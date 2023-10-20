@@ -1,0 +1,13 @@
+
+/* Class = "UILabel"; text = "mac:"; ObjectID = "3Le-Je-crz"; */
+"3Le-Je-crz.text" = "mac:";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Ruw-IF-pk5"; */
+"Ruw-IF-pk5.normalTitle" = "Search to Connect";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "SnB-YG-o2y"; */
+"SnB-YG-o2y.normalTitle" = "Connect by MAC Address";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "sG1-D9-xeW"; */
+"sG1-D9-xeW.normalTitle" = "Scan to Connect";
+

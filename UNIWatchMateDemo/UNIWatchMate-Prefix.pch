@@ -1,0 +1,23 @@
+//
+//  UNIWatchMate-Prefix.pch
+//  UNIWatchMateDemo
+//
+//  Created by 孙强 on 2023/9/27.
+//
+
+#ifndef UNIWatchMate_Prefix_pch
+#define UNIWatchMate_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import <MBProgressHUD/MBProgressHUD.h>
+#import <Toast/Toast.h>
+#import <SVProgressHUD/SVProgressHUD.h>
+#import <UNIWatchMate/UNIWatchMate.h>
+#import <SJWatchLib/SJWatchLib.h>
+#import "WatchManager.h"
+#import <QuickTraceiOSLogger/QuickTraceiOSLogger.h>
+#import <HDWindowLogger/HDWindowLogger.h>
+#import "PickerViewController.h"
+#import <LSTPopView/LSTPopView.h>
+#endif /* UNIWatchMate_Prefix_pch */

@@ -1,0 +1,25 @@
+/* 
+  Localizable.strings
+  UNIWatchMateDemo
+
+  Created by 孙强 on 2023/9/27.
+  
+*/
+
+"Connection mode selection" = "Connection mode selection";
+"Scan QR code connection" = "Scan QR code connection";
+"Connection management page" = "Connection management page";
+"Connection failure" = "Connection failure";
+"Connection successful" = "Connection successful";
+"Time out" = "Time out";
+"scanning..." = "scanning...";
+"You can browse the logs by opening http://%@:%d in your PC browser.\nNote: The phone and PC are on the same network." = "You can browse the logs by opening http://%@:%d in your PC browser.\nNote: The phone and PC are on the same network.";
+"Unbinding failure" = "Unbinding failure";
+"Copied to clipboard" = "Copied to clipboard";
+"Connection down" = "Connection down";
+"Equipment model: " = "Equipment model:";
+"Device MAC address: " = "Device MAC address: ";
+"Device version: " = "Device version: ";
+"Device ID: " = "Device ID: ";
+"Bluetooth name: " = "Bluetooth name: ";
+"Device name: " = "Device name: ";

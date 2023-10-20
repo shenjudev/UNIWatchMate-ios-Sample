@@ -1,0 +1,685 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5F1D9AC02AE144210050C702 /* AlarmEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1D9ABF2AE144210050C702 /* AlarmEditViewController.m */; };
+		5F7A87EA2AE2999F00586791 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7A87E92AE2999F00586791 /* opencv2.framework */; };
+		5F7A87ED2AE299DB00586791 /* h264encoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7A87EB2AE299AC00586791 /* h264encoder.framework */; };
+		5F7A87EE2AE299DB00586791 /* h264encoder.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7A87EB2AE299AC00586791 /* h264encoder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F7A87EF2AE299DF00586791 /* SJWatchLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7A87E52AE2991F00586791 /* SJWatchLib.framework */; };
+		5F7A87F02AE299DF00586791 /* SJWatchLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7A87E52AE2991F00586791 /* SJWatchLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F7A87F12AE299E100586791 /* UNIWatchMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7A87E72AE2996400586791 /* UNIWatchMate.framework */; };
+		5F7A87F22AE299E100586791 /* UNIWatchMate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7A87E72AE2996400586791 /* UNIWatchMate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5FA884F62AD7C5FC001F340D /* SleepSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA884F52AD7C5FC001F340D /* SleepSettingViewController.m */; };
+		5FA885022AD7DB1C001F340D /* 1245156a62de4d6d8d60d8f8ff751302.dial in Resources */ = {isa = PBXBuildFile; fileRef = 5FA885012AD7DB1C001F340D /* 1245156a62de4d6d8d60d8f8ff751302.dial */; };
+		5FA885042AD7DB29001F340D /* 4974f889d52c4a519eac9ea409b3295c.dial in Resources */ = {isa = PBXBuildFile; fileRef = 5FA885032AD7DB28001F340D /* 4974f889d52c4a519eac9ea409b3295c.dial */; };
+		5FA885062AD7DB38001F340D /* 59c4aad46ed434ca58786f3232aba673.dial in Resources */ = {isa = PBXBuildFile; fileRef = 5FA885052AD7DB38001F340D /* 59c4aad46ed434ca58786f3232aba673.dial */; };
+		5FA885082AD7DB44001F340D /* 8c637a6c26d476db361051786e773df7.dial in Resources */ = {isa = PBXBuildFile; fileRef = 5FA885072AD7DB44001F340D /* 8c637a6c26d476db361051786e773df7.dial */; };
+		5FA8850A2AD7DB4F001F340D /* aab168c15c7b40eab361ca98fdd213ee.dial in Resources */ = {isa = PBXBuildFile; fileRef = 5FA885092AD7DB4F001F340D /* aab168c15c7b40eab361ca98fdd213ee.dial */; };
+		5FE03CE82AD7922100E60C76 /* DialManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE03CE72AD7922100E60C76 /* DialManagerViewController.m */; };
+		5FE03CEC2AD7939500E60C76 /* DialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE03CEB2AD7939500E60C76 /* DialModel.m */; };
+		5FE03D182AD7A8D700E60C76 /* CameraControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE03D162AD7A8D700E60C76 /* CameraControlViewController.m */; };
+		5FE994762AE0DE640052851E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE994752AE0DE640052851E /* HomeViewController.m */; };
+		5FE994792AE112F40052851E /* AlarmsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE994782AE112F40052851E /* AlarmsViewController.m */; };
+		5FEA2DF52AE2174D00C464A7 /* LanguageChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEA2DF42AE2174D00C464A7 /* LanguageChangeViewController.m */; };
+		5FEA2DF92AE2234200C464A7 /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEA2DF82AE2234200C464A7 /* PickerViewController.m */; };
+		5FECDECD2AD2802B00908606 /* AboutDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FECDECC2AD2802B00908606 /* AboutDeviceViewController.m */; };
+		5FF3C1652AD651D60063FEE4 /* DateAndTimeSynchronizedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3C1642AD651D60063FEE4 /* DateAndTimeSynchronizedViewController.m */; };
+		5FF3C1682AD6728E0063FEE4 /* SoundAndTouchFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3C1672AD6728E0063FEE4 /* SoundAndTouchFeedbackViewController.m */; };
+		5FF3C16B2AD6B5800063FEE4 /* AppViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF3C16A2AD6B5800063FEE4 /* AppViewViewController.m */; };
+		5FF961F42AC427DC00DFA693 /* ScanQRCodeConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF961EE2AC427DC00DFA693 /* ScanQRCodeConnectionViewController.m */; };
+		5FF961F52AC427DC00DFA693 /* ConnectionModeSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF961F02AC427DC00DFA693 /* ConnectionModeSelectionViewController.m */; };
+		5FF961F62AC427DC00DFA693 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF961F22AC427DC00DFA693 /* DemoViewController.m */; };
+		5FF961FD2AC4292700DFA693 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FF961FF2AC4292700DFA693 /* Localizable.strings */; };
+		5FF962052AC430B800DFA693 /* ConnectionManagementPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF962042AC430B800DFA693 /* ConnectionManagementPageViewController.m */; };
+		5FF962082AC43D0E00DFA693 /* WatchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF962072AC43D0E00DFA693 /* WatchManager.m */; };
+		5FFAC1482AD91DFD006B68CF /* CameraAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFAC1472AD91DFD006B68CF /* CameraAppDelegate.m */; };
+		D7135A8BBE24884BB6DAFEEE /* Pods_UNIWatchMateDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C60E9F032EABB4DD0FEDA943 /* Pods_UNIWatchMateDemo.framework */; };
+		D77825212ABD34180056AB02 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D77825202ABD34180056AB02 /* AppDelegate.m */; };
+		D77825242ABD34180056AB02 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D77825232ABD34180056AB02 /* SceneDelegate.m */; };
+		D77825272ABD34180056AB02 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D77825262ABD34180056AB02 /* ViewController.m */; };
+		D778252A2ABD34180056AB02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D77825282ABD34180056AB02 /* Main.storyboard */; };
+		D778252C2ABD341B0056AB02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D778252B2ABD341B0056AB02 /* Assets.xcassets */; };
+		D778252F2ABD341B0056AB02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D778252D2ABD341B0056AB02 /* LaunchScreen.storyboard */; };
+		D77825322ABD341B0056AB02 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D77825312ABD341B0056AB02 /* main.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D7E86EC12AC2714C009EDA1C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5F7A87F22AE299E100586791 /* UNIWatchMate.framework in Embed Frameworks */,
+				5F7A87EE2AE299DB00586791 /* h264encoder.framework in Embed Frameworks */,
+				5F7A87F02AE299DF00586791 /* SJWatchLib.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5F1D9ABE2AE144210050C702 /* AlarmEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlarmEditViewController.h; sourceTree = "<group>"; };
+		5F1D9ABF2AE144210050C702 /* AlarmEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlarmEditViewController.m; sourceTree = "<group>"; };
+		5F7A87E52AE2991F00586791 /* SJWatchLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SJWatchLib.framework; path = "../../../../Library/Developer/Xcode/DerivedData/UNIWatchMateDemo-hdiipzlnimxwsrabjrhkltrudgzt/Build/Products/Release-iphoneos/SJWatchLib.framework"; sourceTree = "<group>"; };
+		5F7A87E72AE2996400586791 /* UNIWatchMate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UNIWatchMate.framework; path = "../../../../Library/Developer/Xcode/DerivedData/UNIWatchMate-dxzkuqyjptjvpodahkaexayhomel/Build/Products/Release-iphoneos/UNIWatchMate.framework"; sourceTree = "<group>"; };
+		5F7A87E92AE2999F00586791 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		5F7A87EB2AE299AC00586791 /* h264encoder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = h264encoder.framework; sourceTree = "<group>"; };
+		5FA7FDF02AD10CC100133E53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		5FA884F42AD7C5FC001F340D /* SleepSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SleepSettingViewController.h; sourceTree = "<group>"; };
+		5FA884F52AD7C5FC001F340D /* SleepSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SleepSettingViewController.m; sourceTree = "<group>"; };
+		5FA885012AD7DB1C001F340D /* 1245156a62de4d6d8d60d8f8ff751302.dial */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1245156a62de4d6d8d60d8f8ff751302.dial; sourceTree = "<group>"; };
+		5FA885032AD7DB28001F340D /* 4974f889d52c4a519eac9ea409b3295c.dial */ = {isa = PBXFileReference; lastKnownFileType = file; path = 4974f889d52c4a519eac9ea409b3295c.dial; sourceTree = "<group>"; };
+		5FA885052AD7DB38001F340D /* 59c4aad46ed434ca58786f3232aba673.dial */ = {isa = PBXFileReference; lastKnownFileType = file; path = 59c4aad46ed434ca58786f3232aba673.dial; sourceTree = "<group>"; };
+		5FA885072AD7DB44001F340D /* 8c637a6c26d476db361051786e773df7.dial */ = {isa = PBXFileReference; lastKnownFileType = file; path = 8c637a6c26d476db361051786e773df7.dial; sourceTree = "<group>"; };
+		5FA885092AD7DB4F001F340D /* aab168c15c7b40eab361ca98fdd213ee.dial */ = {isa = PBXFileReference; lastKnownFileType = file; path = aab168c15c7b40eab361ca98fdd213ee.dial; sourceTree = "<group>"; };
+		5FE03CE62AD7922100E60C76 /* DialManagerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DialManagerViewController.h; sourceTree = "<group>"; };
+		5FE03CE72AD7922100E60C76 /* DialManagerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DialManagerViewController.m; sourceTree = "<group>"; };
+		5FE03CEA2AD7939500E60C76 /* DialModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DialModel.h; sourceTree = "<group>"; };
+		5FE03CEB2AD7939500E60C76 /* DialModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DialModel.m; sourceTree = "<group>"; };
+		5FE03D162AD7A8D700E60C76 /* CameraControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraControlViewController.m; sourceTree = "<group>"; };
+		5FE03D172AD7A8D700E60C76 /* CameraControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraControlViewController.h; sourceTree = "<group>"; };
+		5FE994742AE0DE640052851E /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		5FE994752AE0DE640052851E /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		5FE994772AE112F40052851E /* AlarmsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlarmsViewController.h; sourceTree = "<group>"; };
+		5FE994782AE112F40052851E /* AlarmsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlarmsViewController.m; sourceTree = "<group>"; };
+		5FEA2DF32AE2174D00C464A7 /* LanguageChangeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LanguageChangeViewController.h; sourceTree = "<group>"; };
+		5FEA2DF42AE2174D00C464A7 /* LanguageChangeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LanguageChangeViewController.m; sourceTree = "<group>"; };
+		5FEA2DF72AE2234200C464A7 /* PickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewController.h; sourceTree = "<group>"; };
+		5FEA2DF82AE2234200C464A7 /* PickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewController.m; sourceTree = "<group>"; };
+		5FECDECB2AD2802B00908606 /* AboutDeviceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutDeviceViewController.h; sourceTree = "<group>"; };
+		5FECDECC2AD2802B00908606 /* AboutDeviceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutDeviceViewController.m; sourceTree = "<group>"; };
+		5FF3C1632AD651D60063FEE4 /* DateAndTimeSynchronizedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateAndTimeSynchronizedViewController.h; sourceTree = "<group>"; };
+		5FF3C1642AD651D60063FEE4 /* DateAndTimeSynchronizedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DateAndTimeSynchronizedViewController.m; sourceTree = "<group>"; };
+		5FF3C1662AD6728E0063FEE4 /* SoundAndTouchFeedbackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoundAndTouchFeedbackViewController.h; sourceTree = "<group>"; };
+		5FF3C1672AD6728E0063FEE4 /* SoundAndTouchFeedbackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoundAndTouchFeedbackViewController.m; sourceTree = "<group>"; };
+		5FF3C1692AD6B5800063FEE4 /* AppViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppViewViewController.h; sourceTree = "<group>"; };
+		5FF3C16A2AD6B5800063FEE4 /* AppViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppViewViewController.m; sourceTree = "<group>"; };
+		5FF961EA2AC4275000DFA693 /* UNIWatchMate-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UNIWatchMate-Prefix.pch"; sourceTree = "<group>"; };
+		5FF961EE2AC427DC00DFA693 /* ScanQRCodeConnectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanQRCodeConnectionViewController.m; sourceTree = "<group>"; };
+		5FF961EF2AC427DC00DFA693 /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
+		5FF961F02AC427DC00DFA693 /* ConnectionModeSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionModeSelectionViewController.m; sourceTree = "<group>"; };
+		5FF961F12AC427DC00DFA693 /* ScanQRCodeConnectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanQRCodeConnectionViewController.h; sourceTree = "<group>"; };
+		5FF961F22AC427DC00DFA693 /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
+		5FF961F32AC427DC00DFA693 /* ConnectionModeSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionModeSelectionViewController.h; sourceTree = "<group>"; };
+		5FF961F92AC4289C00DFA693 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		5FF961FA2AC4289C00DFA693 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		5FF961FE2AC4292700DFA693 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5FF962002AC4292C00DFA693 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		5FF962032AC430B800DFA693 /* ConnectionManagementPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConnectionManagementPageViewController.h; sourceTree = "<group>"; };
+		5FF962042AC430B800DFA693 /* ConnectionManagementPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConnectionManagementPageViewController.m; sourceTree = "<group>"; };
+		5FF962062AC43D0E00DFA693 /* WatchManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WatchManager.h; sourceTree = "<group>"; };
+		5FF962072AC43D0E00DFA693 /* WatchManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WatchManager.m; sourceTree = "<group>"; };
+		5FFAC1462AD91DFD006B68CF /* CameraAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraAppDelegate.h; sourceTree = "<group>"; };
+		5FFAC1472AD91DFD006B68CF /* CameraAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraAppDelegate.m; sourceTree = "<group>"; };
+		73959BDAF331E975138356DF /* Pods-UNIWatchMateDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIWatchMateDemo.release.xcconfig"; path = "Target Support Files/Pods-UNIWatchMateDemo/Pods-UNIWatchMateDemo.release.xcconfig"; sourceTree = "<group>"; };
+		C60E9F032EABB4DD0FEDA943 /* Pods_UNIWatchMateDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UNIWatchMateDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D778251C2ABD34180056AB02 /* UNIWatchMateDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UNIWatchMateDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D778251F2ABD34180056AB02 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D77825202ABD34180056AB02 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D77825222ABD34180056AB02 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		D77825232ABD34180056AB02 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		D77825252ABD34180056AB02 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D77825262ABD34180056AB02 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D77825292ABD34180056AB02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D778252B2ABD341B0056AB02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D778252E2ABD341B0056AB02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D77825302ABD341B0056AB02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D77825312ABD341B0056AB02 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E8DDA96325655A1B0EB18CED /* Pods-UNIWatchMateDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIWatchMateDemo.debug.xcconfig"; path = "Target Support Files/Pods-UNIWatchMateDemo/Pods-UNIWatchMateDemo.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D77825192ABD34180056AB02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F7A87F12AE299E100586791 /* UNIWatchMate.framework in Frameworks */,
+				5F7A87EF2AE299DF00586791 /* SJWatchLib.framework in Frameworks */,
+				5F7A87ED2AE299DB00586791 /* h264encoder.framework in Frameworks */,
+				D7135A8BBE24884BB6DAFEEE /* Pods_UNIWatchMateDemo.framework in Frameworks */,
+				5F7A87EA2AE2999F00586791 /* opencv2.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		56031C1DA84625A2BB83AC8C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5F7A87EB2AE299AC00586791 /* h264encoder.framework */,
+				5F7A87E92AE2999F00586791 /* opencv2.framework */,
+				5F7A87E52AE2991F00586791 /* SJWatchLib.framework */,
+				5F7A87E72AE2996400586791 /* UNIWatchMate.framework */,
+				C60E9F032EABB4DD0FEDA943 /* Pods_UNIWatchMateDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5FE03CE92AD7938200E60C76 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5FE03CEA2AD7939500E60C76 /* DialModel.h */,
+				5FE03CEB2AD7939500E60C76 /* DialModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5FE03CED2AD79DC500E60C76 /* Dial */ = {
+			isa = PBXGroup;
+			children = (
+				5FA885092AD7DB4F001F340D /* aab168c15c7b40eab361ca98fdd213ee.dial */,
+				5FA885072AD7DB44001F340D /* 8c637a6c26d476db361051786e773df7.dial */,
+				5FA885052AD7DB38001F340D /* 59c4aad46ed434ca58786f3232aba673.dial */,
+				5FA885032AD7DB28001F340D /* 4974f889d52c4a519eac9ea409b3295c.dial */,
+				5FA885012AD7DB1C001F340D /* 1245156a62de4d6d8d60d8f8ff751302.dial */,
+			);
+			path = Dial;
+			sourceTree = "<group>";
+		};
+		5FEA2DF62AE2230700C464A7 /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				5FEA2DF72AE2234200C464A7 /* PickerViewController.h */,
+				5FEA2DF82AE2234200C464A7 /* PickerViewController.m */,
+			);
+			path = Picker;
+			sourceTree = "<group>";
+		};
+		5FF961ED2AC427DC00DFA693 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				5FEA2DF62AE2230700C464A7 /* Picker */,
+				5FE03CE92AD7938200E60C76 /* Model */,
+				5FE03CED2AD79DC500E60C76 /* Dial */,
+				5FF961EF2AC427DC00DFA693 /* DemoViewController.h */,
+				5FF961F22AC427DC00DFA693 /* DemoViewController.m */,
+				5FF961F12AC427DC00DFA693 /* ScanQRCodeConnectionViewController.h */,
+				5FF961EE2AC427DC00DFA693 /* ScanQRCodeConnectionViewController.m */,
+				5FF961F32AC427DC00DFA693 /* ConnectionModeSelectionViewController.h */,
+				5FF961F02AC427DC00DFA693 /* ConnectionModeSelectionViewController.m */,
+				5FF962032AC430B800DFA693 /* ConnectionManagementPageViewController.h */,
+				5FF962042AC430B800DFA693 /* ConnectionManagementPageViewController.m */,
+				5FE994742AE0DE640052851E /* HomeViewController.h */,
+				5FE994752AE0DE640052851E /* HomeViewController.m */,
+				5FECDECB2AD2802B00908606 /* AboutDeviceViewController.h */,
+				5FECDECC2AD2802B00908606 /* AboutDeviceViewController.m */,
+				5FF3C1632AD651D60063FEE4 /* DateAndTimeSynchronizedViewController.h */,
+				5FF3C1642AD651D60063FEE4 /* DateAndTimeSynchronizedViewController.m */,
+				5FF3C1662AD6728E0063FEE4 /* SoundAndTouchFeedbackViewController.h */,
+				5FF3C1672AD6728E0063FEE4 /* SoundAndTouchFeedbackViewController.m */,
+				5FE03CE62AD7922100E60C76 /* DialManagerViewController.h */,
+				5FE03CE72AD7922100E60C76 /* DialManagerViewController.m */,
+				5FE03D172AD7A8D700E60C76 /* CameraControlViewController.h */,
+				5FE03D162AD7A8D700E60C76 /* CameraControlViewController.m */,
+				5FA884F42AD7C5FC001F340D /* SleepSettingViewController.h */,
+				5FA884F52AD7C5FC001F340D /* SleepSettingViewController.m */,
+				5FF3C1692AD6B5800063FEE4 /* AppViewViewController.h */,
+				5FF3C16A2AD6B5800063FEE4 /* AppViewViewController.m */,
+				5FFAC1462AD91DFD006B68CF /* CameraAppDelegate.h */,
+				5FFAC1472AD91DFD006B68CF /* CameraAppDelegate.m */,
+				5FF962062AC43D0E00DFA693 /* WatchManager.h */,
+				5FF962072AC43D0E00DFA693 /* WatchManager.m */,
+				5FE994772AE112F40052851E /* AlarmsViewController.h */,
+				5FE994782AE112F40052851E /* AlarmsViewController.m */,
+				5F1D9ABE2AE144210050C702 /* AlarmEditViewController.h */,
+				5F1D9ABF2AE144210050C702 /* AlarmEditViewController.m */,
+				5FEA2DF32AE2174D00C464A7 /* LanguageChangeViewController.h */,
+				5FEA2DF42AE2174D00C464A7 /* LanguageChangeViewController.m */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		AAD7875D60A29A4F0133F022 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E8DDA96325655A1B0EB18CED /* Pods-UNIWatchMateDemo.debug.xcconfig */,
+				73959BDAF331E975138356DF /* Pods-UNIWatchMateDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D77825132ABD34180056AB02 = {
+			isa = PBXGroup;
+			children = (
+				D778251E2ABD34180056AB02 /* UNIWatchMateDemo */,
+				D778251D2ABD34180056AB02 /* Products */,
+				AAD7875D60A29A4F0133F022 /* Pods */,
+				56031C1DA84625A2BB83AC8C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D778251D2ABD34180056AB02 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D778251C2ABD34180056AB02 /* UNIWatchMateDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D778251E2ABD34180056AB02 /* UNIWatchMateDemo */ = {
+			isa = PBXGroup;
+			children = (
+				5FF961EA2AC4275000DFA693 /* UNIWatchMate-Prefix.pch */,
+				D778251F2ABD34180056AB02 /* AppDelegate.h */,
+				D77825202ABD34180056AB02 /* AppDelegate.m */,
+				D77825222ABD34180056AB02 /* SceneDelegate.h */,
+				D77825232ABD34180056AB02 /* SceneDelegate.m */,
+				D77825252ABD34180056AB02 /* ViewController.h */,
+				D77825262ABD34180056AB02 /* ViewController.m */,
+				5FF961ED2AC427DC00DFA693 /* Demo */,
+				D77825282ABD34180056AB02 /* Main.storyboard */,
+				D778252B2ABD341B0056AB02 /* Assets.xcassets */,
+				D778252D2ABD341B0056AB02 /* LaunchScreen.storyboard */,
+				D77825302ABD341B0056AB02 /* Info.plist */,
+				D77825312ABD341B0056AB02 /* main.m */,
+				5FF961FF2AC4292700DFA693 /* Localizable.strings */,
+			);
+			path = UNIWatchMateDemo;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D778251B2ABD34180056AB02 /* UNIWatchMateDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D77825352ABD341B0056AB02 /* Build configuration list for PBXNativeTarget "UNIWatchMateDemo" */;
+			buildPhases = (
+				4085336B5A8B6D165A7A106C /* [CP] Check Pods Manifest.lock */,
+				D77825182ABD34180056AB02 /* Sources */,
+				D77825192ABD34180056AB02 /* Frameworks */,
+				D778251A2ABD34180056AB02 /* Resources */,
+				92476CB8FABB993914E92BDA /* [CP] Embed Pods Frameworks */,
+				D7E86EC12AC2714C009EDA1C /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UNIWatchMateDemo;
+			productName = UNIWatchMateDemo;
+			productReference = D778251C2ABD34180056AB02 /* UNIWatchMateDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D77825142ABD34180056AB02 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					D778251B2ABD34180056AB02 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = D77825172ABD34180056AB02 /* Build configuration list for PBXProject "UNIWatchMateDemo" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+			);
+			mainGroup = D77825132ABD34180056AB02;
+			productRefGroup = D778251D2ABD34180056AB02 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D778251B2ABD34180056AB02 /* UNIWatchMateDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D778251A2ABD34180056AB02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FA885022AD7DB1C001F340D /* 1245156a62de4d6d8d60d8f8ff751302.dial in Resources */,
+				5FA885082AD7DB44001F340D /* 8c637a6c26d476db361051786e773df7.dial in Resources */,
+				D778252F2ABD341B0056AB02 /* LaunchScreen.storyboard in Resources */,
+				5FA8850A2AD7DB4F001F340D /* aab168c15c7b40eab361ca98fdd213ee.dial in Resources */,
+				5FF961FD2AC4292700DFA693 /* Localizable.strings in Resources */,
+				D778252C2ABD341B0056AB02 /* Assets.xcassets in Resources */,
+				D778252A2ABD34180056AB02 /* Main.storyboard in Resources */,
+				5FA885062AD7DB38001F340D /* 59c4aad46ed434ca58786f3232aba673.dial in Resources */,
+				5FA885042AD7DB29001F340D /* 4974f889d52c4a519eac9ea409b3295c.dial in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4085336B5A8B6D165A7A106C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UNIWatchMateDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92476CB8FABB993914E92BDA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UNIWatchMateDemo/Pods-UNIWatchMateDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UNIWatchMateDemo/Pods-UNIWatchMateDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UNIWatchMateDemo/Pods-UNIWatchMateDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D77825182ABD34180056AB02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FE994792AE112F40052851E /* AlarmsViewController.m in Sources */,
+				5FF962082AC43D0E00DFA693 /* WatchManager.m in Sources */,
+				5F1D9AC02AE144210050C702 /* AlarmEditViewController.m in Sources */,
+				5FA884F62AD7C5FC001F340D /* SleepSettingViewController.m in Sources */,
+				5FE03CEC2AD7939500E60C76 /* DialModel.m in Sources */,
+				5FE994762AE0DE640052851E /* HomeViewController.m in Sources */,
+				5FF961F52AC427DC00DFA693 /* ConnectionModeSelectionViewController.m in Sources */,
+				5FECDECD2AD2802B00908606 /* AboutDeviceViewController.m in Sources */,
+				D77825272ABD34180056AB02 /* ViewController.m in Sources */,
+				5FE03D182AD7A8D700E60C76 /* CameraControlViewController.m in Sources */,
+				5FEA2DF52AE2174D00C464A7 /* LanguageChangeViewController.m in Sources */,
+				D77825212ABD34180056AB02 /* AppDelegate.m in Sources */,
+				5FF961F42AC427DC00DFA693 /* ScanQRCodeConnectionViewController.m in Sources */,
+				5FF962052AC430B800DFA693 /* ConnectionManagementPageViewController.m in Sources */,
+				D77825322ABD341B0056AB02 /* main.m in Sources */,
+				5FF3C1682AD6728E0063FEE4 /* SoundAndTouchFeedbackViewController.m in Sources */,
+				5FF3C1652AD651D60063FEE4 /* DateAndTimeSynchronizedViewController.m in Sources */,
+				5FEA2DF92AE2234200C464A7 /* PickerViewController.m in Sources */,
+				5FF961F62AC427DC00DFA693 /* DemoViewController.m in Sources */,
+				D77825242ABD34180056AB02 /* SceneDelegate.m in Sources */,
+				5FFAC1482AD91DFD006B68CF /* CameraAppDelegate.m in Sources */,
+				5FE03CE82AD7922100E60C76 /* DialManagerViewController.m in Sources */,
+				5FF3C16B2AD6B5800063FEE4 /* AppViewViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5FF961FF2AC4292700DFA693 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FF961FE2AC4292700DFA693 /* en */,
+				5FF962002AC4292C00DFA693 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		D77825282ABD34180056AB02 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D77825292ABD34180056AB02 /* Base */,
+				5FF961F92AC4289C00DFA693 /* zh-Hans */,
+				5FA7FDF02AD10CC100133E53 /* en */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D778252D2ABD341B0056AB02 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D778252E2ABD341B0056AB02 /* Base */,
+				5FF961FA2AC4289C00DFA693 /* zh-Hans */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D77825332ABD341B0056AB02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D77825342ABD341B0056AB02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D77825362ABD341B0056AB02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8DDA96325655A1B0EB18CED /* Pods-UNIWatchMateDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HX8T6X3J7G;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PREFIX_HEADER = "UNIWatchMateDemo/UNIWatchMate-Prefix.pch";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = UNIWatchMateDemo/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = xxxxxxxxxxxxxxxx;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Scan QR code connection";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xianshenju.UNIWatchMateDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		D77825372ABD341B0056AB02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73959BDAF331E975138356DF /* Pods-UNIWatchMateDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HX8T6X3J7G;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PREFIX_HEADER = "UNIWatchMateDemo/UNIWatchMate-Prefix.pch";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = UNIWatchMateDemo/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = xxxxxxxxxxxxxxxx;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Scan QR code connection";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xianshenju.UNIWatchMateDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D77825172ABD34180056AB02 /* Build configuration list for PBXProject "UNIWatchMateDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D77825332ABD341B0056AB02 /* Debug */,
+				D77825342ABD341B0056AB02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D77825352ABD341B0056AB02 /* Build configuration list for PBXNativeTarget "UNIWatchMateDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D77825362ABD341B0056AB02 /* Debug */,
+				D77825372ABD341B0056AB02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D77825142ABD34180056AB02 /* Project object */;
+}

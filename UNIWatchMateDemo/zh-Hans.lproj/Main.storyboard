@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1237" y="-32"/>
+        </scene>
+        <!--Connection Mode Selection View Controller-->
+        <scene sceneID="1rE-E2-SVn">
+            <objects>
+                <viewController storyboardIdentifier="ConnectionModeSelectionViewController" id="yOg-8e-UON" customClass="ConnectionModeSelectionViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lR8-T7-dSb">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ruw-IF-pk5">
+                                <rect key="frame" x="150" y="159" width="93.333333333333314" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="搜索连接"/>
+                                <connections>
+                                    <action selector="actionSearch:" destination="yOg-8e-UON" eventType="touchUpInside" id="IyK-eF-bB4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sG1-D9-xeW">
+                                <rect key="frame" x="150" y="234" width="93.333333333333314" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="扫码连接"/>
+                                <connections>
+                                    <action selector="actionScan:" destination="yOg-8e-UON" eventType="touchUpInside" id="UBL-fj-XLP"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mac:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Le-Je-crz">
+                                <rect key="frame" x="177.66666666666666" y="309" width="38" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SnB-YG-o2y">
+                                <rect key="frame" x="133.66666666666666" y="340" width="125.99999999999997" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="mac地址连接"/>
+                                <connections>
+                                    <action selector="actionByMac:" destination="yOg-8e-UON" eventType="touchUpInside" id="7TK-Xu-YYm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="R2P-qX-IYv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3Le-Je-crz" firstAttribute="top" secondItem="sG1-D9-xeW" secondAttribute="bottom" constant="40" id="89w-j0-ghX"/>
+                            <constraint firstItem="3Le-Je-crz" firstAttribute="centerX" secondItem="lR8-T7-dSb" secondAttribute="centerX" id="EAr-8c-dx4"/>
+                            <constraint firstItem="SnB-YG-o2y" firstAttribute="top" secondItem="3Le-Je-crz" secondAttribute="bottom" constant="10" id="ICQ-Mh-Zfx"/>
+                            <constraint firstItem="SnB-YG-o2y" firstAttribute="centerX" secondItem="lR8-T7-dSb" secondAttribute="centerX" id="PFF-jn-opk"/>
+                            <constraint firstItem="Ruw-IF-pk5" firstAttribute="centerX" secondItem="lR8-T7-dSb" secondAttribute="centerX" id="QEE-Oy-bup"/>
+                            <constraint firstItem="sG1-D9-xeW" firstAttribute="centerX" secondItem="lR8-T7-dSb" secondAttribute="centerX" id="f6a-LF-y3k"/>
+                            <constraint firstItem="sG1-D9-xeW" firstAttribute="top" secondItem="Ruw-IF-pk5" secondAttribute="bottom" constant="40" id="gLv-qO-KJs"/>
+                            <constraint firstItem="Ruw-IF-pk5" firstAttribute="top" secondItem="R2P-qX-IYv" secondAttribute="top" constant="100" id="hRH-QD-O5s"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="macLabel" destination="3Le-Je-crz" id="83d-NN-Wdl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vMG-Hc-ZDd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1237" y="642"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
