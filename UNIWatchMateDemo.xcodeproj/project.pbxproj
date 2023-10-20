@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5F1D9AC02AE144210050C702 /* AlarmEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1D9ABF2AE144210050C702 /* AlarmEditViewController.m */; };
-		5F7A87EA2AE2999F00586791 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7A87E92AE2999F00586791 /* opencv2.framework */; };
 		5F7A87ED2AE299DB00586791 /* h264encoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7A87EB2AE299AC00586791 /* h264encoder.framework */; };
 		5F7A87EE2AE299DB00586791 /* h264encoder.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7A87EB2AE299AC00586791 /* h264encoder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5F7A87EF2AE299DF00586791 /* SJWatchLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7A87E52AE2991F00586791 /* SJWatchLib.framework */; };
@@ -24,6 +23,7 @@
 		5FE03CE82AD7922100E60C76 /* DialManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE03CE72AD7922100E60C76 /* DialManagerViewController.m */; };
 		5FE03CEC2AD7939500E60C76 /* DialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE03CEB2AD7939500E60C76 /* DialModel.m */; };
 		5FE03D182AD7A8D700E60C76 /* CameraControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE03D162AD7A8D700E60C76 /* CameraControlViewController.m */; };
+		5FE7E1FA2AE2ADED00738605 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FE7E1F92AE2ADED00738605 /* opencv2.framework */; };
 		5FE994762AE0DE640052851E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE994752AE0DE640052851E /* HomeViewController.m */; };
 		5FE994792AE112F40052851E /* AlarmsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE994782AE112F40052851E /* AlarmsViewController.m */; };
 		5FEA2DF52AE2174D00C464A7 /* LanguageChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEA2DF42AE2174D00C464A7 /* LanguageChangeViewController.m */; };
@@ -70,7 +70,6 @@
 		5F1D9ABF2AE144210050C702 /* AlarmEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlarmEditViewController.m; sourceTree = "<group>"; };
 		5F7A87E52AE2991F00586791 /* SJWatchLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SJWatchLib.framework; path = "../../../../Library/Developer/Xcode/DerivedData/UNIWatchMateDemo-hdiipzlnimxwsrabjrhkltrudgzt/Build/Products/Release-iphoneos/SJWatchLib.framework"; sourceTree = "<group>"; };
 		5F7A87E72AE2996400586791 /* UNIWatchMate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UNIWatchMate.framework; path = "../../../../Library/Developer/Xcode/DerivedData/UNIWatchMate-dxzkuqyjptjvpodahkaexayhomel/Build/Products/Release-iphoneos/UNIWatchMate.framework"; sourceTree = "<group>"; };
-		5F7A87E92AE2999F00586791 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		5F7A87EB2AE299AC00586791 /* h264encoder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = h264encoder.framework; sourceTree = "<group>"; };
 		5FA7FDF02AD10CC100133E53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		5FA884F42AD7C5FC001F340D /* SleepSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SleepSettingViewController.h; sourceTree = "<group>"; };
@@ -86,6 +85,7 @@
 		5FE03CEB2AD7939500E60C76 /* DialModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DialModel.m; sourceTree = "<group>"; };
 		5FE03D162AD7A8D700E60C76 /* CameraControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraControlViewController.m; sourceTree = "<group>"; };
 		5FE03D172AD7A8D700E60C76 /* CameraControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraControlViewController.h; sourceTree = "<group>"; };
+		5FE7E1F92AE2ADED00738605 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		5FE994742AE0DE640052851E /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		5FE994752AE0DE640052851E /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		5FE994772AE112F40052851E /* AlarmsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlarmsViewController.h; sourceTree = "<group>"; };
@@ -144,8 +144,8 @@
 				5F7A87F12AE299E100586791 /* UNIWatchMate.framework in Frameworks */,
 				5F7A87EF2AE299DF00586791 /* SJWatchLib.framework in Frameworks */,
 				5F7A87ED2AE299DB00586791 /* h264encoder.framework in Frameworks */,
+				5FE7E1FA2AE2ADED00738605 /* opencv2.framework in Frameworks */,
 				D7135A8BBE24884BB6DAFEEE /* Pods_UNIWatchMateDemo.framework in Frameworks */,
-				5F7A87EA2AE2999F00586791 /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,8 +155,8 @@
 		56031C1DA84625A2BB83AC8C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5FE7E1F92AE2ADED00738605 /* opencv2.framework */,
 				5F7A87EB2AE299AC00586791 /* h264encoder.framework */,
-				5F7A87E92AE2999F00586791 /* opencv2.framework */,
 				5F7A87E52AE2991F00586791 /* SJWatchLib.framework */,
 				5F7A87E72AE2996400586791 /* UNIWatchMate.framework */,
 				C60E9F032EABB4DD0FEDA943 /* Pods_UNIWatchMateDemo.framework */,
