@@ -1,14 +1,5 @@
 platform :ios, '12.0'
 ENV['SWIFT_VERSION'] = '5.0'
-target 'UNIWatchMate' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  project './UNIWatchMate.xcodeproj'
-  workspace 'UNIWatchMate.xcworkspace'
-  use_frameworks!
-
-  # Pods for UNIWatchMate
-  pod 'ReactiveObjC','3.1.1'
-end
 
 target 'UNIWatchMateDemo' do
   # Comment the next line if you don't want to use dynamic frameworks
