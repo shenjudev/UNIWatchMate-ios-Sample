@@ -20,13 +20,15 @@ typedef NS_ENUM(NSInteger, USWatchPickerDataType) {
     USWatchPickerDataTypeMenstrualCycleLength,
     USWatchPickerDataTypeMenstrualStartReminder,
     USWatchPickerDataTypeMenstrualReminderTime,
-    USWatchPickerDataTypeLanguage
+    USWatchPickerDataTypeLanguage,
+    USWatchPickerDataTypeCustomer
     
 };
 
 @interface PickerViewController : UIViewController
 - (instancetype)initWithValue:(NSString *)value height:(CGFloat)height type:(USWatchPickerDataType)type doneBlock:(void (^)(NSString *))doneBlock cancelBlock:(void (^)(void))cancelBlock;
 - (instancetype)initWithValue:(NSString *)value height:(CGFloat)height data:(NSArray *)data type:(USWatchPickerDataType)type doneBlock:(void (^)(NSString *))doneBlock cancelBlock:(void (^)(void))cancelBlock;
+- (instancetype)initWithValue:(NSString *)value height:(CGFloat)height data:(NSArray *)data type:(USWatchPickerDataType)type tip:(NSString *)tip unit:(NSString *)unit doneBlock:(void (^)(NSString *))doneBlock cancelBlock:(void (^)(void))cancelBlock;
 @end
 
 NS_ASSUME_NONNULL_END

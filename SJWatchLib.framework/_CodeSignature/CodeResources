@@ -22,7 +22,7 @@
 		</data>
 		<key>Headers/SJWatchLib-Swift.h</key>
 		<data>
-		sELS6Yen/Gk7ahXNcXrBaT9lCok=
+		6KI0ZP3lAWOhbIQxSxS/tPQ9+ik=
 		</data>
 		<key>Headers/SJWatchLib.h</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Modules/SJWatchLib.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		7EjzZSzVfZrV1BEUjoqAq2E3iXQ=
+		/Zn7mIJJJ1zgtWpoU1cAJ1qKNlI=
 		</data>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		K45TyTS7DqvRXg7OGWGS1XxYywk=
+		plHNpiXYGnBHGPqRvDFQPGobprQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -87,7 +87,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			IXo87RUVt0Y9Hv6ZkiV9sXq68yKBiX0Qt+8/6bAaiuc=
+			Rb85gpxIzwBNkmecuab9VhmmsMRZTIimTTbiZMijkj4=
 			</data>
 		</dict>
 		<key>Headers/SJWatchLib.h</key>
@@ -101,7 +101,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dl6InpoGwnTaanDYczhubO8Hs3UAxgF6HexUE6MS1Fg=
+			t2hiskyPpPQn7h0lH+VyXm0/2uSCySH01LMW/Q1c96M=
 			</data>
 		</dict>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.abi.json</key>
@@ -122,7 +122,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9byR2X0b/rjvdceMe++o9H6zA0Fxr2jFVAv6enIj7tc=
+			eZz/y9UZePjQbwunq4H1TnDf7guIH6Im8ApcOIXz6NY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

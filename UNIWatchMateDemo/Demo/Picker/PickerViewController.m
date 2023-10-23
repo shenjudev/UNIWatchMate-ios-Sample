@@ -19,6 +19,8 @@
 @property (nonatomic, strong) UIButton *closeButton;
 @property (nonatomic, strong) UIView *lineView;
 @property (nonatomic, strong) UIButton *doneButton;
+@property (nonatomic,strong) NSString *tip;
+@property (nonatomic,strong) NSString *unit;
 
 @end
 
@@ -44,6 +46,20 @@
         self.cancelBlock = cancelBlock;
         self.height = height;
         self.data = data;
+    }
+    return self;
+}
+- (instancetype)initWithValue:(NSString *)value height:(CGFloat)height data:(NSArray *)data type:(USWatchPickerDataType)type tip:(NSString *)tip unit:(NSString *)unit doneBlock:(void (^)(NSString *))doneBlock cancelBlock:(void (^)(void))cancelBlock{
+    self = [super init];
+    if (self) {
+        self.value = value;
+        self.type = type;
+        self.doneBlock = doneBlock;
+        self.cancelBlock = cancelBlock;
+        self.height = height;
+        self.data = data;
+        self.unit = unit;
+        self.tip = tip;
     }
     return self;
 }
@@ -250,6 +266,9 @@
             case  USWatchPickerDataTypeLanguage:{
                 break;
             }
+            case  USWatchPickerDataTypeCustomer:{
+                break;
+            }
         }
     }
     return _data;
@@ -328,9 +347,10 @@
             return NSLocalizedString(@"wh_menstruation_advance", nil);
         case USWatchPickerDataTypeMenstrualReminderTime:
             return NSLocalizedString(@"wh_remind_time", nil);
-        case USWatchPickerDataTypeLanguage:{
+        case USWatchPickerDataTypeLanguage:
             return NSLocalizedString(@"select language", nil);
-        }
+        case USWatchPickerDataTypeCustomer:
+            return _tip;
     }
 }
 - (NSString *)unitForDataType:(USWatchPickerDataType)dataType {
@@ -355,9 +375,10 @@
             return NSLocalizedString(@"unit_day_count", nil);
         case USWatchPickerDataTypeMenstrualReminderTime:
             return @":00";
-        case USWatchPickerDataTypeLanguage:{
+        case USWatchPickerDataTypeLanguage:
             return NSLocalizedString(@"", nil);
-        }
+        case USWatchPickerDataTypeCustomer:
+            return _unit;
     }
 }
 

@@ -8,13 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		5F1D9AC02AE144210050C702 /* AlarmEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1D9ABF2AE144210050C702 /* AlarmEditViewController.m */; };
-		5F54C5B92AE64ABB0090596F /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F54C5B82AE64ABA0090596F /* opencv2.framework */; };
-		5F54C5C02AE64AEB0090596F /* h264encoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F54C5BE2AE64AD90090596F /* h264encoder.framework */; };
-		5F54C5C12AE64AEB0090596F /* h264encoder.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F54C5BE2AE64AD90090596F /* h264encoder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5F54C5C22AE64AEE0090596F /* SJWatchLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F54C5BC2AE64ACD0090596F /* SJWatchLib.framework */; };
-		5F54C5C32AE64AEE0090596F /* SJWatchLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F54C5BC2AE64ACD0090596F /* SJWatchLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5F54C5C42AE64AF00090596F /* UNIWatchMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F54C5BA2AE64AC20090596F /* UNIWatchMate.framework */; };
-		5F54C5C52AE64AF00090596F /* UNIWatchMate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F54C5BA2AE64AC20090596F /* UNIWatchMate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F54C5AA2AE60E4C0090596F /* OtaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F54C5A92AE60E4C0090596F /* OtaViewController.m */; };
+		5F54C5AD2AE6231C0090596F /* DeviceNotificationManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F54C5AC2AE6231C0090596F /* DeviceNotificationManagementViewController.m */; };
+		5F54C5D42AE6714A0090596F /* FindDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F54C5D32AE6714A0090596F /* FindDeviceViewController.m */; };
+		5F54C5DB2AE682C90090596F /* UnitSynchronizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F54C5DA2AE682C90090596F /* UnitSynchronizationViewController.m */; };
+		5F54C5E02AE695E50090596F /* SJWatchLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F54C5DD2AE695BE0090596F /* SJWatchLib.framework */; };
+		5F54C5E12AE695E50090596F /* SJWatchLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F54C5DD2AE695BE0090596F /* SJWatchLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F54C5E22AE695E70090596F /* UNIWatchMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F54C5DC2AE695BE0090596F /* UNIWatchMate.framework */; };
+		5F54C5E32AE695E70090596F /* UNIWatchMate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F54C5DC2AE695BE0090596F /* UNIWatchMate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F7A87EA2AE2999F00586791 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7A87E92AE2999F00586791 /* opencv2.framework */; };
+		5F7A87ED2AE299DB00586791 /* h264encoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7A87EB2AE299AC00586791 /* h264encoder.framework */; };
+		5F7A87EE2AE299DB00586791 /* h264encoder.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7A87EB2AE299AC00586791 /* h264encoder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5FA884F62AD7C5FC001F340D /* SleepSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA884F52AD7C5FC001F340D /* SleepSettingViewController.m */; };
 		5FA885022AD7DB1C001F340D /* 1245156a62de4d6d8d60d8f8ff751302.dial in Resources */ = {isa = PBXBuildFile; fileRef = 5FA885012AD7DB1C001F340D /* 1245156a62de4d6d8d60d8f8ff751302.dial */; };
 		5FA885042AD7DB29001F340D /* 4974f889d52c4a519eac9ea409b3295c.dial in Resources */ = {isa = PBXBuildFile; fileRef = 5FA885032AD7DB28001F340D /* 4974f889d52c4a519eac9ea409b3295c.dial */; };
@@ -56,9 +60,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5F54C5C52AE64AF00090596F /* UNIWatchMate.framework in Embed Frameworks */,
-				5F54C5C12AE64AEB0090596F /* h264encoder.framework in Embed Frameworks */,
-				5F54C5C32AE64AEE0090596F /* SJWatchLib.framework in Embed Frameworks */,
+				5F54C5E32AE695E70090596F /* UNIWatchMate.framework in Embed Frameworks */,
+				5F7A87EE2AE299DB00586791 /* h264encoder.framework in Embed Frameworks */,
+				5F54C5E12AE695E50090596F /* SJWatchLib.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,10 +72,18 @@
 /* Begin PBXFileReference section */
 		5F1D9ABE2AE144210050C702 /* AlarmEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlarmEditViewController.h; sourceTree = "<group>"; };
 		5F1D9ABF2AE144210050C702 /* AlarmEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlarmEditViewController.m; sourceTree = "<group>"; };
-		5F54C5B82AE64ABA0090596F /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
-		5F54C5BA2AE64AC20090596F /* UNIWatchMate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UNIWatchMate.framework; sourceTree = "<group>"; };
-		5F54C5BC2AE64ACD0090596F /* SJWatchLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SJWatchLib.framework; sourceTree = "<group>"; };
-		5F54C5BE2AE64AD90090596F /* h264encoder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = h264encoder.framework; sourceTree = "<group>"; };
+		5F54C5A82AE60E4C0090596F /* OtaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OtaViewController.h; sourceTree = "<group>"; };
+		5F54C5A92AE60E4C0090596F /* OtaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OtaViewController.m; sourceTree = "<group>"; };
+		5F54C5AB2AE6231C0090596F /* DeviceNotificationManagementViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceNotificationManagementViewController.h; sourceTree = "<group>"; };
+		5F54C5AC2AE6231C0090596F /* DeviceNotificationManagementViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceNotificationManagementViewController.m; sourceTree = "<group>"; };
+		5F54C5D22AE6714A0090596F /* FindDeviceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FindDeviceViewController.h; sourceTree = "<group>"; };
+		5F54C5D32AE6714A0090596F /* FindDeviceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FindDeviceViewController.m; sourceTree = "<group>"; };
+		5F54C5D92AE682C90090596F /* UnitSynchronizationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnitSynchronizationViewController.h; sourceTree = "<group>"; };
+		5F54C5DA2AE682C90090596F /* UnitSynchronizationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnitSynchronizationViewController.m; sourceTree = "<group>"; };
+		5F54C5DC2AE695BE0090596F /* UNIWatchMate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UNIWatchMate.framework; sourceTree = "<group>"; };
+		5F54C5DD2AE695BE0090596F /* SJWatchLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SJWatchLib.framework; sourceTree = "<group>"; };
+		5F7A87E92AE2999F00586791 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		5F7A87EB2AE299AC00586791 /* h264encoder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = h264encoder.framework; sourceTree = "<group>"; };
 		5FA7FDF02AD10CC100133E53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		5FA884F42AD7C5FC001F340D /* SleepSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SleepSettingViewController.h; sourceTree = "<group>"; };
 		5FA884F52AD7C5FC001F340D /* SleepSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SleepSettingViewController.m; sourceTree = "<group>"; };
@@ -141,11 +153,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F54C5C42AE64AF00090596F /* UNIWatchMate.framework in Frameworks */,
-				5F54C5C22AE64AEE0090596F /* SJWatchLib.framework in Frameworks */,
-				5F54C5C02AE64AEB0090596F /* h264encoder.framework in Frameworks */,
-				5F54C5B92AE64ABB0090596F /* opencv2.framework in Frameworks */,
+				5F54C5E22AE695E70090596F /* UNIWatchMate.framework in Frameworks */,
+				5F54C5E02AE695E50090596F /* SJWatchLib.framework in Frameworks */,
+				5F7A87ED2AE299DB00586791 /* h264encoder.framework in Frameworks */,
 				D7135A8BBE24884BB6DAFEEE /* Pods_UNIWatchMateDemo.framework in Frameworks */,
+				5F7A87EA2AE2999F00586791 /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,10 +167,10 @@
 		56031C1DA84625A2BB83AC8C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5F54C5BE2AE64AD90090596F /* h264encoder.framework */,
-				5F54C5B82AE64ABA0090596F /* opencv2.framework */,
-				5F54C5BA2AE64AC20090596F /* UNIWatchMate.framework */,
-				5F54C5BC2AE64ACD0090596F /* SJWatchLib.framework */,
+				5F54C5DD2AE695BE0090596F /* SJWatchLib.framework */,
+				5F54C5DC2AE695BE0090596F /* UNIWatchMate.framework */,
+				5F7A87EB2AE299AC00586791 /* h264encoder.framework */,
+				5F7A87E92AE2999F00586791 /* opencv2.framework */,
 				C60E9F032EABB4DD0FEDA943 /* Pods_UNIWatchMateDemo.framework */,
 			);
 			name = Frameworks;
@@ -234,6 +246,14 @@
 				5F1D9ABF2AE144210050C702 /* AlarmEditViewController.m */,
 				5FEA2DF32AE2174D00C464A7 /* LanguageChangeViewController.h */,
 				5FEA2DF42AE2174D00C464A7 /* LanguageChangeViewController.m */,
+				5F54C5A82AE60E4C0090596F /* OtaViewController.h */,
+				5F54C5A92AE60E4C0090596F /* OtaViewController.m */,
+				5F54C5AB2AE6231C0090596F /* DeviceNotificationManagementViewController.h */,
+				5F54C5AC2AE6231C0090596F /* DeviceNotificationManagementViewController.m */,
+				5F54C5D22AE6714A0090596F /* FindDeviceViewController.h */,
+				5F54C5D32AE6714A0090596F /* FindDeviceViewController.m */,
+				5F54C5D92AE682C90090596F /* UnitSynchronizationViewController.h */,
+				5F54C5DA2AE682C90090596F /* UnitSynchronizationViewController.m */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -417,18 +437,22 @@
 				5FF961F52AC427DC00DFA693 /* ConnectionModeSelectionViewController.m in Sources */,
 				5FECDECD2AD2802B00908606 /* AboutDeviceViewController.m in Sources */,
 				D77825272ABD34180056AB02 /* ViewController.m in Sources */,
+				5F54C5AA2AE60E4C0090596F /* OtaViewController.m in Sources */,
+				5F54C5AD2AE6231C0090596F /* DeviceNotificationManagementViewController.m in Sources */,
 				5FE03D182AD7A8D700E60C76 /* CameraControlViewController.m in Sources */,
 				5FEA2DF52AE2174D00C464A7 /* LanguageChangeViewController.m in Sources */,
 				D77825212ABD34180056AB02 /* AppDelegate.m in Sources */,
 				5FF961F42AC427DC00DFA693 /* ScanQRCodeConnectionViewController.m in Sources */,
 				5FF962052AC430B800DFA693 /* ConnectionManagementPageViewController.m in Sources */,
 				D77825322ABD341B0056AB02 /* main.m in Sources */,
+				5F54C5DB2AE682C90090596F /* UnitSynchronizationViewController.m in Sources */,
 				5FF3C1682AD6728E0063FEE4 /* SoundAndTouchFeedbackViewController.m in Sources */,
 				5FF3C1652AD651D60063FEE4 /* DateAndTimeSynchronizedViewController.m in Sources */,
 				5FEA2DF92AE2234200C464A7 /* PickerViewController.m in Sources */,
 				5FF961F62AC427DC00DFA693 /* DemoViewController.m in Sources */,
 				D77825242ABD34180056AB02 /* SceneDelegate.m in Sources */,
 				5FFAC1482AD91DFD006B68CF /* CameraAppDelegate.m in Sources */,
+				5F54C5D42AE6714A0090596F /* FindDeviceViewController.m in Sources */,
 				5FE03CE82AD7922100E60C76 /* DialManagerViewController.m in Sources */,
 				5FF3C16B2AD6B5800063FEE4 /* AppViewViewController.m in Sources */,
 			);

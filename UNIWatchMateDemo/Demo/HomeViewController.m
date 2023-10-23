@@ -17,6 +17,10 @@
 #import "AboutDeviceViewController.h"
 #import "AlarmsViewController.h"
 #import "LanguageChangeViewController.h"
+#import "OtaViewController.h"
+#import "DeviceNotificationManagementViewController.h"
+#import "FindDeviceViewController.h"
+#import "UnitSynchronizationViewController.h"
 
 @interface TableViewHeader : UIView
 
@@ -164,6 +168,7 @@
     self.tableView.tableHeaderView = self.tableViewHeader;
     self.tableView.tableFooterView = self.tableViewFooter;
     [self observerTableViewData];
+//    [self listenForDeviceDiscovery];
     [self config];
 }
 
@@ -331,11 +336,35 @@
                     @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
                     @"selector": NSStringFromSelector(@selector(languageChangeViewController:didSeletIndexPath:))
                 },
+//                @{
+//                    @"title":@"Device Notification Management",
+//                    @"subtitle":@"",
+//                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+//                    @"selector": NSStringFromSelector(@selector(deviceNotificationManagementViewController:didSeletIndexPath:))
+//                },
+//                @{
+//                    @"title":@"Find device",
+//                    @"subtitle":@"",
+//                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+//                    @"selector": NSStringFromSelector(@selector(findDeviceViewController:didSeletIndexPath:))
+//                },
+//                @{
+//                    @"title":@"Unit Synchronization",
+//                    @"subtitle":@"",
+//                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+//                    @"selector": NSStringFromSelector(@selector(unitSynchronizationViewController:didSeletIndexPath:))
+//                },
             ]
         },
         @{
             @"title":@"",
             @"data":@[
+//                @{
+//                    @"title":@"ota",
+//                    @"subtitle":@"",
+//                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+//                    @"selector": NSStringFromSelector(@selector(otaViewController:didSeletIndexPath:))
+//                },
                 @{
                     @"title":@"About evice",
                     @"subtitle":@"",
@@ -453,12 +482,44 @@
     UIViewController *viewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"AboutDeviceViewController"];
     [self.navigationController pushViewController:viewController animated:YES];
 }
+
+/// Push to OTA.
+/// - Parameters:
+///   - cell: selected cell
+///   - indexPath: selected indexPath
+-(void)otaViewController:(UITableViewCell *)cell didSeletIndexPath:(NSIndexPath *)indexPath{
+    UIViewController *viewController = [OtaViewController new];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+/// Push to find device.
+/// - Parameters:
+///   - cell: selected cell
+///   - indexPath: selected indexPath
+-(void)findDeviceViewController:(UITableViewCell *)cell didSeletIndexPath:(NSIndexPath *)indexPath{
+    UIViewController *viewController = [FindDeviceViewController new];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+/// Push to Unit Synchronization.
+/// - Parameters:
+///   - cell: selected cell
+///   - indexPath: selected indexPath
+-(void)unitSynchronizationViewController:(UITableViewCell *)cell didSeletIndexPath:(NSIndexPath *)indexPath{
+    UIViewController *viewController = [UnitSynchronizationViewController new];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
 -(void)alarmsViewController:(UITableViewCell *)cell didSeletIndexPath:(NSIndexPath *)indexPath{
     UIViewController *viewController = [AlarmsViewController new];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 -(void)languageChangeViewController:(UITableViewCell *)cell didSeletIndexPath:(NSIndexPath *)indexPath{
     UIViewController *viewController = [LanguageChangeViewController new];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+-(void)deviceNotificationManagementViewController:(UITableViewCell *)cell didSeletIndexPath:(NSIndexPath *)indexPath{
+    UIViewController *viewController = [DeviceNotificationManagementViewController new];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
@@ -492,6 +553,37 @@
     viewController.title = NSLocalizedString(@"Connection mode selection", nil);
     [[[UIApplication sharedApplication] keyWindow] setRootViewController:[[UINavigationController alloc] initWithRootViewController:viewController]];
     
+}
+
+-(void)listenForDeviceDiscovery{
+    @weakify(self);
+    [[WatchManager sharedInstance].currentValue.apps.findApp.findPhone subscribeNext:^(WMDeviceFindModel * _Nullable x) {
+        @strongify(self);
+        [self showFindMe:x.count ringtime:x.timeSeconds];
+    } error:^(NSError * _Nullable error) {
+
+    }];
+}
+
+-(void)showFindMe:(NSInteger)ringcount ringtime:(NSInteger)ringtime{
+    _alertController = [UIAlertController alertControllerWithTitle:nil message:[NSString stringWithFormat:@"%@\nring time:%lds ring count:%ld",@"Watch find your phone.",(long)ringtime,(long)ringcount] preferredStyle:UIAlertControllerStyleAlert];
+
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Got it" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        // 用户点击取消按钮后的处理代码
+    }];
+    [self.alertController addAction:cancelAction];
+    [self presentViewController:self.alertController animated:YES completion:nil];
+}
+
+-(void)dismissFindMe{
+    if (self.alertController != nil){
+        [self.alertController dismissViewControllerAnimated:false completion:nil];
+    }
+    [[WatchManager sharedInstance].currentValue.apps.findApp.phoneCloseFindPhone subscribeNext:^(NSNumber * _Nullable x) {
+
+        } error:^(NSError * _Nullable error) {
+         [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Stop failed.\n%@",error.localizedDescription]];
+        }];
 }
 
 @end

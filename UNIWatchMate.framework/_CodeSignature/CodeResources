@@ -112,6 +112,10 @@
 		<data>
 		b3sprtfJUcJwNCN+sTeNzzkPVqU=
 		</data>
+		<key>Headers/WMDeviceFindModel.h</key>
+		<data>
+		HFMUogWF5mPiWw2zxaAT7pzC65E=
+		</data>
 		<key>Headers/WMDeviceInfoModel.h</key>
 		<data>
 		+7E52XRRGMuI1sHgY6yivqUDidk=
@@ -138,7 +142,7 @@
 		</data>
 		<key>Headers/WMFindAppModel.h</key>
 		<data>
-		j5GrXgb0O379CbPZtviDzeyMGSA=
+		sGXrYTGywHoCM06swkit+tNkO0o=
 		</data>
 		<key>Headers/WMFindModel.h</key>
 		<data>
@@ -480,6 +484,13 @@
 			uA1wTceA4E0OUeuheiBT/xJ7PGI5vuTmtUICZkz4+2Y=
 			</data>
 		</dict>
+		<key>Headers/WMDeviceFindModel.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			biHMHmz9pX6CG6QfCTo9LplNhva83gAh6DEG+wDSbWg=
+			</data>
+		</dict>
 		<key>Headers/WMDeviceInfoModel.h</key>
 		<dict>
 			<key>hash2</key>
@@ -526,7 +537,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			TIMD027Ac832/wSJVNM3Fm6qCSwzHULfx2Y/aYWq6Jw=
+			5dp9+kgfvXz/VXod1CP0EMG6LtWrbByOQdCa8mw1b/Y=
 			</data>
 		</dict>
 		<key>Headers/WMFindModel.h</key>
