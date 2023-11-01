@@ -21,6 +21,17 @@
 #import "DeviceNotificationManagementViewController.h"
 #import "FindDeviceViewController.h"
 #import "UnitSynchronizationViewController.h"
+#import "ExerciseGoalViewController.h"
+#import "EditUserInfoViewController.h"
+#import "SynchronizeContactsViewController.h"
+#import "EmergencyContactViewController.h"
+#import "SedentaryReminderViewController.h"
+#import "DrinkWaterReminderViewController.h"
+#import "ConfigHeartRateViewController.h"
+#import "SportsmanagerViewController.h"
+#import "WeatherViewController.h"
+#import "RealTimeDataViewController.h"
+#import "WeatherCreateHelper.h"
 
 @interface TableViewHeader : UIView
 
@@ -168,8 +179,9 @@
     self.tableView.tableHeaderView = self.tableViewHeader;
     self.tableView.tableFooterView = self.tableViewFooter;
     [self observerTableViewData];
-//    [self listenForDeviceDiscovery];
+    [self listenForDeviceDiscovery];
     [self config];
+    [self listenForWeather];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -222,7 +234,6 @@
     
     if ([self respondsToSelector:selector]) {
         // 创建参数
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0]; // 举例，您可以根据需要创建合适的 indexPath
         // 使用 performSelector 调用方法并传递参数
         UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         [self performSelector:selector withObject:cell withObject:indexPath];
@@ -336,35 +347,149 @@
                     @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
                     @"selector": NSStringFromSelector(@selector(languageChangeViewController:didSeletIndexPath:))
                 },
-//                @{
-//                    @"title":@"Device Notification Management",
-//                    @"subtitle":@"",
-//                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
-//                    @"selector": NSStringFromSelector(@selector(deviceNotificationManagementViewController:didSeletIndexPath:))
-//                },
-//                @{
-//                    @"title":@"Find device",
-//                    @"subtitle":@"",
-//                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
-//                    @"selector": NSStringFromSelector(@selector(findDeviceViewController:didSeletIndexPath:))
-//                },
-//                @{
-//                    @"title":@"Unit Synchronization",
-//                    @"subtitle":@"",
-//                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
-//                    @"selector": NSStringFromSelector(@selector(unitSynchronizationViewController:didSeletIndexPath:))
-//                },
+                @{
+                    @"title":@"Device Notification Management",
+                    @"subtitle":@"",
+                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+                    @"selector": NSStringFromSelector(@selector(deviceNotificationManagementViewController:didSeletIndexPath:))
+                },
+                @{
+                    @"title":@"Find device",
+                    @"subtitle":@"",
+                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+                    @"selector": NSStringFromSelector(@selector(findDeviceViewController:didSeletIndexPath:))
+                },
+                @{
+                    @"title":@"Unit Synchronization",
+                    @"subtitle":@"",
+                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+                    @"selector": NSStringFromSelector(@selector(unitSynchronizationViewController:didSeletIndexPath:))
+                },
+                @{
+                    @"title":@"Synchronize contacts",
+                    @"subtitle":@"",
+                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+                    @"selector": NSStringFromSelector(@selector(synchronizeContactsViewController:didSeletIndexPath:))
+                },
+                @{
+                    @"title":@"Emergency contact",
+                    @"subtitle":@"",
+                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+                    @"selector": NSStringFromSelector(@selector(emergencyContactViewController:didSeletIndexPath:))
+                },
+                @{
+                    @"title":@"Sedentary reminder",
+                    @"subtitle":@"",
+                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+                    @"selector": NSStringFromSelector(@selector(sedentaryReminderViewController:didSeletIndexPath:))
+                },
+                @{
+                    @"title":@"Drink water reminder",
+                    @"subtitle":@"",
+                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+                    @"selector": NSStringFromSelector(@selector(drinkWaterReminderViewController:didSeletIndexPath:))
+                },
+                @{
+                    @"title":@"Config heart rate",
+                    @"subtitle":@"",
+                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+                    @"selector": NSStringFromSelector(@selector(configHeartRateViewController:didSeletIndexPath:))
+                },
+                @{
+                    @"title":@"Sports manger",
+                    @"subtitle":@"",
+                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+                    @"selector": NSStringFromSelector(@selector(sportsmanagerViewController:didSeletIndexPath:))
+                },
+                @{
+                    @"title":@"Weather",
+                    @"subtitle":@"",
+                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+                    @"selector": NSStringFromSelector(@selector(weatherViewController:didSeletIndexPath:))
+                },
+
             ]
         },
         @{
             @"title":@"",
             @"data":@[
-//                @{
-//                    @"title":@"ota",
+                @{
+                    @"title":@"Exercise goal",
+                    @"subtitle":@"",
+                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+                    @"selector": NSStringFromSelector(@selector(exerciseGoalViewController:didSeletIndexPath:))
+                },
+                @{
+                    @"title":@"User info",
+                    @"subtitle":@"",
+                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+                    @"selector": NSStringFromSelector(@selector(editUserInfoViewController:didSeletIndexPath:))
+                },
+            ]
+        },
+//        @{
+//            @"title":@"",
+//            @"data":@[
+//                @{ 
+//                    @"title":@"Sync step",
 //                    @"subtitle":@"",
 //                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
-//                    @"selector": NSStringFromSelector(@selector(otaViewController:didSeletIndexPath:))
+//                    @"selector": NSStringFromSelector(@selector(realTimeDataViewController:didSeletIndexPath:))
 //                },
+//                @{
+//                    @"title":@"Sync calorie",
+//                    @"subtitle":@"",
+//                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+//                    @"selector": NSStringFromSelector(@selector(realTimeDataViewController:didSeletIndexPath:))
+//                },
+//                @{
+//                    @"title":@"Sync activity time",
+//                    @"subtitle":@"",
+//                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+//                    @"selector": NSStringFromSelector(@selector(realTimeDataViewController:didSeletIndexPath:))
+//                },
+//                @{
+//                    @"title":@"Sync distance",
+//                    @"subtitle":@"",
+//                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+//                    @"selector": NSStringFromSelector(@selector(realTimeDataViewController:didSeletIndexPath:))
+//                },
+//                @{
+//                    @"title":@"Sync heart rate",
+//                    @"subtitle":@"",
+//                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+//                    @"selector": NSStringFromSelector(@selector(realTimeDataViewController:didSeletIndexPath:))
+//                },
+//                @{
+//                    @"title":@"Sync heart rate statistics",
+//                    @"subtitle":@"",
+//                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+//                    @"selector": NSStringFromSelector(@selector(realTimeDataViewController:didSeletIndexPath:))
+//                },
+//                @{
+//                    @"title":@"Sync blood oxygen",
+//                    @"subtitle":@"",
+//                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+//                    @"selector": NSStringFromSelector(@selector(realTimeDataViewController:didSeletIndexPath:))
+//                },
+//                @{
+//                    @"title":@"Sync ctivity data",
+//                    @"subtitle":@"",
+//                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+//                    @"selector": NSStringFromSelector(@selector(realTimeDataViewController:didSeletIndexPath:))
+//                },
+//
+//            ]
+//        },
+        @{
+            @"title":@"",
+            @"data":@[
+                @{
+                    @"title":@"ota",
+                    @"subtitle":@"",
+                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+                    @"selector": NSStringFromSelector(@selector(otaViewController:didSeletIndexPath:))
+                },
                 @{
                     @"title":@"About evice",
                     @"subtitle":@"",
@@ -510,6 +635,96 @@
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
+/// Push to exercise goal.
+/// - Parameters:
+///   - cell: selected cell
+///   - indexPath: selected indexPath
+-(void)exerciseGoalViewController:(UITableViewCell *)cell didSeletIndexPath:(NSIndexPath *)indexPath{
+    UIViewController *viewController = [ExerciseGoalViewController new];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+/// Push to edit user info.
+/// - Parameters:
+///   - cell: selected cell
+///   - indexPath: selected indexPath
+-(void)editUserInfoViewController:(UITableViewCell *)cell didSeletIndexPath:(NSIndexPath *)indexPath{
+    UIViewController *viewController = [EditUserInfoViewController new];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+/// Push to synchronize contacts.
+/// - Parameters:
+///   - cell: selected cell
+///   - indexPath: selected indexPath
+-(void)synchronizeContactsViewController:(UITableViewCell *)cell didSeletIndexPath:(NSIndexPath *)indexPath{
+    UIViewController *viewController = [SynchronizeContactsViewController new];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+/// Push to synchronize contacts.
+/// - Parameters:
+///   - cell: selected cell
+///   - indexPath: selected indexPath
+-(void)emergencyContactViewController:(UITableViewCell *)cell didSeletIndexPath:(NSIndexPath *)indexPath{
+    UIViewController *viewController = [EmergencyContactViewController new];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+/// Push to drink water reminder.
+/// - Parameters:
+///   - cell: selected cell
+///   - indexPath: selected indexPath
+-(void)drinkWaterReminderViewController:(UITableViewCell *)cell didSeletIndexPath:(NSIndexPath *)indexPath{
+    UIViewController *viewController = [DrinkWaterReminderViewController new];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+/// Push to drink water reminder.
+/// - Parameters:
+///   - cell: selected cell
+///   - indexPath: selected indexPath
+-(void)configHeartRateViewController:(UITableViewCell *)cell didSeletIndexPath:(NSIndexPath *)indexPath{
+    UIViewController *viewController = [ConfigHeartRateViewController new];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+/// Push to sports manager.
+/// - Parameters:
+///   - cell: selected cell
+///   - indexPath: selected indexPath
+-(void)sportsmanagerViewController:(UITableViewCell *)cell didSeletIndexPath:(NSIndexPath *)indexPath{
+    UIViewController *viewController = [SportsmanagerViewController new];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+/// Push to sedentary reminder.
+/// - Parameters:
+///   - cell: selected cell
+///   - indexPath: selected indexPath
+-(void)sedentaryReminderViewController:(UITableViewCell *)cell didSeletIndexPath:(NSIndexPath *)indexPath{
+    UIViewController *viewController = [SedentaryReminderViewController new];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+/// Push to weather.
+/// - Parameters:
+///   - cell: selected cell
+///   - indexPath: selected indexPath
+-(void)weatherViewController:(UITableViewCell *)cell didSeletIndexPath:(NSIndexPath *)indexPath{
+    UIViewController *viewController = [WeatherViewController new];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+/// Push to real time data.
+/// - Parameters:
+///   - cell: selected cell
+///   - indexPath: selected indexPath
+-(void)realTimeDataViewController:(UITableViewCell *)cell didSeletIndexPath:(NSIndexPath *)indexPath{
+    UIViewController *viewController = [RealTimeDataViewController new];
+    viewController.title = cell.textLabel.text;
+    [self.navigationController pushViewController:viewController animated:YES];
+}
 -(void)alarmsViewController:(UITableViewCell *)cell didSeletIndexPath:(NSIndexPath *)indexPath{
     UIViewController *viewController = [AlarmsViewController new];
     [self.navigationController pushViewController:viewController animated:YES];
@@ -563,13 +778,53 @@
     } error:^(NSError * _Nullable error) {
 
     }];
-}
+    [[WatchManager sharedInstance].currentValue.apps.findApp.closeFindPhone subscribeNext:^(NSNumber * _Nullable x) {
+        @strongify(self);
+        BOOL close = x;
+        if (close == YES){
+            if (self.alertController != nil){
+                [self.alertController dismissViewControllerAnimated:false completion:nil];
+            }
+        }
+    } error:^(NSError * _Nullable error) {
 
+    }];
+}
+-(void)listenForWeather{
+    [[WatchManager sharedInstance].currentValue.apps.weatherForecastApp.requestDay7 subscribeNext:^(NSString * _Nullable x) {
+        WMWeatherModel *model = [WeatherCreateHelper generateNew];
+        [[[WatchManager sharedInstance].currentValue.apps.weatherForecastApp pushWeatherDay7:model] subscribeNext:^(NSNumber * _Nullable x) {
+
+                } error:^(NSError * _Nullable error) {
+
+                }];
+
+    } error:^(NSError * _Nullable error) {
+
+    }];
+    [[WatchManager sharedInstance].currentValue.apps.weatherForecastApp.requestHour24 subscribeNext:^(NSString * _Nullable x) {
+        WMWeatherModel *model = [WeatherCreateHelper generateNew];
+        [[[WatchManager sharedInstance].currentValue.apps.weatherForecastApp pushWeatherHour24:model] subscribeNext:^(NSNumber * _Nullable x) {
+
+                } error:^(NSError * _Nullable error) {
+
+                }];
+
+    } error:^(NSError * _Nullable error) {
+
+    }];
+}
 -(void)showFindMe:(NSInteger)ringcount ringtime:(NSInteger)ringtime{
+    if (self.alertController != nil){
+        [self.alertController dismissViewControllerAnimated:false completion:nil];
+    }
+    @weakify(self);
     _alertController = [UIAlertController alertControllerWithTitle:nil message:[NSString stringWithFormat:@"%@\nring time:%lds ring count:%ld",@"Watch find your phone.",(long)ringtime,(long)ringcount] preferredStyle:UIAlertControllerStyleAlert];
 
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Got it" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         // 用户点击取消按钮后的处理代码
+        @strongify(self);
+        [self dismissFindMe];
     }];
     [self.alertController addAction:cancelAction];
     [self presentViewController:self.alertController animated:YES completion:nil];

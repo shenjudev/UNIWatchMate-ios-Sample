@@ -14,8 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WMAlarmAppModel : NSObject<WMSupportProtocol>
 
-/// 闹钟列表
+/// 设备端闹钟列表改变订阅
 @property (nonatomic, strong) RACSignal<NSArray<WMAlarmModel*> *> *alarmList;
+/// 当前闹钟列表（设备端、APP修改配置成功时更新数据）
 @property (nonatomic, strong, readonly) NSArray<WMAlarmModel*> *alarmListValue;
            
 /// 同步闹钟列表

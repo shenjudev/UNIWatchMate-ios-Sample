@@ -10,6 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// 同步时间（只有设置接口，其他获取、监听接口无效）
 @interface WMDateTimeSettingModel : WMBaseSettingModel<WMDateTimeModel *>
 
 @end

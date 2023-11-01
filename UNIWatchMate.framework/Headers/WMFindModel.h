@@ -17,10 +17,14 @@ typedef NS_ENUM(NSInteger , WMPeripheralFormType){
     UNIWPeripheralFormTypeMac NS_SWIFT_NAME(mac),
 };
 
+/// 需要连接的设备
 @interface WMPeripheralTargetModel : NSObject
 
+/// 连接入口
 @property (nonatomic, assign) WMPeripheralFormType type;
+/// 设备Mac地址
 @property (nonatomic, strong) NSString * mac;
+/// 设备蓝牙名称
 @property (nonatomic, strong) NSString * name;
 
 @end

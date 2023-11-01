@@ -216,6 +216,7 @@
         [self resendDial:path error:error.description];
     } completed:^{
         [SVProgressHUD showSuccessWithStatus:@"Dial install successed."];
+        [self getDials];
     }];
 }
 

@@ -8,8 +8,6 @@
 #import "UnitSynchronizationViewController.h"
 NSString *NSStringFromLengthUnit(LengthUnit lengthUnit) {
     switch (lengthUnit) {
-        case LengthUnitNone:
-            return @"LengthUnitNone";
         case LengthUnitKM:
             return @"LengthUnitKM";
         case LengthUnitMILE:
@@ -19,8 +17,6 @@ NSString *NSStringFromLengthUnit(LengthUnit lengthUnit) {
 
 NSString *NSStringFromWeightUnit(WeightUnit weightUnit) {
     switch (weightUnit) {
-        case WeightUnitNone:
-            return @"WeightUnitNone";
         case WeightUnitKG:
             return @"WeightUnitKG";
         case WeightUnitLB:
@@ -30,8 +26,6 @@ NSString *NSStringFromWeightUnit(WeightUnit weightUnit) {
 
 NSString *NSStringFromTemperatureUnit(TemperatureUnit temperatureUnit) {
     switch (temperatureUnit) {
-        case TemperatureUnitNone:
-            return @"TemperatureUnitNone";
         case TemperatureUnitCELSIUS:
             return @"TemperatureUnitCELSIUS";
         case TemperatureUnitFAHRENHEIT:
@@ -41,8 +35,6 @@ NSString *NSStringFromTemperatureUnit(TemperatureUnit temperatureUnit) {
 
 NSString *NSStringFromUnitTimeFormat(TimeFormat timeFormat) {
     switch (timeFormat) {
-        case TimeFormatNone:
-            return @"TimeFormatNone";
         case TimeFormatTWELVE_HOUR:
             return @"TimeFormatTWELVE_HOUR";
         case TimeFormatTWENTY_FOUR_HOUR:
@@ -177,7 +169,6 @@ NSString *NSStringFromUnitTimeFormat(TimeFormat timeFormat) {
 -(NSArray *)timeFormat{
     if (_timeFormat == nil){
         _timeFormat = @[
-            NSStringFromUnitTimeFormat(TimeFormatNone),
             NSStringFromUnitTimeFormat(TimeFormatTWELVE_HOUR),
             NSStringFromUnitTimeFormat(TimeFormatTWENTY_FOUR_HOUR),
         ];
@@ -215,7 +206,7 @@ NSString *NSStringFromUnitTimeFormat(TimeFormat timeFormat) {
 }
 -(void)actionTimeFormat:(NSInteger )timeFormat{
     [SVProgressHUD showWithStatus:nil];
-    WMUnitInfoModel *wMUnitInfoModel = [WMUnitInfoModel new];
+    WMUnitInfoModel *wMUnitInfoModel = [WatchManager sharedInstance].currentValue.settings.unitInfo.modelValue;
     wMUnitInfoModel.timeFormat = timeFormat;
     self.detail.text = @"";
     @weakify(self);
@@ -244,7 +235,6 @@ NSString *NSStringFromUnitTimeFormat(TimeFormat timeFormat) {
 -(NSArray *)weightUnit{
     if (_weightUnit == nil){
         _weightUnit = @[
-            NSStringFromWeightUnit(WeightUnitNone),
             NSStringFromWeightUnit(WeightUnitKG),
             NSStringFromWeightUnit(WeightUnitLB),
         ];
@@ -282,7 +272,7 @@ NSString *NSStringFromUnitTimeFormat(TimeFormat timeFormat) {
 }
 -(void)actionWeightUnit:(NSInteger )weightUnit{
     [SVProgressHUD showWithStatus:nil];
-    WMUnitInfoModel *wMUnitInfoModel = [WMUnitInfoModel new];
+    WMUnitInfoModel *wMUnitInfoModel = [WatchManager sharedInstance].currentValue.settings.unitInfo.modelValue;
     wMUnitInfoModel.weightUnit = weightUnit;
     self.detail.text = @"";
     @weakify(self);
@@ -312,7 +302,6 @@ NSString *NSStringFromUnitTimeFormat(TimeFormat timeFormat) {
 -(NSArray *)temperatureUnit{
     if (_temperatureUnit == nil){
         _temperatureUnit = @[
-            NSStringFromTemperatureUnit(TemperatureUnitNone),
             NSStringFromTemperatureUnit(TemperatureUnitCELSIUS),
             NSStringFromTemperatureUnit(TemperatureUnitFAHRENHEIT),
         ];
@@ -351,7 +340,7 @@ NSString *NSStringFromUnitTimeFormat(TimeFormat timeFormat) {
 }
 -(void)actionTemperatureUnit:(NSInteger )temperatureUnit{
     [SVProgressHUD showWithStatus:nil];
-    WMUnitInfoModel *wMUnitInfoModel = [WMUnitInfoModel new];
+    WMUnitInfoModel *wMUnitInfoModel = [WatchManager sharedInstance].currentValue.settings.unitInfo.modelValue;
     wMUnitInfoModel.temperatureUnit = temperatureUnit;
     self.detail.text = @"";
     @weakify(self);

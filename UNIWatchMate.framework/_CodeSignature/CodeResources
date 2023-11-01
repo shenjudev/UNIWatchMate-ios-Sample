@@ -30,7 +30,7 @@
 		</data>
 		<key>Headers/WMAlarmAppModel.h</key>
 		<data>
-		AA3H5+zjjAJsYaZMvkjBut7gWnc=
+		M0x8fGpiMg85LbT9Jcw7WJBuV7I=
 		</data>
 		<key>Headers/WMAlarmModel.h</key>
 		<data>
@@ -58,7 +58,7 @@
 		</data>
 		<key>Headers/WMBaseSettingModel.h</key>
 		<data>
-		EycEGNFB3YWna034dogBSP2ay6I=
+		JhkZ3cnKYnQbbW52z3+dQH/LOfQ=
 		</data>
 		<key>Headers/WMBloodOxygenDataModel.h</key>
 		<data>
@@ -82,11 +82,11 @@
 		</data>
 		<key>Headers/WMConfigHeartRateAppModel.h</key>
 		<data>
-		u8WhvNGXeUHScx2PKytPgNtaMBg=
+		r47jAJrCsHt4MdPQZf7ATRiLMUc=
 		</data>
 		<key>Headers/WMConfigMotionAppModel.h</key>
 		<data>
-		349wC5OhuWdvo9QTqCdZr9+fxJA=
+		ePOoGbYbCvxgCYFez6THAC/jRIA=
 		</data>
 		<key>Headers/WMConnectModel.h</key>
 		<data>
@@ -94,11 +94,11 @@
 		</data>
 		<key>Headers/WMContactModel.h</key>
 		<data>
-		2TcQBXINwMS58LiRSszw9/B5yUI=
+		w7wTowm11INofW2lupx/1dEf0sw=
 		</data>
 		<key>Headers/WMContactsAppModel.h</key>
 		<data>
-		/wofXeFNbQqPLbs718BfwgvDtiQ=
+		12k95mJGpPbKN/zSpXqz9RpTcyA=
 		</data>
 		<key>Headers/WMDatasSyncModel.h</key>
 		<data>
@@ -110,7 +110,7 @@
 		</data>
 		<key>Headers/WMDateTimeSettingModel.h</key>
 		<data>
-		b3sprtfJUcJwNCN+sTeNzzkPVqU=
+		bNjG3mllhja4ZtpxXM6vLtyHwBg=
 		</data>
 		<key>Headers/WMDeviceFindModel.h</key>
 		<data>
@@ -122,7 +122,7 @@
 		</data>
 		<key>Headers/WMDialAppModel.h</key>
 		<data>
-		0yxf2PCJMZJn9vdDbL4CwTW09N4=
+		uzXg82TakUmCuOJ9ytu4OGIiL7E=
 		</data>
 		<key>Headers/WMDialModel.h</key>
 		<data>
@@ -146,11 +146,15 @@
 		</data>
 		<key>Headers/WMFindModel.h</key>
 		<data>
-		1TQ5LV68KtzqOThFWoByrTn+ri0=
+		l13wQeaTMGtKzYoKg7f1MoREOgs=
 		</data>
 		<key>Headers/WMHeartRateAlertModel.h</key>
 		<data>
 		X4S3WbVRVShojxRGw0o+0E/MpX8=
+		</data>
+		<key>Headers/WMHeartRateConfigModel.h</key>
+		<data>
+		pFadq2c2B6yymb33HljIxeJn9fE=
 		</data>
 		<key>Headers/WMHeartRateDataModel.h</key>
 		<data>
@@ -202,7 +206,7 @@
 		</data>
 		<key>Headers/WMPersonalInfoModel.h</key>
 		<data>
-		ScvDojv5N2c4VS3Vu1NPgZC3JNI=
+		q+/+wCMfzn7rptTgfMbpJkNkdiA=
 		</data>
 		<key>Headers/WMPersonalInfoSettingModel.h</key>
 		<data>
@@ -214,7 +218,7 @@
 		</data>
 		<key>Headers/WMReminderModel.h</key>
 		<data>
-		sYtR78d8KuLofILWe2Ny9aBSfUk=
+		gOWr3dFqdn6BGhgHHCe8F5Lb3Hc=
 		</data>
 		<key>Headers/WMReminderSettingModel.h</key>
 		<data>
@@ -270,7 +274,7 @@
 		</data>
 		<key>Headers/WMUnitInfoModel.h</key>
 		<data>
-		7VNS7csRKFUh68cb6FC8HGU5Kr4=
+		Wk2hcZhsTbKiGDv+a+v36vp+MXU=
 		</data>
 		<key>Headers/WMUnitInfoSettingModel.h</key>
 		<data>
@@ -278,15 +282,15 @@
 		</data>
 		<key>Headers/WMWeatherForecastAppModel.h</key>
 		<data>
-		FKc88WxUMXumHs5LJc6OPEwra1A=
+		h6xi3LvzVLvIp7iuDbcXlgoqpRY=
 		</data>
 		<key>Headers/WMWeatherModel.h</key>
 		<data>
-		sdXOY6NWoxM6iOaZbp+3GV6L0kU=
+		yhg1wlFe2c8T8bGl5FCI1QyHplo=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		b3Q1dqTqqE3rujW/cYsX7qvJKc4=
+		doBU33UG0SPvsalQsugih064Thc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -341,7 +345,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Tp8uSbSTEW/Ky8jaJ1rIjypk5OeLWYT86Wxh7OLz5w4=
+			eZGI5InN2wUs0z9U8gI4TD5VvXR5Fl0lTQiZ1ZQWEAE=
 			</data>
 		</dict>
 		<key>Headers/WMAlarmModel.h</key>
@@ -390,7 +394,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			mEDjAxhkGnXvQmyeqK3LCG73qzpDUFLw1Ipbx9zDIg0=
+			BhlUxuF42pzF0yd3THhxNqSQ23YYPJXtVqaF+EFNzFc=
 			</data>
 		</dict>
 		<key>Headers/WMBloodOxygenDataModel.h</key>
@@ -432,14 +436,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			SU2Fvm+JCKF8bWLX0q9imftTy+Y1JoEXnPP9z/QpRJE=
+			v63K77DiwZwR6Z/sGBqIojKloVe33BraeW/530nXZx8=
 			</data>
 		</dict>
 		<key>Headers/WMConfigMotionAppModel.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			cdfNZVNbbhQqZlZioL2cdcnSI7FTt2trQnGTYUGRErY=
+			YuXyBDUUvqxBKzCFXEX1yC21sM/7lsGX1YZkU6uX9Nk=
 			</data>
 		</dict>
 		<key>Headers/WMConnectModel.h</key>
@@ -453,14 +457,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8w7zoOg5Qi68YpJVosT8/H9+cLPh6akAVJtW2YnUA1o=
+			Yuy/UbHfx7YTfaCv14wn4cLArJL1POOn5TEpF0L2scg=
 			</data>
 		</dict>
 		<key>Headers/WMContactsAppModel.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			htdcyfOqaOZCOCU4QLCxr/Y8okN5WaGWme6Jm4xXpz8=
+			GiVlOcZxrPqH69OgR2CR5KcqHyfSoGKx5hFIhJFEQy8=
 			</data>
 		</dict>
 		<key>Headers/WMDatasSyncModel.h</key>
@@ -481,7 +485,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			uA1wTceA4E0OUeuheiBT/xJ7PGI5vuTmtUICZkz4+2Y=
+			MzXGbW4Rl+MuMqQYLKYxsENP0TUQRU/zeoydzh9v938=
 			</data>
 		</dict>
 		<key>Headers/WMDeviceFindModel.h</key>
@@ -502,7 +506,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			CXdo/uH/lYRTbsnSkPIAx4MLnRAaeBuFzU08pnMAmO4=
+			UvZNE19A1jWIZsrEO5K8nPoZc8M1bXyNrKFHWY0OyqE=
 			</data>
 		</dict>
 		<key>Headers/WMDialModel.h</key>
@@ -544,7 +548,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			QcK0K9kxosJ+FP55OJjPYe3sVjBx8fJ6o89gpDlyulU=
+			XDVw4E2ud9Z5j/+oYy0HssEC5bzDgmfQw8Q4wpenZT0=
 			</data>
 		</dict>
 		<key>Headers/WMHeartRateAlertModel.h</key>
@@ -552,6 +556,13 @@
 			<key>hash2</key>
 			<data>
 			5RJC5Z7K5J2atKPFe4ipxngIqLDnPGpWzYIKVigsQv0=
+			</data>
+		</dict>
+		<key>Headers/WMHeartRateConfigModel.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			KJtAyNWwBB2pSNDn0jn/vcELdlx9wO6j2TGZxu5oJsA=
 			</data>
 		</dict>
 		<key>Headers/WMHeartRateDataModel.h</key>
@@ -642,7 +653,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			U3CV8FVwGS9SwXY0ydJ4WBB4laCxZvJemrnAOWQoMjQ=
+			OweNhOeXi4S+M2wqRu7yRB2ESMXxH2c9Nf/YlCIAvBs=
 			</data>
 		</dict>
 		<key>Headers/WMPersonalInfoSettingModel.h</key>
@@ -663,7 +674,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			USOCrY/Nwmn+s5g4sp9bo3l20seJ7EsmtgZg3RrmV1k=
+			r6cCjZzjfRlQIK0curS0vu9f2aPRl94zxw+Nhrug/b0=
 			</data>
 		</dict>
 		<key>Headers/WMReminderSettingModel.h</key>
@@ -761,7 +772,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9vGsh4vMIEI/GKzCMCdR044Kl/51oI+wph0AUq/MbMA=
+			vHPF3N2+XTgaOuUGxRkynkjVXnJiNtYQ146NiRW/PrQ=
 			</data>
 		</dict>
 		<key>Headers/WMUnitInfoSettingModel.h</key>
@@ -775,14 +786,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			kzUa9GwB0/xnRUG1JccUK4fZS/jQ63RttiB27Kyq+7w=
+			EGqVPxicwBRuq1499MHWSBnrmcCA5dOF8ebiGctHcaw=
 			</data>
 		</dict>
 		<key>Headers/WMWeatherModel.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rXmf63fbvQAH8zCxZQbJ0/7vs/nj5R1Q3WikvHQVbhE=
+			6S0jSEIi9jIY4EC6iyKb2rkSqomP3BZCh04MkzJSw08=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

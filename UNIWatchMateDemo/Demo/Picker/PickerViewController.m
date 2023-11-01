@@ -182,7 +182,7 @@
             case USWatchPickerDataTypeCalories: {
                 NSMutableArray<NSString *> *caloriesData = [NSMutableArray array];
                 for (NSInteger i = 1; i <= 50; i++) {
-                    NSString *calorieString = [NSString stringWithFormat:@"%ld%@", (long)i * 30,unit];
+                    NSString *calorieString = [NSString stringWithFormat:@"%ld%@", (long)i * 30 * 1000,unit];
                     [caloriesData addObject:calorieString];
                 }
                 _data = caloriesData;
@@ -190,8 +190,8 @@
             }
             case USWatchPickerDataTypeDistance: {
                 NSMutableArray<NSString *> *distanceData = [NSMutableArray array];
-                for (NSInteger i = 2; i <= 80; i++) {
-                    NSString *distanceString = [NSString stringWithFormat:@"%.1f%@", (double)i*0.5,unit];
+                for (NSInteger i = 1; i <= 100; i++) {
+                    NSString *distanceString = [NSString stringWithFormat:@"%.0f%@", (double)i * 1000,unit];
                     [distanceData addObject:distanceString];
                 }
                 _data = distanceData;
@@ -200,7 +200,7 @@
             case USWatchPickerDataTypeHeight: {
                 NSMutableArray<NSString *> *heightData = [NSMutableArray array];
                 for (NSInteger i = 10; i <= 300; i++) {
-                    NSString *heightString = [NSString stringWithFormat:@"%ld厘米", (long)i];
+                    NSString *heightString = [NSString stringWithFormat:@"%ldcm", (long)i];
                     [heightData addObject:heightString];
                 }
                 _data = heightData;
@@ -209,7 +209,7 @@
             case USWatchPickerDataTypeWeight: {
                 NSMutableArray<NSString *> *weightData = [NSMutableArray array];
                 for (NSInteger i = 10; i <= 500; i++) {
-                    NSString *weightString = [NSString stringWithFormat:@"%ld千克", (long)i];
+                    NSString *weightString = [NSString stringWithFormat:@"%ldkg", (long)i];
                     [weightData addObject:weightString];
                 }
                 _data = weightData;
@@ -267,6 +267,15 @@
                 break;
             }
             case  USWatchPickerDataTypeCustomer:{
+                break;
+            }
+            case USWatchPickerDataTypeActivityDuration: {
+                NSMutableArray<NSString *> *caloriesData = [NSMutableArray array];
+                for (NSInteger i = 1; i <= 200; i++) {
+                    NSString *calorieString = [NSString stringWithFormat:@"%ld%@", (long)i,unit];
+                    [caloriesData addObject:calorieString];
+                }
+                _data = caloriesData;
                 break;
             }
         }
@@ -328,17 +337,17 @@
 - (NSString *)titleForDataType:(USWatchPickerDataType)dataType {
     switch (dataType) {
         case USWatchPickerDataTypeSteps:
-            return NSLocalizedString(@"exercise_goal_step", nil);
+            return @"exercise goal step";
         case USWatchPickerDataTypeCalories:
-            return NSLocalizedString(@"exercise_goal_distance", nil);
+            return @"exercise goal calories";
         case USWatchPickerDataTypeDistance:
-            return NSLocalizedString(@"exercise_goal_calories", nil);
+            return @"exercise goal distance";
         case USWatchPickerDataTypeHeight:
-            return @"您的身高";
+            return @"height";
         case USWatchPickerDataTypeWeight:
-            return @"您的体重";
+            return @"weight";
         case USWatchPickerDataTypeBirthday:
-            return @"您的生日";
+            return @"birthday";
         case USWatchPickerDataTypeMenstrualLength:
             return NSLocalizedString(@"wh_menstruation_duration", nil);
         case USWatchPickerDataTypeMenstrualCycleLength:
@@ -351,20 +360,22 @@
             return NSLocalizedString(@"select language", nil);
         case USWatchPickerDataTypeCustomer:
             return _tip;
+        case USWatchPickerDataTypeActivityDuration:
+            return NSLocalizedString(@"select activity duration", nil);
     }
 }
 - (NSString *)unitForDataType:(USWatchPickerDataType)dataType {
     switch (dataType) {
         case USWatchPickerDataTypeSteps:
-            return NSLocalizedString(@"unit_step", nil);
+            return @"";
         case USWatchPickerDataTypeCalories:
-            return NSLocalizedString(@"unit_k_calories", nil);
+            return @"calories";
         case USWatchPickerDataTypeDistance:
-            return NSLocalizedString(@"unit_km", nil);
+            return @"meter";
         case USWatchPickerDataTypeHeight:
-            return NSLocalizedString(@"unit_step", nil);
+            return @"cm";
         case USWatchPickerDataTypeWeight:
-            return NSLocalizedString(@"unit_step", nil);
+            return @"kg";
         case USWatchPickerDataTypeBirthday:
             return NSLocalizedString(@"unit_step", nil);
         case USWatchPickerDataTypeMenstrualLength:
@@ -379,6 +390,8 @@
             return NSLocalizedString(@"", nil);
         case USWatchPickerDataTypeCustomer:
             return _unit;
+        case USWatchPickerDataTypeActivityDuration:
+            return NSLocalizedString(@"minutes", nil);
     }
 }
 

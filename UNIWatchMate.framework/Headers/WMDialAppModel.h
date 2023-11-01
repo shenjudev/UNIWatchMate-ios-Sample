@@ -14,11 +14,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WMDialAppModel : NSObject<WMSupportProtocol>
 
-/// 表盘列表
+/// 设备端更新表盘列表
 @property (nonatomic, strong) RACSignal<NSArray<WMDialModel*> *> *dialList;
+
+/// 当前表盘列表（设备端、APP修改配置成功时更新数据）
 @property (nonatomic, strong, readonly) NSArray<WMDialModel*> *dialListValue;
 
-/// 同步表盘列表
+/// 获取表盘列表
 - (RACSignal<NSArray<WMDialModel*> *> *)syncDialList;
 
 /// 删除表盘

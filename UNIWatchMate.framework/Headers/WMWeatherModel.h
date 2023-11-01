@@ -28,8 +28,6 @@ typedef NS_ENUM(NSInteger, WMWeek) {
 @property (nonatomic, assign) NSInteger highTemp;
 /// 当前温度（current temperature）
 @property (nonatomic, assign) NSInteger curTemp;
-/// 温度单位（temperature unit）
-@property (nonatomic, assign) TemperatureUnit tempUnit;
 /// 湿度（humidity）
 @property (nonatomic, assign) NSInteger humidity;
 /// 紫外线指数（ultraviolet index）
@@ -43,17 +41,13 @@ typedef NS_ENUM(NSInteger, WMWeek) {
 /// 夜晚天气描述（night weather description）
 @property (nonatomic, strong) NSString *nightDesc;
 /// 日期（date）
-@property (nonatomic, assign) NSTimeInterval date;
-/// 星期（week）
-@property (nonatomic, assign) WMWeek week;
+@property (nonatomic, strong) NSDate *date;
 @end
 
 /// 今日天气（Today's weather）
 @interface WMTodayWeatherModel : NSObject
 /// 当前温度（current temperature）
 @property (nonatomic, assign) NSInteger curTemp;
-/// 温度单位（temperature unit）
-@property (nonatomic, assign) TemperatureUnit *tempUnit;
 /// 湿度（humidity）
 @property (nonatomic, assign) NSInteger humidity;
 /// 紫外线指数（ultraviolet index）
@@ -63,9 +57,7 @@ typedef NS_ENUM(NSInteger, WMWeek) {
 /// 白天天气描述（day weather description）
 @property (nonatomic, strong) NSString *weatherDesc;
 /// 日期（date）
-@property (nonatomic, assign) NSTimeInterval date;
-/// 小时（hour）
-@property (nonatomic, assign) NSInteger hour;
+@property (nonatomic, strong) NSDate *date;
 @end
 
 /// 地理位置信息（Geographical location）
@@ -74,19 +66,13 @@ typedef NS_ENUM(NSInteger, WMWeek) {
 @property (nonatomic, strong) NSString *country;
 /// 城市（city）
 @property (nonatomic, strong) NSString *city;
-/// 区域（district）
-@property (nonatomic, strong) NSString *district;
-/// 经度（longitude）
-@property (nonatomic, assign) double longitude;
-/// 纬度（latitude）
-@property (nonatomic, assign) double latitude;
 
 @end
 
 /// 整体天气信息（Overall weather information）
 @interface WMWeatherModel : NSObject
 /// 发布时间（publish time）
-@property (nonatomic, assign) NSTimeInterval pubDate;
+@property (nonatomic, strong) NSDate *pubDate;
 /// 地理位置（location）
 @property (nonatomic, strong) WMLocationModel *location;
 /// 7天天气预报（weather forecast for 7 days）

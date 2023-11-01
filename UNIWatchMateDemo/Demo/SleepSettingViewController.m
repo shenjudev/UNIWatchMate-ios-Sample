@@ -35,7 +35,7 @@
     self.detail.text = @"";
     @weakify(self);
     WMPeripheral *wMPeripheral = [[WatchManager sharedInstance] currentValue];
-    WMSleepModel *wMSleepModel = [WMSleepModel new];
+    WMSleepModel *wMSleepModel = [WatchManager sharedInstance].currentValue.settings.sleep.modelValue;
     wMSleepModel.isEnabled = enable;
     [[[[wMPeripheral settings] sleep] setConfigModel:wMSleepModel] subscribeNext:^(WMSleepModel * _Nullable x) {
         @strongify(self);
@@ -48,14 +48,12 @@
     self.detail.text = @"";
     @weakify(self);
     WMPeripheral *wMPeripheral = [[WatchManager sharedInstance] currentValue];
-    WMSleepModel *wMSleepModel = [WMSleepModel new];
-    WMTimeRange *wMTimeRange = [WMTimeRange new];
+    WMSleepModel *wMSleepModel = [WatchManager sharedInstance].currentValue.settings.sleep.modelValue;
     if (isStart == true){
-        wMTimeRange.start = self.startTime.date;
+        wMSleepModel.timeRange.start = self.startTime.date;
     }else{
-        wMTimeRange.end = self.endTime.date;
+        wMSleepModel.timeRange.end = self.endTime.date;
     }
-    wMSleepModel.timeRange = wMTimeRange;
     [[[[wMPeripheral settings] sleep] setConfigModel:wMSleepModel] subscribeNext:^(WMSleepModel * _Nullable x) {
         @strongify(self);
         self.detail.text = [NSString stringWithFormat:@"isEnabled:%d\nstart:%@\nend:%@\n",x.isEnabled,[x.timeRange.start stringWithFormat:@"HH:mm"],[x.timeRange.end stringWithFormat:@"HH:mm"]];

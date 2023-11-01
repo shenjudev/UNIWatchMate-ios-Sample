@@ -22,8 +22,6 @@ NSString* NSStringFromTimeFormat(TimeFormat timeFormat) {
             return @"TimeFormatTWELVE_HOUR";
         case TimeFormatTWENTY_FOUR_HOUR:
             return @"TimeFormatTWENTY_FOUR_HOUR";
-        case TimeFormatNone:
-            return @"TimeFormatNone";
     }
 }
 - (void)viewDidLoad {

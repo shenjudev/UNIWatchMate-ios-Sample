@@ -13,15 +13,14 @@ NS_ASSUME_NONNULL_BEGIN
 @interface WMTimeRange : NSObject
 
 /// 开始（精确到小时分钟，年月日秒忽略）
-@property (nonatomic, strong) NSDate *start;
+@property (nonatomic, strong) NSDate * start;
 /// 结束（精确到小时分钟，年月日秒忽略）
-@property (nonatomic, strong) NSDate *end;
+@property (nonatomic, strong) NSDate * end;
 
 @end
 
 /// 时间频次
 typedef NS_ENUM(NSInteger, WMTimeFrequency) {
-    WMTimeFrequencyNone,
     /// 每30分钟一次
     WMTimeFrequencyEvery30Minutes,
     /// 每1小时一次

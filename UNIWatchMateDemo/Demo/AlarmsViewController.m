@@ -156,6 +156,7 @@
     // 处理删除按钮点击事件
     WMAlarmModel *model = self.alarms[indexRow];
     model.isOn = sender.isOn;
+    [SVProgressHUD showWithStatus:nil];
     @weakify(self);
     [[[WatchManager sharedInstance].currentValue.apps.alarmApp updateAlarm:model] subscribeNext:^(NSArray<WMAlarmModel *> * _Nullable x) {
         @strongify(self);
@@ -177,6 +178,7 @@
     // 处理删除按钮点击事件
     WMAlarmModel *model = self.alarms[indexRow];
     @weakify(self);
+    [SVProgressHUD showWithStatus:nil];
     [[[WatchManager sharedInstance].currentValue.apps.alarmApp deleteAlarm:model.identifier] subscribeNext:^(NSArray<WMAlarmModel *> * _Nullable x) {
         @strongify(self);
         [SVProgressHUD dismiss];

@@ -115,7 +115,7 @@
 @interface DeviceNotificationManagementViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *notis; // 存储闹钟数据的数组
-@property (nonatomic, assign) MyMessageModel *model;
+@property (nonatomic, strong) MyMessageModel *model;
 @end
 
 @implementation DeviceNotificationManagementViewController
@@ -140,7 +140,7 @@
 }
 -(void)getInfo{
     @weakify(self);
-    [[WatchManager sharedInstance].currentValue.settings.message.model subscribeNext:^(WMMessageModel * _Nullable x) {
+    [[WatchManager sharedInstance].currentValue.settings.message.getConfigModel subscribeNext:^(WMMessageModel * _Nullable x) {
         @strongify(self);
         [self showModel:x];
     } error:^(NSError * _Nullable error) {
@@ -158,19 +158,19 @@
         @{@"title": @"Facebook", @"subtitle": @"com.facebook.Facebook", @"enable": [NSNumber numberWithBool:self.model.facebookEnabled]},
         @{@"title": @"Gmail", @"subtitle": @"com.google.Gmail", @"enable": [NSNumber numberWithBool:self.model.gmailEnabled]},
         @{@"title": @"Instagram", @"subtitle": @"com.burbn.instagram", @"enable": [NSNumber numberWithBool:self.model.instagramEnabled]},
-        @{@"title": @"iOS Mail", @"subtitle": @"com.apple.mobilemail", @"enable": [NSNumber numberWithBool:[NSNumber numberWithBool:self.model.iOSMailEnabled]]},
-        @{@"title": @"LINE", @"subtitle": @"jp.naver.line", @"enable": [NSNumber numberWithBool:[NSNumber numberWithBool:self.model.LINEEnabled]]},
-        @{@"title": @"LinkedIn", @"subtitle": @"com.linkedin.LinkedIn", @"enable": [NSNumber numberWithBool:[NSNumber numberWithBool:self.model.linkedInEnabled]]},
-        @{@"title": @"Messenger (Facebook Messenger)", @"subtitle": @"com.facebook.Messenger", @"enable": [NSNumber numberWithBool:[NSNumber numberWithBool:self.model.messengerEnabled]]},
-        @{@"title": @"Outlook", @"subtitle": @"com.microsoft.Office.Outlook", @"enable": [NSNumber numberWithBool:[NSNumber numberWithBool:self.model.outlookEnabled]]},
-        @{@"title": @"QQ", @"subtitle": @"com.tencent.mqq", @"enable": [NSNumber numberWithBool:[NSNumber numberWithBool:self.model.QQEnabled]]},
-        @{@"title": @"Skype", @"subtitle": @"com.skype.skype", @"enable": [NSNumber numberWithBool:[NSNumber numberWithBool:self.model.skypeEnabled]]},
-        @{@"title": @"Snapchat", @"subtitle": @"com.toyopagroup.picaboo", @"enable": [NSNumber numberWithBool:[NSNumber numberWithBool:self.model.snapchatEnabled]]},
-        @{@"title": @"Telegram", @"subtitle": @"ph.telegra.Telegraph", @"enable": [NSNumber numberWithBool:[NSNumber numberWithBool:self.model.telegramEnabled]]},
-        @{@"title": @"Twitter", @"subtitle": @"com.atebits.Tweetie2", @"enable": [NSNumber numberWithBool:[NSNumber numberWithBool:self.model.twitterEnabled]]},
-        @{@"title": @"WeChat", @"subtitle": @"com.tencent.xin", @"enable": [NSNumber numberWithBool:[NSNumber numberWithBool:self.model.weChatEnabled]]},
-        @{@"title": @"WhatsApp", @"subtitle": @"net.whatsapp.WhatsApp", @"enable": [NSNumber numberWithBool:[NSNumber numberWithBool:self.model.whatsAppEnabled]]},
-        @{@"title": @"Whatsapp Business", @"subtitle": @"net.whatsapp.WhatsApp4Business", @"enable": [NSNumber numberWithBool:[NSNumber numberWithBool:self.model.whatsAppBusinessEnabled]]}
+        @{@"title": @"iOS Mail", @"subtitle": @"com.apple.mobilemail", @"enable": [NSNumber numberWithBool:self.model.iOSMailEnabled]},
+        @{@"title": @"LINE", @"subtitle": @"jp.naver.line", @"enable": [NSNumber numberWithBool:self.model.LINEEnabled]},
+        @{@"title": @"LinkedIn", @"subtitle": @"com.linkedin.LinkedIn", @"enable": [NSNumber numberWithBool:self.model.linkedInEnabled]},
+        @{@"title": @"Messenger (Facebook Messenger)", @"subtitle": @"com.facebook.Messenger", @"enable": [NSNumber numberWithBool:self.model.messengerEnabled]},
+        @{@"title": @"Outlook", @"subtitle": @"com.microsoft.Office.Outlook", @"enable": [NSNumber numberWithBool:self.model.outlookEnabled]},
+        @{@"title": @"QQ", @"subtitle": @"com.tencent.mqq", @"enable": [NSNumber numberWithBool:self.model.QQEnabled]},
+        @{@"title": @"Skype", @"subtitle": @"com.skype.skype", @"enable": [NSNumber numberWithBool:self.model.skypeEnabled]},
+        @{@"title": @"Snapchat", @"subtitle": @"com.toyopagroup.picaboo", @"enable": [NSNumber numberWithBool:self.model.snapchatEnabled]},
+        @{@"title": @"Telegram", @"subtitle": @"ph.telegra.Telegraph", @"enable": [NSNumber numberWithBool:self.model.telegramEnabled]},
+        @{@"title": @"Twitter", @"subtitle": @"com.atebits.Tweetie2", @"enable": [NSNumber numberWithBool:self.model.twitterEnabled]},
+        @{@"title": @"WeChat", @"subtitle": @"com.tencent.xin", @"enable": [NSNumber numberWithBool:self.model.weChatEnabled]},
+        @{@"title": @"WhatsApp", @"subtitle": @"net.whatsapp.WhatsApp", @"enable": [NSNumber numberWithBool:self.model.whatsAppEnabled]},
+        @{@"title": @"Whatsapp Business", @"subtitle": @"net.whatsapp.WhatsApp4Business", @"enable": [NSNumber numberWithBool:self.model.whatsAppBusinessEnabled]}
     ];
     [self.tableView reloadData];
 
@@ -229,9 +229,7 @@
 - (void)switchValueChanged:(UISwitch *)sender {
     // 处理开关按钮状态改变事件
     NSInteger indexRow = sender.tag - 1000;
-    // 处理删除按钮点击事件
-    NSDictionary *dic = self.notis[indexRow];
-    BOOL enable = [dic[@"enable"] boolValue];
+    BOOL enable = sender.isOn;
     switch (indexRow) {
         case 0:
             self.model.messagesEnabled = enable;

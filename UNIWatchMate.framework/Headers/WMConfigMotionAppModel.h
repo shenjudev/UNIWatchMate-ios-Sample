@@ -18,13 +18,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) RACSignal<NSArray<NSNumber*> *> *activityTypes;
 @property (nonatomic, strong, readonly) NSArray<NSNumber*> *activityTypesValue;
 
-/// 删除运动
-/// - Parameter type: 运动类别（Int值）
-- (RACSignal<NSArray<NSNumber*> *> *)deleteActivityType:(NSNumber *)type;
-
-/// 添加运动
+/// 同步运动类型列表
 /// - Parameter type: 运动列表（Int值）
-- (RACSignal<NSArray<NSNumber*> *> *)addActivityType:(NSNumber *)type;
+- (RACSignal<NSArray<NSNumber*> *> *)syncActivityType:(NSArray<NSNumber*> *)types;
+
+/// 获取运动类型列表
+/// - Parameter type: 运动列表（Int值）
+- (RACSignal<NSArray<NSNumber*> *> *)wm_getActivityTypes;
 
 @end
 

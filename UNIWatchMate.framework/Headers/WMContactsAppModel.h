@@ -14,33 +14,27 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WMContactsAppModel : NSObject<WMSupportProtocol>
 
-/// 联系人列表
+/// 设备端更新联系人列表
 @property (nonatomic, strong) RACSignal<NSArray<WMContactModel*> *> *contactList;
+/// 当前联系人列表（设备端、APP修改配置成功时更新数据）
 @property (nonatomic, strong, readonly) NSArray<WMContactModel*> *contactListValue;
-/// 紧急联系人
-@property (nonatomic, strong) RACSignal<WMContactModel *> *emergencyContact;
-@property (nonatomic, strong, readonly) WMContactModel *emergencyContactValue;
-/// 是否启动紧急联系人（BOOL）
-@property (nonatomic, strong) RACSignal<NSNumber *> *emergencyContactEnable;
-@property (nonatomic, assign, readonly) BOOL emergencyContactEnableValue;
+/// 设备端更新紧急联系人 （RAC 无法设置nil 类型，所以这里用数组。数组为空时表示没有紧急联系人）
+@property (nonatomic, strong) RACSignal<NSArray<WMEmergencyContactModel *> *> *emergencyContact;
+/// 当前紧急联系人（设备端、APP修改配置成功时更新数据）
+@property (nonatomic, strong, readonly) WMEmergencyContactModel * _Nullable emergencyContactValue;
 
-/// 主动获取联系人列表
+/// 获取联系人列表
 - (RACSignal<NSArray<WMContactModel*> *> *)wm_getContactList;
+/// 获取急联系人列表（RAC 无法设置nil 类型，所以这里用数组。数组为空时表示没有紧急联系人）
+- (RACSignal<NSArray<WMEmergencyContactModel*> *> *)wm_emergencyContact;
 
 /// 同步联系人列表到设备
 /// - Parameter contact: 联系人列表
 - (RACSignal<NSArray<WMContactModel*> *> *)syncContactList:(NSArray<WMContactModel*> *)list;
 
-/// 修改紧急联系人，nil为删除紧急联系人
+/// 同步紧急联系人，nil为删除紧急联系人 （RAC 无法设置nil 类型，所以这里用数组。数组为空时表示没有紧急联系人）
 /// - Parameter contact: contact
-- (RACSignal<WMContactModel *> *)updateEmergencyContact:(WMContactModel *)contact;
-
-/// 设置是否启用紧急联系人
-/// - Parameter enable: YES 启用
-- (RACSignal<NSNumber *> *)updateEmergencyContactEnable:(BOOL)enable;
-
-/// 主动获取是否启用紧急联系人
-- (RACSignal<NSNumber *> *)wm_getEmergencyContactEnable;
+- (RACSignal<NSArray<WMEmergencyContactModel *> *> *)syncEmergencyContact:(WMEmergencyContactModel * _Nullable)contact;
 
 @end
 

@@ -13,6 +13,7 @@
 @property(nonatomic,strong)UILabel *ringTimeTip;
 @property(nonatomic,strong)UITextField *ringTime;
 @property(nonatomic,strong)UIButton *findBtn;
+@property (nonatomic, strong) UIAlertController *alertController;
 
 @end
 
@@ -34,9 +35,23 @@
 
     self.ringCount.text = @"1";
     self.ringTime.text = @"3";
+    [self listenForDeviceDiscovery];
 
 }
+-(void)listenForDeviceDiscovery{
+    @weakify(self);
+    [[WatchManager sharedInstance].currentValue.apps.findApp.closeFindPhone subscribeNext:^(NSNumber * _Nullable x) {
+        @strongify(self);
+        BOOL close = x;
+        if (close == YES){
+            if (self.alertController != nil){
+                [self.alertController dismissViewControllerAnimated:false completion:nil];
+            }
+        }
+    } error:^(NSError * _Nullable error) {
 
+    }];
+}
 /*
  #pragma mark - Navigation
 
@@ -131,22 +146,28 @@
 }
 
 
--(void)getInfo{
-
-}
 -(void)showFindController{
-
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Find" message:@"The watch is ring" preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"Stop" style:UIAlertActionStyleDefault handler:nil]];
-    [self presentViewController:alert animated:YES completion:nil];
+    @weakify(self);
+    _alertController = [UIAlertController alertControllerWithTitle:@"Find" message:@"The watch is ring" preferredStyle:UIAlertControllerStyleAlert];
+    [_alertController addAction:[UIAlertAction actionWithTitle:@"Stop" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        @strongify(self);
+        [self stopFind];
+    }]];
+    [self presentViewController:_alertController animated:YES completion:nil];
 }
 
 -(void)stopFind{
-    [[WatchManager sharedInstance].currentValue.apps.findApp.phoneCloseFindPhone subscribeNext:^(NSNumber * _Nullable x) {
+    [[WatchManager sharedInstance].currentValue.apps.findApp.phoneCloseFindWatch subscribeNext:^(NSNumber * _Nullable x) {
 
     } error:^(NSError * _Nullable error) {
         [SVProgressHUD showSuccessWithStatus:@"Stop failed"];
     }];
+}
+- (void)dealloc
+{
+    if (_alertController != nil){
+        [_alertController dismissViewControllerAnimated:false completion:nil];
+    }
 }
 
 @end

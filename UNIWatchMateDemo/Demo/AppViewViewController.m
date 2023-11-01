@@ -103,7 +103,7 @@ NSString* NSStringFromWMAppViewType(WMAppViewType wMAppViewType) {
     @weakify(self);
     self.detail.text = @"";
     WMPeripheral *wMPeripheral = [[WatchManager sharedInstance] currentValue];
-    WMAppViewModel *wMAppViewModel = [[WMAppViewModel alloc] init];
+    WMAppViewModel *wMAppViewModel = [WatchManager sharedInstance].currentValue.settings.appView.modelValue;
     wMAppViewModel.current = wMAppViewType;
     [[[[wMPeripheral settings] appView] setConfigModel:wMAppViewModel] subscribeNext:^(WMAppViewModel * _Nullable x) {
         @strongify(self);

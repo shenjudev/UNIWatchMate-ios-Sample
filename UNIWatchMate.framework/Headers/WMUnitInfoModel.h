@@ -10,7 +10,6 @@
 NS_ASSUME_NONNULL_BEGIN
 /// 长度单位
 typedef NS_ENUM(NSInteger, LengthUnit) {
-    LengthUnitNone,
     /// 公里
     LengthUnitKM,
     /// 英里
@@ -18,7 +17,6 @@ typedef NS_ENUM(NSInteger, LengthUnit) {
 };
 /// 重量单位
 typedef NS_ENUM(NSInteger, WeightUnit) {
-    WeightUnitNone,
     /// 千克
     WeightUnitKG,
     /// 磅
@@ -26,7 +24,6 @@ typedef NS_ENUM(NSInteger, WeightUnit) {
 };
 /// 温度单位
 typedef NS_ENUM(NSInteger, TemperatureUnit) {
-    TemperatureUnitNone,
     /// 摄氏度
     TemperatureUnitCELSIUS,
     /// 华氏度
@@ -34,7 +31,6 @@ typedef NS_ENUM(NSInteger, TemperatureUnit) {
 };
 /// 时间格式
 typedef NS_ENUM(NSInteger, TimeFormat) {
-    TimeFormatNone,
     /// 12小时制
     TimeFormatTWELVE_HOUR,
     /// 24小时制

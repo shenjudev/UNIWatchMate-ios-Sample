@@ -21,7 +21,8 @@ typedef NS_ENUM(NSInteger, USWatchPickerDataType) {
     USWatchPickerDataTypeMenstrualStartReminder,
     USWatchPickerDataTypeMenstrualReminderTime,
     USWatchPickerDataTypeLanguage,
-    USWatchPickerDataTypeCustomer
+    USWatchPickerDataTypeCustomer,
+    USWatchPickerDataTypeActivityDuration
     
 };
 

@@ -312,6 +312,25 @@ SWIFT_CLASS("_TtC10SJWatchLib11SJWatchFind")
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #endif
 #if defined(__cplusplus)
 #endif

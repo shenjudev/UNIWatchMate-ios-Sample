@@ -10,7 +10,6 @@
 NS_ASSUME_NONNULL_BEGIN
 /// 性别
 typedef NS_ENUM(NSInteger, Gender) {
-    GenderNone,
     /// 男性
     GenderMale,
     /// 女性
@@ -28,7 +27,7 @@ typedef NS_ENUM(NSInteger, Gender) {
 /// 性别（none，表示不设置）
 @property (nonatomic, assign) Gender gender;
 /// 生日（nil，表示不设置）
-@property (nonatomic, strong) NSDate * _Nullable birthDate;
+@property (nonatomic, strong) NSDate * birthDate;
 
 @end
 
