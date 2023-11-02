@@ -52,11 +52,7 @@
     // 处理扫描结果，例如显示在界面上或执行其他操作
     LBXScanResult * first = [array firstObject];
     XLOG_INFO(@"扫描结果：%@", first.strScanned);
-    if (first != nil && [first.strScanned rangeOfString:@"random="].location != NSNotFound && [first.strScanned rangeOfString:@"projectname="].location != NSNotFound && [first.strScanned rangeOfString:@"mac="].location != NSNotFound){
-        [self goConnectionManagementPage:first.strScanned];
-        return;
-    }
-    [SVProgressHUD showErrorWithStatus:first.strScanned];
+    [self goConnectionManagementPage:first.strScanned];
     //延迟3秒
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self startScanQRCode];

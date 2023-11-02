@@ -9,9 +9,8 @@
 /* Begin PBXBuildFile section */
 		5F04AD8C2AF0B28900348A38 /* NSDictionary+JSONDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F04AD8B2AF0B28900348A38 /* NSDictionary+JSONDescription.m */; };
 		5F04AD8F2AF0B47A00348A38 /* WeatherCreateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F04AD8E2AF0B47A00348A38 /* WeatherCreateHelper.m */; };
-		5F06611C2AEF69AB00430BE8 /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F0661192AEF69AB00430BE8 /* Contacts.framework */; };
-		5F06611D2AEF69AB00430BE8 /* libswiftContacts.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F06611A2AEF69AB00430BE8 /* libswiftContacts.tbd */; };
-		5F06611E2AEF69AB00430BE8 /* ContactsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F06611B2AEF69AB00430BE8 /* ContactsUI.framework */; };
+		5F1886312AF3ABA300911FBF /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1886302AF3ABA300911FBF /* opencv2.framework */; };
+		5F1886332AF3B0AA00911FBF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5F1886322AF3B0AA00911FBF /* README.md */; };
 		5F1D9AC02AE144210050C702 /* AlarmEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1D9ABF2AE144210050C702 /* AlarmEditViewController.m */; };
 		5F54C5AA2AE60E4C0090596F /* OtaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F54C5A92AE60E4C0090596F /* OtaViewController.m */; };
 		5F54C5AD2AE6231C0090596F /* DeviceNotificationManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F54C5AC2AE6231C0090596F /* DeviceNotificationManagementViewController.m */; };
@@ -90,9 +89,8 @@
 		5F04AD8B2AF0B28900348A38 /* NSDictionary+JSONDescription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JSONDescription.m"; sourceTree = "<group>"; };
 		5F04AD8D2AF0B47A00348A38 /* WeatherCreateHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherCreateHelper.h; sourceTree = "<group>"; };
 		5F04AD8E2AF0B47A00348A38 /* WeatherCreateHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherCreateHelper.m; sourceTree = "<group>"; };
-		5F0661192AEF69AB00430BE8 /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
-		5F06611A2AEF69AB00430BE8 /* libswiftContacts.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftContacts.tbd; path = usr/lib/swift/libswiftContacts.tbd; sourceTree = SDKROOT; };
-		5F06611B2AEF69AB00430BE8 /* ContactsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContactsUI.framework; path = System/Library/Frameworks/ContactsUI.framework; sourceTree = SDKROOT; };
+		5F1886302AF3ABA300911FBF /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		5F1886322AF3B0AA00911FBF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		5F1D9ABE2AE144210050C702 /* AlarmEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlarmEditViewController.h; sourceTree = "<group>"; };
 		5F1D9ABF2AE144210050C702 /* AlarmEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlarmEditViewController.m; sourceTree = "<group>"; };
 		5F54C5A82AE60E4C0090596F /* OtaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OtaViewController.h; sourceTree = "<group>"; };
@@ -198,12 +196,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F06611C2AEF69AB00430BE8 /* Contacts.framework in Frameworks */,
-				5F06611D2AEF69AB00430BE8 /* libswiftContacts.tbd in Frameworks */,
 				5F9C86E22AF2882000117059 /* h264encoder.framework in Frameworks */,
 				5F9C86E62AF28C0E00117059 /* UNIWatchMate.framework in Frameworks */,
-				5F06611E2AEF69AB00430BE8 /* ContactsUI.framework in Frameworks */,
 				D7135A8BBE24884BB6DAFEEE /* Pods_UNIWatchMateDemo.framework in Frameworks */,
+				5F1886312AF3ABA300911FBF /* opencv2.framework in Frameworks */,
 				5F9C86E02AF2877D00117059 /* SJWatchLib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,12 +210,10 @@
 		56031C1DA84625A2BB83AC8C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5F1886302AF3ABA300911FBF /* opencv2.framework */,
 				5F9C86E42AF28C0300117059 /* UNIWatchMate.framework */,
 				5F9C86DE2AF2876C00117059 /* h264encoder.framework */,
 				5F9C86DC2AF2876300117059 /* SJWatchLib.framework */,
-				5F0661192AEF69AB00430BE8 /* Contacts.framework */,
-				5F06611B2AEF69AB00430BE8 /* ContactsUI.framework */,
-				5F06611A2AEF69AB00430BE8 /* libswiftContacts.tbd */,
 				C60E9F032EABB4DD0FEDA943 /* Pods_UNIWatchMateDemo.framework */,
 			);
 			name = Frameworks;
@@ -385,6 +379,7 @@
 				D778252D2ABD341B0056AB02 /* LaunchScreen.storyboard */,
 				D77825302ABD341B0056AB02 /* Info.plist */,
 				D77825312ABD341B0056AB02 /* main.m */,
+				5F1886322AF3B0AA00911FBF /* README.md */,
 				5FF961FF2AC4292700DFA693 /* Localizable.strings */,
 			);
 			path = UNIWatchMateDemo;
@@ -460,6 +455,7 @@
 				D778252C2ABD341B0056AB02 /* Assets.xcassets in Resources */,
 				D778252A2ABD34180056AB02 /* Main.storyboard in Resources */,
 				5FA885062AD7DB38001F340D /* 59c4aad46ed434ca58786f3232aba673.dial in Resources */,
+				5F1886332AF3B0AA00911FBF /* README.md in Resources */,
 				5FA885042AD7DB29001F340D /* 4974f889d52c4a519eac9ea409b3295c.dial in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
