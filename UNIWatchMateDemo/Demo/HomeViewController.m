@@ -32,6 +32,8 @@
 #import "WeatherViewController.h"
 #import "RealTimeDataViewController.h"
 #import "WeatherCreateHelper.h"
+#import "SmallWidgetViewController.h"
+#import "UNIWatchMateDemo-Swift.h"
 
 @interface TableViewHeader : UIView
 
@@ -70,7 +72,6 @@
         
         [self.button.trailingAnchor constraintEqualToAnchor:self.trailingAnchor constant:-16].active = YES;
         [self.button.centerYAnchor constraintEqualToAnchor:self.centerYAnchor].active = YES;
-        
         
     }
     return self;
@@ -182,6 +183,14 @@
     [self listenForDeviceDiscovery];
     [self config];
     [self listenForWeather];
+    //调用getBaseInfo，防止ble里的baseInfo为nil
+    [[[[[WatchManager sharedInstance] currentValue] infoModel] wm_getBaseinfo]   subscribeNext:^(WMDeviceBaseInfo * _Nullable baseInfo) {
+ 
+    } error:^(NSError * _Nullable error) {
+        
+    } completed:^{
+        
+    }];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -193,7 +202,7 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return  80;
+    return  50;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -270,7 +279,7 @@
 {
     if (_tableViewHeaderView == nil) {
         _tableViewHeaderView = [[TableViewHeader alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 100)];
-        [self.tableViewHeaderView.button setTitle:@"get now" forState:UIControlStateNormal];
+        [self.tableViewHeaderView.button setTitle:NSLocalizedString(@"Get Now", nil) forState:UIControlStateNormal];
         [_tableViewHeaderView.button addTarget:self action:@selector(getBatteryNow) forControlEvents:UIControlEventTouchUpInside];
     }
     return _tableViewHeaderView;
@@ -280,9 +289,9 @@
     if (_tableViewFooterView == nil) {
         _tableViewFooterView = [[TableViewFooter alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
         [_tableViewFooterView.disconnect addTarget:self action:@selector(disconnectedDevice) forControlEvents:UIControlEventTouchUpInside];
-        [_tableViewFooterView.disconnect setTitle:@"Disconnect device" forState:UIControlStateNormal];
+        [_tableViewFooterView.disconnect setTitle:NSLocalizedString(@"Disconnect device", nil) forState:UIControlStateNormal];
         [_tableViewFooterView.unbind addTarget:self action:@selector(unbindDevice) forControlEvents:UIControlEventTouchUpInside];
-        [_tableViewFooterView.unbind setTitle:@"Unbind device" forState:UIControlStateNormal];
+        [_tableViewFooterView.unbind setTitle:NSLocalizedString(@"Unbind device", nil) forState:UIControlStateNormal];
     }
     return  _tableViewFooterView;
 }
@@ -300,112 +309,124 @@
             @"title":@"",
             @"data":@[
                 @{
-                    @"title":@"The date and time are synchronized",
+                    @"title":NSLocalizedString(@"The date and time are synchronized", nil),
                     @"subtitle":@"",
                     @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
                     @"selector": NSStringFromSelector(@selector(dateAndTimeSynchronizedViewController:didSeletIndexPath:))
                 },
+//                @{
+//                    @"title":@"Sound and touch feedback",
+//                    @"subtitle":@"",
+//                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+//                    @"selector": NSStringFromSelector(@selector(soundAndTouchFeedbackViewController:didSeletIndexPath:))
+//                },
+//                @{
+//                    @"title":@"App view",
+//                    @"subtitle":@"",
+//                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+//                    @"selector": NSStringFromSelector(@selector(appViewViewController:didSeletIndexPath:))
+//                },
                 @{
-                    @"title":@"Sound and touch feedback",
-                    @"subtitle":@"",
-                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
-                    @"selector": NSStringFromSelector(@selector(soundAndTouchFeedbackViewController:didSeletIndexPath:))
-                },
-                @{
-                    @"title":@"App view",
-                    @"subtitle":@"",
-                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
-                    @"selector": NSStringFromSelector(@selector(appViewViewController:didSeletIndexPath:))
-                },
-                @{
-                    @"title":@"Dial manager",
+                    @"title":NSLocalizedString(@"Dial manager", nil),
                     @"subtitle":@"",
                     @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
                     @"selector": NSStringFromSelector(@selector(dialManagerViewController:didSeletIndexPath:))
                 },
                 @{
-                    @"title":@"Camera Control",
+                    @"title":NSLocalizedString(@"Custom dial", nil),
+                    @"subtitle":@"",
+                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+                    @"selector": NSStringFromSelector(@selector(customDialViewController:didSeletIndexPath:))
+                },
+                @{
+                    @"title":NSLocalizedString(@"Camera Control",nil),
                     @"subtitle":@"",
                     @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
                     @"selector": NSStringFromSelector(@selector(cameraControlViewController:didSeletIndexPath:))
                 },
+//                @{
+//                    @"title":@"Sleep Setting",
+//                    @"subtitle":@"",
+//                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+//                    @"selector": NSStringFromSelector(@selector(sleepSettingViewController:didSeletIndexPath:))
+//                },
                 @{
-                    @"title":@"Sleep Setting",
-                    @"subtitle":@"",
-                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
-                    @"selector": NSStringFromSelector(@selector(sleepSettingViewController:didSeletIndexPath:))
-                },
-                @{
-                    @"title":@"Alarms",
+                    @"title":NSLocalizedString(@"Alarms", nil),
                     @"subtitle":@"",
                     @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
                     @"selector": NSStringFromSelector(@selector(alarmsViewController:didSeletIndexPath:))
                 },
                 @{
-                    @"title":@"Device language",
+                    @"title":NSLocalizedString(@"Device language", nil),
                     @"subtitle":@"",
                     @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
                     @"selector": NSStringFromSelector(@selector(languageChangeViewController:didSeletIndexPath:))
                 },
                 @{
-                    @"title":@"Device Notification Management",
+                    @"title":NSLocalizedString(@"Device Notification Management", nil),
                     @"subtitle":@"",
                     @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
                     @"selector": NSStringFromSelector(@selector(deviceNotificationManagementViewController:didSeletIndexPath:))
                 },
                 @{
-                    @"title":@"Find device",
+                    @"title":NSLocalizedString(@"Find device", nil),
                     @"subtitle":@"",
                     @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
                     @"selector": NSStringFromSelector(@selector(findDeviceViewController:didSeletIndexPath:))
                 },
                 @{
-                    @"title":@"Unit Synchronization",
+                    @"title":NSLocalizedString(@"Unit Synchronization",nil),
                     @"subtitle":@"",
                     @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
                     @"selector": NSStringFromSelector(@selector(unitSynchronizationViewController:didSeletIndexPath:))
                 },
                 @{
-                    @"title":@"Synchronize contacts",
+                    @"title":NSLocalizedString(@"Synchronize contacts",nil),
                     @"subtitle":@"",
                     @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
                     @"selector": NSStringFromSelector(@selector(synchronizeContactsViewController:didSeletIndexPath:))
                 },
                 @{
-                    @"title":@"Emergency contact",
+                    @"title":NSLocalizedString(@"Emergency contact",nil),
                     @"subtitle":@"",
                     @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
                     @"selector": NSStringFromSelector(@selector(emergencyContactViewController:didSeletIndexPath:))
                 },
                 @{
-                    @"title":@"Sedentary reminder",
+                    @"title":NSLocalizedString(@"Sedentary reminder",nil),
                     @"subtitle":@"",
                     @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
                     @"selector": NSStringFromSelector(@selector(sedentaryReminderViewController:didSeletIndexPath:))
                 },
                 @{
-                    @"title":@"Drink water reminder",
+                    @"title":NSLocalizedString(@"Drink water reminder",nil),
                     @"subtitle":@"",
                     @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
                     @"selector": NSStringFromSelector(@selector(drinkWaterReminderViewController:didSeletIndexPath:))
                 },
                 @{
-                    @"title":@"Config heart rate",
+                    @"title":NSLocalizedString(@"Config heart rate",nil),
                     @"subtitle":@"",
                     @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
                     @"selector": NSStringFromSelector(@selector(configHeartRateViewController:didSeletIndexPath:))
                 },
                 @{
-                    @"title":@"Sports manger",
+                    @"title":NSLocalizedString(@"Sports manger",nil),
                     @"subtitle":@"",
                     @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
                     @"selector": NSStringFromSelector(@selector(sportsmanagerViewController:didSeletIndexPath:))
                 },
                 @{
-                    @"title":@"Weather",
+                    @"title":NSLocalizedString(@"Weather",nil),
                     @"subtitle":@"",
                     @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
                     @"selector": NSStringFromSelector(@selector(weatherViewController:didSeletIndexPath:))
+                },
+                @{
+                    @"title":NSLocalizedString(@"Widget",nil),
+                    @"subtitle":@"",
+                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+                    @"selector": NSStringFromSelector(@selector(smallWidgetViewController:didSeletIndexPath:))
                 },
 
             ]
@@ -414,84 +435,96 @@
             @"title":@"",
             @"data":@[
                 @{
-                    @"title":@"Exercise goal",
+                    @"title":NSLocalizedString(@"Exercise goal",nil),
                     @"subtitle":@"",
                     @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
                     @"selector": NSStringFromSelector(@selector(exerciseGoalViewController:didSeletIndexPath:))
                 },
                 @{
-                    @"title":@"User info",
+                    @"title":NSLocalizedString(@"User info",nil),
                     @"subtitle":@"",
                     @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
                     @"selector": NSStringFromSelector(@selector(editUserInfoViewController:didSeletIndexPath:))
                 },
             ]
         },
-//        @{
-//            @"title":@"",
-//            @"data":@[
-//                @{ 
-//                    @"title":@"Sync step",
-//                    @"subtitle":@"",
-//                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
-//                    @"selector": NSStringFromSelector(@selector(realTimeDataViewController:didSeletIndexPath:))
-//                },
-//                @{
-//                    @"title":@"Sync calorie",
-//                    @"subtitle":@"",
-//                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
-//                    @"selector": NSStringFromSelector(@selector(realTimeDataViewController:didSeletIndexPath:))
-//                },
-//                @{
-//                    @"title":@"Sync activity time",
-//                    @"subtitle":@"",
-//                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
-//                    @"selector": NSStringFromSelector(@selector(realTimeDataViewController:didSeletIndexPath:))
-//                },
-//                @{
-//                    @"title":@"Sync distance",
-//                    @"subtitle":@"",
-//                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
-//                    @"selector": NSStringFromSelector(@selector(realTimeDataViewController:didSeletIndexPath:))
-//                },
-//                @{
-//                    @"title":@"Sync heart rate",
-//                    @"subtitle":@"",
-//                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
-//                    @"selector": NSStringFromSelector(@selector(realTimeDataViewController:didSeletIndexPath:))
-//                },
-//                @{
-//                    @"title":@"Sync heart rate statistics",
-//                    @"subtitle":@"",
-//                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
-//                    @"selector": NSStringFromSelector(@selector(realTimeDataViewController:didSeletIndexPath:))
-//                },
-//                @{
-//                    @"title":@"Sync blood oxygen",
-//                    @"subtitle":@"",
-//                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
-//                    @"selector": NSStringFromSelector(@selector(realTimeDataViewController:didSeletIndexPath:))
-//                },
-//                @{
-//                    @"title":@"Sync ctivity data",
-//                    @"subtitle":@"",
-//                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
-//                    @"selector": NSStringFromSelector(@selector(realTimeDataViewController:didSeletIndexPath:))
-//                },
-//
-//            ]
-//        },
         @{
             @"title":@"",
             @"data":@[
                 @{
-                    @"title":@"ota",
+                    @"title":NSLocalizedString(@"Sync step",nil),
+                    @"subtitle":@"",
+                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+                    @"selector": NSStringFromSelector(@selector(realTimeDataViewController:didSeletIndexPath:))
+                },
+                @{
+                    @"title":NSLocalizedString(@"Sync calorie",nil),
+                    @"subtitle":@"",
+                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+                    @"selector": NSStringFromSelector(@selector(realTimeDataViewController:didSeletIndexPath:))
+                },
+                @{
+                    @"title":NSLocalizedString(@"Sync activity time",nil),
+                    @"subtitle":@"",
+                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+                    @"selector": NSStringFromSelector(@selector(realTimeDataViewController:didSeletIndexPath:))
+                },
+                @{
+                    @"title":NSLocalizedString(@"Sync activity type data",nil),//各个活动的分布时长
+                    @"subtitle":@"",
+                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+                    @"selector": NSStringFromSelector(@selector(realTimeDataViewController:didSeletIndexPath:))
+                },
+                @{
+                    @"title":NSLocalizedString(@"Sync distance",nil),
+                    @"subtitle":@"",
+                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+                    @"selector": NSStringFromSelector(@selector(realTimeDataViewController:didSeletIndexPath:))
+                },
+                @{
+                    @"title":NSLocalizedString(@"Sync heart rate",nil),
+                    @"subtitle":@"",
+                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+                    @"selector": NSStringFromSelector(@selector(realTimeDataViewController:didSeletIndexPath:))
+                },
+                @{
+                    @"title":NSLocalizedString(@"Sync heart rate statistics",nil),
+                    @"subtitle":@"",
+                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+                    @"selector": NSStringFromSelector(@selector(realTimeDataViewController:didSeletIndexPath:))
+                },
+                @{
+                    @"title":NSLocalizedString(@"Sync blood oxygen",nil),
+                    @"subtitle":@"",
+                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+                    @"selector": NSStringFromSelector(@selector(realTimeDataViewController:didSeletIndexPath:))
+                },
+                @{
+                    @"title":NSLocalizedString(@"Sync sleep data",nil),
+                    @"subtitle":@"",
+                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+                    @"selector": NSStringFromSelector(@selector(realTimeDataViewController:didSeletIndexPath:))
+                },
+                @{
+                    @"title":NSLocalizedString(@"Sync activity data",nil),
+                    @"subtitle":@"",
+                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+                    @"selector": NSStringFromSelector(@selector(realTimeDataViewController:didSeletIndexPath:))
+                },
+
+            ]
+        },
+        @{
+            @"title":@"",
+            @"data":@[
+                @{
+                    @"title":NSLocalizedString(@"ota",nil),
                     @"subtitle":@"",
                     @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
                     @"selector": NSStringFromSelector(@selector(otaViewController:didSeletIndexPath:))
                 },
                 @{
-                    @"title":@"About evice",
+                    @"title":NSLocalizedString(@"About device",nil),
                     @"subtitle":@"",
                     @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
                     @"selector": NSStringFromSelector(@selector(aboutDeviceViewController:didSeletIndexPath:))
@@ -529,7 +562,9 @@
         if (isOpen == YES){
             UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             // 获取主Storyboard的初始ViewController
-            UIViewController *viewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"CameraControlViewController"];
+            CameraControlViewController *viewController = (CameraControlViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"CameraControlViewController"];
+            // 设置cameraMode属性
+            viewController.openFromDevice = YES;
             [self.navigationController pushViewController:viewController animated:true];
         }
         WatchresultBlock resultBlock = noti.userInfo[@"result"];
@@ -537,13 +572,13 @@
             resultBlock(YES);
         }
     }
-    
 }
+
 -(void)listenBattery{
     @weakify(self);
     [[[[[WatchManager sharedInstance] currentValue] infoModel] battery] subscribeNext:^(WMDeviceBatteryModel * _Nullable x) {
         @strongify(self);
-        self.tableViewHeaderView.label.text = [NSString stringWithFormat:@"battery: %d%%  %@",x.battery,x.isCharging == YES ? @"charging":@"not charging"];
+        self.tableViewHeaderView.label.text = [NSString stringWithFormat:NSLocalizedString(@"battery: %d%%  %@", nil),x.battery,x.isCharging == YES ? NSLocalizedString(@"charging", nil):NSLocalizedString(@"not charging", nil)];
     } error:^(NSError * _Nullable error) {
         
     }];
@@ -554,7 +589,7 @@
     
     [[[[[WatchManager sharedInstance] currentValue] infoModel] wm_getBattery] subscribeNext:^(WMDeviceBatteryModel * _Nullable x) {
         @strongify(self);
-        self.tableViewHeaderView.label.text = [NSString stringWithFormat:@"battery: %d%%  %@",x.battery,x.isCharging == YES ? @"charging":@"not charging"];
+        self.tableViewHeaderView.label.text = [NSString stringWithFormat:NSLocalizedString(@"battery: %d%%  %@", nil),x.battery,x.isCharging == YES ? NSLocalizedString(@"charging", nil):NSLocalizedString(@"not charging", nil)];
     } error:^(NSError * _Nullable error) {
         
     }];
@@ -565,7 +600,7 @@
     [[[[[WatchManager sharedInstance] currentValue] infoModel] wm_getBattery] subscribeNext:^(WMDeviceBatteryModel * _Nullable x) {
         @strongify(self);
         [SVProgressHUD dismiss];
-        self.tableViewHeaderView.label.text = [NSString stringWithFormat:@"battery: %d%%  %@",x.battery,x.isCharging == YES ? @"charging":@"not charging"];
+        self.tableViewHeaderView.label.text = [NSString stringWithFormat:NSLocalizedString(@"battery: %d%%  %@", nil),x.battery,x.isCharging == YES ? NSLocalizedString(@"charging", nil):NSLocalizedString(@"not charging", nil)];
     } error:^(NSError * _Nullable error) {
         [SVProgressHUD dismiss];
         [SVProgressHUD showErrorWithStatus:@"Get battery info fail"];
@@ -607,7 +642,10 @@
     UIViewController *viewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"AboutDeviceViewController"];
     [self.navigationController pushViewController:viewController animated:YES];
 }
-
+-(void)customDialViewController:(UITableViewCell *)cell didSeletIndexPath:(NSIndexPath *)indexPath{
+    UIViewController *viewController = [CustomDialController new];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
 /// Push to OTA.
 /// - Parameters:
 ///   - cell: selected cell
@@ -698,6 +736,10 @@
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
+-(void)smallWidgetViewController:(UITableViewCell *)cell didSeletIndexPath:(NSIndexPath *)indexPath{
+    UIViewController *viewController = [SmallWidgetViewController new];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
 /// Push to sedentary reminder.
 /// - Parameters:
 ///   - cell: selected cell

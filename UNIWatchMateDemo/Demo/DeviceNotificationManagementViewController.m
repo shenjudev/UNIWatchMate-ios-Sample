@@ -25,7 +25,6 @@
 @property (nonatomic, assign) BOOL weChatEnabled;
 @property (nonatomic, assign) BOOL whatsAppEnabled;
 @property (nonatomic, assign) BOOL whatsAppBusinessEnabled;
-
 // 解析整数值并设置开关状态
 - (void)setSwitchesFromInteger:(uint32_t)integerValue;
 
@@ -124,7 +123,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"Device notification manager";
+    self.title = NSLocalizedString(@"Device Notification Management",nil);
     [self getInfo];
 }
 
@@ -142,6 +141,7 @@
     @weakify(self);
     [[WatchManager sharedInstance].currentValue.settings.message.getConfigModel subscribeNext:^(WMMessageModel * _Nullable x) {
         @strongify(self);
+//        self->_wMMessageModel = x;
         [self showModel:x];
     } error:^(NSError * _Nullable error) {
 
@@ -286,15 +286,19 @@
             break;
     }
     
-
+//    if(_wMMessageModel == nil){
+//        [SVProgressHUD dismiss];
+//        return;
+//    }
     WMMessageModel *model = [[WMMessageModel alloc] init];
     model.type = [self.model convertToUint32];
     [SVProgressHUD showWithStatus:nil];
 
     @weakify(self);
-    [[[WatchManager sharedInstance].currentValue.settings.message setConfigModel:model] subscribeNext:^(WMMessageModel * _Nullable x) {
+    [[[WatchManager sharedInstance].currentValue.settings.message setConfigModel:model] subscribeNext:^(NSNumber * _Nullable x) {
         [SVProgressHUD dismiss];
-        [self showModel:x];
+//        if(x )
+        [self showModel:model];
 
     } error:^(NSError * _Nullable error) {
         [SVProgressHUD dismiss];

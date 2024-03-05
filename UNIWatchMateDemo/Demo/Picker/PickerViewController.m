@@ -357,7 +357,7 @@
         case USWatchPickerDataTypeMenstrualReminderTime:
             return NSLocalizedString(@"wh_remind_time", nil);
         case USWatchPickerDataTypeLanguage:
-            return NSLocalizedString(@"select language", nil);
+            return NSLocalizedString(@"", nil);
         case USWatchPickerDataTypeCustomer:
             return _tip;
         case USWatchPickerDataTypeActivityDuration:

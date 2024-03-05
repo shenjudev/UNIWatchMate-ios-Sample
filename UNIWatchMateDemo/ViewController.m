@@ -62,7 +62,7 @@
     model.mac = @"35:53:78:0f:87:44";
 
     @weakify(self);
-    [[[WMManager sharedInstance] findWatchFromTarget:model product:@"OSW-802N"] subscribeNext:^(WMPeripheral * _Nullable x) {
+    [[[WMManager sharedInstance] findWatchFromTarget:model product:@"OSW-802N" uid:@"1"] subscribeNext:^(WMPeripheral * _Nullable x) {
         @strongify(self);
         self.watch = x;
         [self.watch.connect connect];

@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"Language Change";
+    self.title = NSLocalizedString(@"Device language", nil);
     self.view.backgroundColor = [UIColor whiteColor];
     self.getNowBtn.frame = CGRectMake(20, 320, CGRectGetWidth(self.view.frame) - 40, 44);
     self.changelangBtn.frame = CGRectMake(20, 380, CGRectGetWidth(self.view.frame) - 40, 44);
@@ -44,7 +44,7 @@
 -(UIButton *)getNowBtn{
     if (_getNowBtn == nil){
         _getNowBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_getNowBtn setTitle:@"Get Now" forState:UIControlStateNormal];
+        [_getNowBtn setTitle:NSLocalizedString(@"Get Now", nil) forState:UIControlStateNormal];
         [_getNowBtn addTarget:self action:@selector(getDetail) forControlEvents:UIControlEventTouchUpInside];
         _getNowBtn.layer.masksToBounds = YES;
         _getNowBtn.layer.cornerRadius = 5;
@@ -57,7 +57,7 @@
 -(UIButton *)changelangBtn{
     if (_changelangBtn == nil){
         _changelangBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_changelangBtn setTitle:@"Change language" forState:UIControlStateNormal];
+        [_changelangBtn setTitle:NSLocalizedString(@"Change language", nil) forState:UIControlStateNormal];
         [_changelangBtn addTarget:self action:@selector(showStringPicker) forControlEvents:UIControlEventTouchUpInside];
         _changelangBtn.layer.masksToBounds = YES;
         _changelangBtn.layer.cornerRadius = 5;
@@ -147,10 +147,10 @@
     WMLanguageModel *wMLanguageModel = [WMLanguageModel new];
     wMLanguageModel.language = BCD;
     @weakify(self);
-    [[[WatchManager sharedInstance].currentValue.settings.language setConfigModel:wMLanguageModel] subscribeNext:^(WMLanguageModel * _Nullable x) {
+    [[[WatchManager sharedInstance].currentValue.settings.language setConfigModel:wMLanguageModel] subscribeNext:^(NSNumber * _Nullable x) {
         @strongify(self);
         [SVProgressHUD dismiss];
-        [self showInfo:x];
+//        [self showInfo:x];
     } error:^(NSError * _Nullable error) {
         [SVProgressHUD dismiss];
         [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Set Fail\n%@",error.description]];

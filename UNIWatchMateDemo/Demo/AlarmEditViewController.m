@@ -31,7 +31,7 @@
 
 - (UIButton *)mondayBtn {
     if (_mondayBtn == nil) {
-        _mondayBtn = [self createButtonWithTitle:@"Monday" tag:1];
+        _mondayBtn = [self createButtonWithTitle:NSLocalizedString(@"Monday", nil) tag:1];
         [self.view addSubview:_mondayBtn];
     }
     return _mondayBtn;
@@ -39,7 +39,7 @@
 
 - (UIButton *)tuesdayBtn {
     if (_tuesdayBtn == nil) {
-        _tuesdayBtn = [self createButtonWithTitle:@"Tuesday" tag:2];
+        _tuesdayBtn = [self createButtonWithTitle:NSLocalizedString(@"Tuesday", nil) tag:2];
         [self.view addSubview:_tuesdayBtn];
     }
     return _tuesdayBtn;
@@ -47,7 +47,7 @@
 
 - (UIButton *)wednesdayBtn {
     if (_wednesdayBtn == nil) {
-        _wednesdayBtn = [self createButtonWithTitle:@"Wednesday" tag:3];
+        _wednesdayBtn = [self createButtonWithTitle:NSLocalizedString(@"Wednesday", nil) tag:3];
         [self.view addSubview:_wednesdayBtn];
     }
     return _wednesdayBtn;
@@ -55,7 +55,7 @@
 
 - (UIButton *)thursdayBtn {
     if (_thursdayBtn == nil) {
-        _thursdayBtn = [self createButtonWithTitle:@"Thursday" tag:4];
+        _thursdayBtn = [self createButtonWithTitle:NSLocalizedString(@"Thursday", nil) tag:4];
         [self.view addSubview:_thursdayBtn];
     }
     return _thursdayBtn;
@@ -63,7 +63,7 @@
 
 - (UIButton *)fridayBtn {
     if (_fridayBtn == nil) {
-        _fridayBtn = [self createButtonWithTitle:@"Friday" tag:5];
+        _fridayBtn = [self createButtonWithTitle:NSLocalizedString(@"Friday", nil) tag:5];
         [self.view addSubview:_fridayBtn];
     }
     return _fridayBtn;
@@ -71,7 +71,7 @@
 
 - (UIButton *)saturdayBtn {
     if (_saturdayBtn == nil) {
-        _saturdayBtn = [self createButtonWithTitle:@"Saturday" tag:6];
+        _saturdayBtn = [self createButtonWithTitle:NSLocalizedString(@"Saturday", nil) tag:6];
         [self.view addSubview:_saturdayBtn];
     }
     return _saturdayBtn;
@@ -79,7 +79,7 @@
 
 - (UIButton *)sundayBtn {
     if (_sundayBtn == nil) {
-        _sundayBtn = [self createButtonWithTitle:@"Sunday" tag:7];
+        _sundayBtn = [self createButtonWithTitle:NSLocalizedString(@"Sunday", nil) tag:7];
         [self.view addSubview:_sundayBtn];
     }
     return _sundayBtn;
@@ -112,20 +112,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"Alarm Edit";
+    self.title = NSLocalizedString(@"Alarm Edit", nil);
     
     // 创建和布局页面元素，包括文本字段、日期选择器和开关
     _nameTip = [[UILabel alloc] initWithFrame:CGRectMake(20, 100, CGRectGetWidth(self.view.frame) - 40, 30)];
-    _nameTip.text = @"Name";
+    _nameTip.text = NSLocalizedString(@"Name", nil);
     [self.view addSubview:_nameTip];
     
     self.nameTextField = [[UITextField alloc] initWithFrame:CGRectMake(20, 130, CGRectGetWidth(self.view.frame) - 40, 40)];
-    self.nameTextField.placeholder = @"Alarm name";
+    self.nameTextField.placeholder = NSLocalizedString(@"Alarm name", nil);
     [self.view addSubview:self.nameTextField];
     
     
     _timeTip = [[UILabel alloc] initWithFrame:CGRectMake(20, 180, CGRectGetWidth(self.view.frame) - 40, 30)];
-    _timeTip.text = @"Time";
+    _timeTip.text = NSLocalizedString(@"Time", nil);
     [self.view addSubview:_timeTip];
     
     self.timePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(20, 210, CGRectGetWidth(self.view.frame) - 40, 200)];
@@ -136,7 +136,7 @@
     [self.view addSubview:self.timePicker];
     
     _openTip = [[UILabel alloc] initWithFrame:CGRectMake(20, 420, 100, 30)];
-    _openTip.text = @"Enable";
+    _openTip.text = NSLocalizedString(@"Enable", nil);
     _openTip.adjustsFontSizeToFitWidth = YES;
     [self.view addSubview:_openTip];
     
@@ -154,7 +154,7 @@
     self.openSwitch.on = self.alarmModel.isOn;
     
     _repeatOptionsTip = [[UILabel alloc] initWithFrame:CGRectMake(20, 500, 100, 30)];
-    _repeatOptionsTip.text = @"Repeat Options";
+    _repeatOptionsTip.text = NSLocalizedString(@"Repeat Options", nil);
     _repeatOptionsTip.adjustsFontSizeToFitWidth = YES;
     [self.view addSubview:_repeatOptionsTip];
     
@@ -171,7 +171,7 @@
     self.sundayBtn.frame = CGRectMake(40, 660, width, 30);
     
     UIButton *addBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [addBtn setTitle:@"Save" forState:UIControlStateNormal];
+    [addBtn setTitle:NSLocalizedString(@"Save", nil) forState:UIControlStateNormal];
     [addBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     addBtn.layer.masksToBounds = YES;
     addBtn.layer.cornerRadius = 5;
@@ -185,7 +185,7 @@
 
 - (void)saveButtonTapped {
     if (self.nameTextField.text.length == 0){
-        [SVProgressHUD showErrorWithStatus:@"Alarms name cannot be empty"];
+        [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Alarms name cannot be empty", nil)];
         return;
     }
     // 当用户点击保存按钮时，获取并保存页面元素的新值到 alarmModel 中
@@ -203,9 +203,14 @@
     [SVProgressHUD showWithStatus:nil];
     @weakify(self);
     if (self.alarmModel == nil){
-        [[[WatchManager sharedInstance].currentValue.apps.alarmApp addAlarm:model] subscribeNext:^(NSArray<WMAlarmModel *> * _Nullable x) {
+        [self.alarmModels addObject: model];
+        
+        [[[WatchManager sharedInstance].currentValue.apps.alarmApp syncAlarmList:self.alarmModels] subscribeNext:^(NSArray<WMAlarmModel *> * _Nullable x) {
             @strongify(self);
             [SVProgressHUD dismiss];
+            if(self.completionHandler){
+                self.completionHandler(@"");
+            }
             [self.navigationController popViewControllerAnimated:YES];
         } error:^(NSError * _Nullable error) {
             [SVProgressHUD dismiss];
@@ -213,9 +218,17 @@
         }];
         return;
     }
-    [[[WatchManager sharedInstance].currentValue.apps.alarmApp updateAlarm:model] subscribeNext:^(NSArray<WMAlarmModel *> * _Nullable x) {
+    self.alarmModel.alarmHour = model.alarmHour;
+    self.alarmModel.alarmMinute = model.alarmMinute;
+    self.alarmModel.isOn = model.isOn;
+    self.alarmModel.repeatOptions = model.repeatOptions;
+    self.alarmModel.identifier = model.identifier;
+    [[[WatchManager sharedInstance].currentValue.apps.alarmApp syncAlarmList:self.alarmModels] subscribeNext:^(NSArray<WMAlarmModel *> * _Nullable x) {
         @strongify(self);
         [SVProgressHUD dismiss];
+        if(self.completionHandler){
+            self.completionHandler(@"");
+        }
         [self.navigationController popViewControllerAnimated:YES];
     } error:^(NSError * _Nullable error) {
         [SVProgressHUD dismiss];

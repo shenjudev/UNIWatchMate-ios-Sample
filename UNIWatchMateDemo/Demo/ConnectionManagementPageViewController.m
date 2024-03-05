@@ -98,7 +98,7 @@
     [SVProgressHUD showWithStatus:nil];
     NSString *code = qrCode;
     @weakify(self);
-    [[[WMManager sharedInstance] findWatchFromQRCode:code] subscribeNext:^(WMPeripheral * _Nullable x) {
+    [[[WMManager sharedInstance] findWatchFromQRCode:code uid:@"1"] subscribeNext:^(WMPeripheral * _Nullable x) {
         @strongify(self);
         [self bindDevice:x];
     } error:^(NSError * _Nullable error) {
@@ -115,7 +115,7 @@
     model.mac = mac;
     
     @weakify(self);
-    [[[WMManager sharedInstance] findWatchFromTarget:model product:productType] subscribeNext:^(WMPeripheral * _Nullable x) {
+    [[[WMManager sharedInstance] findWatchFromTarget:model product:productType uid:@"1"] subscribeNext:^(WMPeripheral * _Nullable x) {
         @strongify(self);
         [self bindDevice:x];
     } error:^(NSError * _Nullable error) {
@@ -139,17 +139,30 @@
     self.needHiddenLoading = NO;
     self.lastProductType = productType;
     @weakify(self);
-    [[[WMManager sharedInstance] findWatchFromSearch:productType] subscribeNext:^(WMPeripheral * _Nullable x) {
+    [[[WMManager sharedInstance] findWatchFromSearch:productType uid:@"1"] subscribeNext:^(WMPeripheral * _Nullable x) {
         @strongify(self);
         [self addNewDevice:x];
     } error:^(NSError * _Nullable error) {
-        
+        @strongify(self);
+        [SVProgressHUD dismiss];
+        if ([error.domain isEqualToString:RACSignalErrorDomain] && error.code == RACSignalErrorTimedOut) {
+            // 在超时时执行的代码
+            XLOG_INFO(@"connectDeviceBySearchProductType:Signal timed out");
+            [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Time out", nil)];
+            
+        } else {
+            // 处理其他错误
+            XLOG_INFO(@"connectDeviceBySearchProductType:Error: %@", error.localizedDescription);
+            [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+            
+        }
+        [self failBack];
     }];
 }
 -(void)addNewDevice:(WMPeripheral * _Nullable)x{
     
     for (WMPeripheral  *obj in self.currentsValue) {
-        if ([obj.infoModel.baseinfoValue.macAddress isEqualToString:x.infoModel.baseinfoValue.macAddress]) {
+        if ([obj.target.mac isEqualToString:x.target.mac]) {
             return;
         }
     }
@@ -168,32 +181,32 @@
     NSString *name = device.target.name;
     NSString *mac = device.target.mac;
     @weakify(self);
-    //    [[[device.connect.isConnected  skip:1] timeout:20 onScheduler:[RACScheduler mainThreadScheduler]] subscribeNext:^(NSNumber * _Nullable x) {
-    //        @strongify(self);
-    //        BOOL isConnected = [x boolValue];
-    //        XLOG_INFO(@"%@, %@", mac, isConnected ? @"已连接":@"未连接");
-    //        if (isConnected == true){
-    //        }else{
-    //            [SVProgressHUD dismiss];
-    //            [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Connection failure", nil)];
-    //            [self failBack];
-    //        }
-    //    } error:^(NSError * _Nullable error) {
-    //        @strongify(self);
-    //        [SVProgressHUD dismiss];
-    //        if ([error.domain isEqualToString:RACSignalErrorDomain] && error.code == RACSignalErrorTimedOut) {
-    //            // 在超时时执行的代码
-    //            XLOG_INFO(@"Connect:Signal timed out");
-    //            [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Time out", nil)];
-    //
-    //        } else {
-    //            // 处理其他错误
-    //            XLOG_INFO(@"Connect:Error: %@", error.localizedDescription);
-    //            [SVProgressHUD showErrorWithStatus:error.localizedDescription];
-    //
-    //        }
-    //        [self failBack];
-    //    }];
+//        [[[device.connect.isConnected  skip:1] timeout:20 onScheduler:[RACScheduler mainThreadScheduler]] subscribeNext:^(NSNumber * _Nullable x) {
+//            @strongify(self);
+//            BOOL isConnected = [x boolValue];
+//            XLOG_INFO(@"%@, %@", mac, isConnected ? @"已连接":@"未连接");
+//            if (isConnected == true){
+//            }else{
+//                [SVProgressHUD dismiss];
+//                [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Connection failure", nil)];
+//                [self failBack];
+//            }
+//        } error:^(NSError * _Nullable error) {
+//            @strongify(self);
+//            [SVProgressHUD dismiss];
+//            if ([error.domain isEqualToString:RACSignalErrorDomain] && error.code == RACSignalErrorTimedOut) {
+//                // 在超时时执行的代码
+//                XLOG_INFO(@"Connect:Signal timed out");
+//                [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Time out", nil)];
+//
+//            } else {
+//                // 处理其他错误
+//                XLOG_INFO(@"Connect:Error: %@", error.localizedDescription);
+//                [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+//
+//            }
+//            [self failBack];
+//        }];
     
     
     // ready == YES; 表示APP可以与设备进行交互，并且以获取所有设备信息
@@ -205,13 +218,14 @@
         BOOL isReady = [x boolValue];
         if (isReady == true){
             [SVProgressHUD showSuccessWithStatus:NSLocalizedString(@"Connection successful", nil)];
-            [self goHome];
+            [self goHome:name macAdress:mac];
         }else{
             [self failBack];
         }
         
     }error:^(NSError * _Nullable error) {
         @strongify(self);
+        [SVProgressHUD dismiss];
         if (self == nil || self.navigationController.viewControllers.lastObject != self){
             return;
         }
@@ -231,7 +245,7 @@
     
     [[device.connect.isReady flattenMap:^__kindof RACSignal * _Nullable(NSNumber * _Nullable value) {
         @strongify(device);
-        return device.infoModel.baseinfo;
+        return device.infoModel.wm_getBaseinfo;
     }] subscribeNext:^(id  _Nullable x) {
         WMDeviceInfoModel *infoModel = x;
         XLOG_INFO(@"设备信息:%@", infoModel);
@@ -249,11 +263,10 @@
         [self.navigationController popViewControllerAnimated:true];
     });
 }
--(void)goHome{
+-(void)goHome:(NSString *)deviceName macAdress:(NSString *)mac{
     UIViewController *viewController = [HomeViewController new];
-    NSString *deviceName = [WatchManager sharedInstance].currentValue.infoModel.baseinfoValue.deviceName;
     viewController.title = deviceName;
-    [WatchManager sharedInstance].lastConnectedMac =  [WatchManager sharedInstance].currentValue.infoModel.baseinfoValue.macAddress;
+    [WatchManager sharedInstance].lastConnectedMac =  mac;
     [[[UIApplication sharedApplication] keyWindow] setRootViewController:[[UINavigationController alloc] initWithRootViewController:viewController]];
 }
 

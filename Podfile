@@ -26,7 +26,13 @@ target 'UNIWatchMateDemo' do
   pod 'QuickTraceiOSLogger','2.0.7'
   pod 'HDWindowLogger', :path=> './localLib/HDWindowLogger'
   pod 'LSTPopView',"0.3.10"
-  
+    pod 'ZYImagePicker', '~> 0.1.2'
+ pod 'SnapKit',:git => 'https://github.com/SnapKit/SnapKit.git'
+  #swift扩展
+  pod 'SwifterSwift', '5.2.0'
+  #本地化扩展
+  pod 'Localize-Swift', '~> 3.2.0'
+  pod 'MJExtension'
 end
 
 post_install do |installer|

@@ -9,9 +9,15 @@
 
 @interface DateAndTimeSynchronizedViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *info;
+@property (weak, nonatomic) IBOutlet UIButton *timeNow24;
+@property (weak, nonatomic) IBOutlet UIButton *timeNow12;
+
+@property (strong, nonatomic) NSTimer *timer;
+@property (weak, nonatomic) IBOutlet UILabel *time12Tip;
+@property (weak, nonatomic) IBOutlet UILabel *time24Tip;
 @property (weak, nonatomic) IBOutlet UILabel *timeNow;
 @property (weak, nonatomic) IBOutlet UILabel *timeAfter15s;
-@property (strong, nonatomic) NSTimer *timer;
+
 
 @end
 
@@ -19,24 +25,47 @@
 NSString* NSStringFromTimeFormat(TimeFormat timeFormat) {
     switch (timeFormat) {
         case TimeFormatTWELVE_HOUR:
-            return @"TimeFormatTWELVE_HOUR";
+            return NSLocalizedString(@"12 hour system" , nil);
         case TimeFormatTWENTY_FOUR_HOUR:
-            return @"TimeFormatTWENTY_FOUR_HOUR";
+            return NSLocalizedString(@"24 hour system" , nil);
     }
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.info.text =  NSLocalizedString(@"The result will be displayed here when you select the sync time", nil);
+    self.timeNow12.titleLabel.text =  NSLocalizedString(@"Synchronization time", nil);
+    self.timeNow24.titleLabel.text =  NSLocalizedString(@"Synchronization time", nil);
+    self.time12Tip.text = NSLocalizedString(@"The result will be displayed here when you select the sync time", nil);
+    self.time24Tip.text = NSLocalizedString(@"The result will be displayed here when you select the sync time", nil);
     // Do any additional setup after loading the view.
+    self.timeNow.text =  NSLocalizedString(@"time now", nil);
+    self.timeAfter15s.text =  NSLocalizedString(@"after 15s", nil);
     self.title = NSLocalizedString(@"The date and time are synchronized", nil);
     
     _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(handleTimerTick) userInfo:nil repeats:YES];
-    
+    WMPeripheral *wMPeripheral = [[WatchManager sharedInstance] currentValue];
+    @weakify(self);
+    [[[[wMPeripheral settings] dateTime] getConfigModel] subscribeNext:^(WMDateTimeModel * _Nullable x) {
+        @strongify(self);
+        self.info.text = [NSString stringWithFormat:@"%@\n%@",x.currentDate.description,NSStringFromTimeFormat(x.timeFormat)];
+    } error:^(NSError * _Nullable error) {
+        [SVProgressHUD showErrorWithStatus:@"Set time fail"];
+    }];
 }
 - (void)handleTimerTick {
     NSDate *currentDate = [NSDate date];
     NSDate *dateAfter15Seconds = [currentDate dateByAddingTimeInterval:120];
-    self.timeNow.text = currentDate.description;
-    self.timeAfter15s.text = dateAfter15Seconds.description;
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterLongStyle];
+    [formatter setTimeStyle:NSDateFormatterLongStyle];
+    [formatter setTimeZone:[NSTimeZone localTimeZone]]; // 设置为本地时区
+
+    NSString *localizedDateString = [formatter stringFromDate:currentDate];
+    NSString *localizedDateString15 = [formatter stringFromDate:dateAfter15Seconds];
+    self.timeNow.text = localizedDateString;
+    self.timeAfter15s.text = localizedDateString15;
     
 }
 - (void)dealloc {
@@ -45,46 +74,59 @@ NSString* NSStringFromTimeFormat(TimeFormat timeFormat) {
     self.timer = nil;
 }
 - (IBAction)setCurrentTime24HourSystem:(id)sender {
-    [self setTime:TimeFormatTWENTY_FOUR_HOUR];
-}
-- (IBAction)setCurrentTime12HourSystem:(id)sender {
-    [self setTime:TimeFormatTWELVE_HOUR];
-}
-- (IBAction)setAfter15SecondsTime24HourSystem:(id)sender {
-    [self setAfter15sTime:TimeFormatTWENTY_FOUR_HOUR];
-}
-- (IBAction)setAfter15SecondsTime12HourSystem:(id)sender {
-    [self setAfter15sTime:TimeFormatTWELVE_HOUR];
+    [self setTime];
 }
 
--(void)setTime:(TimeFormat)timeFormat{
+
+- (IBAction)setafter15Time12Hour:(id)sender {
+    [self setAfter15sTime];
+}
+
+-(void)setTime{
+   
+    
     @weakify(self);
     WMDateTimeModel *model = [[WMDateTimeModel alloc] init];
     model.currentDate = [NSDate date];
-    model.timeFormat = timeFormat;
     
     WMPeripheral *wMPeripheral = [[WatchManager sharedInstance] currentValue];
     self.info.text = @"";
-    [[[[wMPeripheral settings] dateTime] setConfigModel:model] subscribeNext:^(WMDateTimeModel * _Nullable x) {
+    [[[[wMPeripheral settings] dateTime] setConfigModel:model] subscribeNext:^(NSNumber * _Nullable x) {
         @strongify(self);
-        self.info.text = [NSString stringWithFormat:@"%@\n%@",x.currentDate.description,NSStringFromTimeFormat(x.timeFormat)];
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            [formatter setDateStyle:NSDateFormatterLongStyle];
+            [formatter setTimeStyle:NSDateFormatterLongStyle];
+            [formatter setTimeZone:[NSTimeZone localTimeZone]]; // 设置为本地时区
+            self.info.text = [NSString stringWithFormat:@"%@\n%@",[formatter stringFromDate:model.currentDate],NSStringFromTimeFormat(model.timeFormat)];
+        self.timeNow12.titleLabel.text =  NSLocalizedString(@"Synchronization time", nil);
+        self.timeNow24.titleLabel.text =  NSLocalizedString(@"Synchronization time", nil);
     } error:^(NSError * _Nullable error) {
         [SVProgressHUD showErrorWithStatus:@"Set time fail"];
     }];
 }
--(void)setAfter15sTime:(TimeFormat)timeFormat{
+
+-(void)setAfter15sTime{
+    self.timeNow12.titleLabel.text =  NSLocalizedString(@"Synchronization time", nil);
+    self.timeNow24.titleLabel.text =  NSLocalizedString(@"Synchronization time", nil);
+    
     @weakify(self);
     WMDateTimeModel *model = [[WMDateTimeModel alloc] init];
     NSDate *currentDate = [NSDate date];
     NSDate *dateAfter15Seconds = [currentDate dateByAddingTimeInterval:120];
     model.currentDate = dateAfter15Seconds;
-    model.timeFormat = timeFormat;
     
     WMPeripheral *wMPeripheral = [[WatchManager sharedInstance] currentValue];
     self.info.text = @"";
-    [[[[wMPeripheral settings] dateTime] setConfigModel:model] subscribeNext:^(WMDateTimeModel * _Nullable x) {
+    [[[[wMPeripheral settings] dateTime] setConfigModel:model] subscribeNext:^(NSNumber * _Nullable x) {
         @strongify(self);
-        self.info.text = [NSString stringWithFormat:@"%@\n%@",x.currentDate.description,NSStringFromTimeFormat(x.timeFormat)];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateStyle:NSDateFormatterLongStyle];
+        [formatter setTimeStyle:NSDateFormatterLongStyle];
+        [formatter setTimeZone:[NSTimeZone localTimeZone]]; // 设置为本地时区
+        self.info.text = [NSString stringWithFormat:@"%@\n%@",model.currentDate,NSStringFromTimeFormat(model.timeFormat)];
+        self.timeNow12.titleLabel.text =  NSLocalizedString(@"Synchronization time", nil);
+        self.timeNow24.titleLabel.text =  NSLocalizedString(@"Synchronization time", nil);
+      
     } error:^(NSError * _Nullable error) {
         [SVProgressHUD showErrorWithStatus:@"Set time fail"];
     }];

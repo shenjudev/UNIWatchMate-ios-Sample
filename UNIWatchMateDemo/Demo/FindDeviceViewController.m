@@ -23,7 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"Find device";
+    self.title = NSLocalizedString(@"Find device", nil);
 
 
     self.ringCountTip.frame = CGRectMake(20, 100, CGRectGetWidth(self.view.frame) - 40, 44);
@@ -64,7 +64,7 @@
 -(UILabel *)ringCountTip{
     if (_ringCountTip == nil){
         _ringCountTip = [UILabel new];
-        _ringCountTip.text = @"Please input ring count.";
+        _ringCountTip.text = NSLocalizedString(@"Please input ring count.", nil);
         _ringCountTip.numberOfLines = 0;
         _ringCountTip.adjustsFontSizeToFitWidth = YES;
         [self.view addSubview:_ringCountTip];
@@ -78,7 +78,7 @@
         _ringCount = [UITextField new];
         _ringCount.delegate = self;
         _ringCount.keyboardType = UIKeyboardTypeNumberPad;
-        _ringCount.placeholder = @"Ring count";
+        _ringCount.placeholder = NSLocalizedString(@"Ring count", nil);
         [self.view addSubview:_ringCount];
     }
     return  _ringCount;
@@ -86,7 +86,7 @@
 -(UILabel *)ringTimeTip{
     if (_ringTimeTip == nil){
         _ringTimeTip = [UILabel new];
-        _ringTimeTip.text = @"Please input ring time. s";
+        _ringTimeTip.text = NSLocalizedString(@"Please input ring time. s", nil);
         _ringTimeTip.numberOfLines = 0;
         _ringTimeTip.adjustsFontSizeToFitWidth = YES;
         [self.view addSubview:_ringTimeTip];
@@ -99,7 +99,7 @@
         _ringTime = [UITextField new];
         _ringTime.delegate = self;
         _ringTime.keyboardType = UIKeyboardTypeNumberPad;
-        _ringTime.placeholder = @"Ring time";
+        _ringTime.placeholder = NSLocalizedString(@"Ring time", nil);
         [self.view addSubview:_ringTime];
     }
     return  _ringTime;
@@ -107,7 +107,7 @@
 -(UIButton *)findBtn{
     if (_findBtn == nil){
         _findBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_findBtn setTitle:@"Find" forState:UIControlStateNormal];
+        [_findBtn setTitle:NSLocalizedString(@"Find", nil) forState:UIControlStateNormal];
         [_findBtn setBackgroundColor:[UIColor blueColor]];
         [_findBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_findBtn addTarget:self action:@selector(actionFind) forControlEvents:UIControlEventTouchUpInside];

@@ -7,7 +7,7 @@
 
 #import "CameraControlViewController.h"
 #import <AVFoundation/AVFoundation.h>
-
+#import <Photos/Photos.h>
 @interface CameraControlViewController () <AVCapturePhotoCaptureDelegate,WMCameraAppDelegate>
 
 @property (nonatomic, strong) AVCaptureSession *captureSession;
@@ -27,15 +27,44 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    @weakify(self);
-    [[[WatchManager sharedInstance].currentValue.apps.cameraApp openOrCloseCamera:YES] subscribeNext:^(NSNumber * _Nullable x) {
-        @strongify(self);
-        BOOL isOpen = [x boolValue];
-        [[[WatchManager sharedInstance].currentValue.apps.cameraApp configFlash:self.currentFlashMode == AVCaptureFlashModeOn ? WMCameraFlashModeOn:WMCameraFlashModeOff] subscribeNext:^(NSNumber * _Nullable x) {} error:^(NSError * _Nullable error) {}];
-        [[[WatchManager sharedInstance].currentValue.apps.cameraApp videoPreviewBegin] subscribeNext:^(NSNumber * _Nullable x) {} error:^(NSError * _Nullable error) {}];
-    } error:^(NSError * _Nullable error) {
-        
-    }];
+   
+    if(_openFromDevice){
+        @weakify(self);
+//        [[[WatchManager sharedInstance].currentValue.apps.cameraApp configFlash:self.currentFlashMode == AVCaptureFlashModeOn ? WMCameraFlashModeOn:WMCameraFlashModeOff] subscribeNext:^(NSNumber * _Nullable x) {
+//
+//        } error:^(NSError * _Nullable error) {
+//            NSLog(@"configFlash error");
+//
+//        }];
+        [[[WatchManager sharedInstance].currentValue.apps.cameraApp videoPreviewBegin] subscribeNext:^(NSNumber * _Nullable x) {
+            @strongify(self);
+            NSLog(@"videoPreviewBegin success");
+        } error:^(NSError * _Nullable error) {
+            NSLog(@"videoPreviewBegin error");
+        }];
+    }else{
+        @weakify(self);
+        [[[WatchManager sharedInstance].currentValue.apps.cameraApp openOrCloseCamera:YES] subscribeNext:^(NSNumber * _Nullable x) {
+            @strongify(self);
+            NSLog(@"openOrCloseCamera YES success");
+            BOOL isOpen = [x boolValue];
+            [[[WatchManager sharedInstance].currentValue.apps.cameraApp configFlash:self.currentFlashMode == AVCaptureFlashModeOn ? WMCameraFlashModeOn:WMCameraFlashModeOff] subscribeNext:^(NSNumber * _Nullable x) {
+                
+            } error:^(NSError * _Nullable error) {
+                NSLog(@"configFlash error");
+
+            }];
+            [[[WatchManager sharedInstance].currentValue.apps.cameraApp videoPreviewBegin] subscribeNext:^(NSNumber * _Nullable x) {
+                NSLog(@"videoPreviewBegin success");
+            } error:^(NSError * _Nullable error) {
+                NSLog(@"videoPreviewBegin error");
+            }];
+        } error:^(NSError * _Nullable error) {
+            NSLog(@"openOrCloseCamera YES error");
+
+        }];
+    }
+
 }
 - (void)viewDidDisappear:(BOOL)animated
 {
@@ -45,6 +74,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = NSLocalizedString(@"Camera Control",nil);
     self.view.backgroundColor = [UIColor whiteColor];
     AVCapturePhotoSettings *photoSettings = [AVCapturePhotoSettings photoSettings];
     self.currentFlashMode = photoSettings.flashMode;
@@ -145,15 +175,19 @@
     NSDictionary *userInfo = noti.userInfo;
     if (userInfo!= nil){
         BOOL isOpen = [userInfo[@"isOpen"] boolValue];
-        if (isOpen == YES){
-        }
+       
         WatchresultBlock resultBlock = noti.userInfo[@"result"];
         if (resultBlock) {
             resultBlock(YES);
         }
+        if (isOpen == YES){
+        }else{
+            [self.navigationController popViewControllerAnimated:true];
+
+        }
     }
-    
 }
+
 -(void)notiWatchSwitchCameraCaptureResult:(NSNotification *)noti{
     NSDictionary *userInfo = noti.userInfo;
     if (userInfo!= nil){
@@ -163,8 +197,8 @@
             resultBlock(YES);
         }
     }
-    
 }
+
 -(void)notiWatchSwitchCameraPosition:(NSNotification *)noti{
     NSDictionary *userInfo = noti.userInfo;
     if (userInfo!= nil){
@@ -308,13 +342,6 @@
     [self.flashButton setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
 }
 
-
-
-
-
-
-
-
 - (void)selectPhotoButtonTapped {
     // 处理选择照片按钮点击事件
     // ...
@@ -351,7 +378,19 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.imageView setHidden:YES];
     });
+    
     // 处理拍照完成后的操作，例如展示照片或保存到相册
+if(imageData) {
+    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+        [PHAssetCreationRequest creationRequestForAssetFromImage:[UIImage imageWithData:imageData]];
+    } completionHandler:^(BOOL success, NSError * _Nullable error) {
+        if (success) {
+            NSLog(@"Photo has been successfully saved to the album.");
+        } else {
+            NSLog(@"Error saving photo: %@", error);
+        }
+    }];
+}
     // ...
 }
 -(void)changePosition:(NSNumber *)position{

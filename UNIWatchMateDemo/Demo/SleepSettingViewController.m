@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *detail;
 @property (weak, nonatomic) IBOutlet UIDatePicker *startTime;
 @property (weak, nonatomic) IBOutlet UIDatePicker *endTime;
+@property(strong,nonatomic) WMSleepModel *wMSleepModel;
 
 @end
 
@@ -35,11 +36,13 @@
     self.detail.text = @"";
     @weakify(self);
     WMPeripheral *wMPeripheral = [[WatchManager sharedInstance] currentValue];
-    WMSleepModel *wMSleepModel = [WatchManager sharedInstance].currentValue.settings.sleep.modelValue;
-    wMSleepModel.isEnabled = enable;
-    [[[[wMPeripheral settings] sleep] setConfigModel:wMSleepModel] subscribeNext:^(WMSleepModel * _Nullable x) {
+    if(_wMSleepModel == nil){
+        return;
+    }
+    _wMSleepModel.isEnabled = enable;
+    [[[[wMPeripheral settings] sleep] setConfigModel:_wMSleepModel] subscribeNext:^(NSNumber * _Nullable x) {
         @strongify(self);
-        self.detail.text = [NSString stringWithFormat:@"isEnabled:%d\nstart:%@\nend:%@\n",x.isEnabled,[x.timeRange.start stringWithFormat:@"HH:mm"],[x.timeRange.end stringWithFormat:@"HH:mm"]];
+        self.detail.text = [NSString stringWithFormat:@"isEnabled:%d\nstart:%@\nend:%@\n",_wMSleepModel.isEnabled,[_wMSleepModel.timeRange.start stringWithFormat:@"HH:mm"],[_wMSleepModel.timeRange.end stringWithFormat:@"HH:mm"]];
     } error:^(NSError * _Nullable error) {
         [SVProgressHUD showErrorWithStatus:@"Set fail"];
     }];
@@ -47,16 +50,18 @@
 -(void)setTimeIsStart:(BOOL)isStart{
     self.detail.text = @"";
     @weakify(self);
-    WMPeripheral *wMPeripheral = [[WatchManager sharedInstance] currentValue];
-    WMSleepModel *wMSleepModel = [WatchManager sharedInstance].currentValue.settings.sleep.modelValue;
-    if (isStart == true){
-        wMSleepModel.timeRange.start = self.startTime.date;
-    }else{
-        wMSleepModel.timeRange.end = self.endTime.date;
+    if(_wMSleepModel == nil){
+        return;
     }
-    [[[[wMPeripheral settings] sleep] setConfigModel:wMSleepModel] subscribeNext:^(WMSleepModel * _Nullable x) {
+    WMPeripheral *wMPeripheral = [[WatchManager sharedInstance] currentValue];
+    if (isStart == true){
+        _wMSleepModel.timeRange.start = self.startTime.date;
+    }else{
+        _wMSleepModel.timeRange.end = self.endTime.date;
+    }
+    [[[[wMPeripheral settings] sleep] setConfigModel:_wMSleepModel] subscribeNext:^(NSNumber * _Nullable x) {
         @strongify(self);
-        self.detail.text = [NSString stringWithFormat:@"isEnabled:%d\nstart:%@\nend:%@\n",x.isEnabled,[x.timeRange.start stringWithFormat:@"HH:mm"],[x.timeRange.end stringWithFormat:@"HH:mm"]];
+        self.detail.text = [NSString stringWithFormat:@"isEnabled:%d\nstart:%@\nend:%@\n",_wMSleepModel.isEnabled,[_wMSleepModel.timeRange.start stringWithFormat:@"HH:mm"],[_wMSleepModel.timeRange.end stringWithFormat:@"HH:mm"]];
     } error:^(NSError * _Nullable error) {
         [SVProgressHUD showErrorWithStatus:@"Set fail"];
     }];
@@ -75,7 +80,8 @@
     WMPeripheral *wMPeripheral = [[WatchManager sharedInstance] currentValue];
     [[[[wMPeripheral settings] sleep] getConfigModel] subscribeNext:^(WMSleepModel * _Nullable x) {
         @strongify(self);
-        self.detail.text = [NSString stringWithFormat:@"isEnabled:%d\nstart:%@\nend:%@\n",x.isEnabled,[x.timeRange.start stringWithFormat:@"HH:mm"],[x.timeRange.end stringWithFormat:@"HH:mm"]];
+        self->_wMSleepModel = x;
+        self.detail.text = [NSString stringWithFormat:@"isEnabled:%d\nstart:%@\nend:%@\n",_wMSleepModel.isEnabled,[x.timeRange.start stringWithFormat:@"HH:mm"],[_wMSleepModel.timeRange.end stringWithFormat:@"HH:mm"]];
     } error:^(NSError * _Nullable error) {
         
     }];

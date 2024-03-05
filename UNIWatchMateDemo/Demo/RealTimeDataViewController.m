@@ -4,7 +4,7 @@
 //
 //  Created by 孙强 on 2023/10/25.
 //
-
+#import "MJExtension.h"
 #import "RealTimeDataViewController.h"
 NSString *NSStringFromWMSportDataType(WMSportDataType sportDataType) {
     switch (sportDataType) {
@@ -69,7 +69,7 @@ NSString *NSStringFromWMSportDataType(WMSportDataType sportDataType) {
 -(UIButton *)getNowBtn{
     if (_getNowBtn == nil){
         _getNowBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_getNowBtn setTitle:@"Get Now" forState:UIControlStateNormal];
+        [_getNowBtn setTitle:NSLocalizedString(@"Get Now", nil) forState:UIControlStateNormal];
         [_getNowBtn addTarget:self action:@selector(actionSelecteDate) forControlEvents:UIControlEventTouchUpInside];
         _getNowBtn.layer.masksToBounds = YES;
         _getNowBtn.layer.cornerRadius = 5;
@@ -114,169 +114,231 @@ NSString *NSStringFromWMSportDataType(WMSportDataType sportDataType) {
 
     self.textView.text = @"";
     @weakify(self);
-    if ([self.title isEqualToString:@"Sync step"]){
+    if ([self.title isEqualToString:NSLocalizedString(@"Sync step", nil)]){
         [SVProgressHUD showWithStatus:nil];
         [[[WatchManager sharedInstance].currentValue.datasSync.syncStep syncDataWithStartTime:interval] subscribeNext:^(NSArray<WMStepDataModel *> * _Nullable x) {
             @strongify(self);
 
             NSMutableString *info = [NSMutableString new];
-            [info appendFormat:@"latestSyncTime: %f\n",[WatchManager sharedInstance].currentValue.datasSync.syncStep.latestSyncTime];
-            for (WMStepDataModel *m in x) {
-                [info appendFormat:@"{\n"];
-                [info appendFormat:@"steps:%d\n",m.steps];
-                [info appendFormat:@"timestamp:%f\n",m.timestamp];
-                [info appendFormat:@"duration:%f\n",m.duration];
-                [info appendFormat:@"},\n\n"];
+//            [info appendFormat:@"latestSyncTime: %f\n",[WatchManager sharedInstance].currentValue.datasSync.syncStep.latestSyncTime];
+            for (WMBaseByDayDataModel *m in x) {
+                for(WMStepDataModel *step in m.datas){
+                    [info appendFormat:@"{\n"];
+                    [info appendFormat:@"steps:%ld\n",(long)step.steps];
+                    [info appendString:[self getDateStringWithTimeStr:step.timestamp]];
+    //                [info appendFormat:@"duration:%f\n",m.duration];
+                    [info appendFormat:@"},\n\n"];
+                }
             }
             self.textView.text = info;
-            [self.getNowBtn setTitle:[NSString stringWithFormat:@"Get Now (%@)",date.description] forState:UIControlStateNormal];
+            [self.getNowBtn setTitle:[NSString stringWithFormat:NSLocalizedString(NSLocalizedString(@"Get Now (%@)", nil), nil),date.description] forState:UIControlStateNormal];
             [SVProgressHUD dismiss];
         } error:^(NSError * _Nullable error) {
             [SVProgressHUD dismiss];
             [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Get Fail\n%@",error.description]];
         }];
-    }else if ([self.title isEqualToString:@"Sync calorie"]){
+    }else if ([self.title isEqualToString:NSLocalizedString(@"Sync calorie", nil)]){
         [SVProgressHUD showWithStatus:nil];
         [[[WatchManager sharedInstance].currentValue.datasSync.syncCalorie syncDataWithStartTime:interval] subscribeNext:^(NSArray<WMCalorieDataModel *> * _Nullable x) {
             @strongify(self);
             NSMutableString *info = [NSMutableString new];
-            [info appendFormat:@"latestSyncTime: %f\n",[WatchManager sharedInstance].currentValue.datasSync.syncStep.latestSyncTime];
-            for (WMCalorieDataModel *m in x) {
-                [info appendFormat:@"{\n"];
-                [info appendFormat:@"calorie:%d\n",m.calorie];
-                [info appendFormat:@"timestamp:%f\n",m.timestamp];
-                [info appendFormat:@"duration:%f\n",m.duration];
-                [info appendFormat:@"},\n\n"];
+//            [info appendFormat:@"latestSyncTime: %f\n",[WatchManager sharedInstance].currentValue.datasSync.syncStep.latestSyncTime];
+            for (WMBaseByDayDataModel *m in x) {
+                for(WMCalorieDataModel *ca in m.datas){
+                    [info appendFormat:@"{\n"];
+                    [info appendFormat:@"calorie:%ld\n",ca.calorie];
+                    [info appendString:[self getDateStringWithTimeStr:ca.timestamp]];
+                    //                [info appendFormat:@"duration:%f\n",m.duration];
+                    [info appendFormat:@"},\n\n"];
+                }
             }
             self.textView.text = info;
-            [self.getNowBtn setTitle:[NSString stringWithFormat:@"Get Now (%@)",date.description] forState:UIControlStateNormal];
+            [self.getNowBtn setTitle:[NSString stringWithFormat:NSLocalizedString(@"Get Now (%@)", nil),date.description] forState:UIControlStateNormal];
             [SVProgressHUD dismiss];
         } error:^(NSError * _Nullable error) {
             [SVProgressHUD dismiss];
             [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Get Fail\n%@",error.description]];
         }];
-    }else if ([self.title isEqualToString:@"Sync activity time"]){
+    }else if ([self.title isEqualToString:NSLocalizedString(@"Sync activity time", nil)]){
         [SVProgressHUD showWithStatus:nil];
         [[[WatchManager sharedInstance].currentValue.datasSync.syncActivityTime syncDataWithStartTime:interval] subscribeNext:^(NSArray<WMActivityTimeDataModel *> * _Nullable x) {
             @strongify(self);
             NSMutableString *info = [NSMutableString new];
-            [info appendFormat:@"latestSyncTime: %f\n",[WatchManager sharedInstance].currentValue.datasSync.syncStep.latestSyncTime];
-            for (WMActivityTimeDataModel *m in x) {
-                [info appendFormat:@"{\n"];
-                [info appendFormat:@"activityTime:%d\n",m.activityTime];
-                [info appendFormat:@"timestamp:%f\n",m.timestamp];
-                [info appendFormat:@"duration:%f\n",m.duration];
-                [info appendFormat:@"},\n\n"];
+//            [info appendFormat:@"latestSyncTime: %f\n",[WatchManager sharedInstance].currentValue.datasSync.syncStep.latestSyncTime];
+            for (WMBaseByDayDataModel *m in x) {
+                for(WMActivityTimeDataModel *activity in m.datas){
+                    
+                    [info appendFormat:@"{\n"];
+                    [info appendFormat:@"activityTime:%ld\n",activity.activityTime];
+                    [info appendString:[self getDateStringWithTimeStr:activity.timestamp]];
+                    //                [info appendFormat:@"duration:%f\n",m.duration];
+                    [info appendFormat:@"},\n\n"];
+                }
             }
             self.textView.text = info;
-            [self.getNowBtn setTitle:[NSString stringWithFormat:@"Get Now (%@)",date.description] forState:UIControlStateNormal];
+            [self.getNowBtn setTitle:[NSString stringWithFormat:NSLocalizedString(@"Get Now (%@)", nil),date.description] forState:UIControlStateNormal];
             [SVProgressHUD dismiss];
         } error:^(NSError * _Nullable error) {
             [SVProgressHUD dismiss];
             [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Get Fail\n%@",error.description]];
         }];
-    }else if ([self.title isEqualToString:@"Sync distance"]){
+    }else if ([self.title isEqualToString:NSLocalizedString(@"Sync distance", nil)]){
         [SVProgressHUD showWithStatus:nil];
         [[[WatchManager sharedInstance].currentValue.datasSync.syncDistance syncDataWithStartTime:interval] subscribeNext:^(NSArray<WMDistanceDataModel *> * _Nullable x) {
             @strongify(self);
             NSMutableString *info = [NSMutableString new];
-            [info appendFormat:@"latestSyncTime: %f\n",[WatchManager sharedInstance].currentValue.datasSync.syncStep.latestSyncTime];
-            for (WMDistanceDataModel *m in x) {
-                [info appendFormat:@"{\n"];
-                [info appendFormat:@"distance:%d\n",m.distance];
-                [info appendFormat:@"timestamp:%f\n",m.timestamp];
-                [info appendFormat:@"duration:%f\n",m.duration];
-                [info appendFormat:@"},\n\n"];
-            }
-            self.textView.text = info;
-            [self.getNowBtn setTitle:[NSString stringWithFormat:@"Get Now (%@)",date.description] forState:UIControlStateNormal];
-            [SVProgressHUD dismiss];
-        } error:^(NSError * _Nullable error) {
-            [SVProgressHUD dismiss];
-            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Get Fail\n%@",error.description]];
-        }];
-    }else if ([self.title isEqualToString:@"Sync heart rate"]){
-        [SVProgressHUD showWithStatus:nil];
-        [[[WatchManager sharedInstance].currentValue.datasSync.syncHeartRate syncDataWithStartTime:interval] subscribeNext:^(NSArray<WMHeartRateDataModel *> * _Nullable x) {
-            @strongify(self);
-            NSMutableString *info = [NSMutableString new];
-            [info appendFormat:@"latestSyncTime: %f\n",[WatchManager sharedInstance].currentValue.datasSync.syncStep.latestSyncTime];
-            for (WMHeartRateDataModel *m in x) {
-                [info appendFormat:@"{\n"];
-                [info appendFormat:@"heartRate:%d\n",m.heartRate];
-                [info appendFormat:@"timestamp:%f\n",m.timestamp];
-                [info appendFormat:@"duration:%f\n",m.duration];
-                [info appendFormat:@"},\n\n"];
-            }
-            self.textView.text = info;
-            [self.getNowBtn setTitle:[NSString stringWithFormat:@"Get Now (%@)",date.description] forState:UIControlStateNormal];
-            [SVProgressHUD dismiss];
-        } error:^(NSError * _Nullable error) {
-            [SVProgressHUD dismiss];
-            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Get Fail\n%@",error.description]];
-        }];
-    }else if ([self.title isEqualToString:@"Sync heart rate statistics"]){
-        [SVProgressHUD showWithStatus:nil];
-        [[[WatchManager sharedInstance].currentValue.datasSync.syncHeartRateStatistics syncDataWithStartTime:interval] subscribeNext:^(NSArray<WMHeartRateStatisticsDataModel *> * _Nullable x) {
-            @strongify(self);
-            NSMutableString *info = [NSMutableString new];
-            [info appendFormat:@"latestSyncTime: %f\n",[WatchManager sharedInstance].currentValue.datasSync.syncStep.latestSyncTime];
-            for (WMHeartRateStatisticsDataModel *m in x) {
-                [info appendFormat:@"{\n"];
-                [info appendFormat:@"highestHeartRate:%ld\n",(long)m.highestHeartRate];
-                [info appendFormat:@"lowestHeartRate:%ld\n",(long)m.lowestHeartRate];
-                [info appendFormat:@"averageHeartRate:%f\n",m.averageHeartRate];
-                [info appendFormat:@"timestamp:%f\n",m.timestamp];
-                [info appendFormat:@"duration:%f\n",m.duration];
-                [info appendFormat:@"},\n\n"];
-            }
-            self.textView.text = info;
-            [self.getNowBtn setTitle:[NSString stringWithFormat:@"Get Now (%@)",date.description] forState:UIControlStateNormal];
-            [SVProgressHUD dismiss];
-        } error:^(NSError * _Nullable error) {
-            [SVProgressHUD dismiss];
-            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Get Fail\n%@",error.description]];
-        }];
-    }else if ([self.title isEqualToString:@"Sync blood oxygen"]){
-        [SVProgressHUD showWithStatus:nil];
-        [[[WatchManager sharedInstance].currentValue.datasSync.syncBloodOxygen syncDataWithStartTime:interval] subscribeNext:^(NSArray<WMBloodOxygenDataModel *> * _Nullable x) {
-            @strongify(self);
-            NSMutableString *info = [NSMutableString new];
-            [info appendFormat:@"latestSyncTime: %f\n",[WatchManager sharedInstance].currentValue.datasSync.syncStep.latestSyncTime];
-            for (WMBloodOxygenDataModel *m in x) {
-                [info appendFormat:@"{\n"];
-                [info appendFormat:@"timestamp:%f\n",m.timestamp];
-                [info appendFormat:@"duration:%f\n",m.duration];
-                [info appendFormat:@"},\n\n"];
-            }
-            self.textView.text = info;
-            [self.getNowBtn setTitle:[NSString stringWithFormat:@"Get Now (%@)",date.description] forState:UIControlStateNormal];
-            [SVProgressHUD dismiss];
-        } error:^(NSError * _Nullable error) {
-            [SVProgressHUD dismiss];
-            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Get Fail\n%@",error.description]];
-        }];
-    }else if ([self.title isEqualToString:@"Sync ctivity data"]){
-        [SVProgressHUD showWithStatus:nil];
-        [[[WatchManager sharedInstance].currentValue.datasSync.syncActivity syncDataWithStartTime:interval] subscribeNext:^(NSArray<WMActivityDataModel *> * _Nullable x) {
-            @strongify(self);
-            NSMutableString *info = [NSMutableString new];
-            [info appendFormat:@"latestSyncTime: %f\n",[WatchManager sharedInstance].currentValue.datasSync.syncStep.latestSyncTime];
-            for (WMActivityDataModel *m in x) {
-                [info appendFormat:@"{\n"];
-                [info appendFormat:@"activityType:%ld\n",(long)m.activityType];
-
-                for (WMSportDataModel *sportModel in m.sportDatas) {
-                    [info appendFormat:@" {\n"];
-                    [info appendFormat:@" sportDataType:%@\n",NSStringFromWMSportDataType(sportModel.sportDataType)];
-                    [info appendFormat:@" value:%f\n",sportModel.value];
-                    [info appendFormat:@" },\n"];
+//            [info appendFormat:@"latestSyncTime: %f\n",[WatchManager sharedInstance].currentValue.datasSync.syncStep.latestSyncTime];
+            for (WMBaseByDayDataModel *m in x) {
+                for(WMDistanceDataModel *distance in m.datas){
+                    [info appendFormat:@"{\n"];
+                    [info appendFormat:@"distance:%ld\n",distance.distance];
+                    [info appendString:[self getDateStringWithTimeStr:distance.timestamp]];
+                    //                [info appendFormat:@"duration:%f\n",m.duration];
+                    [info appendFormat:@"},\n\n"];
                 }
-
-                [info appendFormat:@"},\n\n"];
             }
             self.textView.text = info;
-            [self.getNowBtn setTitle:[NSString stringWithFormat:@"Get Now (%@)",date.description] forState:UIControlStateNormal];
+            [self.getNowBtn setTitle:[NSString stringWithFormat:NSLocalizedString(@"Get Now (%@)", nil),date.description] forState:UIControlStateNormal];
+            [SVProgressHUD dismiss];
+        } error:^(NSError * _Nullable error) {
+            [SVProgressHUD dismiss];
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Get Fail\n%@",error.description]];
+        }];
+    }else if ([self.title isEqualToString:NSLocalizedString(@"Sync heart rate", nil)]){
+        [SVProgressHUD showWithStatus:nil];
+        [[[WatchManager sharedInstance].currentValue.datasSync.syncHeartRate syncDataWithStartTime:interval] subscribeNext:^(NSArray<WMBaseByDayDataModel<WMHeartRateDataModel *> *> * _Nullable x) {
+            @strongify(self);
+            NSMutableString *info = [NSMutableString new];
+            //
+//            [info appendFormat:@"latestSyncTime: %f\n",[WatchManager sharedInstance].currentValue.datasSync.syncStep.latestSyncTime];
+            for (WMBaseByDayDataModel<WMHeartRateDataModel *> *m in x) {
+                for(WMHeartRateDataModel *heartRate in m.datas){
+                    [info appendFormat:@"{\n"];
+                    [info appendFormat:@"heartRate:%ld\n",heartRate.heartRate];
+                    [info appendString:[self getDateStringWithTimeStr:heartRate.timestamp]];
+    //                [info appendFormat:@"duration:%f\n",m.duration];
+                    [info appendFormat:@"},\n\n"];
+                }
+              
+            }
+            self.textView.text = info;
+            [self.getNowBtn setTitle:[NSString stringWithFormat:NSLocalizedString(@"Get Now (%@)", nil),date.description] forState:UIControlStateNormal];
+            [SVProgressHUD dismiss];
+        } error:^(NSError * _Nullable error) {
+            [SVProgressHUD dismiss];
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Get Fail\n%@",error.description]];
+        }];
+    }else if ([self.title isEqualToString:NSLocalizedString(@"Sync heart rate statistics", nil)]){
+        [SVProgressHUD showWithStatus:nil];
+        [[[WatchManager sharedInstance].currentValue.datasSync.syncHeartRateStatistics syncDataWithStartTime:interval] subscribeNext:^(NSArray<WMBaseByDayDataModel<WMHeartRateStatisticsDataModel *> *> * _Nullable x) {
+            @strongify(self);
+            NSMutableString *info = [NSMutableString new];
+//            [info appendFormat:@"latestSyncTime: %f\n",[WatchManager sharedInstance].currentValue.datasSync.syncStep.latestSyncTime];
+            for (WMBaseByDayDataModel<WMHeartRateStatisticsDataModel *> *m in x) {
+                for (WMHeartRateStatisticsDataModel *heartStatistics in m.datas) {
+                    [info appendFormat:@"{\n"];
+                    [info appendFormat:@"highestHeartRate:%ld\n",(long)heartStatistics.highestHeartRate];
+                    [info appendFormat:@"lowestHeartRate:%ld\n",(long)heartStatistics.lowestHeartRate];
+                    [info appendFormat:@"averageHeartRate:%f\n",heartStatistics.averageHeartRate];
+                    [info appendString:[self getDateStringWithTimeStr:heartStatistics.timestamp]];
+                    
+                    //                [info appendFormat:@"duration:%f\n",m.duration];
+                    [info appendFormat:@"},\n\n"];
+                }
+            }
+            self.textView.text = info;
+            [self.getNowBtn setTitle:[NSString stringWithFormat:NSLocalizedString(@"Get Now (%@)", nil),date.description] forState:UIControlStateNormal];
+            [SVProgressHUD dismiss];
+        } error:^(NSError * _Nullable error) {
+            [SVProgressHUD dismiss];
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Get Fail\n%@",error.description]];
+        }];
+    }else if ([self.title isEqualToString:NSLocalizedString(@"Sync blood oxygen", nil)]){
+        [SVProgressHUD showWithStatus:nil];
+        [[[WatchManager sharedInstance].currentValue.datasSync.syncBloodOxygen syncDataWithStartTime:interval] subscribeNext:^(NSArray<WMBaseByDayDataModel<WMBloodOxygenDataModel *> *> * _Nullable x) {
+            @strongify(self);
+            NSMutableString *info = [NSMutableString new];
+//            [info appendFormat:@"latestSyncTime: %f\n",[WatchManager sharedInstance].currentValue.datasSync.syncStep.latestSyncTime];
+            for (WMBaseByDayDataModel<WMBloodOxygenDataModel *> *m in x) {
+                for (WMBloodOxygenDataModel *bloodOxygen in m.datas) {
+                    [info appendFormat:@"{\n"];
+                    [info appendFormat:@"bloodOxygen:%ld\n",(long)bloodOxygen.value];
+                    [info appendString:[self getDateStringWithTimeStr:bloodOxygen.timestamp]];
+                    //                [info appendFormat:@"duration:%f\n",m.duration];
+                    [info appendFormat:@"},\n\n"];
+                }
+            }
+            self.textView.text = info;
+            [self.getNowBtn setTitle:[NSString stringWithFormat:NSLocalizedString(@"Get Now (%@)", nil),date.description] forState:UIControlStateNormal];
+            [SVProgressHUD dismiss];
+        } error:^(NSError * _Nullable error) {
+            [SVProgressHUD dismiss];
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Get Fail\n%@",error.description]];
+        }];
+    }else if ([self.title isEqualToString:NSLocalizedString(@"Sync activity data", nil)]){
+        [SVProgressHUD showWithStatus:nil];
+        [[[WatchManager sharedInstance].currentValue.datasSync.syncActivity syncDataWithStartTime:interval] subscribeNext:^(NSArray<WMActivityDataModel  *> * _Nullable x) {
+            @strongify(self);
+            NSMutableString *info = [NSMutableString new];
+//            [info appendFormat:@"latestSyncTime: %f\n",[WatchManager sharedInstance].currentValue.datasSync.syncStep.latestSyncTime];
+//            for (WMBaseByDayDataModel<WMActivityDataModel *> *m in x) {
+                for (WMActivityDataModel *activityData in x) {
+                    [info appendFormat:@"{\n"];
+                    [info appendFormat:@" sportDataType:%ld\n",activityData.sport_type];
+                    [info appendString:[self getDateStringWithTimeStr:activityData.ts_start]];
+                    NSDictionary *personDict = [activityData mj_keyValues];
+                    NSString *jsonString = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:personDict options:0 error:nil] encoding:NSUTF8StringEncoding];
+                    [info appendFormat:@"\ndata:%@\n",jsonString];
+                    [info appendFormat:@"},\n\n"];
+                }
+//            }
+            self.textView.text = info;
+            [self.getNowBtn setTitle:[NSString stringWithFormat:NSLocalizedString(@"Get Now (%@)", nil),date.description] forState:UIControlStateNormal];
+            [SVProgressHUD dismiss];
+        } error:^(NSError * _Nullable error) {
+            [SVProgressHUD dismiss];
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Get Fail\n%@",error.description]];
+        }];
+    }else if ([self.title isEqualToString:NSLocalizedString(@"Sync activity type data", nil)]){
+        [SVProgressHUD showWithStatus:nil];
+        [[[WatchManager sharedInstance].currentValue.datasSync.syncActivityTypeTime syncDataWithStartTime:interval] subscribeNext:^(NSArray<WMBaseByDayDataModel<WMActivityTypeTimeDataModel *> *> * _Nullable x) {
+            @strongify(self);
+            NSMutableString *info = [NSMutableString new];
+//            [info appendFormat:@"latestSyncTime: %f\n",[WatchManager sharedInstance].currentValue.datasSync.syncStep.latestSyncTime];
+            for (WMBaseByDayDataModel<WMActivityTypeTimeDataModel *> *m in x) {
+                for (WMActivityTypeTimeDataModel *activityTypeTime in m.datas) {
+                    [info appendFormat:@"{\n"];
+                    [info appendFormat:@" activityType:%ld\n",activityTypeTime.activityType];
+                    [info appendFormat:@" activityTime:%ld\n",activityTypeTime.activityTime];
+                    [info appendString:[self getDateStringWithTimeStr:activityTypeTime.timestamp]];
+                    [info appendFormat:@" },\n"];
+                    [info appendFormat:@"},\n\n"];
+                }
+            }
+            self.textView.text = info;
+            [self.getNowBtn setTitle:[NSString stringWithFormat:NSLocalizedString(@"Get Now (%@)", nil),date.description] forState:UIControlStateNormal];
+            [SVProgressHUD dismiss];
+        } error:^(NSError * _Nullable error) {
+            [SVProgressHUD dismiss];
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Get Fail\n%@",error.description]];
+        }];
+    }else if ([self.title isEqualToString:NSLocalizedString(@"Sync sleep data", nil)]){
+        [SVProgressHUD showWithStatus:nil];
+        [[[WatchManager sharedInstance].currentValue.datasSync.syncSleep syncDataWithStartTime:interval] subscribeNext:^(NSArray<WMSleepDataModel *> * _Nullable x) {
+            @strongify(self);
+            NSMutableString *info = [NSMutableString new];
+//            [info appendFormat:@"latestSyncTime: %f\n",[WatchManager sharedInstance].currentValue.datasSync.syncStep.latestSyncTime];
+            for (WMSleepDataModel *m in x) {
+                [info appendFormat:@" bed_time:%@\n",[self getDateStringWithTimeStr:m.bed_time]];
+                [info appendFormat:@" get_up_time:%@\n",[self getDateStringWithTimeStr:m.get_up_time]];
+                NSDictionary *personDict = [m mj_keyValues];
+                NSString *jsonString = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:personDict options:0 error:nil] encoding:NSUTF8StringEncoding];
+                [info appendFormat:@" data:%@\n",jsonString];
+                [info appendFormat:@" \n"];
+                [info appendFormat:@"\n\n"];
+            }
+            self.textView.text = info;
+            [self.getNowBtn setTitle:[NSString stringWithFormat:NSLocalizedString(@"Get Now (%@)", nil),date.description] forState:UIControlStateNormal];
             [SVProgressHUD dismiss];
         } error:^(NSError * _Nullable error) {
             [SVProgressHUD dismiss];
@@ -285,6 +347,17 @@ NSString *NSStringFromWMSportDataType(WMSportDataType sportDataType) {
     }
 
 }
+
+// 时间戳转时间,时间戳为13位是精确到毫秒的，10位精确到秒
+- (NSString *)getDateStringWithTimeStr:(NSTimeInterval )time{
+    NSDate *detailDate=[NSDate dateWithTimeIntervalSince1970:time];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init]; //实例化一个NSDateFormatter对象
+    //设定时间格式,这里可以设置成自己需要的格式
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSString *currentDateStr = [dateFormatter stringFromDate: detailDate];
+    return currentDateStr;
+}
+
 
 /*
  #pragma mark - Navigation

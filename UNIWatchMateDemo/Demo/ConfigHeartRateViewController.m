@@ -60,7 +60,7 @@
     if (!_isAutoTip) {
         _isAutoTip = [[UILabel alloc] init];
         // 进行其他属性设置和布局
-        _isAutoTip.text = @"isAutoMeasure";
+        _isAutoTip.text = NSLocalizedString(@"isAutoMeasure", nil);
         _isAutoTip.adjustsFontSizeToFitWidth = YES;
         [self.scrollView addSubview:_isAutoTip];
     }
@@ -95,7 +95,7 @@
 -(UIButton *)getNowBtn{
     if (_getNowBtn == nil){
         _getNowBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_getNowBtn setTitle:@"Get Now" forState:UIControlStateNormal];
+        [_getNowBtn setTitle:NSLocalizedString(@"Get Now", nil) forState:UIControlStateNormal];
         [_getNowBtn addTarget:self action:@selector(getNow) forControlEvents:UIControlEventTouchUpInside];
         _getNowBtn.layer.masksToBounds = YES;
         _getNowBtn.layer.cornerRadius = 5;
@@ -111,7 +111,7 @@
 - (UILabel *)heartRateRangeMaxTip {
     if (!_heartRateRangeMaxTip) {
         _heartRateRangeMaxTip = [[UILabel alloc] init];
-        _heartRateRangeMaxTip.text = @"maxHeartRate";
+        _heartRateRangeMaxTip.text = NSLocalizedString(@"maxHeartRate", nil);
         _heartRateRangeMaxTip.adjustsFontSizeToFitWidth = YES;
         _heartRateRangeMaxTip.textColor = [UIColor blackColor];
         _heartRateRangeMaxTip.adjustsFontSizeToFitWidth = YES;
@@ -124,7 +124,7 @@
 - (UITextField *)heartRateRangeMax {
     if (!_heartRateRangeMax) {
         _heartRateRangeMax = [[UITextField alloc] init];
-        _heartRateRangeMax.placeholder = @"Input max heart rate";
+        _heartRateRangeMax.placeholder = NSLocalizedString(@"Input max heart rate", nil);
         _heartRateRangeMax.textColor = [UIColor blackColor];
         _heartRateRangeMax.keyboardType = UIKeyboardTypeNumberPad;
         [self.scrollView addSubview:_heartRateRangeMax];
@@ -136,7 +136,7 @@
 - (UIButton *)heartRateRangeMaxSave {
     if (!_heartRateRangeMaxSave) {
         _heartRateRangeMaxSave = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_heartRateRangeMaxSave setTitle:@"Save" forState:UIControlStateNormal];
+        [_heartRateRangeMaxSave setTitle:NSLocalizedString(@"Save", nil) forState:UIControlStateNormal];
         [_heartRateRangeMaxSave setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_heartRateRangeMaxSave setBackgroundColor:[UIColor blueColor]];
         _heartRateRangeMaxSave.layer.masksToBounds = YES;
@@ -153,7 +153,7 @@
 - (UILabel *)exerciseAlertTip {
     if (!_exerciseAlertTip) {
         _exerciseAlertTip = [[UILabel alloc] init];
-        _exerciseAlertTip.text = @"exerciseAlert";
+        _exerciseAlertTip.text = NSLocalizedString(@"exerciseAlert", nil);
         _exerciseAlertTip.textColor = [UIColor blackColor];
         _exerciseAlertTip.adjustsFontSizeToFitWidth = YES;
         [self.scrollView addSubview:_exerciseAlertTip];
@@ -165,7 +165,7 @@
 - (UILabel *)exerciseAlertIsAlertEnabledTip {
     if (!_exerciseAlertIsAlertEnabledTip) {
         _exerciseAlertIsAlertEnabledTip = [[UILabel alloc] init];
-        _exerciseAlertIsAlertEnabledTip.text = @"IsAlertEnabled";
+        _exerciseAlertIsAlertEnabledTip.text = NSLocalizedString(@"IsAlertEnabled", nil);
         _exerciseAlertIsAlertEnabledTip.textColor = [UIColor blackColor];
         _exerciseAlertIsAlertEnabledTip.adjustsFontSizeToFitWidth = YES;
         [self.scrollView addSubview:_exerciseAlertIsAlertEnabledTip];
@@ -187,7 +187,7 @@
 - (UILabel *)exerciseAlertThresholdTip {
     if (!_exerciseAlertThresholdTip) {
         _exerciseAlertThresholdTip = [[UILabel alloc] init];
-        _exerciseAlertThresholdTip.text = @"Alert Threshold";
+        _exerciseAlertThresholdTip.text = NSLocalizedString(@"Alert Threshold", nil);
         _exerciseAlertThresholdTip.textColor = [UIColor blackColor];
         _exerciseAlertThresholdTip.adjustsFontSizeToFitWidth = YES;
         [self.scrollView addSubview:_exerciseAlertThresholdTip];
@@ -199,7 +199,7 @@
 - (UITextField *)exerciseAlertThreshold {
     if (!_exerciseAlertThreshold) {
         _exerciseAlertThreshold = [[UITextField alloc] init];
-        _exerciseAlertThreshold.placeholder = @"Input AlertThreshold";
+        _exerciseAlertThreshold.placeholder = NSLocalizedString(@"Input AlertThreshold", nil);
         _exerciseAlertThreshold.textColor = [UIColor blackColor];
         _exerciseAlertThreshold.keyboardType = UIKeyboardTypeNumberPad;
         [self.scrollView addSubview:_exerciseAlertThreshold];
@@ -211,7 +211,7 @@
 - (UIButton *)exerciseAlertThresholdSave {
     if (!_exerciseAlertThresholdSave) {
         _exerciseAlertThresholdSave = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_exerciseAlertThresholdSave setTitle:@"Save" forState:UIControlStateNormal];
+        [_exerciseAlertThresholdSave setTitle:NSLocalizedString(@"Save", nil) forState:UIControlStateNormal];
         [_exerciseAlertThresholdSave setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_exerciseAlertThresholdSave setBackgroundColor:[UIColor blueColor]];
         _exerciseAlertThresholdSave.layer.masksToBounds = YES;
@@ -226,7 +226,7 @@
 - (UILabel *)restingHeartRateAlertTip {
     if (!_restingHeartRateAlertTip) {
         _restingHeartRateAlertTip = [[UILabel alloc] init];
-        _restingHeartRateAlertTip.text = @"restingAlert";
+        _restingHeartRateAlertTip.text = NSLocalizedString(@"restingAlert", nil);
         _restingHeartRateAlertTip.textColor = [UIColor blackColor];
         _restingHeartRateAlertTip.adjustsFontSizeToFitWidth = YES;
         [self.scrollView addSubview:_restingHeartRateAlertTip];
@@ -238,7 +238,7 @@
 - (UILabel *)restingHeartRateAlertEnabledTip {
     if (!_restingHeartRateAlertEnabledTip) {
         _restingHeartRateAlertEnabledTip = [[UILabel alloc] init];
-        _restingHeartRateAlertEnabledTip.text = @"IsAlertEnabled";
+        _restingHeartRateAlertEnabledTip.text = NSLocalizedString(@"IsAlertEnabled", nil);
         _restingHeartRateAlertEnabledTip.textColor = [UIColor blackColor];
         _restingHeartRateAlertEnabledTip.adjustsFontSizeToFitWidth = YES;
         [self.scrollView addSubview:_restingHeartRateAlertEnabledTip];
@@ -262,7 +262,7 @@
 - (UILabel *)restingHeartRateAlertThresholdTip {
     if (!_restingHeartRateAlertThresholdTip) {
         _restingHeartRateAlertThresholdTip = [[UILabel alloc] init];
-        _restingHeartRateAlertThresholdTip.text = @"AlertThreshold";
+        _restingHeartRateAlertThresholdTip.text = NSLocalizedString(@"AlertThreshold", nil);
         _restingHeartRateAlertThresholdTip.textColor = [UIColor blackColor];
         _restingHeartRateAlertThresholdTip.adjustsFontSizeToFitWidth = YES;
         [self.scrollView addSubview:_restingHeartRateAlertThresholdTip];
@@ -274,7 +274,7 @@
 - (UITextField *)restingHeartRateAlertThreshold {
     if (!_restingHeartRateAlertThreshold) {
         _restingHeartRateAlertThreshold = [[UITextField alloc] init];
-        _restingHeartRateAlertThreshold.placeholder = @"Input Threshold";
+        _restingHeartRateAlertThreshold.placeholder = NSLocalizedString(@"Input Threshold", nil);
         _restingHeartRateAlertThreshold.textColor = [UIColor blackColor];
         _restingHeartRateAlertThreshold.keyboardType = UIKeyboardTypeNumberPad;
         [self.scrollView addSubview:_restingHeartRateAlertThreshold];
@@ -286,7 +286,7 @@
 - (UIButton *)restingHeartRateAlertThresholdSave {
     if (!_restingHeartRateAlertThresholdSave) {
         _restingHeartRateAlertThresholdSave = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_restingHeartRateAlertThresholdSave setTitle:@"Save" forState:UIControlStateNormal];
+        [_restingHeartRateAlertThresholdSave setTitle:NSLocalizedString(@"Save", nil) forState:UIControlStateNormal];
         [_restingHeartRateAlertThresholdSave setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_restingHeartRateAlertThresholdSave setBackgroundColor:[UIColor blueColor]];
         _restingHeartRateAlertThresholdSave.layer.masksToBounds = YES;
@@ -306,7 +306,7 @@
     [info appendFormat:@"isAutoMeasure: %d\n",x.isAutoMeasure];
 
     [info appendFormat:@"maxHeartRate:\n",@""];
-    [info appendFormat:@"  maxHeartRate: %d\n",x.maxHeartRate];
+    [info appendFormat:@"  maxHeartRate: %ld\n",x.maxHeartRate];
     WMHeartRateRangeModel *wMHeartRateRangeModel = x.heartRateRangeModel;
     [info appendFormat:@"  warmUp: %d\n",wMHeartRateRangeModel.warmUp];
     [info appendFormat:@"  fatBurn: %d\n",wMHeartRateRangeModel.fatBurn];
@@ -314,17 +314,22 @@
     [info appendFormat:@"  anaerobic: %d\n",wMHeartRateRangeModel.anaerobic];
     [info appendFormat:@"  peak: %d\n",wMHeartRateRangeModel.peak];
 
-
     [info appendFormat:@"exerciseAlert:\n",@""];
-    [info appendFormat:@"  isAlertEnabled: %d\n",x.exerciseAlert.isAlertEnabled];
-    [info appendFormat:@"  alertThreshold: %d\n",x.exerciseAlert.alertThreshold];
-
+    [info appendFormat:@"  isAlertEnabled: %ld\n",x.exerciseAlert.isAlertEnabled];
+    [info appendFormat:@"  alertThreshold: %ld\n",x.exerciseAlert.alertThreshold];
 
     [info appendFormat:@"restingAlert:\n",@""];
-    [info appendFormat:@"  isAlertEnabled: %d\n",x.restingAlert.isAlertEnabled];
-    [info appendFormat:@"  alertThreshold: %d\n",x.restingAlert.alertThreshold];
+    [info appendFormat:@"  isAlertEnabled: %ld\n",x.restingAlert.isAlertEnabled];
+    [info appendFormat:@"  alertThreshold: %ld\n",x.restingAlert.alertThreshold];
 
     self.detail.text = info;
+    
+    [self.isAutoSwitch setOn:x.isAutoMeasure];
+    [self.exerciseAlertIsAlertEnabled setOn:x.exerciseAlert.isAlertEnabled];
+    [self.restingHeartRateAlertIsAlertEnabled setOn:x.restingAlert.isAlertEnabled];
+    self.heartRateRangeMax.text = [NSString stringWithFormat:@"%ld", (long)x.maxHeartRate];
+    self.exerciseAlertThreshold.text = [NSString stringWithFormat:@"%ld", x.exerciseAlert.alertThreshold];
+    self.restingHeartRateAlertThreshold.text = [NSString stringWithFormat:@"%ld", x.restingAlert.alertThreshold];
 
 }
 

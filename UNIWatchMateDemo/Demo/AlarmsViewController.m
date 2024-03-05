@@ -21,7 +21,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"Alarms manager";
+    self.title = NSLocalizedString(@"Alarms", nil);
     
     // 创建UITableView
     _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
@@ -33,30 +33,35 @@
     @weakify(self);
     [[WatchManager sharedInstance].currentValue.apps.alarmApp.alarmList subscribeNext:^(NSArray<WMAlarmModel *> * _Nullable x) {
         @strongify(self);
-        self.alarms = x;
-        if (self.alarms == nil){
-            self.alarms = [NSMutableArray new];
+        self.alarms = [NSMutableArray new];
+        if (self.alarms != nil){
+            [self.alarms addObjectsFromArray:x];
         }
         [self.tableView reloadData];
     } error:^(NSError * _Nullable error) {
-        [SVProgressHUD showErrorWithStatus:@"Get Fail"];
+        [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Get Fail", nil)];
     }];
-    
-    [[WatchManager sharedInstance].currentValue.apps.alarmApp.syncAlarmList subscribeNext:^(NSArray<WMAlarmModel *> * _Nullable x) {
+    [self getAlarmList];
+
+}
+-(void)getAlarmList{
+    @weakify(self);
+    [[WatchManager sharedInstance].currentValue.apps.alarmApp.wm_getAlarmList subscribeNext:^(NSArray<WMAlarmModel *> * _Nullable x) {
         @strongify(self);
-        self.alarms = x;
-        if (self.alarms == nil){
-            self.alarms = [NSMutableArray new];
+        
+        self.alarms = [NSMutableArray new];
+        if (self.alarms != nil){
+            [self.alarms addObjectsFromArray:x];
         }
         [self.tableView reloadData];
     } error:^(NSError * _Nullable error) {
-        [SVProgressHUD showErrorWithStatus:@"Get Fail"];
+        [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Get Fail", nil)];
     }];
 }
 
 -(void)addAddBtn{
     UIButton *addBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [addBtn setTitle:@"Add Alarm" forState:UIControlStateNormal];
+    [addBtn setTitle:NSLocalizedString(@"Add Alarm", nil) forState:UIControlStateNormal];
     [addBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     addBtn.layer.masksToBounds = YES;
     addBtn.layer.cornerRadius = 5;
@@ -107,7 +112,7 @@
     
     // 创建删除按钮
     UIButton *deleteButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [deleteButton setTitle:@"delete" forState:UIControlStateNormal];
+    [deleteButton setTitle:NSLocalizedString(@"delete", nil) forState:UIControlStateNormal];
     [deleteButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     deleteButton.layer.masksToBounds = YES;
     deleteButton.layer.cornerRadius = 5;
@@ -142,11 +147,21 @@
 
 - (void)addAlarm {
     AlarmEditViewController *vc = [AlarmEditViewController new];
+    vc.completionHandler = ^(NSString *data) {
+        // 处理返回的数据
+        [self getAlarmList];
+    };
+    vc.alarmModels = self.alarms;
     [self.navigationController pushViewController:vc animated:YES];
 }
 - (void)editAlarm:(WMAlarmModel *)model {
     AlarmEditViewController *vc = [AlarmEditViewController new];
+    vc.completionHandler = ^(NSString *data) {
+        // 处理返回的数据
+        [self getAlarmList];
+    };
     vc.alarmModel = model;
+    vc.alarmModels = self.alarms;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -158,7 +173,7 @@
     model.isOn = sender.isOn;
     [SVProgressHUD showWithStatus:nil];
     @weakify(self);
-    [[[WatchManager sharedInstance].currentValue.apps.alarmApp updateAlarm:model] subscribeNext:^(NSArray<WMAlarmModel *> * _Nullable x) {
+    [[[WatchManager sharedInstance].currentValue.apps.alarmApp syncAlarmList:_alarms] subscribeNext:^(NSArray<WMAlarmModel *> * _Nullable x) {
         @strongify(self);
         [SVProgressHUD dismiss];
         self.alarms = x;
@@ -176,10 +191,10 @@
 - (void)deleteButtonTapped:(UIButton *)sender {
     NSInteger indexRow = sender.tag - 100;
     // 处理删除按钮点击事件
-    WMAlarmModel *model = self.alarms[indexRow];
+    [self.alarms removeObjectAtIndex:indexRow];
     @weakify(self);
     [SVProgressHUD showWithStatus:nil];
-    [[[WatchManager sharedInstance].currentValue.apps.alarmApp deleteAlarm:model.identifier] subscribeNext:^(NSArray<WMAlarmModel *> * _Nullable x) {
+    [[[WatchManager sharedInstance].currentValue.apps.alarmApp syncAlarmList:_alarms] subscribeNext:^(NSArray<WMAlarmModel *> * _Nullable x) {
         @strongify(self);
         [SVProgressHUD dismiss];
         self.alarms = x;
@@ -197,25 +212,32 @@
     NSMutableString *weekdayString = [NSMutableString string];
     
     if (repeatOptions & WMAlarmRepeatSunday) {
-        [weekdayString appendString:@"Sunday, "];
+        [weekdayString appendString:NSLocalizedString(@"Sunday", nil)];
+        [weekdayString appendString:@", "];
     }
     if (repeatOptions & WMAlarmRepeatMonday) {
-        [weekdayString appendString:@"Monday, "];
+        [weekdayString appendString:NSLocalizedString(@"Monday", nil)];
+        [weekdayString appendString:@", "];
     }
     if (repeatOptions & WMAlarmRepeatTuesday) {
-        [weekdayString appendString:@"Tuesday, "];
+        [weekdayString appendString:NSLocalizedString(@"Tuesday", nil)];
+        [weekdayString appendString:@", "];
     }
     if (repeatOptions & WMAlarmRepeatWednesday) {
-        [weekdayString appendString:@"Wednesday, "];
+        [weekdayString appendString:NSLocalizedString(@"Wednesday", nil)];
+        [weekdayString appendString:@", "];
     }
     if (repeatOptions & WMAlarmRepeatThursday) {
-        [weekdayString appendString:@"Thursday, "];
+        [weekdayString appendString:NSLocalizedString(@"Thursday", nil)];
+        [weekdayString appendString:@", "];
     }
     if (repeatOptions & WMAlarmRepeatFriday) {
-        [weekdayString appendString:@"Friday, "];
+        [weekdayString appendString:NSLocalizedString(@"Friday", nil)];
+        [weekdayString appendString:@", "];
     }
     if (repeatOptions & WMAlarmRepeatSaturday) {
-        [weekdayString appendString:@"Saturday, "];
+        [weekdayString appendString:NSLocalizedString(@"Saturday", nil)];
+        [weekdayString appendString:@", "];
     }
     
     // 去除最后一个逗号和空格

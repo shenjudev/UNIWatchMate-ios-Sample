@@ -10,6 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CameraControlViewController : UIViewController
+@property (nonatomic, assign) BOOL *openFromDevice;
 
 @end
 

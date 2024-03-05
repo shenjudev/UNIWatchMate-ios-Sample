@@ -19,6 +19,8 @@
 @property (nonatomic, copy) NSString *fa;
 @property (nonatomic, copy) NSString *ru;
 
+
+
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 @end
 @implementation SportName
@@ -51,6 +53,7 @@
 @property (nonatomic, assign) NSInteger sportId;
 @property (nonatomic, assign) NSInteger type;
 @property (nonatomic, strong) SportName *names;
+
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 @end
 
@@ -71,16 +74,32 @@
 }
 @end
 
-@interface SportsmanagerViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface SportsmanagerViewController()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray<NSMutableArray *> *dataArray;
+@property (nonatomic, strong) NSMutableArray<NSNumber *> *supportedTypes;
+@property (nonatomic, strong) NSMutableArray<NSNumber *> *fixedTypes;
+@property (nonatomic, strong) NSMutableArray<NSNumber *> *variableTypes;
+@property (nonatomic, strong) NSString *currentLanguageCode;
 
 @end
 
 @implementation SportsmanagerViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = NSLocalizedString(@"Sports manger",nil);
+
+    // 获取应用当前语言的代码
+    self.currentLanguageCode = [[NSLocale preferredLanguages] firstObject];
+    NSLog(@"Current Language Code: %@", self.currentLanguageCode);
+
+
+    
+    _supportedTypes= [NSMutableArray array];
+    _fixedTypes= [NSMutableArray array];
+    _variableTypes= [NSMutableArray array];
     // Do any additional setup after loading the view.
     _dataArray = [NSMutableArray arrayWithArray:@[
         [NSMutableArray arrayWithArray:@[]],
@@ -94,71 +113,70 @@
 
 -(void)getInfo{
     @weakify(self);
-    [[WatchManager sharedInstance].currentValue.apps.configMotionApp.wm_getActivityTypes subscribeNext:^(NSArray<NSNumber *> * _Nullable x) {
+    [[RACSignal zip:@[[WatchManager sharedInstance].currentValue.apps.configMotionApp.getSupportedActivityTypes, [WatchManager sharedInstance].currentValue.apps.configMotionApp.getFixedActivityTypes
+                      ,[WatchManager sharedInstance].currentValue.apps.configMotionApp.getVariableActivityTypes]] subscribeNext:^(RACTuple * _Nullable x) {
         @strongify(self);
-        [self showModel:x];
+        RACTupleUnpack(NSArray<NSNumber *> *supportedTypes, NSArray<NSNumber *> *fixedTypes ,NSArray<NSNumber *> *variableTypes) = x;
+        [self->_supportedTypes removeAllObjects];
+        [self->_supportedTypes addObjectsFromArray:supportedTypes];
+        [self->_fixedTypes removeAllObjects];
+        [self->_fixedTypes addObjectsFromArray:fixedTypes];
+        [self->_variableTypes removeAllObjects];
+        [self->_variableTypes addObjectsFromArray:variableTypes];
+        [self showModel: self->_supportedTypes fixed:self->_fixedTypes variable:self->_variableTypes];
+        
     } error:^(NSError * _Nullable error) {
-
+        
     }];
 }
 
--(void)showModel:(NSArray<NSNumber *> *) x{
-    if ([x count] == 0){
-        _dataArray = [NSMutableArray arrayWithArray:@[
-            [NSMutableArray arrayWithArray:@[]],
-            [NSMutableArray arrayWithArray:@[]],
-            [NSMutableArray arrayWithArray:@[]]
-        ]];
-        [self.tableView reloadData];
-        return;
-    }
+-(void)showModel:(NSMutableArray *) supporteds fixed:(NSMutableArray *) fixeds variable:(NSMutableArray *) variables{
+    
+        NSMutableArray<SJSport *> *supportSJSports = [NSMutableArray array];
+        NSMutableArray<SJSport *> *fixedSJSports = [NSMutableArray array];
+        NSMutableArray<SJSport *> *variableSJSports = [NSMutableArray array];
+
     NSArray *deviceSportInfos = [self loadSportsFromJSONFile];
-
-    // 创建一个用于存放结果的可变数组
-    NSMutableArray<SJSport *> *result = [NSMutableArray array];
-
+//
+//    // 创建一个用于存放结果的可变数组
+//    NSMutableArray<SJSport *> *result = [NSMutableArray array];
+//
     // 遍历x数组
-    for (NSNumber *number in x) {
-        // 在deviceSportInfos数组中搜索具有匹配sportId的SJSport对象
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"sportId == %ld", number.integerValue];
-        NSArray<SJSport *> *filtered = [deviceSportInfos filteredArrayUsingPredicate:predicate];
 
+    for (NSNumber *number in fixeds) {
+        // 在deviceSportInfos数组中搜索具有匹配sportId的SJSport对象
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"sportId == %@", number];
+        NSArray<SJSport *> *filtered = [deviceSportInfos filteredArrayUsingPredicate:predicate];
         // 如果找到匹配的对象，将其添加到结果数组中
         if (filtered.count > 0) {
-            [result addObject:filtered.firstObject];
+            [fixedSJSports addObject:filtered.firstObject];
         }
     }
-
-
-    // 创建一个包含result2所有sportId的集合
-    NSMutableSet<NSNumber *> *result2SportIDs = [NSMutableSet set];
-    for (SJSport *sport in result) {
-        [result2SportIDs addObject:@(sport.sportId)];
-    }
-
-    // 找出所有在result1中但不在result2中的元素
-    NSMutableArray<SJSport *> *difference = [NSMutableArray array];
-    for (SJSport *sport in deviceSportInfos) {
-        if (![result2SportIDs containsObject:@(sport.sportId)]) {
-            [difference addObject:sport];
+    for (NSNumber *number in variables) {
+        // 在deviceSportInfos数组中搜索具有匹配sportId的SJSport对象
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"sportId == %@", number];
+        NSArray<SJSport *> *filtered = [deviceSportInfos filteredArrayUsingPredicate:predicate];
+        // 如果找到匹配的对象，将其添加到结果数组中
+        if (filtered.count > 0) {
+            [variableSJSports addObject:filtered.firstObject];
         }
     }
-    if ([result count] <= 8){
-        _dataArray = [NSMutableArray arrayWithArray:@[
-            [NSMutableArray arrayWithArray:result],
-            [NSMutableArray arrayWithArray:@[]],
-            [NSMutableArray arrayWithArray:difference]
-        ]];
-        [self.tableView reloadData];
-        return;
+    for (NSNumber *number in supporteds) {
+        // 在deviceSportInfos数组中搜索具有匹配sportId的SJSport对象
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"sportId == %@", number];
+        NSArray<SJSport *> *filtered = [deviceSportInfos filteredArrayUsingPredicate:predicate];
+        NSArray<SJSport *> *fixedFiltered = [fixedSJSports filteredArrayUsingPredicate:predicate];
+        NSArray<SJSport *> *variableFiltered = [variableSJSports filteredArrayUsingPredicate:predicate];
+        // 如果找到匹配的对象，将其添加到结果数组中
+        if (filtered.count > 0 && fixedFiltered.count == 0 && variableFiltered.count == 0) {
+            [supportSJSports addObject:filtered.firstObject];
+        }
     }
-    NSRange range = NSMakeRange(0, 8);
-    NSArray *firstEight = [result subarrayWithRange:range];  // 获取前8个元素
-    [result removeObjectsInRange:range];
+  
     _dataArray = [NSMutableArray arrayWithArray:@[
-        [NSMutableArray arrayWithArray:firstEight],
-        [NSMutableArray arrayWithArray:result],
-        [NSMutableArray arrayWithArray:difference]
+        [NSMutableArray arrayWithArray:fixedSJSports],
+        [NSMutableArray arrayWithArray:variableSJSports],
+        [NSMutableArray arrayWithArray:supportSJSports]
     ]];
     [self.tableView reloadData];
 }
@@ -169,6 +187,8 @@
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
         _tableView.delegate = self;
         _tableView.dataSource = self;
+        self.tableView.separatorInset = UIEdgeInsetsZero;
+        self.tableView.layoutMargins = UIEdgeInsetsZero;
         [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
         _tableView.editing = YES; // 启动编辑模式
     }
@@ -181,13 +201,13 @@
         NSLog(@"Failed to locate sports.json in app bundle.");
         return nil;
     }
-
+    
     NSData *data = [NSData dataWithContentsOfFile:filePath];
     if (!data) {
         NSLog(@"Failed to load data from sports.json.");
         return nil;
     }
-
+    
     NSError *error;
     NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
     if (error) {
@@ -204,7 +224,7 @@
 }
 /*
  #pragma mark - Navigation
-
+ 
  // In a storyboard-based application, you will often want to do a little preparation before navigation
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
  // Get the new view controller using [segue destinationViewController].
@@ -215,11 +235,11 @@
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     if (section == 0){
-        return @"From device.Can not delete sports.Can order by move.";
+        return NSLocalizedString(@"From device.Can not delete sports.Can order by move.", nil);
     }else if (section == 1){
-        return @"From device.Can delete.";
+        return NSLocalizedString(@"From device.Can delete.", nil);
     }else{
-        return @"Can add.";
+        return NSLocalizedString(@"Can add.", nil);
     }
 }
 
@@ -234,20 +254,27 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     SJSport *sport = self.dataArray[indexPath.section][indexPath.row];
-    cell.textLabel.text = sport.names.en;
-
+    
+    NSRange range = [self.currentLanguageCode rangeOfString:@"zh"];
+    
+    if (range.location != NSNotFound) {
+        cell.textLabel.text = sport.names.zh_cn;
+    }else{
+        cell.textLabel.text = sport.names.en;
+    }
+        
     for (UIView *view in cell.contentView.subviews) {
         [view removeFromSuperview];
     }
-
+    
     if (indexPath.section != 0){
         // 创建删除按钮
         UIButton *deleteButton = [UIButton buttonWithType:UIButtonTypeCustom];
         if (indexPath.section == 1){
-            [deleteButton setTitle:@"delete" forState:UIControlStateNormal];
+            [deleteButton setTitle:NSLocalizedString(@"delete", nil) forState:UIControlStateNormal];
             [deleteButton addTarget:self action:@selector(deleteButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
         }else if (indexPath.section == 2){
-            [deleteButton setTitle:@"add" forState:UIControlStateNormal];
+            [deleteButton setTitle:NSLocalizedString(@"add", nil) forState:UIControlStateNormal];
             [deleteButton addTarget:self action:@selector(addButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
         }
         [deleteButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -255,20 +282,20 @@
         deleteButton.layer.cornerRadius = 5;
         [deleteButton setBackgroundColor:[UIColor redColor]];
         deleteButton.tag = indexPath.row + 100;
-
+        
         // 布局开关和删除按钮
         CGFloat buttonWidth = 60; // 按钮宽度
         CGFloat cellWidth = CGRectGetWidth(self.view.frame);
-
+        
         // 计算删除按钮的位置
-        CGRect deleteButtonFrame = CGRectMake(cellWidth - 2 * buttonWidth - 10, 10, buttonWidth, 30);
+        CGRect deleteButtonFrame = CGRectMake(cellWidth -  buttonWidth - 50, 10, buttonWidth, 30);
         deleteButton.frame = deleteButtonFrame;
-
+        
         [cell.contentView addSubview:deleteButton];
     }
-
+    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-
+    
     return cell;
 }
 
@@ -286,62 +313,46 @@
     if (sourceIndexPath.section != destinationIndexPath.section) {
         return;
     }
-
-    NSString *itemToMove = self.dataArray[sourceIndexPath.section][sourceIndexPath.row];
-    [self.dataArray[sourceIndexPath.section] removeObjectAtIndex:sourceIndexPath.row];
-    [self.dataArray[destinationIndexPath.section] insertObject:itemToMove atIndex:destinationIndexPath.row];
+    
+    NSNumber *itemToMove = self.fixedTypes[sourceIndexPath.row];
+    [self.fixedTypes removeObjectAtIndex:sourceIndexPath.row];
+    [self.fixedTypes insertObject:itemToMove atIndex:destinationIndexPath.row];
     [self didMove];
 }
 
 - (void)deleteButtonTapped:(UIButton *)sender {
     NSInteger indexRow = sender.tag - 100;
     // 处理删除按钮点击事件
-    [self.dataArray[1] removeObjectAtIndex:indexRow];
+    [self.variableTypes removeObjectAtIndex:indexRow];
     [SVProgressHUD showWithStatus:nil];
     @weakify(self);
-    NSMutableArray *result = [NSMutableArray array];
-    [result addObjectsFromArray:self.dataArray[0]];
-    [result addObjectsFromArray:self.dataArray[1]];
 
-    NSMutableArray *typs = [NSMutableArray array];
-    for (SJSport *s in result) {
-        [typs addObject:[NSNumber numberWithLong:s.sportId]];
-    }
-
-    [[[WatchManager sharedInstance].currentValue.apps.configMotionApp syncActivityType:typs] subscribeNext:^(NSArray<NSNumber *> * _Nullable x) {
-        @strongify(self);
-        [SVProgressHUD dismiss];
-        [self showModel:x];
-    } error:^(NSError * _Nullable error) {
-        @strongify(self);
-        [self getInfo];
-        [SVProgressHUD dismiss];
-        [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Deleta Fail\n%@",error.description]];
-    }];
+        [[[WatchManager sharedInstance].currentValue.apps.configMotionApp syncVariableActivityType:self.variableTypes] subscribeNext:^(NSNumber * _Nullable x) {
+            @strongify(self);
+            [SVProgressHUD dismiss];
+            [self showModel: self->_supportedTypes fixed:self->_fixedTypes variable:self->_variableTypes];
+        } error:^(NSError * _Nullable error) {
+            @strongify(self);
+            [self getInfo];
+            [SVProgressHUD dismiss];
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Deleta Fail\n%@",error.description]];
+        }];
 }
 - (void)didMove{
     
     [SVProgressHUD showWithStatus:nil];
     @weakify(self);
-    NSMutableArray *result = [NSMutableArray array];
-    [result addObjectsFromArray:self.dataArray[0]];
-    [result addObjectsFromArray:self.dataArray[1]];
-
-    NSMutableArray *typs = [NSMutableArray array];
-    for (SJSport *s in result) {
-        [typs addObject:[NSNumber numberWithLong:s.sportId]];
-    }
-
-    [[[WatchManager sharedInstance].currentValue.apps.configMotionApp syncActivityType:typs] subscribeNext:^(NSArray<NSNumber *> * _Nullable x) {
-        @strongify(self);
-        [SVProgressHUD dismiss];
-        [self showModel:x];
-    } error:^(NSError * _Nullable error) {
-        @strongify(self);
-        [self getInfo];
-        [SVProgressHUD dismiss];
-        [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Move Fail\n%@",error.description]];
-    }];
+    
+        [[[WatchManager sharedInstance].currentValue.apps.configMotionApp syncFixedActivityType: self.fixedTypes] subscribeNext:^(NSNumber * _Nullable x) {
+            @strongify(self);
+            [SVProgressHUD dismiss];
+            [self showModel: self->_supportedTypes fixed:self->_fixedTypes variable:self->_variableTypes];
+        } error:^(NSError * _Nullable error) {
+            @strongify(self);
+            [self getInfo];
+            [SVProgressHUD dismiss];
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Move Fail\n%@",error.description]];
+        }];
 }
 
 - (void)addButtonTapped:(UIButton *)sender {
@@ -351,29 +362,21 @@
         [SVProgressHUD showErrorWithStatus:@"You must delete some data first"];
         return;
     }
-
+    
     SJSport *sport = self.dataArray[2][indexRow];
+    [self.variableTypes addObject: [NSNumber numberWithInt: sport.sportId]];
     [SVProgressHUD showWithStatus:nil];
     @weakify(self);
-    NSMutableArray *result = [NSMutableArray array];
-    [result addObjectsFromArray:self.dataArray[0]];
-    [result addObjectsFromArray:self.dataArray[1]];
-    [result addObject:sport];
-
-    NSMutableArray *typs = [NSMutableArray array];
-    for (SJSport *s in result) {
-        [typs addObject:[NSNumber numberWithLong:s.sportId]];
-    }
-
-    [[[WatchManager sharedInstance].currentValue.apps.configMotionApp syncActivityType:typs] subscribeNext:^(NSArray<NSNumber *> * _Nullable x) {
-        @strongify(self);
-        [SVProgressHUD dismiss];
-        [self showModel:x];
-    } error:^(NSError * _Nullable error) {
-        @strongify(self);
-        [self getInfo];
-        [SVProgressHUD dismiss];
-        [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Add Fail\n%@",error.description]];
-    }];
+    
+        [[[WatchManager sharedInstance].currentValue.apps.configMotionApp syncVariableActivityType:self.variableTypes] subscribeNext:^(NSNumber * _Nullable x) {
+            @strongify(self);
+            [SVProgressHUD dismiss];
+            [self showModel: self->_supportedTypes fixed:self->_fixedTypes variable:self->_variableTypes];
+        } error:^(NSError * _Nullable error) {
+            @strongify(self);
+            [self getInfo];
+            [SVProgressHUD dismiss];
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Add Fail\n%@",error.description]];
+        }];
 }
 @end

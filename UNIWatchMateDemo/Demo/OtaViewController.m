@@ -18,12 +18,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"Ota";
+    self.title = NSLocalizedString(@"Ota", nil);
     self.view.backgroundColor = [UIColor whiteColor];
 
     self.upgradeBtn.frame = CGRectMake(20, 220, CGRectGetWidth(self.view.frame) - 40, 44);
 
-    self.detail.text = [NSString stringWithFormat:@"Current version: %@",[WatchManager sharedInstance].currentValue.infoModel.baseinfoValue.version];
+//    self.detail.text = [NSString stringWithFormat:@"Current version: %@",[WatchManager sharedInstance].currentValue.infoModel.baseinfoValue.version];
     [self monitorChange];
 }
 
@@ -41,7 +41,7 @@
 -(UIButton *)upgradeBtn{
     if (_upgradeBtn == nil){
         _upgradeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_upgradeBtn setTitle:@"Upgrade now" forState:UIControlStateNormal];
+        [_upgradeBtn setTitle:NSLocalizedString(@"Upgrade now", nil) forState:UIControlStateNormal];
         [_upgradeBtn addTarget:self action:@selector(upgrade) forControlEvents:UIControlEventTouchUpInside];
         _upgradeBtn.layer.masksToBounds = YES;
         _upgradeBtn.layer.cornerRadius = 5;
@@ -61,18 +61,29 @@
         // 弹出文件选择器
         [self presentViewController:documentPicker animated:YES completion:nil];
 }
+
 - (void)sendData:(NSURL *)path{
-    @weakify(self)
-    [[[WatchManager sharedInstance].currentValue.apps.fileApp startTransferFile:path fileType:WMActivityTypeDIAL] subscribeNext:^(WMProgressModel * _Nullable x) {
-        [SVProgressHUD showProgress:x.progress / 100.0 status:[NSString stringWithFormat:@"Progress:%.2f%%",x.progress]];
-    } error:^(NSError * _Nullable error) {
-        @strongify(self);
+    if ([path startAccessingSecurityScopedResource]) {
+        
+        @weakify(self)
+        [[[WatchManager sharedInstance].currentValue.apps.fileApp startTransferFile:path fileType:WMActivityTypeOTA] subscribeNext:^(WMProgressModel * _Nullable x) {
+            [SVProgressHUD showProgress:x.progress / 100.0 status:[NSString stringWithFormat:NSLocalizedString(@"Progress:%.2f%%", nil),x.progress]];
+        } error:^(NSError * _Nullable error) {
+            @strongify(self);
+            [SVProgressHUD dismiss];
+            [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Ota failed.", nil)];
+            [path stopAccessingSecurityScopedResource];
+        } completed:^{
+            [SVProgressHUD dismiss];
+            [SVProgressHUD showSuccessWithStatus:NSLocalizedString(@"Ota successed.", nil)];
+            [path stopAccessingSecurityScopedResource];
+
+        }];
+    }else {
+        NSLog(@"startAccessingSecurityScopedResource fail");
         [SVProgressHUD dismiss];
-        [SVProgressHUD showErrorWithStatus:@"Ota failed."];
-    } completed:^{
-        [SVProgressHUD dismiss];
-        [SVProgressHUD showSuccessWithStatus:@"Ota successed."];
-    }];
+        [SVProgressHUD showSuccessWithStatus:NSLocalizedString(@"startAccessingSecurityScopedResource fail", nil)];
+    }
 }
 
 // 实现UIDocumentPickerDelegate的代理方法
@@ -80,12 +91,12 @@
     NSURL *selectedURL = [urls firstObject];
        if (selectedURL) {
            // 在这里验证文件扩展名是否为 .up
-           if ([[selectedURL pathExtension] isEqualToString:@"up"]) {
+           if ([[selectedURL pathExtension] isEqualToString:@"up"] || [[selectedURL pathExtension] isEqualToString:@"upex"]) {
                // 在这里可以继续处理 .up 文件
                [self sendData:selectedURL];
            } else {
                // 选择的文件不是 .up 文件，可以提供错误消息给用户
-               [SVProgressHUD showErrorWithStatus:@"The file format is incorrect. Please select a.up file."];
+               [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"The file format is incorrect. Please select a.up file.", nil)];
            }
        }
 }
@@ -100,9 +111,9 @@
 */
 -(void)monitorChange{
     @weakify(self)
-    [[WatchManager sharedInstance].currentValue.infoModel.baseinfo subscribeNext:^(WMDeviceBaseInfo * _Nullable x) {
+    [[WatchManager sharedInstance].currentValue.infoModel.wm_getBaseinfo subscribeNext:^(WMDeviceBaseInfo * _Nullable x) {
         @strongify(self);
-        self.detail.text = [NSString stringWithFormat:@"Current version: %@",x.version];
+        self.detail.text = [NSString stringWithFormat:NSLocalizedString(@"Current version: %@", nil),x.version];
     }];
 }
 @end

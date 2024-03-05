@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -798,7 +798,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jb0-Oh-95R">
-                                <rect key="frame" x="20" y="199" width="353" height="155.66666666666663"/>
+                                <rect key="frame" x="20" y="199" width="353" height="156.33333333333337"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the following 24-hour or 12-hour system and send the following time to the device" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjt-FF-pl7">
                                         <rect key="frame" x="20" y="10" width="313" height="61"/>
@@ -813,10 +813,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1F-hN-XQG">
-                                        <rect key="frame" x="20" y="111.3333333333333" width="313" height="34.333333333333329"/>
+                                        <rect key="frame" x="20" y="111.33333333333331" width="313" height="35"/>
                                         <color key="backgroundColor" systemColor="linkColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="24 hour system">
+                                        <buttonConfiguration key="configuration" style="plain" title="Synchronization time">
                                             <backgroundConfiguration key="background">
                                                 <color key="backgroundColor" systemColor="linkColor"/>
                                             </backgroundConfiguration>
@@ -843,7 +843,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="egz-oi-fWU">
-                                <rect key="frame" x="20" y="374.66666666666669" width="353" height="156.33333333333331"/>
+                                <rect key="frame" x="20" y="375.33333333333331" width="353" height="156.99999999999994"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the following 24-hour or 12-hour system and send the following time to the device" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUi-d9-FoN">
                                         <rect key="frame" x="20" y="10" width="313" height="61"/>
@@ -858,17 +858,17 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cy4-hF-YUG">
-                                        <rect key="frame" x="20" y="111.99999999999999" width="313" height="34.333333333333329"/>
+                                        <rect key="frame" x="20" y="112" width="313" height="35"/>
                                         <color key="backgroundColor" systemColor="linkColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="24 hour system">
+                                        <buttonConfiguration key="configuration" style="plain" title="Synchronization time">
                                             <backgroundConfiguration key="background">
                                                 <color key="backgroundColor" systemColor="linkColor"/>
                                             </backgroundConfiguration>
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="setAfter15SecondsTime24HourSystem:" destination="IbA-Tz-J4b" eventType="touchUpInside" id="IBL-rD-5K6"/>
+                                            <action selector="setafter15Time12Hour:" destination="IbA-Tz-J4b" eventType="touchUpInside" id="BiX-rq-rcg"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -905,8 +905,12 @@
                     <navigationItem key="navigationItem" id="Oiu-mF-WLM"/>
                     <connections>
                         <outlet property="info" destination="5vV-OT-4wI" id="N0X-33-30e"/>
+                        <outlet property="time12Tip" destination="nUi-d9-FoN" id="NcW-7R-ZQq"/>
+                        <outlet property="time24Tip" destination="tjt-FF-pl7" id="11M-qE-rPO"/>
                         <outlet property="timeAfter15s" destination="U5y-5R-BiG" id="Aqk-AD-Xli"/>
                         <outlet property="timeNow" destination="1wd-Rk-9Rn" id="VtA-Mu-INY"/>
+                        <outlet property="timeNow12" destination="Cy4-hF-YUG" id="wRA-UW-1gh"/>
+                        <outlet property="timeNow24" destination="a1F-hN-XQG" id="hyL-ML-V3C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X2A-Qb-AJ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

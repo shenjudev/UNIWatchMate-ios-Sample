@@ -16,12 +16,12 @@
 #import "WMAppViewSettingModel.h"
 #import "WMSleepSettingModel.h"
 #import "WMMessageSettingModel.h"
+#import "WMWidgetSettingModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 /// 功能设置
 @interface WMSettingsModel : NSObject
-
 /// 运动目标设置
 @property (nonatomic, strong) WMSportGoalSettingModel *sportGoal;
 /// 计量单位设置
@@ -44,6 +44,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) WMSleepSettingModel *sleep;
 /// 消息设置
 @property (nonatomic, strong) WMMessageSettingModel *message;
+/// 组件设置
+@property (nonatomic, strong) WMWidgetSettingModel *widget;
 
 @end
 

@@ -45,7 +45,7 @@
 -(UIButton *)sendNowBtn{
     if (_sendNowBtn == nil){
         _sendNowBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_sendNowBtn setTitle:@"Send Now" forState:UIControlStateNormal];
+        [_sendNowBtn setTitle:NSLocalizedString(@"Send Now", nil) forState:UIControlStateNormal];
         [_sendNowBtn addTarget:self action:@selector(sendNow) forControlEvents:UIControlEventTouchUpInside];
         _sendNowBtn.layer.masksToBounds = YES;
         _sendNowBtn.layer.cornerRadius = 5;
@@ -59,7 +59,7 @@
 -(UIButton *)generateNewBtn{
     if (_generateNewBtn == nil){
         _generateNewBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_generateNewBtn setTitle:@"Generate new" forState:UIControlStateNormal];
+        [_generateNewBtn setTitle:NSLocalizedString(@"Generate new", nil) forState:UIControlStateNormal];
         [_generateNewBtn addTarget:self action:@selector(generateNew) forControlEvents:UIControlEventTouchUpInside];
         _generateNewBtn.layer.masksToBounds = YES;
         _generateNewBtn.layer.cornerRadius = 5;

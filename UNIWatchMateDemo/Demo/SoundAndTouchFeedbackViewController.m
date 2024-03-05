@@ -29,6 +29,12 @@
     [[[[wMPeripheral settings] switchs] getConfigModel] subscribeNext:^(WMSwitchsModel * _Nullable x) {
         @strongify(self);
         [self feedInfo:x];
+    } error:^(NSError * _Nullable error) {
+        if(error!=nil){
+            XLOG_INFO(@"switchs getConfigModel error结果：%@", error.description);
+        }
+    } completed:^{
+        
     }];
 }
 -(void)listen{
@@ -104,9 +110,9 @@
     
     @weakify(self);
     WMPeripheral *wMPeripheral = [[WatchManager sharedInstance] currentValue];
-    WMSwitchsModel *wMSwitchsModel = [[[wMPeripheral settings] switchs] modelValue];
+    WMSwitchsModel *wMSwitchsModel = [[[wMPeripheral settings] switchs] getConfigModel].first;
     wMSwitchsModel.isRingtoneEnabled = enable;
-    [[[[wMPeripheral settings] switchs] setConfigModel:wMSwitchsModel] subscribeNext:^(WMSwitchsModel * _Nullable x) {
+    [[[[wMPeripheral settings] switchs] setConfigModel:wMSwitchsModel] subscribeNext:^(NSNumber * _Nullable x) {
         @strongify(self);
         [self feedInfo:x];
     } error:^(NSError * _Nullable error) {
@@ -119,9 +125,9 @@
     
     @weakify(self);
     WMPeripheral *wMPeripheral = [[WatchManager sharedInstance] currentValue];
-    WMSwitchsModel *wMSwitchsModel = [[[wMPeripheral settings] switchs] modelValue];
+    WMSwitchsModel *wMSwitchsModel = [[[wMPeripheral settings] switchs] getConfigModel].first;
     wMSwitchsModel.isNotificationHaptic = enable;
-    [[[[wMPeripheral settings] switchs] setConfigModel:wMSwitchsModel] subscribeNext:^(WMSwitchsModel * _Nullable x) {
+    [[[[wMPeripheral settings] switchs] setConfigModel:wMSwitchsModel] subscribeNext:^(NSNumber * _Nullable x) {
         @strongify(self);
         [self feedInfo:x];
     } error:^(NSError * _Nullable error) {
@@ -134,9 +140,9 @@
     
     @weakify(self);
     WMPeripheral *wMPeripheral = [[WatchManager sharedInstance] currentValue];
-    WMSwitchsModel *wMSwitchsModel = [[[wMPeripheral settings] switchs] modelValue];
+    WMSwitchsModel *wMSwitchsModel = [[[wMPeripheral settings] switchs] getConfigModel].first;
     wMSwitchsModel.isCrownHapticFeedback = enable;
-    [[[[wMPeripheral settings] switchs] setConfigModel:wMSwitchsModel] subscribeNext:^(WMSwitchsModel * _Nullable x) {
+    [[[[wMPeripheral settings] switchs] setConfigModel:wMSwitchsModel] subscribeNext:^(NSNumber * _Nullable x) {
         @strongify(self);
         [self feedInfo:x];
     } error:^(NSError * _Nullable error) {
@@ -149,9 +155,9 @@
     
     @weakify(self);
     WMPeripheral *wMPeripheral = [[WatchManager sharedInstance] currentValue];
-    WMSwitchsModel *wMSwitchsModel = [[[wMPeripheral settings] switchs] modelValue];
+    WMSwitchsModel *wMSwitchsModel = [[[wMPeripheral settings] switchs] getConfigModel].first;
     wMSwitchsModel.isSystemHapticFeedback = enable;
-    [[[[wMPeripheral settings] switchs] setConfigModel:wMSwitchsModel] subscribeNext:^(WMSwitchsModel * _Nullable x) {
+    [[[[wMPeripheral settings] switchs] setConfigModel:wMSwitchsModel] subscribeNext:^(NSNumber * _Nullable x) {
         @strongify(self);
         [self feedInfo:x];
     } error:^(NSError * _Nullable error) {
@@ -164,9 +170,9 @@
     
     @weakify(self);
     WMPeripheral *wMPeripheral = [[WatchManager sharedInstance] currentValue];
-    WMSwitchsModel *wMSwitchsModel = [[[wMPeripheral settings] switchs] modelValue];
+    WMSwitchsModel *wMSwitchsModel = [[[wMPeripheral settings] switchs] getConfigModel].first;
     wMSwitchsModel.isMuted = enable;
-    [[[[wMPeripheral settings] switchs] setConfigModel:wMSwitchsModel] subscribeNext:^(WMSwitchsModel * _Nullable x) {
+    [[[[wMPeripheral settings] switchs] setConfigModel:wMSwitchsModel] subscribeNext:^(NSNumber * _Nullable x) {
         @strongify(self);
         [self feedInfo:x];
     } error:^(NSError * _Nullable error) {
@@ -179,9 +185,9 @@
     
     @weakify(self);
     WMPeripheral *wMPeripheral = [[WatchManager sharedInstance] currentValue];
-    WMSwitchsModel *wMSwitchsModel = [[[wMPeripheral settings] switchs] modelValue];
+    WMSwitchsModel *wMSwitchsModel = [[[wMPeripheral settings] switchs] getConfigModel].first;
     wMSwitchsModel.isScreenWakeEnabled = enable;
-    [[[[wMPeripheral settings] switchs] setConfigModel:wMSwitchsModel] subscribeNext:^(WMSwitchsModel * _Nullable x) {
+    [[[[wMPeripheral settings] switchs] setConfigModel:wMSwitchsModel] subscribeNext:^(NSNumber * _Nullable x) {
         @strongify(self);
         [self feedInfo:x];
     } error:^(NSError * _Nullable error) {

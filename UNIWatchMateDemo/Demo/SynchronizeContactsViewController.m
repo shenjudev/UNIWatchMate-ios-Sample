@@ -78,7 +78,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-    self.title = @"Synchronize contacts";
+    self.title = NSLocalizedString(@"Synchronize contacts", nil);
     self.view.backgroundColor = [UIColor whiteColor];
 
 
@@ -130,9 +130,9 @@
     if (_tableViewFooterView == nil) {
         _tableViewFooterView = [[SynchronizeContactsTableViewFooter alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
         [_tableViewFooterView.selectContacts addTarget:self action:@selector(showContactPicker:) forControlEvents:UIControlEventTouchUpInside];
-        [_tableViewFooterView.selectContacts setTitle:@"Select contacts" forState:UIControlStateNormal];
+        [_tableViewFooterView.selectContacts setTitle:NSLocalizedString(@"Select contacts", nil) forState:UIControlStateNormal];
         [_tableViewFooterView.syncBtn addTarget:self action:@selector(syncContacts) forControlEvents:UIControlEventTouchUpInside];
-        [_tableViewFooterView.syncBtn setTitle:@"sync contacts from watch" forState:UIControlStateNormal];
+        [_tableViewFooterView.syncBtn setTitle:NSLocalizedString(@"sync contacts from watch", nil) forState:UIControlStateNormal];
     }
     return  _tableViewFooterView;
 }
@@ -161,7 +161,7 @@
 
     // 创建删除按钮
     UIButton *deleteButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [deleteButton setTitle:@"delete" forState:UIControlStateNormal];
+    [deleteButton setTitle:NSLocalizedString(@"delete", nil) forState:UIControlStateNormal];
     [deleteButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     deleteButton.layer.masksToBounds = YES;
     deleteButton.layer.cornerRadius = 5;
@@ -172,7 +172,7 @@
 
     // 创建删除按钮
     UIButton *editButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [editButton setTitle:@"Edit" forState:UIControlStateNormal];
+    [editButton setTitle:NSLocalizedString(@"Edit", nil) forState:UIControlStateNormal];
     [editButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     editButton.layer.masksToBounds = YES;
     editButton.layer.cornerRadius = 5;
@@ -263,7 +263,7 @@
     WMContactModel *model = self.currentsValue[indexRow];
 
     // 创建 UIAlertController
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Edit contact" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Edit contact", nil) message:nil preferredStyle:UIAlertControllerStyleAlert];
 
     // 添加文本框1（用于编辑名字）
     [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
@@ -280,7 +280,7 @@
 
     @weakify(self);
     // 添加保存按钮
-    UIAlertAction *saveAction = [UIAlertAction actionWithTitle:@"Done" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *saveAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Done", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         // 在这里处理用户点击保存按钮后的逻辑
         @strongify(self);
         UITextField *nameTextField = alertController.textFields[0];
@@ -292,7 +292,7 @@
     }];
 
     // 添加取消按钮
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:nil];
 
     // 将按钮添加到 UIAlertController
     [alertController addAction:saveAction];
@@ -337,7 +337,7 @@
     NSArray *selected10Contacts = [contacts subarrayWithRange:NSMakeRange(0, maxCount)];
 
     if ([contacts count] > 100){
-        [SVProgressHUD showErrorWithStatus:@"Max 100 contacts"];
+        [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Max 100 contacts", nil)];
     }
     if ([selected10Contacts count] > 0){
         [self syncContactsToDevice:selected10Contacts];

@@ -16,6 +16,7 @@
 @property (nonatomic, strong) PickerViewController *pickerVC;
 @property (nonatomic, strong) LSTPopView *popView;
 @property (nonatomic, strong) UIButton *getNowBtn;
+@property (nonatomic, strong) WMSportGoalModel *wMSportGoalModel;
 
 @end
 
@@ -24,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"Exercise goal";
+    self.title = NSLocalizedString(@"Exercise goal", nil);
     self.view.backgroundColor = [UIColor whiteColor];
     [self getDetail];
 
@@ -38,7 +39,7 @@
 -(UIButton *)getNowBtn{
     if (_getNowBtn == nil){
         _getNowBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_getNowBtn setTitle:@"Get Now" forState:UIControlStateNormal];
+        [_getNowBtn setTitle:NSLocalizedString(@"Get Now", nil) forState:UIControlStateNormal];
         [_getNowBtn addTarget:self action:@selector(getDetail) forControlEvents:UIControlEventTouchUpInside];
         _getNowBtn.layer.masksToBounds = YES;
         _getNowBtn.layer.cornerRadius = 5;
@@ -56,6 +57,7 @@
     [[WatchManager sharedInstance].currentValue.settings.sportGoal.getConfigModel subscribeNext:^(WMSportGoalModel * _Nullable x) {
         @strongify(self);
         [SVProgressHUD dismiss];
+        self->_wMSportGoalModel = x;
         [self showInfo:x];
     } error:^(NSError * _Nullable error) {
         [SVProgressHUD dismiss];
@@ -98,7 +100,7 @@
 -(UIButton *)changSteps{
     if (_changSteps == nil){
         _changSteps = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_changSteps setTitle:@"Change steps" forState:UIControlStateNormal];
+        [_changSteps setTitle:NSLocalizedString(@"Change steps", nil) forState:UIControlStateNormal];
         [_changSteps addTarget:self action:@selector(actionChangeSteps) forControlEvents:UIControlEventTouchUpInside];
         _changSteps.layer.masksToBounds = YES;
         _changSteps.layer.cornerRadius = 5;
@@ -141,12 +143,18 @@
 -(void)actionChangeSteps:(NSString *) steps{
     [SVProgressHUD showWithStatus:nil];
     @weakify(self);
-    WMSportGoalModel *wMSportGoalModel = [WatchManager sharedInstance].currentValue.settings.sportGoal.modelValue;
-    wMSportGoalModel.steps = steps.integerValue;
-    [[[WatchManager sharedInstance].currentValue.settings.sportGoal setConfigModel:wMSportGoalModel] subscribeNext:^(WMSportGoalModel * _Nullable x) {
+
+    if( _wMSportGoalModel == nil ){
+        [SVProgressHUD dismiss];
+        return;
+    }
+    _wMSportGoalModel.steps = steps.integerValue;
+    [[[WatchManager sharedInstance].currentValue.settings.sportGoal setConfigModel:_wMSportGoalModel] subscribeNext:^(NSNumber * _Nullable x) {
         @strongify(self);
         [SVProgressHUD dismiss];
-        [self showInfo:x];
+        if([x boolValue] == YES) {
+            [self showInfo:self->_wMSportGoalModel];
+        }
     } error:^(NSError * _Nullable error) {
         [SVProgressHUD dismiss];
         [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"set Fail\n%@",error.description]];
@@ -156,7 +164,7 @@
 -(UIButton *)changeCalories{
     if (_changeCalories == nil){
         _changeCalories = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_changeCalories setTitle:@"Change calories" forState:UIControlStateNormal];
+        [_changeCalories setTitle:NSLocalizedString(@"Change calories", nil) forState:UIControlStateNormal];
         [_changeCalories addTarget:self action:@selector(actionChangeCalories) forControlEvents:UIControlEventTouchUpInside];
         _changeCalories.layer.masksToBounds = YES;
         _changeCalories.layer.cornerRadius = 5;
@@ -201,12 +209,17 @@
 -(void)actionChangeCalories:(NSString *) calories{
     [SVProgressHUD showWithStatus:nil];
     @weakify(self);
-    WMSportGoalModel *wMSportGoalModel = [WatchManager sharedInstance].currentValue.settings.sportGoal.modelValue;
-    wMSportGoalModel.calories = calories.integerValue;
-    [[[WatchManager sharedInstance].currentValue.settings.sportGoal setConfigModel:wMSportGoalModel] subscribeNext:^(WMSportGoalModel * _Nullable x) {
+    if( _wMSportGoalModel == nil ){
+        [SVProgressHUD dismiss];
+        return;
+    }
+    _wMSportGoalModel.calories = calories.integerValue/1000;
+    [[[WatchManager sharedInstance].currentValue.settings.sportGoal setConfigModel:_wMSportGoalModel] subscribeNext:^(NSNumber * _Nullable x) {
         @strongify(self);
         [SVProgressHUD dismiss];
-        [self showInfo:x];
+        if([x boolValue] == YES) {
+            [self showInfo:self->_wMSportGoalModel];
+        }
     } error:^(NSError * _Nullable error) {
         [SVProgressHUD dismiss];
         [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"set Fail\n%@",error.description]];
@@ -216,7 +229,7 @@
 -(UIButton *)changeDistance{
     if (_changeDistance == nil){
         _changeDistance = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_changeDistance setTitle:@"Change distance" forState:UIControlStateNormal];
+        [_changeDistance setTitle:NSLocalizedString(@"Change distance", nil) forState:UIControlStateNormal];
         [_changeDistance addTarget:self action:@selector(actionChangeDistance) forControlEvents:UIControlEventTouchUpInside];
         _changeDistance.layer.masksToBounds = YES;
         _changeDistance.layer.cornerRadius = 5;
@@ -261,12 +274,17 @@
 -(void)actionChangeDistance:(NSString *) distance{
     [SVProgressHUD showWithStatus:nil];
     @weakify(self);
-    WMSportGoalModel *wMSportGoalModel = [WatchManager sharedInstance].currentValue.settings.sportGoal.modelValue;
-    wMSportGoalModel.distance = distance.integerValue;
-    [[[WatchManager sharedInstance].currentValue.settings.sportGoal setConfigModel:wMSportGoalModel] subscribeNext:^(WMSportGoalModel * _Nullable x) {
+    if( _wMSportGoalModel == nil ){
+        [SVProgressHUD dismiss];
+        return;
+    }
+    _wMSportGoalModel.distance = distance.integerValue;
+    [[[WatchManager sharedInstance].currentValue.settings.sportGoal setConfigModel:_wMSportGoalModel] subscribeNext:^(NSNumber * _Nullable x) {
         @strongify(self);
         [SVProgressHUD dismiss];
-        [self showInfo:x];
+        if([x boolValue] == YES) {
+            [self showInfo:self->_wMSportGoalModel];
+        }
     } error:^(NSError * _Nullable error) {
         [SVProgressHUD dismiss];
         [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"set Fail\n%@",error.description]];
@@ -276,7 +294,7 @@
 -(UIButton *)changeActivityDuration{
     if (_changeActivityDuration == nil){
         _changeActivityDuration = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_changeActivityDuration setTitle:@"Change activity duration" forState:UIControlStateNormal];
+        [_changeActivityDuration setTitle:NSLocalizedString(@"Change activity duration", nil) forState:UIControlStateNormal];
         [_changeActivityDuration addTarget:self action:@selector(actionChangeActivityDuration) forControlEvents:UIControlEventTouchUpInside];
         _changeActivityDuration.layer.masksToBounds = YES;
         _changeActivityDuration.layer.cornerRadius = 5;
@@ -321,12 +339,17 @@
 -(void)actionChangeActivityDuration:(NSString *) activityDuration{
     [SVProgressHUD showWithStatus:nil];
     @weakify(self);
-    WMSportGoalModel *wMSportGoalModel = [WatchManager sharedInstance].currentValue.settings.sportGoal.modelValue;
-    wMSportGoalModel.activityDuration = activityDuration.integerValue;
-    [[[WatchManager sharedInstance].currentValue.settings.sportGoal setConfigModel:wMSportGoalModel] subscribeNext:^(WMSportGoalModel * _Nullable x) {
+    if( _wMSportGoalModel == nil ){
+        [SVProgressHUD dismiss];
+        return;
+    }
+    _wMSportGoalModel.activityDuration = activityDuration.integerValue;
+    [[[WatchManager sharedInstance].currentValue.settings.sportGoal setConfigModel:_wMSportGoalModel] subscribeNext:^(NSNumber * _Nullable x) {
         @strongify(self);
         [SVProgressHUD dismiss];
-        [self showInfo:x];
+        if([x boolValue] == YES) {
+            [self showInfo:self->_wMSportGoalModel];
+        }
     } error:^(NSError * _Nullable error) {
         [SVProgressHUD dismiss];
         [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"set Fail\n%@",error.description]];

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5F04AD8C2AF0B28900348A38 /* NSDictionary+JSONDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F04AD8B2AF0B28900348A38 /* NSDictionary+JSONDescription.m */; };
 		5F04AD8F2AF0B47A00348A38 /* WeatherCreateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F04AD8E2AF0B47A00348A38 /* WeatherCreateHelper.m */; };
-		5F1886312AF3ABA300911FBF /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1886302AF3ABA300911FBF /* opencv2.framework */; };
 		5F1886332AF3B0AA00911FBF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5F1886322AF3B0AA00911FBF /* README.md */; };
 		5F1D9AC02AE144210050C702 /* AlarmEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1D9ABF2AE144210050C702 /* AlarmEditViewController.m */; };
 		5F54C5AA2AE60E4C0090596F /* OtaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F54C5A92AE60E4C0090596F /* OtaViewController.m */; };
@@ -18,18 +17,9 @@
 		5F54C5DB2AE682C90090596F /* UnitSynchronizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F54C5DA2AE682C90090596F /* UnitSynchronizationViewController.m */; };
 		5F5BD2F12AE90E3D007D2024 /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5BD2F02AE90E3D007D2024 /* WeatherViewController.m */; };
 		5F5BD2F42AE92CD5007D2024 /* RealTimeDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5BD2F32AE92CD5007D2024 /* RealTimeDataViewController.m */; };
-		5F9C86E02AF2877D00117059 /* SJWatchLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9C86DC2AF2876300117059 /* SJWatchLib.framework */; };
-		5F9C86E12AF2877D00117059 /* SJWatchLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9C86DC2AF2876300117059 /* SJWatchLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5F9C86E22AF2882000117059 /* h264encoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9C86DE2AF2876C00117059 /* h264encoder.framework */; };
-		5F9C86E32AF2882100117059 /* h264encoder.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9C86DE2AF2876C00117059 /* h264encoder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5F9C86E62AF28C0E00117059 /* UNIWatchMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9C86E42AF28C0300117059 /* UNIWatchMate.framework */; };
 		5F9C86E72AF28C0E00117059 /* UNIWatchMate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9C86E42AF28C0300117059 /* UNIWatchMate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5FA884F62AD7C5FC001F340D /* SleepSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA884F52AD7C5FC001F340D /* SleepSettingViewController.m */; };
-		5FA885022AD7DB1C001F340D /* 1245156a62de4d6d8d60d8f8ff751302.dial in Resources */ = {isa = PBXBuildFile; fileRef = 5FA885012AD7DB1C001F340D /* 1245156a62de4d6d8d60d8f8ff751302.dial */; };
-		5FA885042AD7DB29001F340D /* 4974f889d52c4a519eac9ea409b3295c.dial in Resources */ = {isa = PBXBuildFile; fileRef = 5FA885032AD7DB28001F340D /* 4974f889d52c4a519eac9ea409b3295c.dial */; };
-		5FA885062AD7DB38001F340D /* 59c4aad46ed434ca58786f3232aba673.dial in Resources */ = {isa = PBXBuildFile; fileRef = 5FA885052AD7DB38001F340D /* 59c4aad46ed434ca58786f3232aba673.dial */; };
-		5FA885082AD7DB44001F340D /* 8c637a6c26d476db361051786e773df7.dial in Resources */ = {isa = PBXBuildFile; fileRef = 5FA885072AD7DB44001F340D /* 8c637a6c26d476db361051786e773df7.dial */; };
-		5FA8850A2AD7DB4F001F340D /* aab168c15c7b40eab361ca98fdd213ee.dial in Resources */ = {isa = PBXBuildFile; fileRef = 5FA885092AD7DB4F001F340D /* aab168c15c7b40eab361ca98fdd213ee.dial */; };
 		5FC311852AE768B700635E56 /* ExerciseGoalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC311842AE768B700635E56 /* ExerciseGoalViewController.m */; };
 		5FC311882AE768D700635E56 /* EditUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC311872AE768D700635E56 /* EditUserInfoViewController.m */; };
 		5FC3118B2AE77EC300635E56 /* DatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC311892AE77EC300635E56 /* DatePickerViewController.m */; };
@@ -59,6 +49,47 @@
 		5FF962082AC43D0E00DFA693 /* WatchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF962072AC43D0E00DFA693 /* WatchManager.m */; };
 		5FFAC1482AD91DFD006B68CF /* CameraAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFAC1472AD91DFD006B68CF /* CameraAppDelegate.m */; };
 		D7135A8BBE24884BB6DAFEEE /* Pods_UNIWatchMateDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C60E9F032EABB4DD0FEDA943 /* Pods_UNIWatchMateDemo.framework */; };
+		D714817A2B97376600C3CB63 /* h264encoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D71481792B97376500C3CB63 /* h264encoder.framework */; };
+		D714817B2B97376600C3CB63 /* h264encoder.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D71481792B97376500C3CB63 /* h264encoder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D714817D2B97377500C3CB63 /* SJWatchLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D714817C2B97377400C3CB63 /* SJWatchLib.framework */; };
+		D714817E2B97377500C3CB63 /* SJWatchLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D714817C2B97377400C3CB63 /* SJWatchLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D71481832B9738A700C3CB63 /* x8c637a6c26d476db361051786e773df7.dial in Resources */ = {isa = PBXBuildFile; fileRef = D714817F2B9738A600C3CB63 /* x8c637a6c26d476db361051786e773df7.dial */; };
+		D71481842B9738A700C3CB63 /* x59c4aad46ed434ca58786f3232aba673.dial in Resources */ = {isa = PBXBuildFile; fileRef = D71481802B9738A600C3CB63 /* x59c4aad46ed434ca58786f3232aba673.dial */; };
+		D71481852B9738A700C3CB63 /* x1245156a62de4d6d8d60d8f8ff751302.dial in Resources */ = {isa = PBXBuildFile; fileRef = D71481812B9738A700C3CB63 /* x1245156a62de4d6d8d60d8f8ff751302.dial */; };
+		D71481862B9738A700C3CB63 /* xaab168c15c7b40eab361ca98fdd213ee.dial in Resources */ = {isa = PBXBuildFile; fileRef = D71481822B9738A700C3CB63 /* xaab168c15c7b40eab361ca98fdd213ee.dial */; };
+		D714818C2B97397F00C3CB63 /* TSDeviceDialTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71481872B97397E00C3CB63 /* TSDeviceDialTools.swift */; };
+		D714818D2B97397F00C3CB63 /* SmallWidgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71481882B97397E00C3CB63 /* SmallWidgetViewController.m */; };
+		D714818E2B97397F00C3CB63 /* CustomDialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D714818B2B97397F00C3CB63 /* CustomDialController.swift */; };
+		D71481B02B97399E00C3CB63 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71481902B97399D00C3CB63 /* Constant.swift */; };
+		D71481B12B97399E00C3CB63 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71481912B97399D00C3CB63 /* BaseTableViewCell.swift */; };
+		D71481B22B97399E00C3CB63 /* TSAlertSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71481922B97399D00C3CB63 /* TSAlertSheetView.swift */; };
+		D71481B32B97399E00C3CB63 /* ZHBaseBottomPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71481932B97399D00C3CB63 /* ZHBaseBottomPopView.swift */; };
+		D71481B42B97399E00C3CB63 /* TSWatchDailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71481942B97399D00C3CB63 /* TSWatchDailModel.swift */; };
+		D71481B52B97399E00C3CB63 /* TSAlertManagerTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71481952B97399D00C3CB63 /* TSAlertManagerTools.swift */; };
+		D71481B62B97399E00C3CB63 /* TSDailCustomPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71481962B97399D00C3CB63 /* TSDailCustomPreviewCell.swift */; };
+		D71481B72B97399E00C3CB63 /* EFHSBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71481982B97399D00C3CB63 /* EFHSBView.swift */; };
+		D71481B82B97399E00C3CB63 /* EFColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71481992B97399E00C3CB63 /* EFColorUtils.swift */; };
+		D71481B92B97399E00C3CB63 /* EFColorWheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D714819A2B97399E00C3CB63 /* EFColorWheelView.swift */; };
+		D71481BA2B97399E00C3CB63 /* EFColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D714819B2B97399E00C3CB63 /* EFColorView.swift */; };
+		D71481BB2B97399E00C3CB63 /* TSAuthorizationTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D714819C2B97399E00C3CB63 /* TSAuthorizationTool.swift */; };
+		D71481BC2B97399E00C3CB63 /* TSAlertSheetListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D714819D2B97399E00C3CB63 /* TSAlertSheetListView.swift */; };
+		D71481BD2B97399E00C3CB63 /* TSDialHsbColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D714819E2B97399E00C3CB63 /* TSDialHsbColorView.swift */; };
+		D71481BE2B97399E00C3CB63 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D714819F2B97399E00C3CB63 /* BaseView.swift */; };
+		D71481BF2B97399E00C3CB63 /* UILabel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71481A12B97399E00C3CB63 /* UILabel+Ext.swift */; };
+		D71481C02B97399E00C3CB63 /* UIimageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71481A22B97399E00C3CB63 /* UIimageView+Ext.swift */; };
+		D71481C12B97399E00C3CB63 /* UIButton+Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71481A32B97399E00C3CB63 /* UIButton+Badge.swift */; };
+		D71481C22B97399E00C3CB63 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71481A42B97399E00C3CB63 /* UIImage+Ext.swift */; };
+		D71481C32B97399E00C3CB63 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71481A52B97399E00C3CB63 /* Date+Ext.swift */; };
+		D71481C42B97399E00C3CB63 /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71481A62B97399E00C3CB63 /* UITableView+Ext.swift */; };
+		D71481C52B97399E00C3CB63 /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71481A72B97399E00C3CB63 /* UIButton+Ext.swift */; };
+		D71481C62B97399E00C3CB63 /* String+SwifterSwiftExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71481A82B97399E00C3CB63 /* String+SwifterSwiftExt.swift */; };
+		D71481C72B97399E00C3CB63 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71481A92B97399E00C3CB63 /* String+Ext.swift */; };
+		D71481C82B97399E00C3CB63 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71481AA2B97399E00C3CB63 /* UIColor+Ext.swift */; };
+		D71481C92B97399E00C3CB63 /* UISwitch+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71481AB2B97399E00C3CB63 /* UISwitch+Ext.swift */; };
+		D71481CA2B97399E00C3CB63 /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71481AC2B97399E00C3CB63 /* Array+Ext.swift */; };
+		D71481CB2B97399E00C3CB63 /* NSAttributedString+SwifterSwiftExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71481AD2B97399E00C3CB63 /* NSAttributedString+SwifterSwiftExt.swift */; };
+		D71481CC2B97399E00C3CB63 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71481AE2B97399E00C3CB63 /* UIViewController+Ext.swift */; };
+		D71481CD2B97399E00C3CB63 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71481AF2B97399E00C3CB63 /* UIView+Ext.swift */; };
 		D77825212ABD34180056AB02 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D77825202ABD34180056AB02 /* AppDelegate.m */; };
 		D77825242ABD34180056AB02 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D77825232ABD34180056AB02 /* SceneDelegate.m */; };
 		D77825272ABD34180056AB02 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D77825262ABD34180056AB02 /* ViewController.m */; };
@@ -75,9 +106,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				D714817E2B97377500C3CB63 /* SJWatchLib.framework in Embed Frameworks */,
 				5F9C86E72AF28C0E00117059 /* UNIWatchMate.framework in Embed Frameworks */,
-				5F9C86E32AF2882100117059 /* h264encoder.framework in Embed Frameworks */,
-				5F9C86E12AF2877D00117059 /* SJWatchLib.framework in Embed Frameworks */,
+				D714817B2B97376600C3CB63 /* h264encoder.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,7 +120,6 @@
 		5F04AD8B2AF0B28900348A38 /* NSDictionary+JSONDescription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JSONDescription.m"; sourceTree = "<group>"; };
 		5F04AD8D2AF0B47A00348A38 /* WeatherCreateHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherCreateHelper.h; sourceTree = "<group>"; };
 		5F04AD8E2AF0B47A00348A38 /* WeatherCreateHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherCreateHelper.m; sourceTree = "<group>"; };
-		5F1886302AF3ABA300911FBF /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		5F1886322AF3B0AA00911FBF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		5F1D9ABE2AE144210050C702 /* AlarmEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlarmEditViewController.h; sourceTree = "<group>"; };
 		5F1D9ABF2AE144210050C702 /* AlarmEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlarmEditViewController.m; sourceTree = "<group>"; };
@@ -105,17 +135,10 @@
 		5F5BD2F02AE90E3D007D2024 /* WeatherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherViewController.m; sourceTree = "<group>"; };
 		5F5BD2F22AE92CD5007D2024 /* RealTimeDataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealTimeDataViewController.h; sourceTree = "<group>"; };
 		5F5BD2F32AE92CD5007D2024 /* RealTimeDataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealTimeDataViewController.m; sourceTree = "<group>"; };
-		5F9C86DC2AF2876300117059 /* SJWatchLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SJWatchLib.framework; sourceTree = "<group>"; };
-		5F9C86DE2AF2876C00117059 /* h264encoder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = h264encoder.framework; sourceTree = "<group>"; };
 		5F9C86E42AF28C0300117059 /* UNIWatchMate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UNIWatchMate.framework; sourceTree = "<group>"; };
 		5FA7FDF02AD10CC100133E53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		5FA884F42AD7C5FC001F340D /* SleepSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SleepSettingViewController.h; sourceTree = "<group>"; };
 		5FA884F52AD7C5FC001F340D /* SleepSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SleepSettingViewController.m; sourceTree = "<group>"; };
-		5FA885012AD7DB1C001F340D /* 1245156a62de4d6d8d60d8f8ff751302.dial */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1245156a62de4d6d8d60d8f8ff751302.dial; sourceTree = "<group>"; };
-		5FA885032AD7DB28001F340D /* 4974f889d52c4a519eac9ea409b3295c.dial */ = {isa = PBXFileReference; lastKnownFileType = file; path = 4974f889d52c4a519eac9ea409b3295c.dial; sourceTree = "<group>"; };
-		5FA885052AD7DB38001F340D /* 59c4aad46ed434ca58786f3232aba673.dial */ = {isa = PBXFileReference; lastKnownFileType = file; path = 59c4aad46ed434ca58786f3232aba673.dial; sourceTree = "<group>"; };
-		5FA885072AD7DB44001F340D /* 8c637a6c26d476db361051786e773df7.dial */ = {isa = PBXFileReference; lastKnownFileType = file; path = 8c637a6c26d476db361051786e773df7.dial; sourceTree = "<group>"; };
-		5FA885092AD7DB4F001F340D /* aab168c15c7b40eab361ca98fdd213ee.dial */ = {isa = PBXFileReference; lastKnownFileType = file; path = aab168c15c7b40eab361ca98fdd213ee.dial; sourceTree = "<group>"; };
 		5FC311832AE768B700635E56 /* ExerciseGoalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExerciseGoalViewController.h; sourceTree = "<group>"; };
 		5FC311842AE768B700635E56 /* ExerciseGoalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExerciseGoalViewController.m; sourceTree = "<group>"; };
 		5FC311862AE768D700635E56 /* EditUserInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditUserInfoViewController.h; sourceTree = "<group>"; };
@@ -176,6 +199,47 @@
 		5FFAC1472AD91DFD006B68CF /* CameraAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraAppDelegate.m; sourceTree = "<group>"; };
 		73959BDAF331E975138356DF /* Pods-UNIWatchMateDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIWatchMateDemo.release.xcconfig"; path = "Target Support Files/Pods-UNIWatchMateDemo/Pods-UNIWatchMateDemo.release.xcconfig"; sourceTree = "<group>"; };
 		C60E9F032EABB4DD0FEDA943 /* Pods_UNIWatchMateDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UNIWatchMateDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D71481792B97376500C3CB63 /* h264encoder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = h264encoder.framework; path = UNIWatchMateDemo/Libs/h264encoder.framework; sourceTree = "<group>"; };
+		D714817C2B97377400C3CB63 /* SJWatchLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SJWatchLib.framework; path = UNIWatchMateDemo/Libs/SJWatchLib.framework; sourceTree = "<group>"; };
+		D714817F2B9738A600C3CB63 /* x8c637a6c26d476db361051786e773df7.dial */ = {isa = PBXFileReference; lastKnownFileType = file; path = x8c637a6c26d476db361051786e773df7.dial; sourceTree = "<group>"; };
+		D71481802B9738A600C3CB63 /* x59c4aad46ed434ca58786f3232aba673.dial */ = {isa = PBXFileReference; lastKnownFileType = file; path = x59c4aad46ed434ca58786f3232aba673.dial; sourceTree = "<group>"; };
+		D71481812B9738A700C3CB63 /* x1245156a62de4d6d8d60d8f8ff751302.dial */ = {isa = PBXFileReference; lastKnownFileType = file; path = x1245156a62de4d6d8d60d8f8ff751302.dial; sourceTree = "<group>"; };
+		D71481822B9738A700C3CB63 /* xaab168c15c7b40eab361ca98fdd213ee.dial */ = {isa = PBXFileReference; lastKnownFileType = file; path = xaab168c15c7b40eab361ca98fdd213ee.dial; sourceTree = "<group>"; };
+		D71481872B97397E00C3CB63 /* TSDeviceDialTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSDeviceDialTools.swift; sourceTree = "<group>"; };
+		D71481882B97397E00C3CB63 /* SmallWidgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmallWidgetViewController.m; sourceTree = "<group>"; };
+		D71481892B97397E00C3CB63 /* SmallWidgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmallWidgetViewController.h; sourceTree = "<group>"; };
+		D714818B2B97397F00C3CB63 /* CustomDialController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDialController.swift; sourceTree = "<group>"; };
+		D71481902B97399D00C3CB63 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		D71481912B97399D00C3CB63 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		D71481922B97399D00C3CB63 /* TSAlertSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSAlertSheetView.swift; sourceTree = "<group>"; };
+		D71481932B97399D00C3CB63 /* ZHBaseBottomPopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHBaseBottomPopView.swift; sourceTree = "<group>"; };
+		D71481942B97399D00C3CB63 /* TSWatchDailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSWatchDailModel.swift; sourceTree = "<group>"; };
+		D71481952B97399D00C3CB63 /* TSAlertManagerTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSAlertManagerTools.swift; sourceTree = "<group>"; };
+		D71481962B97399D00C3CB63 /* TSDailCustomPreviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSDailCustomPreviewCell.swift; sourceTree = "<group>"; };
+		D71481982B97399D00C3CB63 /* EFHSBView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFHSBView.swift; sourceTree = "<group>"; };
+		D71481992B97399E00C3CB63 /* EFColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFColorUtils.swift; sourceTree = "<group>"; };
+		D714819A2B97399E00C3CB63 /* EFColorWheelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFColorWheelView.swift; sourceTree = "<group>"; };
+		D714819B2B97399E00C3CB63 /* EFColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFColorView.swift; sourceTree = "<group>"; };
+		D714819C2B97399E00C3CB63 /* TSAuthorizationTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSAuthorizationTool.swift; sourceTree = "<group>"; };
+		D714819D2B97399E00C3CB63 /* TSAlertSheetListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSAlertSheetListView.swift; sourceTree = "<group>"; };
+		D714819E2B97399E00C3CB63 /* TSDialHsbColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSDialHsbColorView.swift; sourceTree = "<group>"; };
+		D714819F2B97399E00C3CB63 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		D71481A12B97399E00C3CB63 /* UILabel+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Ext.swift"; sourceTree = "<group>"; };
+		D71481A22B97399E00C3CB63 /* UIimageView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIimageView+Ext.swift"; sourceTree = "<group>"; };
+		D71481A32B97399E00C3CB63 /* UIButton+Badge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Badge.swift"; sourceTree = "<group>"; };
+		D71481A42B97399E00C3CB63 /* UIImage+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
+		D71481A52B97399E00C3CB63 /* Date+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		D71481A62B97399E00C3CB63 /* UITableView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
+		D71481A72B97399E00C3CB63 /* UIButton+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Ext.swift"; sourceTree = "<group>"; };
+		D71481A82B97399E00C3CB63 /* String+SwifterSwiftExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+SwifterSwiftExt.swift"; sourceTree = "<group>"; };
+		D71481A92B97399E00C3CB63 /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		D71481AA2B97399E00C3CB63 /* UIColor+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		D71481AB2B97399E00C3CB63 /* UISwitch+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISwitch+Ext.swift"; sourceTree = "<group>"; };
+		D71481AC2B97399E00C3CB63 /* Array+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
+		D71481AD2B97399E00C3CB63 /* NSAttributedString+SwifterSwiftExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+SwifterSwiftExt.swift"; sourceTree = "<group>"; };
+		D71481AE2B97399E00C3CB63 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		D71481AF2B97399E00C3CB63 /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		D71481D02B973CA900C3CB63 /* UNIWatchMateDemo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UNIWatchMateDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		D778251C2ABD34180056AB02 /* UNIWatchMateDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UNIWatchMateDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D778251F2ABD34180056AB02 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D77825202ABD34180056AB02 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -196,11 +260,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F9C86E22AF2882000117059 /* h264encoder.framework in Frameworks */,
+				D714817D2B97377500C3CB63 /* SJWatchLib.framework in Frameworks */,
 				5F9C86E62AF28C0E00117059 /* UNIWatchMate.framework in Frameworks */,
+				D714817A2B97376600C3CB63 /* h264encoder.framework in Frameworks */,
 				D7135A8BBE24884BB6DAFEEE /* Pods_UNIWatchMateDemo.framework in Frameworks */,
-				5F1886312AF3ABA300911FBF /* opencv2.framework in Frameworks */,
-				5F9C86E02AF2877D00117059 /* SJWatchLib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,10 +273,9 @@
 		56031C1DA84625A2BB83AC8C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5F1886302AF3ABA300911FBF /* opencv2.framework */,
+				D714817C2B97377400C3CB63 /* SJWatchLib.framework */,
+				D71481792B97376500C3CB63 /* h264encoder.framework */,
 				5F9C86E42AF28C0300117059 /* UNIWatchMate.framework */,
-				5F9C86DE2AF2876C00117059 /* h264encoder.framework */,
-				5F9C86DC2AF2876300117059 /* SJWatchLib.framework */,
 				C60E9F032EABB4DD0FEDA943 /* Pods_UNIWatchMateDemo.framework */,
 			);
 			name = Frameworks;
@@ -240,11 +302,10 @@
 		5FE03CED2AD79DC500E60C76 /* Dial */ = {
 			isa = PBXGroup;
 			children = (
-				5FA885092AD7DB4F001F340D /* aab168c15c7b40eab361ca98fdd213ee.dial */,
-				5FA885072AD7DB44001F340D /* 8c637a6c26d476db361051786e773df7.dial */,
-				5FA885052AD7DB38001F340D /* 59c4aad46ed434ca58786f3232aba673.dial */,
-				5FA885032AD7DB28001F340D /* 4974f889d52c4a519eac9ea409b3295c.dial */,
-				5FA885012AD7DB1C001F340D /* 1245156a62de4d6d8d60d8f8ff751302.dial */,
+				D714817F2B9738A600C3CB63 /* x8c637a6c26d476db361051786e773df7.dial */,
+				D71481802B9738A600C3CB63 /* x59c4aad46ed434ca58786f3232aba673.dial */,
+				D71481812B9738A700C3CB63 /* x1245156a62de4d6d8d60d8f8ff751302.dial */,
+				D71481822B9738A700C3CB63 /* xaab168c15c7b40eab361ca98fdd213ee.dial */,
 			);
 			path = Dial;
 			sourceTree = "<group>";
@@ -263,6 +324,13 @@
 		5FF961ED2AC427DC00DFA693 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				D71481D02B973CA900C3CB63 /* UNIWatchMateDemo-Bridging-Header.h */,
+				D714818F2B97399D00C3CB63 /* base */,
+				D71481A02B97399E00C3CB63 /* Categery */,
+				D714818B2B97397F00C3CB63 /* CustomDialController.swift */,
+				D71481892B97397E00C3CB63 /* SmallWidgetViewController.h */,
+				D71481882B97397E00C3CB63 /* SmallWidgetViewController.m */,
+				D71481872B97397E00C3CB63 /* TSDeviceDialTools.swift */,
 				5F04AD892AF0B26600348A38 /* Tool */,
 				5FC3119B2AE7EFAA00635E56 /* sports_data.json */,
 				5FEA2DF62AE2230700C464A7 /* Picker */,
@@ -345,6 +413,58 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D714818F2B97399D00C3CB63 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				D71481902B97399D00C3CB63 /* Constant.swift */,
+				D71481912B97399D00C3CB63 /* BaseTableViewCell.swift */,
+				D71481922B97399D00C3CB63 /* TSAlertSheetView.swift */,
+				D71481932B97399D00C3CB63 /* ZHBaseBottomPopView.swift */,
+				D71481942B97399D00C3CB63 /* TSWatchDailModel.swift */,
+				D71481952B97399D00C3CB63 /* TSAlertManagerTools.swift */,
+				D71481962B97399D00C3CB63 /* TSDailCustomPreviewCell.swift */,
+				D71481972B97399D00C3CB63 /* HSBView */,
+				D714819C2B97399E00C3CB63 /* TSAuthorizationTool.swift */,
+				D714819D2B97399E00C3CB63 /* TSAlertSheetListView.swift */,
+				D714819E2B97399E00C3CB63 /* TSDialHsbColorView.swift */,
+				D714819F2B97399E00C3CB63 /* BaseView.swift */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		D71481972B97399D00C3CB63 /* HSBView */ = {
+			isa = PBXGroup;
+			children = (
+				D71481982B97399D00C3CB63 /* EFHSBView.swift */,
+				D71481992B97399E00C3CB63 /* EFColorUtils.swift */,
+				D714819A2B97399E00C3CB63 /* EFColorWheelView.swift */,
+				D714819B2B97399E00C3CB63 /* EFColorView.swift */,
+			);
+			path = HSBView;
+			sourceTree = "<group>";
+		};
+		D71481A02B97399E00C3CB63 /* Categery */ = {
+			isa = PBXGroup;
+			children = (
+				D71481A12B97399E00C3CB63 /* UILabel+Ext.swift */,
+				D71481A22B97399E00C3CB63 /* UIimageView+Ext.swift */,
+				D71481A32B97399E00C3CB63 /* UIButton+Badge.swift */,
+				D71481A42B97399E00C3CB63 /* UIImage+Ext.swift */,
+				D71481A52B97399E00C3CB63 /* Date+Ext.swift */,
+				D71481A62B97399E00C3CB63 /* UITableView+Ext.swift */,
+				D71481A72B97399E00C3CB63 /* UIButton+Ext.swift */,
+				D71481A82B97399E00C3CB63 /* String+SwifterSwiftExt.swift */,
+				D71481A92B97399E00C3CB63 /* String+Ext.swift */,
+				D71481AA2B97399E00C3CB63 /* UIColor+Ext.swift */,
+				D71481AB2B97399E00C3CB63 /* UISwitch+Ext.swift */,
+				D71481AC2B97399E00C3CB63 /* Array+Ext.swift */,
+				D71481AD2B97399E00C3CB63 /* NSAttributedString+SwifterSwiftExt.swift */,
+				D71481AE2B97399E00C3CB63 /* UIViewController+Ext.swift */,
+				D71481AF2B97399E00C3CB63 /* UIView+Ext.swift */,
+			);
+			path = Categery;
+			sourceTree = "<group>";
+		};
 		D77825132ABD34180056AB02 = {
 			isa = PBXGroup;
 			children = (
@@ -419,6 +539,7 @@
 				TargetAttributes = {
 					D778251B2ABD34180056AB02 = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 				};
 			};
@@ -446,17 +567,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FA885022AD7DB1C001F340D /* 1245156a62de4d6d8d60d8f8ff751302.dial in Resources */,
-				5FA885082AD7DB44001F340D /* 8c637a6c26d476db361051786e773df7.dial in Resources */,
 				D778252F2ABD341B0056AB02 /* LaunchScreen.storyboard in Resources */,
-				5FA8850A2AD7DB4F001F340D /* aab168c15c7b40eab361ca98fdd213ee.dial in Resources */,
+				D71481852B9738A700C3CB63 /* x1245156a62de4d6d8d60d8f8ff751302.dial in Resources */,
+				D71481842B9738A700C3CB63 /* x59c4aad46ed434ca58786f3232aba673.dial in Resources */,
 				5FC3119C2AE7EFAA00635E56 /* sports_data.json in Resources */,
 				5FF961FD2AC4292700DFA693 /* Localizable.strings in Resources */,
+				D71481862B9738A700C3CB63 /* xaab168c15c7b40eab361ca98fdd213ee.dial in Resources */,
+				D71481832B9738A700C3CB63 /* x8c637a6c26d476db361051786e773df7.dial in Resources */,
 				D778252C2ABD341B0056AB02 /* Assets.xcassets in Resources */,
 				D778252A2ABD34180056AB02 /* Main.storyboard in Resources */,
-				5FA885062AD7DB38001F340D /* 59c4aad46ed434ca58786f3232aba673.dial in Resources */,
 				5F1886332AF3B0AA00911FBF /* README.md in Resources */,
-				5FA885042AD7DB29001F340D /* 4974f889d52c4a519eac9ea409b3295c.dial in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,24 +629,46 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D71481B52B97399E00C3CB63 /* TSAlertManagerTools.swift in Sources */,
 				5F04AD8C2AF0B28900348A38 /* NSDictionary+JSONDescription.m in Sources */,
+				D714818C2B97397F00C3CB63 /* TSDeviceDialTools.swift in Sources */,
+				D71481C72B97399E00C3CB63 /* String+Ext.swift in Sources */,
+				D71481B22B97399E00C3CB63 /* TSAlertSheetView.swift in Sources */,
+				D71481B72B97399E00C3CB63 /* EFHSBView.swift in Sources */,
 				5FE994792AE112F40052851E /* AlarmsViewController.m in Sources */,
+				D71481CA2B97399E00C3CB63 /* Array+Ext.swift in Sources */,
 				5FF962082AC43D0E00DFA693 /* WatchManager.m in Sources */,
+				D71481C92B97399E00C3CB63 /* UISwitch+Ext.swift in Sources */,
 				5F1D9AC02AE144210050C702 /* AlarmEditViewController.m in Sources */,
 				5FA884F62AD7C5FC001F340D /* SleepSettingViewController.m in Sources */,
 				5FE03CEC2AD7939500E60C76 /* DialModel.m in Sources */,
 				5F5BD2F12AE90E3D007D2024 /* WeatherViewController.m in Sources */,
 				5FC311882AE768D700635E56 /* EditUserInfoViewController.m in Sources */,
+				D71481B42B97399E00C3CB63 /* TSWatchDailModel.swift in Sources */,
+				D71481B62B97399E00C3CB63 /* TSDailCustomPreviewCell.swift in Sources */,
+				D714818E2B97397F00C3CB63 /* CustomDialController.swift in Sources */,
 				5FE994762AE0DE640052851E /* HomeViewController.m in Sources */,
 				5FC311972AE7B20E00635E56 /* DrinkWaterReminderViewController.m in Sources */,
+				D71481BD2B97399E00C3CB63 /* TSDialHsbColorView.swift in Sources */,
 				5FF961F52AC427DC00DFA693 /* ConnectionModeSelectionViewController.m in Sources */,
+				D71481B12B97399E00C3CB63 /* BaseTableViewCell.swift in Sources */,
 				5FECDECD2AD2802B00908606 /* AboutDeviceViewController.m in Sources */,
 				D77825272ABD34180056AB02 /* ViewController.m in Sources */,
 				5FC311912AE7A84300635E56 /* EmergencyContactViewController.m in Sources */,
 				5F54C5AA2AE60E4C0090596F /* OtaViewController.m in Sources */,
+				D71481BF2B97399E00C3CB63 /* UILabel+Ext.swift in Sources */,
+				D714818D2B97397F00C3CB63 /* SmallWidgetViewController.m in Sources */,
+				D71481CD2B97399E00C3CB63 /* UIView+Ext.swift in Sources */,
+				D71481B82B97399E00C3CB63 /* EFColorUtils.swift in Sources */,
 				5F54C5AD2AE6231C0090596F /* DeviceNotificationManagementViewController.m in Sources */,
+				D71481C02B97399E00C3CB63 /* UIimageView+Ext.swift in Sources */,
+				D71481B02B97399E00C3CB63 /* Constant.swift in Sources */,
 				5FC3118E2AE7948300635E56 /* SynchronizeContactsViewController.m in Sources */,
+				D71481BE2B97399E00C3CB63 /* BaseView.swift in Sources */,
+				D71481BC2B97399E00C3CB63 /* TSAlertSheetListView.swift in Sources */,
 				5FE03D182AD7A8D700E60C76 /* CameraControlViewController.m in Sources */,
+				D71481BB2B97399E00C3CB63 /* TSAuthorizationTool.swift in Sources */,
+				D71481C52B97399E00C3CB63 /* UIButton+Ext.swift in Sources */,
 				5FEA2DF52AE2174D00C464A7 /* LanguageChangeViewController.m in Sources */,
 				5FC3119F2AE7F1CE00635E56 /* SportsmanagerViewController.m in Sources */,
 				D77825212ABD34180056AB02 /* AppDelegate.m in Sources */,
@@ -535,20 +677,31 @@
 				D77825322ABD341B0056AB02 /* main.m in Sources */,
 				5F54C5DB2AE682C90090596F /* UnitSynchronizationViewController.m in Sources */,
 				5FC3119A2AE7CBF000635E56 /* ConfigHeartRateViewController.m in Sources */,
+				D71481B32B97399E00C3CB63 /* ZHBaseBottomPopView.swift in Sources */,
 				5FF3C1682AD6728E0063FEE4 /* SoundAndTouchFeedbackViewController.m in Sources */,
+				D71481C42B97399E00C3CB63 /* UITableView+Ext.swift in Sources */,
 				5FC311942AE7B1F200635E56 /* SedentaryReminderViewController.m in Sources */,
 				5F04AD8F2AF0B47A00348A38 /* WeatherCreateHelper.m in Sources */,
+				D71481CB2B97399E00C3CB63 /* NSAttributedString+SwifterSwiftExt.swift in Sources */,
 				5FF3C1652AD651D60063FEE4 /* DateAndTimeSynchronizedViewController.m in Sources */,
 				5FEA2DF92AE2234200C464A7 /* PickerViewController.m in Sources */,
 				5FF961F62AC427DC00DFA693 /* DemoViewController.m in Sources */,
+				D71481B92B97399E00C3CB63 /* EFColorWheelView.swift in Sources */,
+				D71481BA2B97399E00C3CB63 /* EFColorView.swift in Sources */,
 				D77825242ABD34180056AB02 /* SceneDelegate.m in Sources */,
+				D71481C12B97399E00C3CB63 /* UIButton+Badge.swift in Sources */,
+				D71481C82B97399E00C3CB63 /* UIColor+Ext.swift in Sources */,
+				D71481C32B97399E00C3CB63 /* Date+Ext.swift in Sources */,
+				D71481CC2B97399E00C3CB63 /* UIViewController+Ext.swift in Sources */,
 				5FFAC1482AD91DFD006B68CF /* CameraAppDelegate.m in Sources */,
 				5F54C5D42AE6714A0090596F /* FindDeviceViewController.m in Sources */,
 				5FC311852AE768B700635E56 /* ExerciseGoalViewController.m in Sources */,
 				5FE03CE82AD7922100E60C76 /* DialManagerViewController.m in Sources */,
 				5FC3118B2AE77EC300635E56 /* DatePickerViewController.m in Sources */,
+				D71481C22B97399E00C3CB63 /* UIImage+Ext.swift in Sources */,
 				5FF3C16B2AD6B5800063FEE4 /* AppViewViewController.m in Sources */,
 				5F5BD2F42AE92CD5007D2024 /* RealTimeDataViewController.m in Sources */,
+				D71481C62B97399E00C3CB63 /* String+SwifterSwiftExt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,12 +857,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = HX8T6X3J7G;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/UNIWatchMateDemo/Libs",
 				);
 				GCC_PREFIX_HEADER = "UNIWatchMateDemo/UNIWatchMate-Prefix.pch";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -721,7 +876,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -730,13 +885,16 @@
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/swift",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xianshenju.UNIWatchMateDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "UNIWatchMateDemo/Demo/UNIWatchMateDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -747,12 +905,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = HX8T6X3J7G;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/UNIWatchMateDemo/Libs",
 				);
 				GCC_PREFIX_HEADER = "UNIWatchMateDemo/UNIWatchMate-Prefix.pch";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -764,7 +924,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -773,13 +933,15 @@
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/swift",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xianshenju.UNIWatchMateDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "UNIWatchMateDemo/Demo/UNIWatchMateDemo-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

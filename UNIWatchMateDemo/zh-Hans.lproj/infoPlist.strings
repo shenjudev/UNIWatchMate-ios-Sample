@@ -1,0 +1,12 @@
+/* 
+  infoPlist.strings
+  UNIWatchMateDemo
+
+  Created by t_t on 2024/3/1.
+  
+*/
+NSPhotoLibraryUsageDescription    =    "允许访问相册";
+NSPhotoLibraryAddUsageDescription    =    "允许保存图片至相册";
+PHPhotoLibraryPreventAutomaticLimitedAccessAlert    =    "设置为 YES iOS 14+ 以禁用自动弹出添加更多照片的弹框(Picker 已适配 Limited 功能，可由用户主动触发，提升用户体验)";
+NSCameraUsageDescription    =    "允许使用相机";
+NSMicrophoneUsageDescription    =    "允许使用麦克风";

@@ -54,6 +54,7 @@ NSString *NSStringFromUnitTimeFormat(TimeFormat timeFormat) {
 @property (nonatomic, strong) NSArray *temperatureUnit;
 @property (nonatomic, strong) NSArray *weightUnit;
 @property (nonatomic, strong) NSArray *lengthUnit;
+@property (nonatomic, strong) WMUnitInfoModel *wMUnitInfoModel;
 
 @end
 
@@ -63,7 +64,7 @@ NSString *NSStringFromUnitTimeFormat(TimeFormat timeFormat) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"Unit synchronization";
+    self.title = NSLocalizedString(@"Unit Synchronization", nil);
     self.view.backgroundColor = [UIColor whiteColor];
     [self getDetail];
 
@@ -88,7 +89,7 @@ NSString *NSStringFromUnitTimeFormat(TimeFormat timeFormat) {
 -(UIButton *)changeLengthUnit{
     if (_changeLengthUnit == nil){
         _changeLengthUnit = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_changeLengthUnit setTitle:@"Change length unit" forState:UIControlStateNormal];
+        [_changeLengthUnit setTitle:NSLocalizedString(@"Change length unit", nil) forState:UIControlStateNormal];
         [_changeLengthUnit addTarget:self action:@selector(actionChangeLengthUnit) forControlEvents:UIControlEventTouchUpInside];
         _changeLengthUnit.layer.masksToBounds = YES;
         _changeLengthUnit.layer.cornerRadius = 5;
@@ -139,11 +140,14 @@ NSString *NSStringFromUnitTimeFormat(TimeFormat timeFormat) {
 }
 -(void)actionChangeLengthUnit:(NSInteger )lengthUnit{
     [SVProgressHUD showWithStatus:nil];
-    WMUnitInfoModel *wMUnitInfoModel = [WMUnitInfoModel new];
-    wMUnitInfoModel.lengthUnit = lengthUnit;
+    if(_wMUnitInfoModel == nil){
+        [SVProgressHUD dismiss];
+        return;
+    }
+    _wMUnitInfoModel.lengthUnit = lengthUnit;
     self.detail.text = @"";
     @weakify(self);
-    [[[WatchManager sharedInstance].currentValue.settings.unitInfo setConfigModel:wMUnitInfoModel] subscribeNext:^(WMUnitInfoModel * _Nullable x) {
+    [[[WatchManager sharedInstance].currentValue.settings.unitInfo setConfigModel:_wMUnitInfoModel] subscribeNext:^(NSNumber * _Nullable x) {
         @strongify(self);
         [SVProgressHUD dismiss];
         [self showInfo:x];
@@ -156,7 +160,7 @@ NSString *NSStringFromUnitTimeFormat(TimeFormat timeFormat) {
 -(UIButton *)changeTimeFormat{
     if (_changeTimeFormat == nil){
         _changeTimeFormat = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_changeTimeFormat setTitle:@"change time format" forState:UIControlStateNormal];
+        [_changeTimeFormat setTitle:NSLocalizedString(@"change time format", nil) forState:UIControlStateNormal];
         [_changeTimeFormat addTarget:self action:@selector(actionChangeTimeFormat) forControlEvents:UIControlEventTouchUpInside];
         _changeTimeFormat.layer.masksToBounds = YES;
         _changeTimeFormat.layer.cornerRadius = 5;
@@ -206,14 +210,17 @@ NSString *NSStringFromUnitTimeFormat(TimeFormat timeFormat) {
 }
 -(void)actionTimeFormat:(NSInteger )timeFormat{
     [SVProgressHUD showWithStatus:nil];
-    WMUnitInfoModel *wMUnitInfoModel = [WatchManager sharedInstance].currentValue.settings.unitInfo.modelValue;
-    wMUnitInfoModel.timeFormat = timeFormat;
+    if(_wMUnitInfoModel == nil){
+        [SVProgressHUD dismiss];
+        return;
+    }
+    _wMUnitInfoModel.timeFormat = timeFormat;
     self.detail.text = @"";
     @weakify(self);
-    [[[WatchManager sharedInstance].currentValue.settings.unitInfo setConfigModel:wMUnitInfoModel] subscribeNext:^(WMUnitInfoModel * _Nullable x) {
+    [[[WatchManager sharedInstance].currentValue.settings.unitInfo setConfigModel:_wMUnitInfoModel] subscribeNext:^(NSNumber * _Nullable x) {
         @strongify(self);
         [SVProgressHUD dismiss];
-        [self showInfo:x];
+        [self showInfo:_wMUnitInfoModel];
     } error:^(NSError * _Nullable error) {
         [SVProgressHUD dismiss];
         [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Set Fail\n%@",error.description]];
@@ -222,7 +229,7 @@ NSString *NSStringFromUnitTimeFormat(TimeFormat timeFormat) {
 -(UIButton *)changeWeightUnit{
     if (_changeWeightUnit == nil){
         _changeWeightUnit = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_changeWeightUnit setTitle:@"change weight unit" forState:UIControlStateNormal];
+        [_changeWeightUnit setTitle:NSLocalizedString(@"change weight unit", nil) forState:UIControlStateNormal];
         [_changeWeightUnit addTarget:self action:@selector(actionChangeWeightUnit) forControlEvents:UIControlEventTouchUpInside];
         _changeWeightUnit.layer.masksToBounds = YES;
         _changeWeightUnit.layer.cornerRadius = 5;
@@ -272,14 +279,17 @@ NSString *NSStringFromUnitTimeFormat(TimeFormat timeFormat) {
 }
 -(void)actionWeightUnit:(NSInteger )weightUnit{
     [SVProgressHUD showWithStatus:nil];
-    WMUnitInfoModel *wMUnitInfoModel = [WatchManager sharedInstance].currentValue.settings.unitInfo.modelValue;
-    wMUnitInfoModel.weightUnit = weightUnit;
+    if(_wMUnitInfoModel == nil){
+        [SVProgressHUD dismiss];
+        return;
+    }
+    _wMUnitInfoModel.weightUnit = weightUnit;
     self.detail.text = @"";
     @weakify(self);
-    [[[WatchManager sharedInstance].currentValue.settings.unitInfo setConfigModel:wMUnitInfoModel] subscribeNext:^(WMUnitInfoModel * _Nullable x) {
+    [[[WatchManager sharedInstance].currentValue.settings.unitInfo setConfigModel:_wMUnitInfoModel] subscribeNext:^(NSNumber * _Nullable x) {
         @strongify(self);
         [SVProgressHUD dismiss];
-        [self showInfo:x];
+        [self showInfo:_wMUnitInfoModel];
     } error:^(NSError * _Nullable error) {
         [SVProgressHUD dismiss];
         [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Set Fail\n%@",error.description]];
@@ -289,7 +299,7 @@ NSString *NSStringFromUnitTimeFormat(TimeFormat timeFormat) {
 -(UIButton *)changeTemperatureUnit{
     if (_changeTemperatureUnit == nil){
         _changeTemperatureUnit = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_changeTemperatureUnit setTitle:@"change temperature unit" forState:UIControlStateNormal];
+        [_changeTemperatureUnit setTitle:NSLocalizedString(@"change temperature unit", nil) forState:UIControlStateNormal];
         [_changeTemperatureUnit addTarget:self action:@selector(actionChangeTemperatureUnit) forControlEvents:UIControlEventTouchUpInside];
         _changeTemperatureUnit.layer.masksToBounds = YES;
         _changeTemperatureUnit.layer.cornerRadius = 5;
@@ -340,14 +350,17 @@ NSString *NSStringFromUnitTimeFormat(TimeFormat timeFormat) {
 }
 -(void)actionTemperatureUnit:(NSInteger )temperatureUnit{
     [SVProgressHUD showWithStatus:nil];
-    WMUnitInfoModel *wMUnitInfoModel = [WatchManager sharedInstance].currentValue.settings.unitInfo.modelValue;
-    wMUnitInfoModel.temperatureUnit = temperatureUnit;
+    if(_wMUnitInfoModel == nil){
+        [SVProgressHUD dismiss];
+        return;
+    }
+    _wMUnitInfoModel.temperatureUnit = temperatureUnit;
     self.detail.text = @"";
     @weakify(self);
-    [[[WatchManager sharedInstance].currentValue.settings.unitInfo setConfigModel:wMUnitInfoModel] subscribeNext:^(WMUnitInfoModel * _Nullable x) {
+    [[[WatchManager sharedInstance].currentValue.settings.unitInfo setConfigModel:_wMUnitInfoModel] subscribeNext:^(NSNumber * _Nullable x) {
         @strongify(self);
         [SVProgressHUD dismiss];
-        [self showInfo:x];
+        [self showInfo:_wMUnitInfoModel];
     } error:^(NSError * _Nullable error) {
         [SVProgressHUD dismiss];
         [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Set Fail\n%@",error.description]];
@@ -360,6 +373,7 @@ NSString *NSStringFromUnitTimeFormat(TimeFormat timeFormat) {
     @weakify(self);
     [[WatchManager sharedInstance].currentValue.settings.unitInfo.getConfigModel subscribeNext:^(WMUnitInfoModel * _Nullable x) {
         @strongify(self);
+        self->_wMUnitInfoModel = x;
         [SVProgressHUD dismiss];
         [self showInfo:x];
     } error:^(NSError * _Nullable error) {

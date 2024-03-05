@@ -78,7 +78,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-    self.title = @"Emergency contact";
+    self.title = NSLocalizedString(@"Emergency contact", nil);
     self.view.backgroundColor = [UIColor whiteColor];
 
 
@@ -130,9 +130,9 @@
     if (_tableViewFooterView == nil) {
         _tableViewFooterView = [[EmergencyContactFooter alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
         [_tableViewFooterView.selectContacts addTarget:self action:@selector(showContactPicker:) forControlEvents:UIControlEventTouchUpInside];
-        [_tableViewFooterView.selectContacts setTitle:@"Select emergency contact" forState:UIControlStateNormal];
+        [_tableViewFooterView.selectContacts setTitle:NSLocalizedString(@"Select emergency contact", nil) forState:UIControlStateNormal];
         [_tableViewFooterView.syncBtn addTarget:self action:@selector(syncContacts) forControlEvents:UIControlEventTouchUpInside];
-        [_tableViewFooterView.syncBtn setTitle:@"sync emergency contact from watch" forState:UIControlStateNormal];
+        [_tableViewFooterView.syncBtn setTitle:NSLocalizedString(@"sync emergency contact from watch", nil) forState:UIControlStateNormal];
     }
     return  _tableViewFooterView;
 }
@@ -161,7 +161,7 @@
 
     // 创建删除按钮
     UIButton *deleteButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [deleteButton setTitle:@"delete" forState:UIControlStateNormal];
+    [deleteButton setTitle:NSLocalizedString(@"delete", nil) forState:UIControlStateNormal];
     [deleteButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     deleteButton.layer.masksToBounds = YES;
     deleteButton.layer.cornerRadius = 5;
@@ -295,7 +295,7 @@
     NSArray *selected10Contacts = [contacts subarrayWithRange:NSMakeRange(0, maxCount)];
 
     if ([contacts count] > 1){
-        [SVProgressHUD showErrorWithStatus:@"Max 1 contacts"];
+        [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Max 1 contacts", nil)];
     }
     if ([selected10Contacts count] > 0){
         [self syncContactsToDevice:selected10Contacts];

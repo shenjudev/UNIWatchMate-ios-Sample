@@ -13,6 +13,7 @@
 @property (nonatomic, strong) RACReplaySubject<NSMutableArray<DialModel *> *> *currents;
 @property (nonatomic, strong) NSMutableArray *currentsValue; // 用于保存最新的值
 @property (nonatomic, strong) UIAlertController *alertController;
+@property (nonatomic, strong) NSMutableArray<WMDialModel *> *wmDialModels;
 
 @end
 
@@ -25,6 +26,8 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = NSLocalizedString(@"Dial manager",nil);
+
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     _currents = [RACReplaySubject replaySubjectWithCapacity:1];
@@ -40,14 +43,15 @@
         self.currentsValue = peripherals;
         [self.tableView reloadData]; // 刷新表格数据
     }];
-    @weakify(self);
-    [[WatchManager sharedInstance].currentValue.apps.dialApp.dialList subscribeNext:^(NSArray<WMDialModel *> * _Nullable x) {
-        @strongify(self);
-        NSArray *array = [self changeToDialModel:x];
-        [self.currents sendNext:array];
-    } error:^(NSError * _Nullable error) {
-        [SVProgressHUD showErrorWithStatus:@"Get Fail"];
-    }];
+//    @weakify(self);
+//    [[WatchManager sharedInstance].currentValue.apps.dialApp.syncDialList subscribeNext:^(NSArray<WMDialModel *> * _Nullable x) {
+//        @strongify(self);
+//        self.wmDialModels = x;
+//        NSArray *array = [self changeToDialModel:x];
+//        [self.currents sendNext:array];
+//    } error:^(NSError * _Nullable error) {
+//        [SVProgressHUD showErrorWithStatus:@"Get Fail"];
+//    }];
     [self getDials];
 }
 -(NSArray *)changeToDialModel:(NSArray<WMDialModel *> * _Nullable )x{
@@ -64,7 +68,7 @@
     
     DialModel *model1 = [DialModel new];
     model1.image = @"aab168c15c7b40eab361ca98fdd213ee";
-    model1.path = @"aab168c15c7b40eab361ca98fdd213ee.dial";
+    model1.path = @"xaab168c15c7b40eab361ca98fdd213ee.dial";
     WMDialModel *dialModel1 = [WMDialModel new];
     dialModel1.identifier = @"aab168c15c7b40eab361ca98fdd213ee";
     dialModel1.isBuiltIn = NO;
@@ -72,39 +76,29 @@
     model1.model = dialModel1;
     [customerArray addObject:model1];
     
-    DialModel *model2 = [DialModel new];
-    model2.image = @"8c637a6c26d476db361051786e773df7";
-    model2.path = @"8c637a6c26d476db361051786e773df7.dial";
-    WMDialModel *dialModel2 = [WMDialModel new];
-    dialModel2.identifier = @"8c637a6c26d476db361051786e773df7";
-    dialModel2.isBuiltIn = NO;
-    model2.canInstall = YES;
-    model2.model = dialModel2;
-    [customerArray addObject:model2];
-    
-    DialModel *model3 = [DialModel new];
-    model3.image = @"59c4aad46ed434ca58786f3232aba673";
-    model3.path = @"59c4aad46ed434ca58786f3232aba673.dial";
-    WMDialModel *dialModel3 = [WMDialModel new];
-    dialModel3.identifier = @"59c4aad46ed434ca58786f3232aba673";
-    dialModel3.isBuiltIn = NO;
-    model3.canInstall = YES;
-    model3.model = dialModel3;
-    [customerArray addObject:model3];
-    
-    DialModel *model4 = [DialModel new];
-    model4.image = @"4974f889d52c4a519eac9ea409b3295c";
-    model4.path = @"4974f889d52c4a519eac9ea409b3295c.dial";
-    WMDialModel *dialModel4 = [WMDialModel new];
-    dialModel4.identifier = @"4974f889d52c4a519eac9ea409b3295c";
-    dialModel4.isBuiltIn = NO;
-    model4.canInstall = YES;
-    model4.model = dialModel4;
-    [customerArray addObject:model4];
-    
+//    DialModel *model2 = [DialModel new];
+//    model2.image = @"8c637a6c26d476db361051786e773df7";
+//    model2.path = @"x8c637a6c26d476db361051786e773df7.dial";
+//    WMDialModel *dialModel2 = [WMDialModel new];
+//    dialModel2.identifier = @"8c637a6c26d476db361051786e773df7";
+//    dialModel2.isBuiltIn = NO;
+//    model2.canInstall = YES;
+//    model2.model = dialModel2;
+//    [customerArray addObject:model2];
+//
+//    DialModel *model3 = [DialModel new];
+//    model3.image = @"59c4aad46ed434ca58786f3232aba673";
+//    model3.path = @"x59c4aad46ed434ca58786f3232aba673.dial";
+//    WMDialModel *dialModel3 = [WMDialModel new];
+//    dialModel3.identifier = @"59c4aad46ed434ca58786f3232aba673";
+//    dialModel3.isBuiltIn = NO;
+//    model3.canInstall = YES;
+//    model3.model = dialModel3;
+//    [customerArray addObject:model3];
+
     DialModel *model5 = [DialModel new];
     model5.image = @"1245156a62de4d6d8d60d8f8ff751302";
-    model5.path = @"1245156a62de4d6d8d60d8f8ff751302.dial";
+    model5.path = @"x1245156a62de4d6d8d60d8f8ff751302.dial";
     WMDialModel *dialModel5 = [WMDialModel new];
     dialModel5.identifier = @"1245156a62de4d6d8d60d8f8ff751302";
     dialModel5.isBuiltIn = NO;
@@ -123,6 +117,7 @@
     [[WatchManager sharedInstance].currentValue.apps.dialApp.syncDialList subscribeNext:^(NSArray<WMDialModel *> * _Nullable x) {
         @strongify(self);
         NSArray *array = [self changeToDialModel:x];
+//        self.wmDialModels = x;
         [self.currents sendNext:array];
 
     } error:^(NSError * _Nullable error) {
@@ -162,7 +157,7 @@
     cell.textLabel.text = dialModel.model.identifier;
     if (dialModel.model.isBuiltIn == YES){
         // 设置右侧详情文本
-        cell.detailTextLabel.text =  @"BuiltIn";
+        cell.detailTextLabel.text =  NSLocalizedString(@"BuiltIn", nil);
         // 设置尖头样式
         cell.accessoryType = UITableViewCellAccessoryNone;
         cell.imageView.image = nil;
@@ -190,6 +185,12 @@
         [self deleteDialFromDevice:dialModel.model.identifier];
         return;
     }
+    for(DialModel *deviceDail in self.currentsValue[0]){
+        if([deviceDail.model.identifier isEqualToString :dialModel.model.identifier]){
+            [SVProgressHUD showInfoWithStatus:@"installed"];
+            return;
+        }
+    }
     if (dialModel.path != nil){
         [self sendDial:dialModel.path];
     }
@@ -198,9 +199,9 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     if (section == 0){
-        return  @"The dial from the device";
+        return  NSLocalizedString(@"The dial from the device", nil);
     }else{
-        return  @"Demo dial.You can send to device";
+        return  NSLocalizedString(@"Demo dial.You can send to device", nil);
     }
 }
 - (void)sendDial:(NSString *)path{
@@ -210,10 +211,11 @@
     }
     @weakify(self)
     [[[WatchManager sharedInstance].currentValue.apps.fileApp startTransferFile:[NSURL fileURLWithPath:desPath] fileType:WMActivityTypeDIAL] subscribeNext:^(WMProgressModel * _Nullable x) {
-        [SVProgressHUD showProgress:x.progress / 100.0 status:[NSString stringWithFormat:@"data:%.2f%%",x.progress]];
+        [SVProgressHUD showProgress:x.progress / 100.0 status:[NSString stringWithFormat:@"progress:%.2f%%",x.progress]];
     } error:^(NSError * _Nullable error) {
         @strongify(self);
         [self resendDial:path error:error.description];
+        [SVProgressHUD dismiss];
     } completed:^{
         [SVProgressHUD showSuccessWithStatus:@"Dial install successed."];
         [self getDials];
@@ -334,12 +336,11 @@
     model.isBuiltIn = false;
     @weakify(self)
     [SVProgressHUD showWithStatus:nil];
-    [[[WatchManager sharedInstance].currentValue.apps.dialApp deleteDial:model] subscribeNext:^(NSArray<WMDialModel *> * _Nullable x) {
+    [[[WatchManager sharedInstance].currentValue.apps.dialApp deleteDial:model] subscribeNext:^(NSNumber * _Nullable x) {
         @strongify(self);
         [SVProgressHUD dismiss];
         [SVProgressHUD showSuccessWithStatus:@"Delete Success."];
-        NSArray *array = [self changeToDialModel:x];
-        [self.currents sendNext:array];
+        [self getDials];
     } error:^(NSError * _Nullable error) {
         @strongify(self);
         [SVProgressHUD dismiss];

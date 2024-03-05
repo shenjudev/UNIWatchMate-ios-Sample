@@ -16,17 +16,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    WMDeviceBaseInfo * baseInfo = [[[[WatchManager sharedInstance] currentValue] infoModel] baseinfoValue];
-    NSMutableString * info = [NSMutableString string];
-    [info appendFormat:@"%@%@\n",NSLocalizedString(@"Equipment model: ", nil),baseInfo.model];
-    [info appendFormat:@"%@%@\n",NSLocalizedString(@"Device MAC address: ", nil),baseInfo.macAddress];
-    [info appendFormat:@"%@%@\n",NSLocalizedString(@"Device version: ", nil),baseInfo.version];
-    [info appendFormat:@"%@%@\n",NSLocalizedString(@"Device ID: ", nil),baseInfo.deviceId];
-    [info appendFormat:@"%@%@\n",NSLocalizedString(@"Bluetooth name: ", nil),baseInfo.bluetoothName];
-    [info appendFormat:@"%@%@\n",NSLocalizedString(@"Device name:", nil),baseInfo.deviceName];
+    self.title = NSLocalizedString(@"About device",nil);
+
+    [[[[[WatchManager sharedInstance] currentValue] infoModel] wm_getBaseinfo]   subscribeNext:^(WMDeviceBaseInfo * _Nullable baseInfo) {
+        NSMutableString * info = [NSMutableString string];
+        [info appendFormat:@"%@%@\n",NSLocalizedString(@"Equipment model: ", nil),baseInfo.model];
+        [info appendFormat:@"%@%@\n",NSLocalizedString(@"Device MAC address: ", nil),baseInfo.macAddress];
+        [info appendFormat:@"%@%@\n",NSLocalizedString(@"Device version: ", nil),baseInfo.version];
+        [info appendFormat:@"%@%@\n",NSLocalizedString(@"Device ID: ", nil),baseInfo.deviceId];
+//        [info appendFormat:@"%@%@\n",NSLocalizedString(@"Bluetooth name: ", nil),baseInfo.bluetoothName];
+        [info appendFormat:@"%@%@\n",NSLocalizedString(@"Device name:", nil),baseInfo.deviceName];
+        self.detail.text = info;
+    } error:^(NSError * _Nullable error) {
+        
+    } completed:^{
+        
+    }];
     
-    self.detail.text = info;
 }
+
 //点击页面复制全部信息
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     XLOG_INFO(@"%@",self.detail.text);

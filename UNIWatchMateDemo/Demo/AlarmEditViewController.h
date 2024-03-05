@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AlarmEditViewController : UIViewController
 @property (nonatomic, strong) WMAlarmModel *alarmModel;
+@property (nonatomic, strong) NSMutableArray<WMAlarmModel *> *alarmModels;
+@property (copy, nonatomic) void (^completionHandler)(NSString *data);
 
 @end
 

@@ -49,7 +49,7 @@ NSString *NSStringFromWMTimeFrequencyWater(WMTimeFrequency timeFrequency) {
 @property (nonatomic, strong) LSTPopView *popView;
 
 @property (nonatomic,strong) UIScrollView *scrollView;
-
+@property (nonatomic,strong) WMReminderModel *wMReminderModel;
 @end
 
 @implementation DrinkWaterReminderViewController
@@ -75,7 +75,7 @@ NSString *NSStringFromWMTimeFrequencyWater(WMTimeFrequency timeFrequency) {
 - (UIButton *)timeRangeSave {
     if (!_timeRangeSave) {
         _timeRangeSave = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_timeRangeSave setTitle:@"Save" forState:UIControlStateNormal];
+        [_timeRangeSave setTitle:NSLocalizedString(@"Save", nil) forState:UIControlStateNormal];
         [_timeRangeSave setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_timeRangeSave setBackgroundColor:[UIColor blueColor]];
         _timeRangeSave.layer.masksToBounds = YES;
@@ -94,7 +94,7 @@ NSString *NSStringFromWMTimeFrequencyWater(WMTimeFrequency timeFrequency) {
     if (!_isEnableTip) {
         _isEnableTip = [[UILabel alloc] init];
         // 进行其他属性设置和布局
-        _isEnableTip.text = @"isEnable";
+        _isEnableTip.text = NSLocalizedString(@"isEnable", nil);
         [self.scrollView addSubview:_isEnableTip];
     }
     return _isEnableTip;
@@ -116,7 +116,7 @@ NSString *NSStringFromWMTimeFrequencyWater(WMTimeFrequency timeFrequency) {
     if (!_timeRangeTip) {
         _timeRangeTip = [[UILabel alloc] init];
         // 进行其他属性设置和布局
-        _timeRangeTip.text = @"timeRange";
+        _timeRangeTip.text = NSLocalizedString(@"timeRange", nil);
         [self.scrollView addSubview:_timeRangeTip];
     }
     return _timeRangeTip;
@@ -155,7 +155,7 @@ NSString *NSStringFromWMTimeFrequencyWater(WMTimeFrequency timeFrequency) {
     if (!_frequencyTip) {
         _frequencyTip = [[UILabel alloc] init];
         // 进行其他属性设置和布局
-        _frequencyTip.text = @"frequency";
+        _frequencyTip.text = NSLocalizedString(@"frequency", nil);
         [self.scrollView addSubview:_frequencyTip];
     }
     return _frequencyTip;
@@ -184,7 +184,7 @@ NSString *NSStringFromWMTimeFrequencyWater(WMTimeFrequency timeFrequency) {
     if (!_noDisturbLunchBreakTip) {
         _noDisturbLunchBreakTip = [[UILabel alloc] init];
         // 进行其他属性设置和布局
-        _noDisturbLunchBreakTip.text = @"noDisturbLunchBreakTip";
+        _noDisturbLunchBreakTip.text = NSLocalizedString(@"noDisturbLunchBreakTip", nil);
         [self.scrollView addSubview:_noDisturbLunchBreakTip];
     }
     return _noDisturbLunchBreakTip;
@@ -195,7 +195,7 @@ NSString *NSStringFromWMTimeFrequencyWater(WMTimeFrequency timeFrequency) {
     if (!_noDisturbLunchBreakIsEnableTip) {
         _noDisturbLunchBreakIsEnableTip = [[UILabel alloc] init];
         // 进行其他属性设置和布局
-        _noDisturbLunchBreakIsEnableTip.text = @"isEnable";
+        _noDisturbLunchBreakIsEnableTip.text = NSLocalizedString(@"isEnable", nil);
         [self.scrollView addSubview:_noDisturbLunchBreakIsEnableTip];
     }
     return _noDisturbLunchBreakIsEnableTip;
@@ -217,7 +217,7 @@ NSString *NSStringFromWMTimeFrequencyWater(WMTimeFrequency timeFrequency) {
     if (!_noDisturbLunchBreakTimeRangeTip) {
         _noDisturbLunchBreakTimeRangeTip = [[UILabel alloc] init];
         // 进行其他属性设置和布局
-        _noDisturbLunchBreakTimeRangeTip.text = @"timeRange";
+        _noDisturbLunchBreakTimeRangeTip.text = NSLocalizedString(@"timeRange", nil);
         [self.scrollView addSubview:_noDisturbLunchBreakTimeRangeTip];
     }
     return _noDisturbLunchBreakTimeRangeTip;
@@ -256,7 +256,7 @@ NSString *NSStringFromWMTimeFrequencyWater(WMTimeFrequency timeFrequency) {
     if (!_noDisturbLaunchBreak) {
         _noDisturbLaunchBreak = [UIButton buttonWithType:UIButtonTypeCustom];
         // 进行其他属性设置和布局
-        [_noDisturbLaunchBreak setTitle:@"save" forState:UIControlStateNormal];
+        [_noDisturbLaunchBreak setTitle:NSLocalizedString(@"Save", nil) forState:UIControlStateNormal];
         [_noDisturbLaunchBreak setBackgroundColor:[UIColor blueColor]];
         [_noDisturbLaunchBreak setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_noDisturbLaunchBreak setContentEdgeInsets:UIEdgeInsetsMake(10, 10, 10, 10)];
@@ -320,7 +320,7 @@ NSString *NSStringFromWMTimeFrequencyWater(WMTimeFrequency timeFrequency) {
 -(UIButton *)getNowBtn{
     if (_getNowBtn == nil){
         _getNowBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_getNowBtn setTitle:@"Get Now" forState:UIControlStateNormal];
+        [_getNowBtn setTitle:NSLocalizedString(@"Get Now", nil) forState:UIControlStateNormal];
         [_getNowBtn addTarget:self action:@selector(getNow) forControlEvents:UIControlEventTouchUpInside];
         _getNowBtn.layer.masksToBounds = YES;
         _getNowBtn.layer.cornerRadius = 5;
@@ -347,6 +347,7 @@ NSString *NSStringFromWMTimeFrequencyWater(WMTimeFrequency timeFrequency) {
     [[[WatchManager sharedInstance].currentValue.settings.waterReminder getConfigModel] subscribeNext:^(WMReminderModel * _Nullable x) {
         @strongify(self);
         [SVProgressHUD dismiss];
+        self-> _wMReminderModel = x;
         [self showDetail:x];
     } error:^(NSError * _Nullable error) {
         [SVProgressHUD dismiss];
@@ -362,6 +363,18 @@ NSString *NSStringFromWMTimeFrequencyWater(WMTimeFrequency timeFrequency) {
     [info appendFormat:@"frequency:%@\n",NSStringFromWMTimeFrequencyWater(x.frequency)];
     [info appendFormat:@"noDisturbLunchBreak:\n  isEnabled:%d\n  timeRange:\n  start:%@\n  end:%@\n",x.noDisturbLunchBreak.isEnabled,[self getHourAndMMFromDate:x.noDisturbLunchBreak.timeRange.start],[self getHourAndMMFromDate:x.noDisturbLunchBreak.timeRange.end]];
     self.detail.text = info;
+    
+    self.startDate.date = x.timeRange.start;
+    self.noDisturbLunchBreakStartDate.date = x.noDisturbLunchBreak.timeRange.start;
+    self.endDate.date = x.timeRange.end;
+    self.noDisturbLunchBreakEndDate.date = x.noDisturbLunchBreak.timeRange.end;
+    [self.noDisturbLunchBreakIsEnableSwitch setOn:x.noDisturbLunchBreak.isEnabled];
+    [self.isEnableSwitch setOn:x.isEnabled];
+    [self.frequencyBtn setTitle: NSStringFromWMTimeFrequencyWater(x.frequency) forState:UIControlStateNormal];
+
+    
+//    [self.frequencyBtn setTitle:x.frequency forState:UIControlStateNormal];
+
 }
 /*
  #pragma mark - Navigation
@@ -423,12 +436,19 @@ NSString *NSStringFromWMTimeFrequencyWater(WMTimeFrequency timeFrequency) {
     self.detail.text = @"";
     @weakify(self);
     [SVProgressHUD showWithStatus:nil];
-    WMReminderModel *wMReminderModel = [WatchManager sharedInstance].currentValue.settings.waterReminder.modelValue;
-    wMReminderModel.isEnabled = self.isEnableSwitch.isOn;
-    [[[WatchManager sharedInstance].currentValue.settings.waterReminder setConfigModel:wMReminderModel] subscribeNext:^(WMReminderModel * _Nullable x) {
+    if(_wMReminderModel == nil){
+        [SVProgressHUD dismiss];
+        return;
+    }
+    _wMReminderModel.isEnabled = self.isEnableSwitch.isOn;
+    [[[WatchManager sharedInstance].currentValue.settings.waterReminder setConfigModel:_wMReminderModel] subscribeNext:^(NSNumber * _Nullable x) {
         @strongify(self);
         [SVProgressHUD dismiss];
-        [self showDetail:x];
+        if([x isKindOfClass:WMReminderModel.class]){
+            
+            [self showDetail:x];
+        }
+
     } error:^(NSError * _Nullable error) {
         [SVProgressHUD dismiss];
         [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@\n%@",@"Set Fail",error.description]];
@@ -439,16 +459,20 @@ NSString *NSStringFromWMTimeFrequencyWater(WMTimeFrequency timeFrequency) {
     self.detail.text = @"";
     @weakify(self);
     [SVProgressHUD showWithStatus:nil];
-    WMReminderModel *wMReminderModel = [WatchManager sharedInstance].currentValue.settings.waterReminder.modelValue;
+    if(_wMReminderModel == nil){
+        [SVProgressHUD dismiss];
+        return;
+    }
+    _wMReminderModel.noDisturbLunchBreak.isEnabled = self.noDisturbLunchBreakIsEnableSwitch.isOn;
 
-    wMReminderModel.noDisturbLunchBreak.isEnabled = self.noDisturbLunchBreakIsEnableSwitch.isOn;
 
 
-
-    [[[WatchManager sharedInstance].currentValue.settings.waterReminder setConfigModel:wMReminderModel] subscribeNext:^(WMReminderModel * _Nullable x) {
+    [[[WatchManager sharedInstance].currentValue.settings.waterReminder setConfigModel:_wMReminderModel] subscribeNext:^(NSNumber * _Nullable x) {
         @strongify(self);
         [SVProgressHUD dismiss];
-        [self showDetail:x];
+        if([x isKindOfClass:WMReminderModel.class]){
+            [self showDetail:x];
+        }
     } error:^(NSError * _Nullable error) {
         [SVProgressHUD dismiss];
         [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@\n%@",@"Set Fail",error.description]];
@@ -459,13 +483,18 @@ NSString *NSStringFromWMTimeFrequencyWater(WMTimeFrequency timeFrequency) {
     self.detail.text = @"";
     @weakify(self);
     [SVProgressHUD showWithStatus:nil];
-    WMReminderModel *wMReminderModel = [WatchManager sharedInstance].currentValue.settings.waterReminder.modelValue;
-    wMReminderModel.timeRange.start = self.startDate.date;
-    wMReminderModel.timeRange.end = self.endDate.date;
-    [[[WatchManager sharedInstance].currentValue.settings.waterReminder setConfigModel:wMReminderModel] subscribeNext:^(WMReminderModel * _Nullable x) {
+    if(_wMReminderModel == nil){
+        [SVProgressHUD dismiss];
+        return;
+    }
+    _wMReminderModel.timeRange.start = self.startDate.date;
+    _wMReminderModel.timeRange.end = self.endDate.date;
+    [[[WatchManager sharedInstance].currentValue.settings.waterReminder setConfigModel:_wMReminderModel] subscribeNext:^(NSNumber * _Nullable x) {
         @strongify(self);
         [SVProgressHUD dismiss];
-        [self showDetail:x];
+        if([x isKindOfClass:WMReminderModel.class]){
+            [self showDetail:self->_wMReminderModel];
+        }
     } error:^(NSError * _Nullable error) {
         [SVProgressHUD dismiss];
         [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@\n%@",@"Set Fail",error.description]];
@@ -475,17 +504,18 @@ NSString *NSStringFromWMTimeFrequencyWater(WMTimeFrequency timeFrequency) {
     self.detail.text = @"";
     @weakify(self);
     [SVProgressHUD showWithStatus:nil];
-    WMReminderModel *wMReminderModel = [WatchManager sharedInstance].currentValue.settings.waterReminder.modelValue;
-    wMReminderModel.noDisturbLunchBreak.timeRange.start = self.noDisturbLunchBreakStartDate.date;
-    wMReminderModel.noDisturbLunchBreak.timeRange.end = self.noDisturbLunchBreakEndDate.date;
+    if(_wMReminderModel == nil){
+        [SVProgressHUD dismiss];
+        return;
+    }
+    _wMReminderModel.noDisturbLunchBreak.timeRange.start = self.noDisturbLunchBreakStartDate.date;
+    _wMReminderModel.noDisturbLunchBreak.timeRange.end = self.noDisturbLunchBreakEndDate.date;
 
-
-
-
-    [[[WatchManager sharedInstance].currentValue.settings.waterReminder setConfigModel:wMReminderModel] subscribeNext:^(WMReminderModel * _Nullable x) {
+    [[[WatchManager sharedInstance].currentValue.settings.waterReminder setConfigModel:_wMReminderModel] subscribeNext:^(NSNumber * _Nullable x) {
         @strongify(self);
         [SVProgressHUD dismiss];
         [self showDetail:x];
+
     } error:^(NSError * _Nullable error) {
         [SVProgressHUD dismiss];
         [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@\n%@",@"Set Fail",error.description]];
@@ -495,12 +525,17 @@ NSString *NSStringFromWMTimeFrequencyWater(WMTimeFrequency timeFrequency) {
     self.detail.text = @"";
     @weakify(self);
     [SVProgressHUD showWithStatus:nil];
-    WMReminderModel *wMReminderModel = [WatchManager sharedInstance].currentValue.settings.waterReminder.modelValue;
-    wMReminderModel.frequency = [self.timeFrequencys indexOfObject:frequency];
-    [[[WatchManager sharedInstance].currentValue.settings.waterReminder setConfigModel:wMReminderModel] subscribeNext:^(WMReminderModel * _Nullable x) {
+    if(_wMReminderModel == nil){
+        [SVProgressHUD dismiss];
+        return;
+    }
+    _wMReminderModel.frequency = [self.timeFrequencys indexOfObject:frequency];
+    [[[WatchManager sharedInstance].currentValue.settings.waterReminder setConfigModel:_wMReminderModel] subscribeNext:^(NSNumber * _Nullable x) {
         @strongify(self);
         [SVProgressHUD dismiss];
         [self showDetail:x];
+
+       
     } error:^(NSError * _Nullable error) {
         [SVProgressHUD dismiss];
         [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@\n%@",@"Set Fail",error.description]];

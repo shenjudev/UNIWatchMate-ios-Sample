@@ -30,7 +30,7 @@ NSString *NSStringFromGender(Gender gender)
 
 @property (nonatomic, strong) NSArray *genders;
 @property (nonatomic, strong) DatePickerViewController *datePicker;
-
+@property (nonatomic, strong) WMPersonalInfoModel *wMPersonalInfoModel;
 @end
 
 @implementation EditUserInfoViewController
@@ -38,7 +38,7 @@ NSString *NSStringFromGender(Gender gender)
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"User info";
+    self.title = NSLocalizedString(@"User info", nil);
     self.view.backgroundColor = [UIColor whiteColor];
     [self getDetail];
 
@@ -47,7 +47,19 @@ NSString *NSStringFromGender(Gender gender)
     self.changeWeight.frame = CGRectMake(20, 440, CGRectGetWidth(self.view.frame) - 40, 44);
     self.changeGender.frame = CGRectMake(20, 500, CGRectGetWidth(self.view.frame) - 40, 44);
     self.changeBirthDate.frame = CGRectMake(20, 560, CGRectGetWidth(self.view.frame) - 40, 44);
-
+    self.wMPersonalInfoModel = [WMPersonalInfoModel new];
+    self.wMPersonalInfoModel.height = 170;
+    self.wMPersonalInfoModel.weight = 70;
+    self.wMPersonalInfoModel.gender = GenderMale;
+    // 创建一个日期格式器
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    // 设置日期格式器的格式
+    [dateFormatter setDateFormat:@"yyyyMMdd"]; // 19880709格式
+    // 根据字符串创建NSDate对象
+    NSString *dateString = @"19950709";
+    NSDate *date = [dateFormatter dateFromString:dateString];
+    self.wMPersonalInfoModel.birthDate = date;
+    
     _genders = @[
         NSStringFromGender(GenderMale),
         NSStringFromGender(GenderFemale),
@@ -59,7 +71,7 @@ NSString *NSStringFromGender(Gender gender)
 -(UIButton *)getNowBtn{
     if (_getNowBtn == nil){
         _getNowBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_getNowBtn setTitle:@"Get Now" forState:UIControlStateNormal];
+        [_getNowBtn setTitle:NSLocalizedString(@"Get Now", nil) forState:UIControlStateNormal];
         [_getNowBtn addTarget:self action:@selector(getDetail) forControlEvents:UIControlEventTouchUpInside];
         _getNowBtn.layer.masksToBounds = YES;
         _getNowBtn.layer.cornerRadius = 5;
@@ -77,6 +89,7 @@ NSString *NSStringFromGender(Gender gender)
     [[WatchManager sharedInstance].currentValue.settings.personalInfo.getConfigModel subscribeNext:^(WMPersonalInfoModel * _Nullable x) {
         @strongify(self);
         [SVProgressHUD dismiss];
+        _wMPersonalInfoModel = x;
         [self showInfo:x];
     } error:^(NSError * _Nullable error) {
         [SVProgressHUD dismiss];
@@ -123,7 +136,7 @@ NSString *NSStringFromGender(Gender gender)
 -(UIButton *)changHeight{
     if (_changHeight == nil){
         _changHeight = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_changHeight setTitle:@"Change height" forState:UIControlStateNormal];
+        [_changHeight setTitle:NSLocalizedString(@"Change height", nil) forState:UIControlStateNormal];
         [_changHeight addTarget:self action:@selector(actionChangeHeight) forControlEvents:UIControlEventTouchUpInside];
         _changHeight.layer.masksToBounds = YES;
         _changHeight.layer.cornerRadius = 5;
@@ -165,13 +178,16 @@ NSString *NSStringFromGender(Gender gender)
 }
 -(void)actionChangeHeight:(NSString *) uesrHeight{
     [SVProgressHUD showWithStatus:nil];
+    if ( _wMPersonalInfoModel == nil){
+        [SVProgressHUD dismiss];
+        return;
+    }
     @weakify(self);
-    WMPersonalInfoModel *wMPersonalInfoModel = [WatchManager sharedInstance].currentValue.settings.personalInfo.modelValue;
-    wMPersonalInfoModel.height = uesrHeight.integerValue;
-    [[[WatchManager sharedInstance].currentValue.settings.personalInfo setConfigModel:wMPersonalInfoModel] subscribeNext:^(WMPersonalInfoModel * _Nullable x) {
+    _wMPersonalInfoModel.height = uesrHeight.integerValue;
+    [[[WatchManager sharedInstance].currentValue.settings.personalInfo setConfigModel:_wMPersonalInfoModel] subscribeNext:^(NSNumber * _Nullable x) {
         @strongify(self);
         [SVProgressHUD dismiss];
-        [self showInfo:x];
+        [self showInfo:self.wMPersonalInfoModel];
     } error:^(NSError * _Nullable error) {
         [SVProgressHUD dismiss];
         [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"set Fail\n%@",error.description]];
@@ -181,7 +197,7 @@ NSString *NSStringFromGender(Gender gender)
 -(UIButton *)changeWeight{
     if (_changeWeight == nil){
         _changeWeight = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_changeWeight setTitle:@"Change weight" forState:UIControlStateNormal];
+        [_changeWeight setTitle:NSLocalizedString(@"Change weight", nil) forState:UIControlStateNormal];
         [_changeWeight addTarget:self action:@selector(actionChangeWeight) forControlEvents:UIControlEventTouchUpInside];
         _changeWeight.layer.masksToBounds = YES;
         _changeWeight.layer.cornerRadius = 5;
@@ -225,13 +241,16 @@ NSString *NSStringFromGender(Gender gender)
 
 -(void)actionChangeWeight:(NSString *) weight{
     [SVProgressHUD showWithStatus:nil];
+    if ( _wMPersonalInfoModel == nil){
+        [SVProgressHUD dismiss];
+        return;
+    }
     @weakify(self);
-    WMPersonalInfoModel *wMPersonalInfoModel = [WatchManager sharedInstance].currentValue.settings.personalInfo.modelValue;
-    wMPersonalInfoModel.weight = weight.integerValue;
-    [[[WatchManager sharedInstance].currentValue.settings.personalInfo setConfigModel:wMPersonalInfoModel] subscribeNext:^(WMPersonalInfoModel * _Nullable x) {
+    _wMPersonalInfoModel.weight = weight.integerValue;
+    [[[WatchManager sharedInstance].currentValue.settings.personalInfo setConfigModel:_wMPersonalInfoModel] subscribeNext:^(NSNumber * _Nullable x) {
         @strongify(self);
         [SVProgressHUD dismiss];
-        [self showInfo:x];
+        [self showInfo:self.wMPersonalInfoModel];
     } error:^(NSError * _Nullable error) {
         [SVProgressHUD dismiss];
         [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"set Fail\n%@",error.description]];
@@ -241,7 +260,7 @@ NSString *NSStringFromGender(Gender gender)
 -(UIButton *)changeGender{
     if (_changeGender == nil){
         _changeGender = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_changeGender setTitle:@"Change gender" forState:UIControlStateNormal];
+        [_changeGender setTitle:NSLocalizedString(@"Change gender", nil) forState:UIControlStateNormal];
         [_changeGender addTarget:self action:@selector(actionChangeGender) forControlEvents:UIControlEventTouchUpInside];
         _changeGender.layer.masksToBounds = YES;
         _changeGender.layer.cornerRadius = 5;
@@ -285,13 +304,16 @@ NSString *NSStringFromGender(Gender gender)
 
 -(void)actionChangeGender:(NSString *) gender{
     [SVProgressHUD showWithStatus:nil];
+    if ( _wMPersonalInfoModel == nil){
+        [SVProgressHUD dismiss];
+        return;
+    }
     @weakify(self);
-    WMPersonalInfoModel *wMPersonalInfoModel = [WatchManager sharedInstance].currentValue.settings.personalInfo.modelValue;
-    wMPersonalInfoModel.gender = [self.genders indexOfObject:gender];
-    [[[WatchManager sharedInstance].currentValue.settings.personalInfo setConfigModel:wMPersonalInfoModel] subscribeNext:^(WMPersonalInfoModel * _Nullable x) {
+    _wMPersonalInfoModel.gender = [self.genders indexOfObject:gender];
+    [[[WatchManager sharedInstance].currentValue.settings.personalInfo setConfigModel:_wMPersonalInfoModel] subscribeNext:^(NSNumber * _Nullable x) {
         @strongify(self);
         [SVProgressHUD dismiss];
-        [self showInfo:x];
+        [self showInfo:self.wMPersonalInfoModel];
     } error:^(NSError * _Nullable error) {
         [SVProgressHUD dismiss];
         [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"set Fail\n%@",error.description]];
@@ -301,7 +323,7 @@ NSString *NSStringFromGender(Gender gender)
 -(UIButton *)changeBirthDate{
     if (_changeBirthDate == nil){
         _changeBirthDate = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_changeBirthDate setTitle:@"Change birth date" forState:UIControlStateNormal];
+        [_changeBirthDate setTitle:NSLocalizedString(@"Change birth date", nil) forState:UIControlStateNormal];
         [_changeBirthDate addTarget:self action:@selector(actionChangeBirthDate) forControlEvents:UIControlEventTouchUpInside];
         _changeBirthDate.layer.masksToBounds = YES;
         _changeBirthDate.layer.cornerRadius = 5;
@@ -345,8 +367,11 @@ NSString *NSStringFromGender(Gender gender)
 
 -(void)actionChangeBirthDate:(NSString *) birthday{
     [SVProgressHUD showWithStatus:nil];
+    if ( _wMPersonalInfoModel == nil){
+        [SVProgressHUD dismiss];
+        return;
+    }
     @weakify(self);
-    WMPersonalInfoModel *wMPersonalInfoModel = [WatchManager sharedInstance].currentValue.settings.personalInfo.modelValue;
 
     NSString *dateFormat = @"yyyy MM dd"; // 输入日期字符串的格式，根据实际情况修改
     // 创建一个 NSDateFormatter 对象，并设置日期格式
@@ -354,11 +379,11 @@ NSString *NSStringFromGender(Gender gender)
     [dateFormatter setDateFormat:dateFormat];
     // 使用日期格式化程序将字符串转换为 NSDate
     NSDate *date = [dateFormatter dateFromString:birthday];
-    wMPersonalInfoModel.birthDate = date;
-    [[[WatchManager sharedInstance].currentValue.settings.personalInfo setConfigModel:wMPersonalInfoModel] subscribeNext:^(WMPersonalInfoModel * _Nullable x) {
+    _wMPersonalInfoModel.birthDate = date;
+    [[[WatchManager sharedInstance].currentValue.settings.personalInfo setConfigModel:_wMPersonalInfoModel] subscribeNext:^(NSNumber * _Nullable x) {
         @strongify(self);
         [SVProgressHUD dismiss];
-        [self showInfo:x];
+        [self showInfo:self.wMPersonalInfoModel];
     } error:^(NSError * _Nullable error) {
         [SVProgressHUD dismiss];
         [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"set Fail\n%@",error.description]];

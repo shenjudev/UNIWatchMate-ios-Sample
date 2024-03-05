@@ -10,6 +10,7 @@
 @interface AppViewViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *detail;
 @property(strong,nonatomic)NSArray *viewTypes;
+@property(strong,nonatomic)WMAppViewModel *wMAppViewModel;
 
 @end
 
@@ -52,6 +53,7 @@ NSString* NSStringFromWMAppViewType(WMAppViewType wMAppViewType) {
     WMPeripheral *wMPeripheral = [[WatchManager sharedInstance] currentValue];
     [[[[wMPeripheral settings] appView] getConfigModel] subscribeNext:^(WMAppViewModel * _Nullable x) {
         @strongify(self);
+        self->_wMAppViewModel = x;
         self.viewTypes = x.views;
         self.detail.text = [NSString stringWithFormat:@"current view:%@\nsupport:\n%@",NSStringFromWMAppViewType(x.current),[[self supportViewTypes] componentsJoinedByString:@"\n"]];
     } error:^(NSError * _Nullable error) {
@@ -103,12 +105,14 @@ NSString* NSStringFromWMAppViewType(WMAppViewType wMAppViewType) {
     @weakify(self);
     self.detail.text = @"";
     WMPeripheral *wMPeripheral = [[WatchManager sharedInstance] currentValue];
-    WMAppViewModel *wMAppViewModel = [WatchManager sharedInstance].currentValue.settings.appView.modelValue;
-    wMAppViewModel.current = wMAppViewType;
-    [[[[wMPeripheral settings] appView] setConfigModel:wMAppViewModel] subscribeNext:^(WMAppViewModel * _Nullable x) {
+    if(_wMAppViewModel == nil){
+        return;
+    }
+    _wMAppViewModel.current = wMAppViewType;
+    [[[[wMPeripheral settings] appView] setConfigModel:_wMAppViewModel] subscribeNext:^(NSNumber * _Nullable x) {
         @strongify(self);
-        self.viewTypes = x.views;
-        self.detail.text = [NSString stringWithFormat:@"current view:%@\nsupport:\n%@",NSStringFromWMAppViewType(x.current),[[self supportViewTypes] componentsJoinedByString:@"\n"]];
+        self.viewTypes = _wMAppViewModel.views;
+        self.detail.text = [NSString stringWithFormat:@"current view:%@\nsupport:\n%@",NSStringFromWMAppViewType(_wMAppViewModel.current),[[self supportViewTypes] componentsJoinedByString:@"\n"]];
     } error:^(NSError * _Nullable error) {
         [SVProgressHUD showErrorWithStatus:@"Set fail"];
     }];
