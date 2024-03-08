@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = NSLocalizedString(@"Ota", nil);
+    self.title = NSLocalizedString(@"ota", nil);
     self.view.backgroundColor = [UIColor whiteColor];
 
     self.upgradeBtn.frame = CGRectMake(20, 220, CGRectGetWidth(self.view.frame) - 40, 44);

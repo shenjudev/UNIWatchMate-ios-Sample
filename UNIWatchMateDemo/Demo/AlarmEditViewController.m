@@ -7,7 +7,7 @@
 
 #import "AlarmEditViewController.h"
 
-@interface AlarmEditViewController ()
+@interface AlarmEditViewController () <UIScrollViewDelegate>
 @property (nonatomic, strong) UILabel *nameTip;
 @property (nonatomic, strong) UITextField *nameTextField;
 @property (nonatomic, strong) UILabel *timeTip;
@@ -23,6 +23,7 @@
 @property (nonatomic, strong) UIButton *fridayBtn;
 @property (nonatomic, strong) UIButton *saturdayBtn;
 @property (nonatomic, strong) UIButton *sundayBtn;
+@property (nonatomic, strong) UIScrollView *uiScrollView;
 
 
 @end
@@ -32,7 +33,7 @@
 - (UIButton *)mondayBtn {
     if (_mondayBtn == nil) {
         _mondayBtn = [self createButtonWithTitle:NSLocalizedString(@"Monday", nil) tag:1];
-        [self.view addSubview:_mondayBtn];
+        [self.uiScrollView addSubview:_mondayBtn];
     }
     return _mondayBtn;
 }
@@ -40,7 +41,7 @@
 - (UIButton *)tuesdayBtn {
     if (_tuesdayBtn == nil) {
         _tuesdayBtn = [self createButtonWithTitle:NSLocalizedString(@"Tuesday", nil) tag:2];
-        [self.view addSubview:_tuesdayBtn];
+        [self.uiScrollView addSubview:_tuesdayBtn];
     }
     return _tuesdayBtn;
 }
@@ -48,7 +49,7 @@
 - (UIButton *)wednesdayBtn {
     if (_wednesdayBtn == nil) {
         _wednesdayBtn = [self createButtonWithTitle:NSLocalizedString(@"Wednesday", nil) tag:3];
-        [self.view addSubview:_wednesdayBtn];
+        [self.uiScrollView addSubview:_wednesdayBtn];
     }
     return _wednesdayBtn;
 }
@@ -56,7 +57,7 @@
 - (UIButton *)thursdayBtn {
     if (_thursdayBtn == nil) {
         _thursdayBtn = [self createButtonWithTitle:NSLocalizedString(@"Thursday", nil) tag:4];
-        [self.view addSubview:_thursdayBtn];
+        [self.uiScrollView addSubview:_thursdayBtn];
     }
     return _thursdayBtn;
 }
@@ -64,7 +65,7 @@
 - (UIButton *)fridayBtn {
     if (_fridayBtn == nil) {
         _fridayBtn = [self createButtonWithTitle:NSLocalizedString(@"Friday", nil) tag:5];
-        [self.view addSubview:_fridayBtn];
+        [self.uiScrollView addSubview:_fridayBtn];
     }
     return _fridayBtn;
 }
@@ -72,7 +73,7 @@
 - (UIButton *)saturdayBtn {
     if (_saturdayBtn == nil) {
         _saturdayBtn = [self createButtonWithTitle:NSLocalizedString(@"Saturday", nil) tag:6];
-        [self.view addSubview:_saturdayBtn];
+        [self.uiScrollView addSubview:_saturdayBtn];
     }
     return _saturdayBtn;
 }
@@ -80,7 +81,7 @@
 - (UIButton *)sundayBtn {
     if (_sundayBtn == nil) {
         _sundayBtn = [self createButtonWithTitle:NSLocalizedString(@"Sunday", nil) tag:7];
-        [self.view addSubview:_sundayBtn];
+        [self.uiScrollView addSubview:_sundayBtn];
     }
     return _sundayBtn;
 }
@@ -114,34 +115,50 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = NSLocalizedString(@"Alarm Edit", nil);
     
+    self.uiScrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    self.uiScrollView.backgroundColor = [UIColor whiteColor];
+
+    // 假设我们要滚动的内容高度是900
+    self.uiScrollView.contentSize = CGSizeMake(self.view.bounds.size.width, 800);
+    self.uiScrollView.delegate = self;
+    [self.view addSubview:self.uiScrollView];
+    // 确保子视图允许用户交互
+       self.uiScrollView.userInteractionEnabled = YES;
+
+       // 创建 UITapGestureRecognizer 实例
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollViewTapped:)];
+    tapRecognizer.cancelsTouchesInView = NO; // 确保触摸事件可以继续传递给子视图
+    [self.uiScrollView addGestureRecognizer:tapRecognizer];
+    // 现在可以在scrollView上添加其他视图，如UILabels, UIImageViews等
+    
     // 创建和布局页面元素，包括文本字段、日期选择器和开关
-    _nameTip = [[UILabel alloc] initWithFrame:CGRectMake(20, 100, CGRectGetWidth(self.view.frame) - 40, 30)];
+    _nameTip = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, CGRectGetWidth(self.view.frame) - 40, 30)];
     _nameTip.text = NSLocalizedString(@"Name", nil);
-    [self.view addSubview:_nameTip];
+    [self.uiScrollView addSubview:_nameTip];
     
-    self.nameTextField = [[UITextField alloc] initWithFrame:CGRectMake(20, 130, CGRectGetWidth(self.view.frame) - 40, 40)];
+    self.nameTextField = [[UITextField alloc] initWithFrame:CGRectMake(20, 50, CGRectGetWidth(self.view.frame) - 40, 40)];
     self.nameTextField.placeholder = NSLocalizedString(@"Alarm name", nil);
-    [self.view addSubview:self.nameTextField];
+    [self.uiScrollView addSubview:self.nameTextField];
     
     
-    _timeTip = [[UILabel alloc] initWithFrame:CGRectMake(20, 180, CGRectGetWidth(self.view.frame) - 40, 30)];
+    _timeTip = [[UILabel alloc] initWithFrame:CGRectMake(20, 100, CGRectGetWidth(self.view.frame) - 40, 30)];
     _timeTip.text = NSLocalizedString(@"Time", nil);
-    [self.view addSubview:_timeTip];
+    [self.uiScrollView addSubview:_timeTip];
     
-    self.timePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(20, 210, CGRectGetWidth(self.view.frame) - 40, 200)];
+    self.timePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(20, 130, CGRectGetWidth(self.view.frame) - 40, 200)];
     self.timePicker.datePickerMode = UIDatePickerModeTime;
     if (@available(iOS 13.4, *)) {
         [self.timePicker setPreferredDatePickerStyle:UIDatePickerStyleWheels];
     }
-    [self.view addSubview:self.timePicker];
+    [self.uiScrollView addSubview:self.timePicker];
     
-    _openTip = [[UILabel alloc] initWithFrame:CGRectMake(20, 420, 100, 30)];
+    _openTip = [[UILabel alloc] initWithFrame:CGRectMake(20, 340, 100, 30)];
     _openTip.text = NSLocalizedString(@"Enable", nil);
     _openTip.adjustsFontSizeToFitWidth = YES;
-    [self.view addSubview:_openTip];
+    [self.uiScrollView addSubview:_openTip];
     
-    self.openSwitch = [[UISwitch alloc] initWithFrame:CGRectMake(120, 420, 100, 40)];
-    [self.view addSubview:self.openSwitch];
+    self.openSwitch = [[UISwitch alloc] initWithFrame:CGRectMake(120, 340, 100, 40)];
+    [self.uiScrollView addSubview:self.openSwitch];
     
     // 设置页面元素的初始值为从 alarmModel 中获取的值
     self.nameTextField.text = self.alarmModel.alarmName;
@@ -153,20 +170,20 @@
     
     self.openSwitch.on = self.alarmModel.isOn;
     
-    _repeatOptionsTip = [[UILabel alloc] initWithFrame:CGRectMake(20, 500, 100, 30)];
+    _repeatOptionsTip = [[UILabel alloc] initWithFrame:CGRectMake(20, 420, 100, 30)];
     _repeatOptionsTip.text = NSLocalizedString(@"Repeat Options", nil);
     _repeatOptionsTip.adjustsFontSizeToFitWidth = YES;
-    [self.view addSubview:_repeatOptionsTip];
+    [self.uiScrollView addSubview:_repeatOptionsTip];
     
     CGFloat width = 80;
-    self.mondayBtn.frame = CGRectMake(40, 540, width, 30);
-    self.tuesdayBtn.frame = CGRectMake(CGRectGetMaxX(self.mondayBtn.frame) + 10, 540, width, 30);
+    self.mondayBtn.frame = CGRectMake(40, 460, width, 30);
+    self.tuesdayBtn.frame = CGRectMake(CGRectGetMaxX(self.mondayBtn.frame) + 10, 460, width, 30);
     
-    self.wednesdayBtn.frame = CGRectMake(40, 580, width, 30);
-    self.thursdayBtn.frame = CGRectMake(CGRectGetMaxX(self.mondayBtn.frame) + 10, 580, width, 30);
+    self.wednesdayBtn.frame = CGRectMake(40, 500, width, 30);
+    self.thursdayBtn.frame = CGRectMake(CGRectGetMaxX(self.mondayBtn.frame) + 10, 500, width, 30);
     
-    self.fridayBtn.frame = CGRectMake(40, 620, width, 30);
-    self.saturdayBtn.frame = CGRectMake(CGRectGetMaxX(self.mondayBtn.frame) + 10, 620, width, 30);
+    self.fridayBtn.frame = CGRectMake(40, 540, width, 30);
+    self.saturdayBtn.frame = CGRectMake(CGRectGetMaxX(self.mondayBtn.frame) + 10, 540, width, 30);
     
     self.sundayBtn.frame = CGRectMake(40, 660, width, 30);
     
@@ -177,10 +194,18 @@
     addBtn.layer.cornerRadius = 5;
     [addBtn setBackgroundColor:[UIColor blueColor]];
     [addBtn addTarget:self action:@selector(saveButtonTapped) forControlEvents:UIControlEventTouchUpInside];
-    addBtn.frame = CGRectMake(20, 720,CGRectGetWidth(self.view.frame) - 40, 44);
-    [self.view addSubview:addBtn];
+    addBtn.frame = CGRectMake(20, 600,CGRectGetWidth(self.view.frame) - 40, 44);
+    [self.uiScrollView addSubview:addBtn];
     
     [self reloadRepeatOpions];
+}
+- (void)scrollViewTapped:(UITapGestureRecognizer *)tapGestureRecognizer {
+    // 当 UIScrollView 被点击时，结束编辑以关闭键盘
+    [self.view endEditing:YES];
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    [self.view endEditing:YES];
 }
 
 - (void)saveButtonTapped {

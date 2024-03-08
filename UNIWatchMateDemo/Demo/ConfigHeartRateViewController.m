@@ -299,7 +299,16 @@
 
 
 -(void)listen{
+    @weakify(self);
+    [SVProgressHUD showWithStatus:nil];
+    [[WatchManager sharedInstance].currentValue.apps.configHeartRateApp.model subscribeNext:^(WMHeartRateConfigModel * _Nullable x) {
+        @strongify(self);
+        [SVProgressHUD dismiss];
+        [self showDetail:x];
+    } error:^(NSError * _Nullable error) {
+        [SVProgressHUD dismiss];
 
+    }];
 }
 -(void)showDetail:(WMHeartRateConfigModel *)x{
     NSMutableString *info = [NSMutableString new];

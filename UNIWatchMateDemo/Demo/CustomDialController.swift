@@ -42,7 +42,7 @@ class CustomDialController: UIViewController {
                 UIImage(named: "ic_dail_time_bottom_right") ?? UIImage()]
     }
     
-    lazy private var syncItem:UIButton = UIButton(title: "设为当前表盘")
+    lazy private var syncItem:UIButton = UIButton(title: "设为当前表盘".localized())
     lazy private var progreeeLb:UILabel = UILabel.init(text: "0%", textColor: UIColor(hex: 0x000000), font: UIFont.mediumFont(size: 16))
     lazy private var progressView:UIView = UIView.init()
     lazy private var imagePicker : ZYImagePicker = ZYImagePicker.init()
@@ -94,7 +94,7 @@ class CustomDialController: UIViewController {
             $0.bottom.equalToSuperview().offset(-bottomSafeHeight - 20)
         }
         
-        progressView.backgroundColor = UIColor(hexString: "#23ED67")!.withAlphaComponent(0.7)
+        progressView.backgroundColor = UIColor.color23ED67.withAlphaComponent(0.7)
         syncItem.addSubview(progressView)
         progressView.cornerRadius = 48 / 2
         progressView.frame = CGRect.init(x: 0, y: 0, width: 0, height: 48)
@@ -233,9 +233,9 @@ extension CustomDialController : UICollectionViewDelegate , UICollectionViewData
                 //            case 0:
                 //                headView.titleLB.text = "自定义背景"
             case 0:
-                headView.titleLB.text = "时间样式"
+                headView.titleLB.text = "时间样式".localized()
             case 1:
-                headView.titleLB.text = "字体颜色"
+                headView.titleLB.text = "字体颜色".localized()
             default:
                 headView.titleLB.text = ""
             }
@@ -318,23 +318,23 @@ extension CustomDialController {
     }
     
     private func openPhotoSheetView() {
-        let items = ["拍照" , "相册" , "视频"]
+        let items = ["拍照".localized() , "相册".localized() , "视频".localized()]
         
         let sheetView = TSAlertSheetListView.init(items: items) {[weak self] idx in
             guard let idx = idx else {return}
-            if items[idx] == "拍照" {
+            if items[idx] == "拍照".localized() {
                 self?.isAuthorizationCamera(completion: { isOpen in
                     if isOpen {
                         self?.openCamera()
                     }
                 })
-            }else if items[idx] == "相册" {
+            }else if items[idx] == "相册".localized() {
                 self?.isAuthorizationPhoto(completion: { isOpen in
                     if isOpen {
                         self?.openPhotoLibrary()
                     }
                 })
-            }else if items[idx] == "视频" {
+            }else if items[idx] == "视频".localized() {
                 self?.isAuthorizationPhoto(completion: { isOpen in
                     if isOpen {
                         self?.openVideoLibrary()
@@ -397,7 +397,7 @@ extension CustomDialController {
             self?.compressAndResizeVideoWithThumbnail(videoURL: videoURL) { result in
                 switch result {
                 case .success(let (videoPath, thumbnailImage)):
-                    print("视频转换成功，新视频路径: \(videoPath)")
+                    print("Video conversion successful, new video path: \(videoPath)")
                     self?.dialModel.isVideo = true
                     self?.dialModel.filePath = videoPath.path
                     self?.dialModel.bgImage = thumbnailImage
@@ -405,16 +405,16 @@ extension CustomDialController {
                         self?.updateSyncItem(isSyne: true)
                         self?.updatePreView()
                     }
-                   
+                    
                 case .failure(let error):
-                    print("操作失败: \(error)")
+                    print("fail: \(error)")
                 }
             }
         }
     }
     
     func compressAndResizeVideoWithThumbnail(videoURL: URL, outputFileType: AVFileType = .mp4, completion: @escaping (Result<(videoPath: URL, thumbnailImage: UIImage?), Error>) -> Void) {
-        let targetSize = CGSize(width: 320, height: 384) // 目标尺寸
+        let targetSize = CGSize(width: 320, height: 386) // 目标尺寸
         let asset = AVAsset(url: videoURL)
         guard let exportSession = AVAssetExportSession(asset: asset, presetName: AVAssetExportPresetHighestQuality) else {
             completion(.failure(NSError(domain: "ExportSessionCreationFailed", code: 0, userInfo: nil)))
@@ -508,7 +508,7 @@ extension CustomDialController {
     
     // 重置更新状态
     private func resetItem() {
-        syncItem.setTitle("设为当前表盘", for: .normal)
+        syncItem.setTitle("设为当前表盘".localized(), for: .normal)
         syncItem.itemAlpha(true)
         
         progressView.isHidden = true
@@ -553,7 +553,6 @@ extension CustomDialController {
                 }
             }
         }
-
     }
     
     func fileTransComplete(_ progress: Int, _ status: TSProgressState, _ errorCode:Int?){

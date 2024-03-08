@@ -26,13 +26,13 @@
 
 "The date and time are synchronized" = "The date and time are synchronized";
 "Dial manager" = "Dial manager";
-"ota"="ota";
+"ota"="Ota";
 "About device"="About device";
 "Sync activity data"="Sync activity data";
 "Sync sleep data"="Sync sleep data";
 "Sync blood oxygen"="Sync blood oxygen";
 "Sync heart rate statistics"="Sync heart rate statistics";
-"Sync heart rate"="Sync heart rate";
+"Sync 5min heart rate"="Sync 5min heart rate";
 "Sync distance"="Sync distance";
 "Sync activity type data"="Sync activity type data";
 "Sync activity time"="Sync activity time";
@@ -167,3 +167,11 @@
 "time now" = "time now";
 "after 15s" = "after 15s";
 "Synchronization time" = "Synchronization time";
+"拍照" = "Take a photo";
+"相册" = "Photo album";
+"视频" = "Video";
+"时间样式" = "Time style";
+"字体颜色" = "Font color";
+"自定义表盘" = "Custom watch face";
+"设为当前表盘" = "Set as current watch face";
+"Reboot device" = "Reboot device";

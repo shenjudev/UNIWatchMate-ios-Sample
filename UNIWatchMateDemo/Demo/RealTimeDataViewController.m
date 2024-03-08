@@ -204,7 +204,7 @@ NSString *NSStringFromWMSportDataType(WMSportDataType sportDataType) {
             [SVProgressHUD dismiss];
             [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"Get Fail\n%@",error.description]];
         }];
-    }else if ([self.title isEqualToString:NSLocalizedString(@"Sync heart rate", nil)]){
+    }else if ([self.title isEqualToString:NSLocalizedString(@"Sync 5min heart rate", nil)]){
         [SVProgressHUD showWithStatus:nil];
         [[[WatchManager sharedInstance].currentValue.datasSync.syncHeartRate syncDataWithStartTime:interval] subscribeNext:^(NSArray<WMBaseByDayDataModel<WMHeartRateDataModel *> *> * _Nullable x) {
             @strongify(self);

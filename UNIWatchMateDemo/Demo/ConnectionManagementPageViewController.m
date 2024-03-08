@@ -243,6 +243,10 @@
         [self failBack];
     }];
     
+    
+ 
+    
+    
     [[device.connect.isReady flattenMap:^__kindof RACSignal * _Nullable(NSNumber * _Nullable value) {
         @strongify(device);
         return device.infoModel.wm_getBaseinfo;

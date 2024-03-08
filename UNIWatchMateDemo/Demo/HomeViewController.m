@@ -82,6 +82,7 @@
 @interface TableViewFooter : UIView
 
 @property (nonatomic, strong) UIButton *disconnect;
+@property (nonatomic, strong) UIButton *reboot;
 @property (nonatomic, strong) UIButton *unbind;
 
 - (instancetype)initWithFrame:(CGRect)frame;
@@ -92,6 +93,17 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
+        
+        // 创建按钮reboot
+        self.reboot = [UIButton buttonWithType:UIButtonTypeSystem];
+        self.reboot.translatesAutoresizingMaskIntoConstraints = NO;
+        [self.reboot setBackgroundColor:[UIColor blueColor]];
+        [self.reboot setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [self.reboot setContentEdgeInsets:UIEdgeInsetsMake(10, 10, 10, 10)];
+        self.reboot.layer.cornerRadius = 5;
+        self.reboot.layer.masksToBounds = YES;
+        [self addSubview:self.reboot];
+        
         // 创建按钮1
         self.disconnect = [UIButton buttonWithType:UIButtonTypeSystem];
         self.disconnect.translatesAutoresizingMaskIntoConstraints = NO;
@@ -113,14 +125,19 @@
         [self addSubview:self.unbind];
         
         // 使用Auto Layout布局按钮1和按钮2
+        [self.reboot.leadingAnchor constraintEqualToAnchor:self.leadingAnchor constant:16].active = YES;
+        [self.reboot.trailingAnchor constraintEqualToAnchor:self.trailingAnchor constant:-16].active = YES;
+        [self.reboot.topAnchor constraintEqualToAnchor:self.topAnchor constant:16].active = YES;
+        [self.reboot.heightAnchor constraintEqualToConstant:44].active = YES;
+        
         [self.disconnect.leadingAnchor constraintEqualToAnchor:self.leadingAnchor constant:16].active = YES;
         [self.disconnect.trailingAnchor constraintEqualToAnchor:self.trailingAnchor constant:-16].active = YES;
-        [self.disconnect.topAnchor constraintEqualToAnchor:self.topAnchor constant:16].active = YES;
+        [self.disconnect.topAnchor constraintEqualToAnchor:self.reboot.bottomAnchor constant:30].active = YES;
         [self.disconnect.heightAnchor constraintEqualToConstant:44].active = YES;
         
         [self.unbind.leadingAnchor constraintEqualToAnchor:self.leadingAnchor constant:16].active = YES;
         [self.unbind.trailingAnchor constraintEqualToAnchor:self.trailingAnchor constant:-16].active = YES;
-        [self.unbind.topAnchor constraintEqualToAnchor:self.disconnect.bottomAnchor constant:60].active = YES;
+        [self.unbind.topAnchor constraintEqualToAnchor:self.disconnect.bottomAnchor constant:30].active = YES;
         [self.unbind.heightAnchor constraintEqualToConstant:44].active = YES;
         
     }
@@ -269,7 +286,7 @@
 }
 -(UIView *)tableViewFooter{
     if(_tableViewFooter == nil){
-        _tableViewFooter = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
+        _tableViewFooter = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 300)];
         [_tableViewFooter addSubview:self.tableViewFooterView];
     }
     return _tableViewFooter;
@@ -287,9 +304,13 @@
 - (TableViewFooter *)tableViewFooterView
 {
     if (_tableViewFooterView == nil) {
-        _tableViewFooterView = [[TableViewFooter alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
+        _tableViewFooterView = [[TableViewFooter alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 300)];
+        [_tableViewFooterView.reboot addTarget:self action:@selector(rebootDevice) forControlEvents:UIControlEventTouchUpInside];
+        [_tableViewFooterView.reboot setTitle:NSLocalizedString(@"Reboot device", nil) forState:UIControlStateNormal];
+
         [_tableViewFooterView.disconnect addTarget:self action:@selector(disconnectedDevice) forControlEvents:UIControlEventTouchUpInside];
         [_tableViewFooterView.disconnect setTitle:NSLocalizedString(@"Disconnect device", nil) forState:UIControlStateNormal];
+        
         [_tableViewFooterView.unbind addTarget:self action:@selector(unbindDevice) forControlEvents:UIControlEventTouchUpInside];
         [_tableViewFooterView.unbind setTitle:NSLocalizedString(@"Unbind device", nil) forState:UIControlStateNormal];
     }
@@ -802,7 +823,25 @@
 - (void)disconnectedDevice {
     [[[[WatchManager sharedInstance] currentValue] connect] disconnect];
     [self goConnectView];
+    
 }
+- (void)rebootDevice {
+    @weakify(self);
+    [SVProgressHUD showWithStatus:nil];
+    [[[[[WatchManager sharedInstance] currentValue] connect] reboot] subscribeNext:^(NSNumber * _Nullable x) {
+        [SVProgressHUD dismiss];
+        @strongify(self);
+        BOOL isUnbindSuccess = [x boolValue];
+        if (isUnbindSuccess == YES){
+            XLOG_INFO(@"重启成功"); // 获取应用程序的主Storyboard
+            [self goConnectView];
+        }else{
+            [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Connection mode selection", nil)];
+            XLOG_INFO(@"解绑失败");
+        }
+    }];
+}
+
 - (void)goConnectView{
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     // 获取主Storyboard的初始ViewController

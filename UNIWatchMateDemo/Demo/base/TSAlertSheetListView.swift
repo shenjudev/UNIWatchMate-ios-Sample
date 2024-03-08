@@ -58,7 +58,7 @@ class TSAlertSheetListView: BaseView {
             $0.bottom.equalToSuperview().offset(-bottomSafeHeight - 10)
         }
 
-        let cannelItem = UIButton(title: "取消", textColor: .color000000, font: .medium18(), target: self, selector: #selector(cannelAction))
+        let cannelItem = UIButton(title: "Cancel".localized(), textColor: .color000000, font: .medium18(), target: self, selector: #selector(cannelAction))
         cannelItem.backgroundColor = .colorFFFFFF
         cannelItem.cornerRadius = 10
         contentView.addSubview(cannelItem)

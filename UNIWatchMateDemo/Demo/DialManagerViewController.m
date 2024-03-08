@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSMutableArray *currentsValue; // 用于保存最新的值
 @property (nonatomic, strong) UIAlertController *alertController;
 @property (nonatomic, strong) NSMutableArray<WMDialModel *> *wmDialModels;
+@property (nonatomic, assign) Boolean sportInstall ;
 
 @end
 
@@ -209,6 +210,10 @@
     if (desPath == nil){
         return;
     }
+    if(self.sportInstall){
+        return;
+    }
+    _sportInstall = true;
     @weakify(self)
     [[[WatchManager sharedInstance].currentValue.apps.fileApp startTransferFile:[NSURL fileURLWithPath:desPath] fileType:WMActivityTypeDIAL] subscribeNext:^(WMProgressModel * _Nullable x) {
         [SVProgressHUD showProgress:x.progress / 100.0 status:[NSString stringWithFormat:@"progress:%.2f%%",x.progress]];
@@ -216,7 +221,9 @@
         @strongify(self);
         [self resendDial:path error:error.description];
         [SVProgressHUD dismiss];
+        self.sportInstall = false;
     } completed:^{
+        self.sportInstall = false;
         [SVProgressHUD showSuccessWithStatus:@"Dial install successed."];
         [self getDials];
     }];

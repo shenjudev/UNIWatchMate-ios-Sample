@@ -23,13 +23,13 @@
 "Device name:" = "设备名称：";
 "The date and time are synchronized" = "日期和时间同步";
 "Dial manager" = "表盘管理器";
-"ota"="ota";
+"ota"="固件升级";
 "About device"="关于设备";
 "Sync activity data"="同步活动数据";
 "Sync sleep data"="同步睡眠数据";
 "Sync blood oxygen"="同步血氧";
 "Sync heart rate statistics"="同步心率统计";
-"Sync heart rate"="同步心率";
+"Sync 5min heart rate"="同步5分钟心率";
 "Sync distance"="同步距离";
 "Sync activity type data"="同步活动类型数据";
 "Sync activity time"="同步活动时间";
@@ -164,3 +164,11 @@
 "time now" = "现在时间";
 "after 15s" = "15秒后";
 "Synchronization time" = "同步时间";
+"拍照" = "拍照";
+"相册" = "相册";
+"视频" = "视频";
+"时间样式" = "时间样式";
+"字体颜色" = "字体颜色";
+"自定义表盘" = "自定义表盘";
+"设为当前表盘" = "设为当前表盘";
+"Reboot device" = "重启设备";

@@ -87,7 +87,12 @@
         [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"7 days:Set Fail\n%@", error.description]];
         return [RACSignal empty];
     }];
-
+//    [[[WatchManager sharedInstance].currentValue.apps.weatherForecastApp pushWeatherDay7:self.currentWeatherModel] subscribeNext:^(NSNumber * _Nullable x) {
+//        
+//    }];
+//    [[[WatchManager sharedInstance].currentValue.apps.weatherForecastApp pushWeatherHour24:self.currentWeatherModel] subscribeNext:^(NSNumber * _Nullable x) {
+//        
+//    }];
     // 创建第二个信号
     RACSignal *hour24Signal = [[[WatchManager sharedInstance].currentValue.apps.weatherForecastApp pushWeatherHour24:self.currentWeatherModel] catch:^RACSignal * _Nonnull(NSError * _Nonnull error) {
         [SVProgressHUD dismiss];
