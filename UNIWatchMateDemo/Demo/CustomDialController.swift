@@ -420,6 +420,11 @@ extension CustomDialController {
             completion(.failure(NSError(domain: "ExportSessionCreationFailed", code: 0, userInfo: nil)))
             return
         }
+        guard let videoTrack = asset.tracks(withMediaType: .video).first else {
+            completion(.failure(NSError(domain: "VideoTrackError", code: 0, userInfo: nil)))
+            return
+        }
+        let assetInfo = orientationFromTransform(transform: videoTrack.preferredTransform)
         
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let outputPath = documentsDirectory.appendingPathComponent(UUID().uuidString).appendingPathExtension("mp4")
@@ -434,10 +439,23 @@ extension CustomDialController {
         let instruction = AVMutableVideoCompositionInstruction()
         instruction.timeRange = CMTimeRangeMake(start: CMTime.zero, duration: asset.duration)
         
-        let videoTrack = asset.tracks(withMediaType: .video).first!
+        // 计算缩放和位移，使视频填满目标尺寸
+        let originalSize = videoTrack.naturalSize
+        var finalTransform = videoTrack.preferredTransform
+        // 根据视频的方向调整 originalSize
+        let adjustedSize = assetInfo.isPortrait ? CGSize(width: originalSize.height, height: originalSize.width) : originalSize
+        let scaleX = targetSize.width / adjustedSize.width
+        let scaleY = targetSize.height / adjustedSize.height
+        let scale = max(scaleX, scaleY) // 选择较大的缩放比例以填满目标尺寸
+        let scaledWidth = adjustedSize.width * scale
+        let scaledHeight = adjustedSize.height * scale
+        let translateX = (targetSize.width - scaledWidth) / 2 // 居中调整
+        let translateY = (targetSize.height - scaledHeight) / 2 // 居中调整
+        finalTransform = finalTransform.translatedBy(x: translateX / scale, y: translateY / scale) // 应用位移
+        finalTransform = finalTransform.scaledBy(x: scale, y: scale) // 应用缩放
+        
         let layerInstruction = AVMutableVideoCompositionLayerInstruction(assetTrack: videoTrack)
-        let transform = videoTrack.preferredTransform
-        layerInstruction.setTransform(transform, at: CMTime.zero)
+        layerInstruction.setTransform(finalTransform, at: .zero)
         
         instruction.layerInstructions = [layerInstruction]
         videoComposition.instructions = [instruction]
@@ -449,7 +467,9 @@ extension CustomDialController {
             switch exportSession.status {
             case .completed:
                 // 视频转换成功后，生成封面图
-                let assetImgGenerate = AVAssetImageGenerator(asset: asset)
+//                let fileURL = URL(fileURLWithPath: outputPath)
+                let outPutAsset = AVURLAsset(url: outputPath)
+                let assetImgGenerate = AVAssetImageGenerator(asset: outPutAsset)
                 assetImgGenerate.appliesPreferredTrackTransform = true
                 let time = CMTimeMakeWithSeconds(1.0, preferredTimescale: 600)
                 
@@ -470,9 +490,37 @@ extension CustomDialController {
             }
         }
     }
-    
-}
 
+
+    // 根据视频轨道的 preferredTransform 来判断视频的方向
+    func orientationFromTransform(transform: CGAffineTransform) -> VideoOrientation {
+        var assetOrientation = UIImage.Orientation.up
+        var isPortrait = false
+        let tfA = transform.a
+        let tfB = transform.b
+        let tfC = transform.c
+        let tfD = transform.d
+
+        if tfA == 0 && tfB == 1.0 && tfC == -1.0 && tfD == 0 {
+            assetOrientation = .right
+            isPortrait = true
+        } else if tfA == 0 && tfB == -1.0 && tfC == 1.0 && tfD == 0 {
+            assetOrientation = .left
+            isPortrait = true
+        } else if tfA == 1.0 && tfB == 0 && tfC == 0 && tfD == 1.0 {
+            assetOrientation = .up
+        } else if tfA == -1.0 && tfB == 0 && tfC == 0 && tfD == -1.0 {
+            assetOrientation = .down
+        }
+        
+        return VideoOrientation(orientation: assetOrientation, isPortrait: isPortrait)
+    }
+}
+// 定义一个结构体来存储视频的方向信息
+struct VideoOrientation {
+    var orientation: UIImage.Orientation
+    var isPortrait: Bool
+}
 // 刷新表盘预览图
 extension CustomDialController {
     
