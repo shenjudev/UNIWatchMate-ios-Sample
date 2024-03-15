@@ -1,0 +1,233 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-bare-slash-regex -module-name SJWatchLib
+import AVFoundation
+import CoreBluetooth
+import Foundation
+import HandyJSON
+import PromiseKit
+import ReactiveObjC
+import RxCocoa
+import RxSwift
+@_exported import SJWatchLib
+import Swift
+import SwiftyJSON
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import h264encoder
+public struct SJWatchFunctionsModel {
+  public let weather: Swift.Bool
+  public let fitness: Swift.Bool
+  public let heartRate: Swift.Bool
+  public let takePhoto: Swift.Bool
+  public let message: Swift.Bool
+  public let clock: Swift.Bool
+  public let music: Swift.Bool
+  public let contacts: Swift.Bool
+  public let findWatch: Swift.Bool
+  public let findPhone: Swift.Bool
+  public let appViews: Swift.Bool
+  public let ring: Swift.Bool
+  public let notifyShake: Swift.Bool
+  public let crownShake: Swift.Bool
+  public let systemShake: Swift.Bool
+  public let bright: Swift.Bool
+  public let bloodOxygen: Swift.Bool
+  public let bloodPressure: Swift.Bool
+  public let bloodSugar: Swift.Bool
+  public let sleep: Swift.Bool
+  public let book: Swift.Bool
+  public let lowModel: Swift.Bool
+  public let videoPreview: Swift.Bool
+  public init()
+}
+extension Swift.Array {
+  public init(reserveCapacity: Swift.Int)
+}
+extension Foundation.Data {
+  public static func random(count: Swift.Int) -> Foundation.Data
+}
+public enum SJWatchSwitchType : Swift.UInt8 {
+  case ring
+  case notifyShake
+  case crownShake
+  case systemShake
+  case bright
+  public var desc: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public class SJWatchSwitchModel {
+  final public let type: SJWatchLib.SJWatchSwitchType
+  final public let isOn: Swift.Bool
+  public init?(data: Foundation.Data)
+  public init(type: SJWatchLib.SJWatchSwitchType, isOn: Swift.Bool)
+  public var data: Foundation.Data {
+    get
+  }
+  public var desc: Swift.String {
+    get
+  }
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class SJWatchFind : UNIWatchMate.WMFindModel {
+  @objc override dynamic public class func sharedInstance() -> UNIWatchMate.WMFindModel
+  @objc override dynamic public func fromScanQRCode(_ code: Swift.String, uid: Swift.String) -> ReactiveObjC.RACSignal<UNIWatchMate.WMPeripheral>?
+  @objc override dynamic public func fromSearch(withUid uid: Swift.String) -> ReactiveObjC.RACSignal<UNIWatchMate.WMPeripheral>?
+  @objc override dynamic public func fromTarget(_ target: UNIWatchMate.WMPeripheralTargetModel, uid: Swift.String) -> ReactiveObjC.RACSignal<UNIWatchMate.WMPeripheral>?
+  @objc override dynamic public func stopSearch()
+  @objc override dynamic public func isEnabled(forProduct product: Swift.String) -> Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum SJWatchCameraSettingType : Swift.UInt8 {
+  case camera
+  case flash
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public class SJWatchCameraSettingModel {
+  final public let type: SJWatchLib.SJWatchCameraSettingType
+  final public let value: Swift.UInt8
+  public init?(data: Foundation.Data)
+  public init(type: SJWatchLib.SJWatchCameraSettingType, value: Swift.UInt8)
+  public var data: Foundation.Data {
+    get
+  }
+  public var desc: Swift.String {
+    get
+  }
+  @objc deinit
+}
+public class SJWatchNaviVideoFrameModel {
+  final public let frameType: SJWatchLib.SJWatchVideoFrameType
+  final public let payload: Foundation.Data
+  public init(frameType: SJWatchLib.SJWatchVideoFrameType, payload: Foundation.Data)
+  public func sendData(mtu: Swift.Int) -> [[Foundation.Data]]
+  @objc deinit
+}
+public class USWatchViewModel : HandyJSON.HandyJSON {
+  required public init()
+  public var id: Swift.UInt8?
+  public var name: Swift.String?
+  public var sort: Swift.Int8?
+  public var using: Swift.Int8?
+  @objc deinit
+}
+public class SJWatchSleepSettingModel {
+  public var isOn: Swift.Bool
+  public var start_HH: Swift.UInt8
+  public var start_mm: Swift.UInt8
+  public var end_HH: Swift.UInt8
+  public var end_mm: Swift.UInt8
+  public init?(data: Foundation.Data)
+  public init()
+  public var desc: Swift.String {
+    get
+  }
+  public var data: Foundation.Data {
+    get
+  }
+  public var start: Swift.String {
+    get
+  }
+  public var end: Swift.String {
+    get
+  }
+  public var duration: Swift.Int {
+    get
+  }
+  public func tagTime(HH: Swift.UInt8, mm: Swift.UInt8, isAdd: Swift.Bool, value: Swift.Int) -> (HH: Swift.UInt8, mm: Swift.UInt8)
+  @objc deinit
+}
+public let SH_LEVEL_DEBUG: Swift.String
+public let SH_LEVEL_INFO: Swift.String
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class SJLogInfo : UNIWatchMate.WMLogInfo {
+  @objc override dynamic public class func sharedInstance() -> UNIWatchMate.WMLogInfo
+  @objc override dynamic public func registerLevel(_ level: Swift.String)
+  @objc override dynamic public func mateName() -> Swift.String
+  @objc deinit
+}
+public class USWatchDialBleModel : HandyJSON.HandyJSON {
+  required public init()
+  public var id: Swift.String?
+  public var using: Swift.UInt8?
+  public var version: Swift.String?
+  public var bUsing: Swift.Bool? {
+    get
+  }
+  @objc deinit
+}
+public class USWatchBatteryModel : HandyJSON.HandyJSON {
+  required public init()
+  public var battery: Swift.Int {
+    get
+  }
+  public var isCharging: Swift.Bool {
+    get
+  }
+  @objc deinit
+}
+public class USWatchBaseInfoModel : HandyJSON.HandyJSON {
+  public var chip_mode: Swift.String?
+  public var prod_mode: Swift.String?
+  public var soft_ver: Swift.String?
+  public var hard_ver: Swift.String?
+  public var mac_addr: Swift.String?
+  public var dev_id: Swift.String?
+  public var dev_name: Swift.String?
+  public var prod_category: Swift.String?
+  public var prod_subcate: Swift.String?
+  public var remain_memory: Swift.String?
+  public var total_memory: Swift.String?
+  public var prod_date: Swift.String?
+  public var battery_main: Swift.String?
+  public var dial_ability: Swift.String?
+  public var screen: Swift.String?
+  public var alipay: Swift.String?
+  public var spo2: Swift.String?
+  public var lang: Swift.String?
+  public var ch: Swift.Int?
+  public var cw: Swift.Int?
+  public var ble_name: Swift.String?
+  required public init()
+  @objc deinit
+}
+public enum SJWatchVideoFrameType : Swift.UInt8 {
+  case I
+  case P
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public class SJWatchVideoFrameModel {
+  final public let frameType: SJWatchLib.SJWatchVideoFrameType
+  final public let payload: Foundation.Data
+  public init(frameType: SJWatchLib.SJWatchVideoFrameType, payload: Foundation.Data)
+  public func sendData(mtu: Swift.Int) -> [[Foundation.Data]]
+  @objc deinit
+}
+extension Foundation.Data {
+  public func toHexString2() -> Swift.String
+}
+extension SJWatchLib.SJWatchSwitchType : Swift.Equatable {}
+extension SJWatchLib.SJWatchSwitchType : Swift.Hashable {}
+extension SJWatchLib.SJWatchSwitchType : Swift.RawRepresentable {}
+extension SJWatchLib.SJWatchCameraSettingType : Swift.Equatable {}
+extension SJWatchLib.SJWatchCameraSettingType : Swift.Hashable {}
+extension SJWatchLib.SJWatchCameraSettingType : Swift.RawRepresentable {}
+extension SJWatchLib.SJWatchVideoFrameType : Swift.Equatable {}
+extension SJWatchLib.SJWatchVideoFrameType : Swift.Hashable {}
+extension SJWatchLib.SJWatchVideoFrameType : Swift.RawRepresentable {}

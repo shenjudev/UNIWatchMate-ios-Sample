@@ -22,7 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 功能设置
 @interface WMSettingsModel : NSObject
-
 /// 运动目标设置
 @property (nonatomic, strong) WMSportGoalSettingModel *sportGoal;
 /// 计量单位设置

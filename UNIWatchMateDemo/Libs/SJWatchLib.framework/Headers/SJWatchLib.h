@@ -19,5 +19,6 @@ FOUNDATION_EXPORT const unsigned char SJWatchLibVersionString[];
 #import <UNIWatchMate/UNIWatchMate.h>
 #import <SJWatchLib/BtUtils.h>
 #import <SJWatchLib/MTWatchVideoH264.h>
+#import <SJWatchLib/NavigationWatchVideoH264.h>
 #import <SJWatchLib/DialThumbnailAdapter.h>
 #import <ReactiveObjC/ReactiveObjC.h>

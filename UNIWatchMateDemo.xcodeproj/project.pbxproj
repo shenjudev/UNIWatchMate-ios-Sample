@@ -17,8 +17,6 @@
 		5F54C5DB2AE682C90090596F /* UnitSynchronizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F54C5DA2AE682C90090596F /* UnitSynchronizationViewController.m */; };
 		5F5BD2F12AE90E3D007D2024 /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5BD2F02AE90E3D007D2024 /* WeatherViewController.m */; };
 		5F5BD2F42AE92CD5007D2024 /* RealTimeDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5BD2F32AE92CD5007D2024 /* RealTimeDataViewController.m */; };
-		5F9C86E62AF28C0E00117059 /* UNIWatchMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9C86E42AF28C0300117059 /* UNIWatchMate.framework */; };
-		5F9C86E72AF28C0E00117059 /* UNIWatchMate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9C86E42AF28C0300117059 /* UNIWatchMate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5FA884F62AD7C5FC001F340D /* SleepSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA884F52AD7C5FC001F340D /* SleepSettingViewController.m */; };
 		5FC311852AE768B700635E56 /* ExerciseGoalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC311842AE768B700635E56 /* ExerciseGoalViewController.m */; };
 		5FC311882AE768D700635E56 /* EditUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC311872AE768D700635E56 /* EditUserInfoViewController.m */; };
@@ -48,11 +46,13 @@
 		5FF962052AC430B800DFA693 /* ConnectionManagementPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF962042AC430B800DFA693 /* ConnectionManagementPageViewController.m */; };
 		5FF962082AC43D0E00DFA693 /* WatchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF962072AC43D0E00DFA693 /* WatchManager.m */; };
 		5FFAC1482AD91DFD006B68CF /* CameraAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFAC1472AD91DFD006B68CF /* CameraAppDelegate.m */; };
+		B5978CB82BA454B900870A6A /* UNIWatchMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5978CAF2BA43E8300870A6A /* UNIWatchMate.framework */; platformFilter = ios; };
+		B5978CB92BA454B900870A6A /* UNIWatchMate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5978CAF2BA43E8300870A6A /* UNIWatchMate.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B5978CBE2BA4564A00870A6A /* SJWatchLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5978CBD2BA4564A00870A6A /* SJWatchLib.framework */; platformFilter = ios; };
+		B5978CBF2BA4564A00870A6A /* SJWatchLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5978CBD2BA4564A00870A6A /* SJWatchLib.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D7135A8BBE24884BB6DAFEEE /* Pods_UNIWatchMateDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C60E9F032EABB4DD0FEDA943 /* Pods_UNIWatchMateDemo.framework */; };
 		D714817A2B97376600C3CB63 /* h264encoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D71481792B97376500C3CB63 /* h264encoder.framework */; };
 		D714817B2B97376600C3CB63 /* h264encoder.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D71481792B97376500C3CB63 /* h264encoder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D714817D2B97377500C3CB63 /* SJWatchLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D714817C2B97377400C3CB63 /* SJWatchLib.framework */; };
-		D714817E2B97377500C3CB63 /* SJWatchLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D714817C2B97377400C3CB63 /* SJWatchLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D71481832B9738A700C3CB63 /* x8c637a6c26d476db361051786e773df7.dial in Resources */ = {isa = PBXBuildFile; fileRef = D714817F2B9738A600C3CB63 /* x8c637a6c26d476db361051786e773df7.dial */; };
 		D71481842B9738A700C3CB63 /* x59c4aad46ed434ca58786f3232aba673.dial in Resources */ = {isa = PBXBuildFile; fileRef = D71481802B9738A600C3CB63 /* x59c4aad46ed434ca58786f3232aba673.dial */; };
 		D71481852B9738A700C3CB63 /* x1245156a62de4d6d8d60d8f8ff751302.dial in Resources */ = {isa = PBXBuildFile; fileRef = D71481812B9738A700C3CB63 /* x1245156a62de4d6d8d60d8f8ff751302.dial */; };
@@ -106,8 +106,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D714817E2B97377500C3CB63 /* SJWatchLib.framework in Embed Frameworks */,
-				5F9C86E72AF28C0E00117059 /* UNIWatchMate.framework in Embed Frameworks */,
+				B5978CBF2BA4564A00870A6A /* SJWatchLib.framework in Embed Frameworks */,
+				B5978CB92BA454B900870A6A /* UNIWatchMate.framework in Embed Frameworks */,
 				D714817B2B97376600C3CB63 /* h264encoder.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -135,7 +135,6 @@
 		5F5BD2F02AE90E3D007D2024 /* WeatherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherViewController.m; sourceTree = "<group>"; };
 		5F5BD2F22AE92CD5007D2024 /* RealTimeDataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealTimeDataViewController.h; sourceTree = "<group>"; };
 		5F5BD2F32AE92CD5007D2024 /* RealTimeDataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealTimeDataViewController.m; sourceTree = "<group>"; };
-		5F9C86E42AF28C0300117059 /* UNIWatchMate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UNIWatchMate.framework; sourceTree = "<group>"; };
 		5FA7FDF02AD10CC100133E53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		5FA884F42AD7C5FC001F340D /* SleepSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SleepSettingViewController.h; sourceTree = "<group>"; };
 		5FA884F52AD7C5FC001F340D /* SleepSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SleepSettingViewController.m; sourceTree = "<group>"; };
@@ -198,9 +197,10 @@
 		5FFAC1462AD91DFD006B68CF /* CameraAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraAppDelegate.h; sourceTree = "<group>"; };
 		5FFAC1472AD91DFD006B68CF /* CameraAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraAppDelegate.m; sourceTree = "<group>"; };
 		73959BDAF331E975138356DF /* Pods-UNIWatchMateDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIWatchMateDemo.release.xcconfig"; path = "Target Support Files/Pods-UNIWatchMateDemo/Pods-UNIWatchMateDemo.release.xcconfig"; sourceTree = "<group>"; };
+		B5978CAF2BA43E8300870A6A /* UNIWatchMate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UNIWatchMate.framework; path = UNIWatchMateDemo/Libs/UNIWatchMate.framework; sourceTree = "<group>"; };
+		B5978CBD2BA4564A00870A6A /* SJWatchLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SJWatchLib.framework; path = UNIWatchMateDemo/Libs/SJWatchLib.framework; sourceTree = "<group>"; };
 		C60E9F032EABB4DD0FEDA943 /* Pods_UNIWatchMateDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UNIWatchMateDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D71481792B97376500C3CB63 /* h264encoder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = h264encoder.framework; path = UNIWatchMateDemo/Libs/h264encoder.framework; sourceTree = "<group>"; };
-		D714817C2B97377400C3CB63 /* SJWatchLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SJWatchLib.framework; path = UNIWatchMateDemo/Libs/SJWatchLib.framework; sourceTree = "<group>"; };
 		D714817F2B9738A600C3CB63 /* x8c637a6c26d476db361051786e773df7.dial */ = {isa = PBXFileReference; lastKnownFileType = file; path = x8c637a6c26d476db361051786e773df7.dial; sourceTree = "<group>"; };
 		D71481802B9738A600C3CB63 /* x59c4aad46ed434ca58786f3232aba673.dial */ = {isa = PBXFileReference; lastKnownFileType = file; path = x59c4aad46ed434ca58786f3232aba673.dial; sourceTree = "<group>"; };
 		D71481812B9738A700C3CB63 /* x1245156a62de4d6d8d60d8f8ff751302.dial */ = {isa = PBXFileReference; lastKnownFileType = file; path = x1245156a62de4d6d8d60d8f8ff751302.dial; sourceTree = "<group>"; };
@@ -260,10 +260,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D714817D2B97377500C3CB63 /* SJWatchLib.framework in Frameworks */,
-				5F9C86E62AF28C0E00117059 /* UNIWatchMate.framework in Frameworks */,
+				B5978CB82BA454B900870A6A /* UNIWatchMate.framework in Frameworks */,
 				D714817A2B97376600C3CB63 /* h264encoder.framework in Frameworks */,
 				D7135A8BBE24884BB6DAFEEE /* Pods_UNIWatchMateDemo.framework in Frameworks */,
+				B5978CBE2BA4564A00870A6A /* SJWatchLib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,9 +273,9 @@
 		56031C1DA84625A2BB83AC8C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D714817C2B97377400C3CB63 /* SJWatchLib.framework */,
+				B5978CBD2BA4564A00870A6A /* SJWatchLib.framework */,
+				B5978CAF2BA43E8300870A6A /* UNIWatchMate.framework */,
 				D71481792B97376500C3CB63 /* h264encoder.framework */,
-				5F9C86E42AF28C0300117059 /* UNIWatchMate.framework */,
 				C60E9F032EABB4DD0FEDA943 /* Pods_UNIWatchMateDemo.framework */,
 			);
 			name = Frameworks;
@@ -855,6 +855,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E8DDA96325655A1B0EB18CED /* Pods-UNIWatchMateDemo.debug.xcconfig */;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -888,8 +889,8 @@
 				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xianshenju.UNIWatchMateDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "UNIWatchMateDemo/Demo/UNIWatchMateDemo-Bridging-Header.h";
@@ -903,6 +904,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 73959BDAF331E975138356DF /* Pods-UNIWatchMateDemo.release.xcconfig */;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -936,8 +938,8 @@
 				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xianshenju.UNIWatchMateDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "UNIWatchMateDemo/Demo/UNIWatchMateDemo-Bridging-Header.h";

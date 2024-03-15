@@ -12,11 +12,11 @@ target 'UNIWatchMateDemo' do
   pod "ReactiveObjC",'3.1.1'
   # Pods for UNIWatchMateDemo
   
-  pod 'RxSwift','6.6.0'
-  pod 'RxCocoa','6.6.0'
-  pod 'PromiseKit','8.1.1'
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'PromiseKit'
   pod 'HandyJSON','5.0.2'
-  pod 'SwiftyJSON','5.0.1'
+  pod 'SwiftyJSON'
   # Pods for UNIWatchMateDemo
   
   pod 'LBXScan','2.5.1'

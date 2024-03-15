@@ -54,7 +54,7 @@
 		</data>
 		<key>Headers/WMAppsModel.h</key>
 		<data>
-		DpbM7lkLrKI2t5umQ/93PM8W2F8=
+		JX0/r58+ZxJ4Vgp8J4ENyYT7+wA=
 		</data>
 		<key>Headers/WMBaseDataModel.h</key>
 		<data>
@@ -126,7 +126,7 @@
 		</data>
 		<key>Headers/WMDeviceInfoModel.h</key>
 		<data>
-		OHPJmBo2QYigG6r6BAeYDHIAcxo=
+		jiCMTkpKvyVZIGa80tW6tSLyRBo=
 		</data>
 		<key>Headers/WMDialAppModel.h</key>
 		<data>
@@ -212,6 +212,10 @@
 		<data>
 		evJ/QgZ7zPCFrn90LiDPASM/aYA=
 		</data>
+		<key>Headers/WMNavigationAppModel.h</key>
+		<data>
+		Vs3Gh975VbhGsRe+nkuRnxXcl7s=
+		</data>
 		<key>Headers/WMPeripheral.h</key>
 		<data>
 		Juvie2BepS5KbnmmsRekdtYFWzQ=
@@ -238,7 +242,7 @@
 		</data>
 		<key>Headers/WMSettingsModel.h</key>
 		<data>
-		bb6NFZtjB/FTX4sqg/vTStM2QZo=
+		5OhOHHCLPUMc1j5ELjTpgoADDqE=
 		</data>
 		<key>Headers/WMSleepDataModel.h</key>
 		<data>
@@ -318,11 +322,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		jAzPvkl6i99qdq9H3ZunvEWgNYY=
+		cRprkBWGhQ9FU9x1P1O3muzuwVY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		hQM8Q016Ey//Wdr/QEXpK1n8pV0=
+		t2aggd8tM3u4NNv0HU66UcQmPqc=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -415,7 +419,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			uwbeupBYh1AZVo4Qh1j8v313gEMGFZeV1iCVy3q+rg4=
+			ywov1SRnE0+8Q6NYhMuiH+Rf2ALqy1aP4ds68+Y23Ec=
 			</data>
 		</dict>
 		<key>Headers/WMBaseDataModel.h</key>
@@ -541,7 +545,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			SGZZEIqaaGzxuFdthiI9FcL3mc4475xY6q/g5bU4mRo=
+			8NZz/lAb7WLMlvVhmd6XI1LXRv/mKUvIODKlZuIQDLE=
 			</data>
 		</dict>
 		<key>Headers/WMDialAppModel.h</key>
@@ -691,6 +695,13 @@
 			WOkHxc1sTxIY0178OTHtmFbcvXzKZcgSOjIHkEXupmw=
 			</data>
 		</dict>
+		<key>Headers/WMNavigationAppModel.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			L83pRIRdx01Ii+W6eTlStyeCRoQH2TksgHGaSJUDUVI=
+			</data>
+		</dict>
 		<key>Headers/WMPeripheral.h</key>
 		<dict>
 			<key>hash2</key>
@@ -737,7 +748,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9Cw5smgxZ08eSgnmHfOTLUCH/tNsoxmmXjFVh/8WJPg=
+			yV1ibFeKzfw0KZV0hgsToJBwbkv2k+B92m3zpck240c=
 			</data>
 		</dict>
 		<key>Headers/WMSleepDataModel.h</key>
@@ -877,7 +888,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ae0ntAAdWFUn1jr5whptm6nGJspgYQPegsqz2vtvxMU=
+			NQ51wc16hmxFfYIkpTdS9iX9crIjr5a3Z5xlAx+14Ds=
 			</data>
 		</dict>
 	</dict>

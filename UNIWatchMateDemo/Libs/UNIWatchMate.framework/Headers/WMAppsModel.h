@@ -15,6 +15,7 @@
 #import "WMConfigHeartRateAppModel.h"
 #import "WMFindAppModel.h"
 #import "WMCameraAppModel.h"
+#import "WMNavigationAppModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -39,7 +40,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) WMFindAppModel *findApp;
 /// 相机
 @property (nonatomic, strong) WMCameraAppModel *cameraApp;
-
+/// 导航
+@property (nonatomic, strong) WMNavigationAppModel *navigationApp;
 @end
 
 NS_ASSUME_NONNULL_END
