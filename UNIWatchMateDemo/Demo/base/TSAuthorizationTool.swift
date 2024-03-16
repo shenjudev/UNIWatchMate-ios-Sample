@@ -9,9 +9,9 @@ import AVFoundation
 import Photos
 struct TSAuthorizationTool {
     
-    /// 摄像头访问权限
-    /// - Parameter isOpenAlert: 是否打开引导弹窗
-    /// - Returns: 权限状态
+    /// 摄Camera access
+    /// - Parameter isOpenAlert: Whether to open the guided missile window
+    /// - Returns: Permission state
     static func isCameraAvailable(_ isOpenAlert : Bool = false , _ completion:CommonBoolBlock? = nil) -> Bool {
         if UIImagePickerController.isSourceTypeAvailable(.camera) && UIImagePickerController.isCameraDeviceAvailable(.front) && UIImagePickerController.isCameraDeviceAvailable(.rear) {
             return true

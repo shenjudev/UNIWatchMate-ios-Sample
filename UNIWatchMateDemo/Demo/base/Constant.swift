@@ -64,7 +64,7 @@ typealias CommonIntBlock = ((Int?) -> ())
 typealias CommonStringBlock = ((String?) -> ())
 typealias CommonBoolBlock = ((Bool) -> ())
 
-// MARK: 打印
+// MARK: print
 func ZHLog<T>(_ message:T,file:String = #file,funcName:String = #function,lineName:Int = #line){
     #if DEBUG
         let  flieName = (file as NSString).lastPathComponent

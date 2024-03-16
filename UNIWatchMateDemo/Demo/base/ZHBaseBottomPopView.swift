@@ -9,14 +9,14 @@ import UIKit
 
 enum ZHPickerAlertType : String{
     case none
-    // 数字类型
+    // Number type
     case steps = "steps"
     case kcal  = "kcal"
     case min   = "min"
     case second = "second"
     case bpm   = "bpm"
     case warnbpm   = "warnbpm"
-    // 非数字类型
+    // Non-numeric type
     case time  = "time"
 }
 
@@ -29,7 +29,7 @@ class ZHBaseBottomAlertView: BaseView {
             bgview.backgroundColor = bgColor
         }
     }
-    // 是否点击确认自动消失
+    // Whether to click OK to automatically disappear
     var isAutoHidden : Bool = true
     
     override func setupUI() {

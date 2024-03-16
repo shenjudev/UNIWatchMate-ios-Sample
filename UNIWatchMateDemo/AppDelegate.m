@@ -34,7 +34,7 @@
     if (@available(iOS 13.0, *)) {
         self.window.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
     }
-    // 其他初始化操作...
+    
     [self.window makeKeyAndVisible];
     return YES;
 }

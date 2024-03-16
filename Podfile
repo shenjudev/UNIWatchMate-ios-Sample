@@ -28,9 +28,9 @@ target 'UNIWatchMateDemo' do
   pod 'LSTPopView',"0.3.10"
     pod 'ZYImagePicker', '~> 0.1.2'
  pod 'SnapKit',:git => 'https://github.com/SnapKit/SnapKit.git'
-  #swift扩展
+  #swift extension
   pod 'SwifterSwift', '5.2.0'
-  #本地化扩展
+  #Localized extension
   pod 'Localize-Swift', '~> 3.2.0'
   pod 'MJExtension'
 end
