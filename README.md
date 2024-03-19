@@ -2,13 +2,18 @@
 # UNIWatchMate
 
 The interface framework of UNIWatchMate smartwatch is responsible for packaging functions such as communication with the watch device. It provides interfaces related to the smartwatch for the App to operate, and connects to SDKS of other watches.
-  
+# Version 1.0.4  
 # [SDK documentation](https://github.com/shenjudev/UNIWatchMate-ios-Sample/wiki)  
-# Version 1.0.2
+## v1.0.4(2024-03-18)
+1. Customizable Dial
+2. Device widgets
+3. Device Features List
 
-## v1.0.2(2024-03-05)
+# Version 1.0.3
+
+## v1.0.3(2024-03-05)
 1. Update the sdk to accommodate the new device firmware                 
-              <br><br>
+              
 # Version 1.0.1
 
 ## v1.0.1(2023-11-01)
