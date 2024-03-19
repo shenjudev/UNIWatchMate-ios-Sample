@@ -3,7 +3,7 @@
 
 The interface framework of UNIWatchMate smartwatch is responsible for packaging functions such as communication with the watch device. It provides interfaces related to the smartwatch for the App to operate, and connects to SDKS of other watches.
   
-# [Wiki](https://github.com/shenjudev/UNIWatchMate-ios-Sample/wiki)  
+# [SDK documentation](https://github.com/shenjudev/UNIWatchMate-ios-Sample/wiki)  
 # Version 1.0.2
 
 ## v1.0.2(2024-03-05)
