@@ -11,10 +11,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WMDeviceFindModel : NSObject
 
-/// 响铃次数
+/// 响铃次数 依赖于设备  （Number of ringing Equipment dependent）
 @property (nonatomic, assign) NSInteger count;
 
-/// 响铃时长（单位秒）
+/// 响铃时长（单位秒）（Ring duration (in seconds)）
 @property (nonatomic, assign) NSInteger timeSeconds;
 
 @end

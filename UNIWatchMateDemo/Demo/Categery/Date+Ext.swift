@@ -12,7 +12,7 @@ extension Date {
         
         let dateformatter = DateFormatter()
         
-        dateformatter.dateFormat = "YYYY-MM-dd HH:mm:ss"// 自定义时间格式
+        dateformatter.dateFormat = "YYYY-MM-dd HH:mm:ss"
         
         // GMT时间 转字符串，直接是系统当前时间
         

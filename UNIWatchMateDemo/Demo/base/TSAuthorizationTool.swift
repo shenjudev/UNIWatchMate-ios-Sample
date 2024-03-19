@@ -9,7 +9,7 @@ import AVFoundation
 import Photos
 struct TSAuthorizationTool {
     
-    /// 摄Camera access
+    /// Camera access
     /// - Parameter isOpenAlert: Whether to open the guided missile window
     /// - Returns: Permission state
     static func isCameraAvailable(_ isOpenAlert : Bool = false , _ completion:CommonBoolBlock? = nil) -> Bool {
@@ -20,11 +20,11 @@ struct TSAuthorizationTool {
     }
     
     
-    ///  判断是否支持摄像
-    /// - Parameter isOpenAlert: 是否打开引导弹窗
-    /// - Returns: 权限状态
+    ///  e whether the camera is supported
+    /// - Parameter isOpenAlert: Whether to open the guided missile window
+    /// - Returns: Permission state
     static func doesCameraSupportTakingPhotos(_ isOpenAlert : Bool = false , _ completion:CommonBoolBlock? = nil) -> Bool {
-        let mediaType = AVMediaType.video //读取媒体类型
+        let mediaType = AVMediaType.video //Read media type
         let authStatus : AVAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: mediaType)
         if authStatus == AVAuthorizationStatus.authorized || authStatus == AVAuthorizationStatus.notDetermined {
             return true
@@ -33,8 +33,8 @@ struct TSAuthorizationTool {
 
     }
     
-    ///  相册访问权限
-    /// - Parameter isOpenAlert: 是否打开引导弹窗
+    ///  Album access
+    /// - Parameter isOpenAlert: Whether to open the guided missile window
     /// - Returns: 权限状态
     static func isPhotoLibraryAvailable(_ isOpenAlert : Bool = false , _ completion:CommonBoolBlock? = nil) -> Bool {
         let authStatus = PHPhotoLibrary.authorizationStatus()
@@ -44,10 +44,10 @@ struct TSAuthorizationTool {
         if isOpenAlert  {
             
             let sheet = TSAlertSheetView()
-            sheet.show(icon: nil, title:"相册访问权限未开启".attributed , alignment: .center, leftTitle: "取消", rightTitle: "去设置", cancelClosure: {
+            sheet.show(icon: nil, title:"The album access permission is not enabled".attributed , alignment: .center, leftTitle: "Cancel", rightTitle: "Go to Settings", cancelClosure: {
                 completion?(false)
             }, rightClosure: {
-                /// 跳转到设置界面
+                /// Permission state
                 guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             })

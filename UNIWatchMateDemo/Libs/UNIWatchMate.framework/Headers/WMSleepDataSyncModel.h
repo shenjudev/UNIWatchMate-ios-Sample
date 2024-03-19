@@ -12,8 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WMSleepDataSyncModel : NSObject
 
-/// 同步睡眠数据
-/// - Parameter startTime: 从什么时候开始同步数据
+/// 同步睡眠数据 （Synchronized sleep data）
+/// - Parameter startTime: 从什么时候开始同步数据 （When do you start synchronizing data）
 - (RACSignal<NSArray<WMSleepDataModel *>* > *)syncDataWithStartTime:(NSTimeInterval)startTime;
 
 @end

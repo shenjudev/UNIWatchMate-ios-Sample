@@ -17,17 +17,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WMPeripheral : NSObject
 
-/// 连接的目标设备
+/// 连接的目标设备 (The connected target device)
 @property (nonatomic, strong) WMPeripheralTargetModel *target;
-/// 设备连接
+/// 设备连接 (Device connection)
 @property (nonatomic, strong) WMConnectModel *connect;
-/// 设备信息
+/// 设备信息 (Device information)
 @property (nonatomic, strong) WMDeviceInfoModel *infoModel;
-/// 功能设置
+/// 功能设置 (Function setting)
 @property (nonatomic, strong) WMSettingsModel *settings;
-/// 设备应用
+/// 设备应用 (Equipment application)
 @property (nonatomic, strong) WMAppsModel *apps;
-/// 数据同步
+/// 数据同步 (Data synchronization)
 @property (nonatomic, strong) WMDatasSyncModel *datasSync;
 
 @end

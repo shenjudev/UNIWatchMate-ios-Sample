@@ -60,7 +60,7 @@
     model.type = UNIWPeripheralFormTypeMac;
     model.name = @"";
     model.mac = @"35:53:78:0f:87:44";
-
+    //uid is usually the unique id of the login user, and "1" is used in the demo
     @weakify(self);
     [[[WMManager sharedInstance] findWatchFromTarget:model product:@"OSW-802N" uid:@"1"] subscribeNext:^(WMPeripheral * _Nullable x) {
         @strongify(self);

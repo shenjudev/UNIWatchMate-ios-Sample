@@ -9,10 +9,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// 每小时步数数据
+/// 每小时步数数据 （Number of steps per hour）
 @interface WMStepDataModel : WMBaseDataModel
 
-/// 步数
+/// 步数 （Step number）
 @property (nonatomic, assign) NSInteger steps;
 
 @end

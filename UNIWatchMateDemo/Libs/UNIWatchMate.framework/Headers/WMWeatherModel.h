@@ -11,13 +11,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger, WMWeek) {
-    WMWeekSunday,      /// 星期日
-    WMWeekMonday,      /// 星期一
-    WMWeekTuesday,     /// 星期二
-    WMWeekWednesday,   /// 星期三
-    WMWeekThursday,    /// 星期四
-    WMWeekFriday,      /// 星期五
-    WMWeekSaturday     /// 星期六
+    WMWeekSunday,      /// 星期日（Sunday.）
+    WMWeekMonday,      /// 星期一（Monday.）
+    WMWeekTuesday,     /// 星期二（Tuesday.）
+    WMWeekWednesday,   /// 星期三（Wednesday.）
+    WMWeekThursday,    /// 星期四（Thursday.）
+    WMWeekFriday,      /// 星期五（Friday.）
+    WMWeekSaturday     /// 星期六（Saturday.）
 };
 
 /// 天气（weather）

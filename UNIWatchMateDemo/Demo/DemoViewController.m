@@ -26,12 +26,12 @@
     [HDWindowLogger defaultWindowLogger].mCompleteLogOut = NO;
     [HDWindowLogger defaultWindowLogger].mDebugAreaLogOut = NO;
     
-    //设置SVProgressHUD属性
+    //Set the SVProgressHUD property
     [SVProgressHUD setMinimumDismissTimeInterval:2];
     
 }
 - (void)checkNetworkPermission {
-    NSURL *url = [NSURL URLWithString:@"https://www.example.com"]; // 将 "www.example.com" 替换为你想要加载的域名
+    NSURL *url = [NSURL URLWithString:@"https://www.example.com"]; // Replace "www.example.com" with the domain name you want to load
     NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
     }];
     [dataTask resume];
@@ -47,9 +47,9 @@
  }
  */
 -(void)goConnectionModeSelectionViewController{
-    // 获取应用程序的主Storyboard
+    // Gets the main Storyboard for the application
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    // 获取主Storyboard的初始ViewController
+    // Gets the initial ViewController for the main Storyboard
     UIViewController *viewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"ConnectionModeSelectionViewController"];
     viewController.title = NSLocalizedString(@"Connection mode selection", nil);
     [[[UIApplication sharedApplication] keyWindow] setRootViewController:[[UINavigationController alloc] initWithRootViewController:viewController]];

@@ -53,12 +53,10 @@
 }
 
 -(void)upgrade{
-    // 创建文件选择器
         UIDocumentPickerViewController *documentPicker = [[UIDocumentPickerViewController alloc] initWithDocumentTypes:@[@"public.item"]
                                                                                                                 inMode:UIDocumentPickerModeOpen];
         documentPicker.delegate = self;
 
-        // 弹出文件选择器
         [self presentViewController:documentPicker animated:YES completion:nil];
 }
 
@@ -86,16 +84,16 @@
     }
 }
 
-// 实现UIDocumentPickerDelegate的代理方法
+
 - (void)documentPicker:(UIDocumentPickerViewController *)controller didPickDocumentsAtURLs:(NSArray<NSURL *> *)urls {
     NSURL *selectedURL = [urls firstObject];
        if (selectedURL) {
-           // 在这里验证文件扩展名是否为 .up
+           // Verify here that the file extension is.up or.upex
            if ([[selectedURL pathExtension] isEqualToString:@"up"] || [[selectedURL pathExtension] isEqualToString:@"upex"]) {
-               // 在这里可以继续处理 .up 文件
+               // Here you can continue working with.up or.upex files
                [self sendData:selectedURL];
            } else {
-               // 选择的文件不是 .up 文件，可以提供错误消息给用户
+               // The selected file is not an.up file and can provide an error message to the user
                [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"The file format is incorrect. Please select a.up file.", nil)];
            }
        }

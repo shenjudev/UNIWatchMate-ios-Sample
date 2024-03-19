@@ -10,9 +10,9 @@ import UIKit
 
 extension UIColor {
     
-    /// 24位16进制颜色
+    /// 24-bit hexadecimal color
     ///
-    /// - Parameter hex: 24位16进制 数
+    /// - Parameter hex: A 24-digit hexadecimal number
     convenience init(hex: UInt32) {
         let r = (hex & 0xff0000) >> 16
         let g = (hex & 0x00ff00) >> 8
@@ -20,17 +20,17 @@ extension UIColor {
         self.init(r: UInt8(r), g: UInt8(g), b: UInt8(b))
     }
     
-    /// 获取 UIColor
+    /// Get UIColor
     ///
     /// - Parameters:
-    ///   - r: 红    取值: 0-255
-    ///   - g: 绿    取值: 0-255
-    ///   - b: 蓝    取值: 0-255
+    /// -r: red The value ranges from 0 to 255
+    /// -g: green The value ranges from 0 to 255
+    /// -b: blue The value ranges from 0 to 255
     convenience init(r: UInt8, g: UInt8, b: UInt8) {
         self.init(red: CGFloat(r) / 255.0, green:  CGFloat(g) / 255.0, blue:  CGFloat(b) / 255.0, alpha: 1)
     }
     
-    /// 随机色
+    /// Random color
     class var random: UIColor {
         return UIColor(r: UInt8(arc4random_uniform(256)), g: UInt8(arc4random_uniform(256)), b: UInt8(arc4random_uniform(256)))
     }

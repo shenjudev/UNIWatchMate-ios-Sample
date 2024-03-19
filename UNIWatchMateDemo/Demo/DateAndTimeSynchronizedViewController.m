@@ -60,7 +60,7 @@ NSString* NSStringFromTimeFormat(TimeFormat timeFormat) {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterLongStyle];
     [formatter setTimeStyle:NSDateFormatterLongStyle];
-    [formatter setTimeZone:[NSTimeZone localTimeZone]]; // 设置为本地时区
+    [formatter setTimeZone:[NSTimeZone localTimeZone]]; // Set this parameter to the local time zone
 
     NSString *localizedDateString = [formatter stringFromDate:currentDate];
     NSString *localizedDateString15 = [formatter stringFromDate:dateAfter15Seconds];
@@ -69,7 +69,7 @@ NSString* NSStringFromTimeFormat(TimeFormat timeFormat) {
     
 }
 - (void)dealloc {
-    // 在对象销毁时确保定时器也被停止
+    // Make sure the timer is also stopped when the object is destroyed
     [self.timer invalidate];
     self.timer = nil;
 }

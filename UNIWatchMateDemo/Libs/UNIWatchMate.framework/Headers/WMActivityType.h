@@ -8,7 +8,7 @@
 #ifndef WMActivityType_h
 #define WMActivityType_h
 
-// 运动类别 废弃（使用注册的方式，API不关心有多少中运动，API调用者与设备约定好每个运动的ID，api直接将设备给的运动ID对应注册的运动类吐出）
+// Motion class abandonment 运动类别 废弃（使用注册的方式，API不关心有多少中运动，API调用者与设备约定好每个运动的ID，api直接将设备给的运动ID对应注册的运动类吐出）
 //typedef NS_ENUM(NSInteger, WMActivityType) {
 //    WMActivityTypeOutdoorRunning,      // 户外跑步
 //    WMActivityTypeOutdoorWalking,      // 户外健走

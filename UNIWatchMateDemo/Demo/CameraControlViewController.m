@@ -79,10 +79,10 @@
     AVCapturePhotoSettings *photoSettings = [AVCapturePhotoSettings photoSettings];
     self.currentFlashMode = photoSettings.flashMode;
     
-    // 创建并配置 AVCaptureSession
+    // Create and configure AVCaptureSession
     self.captureSession = [[AVCaptureSession alloc] init];
     
-    // 创建 AVCaptureDeviceInput 来获取摄像头输入
+    // Create AVCaptureDeviceInput to get the camera input
     self.captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     NSError *error = nil;
     self.currentCameraInput = [AVCaptureDeviceInput deviceInputWithDevice:self.captureDevice error:&error];
@@ -91,7 +91,7 @@
         [self.captureSession addInput:self.currentCameraInput];
     }
     
-    // 创建 AVCapturePhotoOutput 来处理拍照
+    // Create an AVCapturePhotoOutput to process the photo
     self.photoOutput = [[AVCapturePhotoOutput alloc] init];
     if ([self.captureSession canAddOutput:self.photoOutput]) {
         [self.captureSession addOutput:self.photoOutput];
@@ -99,7 +99,7 @@
     AVCaptureVideoDataOutput *output = [[AVCaptureVideoDataOutput alloc] init];
     [output setSampleBufferDelegate:self queue:dispatch_get_main_queue()];
     [self.captureSession addOutput:output];
-    // 创建预览图层并添加到视图
+    // Create a preview layer and add it to the view
     self.previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:self.captureSession];
     self.previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
     self.previewLayer.frame = self.view.bounds;
@@ -112,7 +112,7 @@
     self.imageView.layer.borderWidth = 10;
     [self.imageView setHidden:YES];
     
-    // 创建拍照按钮
+    // Create photo button
     self.captureButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.captureButton.frame = CGRectMake(self.view.frame.size.width / 2 - 40, self.view.frame.size.height - 100, 80, 80);
     [self.captureButton setImage: [UIImage imageNamed:@"ic_camera_tack"] forState:UIControlStateNormal];
@@ -123,7 +123,7 @@
     //    self.captureButton.layer.borderWidth = 2;
     [self.view addSubview:self.captureButton];
     
-    // 创建前后摄像头切换按钮
+    // Create front and rear camera toggle buttons
     self.switchCameraButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.switchCameraButton.frame = CGRectMake(CGRectGetWidth(self.view.frame) - 150, 140, 40, 40);
     [self.switchCameraButton setImage:[UIImage imageNamed:@"ic_camera_switch"] forState:UIControlStateNormal];
@@ -134,7 +134,7 @@
     //    self.switchCameraButton.layer.borderWidth = 2;
     [self.view addSubview:self.switchCameraButton];
     
-    // 创建闪光灯控制按钮
+    // Create flash control buttons
     self.flashButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.flashButton.frame = CGRectMake(CGRectGetWidth(self.view.frame) - 100, 140, 40, 40);
     [self.flashButton setImage:self.currentFlashMode == AVCaptureFlashModeOn ? [UIImage imageNamed:@"ic_bolt_circle_fill"] : [UIImage imageNamed:@"ic_bolt_slash_fill"] forState:UIControlStateNormal];
@@ -145,7 +145,7 @@
     //    self.flashButton.layer.borderWidth = 2;
     [self.view addSubview:self.flashButton];
     
-    // 创建选择照片按钮
+    // Create Select Photo button
     self.selectPhotoButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.selectPhotoButton.frame = CGRectMake(CGRectGetWidth(self.view.frame) - 50, 140, 40, 40);
     //    self.selectPhotoButton.backgroundColor = [UIColor whiteColor];
@@ -156,7 +156,7 @@
     [self.selectPhotoButton setHidden:YES];
     [self.view addSubview:self.selectPhotoButton];
     
-    // 添加按钮点击事件处理
+    // Add button click event handling
     [self.captureButton addTarget:self action:@selector(captureButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     [self.switchCameraButton addTarget:self action:@selector(switchCameraButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     [self.flashButton addTarget:self action:@selector(flashButtonTapped) forControlEvents:UIControlEventTouchUpInside];
@@ -245,14 +245,14 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 - (void)captureButtonTapped {
-    // 处理拍照按钮点击事件
+    // Handle photo button click events
     AVCapturePhotoSettings *photoSettings = [AVCapturePhotoSettings photoSettings];
     photoSettings.flashMode = self.currentFlashMode;
     [self.photoOutput capturePhotoWithSettings:photoSettings delegate:self];
 }
 
 - (void)switchCameraButtonTapped {
-    // 处理前后摄像头切换按钮点击事件
+    // Handle front and rear camera switch button click event
     AVCaptureDevice *newCamera = nil;
     AVCaptureDeviceInput *newInput = nil;
     
@@ -283,7 +283,7 @@
     
 }
 - (void)switchCamera:(AVCaptureDevicePosition)captureDevicePosition{
-    // 处理前后摄像头切换按钮点击事件
+    // Handle front and rear camera switch button click event
     AVCaptureDevice *newCamera = nil;
     AVCaptureDeviceInput *newInput = nil;
     
@@ -343,7 +343,7 @@
 }
 
 - (void)selectPhotoButtonTapped {
-    // 处理选择照片按钮点击事件
+    // Handle select photo button click event
     // ...
 }
 
@@ -361,25 +361,25 @@
     [[WatchManager sharedInstance].currentValue.apps.cameraApp sendVideo:sampleBuffer CameraPosition:self.currentCameraInput.device.position == AVCaptureDevicePositionBack];
 }
 
-// 实现拍照完成后的代理方法
+// Realize the proxy method after the photo is taken
 - (void)captureOutput:(AVCapturePhotoOutput *)output didFinishProcessingPhoto:(AVCapturePhoto *)photo error:(NSError *)error {
     if (error) {
-        // 处理拍照错误
+        // Processing photo error
         return;
     }
     
-    // 获取拍摄的照片数据
+    // Get photo data taken
     NSData *imageData = [photo fileDataRepresentation];
     UIImage *capturedImage = [UIImage imageWithData:imageData];
     
     self.imageView.image = capturedImage;
     [self.imageView setHidden:NO];
-    //1s后消失
+    //Disappear after 1s
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.imageView setHidden:YES];
     });
     
-    // 处理拍照完成后的操作，例如展示照片或保存到相册
+    // Handle the actions taken after the photo is taken, such as displaying the photo or saving it to an album
 if(imageData) {
     [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
         [PHAssetCreationRequest creationRequestForAssetFromImage:[UIImage imageWithData:imageData]];

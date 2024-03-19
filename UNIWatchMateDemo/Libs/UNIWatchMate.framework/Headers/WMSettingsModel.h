@@ -20,31 +20,31 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// 功能设置
+/// 功能设置 （Function setting）
 @interface WMSettingsModel : NSObject
-/// 运动目标设置
+/// 运动目标设置 （Moving goal setting）
 @property (nonatomic, strong) WMSportGoalSettingModel *sportGoal;
-/// 计量单位设置
+/// 计量单位设置 （Unit setting）
 @property (nonatomic, strong) WMUnitInfoSettingModel *unitInfo;
-/// 个人信息设置
+/// 个人信息设置 （Personal information setting）
 @property (nonatomic, strong) WMPersonalInfoSettingModel *personalInfo;
-/// 语言设置
+/// 语言设置 （Language setting）
 @property (nonatomic, strong) WMLanguageSettingModel *language;
-/// 喝水提醒设置
+/// 喝水提醒设置 （Drink water reminder Settings）
 @property (nonatomic, strong) WMReminderSettingModel *waterReminder;
-/// 久坐提醒设置
+/// 久坐提醒设置 （Sedentary reminder Settings）
 @property (nonatomic, strong) WMReminderSettingModel *sedentaryReminder;
-/// 时间设置
+/// 时间设置 （Time setting）
 @property (nonatomic, strong) WMDateTimeSettingModel *dateTime;
-/// 开关设置
+/// 开关设置 （Switch setting）
 @property (nonatomic, strong) WMSwitchsSettingModel *switchs;
-/// app视图设置
+/// app视图设置 （app view Settings）
 @property (nonatomic, strong) WMAppViewSettingModel *appView;
-/// 睡眠设置
+/// 睡眠设置 （Sleep setting）
 @property (nonatomic, strong) WMSleepSettingModel *sleep;
-/// 消息设置
+/// 消息设置 （Message setting）
 @property (nonatomic, strong) WMMessageSettingModel *message;
-/// 组件设置
+/// 组件设置 （Component setup）
 @property (nonatomic, strong) WMWidgetSettingModel *widget;
 
 @end

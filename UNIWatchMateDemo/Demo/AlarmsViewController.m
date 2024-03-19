@@ -94,7 +94,7 @@
     }
     
     WMAlarmModel *model = self.alarms[indexPath.row];
-    // 配置每行的Cell
+    
     NSString *alarmText = model.alarmName;
     
     cell.textLabel.text = alarmText;
@@ -104,13 +104,13 @@
     for (UIView *view in cell.contentView.subviews) {
         [view removeFromSuperview];
     }
-    // 创建开关
+   
     UISwitch *switchView = [[UISwitch alloc] init];
     [switchView setOn:model.isOn];
     switchView.tag = indexPath.row + 1000;
     [switchView addTarget:self action:@selector(switchValueChanged:) forControlEvents:UIControlEventValueChanged];
     
-    // 创建删除按钮
+    
     UIButton *deleteButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [deleteButton setTitle:NSLocalizedString(@"delete", nil) forState:UIControlStateNormal];
     [deleteButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -120,19 +120,15 @@
     deleteButton.tag = indexPath.row + 100;
     [deleteButton addTarget:self action:@selector(deleteButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     
-    // 布局开关和删除按钮
-    CGFloat buttonWidth = 60; // 按钮宽度
+    CGFloat buttonWidth = 60;
     CGFloat cellWidth = CGRectGetWidth(self.view.frame);
     
-    // 计算删除按钮的位置
     CGRect deleteButtonFrame = CGRectMake(cellWidth - buttonWidth - 10, 10, buttonWidth, 30);
     deleteButton.frame = deleteButtonFrame;
     
-    // 计算开关的位置
     CGRect switchFrame = CGRectMake(cellWidth - 2 * buttonWidth - 10, 10, buttonWidth, 30);
     switchView.frame = switchFrame;
     
-    // 将开关和删除按钮添加到单元格
     [cell.contentView addSubview:switchView];
     [cell.contentView addSubview:deleteButton];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -148,7 +144,7 @@
 - (void)addAlarm {
     AlarmEditViewController *vc = [AlarmEditViewController new];
     vc.completionHandler = ^(NSString *data) {
-        // 处理返回的数据
+      
         [self getAlarmList];
     };
     vc.alarmModels = self.alarms;
@@ -157,7 +153,7 @@
 - (void)editAlarm:(WMAlarmModel *)model {
     AlarmEditViewController *vc = [AlarmEditViewController new];
     vc.completionHandler = ^(NSString *data) {
-        // 处理返回的数据
+        
         [self getAlarmList];
     };
     vc.alarmModel = model;
@@ -166,9 +162,9 @@
 }
 
 - (void)switchValueChanged:(UISwitch *)sender {
-    // 处理开关按钮状态改变事件
+    
     NSInteger indexRow = sender.tag - 1000;
-    // 处理删除按钮点击事件
+    
     WMAlarmModel *model = self.alarms[indexRow];
     model.isOn = sender.isOn;
     [SVProgressHUD showWithStatus:nil];
@@ -190,7 +186,7 @@
 
 - (void)deleteButtonTapped:(UIButton *)sender {
     NSInteger indexRow = sender.tag - 100;
-    // 处理删除按钮点击事件
+    
     [self.alarms removeObjectAtIndex:indexRow];
     @weakify(self);
     [SVProgressHUD showWithStatus:nil];
@@ -240,7 +236,7 @@
         [weekdayString appendString:@", "];
     }
     
-    // 去除最后一个逗号和空格
+    // Remove the last comma and space
     if ([weekdayString length] > 2) {
         [weekdayString deleteCharactersInRange:NSMakeRange([weekdayString length] - 2, 2)];
     }

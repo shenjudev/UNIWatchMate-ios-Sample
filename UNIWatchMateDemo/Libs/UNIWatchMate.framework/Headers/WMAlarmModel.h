@@ -20,20 +20,20 @@ typedef NS_OPTIONS(uint8_t, WMAlarmRepeat) {
     WMAlarmRepeatSunday    = 1 << 6,
 };
 
-/// 闹钟
+/// 闹钟 （Alarm clock）
 @interface WMAlarmModel : NSObject
 
-/// 闹钟ID
+/// 闹钟ID （Alarm ID）
 @property (nonatomic, assign) NSInteger identifier;
-/// 闹钟名称
+/// 闹钟名称 （Alarm clock name）
 @property (nonatomic, strong) NSString *alarmName;
-/// 闹钟时间小时
+/// 闹钟时间小时 （Alarm clock hour）
 @property (nonatomic, assign) NSInteger alarmHour;
-/// 闹钟时间分钟
+/// 闹钟时间分钟 （Alarm clock minutes）
 @property (nonatomic, assign) NSInteger alarmMinute;
-/// 闹钟重复设置
+/// 闹钟重复设置 （Repeat alarm setting）
 @property (nonatomic, assign) WMAlarmRepeat repeatOptions;
-/// 闹钟是否开启
+/// 闹钟是否开启 （Whether the alarm is on or not）
 @property (nonatomic, assign) BOOL isOn;
 
 @end

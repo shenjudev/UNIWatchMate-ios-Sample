@@ -68,12 +68,12 @@
 }
 -(void)showModel {
     
-    // 使用 NSPredicate 创建一个谓词，过滤掉 fixedWidgetTypes 中的值
+    // Use NSPredicate to create a predicate that filters out the values in fixedWidgetTypes
     NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSNumber *evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
         return ![_variableTypes containsObject:evaluatedObject];
     }];
 
-    // 使用谓词过滤 allWidgetTypes
+    // Filter allWidgetTypes using predicates
     NSArray<NSNumber *> *filteredWidgetTypes = [self.supportedTypes filteredArrayUsingPredicate:predicate];
     self.dataArray = [NSMutableArray arrayWithArray:@[
         [NSMutableArray arrayWithArray:self.variableTypes],
@@ -105,7 +105,7 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     NSInteger *wMWidgetTypeInt = [self.dataArray[indexPath.section][indexPath.row] intValue];
-    // 然后将这个NSInteger转换为WMWidgetType枚举
+    // This NSInteger is then converted to a WMWidgetType enumeration
     WMWidgetType widgetType = (WMWidgetType)wMWidgetTypeInt;
     cell.textLabel.text =stringFromWMWidgetType(widgetType);
     cell.textLabel.frame = CGRectInset(cell.textLabel.frame, 0, 0);
@@ -113,7 +113,7 @@
     for (UIView *view in cell.contentView.subviews) {
         [view removeFromSuperview];
     }
-        // 创建删除按钮
+        // Create delete button
         UIButton *deleteButton = [UIButton buttonWithType:UIButtonTypeCustom];
         if (indexPath.section == 0){
             [deleteButton setTitle:NSLocalizedString(@"delete", nil) forState:UIControlStateNormal];
@@ -128,11 +128,11 @@
         [deleteButton setBackgroundColor:[UIColor redColor]];
         deleteButton.tag = indexPath.row + 100;
         
-        // 布局开关和删除按钮
-        CGFloat buttonWidth = 60; // 按钮宽度
+        // Layout switch and delete button
+        CGFloat buttonWidth = 60; // Button width
         CGFloat cellWidth = CGRectGetWidth(self.view.frame);
         
-        // 计算删除按钮的位置
+        // Calculate the location of the delete button
         CGRect deleteButtonFrame = CGRectMake(cellWidth - buttonWidth - 25, 10, buttonWidth, 30);
         deleteButton.frame = deleteButtonFrame;
         
@@ -145,7 +145,7 @@
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
      return self.dataArray[section].count;
 }
-// 禁止删除行
+// Prevent deleting rows
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewCellEditingStyleNone;
 }
@@ -194,7 +194,7 @@ NSString *stringFromWMWidgetType(WMWidgetType type) {
 
 - (void)deleteButtonTapped:(UIButton *)sender {
     NSInteger indexRow = sender.tag - 100;
-    // 处理删除按钮点击事件
+    // Handle delete button click events
     if(self.variableTypes.count < 2){
         [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"At least one", nil)];
         return;
@@ -224,7 +224,7 @@ NSString *stringFromWMWidgetType(WMWidgetType type) {
 
 - (void)addButtonTapped:(UIButton *)sender {
     NSInteger indexRow = sender.tag - 100;
-    // 处理删除按钮点击事件
+    // Handle delete button click events
     NSNumber * firstType = [self.dataArray[0] objectAtIndex:0];
     if(firstType.intValue == WMWidgetTypeWidgetMusic && self.variableTypes.count >= 4){
         [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"You must delete some data first", nil)];

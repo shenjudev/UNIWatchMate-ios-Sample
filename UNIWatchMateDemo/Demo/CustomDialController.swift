@@ -15,7 +15,7 @@ import SnapKit
 import SwifterSwift
 //import HXPhotoPicker_Lite
 
-///自定义表盘
+///Custom dial
 @objcMembers
 class CustomDialController: UIViewController {
     
@@ -42,7 +42,7 @@ class CustomDialController: UIViewController {
                 UIImage(named: "ic_dail_time_bottom_right") ?? UIImage()]
     }
     
-    lazy private var syncItem:UIButton = UIButton(title: "设为当前表盘".localized())
+    lazy private var syncItem:UIButton = UIButton(title: "Set as current watch face".localized())
     lazy private var progreeeLb:UILabel = UILabel.init(text: "0%", textColor: UIColor(hex: 0x000000), font: UIFont.mediumFont(size: 16))
     lazy private var progressView:UIView = UIView.init()
     lazy private var imagePicker : ZYImagePicker = ZYImagePicker.init()
@@ -56,7 +56,7 @@ class CustomDialController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "自定义表盘".localized()
+        self.title = "Custom watch face".localized()
         
         congifureDefaultValue()
         
@@ -115,7 +115,7 @@ class CustomDialController: UIViewController {
             if let nav = self.navigationController {
                 $0.top.equalToSuperview().offset(nav.navigationBar.height)
             } else {
-                // 如果没有导航控制器，就使用安全区域的顶部
+                // If there is no navigation controller, use the top of the safe zone
                 $0.top.equalToSuperview().offset(80)
             }
             
@@ -231,11 +231,10 @@ extension CustomDialController : UICollectionViewDelegate , UICollectionViewData
             let headView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withClass: TSDailCustomHeadView.self, for: indexPath)
             switch indexPath.section {
                 //            case 0:
-                //                headView.titleLB.text = "自定义背景"
             case 0:
-                headView.titleLB.text = "时间样式".localized()
+                headView.titleLB.text = "Time style".localized()
             case 1:
-                headView.titleLB.text = "字体颜色".localized()
+                headView.titleLB.text = "Font color".localized()
             default:
                 headView.titleLB.text = ""
             }
@@ -264,7 +263,7 @@ extension CustomDialController : UICollectionViewDelegate , UICollectionViewData
         case 0:
             return;
             
-        case 1: // 选择颜色
+        case 1: // Choose color
 //            if  indexPath.row == colors.count - 1{
 //                self.changeTextColor(indexPath)
 //            }else{
@@ -294,7 +293,7 @@ extension CustomDialController : UICollectionViewDelegate , UICollectionViewData
         }
     }
 }
-// MARK: 获取背景图
+// MARK: Get background
 extension CustomDialController {
     
     private func changeTextColor(_ indexPath : IndexPath) {
@@ -318,23 +317,23 @@ extension CustomDialController {
     }
     
     private func openPhotoSheetView() {
-        let items = ["拍照".localized() , "相册".localized() , "视频".localized()]
+        let items = ["Take a photo".localized() , "Photo album".localized() , "Video".localized()]
         
         let sheetView = TSAlertSheetListView.init(items: items) {[weak self] idx in
             guard let idx = idx else {return}
-            if items[idx] == "拍照".localized() {
+            if items[idx] == "Take a photo".localized() {
                 self?.isAuthorizationCamera(completion: { isOpen in
                     if isOpen {
                         self?.openCamera()
                     }
                 })
-            }else if items[idx] == "相册".localized() {
+            }else if items[idx] == "Photo album".localized() {
                 self?.isAuthorizationPhoto(completion: { isOpen in
                     if isOpen {
                         self?.openPhotoLibrary()
                     }
                 })
-            }else if items[idx] == "视频".localized() {
+            }else if items[idx] == "Video".localized() {
                 self?.isAuthorizationPhoto(completion: { isOpen in
                     if isOpen {
                         self?.openVideoLibrary()
@@ -414,7 +413,7 @@ extension CustomDialController {
     }
     
     func compressAndResizeVideoWithThumbnail(videoURL: URL, outputFileType: AVFileType = .mp4, completion: @escaping (Result<(videoPath: URL, thumbnailImage: UIImage?), Error>) -> Void) {
-        let targetSize = CGSize(width: 320, height: 386) // 目标尺寸
+        let targetSize = CGSize(width: 320, height: 386) // Target size
         let asset = AVAsset(url: videoURL)
         guard let exportSession = AVAssetExportSession(asset: asset, presetName: AVAssetExportPresetHighestQuality) else {
             completion(.failure(NSError(domain: "ExportSessionCreationFailed", code: 0, userInfo: nil)))
@@ -431,28 +430,28 @@ extension CustomDialController {
         exportSession.outputURL = outputPath
         exportSession.outputFileType = outputFileType
         
-        // 设置视频帧的压缩和尺寸调整
+        // Set compression and resizing of video frames
         let videoComposition = AVMutableVideoComposition(propertiesOf: asset)
         videoComposition.renderSize = targetSize
-        videoComposition.frameDuration = CMTimeMake(value: 1, timescale: 30) // 设置帧率
+        videoComposition.frameDuration = CMTimeMake(value: 1, timescale: 30) // Set frame rate
         
         let instruction = AVMutableVideoCompositionInstruction()
         instruction.timeRange = CMTimeRangeMake(start: CMTime.zero, duration: asset.duration)
         
-        // 计算缩放和位移，使视频填满目标尺寸
+        // Calculate scaling and displacement so that the video fills the target size
         let originalSize = videoTrack.naturalSize
         var finalTransform = videoTrack.preferredTransform
-        // 根据视频的方向调整 originalSize
+        // Adjust according to the direction of the video originalSize
         let adjustedSize = assetInfo.isPortrait ? CGSize(width: originalSize.height, height: originalSize.width) : originalSize
         let scaleX = targetSize.width / adjustedSize.width
         let scaleY = targetSize.height / adjustedSize.height
-        let scale = max(scaleX, scaleY) // 选择较大的缩放比例以填满目标尺寸
+        let scale = max(scaleX, scaleY) // Select a large scale to fill the target size
         let scaledWidth = adjustedSize.width * scale
         let scaledHeight = adjustedSize.height * scale
-        let translateX = (targetSize.width - scaledWidth) / 2 // 居中调整
-        let translateY = (targetSize.height - scaledHeight) / 2 // 居中调整
+        let translateX = (targetSize.width - scaledWidth) / 2 // Centering adjustment
+        let translateY = (targetSize.height - scaledHeight) / 2 // Centering adjustment
         finalTransform = finalTransform.translatedBy(x: translateX / scale, y: translateY / scale) // 应用位移
-        finalTransform = finalTransform.scaledBy(x: scale, y: scale) // 应用缩放
+        finalTransform = finalTransform.scaledBy(x: scale, y: scale) // Application scaling
         
         let layerInstruction = AVMutableVideoCompositionLayerInstruction(assetTrack: videoTrack)
         layerInstruction.setTransform(finalTransform, at: .zero)
@@ -462,11 +461,11 @@ extension CustomDialController {
         
         exportSession.videoComposition = videoComposition
         
-        // 开始导出视频
+        // Start exporting video
         exportSession.exportAsynchronously {
             switch exportSession.status {
             case .completed:
-                // 视频转换成功后，生成封面图
+                // After the video is successfully converted, the cover image is generated
 //                let fileURL = URL(fileURLWithPath: outputPath)
                 let outPutAsset = AVURLAsset(url: outputPath)
                 let assetImgGenerate = AVAssetImageGenerator(asset: outPutAsset)
@@ -478,7 +477,7 @@ extension CustomDialController {
                     let thumbnail = UIImage(cgImage: img)
                     completion(.success((videoPath: outputPath, thumbnailImage: thumbnail)))
                 } catch {
-                    // 即使封面图生成失败，也返回视频路径
+                    // The video path is returned even if the cover image generation fails
                     completion(.success((videoPath: outputPath, thumbnailImage: nil)))
                 }
             case .failed, .cancelled:
@@ -492,7 +491,7 @@ extension CustomDialController {
     }
 
 
-    // 根据视频轨道的 preferredTransform 来判断视频的方向
+    // The direction of the video is judged according to the preferredTransform of the video track
     func orientationFromTransform(transform: CGAffineTransform) -> VideoOrientation {
         var assetOrientation = UIImage.Orientation.up
         var isPortrait = false
@@ -516,12 +515,12 @@ extension CustomDialController {
         return VideoOrientation(orientation: assetOrientation, isPortrait: isPortrait)
     }
 }
-// 定义一个结构体来存储视频的方向信息
+// Define a structure to store video orientation information
 struct VideoOrientation {
     var orientation: UIImage.Orientation
     var isPortrait: Bool
 }
-// 刷新表盘预览图
+//Refresh the watch face preview
 extension CustomDialController {
     
     private func creatimageWithColor(color:UIColor)->UIImage{
@@ -545,7 +544,7 @@ extension CustomDialController {
     }
 }
 
-// MARK: 同步创作表盘
+// MARK:Synchronous creation dial
 extension CustomDialController {
 
     
@@ -554,9 +553,9 @@ extension CustomDialController {
         syncItem.isEnabled = isSyne
     }
     
-    // 重置更新状态
+    // Reset update status
     private func resetItem() {
-        syncItem.setTitle("设为当前表盘".localized(), for: .normal)
+        syncItem.setTitle("Set to the current dial".localized(), for: .normal)
         syncItem.itemAlpha(true)
         
         progressView.isHidden = true
@@ -624,7 +623,7 @@ extension CustomDialController {
         }
     }
     
-    // 更新进度
+    // Update progress
     private func updateProgress(progress : Int) {
         syncItem.setTitle("", for: .normal)
         syncItem.itemAlpha(false)
@@ -695,14 +694,14 @@ extension UIImage {
 }
 
 
-/// 传输状态
+/// Transmission state
 enum TSProgressState: Error {
-    /// 传输失败
+    /// Transmission failure
     case Failed
-    /// 传输成功
+    /// Successful transmission
     case Succeed
-    /// 传输中
+    /// In transmission
     case InTransit
-    /// 开始传输
+    /// Start transmission
     case Start
 }

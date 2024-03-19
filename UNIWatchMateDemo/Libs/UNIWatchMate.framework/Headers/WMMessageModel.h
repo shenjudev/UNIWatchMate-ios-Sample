@@ -31,11 +31,11 @@ typedef NS_OPTIONS(NSInteger, WMMessageType) {
 
 @interface WMMessageModel : NSObject
 
-/// 接打电话开关
+/// 接打电话开关 （Make and receive switch）
 @property (nonatomic, assign) BOOL isOnCall;
-/// 消息总开关
+/// 消息总开关 （消息总开关）
 @property (nonatomic, assign) BOOL isOpen;
-/// 支持的消息类型
+/// 支持的消息类型 （Supported message types）
 @property (nonatomic, assign) WMMessageType type;
 
 @end

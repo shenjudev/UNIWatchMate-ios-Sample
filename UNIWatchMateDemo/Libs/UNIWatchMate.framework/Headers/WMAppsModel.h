@@ -19,28 +19,28 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// 设备应用
+/// 设备应用 （Equipment application）
 @interface WMAppsModel : NSObject
 
-/// 表盘
+/// 表盘 （Dial plate）
 @property (nonatomic, strong) WMDialAppModel *dialApp;
-/// 文件传输
+/// 文件传输 （File transfer）
 @property (nonatomic, strong) WMFileAppModel *fileApp;
-/// 闹钟
+/// 闹钟 （Alarm clock）
 @property (nonatomic, strong) WMAlarmAppModel *alarmApp;
-/// 通讯录
+/// 通讯录 （Address book）
 @property (nonatomic, strong) WMContactsAppModel *contactsApp;
-/// 天气预报
+/// 天气预报 （Weather forecast）
 @property (nonatomic, strong) WMWeatherForecastAppModel *weatherForecastApp;
-/// 运动项目配置
+/// 运动项目配置 （Allocation of sports items）
 @property (nonatomic, strong) WMConfigMotionAppModel *configMotionApp;
-/// 心率
+/// 心率 （Heart rate）
 @property (nonatomic, strong) WMConfigHeartRateAppModel *configHeartRateApp;
-/// 查找
+/// 查找 （Look up）
 @property (nonatomic, strong) WMFindAppModel *findApp;
-/// 相机
+/// 相机 （Camera）
 @property (nonatomic, strong) WMCameraAppModel *cameraApp;
-/// 导航
+/// 导航 （Navigation）
 @property (nonatomic, strong) WMNavigationAppModel *navigationApp;
 @end
 

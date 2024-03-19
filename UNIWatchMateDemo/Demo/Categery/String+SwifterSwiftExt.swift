@@ -44,11 +44,11 @@ extension String {
 /// String Size
 extension String {
     
-    /// 获取文字真实宽度
+    /// Gets the true width of the text
     /// - Parameters:
-    ///   - font: 字体
-    ///   - height: 高度限制
-    /// - Returns: 真实宽度
+    ///   - font
+    ///   - height
+    /// - Returns:
     func getStringTrueWidth(font: UIFont, height: CGFloat) -> CGFloat {
         let size = CGSize(width: 999, height: height)
         let trueSize = self.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil).size
@@ -56,11 +56,11 @@ extension String {
     }
 
     
-    /// 获取文字真实高度
+    ///
     /// - Parameters:
-    ///   - font: 字体
-    ///   - width: 宽度限制
-    /// - Returns: 真实高度
+    ///   - font
+    ///   - width
+    /// - Returns
     func getStringTrueHeight(font: UIFont, width: CGFloat) -> CGFloat {
         let size = CGSize(width: width, height: 9999)
         let trueSize = self.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil).size

@@ -154,19 +154,19 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"CellIdentifier"];
     }
-    // 设置左侧标签
+    // Set left TAB
     cell.textLabel.text = dialModel.model.identifier;
     if (dialModel.model.isBuiltIn == YES){
-        // 设置右侧详情文本
+        // Set the details text on the right
         cell.detailTextLabel.text =  NSLocalizedString(@"BuiltIn", nil);
-        // 设置尖头样式
+        // Set the arrow style
         cell.accessoryType = UITableViewCellAccessoryNone;
         cell.imageView.image = nil;
 
     }else{
-        // 设置右侧详情文本
+        // Set the details text on the right
         cell.detailTextLabel.text = @"";
-        // 设置尖头样式
+        // Set arrow style
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.imageView.image = [UIImage imageNamed:dialModel.image];
     }
@@ -237,26 +237,26 @@
     NSString *filePath = [[NSBundle mainBundle] pathForResource:[name stringByReplacingOccurrencesOfString:type withString:@""] ofType:type];
     NSData *data = [[NSData alloc] initWithContentsOfFile:filePath];
     if (!data) {
-        NSLog(@"无法 获取数据");
+        NSLog(@"Data not available");
         return nil;
     }
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSString *subDirectoryPath = [directory stringByAppendingPathComponent:subDirectory];
 
-    // 创建子目录（如果不存在）
+    // Create a subdirectory if it does not exist
     if (![fileManager fileExistsAtPath:subDirectoryPath]) {
         NSError *dirError;
         [fileManager createDirectoryAtPath:subDirectoryPath withIntermediateDirectories:YES attributes:nil error:&dirError];
         
         if (dirError) {
-            NSLog(@"创建子目录失败: %@", [dirError localizedDescription]);
+            NSLog(@"Failed to create a subdirectory. Procedure: %@", [dirError localizedDescription]);
             return nil;
         }
     }
 
     NSString *destinationPath = [subDirectoryPath stringByAppendingPathComponent:name];
 
-    // 如果目标文件已存在，删除它
+    // If the destination file already exists, delete it
     if ([fileManager fileExistsAtPath:destinationPath]) {
         NSError *deleteError;
         [fileManager removeItemAtPath:destinationPath error:&deleteError];
@@ -266,12 +266,12 @@
         }
     }
 
-    // 将数据写入文件
+    // Write data to a file
     NSError *writeError;
     if ([data writeToFile:destinationPath options:NSDataWritingAtomic error:&writeError]) {
         return destinationPath;
     } else {
-        NSLog(@"写入文件失败: %@", [writeError localizedDescription]);
+        NSLog(@"File write failure: %@", [writeError localizedDescription]);
         return nil;
     }
 }
@@ -283,7 +283,7 @@
     UIImage *image = [UIImage imageNamed:name];
     NSData *data = UIImageJPEGRepresentation(image, 0.5); // 1.0表示最高质量
     if (!data) {
-        NSLog(@"无法 获取数据");
+        NSLog(@"Data not available");
         return nil;
     }
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -295,7 +295,7 @@
         [fileManager createDirectoryAtPath:subDirectoryPath withIntermediateDirectories:YES attributes:nil error:&dirError];
         
         if (dirError) {
-            NSLog(@"创建子目录失败: %@", [dirError localizedDescription]);
+            NSLog(@"Failed to create a subdirectory. Procedure: %@", [dirError localizedDescription]);
             return nil;
         }
     }
@@ -307,7 +307,7 @@
         NSError *deleteError;
         [fileManager removeItemAtPath:destinationPath error:&deleteError];
         if (deleteError) {
-            NSLog(@"删除已存在的文件失败: %@", [deleteError localizedDescription]);
+            NSLog(@"Description Failed to delete an existing file: %@", [deleteError localizedDescription]);
             return nil;
         }
     }
@@ -317,7 +317,7 @@
     if ([data writeToFile:destinationPath options:NSDataWritingAtomic error:&writeError]) {
         return destinationPath;
     } else {
-        NSLog(@"写入文件失败: %@", [writeError localizedDescription]);
+        NSLog(@"File write failure: %@", [writeError localizedDescription]);
         return nil;
     }
 }
@@ -325,11 +325,11 @@
     _alertController = [UIAlertController alertControllerWithTitle:nil message:@"This is a watch face mounted on the watch, can be removed, do you want to delete?" preferredStyle:UIAlertControllerStyleAlert];
 
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        // 用户点击取消按钮后的处理代码
+        // The processing code after the user clicks the cancel button
     }];
 
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"delete" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        // 用户点击确定按钮后的处理代码
+        // The processing code after the user clicks the OK button
         [self deleteDial:identifier];
     }];
 
@@ -358,11 +358,11 @@
     _alertController = [UIAlertController alertControllerWithTitle:nil message:error preferredStyle:UIAlertControllerStyleAlert];
 
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        // 用户点击取消按钮后的处理代码
+       
     }];
 
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"retry" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        // 用户点击确定按钮后的处理代码
+        
         [self sendDial:path];
     }];
 

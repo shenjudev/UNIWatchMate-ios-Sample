@@ -25,7 +25,7 @@
 @property (nonatomic, assign) BOOL weChatEnabled;
 @property (nonatomic, assign) BOOL whatsAppEnabled;
 @property (nonatomic, assign) BOOL whatsAppBusinessEnabled;
-// 解析整数值并设置开关状态
+// Parse the integer value and set the switch status
 - (void)setSwitchesFromInteger:(uint32_t)integerValue;
 
 @end
@@ -113,7 +113,7 @@
 
 @interface DeviceNotificationManagementViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray *notis; // 存储闹钟数据的数组
+@property (nonatomic, strong) NSMutableArray *notis; // An array that stores alarm data
 @property (nonatomic, strong) MyMessageModel *model;
 @end
 
@@ -205,29 +205,26 @@
     for (UIView *view in cell.contentView.subviews) {
         [view removeFromSuperview];
     }
-    // 创建开关
+   
     UISwitch *switchView = [[UISwitch alloc] init];
     [switchView setOn:[dic[@"enable"] boolValue]];
 
     switchView.tag = indexPath.row + 1000;
     [switchView addTarget:self action:@selector(switchValueChanged:) forControlEvents:UIControlEventValueChanged];
 
-    // 布局开关和删除按钮
-    CGFloat buttonWidth = 60; // 按钮宽度
+    CGFloat buttonWidth = 60;
     CGFloat cellWidth = CGRectGetWidth(self.view.frame);
 
-    // 计算开关的位置
     CGRect switchFrame = CGRectMake(cellWidth - buttonWidth - 10, 10, buttonWidth, 30);
     switchView.frame = switchFrame;
 
-    // 将开关和删除按钮添加到单元格
     [cell.contentView addSubview:switchView];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
     return cell;
 }
 - (void)switchValueChanged:(UISwitch *)sender {
-    // 处理开关按钮状态改变事件
+    
     NSInteger indexRow = sender.tag - 1000;
     BOOL enable = sender.isOn;
     switch (indexRow) {

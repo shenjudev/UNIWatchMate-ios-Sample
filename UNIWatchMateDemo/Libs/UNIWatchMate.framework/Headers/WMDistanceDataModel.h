@@ -9,10 +9,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// 每小时内新增的距离（米）
+/// 每小时内新增的距离（米）（Distance added per hour (m)）
 @interface WMDistanceDataModel : WMBaseDataModel
 
-/// 新增距离（米）
+/// 新增距离（米）（New distance (m)）
 @property (nonatomic, assign) NSInteger distance;
 
 @end

@@ -1,23 +1,24 @@
 platform :ios, '12.0'
-ENV['SWIFT_VERSION'] = '5.0'
+#ENV['SWIFT_VERSION'] = '5.0'
 
+workspace 'UNIWatchMate.xcworkspace'
 
 target 'UNIWatchMateDemo' do
   # Comment the next line if you don't want to use dynamic frameworks
   project './UNIWatchMateDemo.xcodeproj'
-  workspace 'UNIWatchMate.xcworkspace'
-  use_frameworks!
-  
-  pod 'YYCategories','1.0.4'
-  pod "ReactiveObjC",'3.1.1'
-  # Pods for UNIWatchMateDemo
-  
-  pod 'RxSwift'
-  pod 'RxCocoa'
-  pod 'PromiseKit'
-  pod 'HandyJSON','5.0.2'
-  pod 'SwiftyJSON'
-  # Pods for UNIWatchMateDemo
+   
+   use_frameworks!
+   
+   pod 'YYCategories','1.0.4'
+   pod "ReactiveObjC",'3.1.1'
+   # Pods for UNIWatchMateDemo
+   
+   pod 'RxSwift','6.6.0'
+   pod 'RxCocoa','6.6.0'
+   pod 'PromiseKit','8.1.1'
+   pod 'HandyJSON', '5.0.0'
+   pod 'SwiftyJSON','5.0.1'
+   # Pods for UNIWatchMateDemo
   
   pod 'LBXScan','2.5.1'
   pod 'MBProgressHUD','1.2.0'
@@ -39,9 +40,11 @@ post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
       config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
+      config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
       if config.name == "Debug"
         config.build_settings['SWIFT_ACTIVE_COMPILATION_CONDITIONS'] = []
       end
     end
   end
 end
+

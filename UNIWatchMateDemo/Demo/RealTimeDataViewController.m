@@ -83,8 +83,8 @@ NSString *NSStringFromWMSportDataType(WMSportDataType sportDataType) {
 - (UITextView *)textView {
     if (!_textView) {
         _textView = [[UITextView alloc] init];
-        _textView.editable = NO;  // 不允许编辑
-        _textView.scrollEnabled = YES;  // 允许滚动
+        _textView.editable = NO;  // Do not allow editing
+        _textView.scrollEnabled = YES;  // Roll enabled
         _textView.backgroundColor = [UIColor lightGrayColor];
         [self.view addSubview:_textView];
     }
@@ -92,23 +92,23 @@ NSString *NSStringFromWMSportDataType(WMSportDataType sportDataType) {
 }
 
 -(void)gettextView:(NSString *)date{
-    NSString *dateFormat = @"yyyy MM dd"; // 输入日期字符串的格式，根据实际情况修改
-    // 创建一个 NSDateFormatter 对象，并设置日期格式
+    NSString *dateFormat = @"yyyy MM dd"; // Enter a date string format. Change the format based on site requirements
+    // Create an NSDateFormatter object and format the date
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:dateFormat];
-    // 使用日期格式化程序将字符串转换为 NSDate
+    // Convert a string to NSDate using a date formatter
     NSDate *selectedDate = [dateFormatter dateFromString:date];
 
-    // 获取用户当前日历
+    // Gets the user's current calendar
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    // 获取指定日期的年、月、日信息
+    // Gets year, month, and day information for the specified date
     NSDateComponents *components = [calendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:selectedDate];
-    // 将小时、分钟和秒设置为0
+    // Set hours, minutes, and seconds to 0
     components.hour = 0;
     components.minute = 0;
     components.second = 0;
 
-    // 根据上述设置，重新生成 NSDate 对象，该对象代表当天的零点
+    // Based on the above Settings, the NSDate object is regenerated, which represents the zero of the day
     NSDate *dateAtMidnight = [calendar dateFromComponents:components];
     NSTimeInterval interval = [dateAtMidnight timeIntervalSince1970];
 
@@ -348,11 +348,11 @@ NSString *NSStringFromWMSportDataType(WMSportDataType sportDataType) {
 
 }
 
-// 时间戳转时间,时间戳为13位是精确到毫秒的，10位精确到秒
+// The time stamp turns the time, and the time stamp is accurate to milliseconds for 13 digits and to seconds for 10 digits
 - (NSString *)getDateStringWithTimeStr:(NSTimeInterval )time{
     NSDate *detailDate=[NSDate dateWithTimeIntervalSince1970:time];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init]; //实例化一个NSDateFormatter对象
-    //设定时间格式,这里可以设置成自己需要的格式
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init]; //Instantiate an NSDateFormatter object
+    //Set the time format, you can set it to your own format
         [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     NSString *currentDateStr = [dateFormatter stringFromDate: detailDate];
     return currentDateStr;
@@ -382,20 +382,20 @@ NSString *NSStringFromWMSportDataType(WMSportDataType sportDataType) {
         [self.popView dismiss];
     }];
 
-    //创建弹窗PopViiew 指定父容器self.view, 不指定默认是app window
+    //PopViiew specifies the parent container self.view, not app window by default
     _popView = [LSTPopView initWithCustomView:self.datePicker.view
                                        parentView:self.view
                                          popStyle:LSTPopStyleSmoothFromBottom
                                      dismissStyle:LSTDismissStyleSmoothToBottom];
-    //弹窗位置: 居中 贴顶 贴左 贴底 贴右
+    //Pop-up window position: center stick top stick left stick bottom stick right
     self.popView.hemStyle = LSTHemStyleBottom;
-    //点击背景触发
+    //Click background trigger
     self.popView.bgClickBlock = ^{
         @strongify(self);
         self.datePicker = nil;
         [ self.popView dismiss];
     };
-    //弹窗显示
+    //Pop-up display
     [self.popView pop];
 }
 @end

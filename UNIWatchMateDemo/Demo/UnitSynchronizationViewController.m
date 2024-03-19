@@ -127,15 +127,15 @@ NSString *NSStringFromUnitTimeFormat(TimeFormat timeFormat) {
                                        parentView:self.view
                                          popStyle:LSTPopStyleSmoothFromBottom
                                      dismissStyle:LSTDismissStyleSmoothToBottom];
-    //弹窗位置: 居中 贴顶 贴左 贴底 贴右
+   
     self.popView.hemStyle = LSTHemStyleBottom;
-    //点击背景触发
+    
     self.popView.bgClickBlock = ^{
         @strongify(self);
         self.pickerVC = nil;
         [ self.popView dismiss];
     };
-    //弹窗显示
+    
     [self.popView pop];
 }
 -(void)actionChangeLengthUnit:(NSInteger )lengthUnit{
@@ -192,20 +192,20 @@ NSString *NSStringFromUnitTimeFormat(TimeFormat timeFormat) {
         [self.popView dismiss];
     }];
 
-    //创建弹窗PopViiew 指定父容器self.view, 不指定默认是app window
+    
     self.popView = [LSTPopView initWithCustomView:self.pickerVC.view
                                        parentView:self.view
                                          popStyle:LSTPopStyleSmoothFromBottom
                                      dismissStyle:LSTDismissStyleSmoothToBottom];
-    //弹窗位置: 居中 贴顶 贴左 贴底 贴右
+    
     self.popView.hemStyle = LSTHemStyleBottom;
-    //点击背景触发
+    
     self.popView.bgClickBlock = ^{
         @strongify(self);
         self.pickerVC = nil;
         [ self.popView dismiss];
     };
-    //弹窗显示
+    
     [self.popView pop];
 }
 -(void)actionTimeFormat:(NSInteger )timeFormat{
@@ -261,20 +261,20 @@ NSString *NSStringFromUnitTimeFormat(TimeFormat timeFormat) {
         [self.popView dismiss];
     }];
 
-    //创建弹窗PopViiew 指定父容器self.view, 不指定默认是app window
+    
     self.popView = [LSTPopView initWithCustomView:self.pickerVC.view
                                        parentView:self.view
                                          popStyle:LSTPopStyleSmoothFromBottom
                                      dismissStyle:LSTDismissStyleSmoothToBottom];
-    //弹窗位置: 居中 贴顶 贴左 贴底 贴右
+    
     self.popView.hemStyle = LSTHemStyleBottom;
-    //点击背景触发
+    
     self.popView.bgClickBlock = ^{
         @strongify(self);
         self.pickerVC = nil;
         [ self.popView dismiss];
     };
-    //弹窗显示
+    
     [self.popView pop];
 }
 -(void)actionWeightUnit:(NSInteger )weightUnit{
@@ -332,20 +332,20 @@ NSString *NSStringFromUnitTimeFormat(TimeFormat timeFormat) {
         [self.popView dismiss];
     }];
 
-    //创建弹窗PopViiew 指定父容器self.view, 不指定默认是app window
+    
     self.popView = [LSTPopView initWithCustomView:self.pickerVC.view
                                        parentView:self.view
                                          popStyle:LSTPopStyleSmoothFromBottom
                                      dismissStyle:LSTDismissStyleSmoothToBottom];
-    //弹窗位置: 居中 贴顶 贴左 贴底 贴右
+    
     self.popView.hemStyle = LSTHemStyleBottom;
-    //点击背景触发
+    
     self.popView.bgClickBlock = ^{
         @strongify(self);
         self.pickerVC = nil;
         [ self.popView dismiss];
     };
-    //弹窗显示
+    
     [self.popView pop];
 }
 -(void)actionTemperatureUnit:(NSInteger )temperatureUnit{

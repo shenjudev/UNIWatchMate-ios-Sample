@@ -8,7 +8,7 @@
 import Foundation
 
 extension Array {
-    //创建数组
+    //Create array
     static func incrementArrs(start : Int , end : Int , interval : Int = 1) -> Array<String> {
         let arrsCount = (end - start) / interval
         var arrs : [String] = []
@@ -21,7 +21,7 @@ extension Array {
         return arrs
     }
     
-    //创建数组
+    //Create array
     static func incrementNumbersArrs(start : Int , end : Int , interval : Int = 1) -> Array<Int> {
 
         let arrsCount = (end - start) / interval
@@ -35,7 +35,7 @@ extension Array {
         return arrs
     }
         
-    //创建数组
+    //Create array
     static func incrementArrs(start : Int , count : Int , interval : Int = 1) -> Array<String> {
         var arrs : [String] = []
         if count <= 0 {

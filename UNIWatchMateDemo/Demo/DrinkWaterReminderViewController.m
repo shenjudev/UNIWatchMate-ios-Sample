@@ -93,7 +93,7 @@ NSString *NSStringFromWMTimeFrequencyWater(WMTimeFrequency timeFrequency) {
 - (UILabel *)isEnableTip {
     if (!_isEnableTip) {
         _isEnableTip = [[UILabel alloc] init];
-        // 进行其他属性设置和布局
+        // Do other property Settings and layouts
         _isEnableTip.text = NSLocalizedString(@"isEnable", nil);
         [self.scrollView addSubview:_isEnableTip];
     }
@@ -104,7 +104,7 @@ NSString *NSStringFromWMTimeFrequencyWater(WMTimeFrequency timeFrequency) {
 - (UISwitch *)isEnableSwitch {
     if (!_isEnableSwitch) {
         _isEnableSwitch = [[UISwitch alloc] init];
-        // 进行其他属性设置和布局
+        // Do other property Settings and layouts
         [_isEnableSwitch addTarget:self action:@selector(actionEnable:) forControlEvents:UIControlEventValueChanged];
         [self.scrollView addSubview:_isEnableSwitch];
     }
@@ -115,7 +115,7 @@ NSString *NSStringFromWMTimeFrequencyWater(WMTimeFrequency timeFrequency) {
 - (UILabel *)timeRangeTip {
     if (!_timeRangeTip) {
         _timeRangeTip = [[UILabel alloc] init];
-        // 进行其他属性设置和布局
+        // Do other property Settings and layouts
         _timeRangeTip.text = NSLocalizedString(@"timeRange", nil);
         [self.scrollView addSubview:_timeRangeTip];
     }
@@ -126,10 +126,10 @@ NSString *NSStringFromWMTimeFrequencyWater(WMTimeFrequency timeFrequency) {
 - (UIDatePicker *)startDate {
     if (!_startDate) {
         _startDate = [[UIDatePicker alloc] init];
-        // 进行其他属性设置和布局
-        _startDate.datePickerMode = UIDatePickerModeTime; // 设置为时间选择模式
-        // 限制显示的时间组件，只显示小时和分钟
-        [_startDate setMinuteInterval:1]; // 设置分钟间隔为1分钟
+        // Do other property Settings and layouts
+        _startDate.datePickerMode = UIDatePickerModeTime; // Set to time selection mode
+        // Limit the time component displayed to hours and minutes only
+        [_startDate setMinuteInterval:1]; // Set the interval to 1 minute
 
         [self.scrollView addSubview:_startDate];
     }
@@ -140,11 +140,11 @@ NSString *NSStringFromWMTimeFrequencyWater(WMTimeFrequency timeFrequency) {
 - (UIDatePicker *)endDate {
     if (!_endDate) {
         _endDate = [[UIDatePicker alloc] init];
-        // 进行其他属性设置和布局
-        _endDate.datePickerMode = UIDatePickerModeTime; // 设置为时间选择模式
-        // 限制显示的时间组件，只显示小时和分钟
-        [_endDate setMinuteInterval:1]; // 设置分钟间隔为1分钟
-        // 进行其他属性设置和布局
+        // Do other property Settings and layouts
+        _endDate.datePickerMode = UIDatePickerModeTime; // Set to time selection mode
+        // Limit the time component displayed to hours and minutes only
+        [_endDate setMinuteInterval:1]; // Set the interval to 1 minute
+        // Do other property Settings and layouts
         [self.scrollView addSubview:_endDate];
     }
     return _endDate;
@@ -154,7 +154,7 @@ NSString *NSStringFromWMTimeFrequencyWater(WMTimeFrequency timeFrequency) {
 - (UILabel *)frequencyTip {
     if (!_frequencyTip) {
         _frequencyTip = [[UILabel alloc] init];
-        // 进行其他属性设置和布局
+        // Do other property Settings and layouts
         _frequencyTip.text = NSLocalizedString(@"frequency", nil);
         [self.scrollView addSubview:_frequencyTip];
     }
@@ -165,7 +165,6 @@ NSString *NSStringFromWMTimeFrequencyWater(WMTimeFrequency timeFrequency) {
 - (UIButton *)frequencyBtn {
     if (!_frequencyBtn) {
         _frequencyBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        // 进行其他属性设置和布局
         [_frequencyBtn setBackgroundColor:[UIColor blueColor]];
         [_frequencyBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_frequencyBtn setContentEdgeInsets:UIEdgeInsetsMake(10, 10, 10, 10)];
@@ -183,7 +182,7 @@ NSString *NSStringFromWMTimeFrequencyWater(WMTimeFrequency timeFrequency) {
 - (UILabel *)noDisturbLunchBreakTip {
     if (!_noDisturbLunchBreakTip) {
         _noDisturbLunchBreakTip = [[UILabel alloc] init];
-        // 进行其他属性设置和布局
+       
         _noDisturbLunchBreakTip.text = NSLocalizedString(@"noDisturbLunchBreakTip", nil);
         [self.scrollView addSubview:_noDisturbLunchBreakTip];
     }
@@ -194,7 +193,7 @@ NSString *NSStringFromWMTimeFrequencyWater(WMTimeFrequency timeFrequency) {
 - (UILabel *)noDisturbLunchBreakIsEnableTip {
     if (!_noDisturbLunchBreakIsEnableTip) {
         _noDisturbLunchBreakIsEnableTip = [[UILabel alloc] init];
-        // 进行其他属性设置和布局
+        
         _noDisturbLunchBreakIsEnableTip.text = NSLocalizedString(@"isEnable", nil);
         [self.scrollView addSubview:_noDisturbLunchBreakIsEnableTip];
     }
@@ -205,7 +204,7 @@ NSString *NSStringFromWMTimeFrequencyWater(WMTimeFrequency timeFrequency) {
 - (UISwitch *)noDisturbLunchBreakIsEnableSwitch {
     if (!_noDisturbLunchBreakIsEnableSwitch) {
         _noDisturbLunchBreakIsEnableSwitch = [[UISwitch alloc] init];
-        // 进行其他属性设置和布局
+       
         [_noDisturbLunchBreakIsEnableSwitch addTarget:self action:@selector(actionNoDisturbLunchBreakIsEnable:) forControlEvents:UIControlEventValueChanged];
         [self.scrollView addSubview:_noDisturbLunchBreakIsEnableSwitch];
     }
@@ -216,7 +215,7 @@ NSString *NSStringFromWMTimeFrequencyWater(WMTimeFrequency timeFrequency) {
 - (UILabel *)noDisturbLunchBreakTimeRangeTip {
     if (!_noDisturbLunchBreakTimeRangeTip) {
         _noDisturbLunchBreakTimeRangeTip = [[UILabel alloc] init];
-        // 进行其他属性设置和布局
+        
         _noDisturbLunchBreakTimeRangeTip.text = NSLocalizedString(@"timeRange", nil);
         [self.scrollView addSubview:_noDisturbLunchBreakTimeRangeTip];
     }
@@ -227,10 +226,10 @@ NSString *NSStringFromWMTimeFrequencyWater(WMTimeFrequency timeFrequency) {
 - (UIDatePicker *)noDisturbLunchBreakStartDate {
     if (!_noDisturbLunchBreakStartDate) {
         _noDisturbLunchBreakStartDate = [[UIDatePicker alloc] init];
-        // 进行其他属性设置和布局
-        _noDisturbLunchBreakStartDate.datePickerMode = UIDatePickerModeTime; // 设置为时间选择模式
-        // 限制显示的时间组件，只显示小时和分钟
-        [_noDisturbLunchBreakStartDate setMinuteInterval:1]; // 设置分钟间隔为1分钟
+        
+        _noDisturbLunchBreakStartDate.datePickerMode = UIDatePickerModeTime;
+        
+        [_noDisturbLunchBreakStartDate setMinuteInterval:1];
 
         [self.scrollView addSubview:_noDisturbLunchBreakStartDate];
     }
@@ -241,11 +240,11 @@ NSString *NSStringFromWMTimeFrequencyWater(WMTimeFrequency timeFrequency) {
 - (UIDatePicker *)noDisturbLunchBreakEndDate {
     if (!_noDisturbLunchBreakEndDate) {
         _noDisturbLunchBreakEndDate = [[UIDatePicker alloc] init];
-        // 进行其他属性设置和布局
-        _noDisturbLunchBreakEndDate.datePickerMode = UIDatePickerModeTime; // 设置为时间选择模式
-        // 限制显示的时间组件，只显示小时和分钟
-        [_noDisturbLunchBreakEndDate setMinuteInterval:1]; // 设置分钟间隔为1分钟
-        // 进行其他属性设置和布局
+        //  Do other property Settings and layouts
+        _noDisturbLunchBreakEndDate.datePickerMode = UIDatePickerModeTime; // Set to time selection mode
+        // Limit the time component displayed to hours and minutes only
+        [_noDisturbLunchBreakEndDate setMinuteInterval:1]; // Set the interval to 1 minute
+        // Do other property Settings and layouts
         [self.scrollView addSubview:_noDisturbLunchBreakEndDate];
     }
     return _noDisturbLunchBreakEndDate;
@@ -255,7 +254,6 @@ NSString *NSStringFromWMTimeFrequencyWater(WMTimeFrequency timeFrequency) {
 - (UIButton *)noDisturbLaunchBreak {
     if (!_noDisturbLaunchBreak) {
         _noDisturbLaunchBreak = [UIButton buttonWithType:UIButtonTypeCustom];
-        // 进行其他属性设置和布局
         [_noDisturbLaunchBreak setTitle:NSLocalizedString(@"Save", nil) forState:UIControlStateNormal];
         [_noDisturbLaunchBreak setBackgroundColor:[UIColor blueColor]];
         [_noDisturbLaunchBreak setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -400,36 +398,36 @@ NSString *NSStringFromWMTimeFrequencyWater(WMTimeFrequency timeFrequency) {
         [self.popView dismiss];
     }];
 
-    //创建弹窗PopViiew 指定父容器self.view, 不指定默认是app window
+    //PopViiew specifies the parent container self.view, not app window by default
     self.popView = [LSTPopView initWithCustomView:self.pickerVC.view
                                        parentView:self.view
                                          popStyle:LSTPopStyleSmoothFromBottom
                                      dismissStyle:LSTDismissStyleSmoothToBottom];
-    //弹窗位置: 居中 贴顶 贴左 贴底 贴右
+    //Pop-up window position: center stick top stick left stick bottom stick right
     self.popView.hemStyle = LSTHemStyleBottom;
-    //点击背景触发
+    //Click background trigger
     self.popView.bgClickBlock = ^{
         @strongify(self);
         self.pickerVC = nil;
         [ self.popView dismiss];
     };
-    //弹窗显示
+    //Pop-up display
     [self.popView pop];
 }
 - (NSString *)getHourAndMMFromDate:(NSDate *)date {
-    // 1. 创建一个日期格式器
+    // 1. Create a date formatter
     NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
 
-    // 2. 设置日期格式器的格式
+    // 2. Sets the format of the date formatter
     [timeFormatter setDateFormat:@"HH:mm"];
 
-    // 3. 设置日期格式器的时区为手机当前时区
+    // 3. Set the time zone of the date formatter to the current time zone of the phone
     [timeFormatter setTimeZone:[NSTimeZone localTimeZone]];
 
-    // 4. 使用日期格式器格式化日期，并获取结果字符串
+    // 4. Use the date formatter to format the date and get the resulting string
     NSString *formattedTime = [timeFormatter stringFromDate:date];
 
-    // 5. 返回格式化的字符串
+    // 5. Returns a formatted string
     return formattedTime;
 }
 -(void)actionEnable:(UISwitch *)sender{

@@ -10,12 +10,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// 日期与时间同步信息
+/// 日期与时间同步信息 （Date and time synchronization information）
 @interface WMDateTimeModel : NSObject
 
-/// 当前时间
+/// 当前时间 （Current time）
 @property (nonatomic, strong) NSDate *currentDate;
-/// 时间格式
+/// 时间格式 （Time format）
 @property (nonatomic, assign) TimeFormat timeFormat;
 
 @end

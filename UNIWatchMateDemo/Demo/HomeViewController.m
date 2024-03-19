@@ -34,6 +34,7 @@
 #import "WeatherCreateHelper.h"
 #import "SmallWidgetViewController.h"
 #import "UNIWatchMateDemo-Swift.h"
+#import "FeaturesViewController.h"
 
 @interface TableViewHeader : UIView
 
@@ -49,13 +50,13 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        // 创建标签
+        // Create label
         _label = [[UILabel alloc] init];
-        self.label.translatesAutoresizingMaskIntoConstraints = NO; // 关闭AutoresizingMask，以使用Auto Layout
+        self.label.translatesAutoresizingMaskIntoConstraints = NO; // Turn off AutoresizingMask to use Auto Layout
         self.label.textAlignment = NSTextAlignmentCenter;
         [self addSubview:self.label];
         
-        // 创建按钮
+        // Create button
         _button = [UIButton buttonWithType:UIButtonTypeSystem];
         self.button.translatesAutoresizingMaskIntoConstraints = NO;
         [self.button setBackgroundColor:[UIColor blueColor]];
@@ -65,9 +66,9 @@
         self.button.layer.masksToBounds = YES;
         [self addSubview:self.button];
         
-        // 使用Auto Layout布局标签和按钮
+        // Use Auto Layout to lay out labels and buttons
         [self.label.leadingAnchor constraintEqualToAnchor:self.leadingAnchor constant:16].active = YES;
-        [self.label.trailingAnchor constraintEqualToAnchor:self.button.leadingAnchor constant:-16].active = YES; // 更新约束，使标签不覆盖按钮
+        [self.label.trailingAnchor constraintEqualToAnchor:self.button.leadingAnchor constant:-16].active = YES; // Update the constraint so that the label does not overwrite the button
         [self.label.centerYAnchor constraintEqualToAnchor:self.centerYAnchor].active = YES;
         
         [self.button.trailingAnchor constraintEqualToAnchor:self.trailingAnchor constant:-16].active = YES;
@@ -94,7 +95,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        // 创建按钮reboot
+        // Create button reboot
         self.reboot = [UIButton buttonWithType:UIButtonTypeSystem];
         self.reboot.translatesAutoresizingMaskIntoConstraints = NO;
         [self.reboot setBackgroundColor:[UIColor blueColor]];
@@ -104,7 +105,7 @@
         self.reboot.layer.masksToBounds = YES;
         [self addSubview:self.reboot];
         
-        // 创建按钮1
+        // Create button disconnect
         self.disconnect = [UIButton buttonWithType:UIButtonTypeSystem];
         self.disconnect.translatesAutoresizingMaskIntoConstraints = NO;
         [self.disconnect setBackgroundColor:[UIColor blueColor]];
@@ -114,7 +115,7 @@
         self.disconnect.layer.masksToBounds = YES;
         [self addSubview:self.disconnect];
         
-        // 创建按钮2
+        // Create button unbind
         self.unbind = [UIButton buttonWithType:UIButtonTypeSystem];
         self.unbind.translatesAutoresizingMaskIntoConstraints = NO;
         [self.unbind setBackgroundColor:[UIColor redColor]];
@@ -124,7 +125,7 @@
         self.unbind.layer.masksToBounds = YES;
         [self addSubview:self.unbind];
         
-        // 使用Auto Layout布局按钮1和按钮2
+        // Use Auto Layout to lay out buttons 1 and 2
         [self.reboot.leadingAnchor constraintEqualToAnchor:self.leadingAnchor constant:16].active = YES;
         [self.reboot.trailingAnchor constraintEqualToAnchor:self.trailingAnchor constant:-16].active = YES;
         [self.reboot.topAnchor constraintEqualToAnchor:self.topAnchor constant:16].active = YES;
@@ -149,7 +150,7 @@
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) RACReplaySubject<NSMutableArray<id> *> *currents;
-@property (nonatomic, strong) NSMutableArray *currentsValue; // 用于保存最新的值
+@property (nonatomic, strong) NSMutableArray *currentsValue; //Used to save the latest values
 @property (nonatomic, strong) UIAlertController *alertController;
 @property (nonatomic, strong) UIView *tableViewHeader;
 @property (nonatomic, strong) UIView *tableViewFooter;
@@ -174,11 +175,11 @@
 
 -(void)observerTableViewData{
     @weakify(self);
-    // 订阅 currents 来更新 currentsValue
+    // Subscribe to currents to update currentsValue
     [self.currents subscribeNext:^(NSMutableArray<NSMutableArray<id>*> *peripherals) {
         @strongify(self);
         self.currentsValue = peripherals;
-        [self.tableView reloadData]; // 刷新表格数据
+        [self.tableView reloadData]; // Refresh table data
     }];
 }
 - (void)dealloc
@@ -200,7 +201,7 @@
     [self listenForDeviceDiscovery];
     [self config];
     [self listenForWeather];
-    //调用getBaseInfo，防止ble里的baseInfo为nil
+    //Call getBaseInfo to prevent baseInfo in ble from being nil
     [[[[[WatchManager sharedInstance] currentValue] infoModel] wm_getBaseinfo]   subscribeNext:^(WMDeviceBaseInfo * _Nullable baseInfo) {
  
     } error:^(NSError * _Nullable error) {
@@ -253,18 +254,18 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    // 从字典中获取选择器字符串
+    // Gets the selector string from the dictionary
     NSString *selectorString = self.currentsValue[indexPath.section][@"data"][indexPath.row][@"selector"];
-    // 将选择器字符串转换为 SEL 对象
+    // Converts a selector string to an SEL object
     SEL selector = NSSelectorFromString(selectorString);
     
     if ([self respondsToSelector:selector]) {
-        // 创建参数
-        // 使用 performSelector 调用方法并传递参数
+        // Create parameter
+        // Call the method with performSelector and pass the arguments
         UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         [self performSelector:selector withObject:cell withObject:indexPath];
     } else {
-        // 处理选择器不存在的情况
+        // Handles cases where the selector does not exist
     }
 }
 
@@ -467,6 +468,12 @@
                     @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
                     @"selector": NSStringFromSelector(@selector(editUserInfoViewController:didSeletIndexPath:))
                 },
+                @{
+                    @"title":NSLocalizedString(@"Features",nil),
+                    @"subtitle":@"",
+                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+                    @"selector": NSStringFromSelector(@selector(featuresViewController:didSeletIndexPath:))
+                },
             ]
         },
         @{
@@ -491,7 +498,7 @@
                     @"selector": NSStringFromSelector(@selector(realTimeDataViewController:didSeletIndexPath:))
                 },
                 @{
-                    @"title":NSLocalizedString(@"Sync activity type data",nil),//各个活动的分布时长
+                    @"title":NSLocalizedString(@"Sync activity type data",nil),//The distributed duration of each activity
                     @"subtitle":@"",
                     @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
                     @"selector": NSStringFromSelector(@selector(realTimeDataViewController:didSeletIndexPath:))
@@ -561,7 +568,7 @@
         if (isConnected == false){
             [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Connection down",nil)];
             //            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            //            // 获取主Storyboard的初始ViewController
+            //            // Gets the initial ViewController for the main Storyboard
             //            UIViewController *viewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"ConnectionModeSelectionViewController"];
             //            viewController.title = NSLocalizedString(@"Connection mode selection", nil);
             //            [[[UIApplication sharedApplication] keyWindow] setRootViewController:[[UINavigationController alloc] initWithRootViewController:viewController]];
@@ -582,9 +589,9 @@
         BOOL isOpen = [userInfo[@"isOpen"] boolValue];
         if (isOpen == YES){
             UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            // 获取主Storyboard的初始ViewController
+            // Gets the initial ViewController for the main Storyboard
             CameraControlViewController *viewController = (CameraControlViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"CameraControlViewController"];
-            // 设置cameraMode属性
+            // Set the cameraMode property
             viewController.openFromDevice = YES;
             [self.navigationController pushViewController:viewController animated:true];
         }
@@ -712,6 +719,15 @@
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
+/// Push to edit user info.
+/// - Parameters:
+///   - cell: selected cell
+///   - indexPath: selected indexPath
+-(void)featuresViewController:(UITableViewCell *)cell didSeletIndexPath:(NSIndexPath *)indexPath{
+    UIViewController *viewController = [FeaturesViewController new];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
 /// Push to synchronize contacts.
 /// - Parameters:
 ///   - cell: selected cell
@@ -809,12 +825,12 @@
         @strongify(self);
         BOOL isUnbindSuccess = [x boolValue];
         if (isUnbindSuccess == YES){
-            XLOG_INFO(@"解绑成功"); // 获取应用程序的主Storyboard
+            XLOG_INFO(@"Unbind successfully"); // Gets the main Storyboard for the application
             [WatchManager sharedInstance].lastConnectedMac = nil;
             [self goConnectView];
         }else{
             [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Connection mode selection", nil)];
-            XLOG_INFO(@"解绑失败");
+            XLOG_INFO(@"Unbind successfully");
         }
         
     }];
@@ -833,11 +849,11 @@
         @strongify(self);
         BOOL isUnbindSuccess = [x boolValue];
         if (isUnbindSuccess == YES){
-            XLOG_INFO(@"重启成功"); // 获取应用程序的主Storyboard
+            XLOG_INFO(@"Restart successfully");
             [self goConnectView];
         }else{
             [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Connection mode selection", nil)];
-            XLOG_INFO(@"解绑失败");
+            XLOG_INFO(@"Restart failure");
         }
     }];
 }
@@ -903,7 +919,7 @@
     _alertController = [UIAlertController alertControllerWithTitle:nil message:[NSString stringWithFormat:@"%@\nring time:%lds ring count:%ld",@"Watch find your phone.",(long)ringtime,(long)ringcount] preferredStyle:UIAlertControllerStyleAlert];
 
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Got it" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        // 用户点击取消按钮后的处理代码
+        // The processing code after the user clicks the cancel button
         @strongify(self);
         [self dismissFindMe];
     }];

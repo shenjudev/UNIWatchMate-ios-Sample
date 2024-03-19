@@ -9,10 +9,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// 是否支持此功能
+/// 是否支持此功能 （Whether this function is supported）
 @protocol WMSupportProtocol <NSObject>
 
-/// 是否支持此功能
+/// 是否支持此功能 （Whether this function is supported）
 - (BOOL)isSupport;
 
 @end

@@ -51,11 +51,11 @@ NSString *NSStringFromGender(Gender gender)
     self.wMPersonalInfoModel.height = 170;
     self.wMPersonalInfoModel.weight = 70;
     self.wMPersonalInfoModel.gender = GenderMale;
-    // 创建一个日期格式器
+    
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    // 设置日期格式器的格式
-    [dateFormatter setDateFormat:@"yyyyMMdd"]; // 19880709格式
-    // 根据字符串创建NSDate对象
+    
+    [dateFormatter setDateFormat:@"yyyyMMdd"];
+    
     NSString *dateString = @"19950709";
     NSDate *date = [dateFormatter dateFromString:dateString];
     self.wMPersonalInfoModel.birthDate = date;
@@ -160,20 +160,20 @@ NSString *NSStringFromGender(Gender gender)
         [self.popView dismiss];
     }];
 
-    //创建弹窗PopViiew 指定父容器self.view, 不指定默认是app window
+    //PopViiew specifies the parent container self.view, not app window by default
     self.popView = [LSTPopView initWithCustomView:self.pickerVC.view
                                        parentView:self.view
                                          popStyle:LSTPopStyleSmoothFromBottom
                                      dismissStyle:LSTDismissStyleSmoothToBottom];
-    //弹窗位置: 居中 贴顶 贴左 贴底 贴右
+    //Pop-up window position: center stick top stick left stick bottom stick right
     self.popView.hemStyle = LSTHemStyleBottom;
-    //点击背景触发
+    //Click background trigger
     self.popView.bgClickBlock = ^{
         @strongify(self);
         self.pickerVC = nil;
         [ self.popView dismiss];
     };
-    //弹窗显示
+    //Pop-up display
     [self.popView pop];
 }
 -(void)actionChangeHeight:(NSString *) uesrHeight{
@@ -222,20 +222,20 @@ NSString *NSStringFromGender(Gender gender)
         [self.popView dismiss];
     }];
 
-    //创建弹窗PopViiew 指定父容器self.view, 不指定默认是app window
+    //PopViiew specifies the parent container self.view, not app window by default
     _popView = [LSTPopView initWithCustomView:self.pickerVC.view
                                        parentView:self.view
                                          popStyle:LSTPopStyleSmoothFromBottom
                                      dismissStyle:LSTDismissStyleSmoothToBottom];
-    //弹窗位置: 居中 贴顶 贴左 贴底 贴右
+    //Pop-up window position: center stick top stick left stick bottom stick right
     self.popView.hemStyle = LSTHemStyleBottom;
-    //点击背景触发
+    //Click background trigger
     self.popView.bgClickBlock = ^{
         @strongify(self);
         self.pickerVC = nil;
         [ self.popView dismiss];
     };
-    //弹窗显示
+    //Pop-up display
     [self.popView pop];
 }
 
@@ -285,20 +285,20 @@ NSString *NSStringFromGender(Gender gender)
         [self.popView dismiss];
     }];
 
-    //创建弹窗PopViiew 指定父容器self.view, 不指定默认是app window
+    //PopViiew specifies the parent container self.view, not app window by default
     _popView = [LSTPopView initWithCustomView:self.pickerVC.view
                                        parentView:self.view
                                          popStyle:LSTPopStyleSmoothFromBottom
                                      dismissStyle:LSTDismissStyleSmoothToBottom];
-    //弹窗位置: 居中 贴顶 贴左 贴底 贴右
+    //Pop-up window position: center stick top stick left stick bottom stick right
     self.popView.hemStyle = LSTHemStyleBottom;
-    //点击背景触发
+    //Click background trigger
     self.popView.bgClickBlock = ^{
         @strongify(self);
         self.pickerVC = nil;
         [ self.popView dismiss];
     };
-    //弹窗显示
+    //Pop-up display
     [self.popView pop];
 }
 
@@ -348,20 +348,20 @@ NSString *NSStringFromGender(Gender gender)
         [self.popView dismiss];
     }];
 
-    //创建弹窗PopViiew 指定父容器self.view, 不指定默认是app window
+    //PopViiew specifies the parent container self.view, not app window by default
     _popView = [LSTPopView initWithCustomView:self.datePicker.view
                                        parentView:self.view
                                          popStyle:LSTPopStyleSmoothFromBottom
                                      dismissStyle:LSTDismissStyleSmoothToBottom];
-    //弹窗位置: 居中 贴顶 贴左 贴底 贴右
+    //Pop-up window position: center stick top stick left stick bottom stick right
     self.popView.hemStyle = LSTHemStyleBottom;
-    //点击背景触发
+    //Click background trigger
     self.popView.bgClickBlock = ^{
         @strongify(self);
         self.pickerVC = nil;
         [ self.popView dismiss];
     };
-    //弹窗显示
+    //Pop-up display
     [self.popView pop];
 }
 
@@ -373,11 +373,11 @@ NSString *NSStringFromGender(Gender gender)
     }
     @weakify(self);
 
-    NSString *dateFormat = @"yyyy MM dd"; // 输入日期字符串的格式，根据实际情况修改
-    // 创建一个 NSDateFormatter 对象，并设置日期格式
+    NSString *dateFormat = @"yyyy MM dd"; // Enter a date string format. Change the format based on site requirements
+    // Create an NSDateFormatter object and format the date
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:dateFormat];
-    // 使用日期格式化程序将字符串转换为 NSDate
+    // Convert a string to NSDate using a date formatter
     NSDate *date = [dateFormatter dateFromString:birthday];
     _wMPersonalInfoModel.birthDate = date;
     [[[WatchManager sharedInstance].currentValue.settings.personalInfo setConfigModel:_wMPersonalInfoModel] subscribeNext:^(NSNumber * _Nullable x) {

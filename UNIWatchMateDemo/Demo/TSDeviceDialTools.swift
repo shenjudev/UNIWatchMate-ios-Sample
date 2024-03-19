@@ -11,22 +11,22 @@ class TSDeviceDialTools {
     static var shared = TSDeviceDialTools()
     private init() { }
 }
-// MARK: 表盘需要配置参数
+// MARK: The dial requires configuration parameters
 extension TSDeviceDialTools{
-    /// 创作表盘 的表盘大小尺寸
-    /// - Returns: 表盘大小尺寸
+    /// Create the dial size of the dial
+    /// - Returns: Dial size size
     func getDialSize() -> CGSize {
         return CGSize(width: 320, height: 386)
     }
     
-    /// 创作表盘 的表盘生成规则
-    /// - Returns: 生成规则
+    /// Create dial generation rules for the dial
+    /// - Returns: Generation rule
     func getDialRule() -> Bool {
         return false
     }
     
-    /// 获取创作表盘的样式
-    /// - Returns: 对应设备类型的表盘样式
+    /// Gets the style of the authoring dial
+    /// - Returns: Dial style for device type
     func getDialTimeStyles() -> [UIImage] {
         return [UIImage(named: "ic_dail_time_top_left") ?? UIImage(),
                 UIImage(named: "ic_dail_time_bottom_left") ?? UIImage(),
@@ -34,38 +34,38 @@ extension TSDeviceDialTools{
                 UIImage(named: "ic_dail_time_bottom_right") ?? UIImage()]
     }
    
-    /// 获取创作表盘的颜色
-    /// - Returns: 对应设备类型的表盘颜色
+    /// Gets the color of the creation dial
+    /// - Returns: Dial color for device type
     func getDialTimeColors() -> [String] {
         return ["#FFFFFF", "#333333", "#F7B500", "#44D7B6", "#32C5FF", ""]
     }
     
-    /// 当前表盘是否是自定义表盘ID
+    /// Whether the current dial is a custom dial ID
     private func getCustomizeDailids() -> [String] {
         return []
     }
     
-    /// 当前表盘是否是自定义bin文件地址
+    /// Whether the current dial is a custom bin file address
     private func getCustomizeBinPath() -> [String] {
         return []
     }
-    // 本地表盘名称
+    // Local dial name
     private func getLocalDialNames() -> [String] {
         return ["", "", ""]
     }
-    // 本地表盘ICon
+    // Local dial ICon
     private func getLocalDialIcons() -> [String] {
         return ["ic_watch_01_OSW820", "ic_watch_02_OSW820", "ic_watch_03_OSW820", "ic_watch_04_OSW820", "ic_watch_05_OSW820"]
     }
     
-    /// 创作表盘的圆角
-    /// - Returns:圆角大小
+    /// Create the rounded corners of the dial
+    /// - Returns:Fillet size
     func getcornerRadii() -> CGFloat {
         return 25
     }
 }
 
-// MARK: 获取设备的表盘信息
+// MARK: Get the device's dial information
 extension TSDeviceDialTools {
     
     public func getDialBinPath(idx:Int) -> String {

@@ -34,8 +34,8 @@
 - (UITextView *)textView {
     if (!_textView) {
         _textView = [[UITextView alloc] init];
-        _textView.editable = NO;  // 不允许编辑
-        _textView.scrollEnabled = YES;  // 允许滚动
+        _textView.editable = NO;
+        _textView.scrollEnabled = YES;
         _textView.backgroundColor = [UIColor lightGrayColor];
         [self.view addSubview:_textView];
     }
@@ -93,14 +93,14 @@
 //    [[[WatchManager sharedInstance].currentValue.apps.weatherForecastApp pushWeatherHour24:self.currentWeatherModel] subscribeNext:^(NSNumber * _Nullable x) {
 //        
 //    }];
-    // 创建第二个信号
+    // Create a second signal
     RACSignal *hour24Signal = [[[WatchManager sharedInstance].currentValue.apps.weatherForecastApp pushWeatherHour24:self.currentWeatherModel] catch:^RACSignal * _Nonnull(NSError * _Nonnull error) {
         [SVProgressHUD dismiss];
         [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"24 Hours:Set Fail\n%@", error.description]];
         return [RACSignal empty];
     }];
 
-    // 组合两个信号
+    // Combine two signals
     [[RACSignal combineLatest:@[day7Signal, hour24Signal]] subscribeNext:^(RACTuple * _Nullable x) {
         [SVProgressHUD dismiss];
         NSNumber *day7Result = x.first;
@@ -122,18 +122,18 @@
 -(NSString *)dateToString:(NSDate *)date {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
 
-    // 设置日期格式为UTC 24小时制
+    // Set the date format to UTC 24 hours
     [dateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
 
-    // 使用日期格式化器将NSDate对象转换为UTC 24小时制的日期字符串
+    // Convert an NSDate object to a UTC 24-hour date string using a date formatter
     NSString *formattedDate = [dateFormatter stringFromDate:date];
 
     return formattedDate;
 }
 - (NSDictionary *)weatherModeltoDictionary:(WMWeatherModel *)model {
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    // 创建日期格式化器
+    // Create a date formatter
 
 
 

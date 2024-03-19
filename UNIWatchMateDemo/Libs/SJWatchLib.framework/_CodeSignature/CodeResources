@@ -6,27 +6,27 @@
 	<dict>
 		<key>Frameworks/UNIWatchMate.framework/Info.plist</key>
 		<data>
-		KBQb2zJYp/H4g9qc1lyjRaBokRI=
+		FS0tTyoq8O75zccQwQ1phqVBf+g=
 		</data>
 		<key>Frameworks/UNIWatchMate.framework/UNIWatchMate</key>
 		<data>
-		39X7YbZKEbceYQQ6pB8Y06UOWcM=
+		a3xrCYMFLJqlMX45fzP5GuJI/Pw=
 		</data>
 		<key>Frameworks/UNIWatchMate.framework/_CodeSignature/CodeResources</key>
 		<data>
-		gpOmeVpSC0evohxCZKsbAQj69/Y=
+		4lu3omyRdaIrdv9EYwiYn6YNMUE=
 		</data>
 		<key>Frameworks/h264encoder.framework/Info.plist</key>
 		<data>
-		NtzifUSiifWdtANgIEsgwlftg80=
+		p6iwdJr4FWu7B/Jzay6GZKGLoPA=
 		</data>
 		<key>Frameworks/h264encoder.framework/_CodeSignature/CodeResources</key>
 		<data>
-		0V/EhZnOvWqk+ifiykhAWTmlDM8=
+		8Z9TaoErU4KNrBjsfLpLrviQiEU=
 		</data>
 		<key>Frameworks/h264encoder.framework/h264encoder</key>
 		<data>
-		BQugiv9u7H+r77u50gKo13XA3gM=
+		SQjLZrgFb67NqrVNn57zYMB4Sws=
 		</data>
 		<key>Headers/BtUtils.h</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Headers/SJWatchLib-Swift.h</key>
 		<data>
-		8iXTUSAMtOCcV2d9+OCTwlqHVUA=
+		uJQEllHeOtfLRtF5NWs97jy9vfQ=
 		</data>
 		<key>Headers/SJWatchLib.h</key>
 		<data>
@@ -58,31 +58,31 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		2Xn05GxldQ8qSEUV3kIy833yGV8=
+		uK+0Ss4JmvGG73xNdPye9E+zYIw=
 		</data>
 		<key>Modules/SJWatchLib.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		IlaxQJnK1RkYE54MywDyqkyjNgk=
+		F6E8uoj0qmYblJ7iV7Vj4cLblPc=
 		</data>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		QYpF+BFy+bW/ss5HLh0UMuBh0BE=
+		4Kg0CWPqOYLE9Jb1KEP5EDTTnmY=
 		</data>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		gyGGdyiEfEdwyF1Ccv9DoIIC37M=
+		JDXI6RqgZSMDpxdVOlWnYne60Pc=
 		</data>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		JJt6qCeG81e3xmM8FIia5o7Sr4k=
+		VSmBe18oMhv2fFEuuBV4kCzm47w=
 		</data>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		gyGGdyiEfEdwyF1Ccv9DoIIC37M=
+		JDXI6RqgZSMDpxdVOlWnYne60Pc=
 		</data>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		vB96cQv23gPVjfp/9NqPvhXtsZQ=
+		IHasNnRqeYBg1hgrdhHDxbWs2uQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -131,42 +131,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			bdhAOLFXlp0qHhI1GTKyyl+DrqH97oauSj7HS9Fo4Hk=
+			Ihgqzny4Ete/e/NEfyN2YDzVqNg4Kk/CW05qG/p/VuE=
 			</data>
 		</dict>
 		<key>Frameworks/UNIWatchMate.framework/UNIWatchMate</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			tkdWXZuKyvCnYoPCLhTX000JnbDFygSsHnhWnYJZfI8=
+			jw61g8yPDY6aZ0UWjr4JSGBpwAbmcp645ttIO2liOfQ=
 			</data>
 		</dict>
 		<key>Frameworks/UNIWatchMate.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nN+H0F+zqX+HZ1sk88VLC6db7mAchYNpvjNgxwfWMWk=
+			VJcoAx2d7MdmFhGXaFcrD2C7mzGtA/+Z/O4XQQFbbf4=
 			</data>
 		</dict>
 		<key>Frameworks/h264encoder.framework/Info.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			O0Hm3TSyzB51ktaD4542j8VGJ2P6uLbUIfMzqUGGjvk=
+			9Szfds2RuAT2gMmmVko4LKgWRqSAuO2a0KRUAZ3Bvuo=
 			</data>
 		</dict>
 		<key>Frameworks/h264encoder.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			bsbgHs7YJPEeZ8jD1eccntGr7CaddizjZMyYAFmJYp8=
+			6SHYNvZkPUAl042G5iGuxKjkBsUNjWzFBshR3R7uNDA=
 			</data>
 		</dict>
 		<key>Frameworks/h264encoder.framework/h264encoder</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Zgo+Id014CIGN6J4OcA4kL2YbNk7CHLA0aO16B11Vqo=
+			j6aOwm8p1fxeDYuAQppb44Ns6Or9Ci4abYcMSnEMreM=
 			</data>
 		</dict>
 		<key>Headers/BtUtils.h</key>
@@ -208,7 +208,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			SCAVGC2uRnwpL6u/D2+3mAZZm6v/01I+2Yng1ckfr/o=
+			HMjR0rbVqjMUdDPIwKtZgKlhx0RIOUP6uvtgqDU0jDo=
 			</data>
 		</dict>
 		<key>Headers/SJWatchLib.h</key>
@@ -222,42 +222,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2r3ZNt/VomYgb+8Z01979tjQalK+M44na8ZLBOa1pTo=
+			JiqGQXjBQG/HuTTzkgzudxcggoqu3eP/CSLM6irtBv0=
 			</data>
 		</dict>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			htbW0EDPDiT8XxP/1Gbh9mjPgAzSMD2thEeCZQTfjQg=
+			la0WdYsDkLAy7Y1VmwCdfMI6HTqLckM8hwhnLv3WarY=
 			</data>
 		</dict>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2pYOOB6ts5F6NqwF4+vOn4nQOf/flrkGwoe/Dqkn0OA=
+			ZH9ueM2WwxoZPiI5+479iwY01emObq63Ec+SJo3q2f0=
 			</data>
 		</dict>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			EiaYBRtzqKPleXcWPnAjo0VUntDtoYiCDh8wO9dddjE=
+			vrBVwKbq2Bw9wmBcgyH/KUBnXGl9rSX+GGMifkotz4Q=
 			</data>
 		</dict>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2pYOOB6ts5F6NqwF4+vOn4nQOf/flrkGwoe/Dqkn0OA=
+			ZH9ueM2WwxoZPiI5+479iwY01emObq63Ec+SJo3q2f0=
 			</data>
 		</dict>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			k5n8i692K+GeLrKuFeKiYYlVa2T212sgniZ7Huyn7jg=
+			YLDdBfdqv1QybDMe2dRuJD3E3GqCZD7NNbjGodXvV68=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

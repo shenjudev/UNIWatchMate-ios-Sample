@@ -35,7 +35,7 @@
     
 }
 
-//点击页面复制全部信息
+//Click on the page to copy all information
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     XLOG_INFO(@"%@",self.detail.text);
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];

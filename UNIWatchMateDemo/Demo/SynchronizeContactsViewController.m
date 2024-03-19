@@ -24,7 +24,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        // 创建按钮1
+        // Create button 1
         _selectContacts = [UIButton buttonWithType:UIButtonTypeSystem];
         self.selectContacts.translatesAutoresizingMaskIntoConstraints = NO;
         [self.selectContacts setBackgroundColor:[UIColor blueColor]];
@@ -34,7 +34,7 @@
         self.selectContacts.layer.masksToBounds = YES;
         [self addSubview:self.selectContacts];
 
-        // 创建按钮2
+        // Create button 2
         _syncBtn = [UIButton buttonWithType:UIButtonTypeSystem];
         self.syncBtn.translatesAutoresizingMaskIntoConstraints = NO;
         [self.syncBtn setBackgroundColor:[UIColor blueColor]];
@@ -44,7 +44,7 @@
         self.syncBtn.layer.masksToBounds = YES;
         [self addSubview:self.syncBtn];
 
-        // 使用Auto Layout布局按钮1和按钮2
+        // Use Auto Layout to lay out buttons 1 and 2
         [self.selectContacts.leadingAnchor constraintEqualToAnchor:self.leadingAnchor constant:16].active = YES;
         [self.selectContacts.trailingAnchor constraintEqualToAnchor:self.trailingAnchor constant:-16].active = YES;
         [self.selectContacts.topAnchor constraintEqualToAnchor:self.topAnchor constant:16].active = YES;
@@ -65,10 +65,10 @@
 
 @interface SynchronizeContactsViewController ()<UITableViewDataSource, UITableViewDelegate,CNContactPickerDelegate>
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSArray<CNContact *> *contacts; // 存储联系人的数组
+@property (nonatomic, strong) NSArray<CNContact *> *contacts; // Store an array of contacts
 @property (nonatomic, strong) UIView *tableViewFooter;
 @property (nonatomic, strong) SynchronizeContactsTableViewFooter *tableViewFooterView;
-@property (nonatomic, strong) NSMutableArray *currentsValue; // 用于保存最新的值
+@property (nonatomic, strong) NSMutableArray *currentsValue; // Used to save the latest values
 
 @end
 
@@ -159,7 +159,7 @@
         [view removeFromSuperview];
     }
 
-    // 创建删除按钮
+    
     UIButton *deleteButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [deleteButton setTitle:NSLocalizedString(@"delete", nil) forState:UIControlStateNormal];
     [deleteButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -170,7 +170,7 @@
     [deleteButton addTarget:self action:@selector(deleteButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
 
 
-    // 创建删除按钮
+    
     UIButton *editButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [editButton setTitle:NSLocalizedString(@"Edit", nil) forState:UIControlStateNormal];
     [editButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -181,19 +181,18 @@
     [editButton addTarget:self action:@selector(editButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
 
 
-    // 布局开关和删除按钮
-    CGFloat buttonWidth = 60; // 按钮宽度
+    
+    CGFloat buttonWidth = 60;
     CGFloat cellWidth = CGRectGetWidth(self.view.frame);
 
-    // 计算删除按钮的位置
+    
     CGRect deleteButtonFrame = CGRectMake(cellWidth - buttonWidth - 10, 25, buttonWidth, 30);
     deleteButton.frame = deleteButtonFrame;
 
-    // 计算开关的位置
+    
     CGRect editFrame = CGRectMake(cellWidth - 2 * buttonWidth - 10 - 10, 25, buttonWidth, 30);
     editButton.frame = editFrame;
 
-    // 将开关和删除按钮添加到单元格
     [cell.contentView addSubview:editButton];
     [cell.contentView addSubview:deleteButton];
 
@@ -245,7 +244,7 @@
 
 - (void)deleteButtonTapped:(UIButton *)sender {
     NSInteger indexRow = sender.tag - 100;
-    // 处理删除按钮点击事件
+    
     [self.currentsValue removeObjectAtIndex:indexRow];
     [SVProgressHUD showWithStatus:nil];
     @weakify(self);
@@ -262,26 +261,26 @@
     NSInteger indexRow = sender.tag - 1000;
     WMContactModel *model = self.currentsValue[indexRow];
 
-    // 创建 UIAlertController
+    // Create a UIAlertController
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Edit contact", nil) message:nil preferredStyle:UIAlertControllerStyleAlert];
 
-    // 添加文本框1（用于编辑名字）
+    // Add text box 1 (for editing names)
     [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
         textField.placeholder = @"name";
         textField.text = model.name;
     }];
 
-    // 添加文本框2（用于编辑电话号码）
+    // Add text box 2 (for editing phone numbers)
     [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
         textField.placeholder = @"phone number";
-        textField.keyboardType = UIKeyboardTypePhonePad; // 设置键盘类型为电话号码键盘
+        textField.keyboardType = UIKeyboardTypePhonePad; // Set the keyboard type to phone number keyboard
         textField.text = model.number;
     }];
 
     @weakify(self);
-    // 添加保存按钮
+    // Add save button
     UIAlertAction *saveAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Done", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        // 在这里处理用户点击保存按钮后的逻辑
+        // The logic after the user clicks the Save button is processed here
         @strongify(self);
         UITextField *nameTextField = alertController.textFields[0];
         UITextField *phoneNumberTextField = alertController.textFields[1];
@@ -291,14 +290,14 @@
         [self editContact:indexRow name:editName number:phoneNumber];
     }];
 
-    // 添加取消按钮
+    // Add cancel button
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:nil];
 
-    // 将按钮添加到 UIAlertController
+    // Add the button to UIAlertController
     [alertController addAction:saveAction];
     [alertController addAction:cancelAction];
 
-    // 弹出 UIAlertController
+    // Pop up UIAlertController
     [self presentViewController:alertController animated:YES completion:nil];
 
 }
@@ -346,17 +345,17 @@
 }
 
 - (void)contactPickerDidCancel:(CNContactPickerViewController *)picker {
-    // 用户取消了联系人选择
+    // The user deselected the contact
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(NSString *)firstPhoneNumber:(CNContact*)contact{
     NSArray<CNLabeledValue<CNPhoneNumber *> *> *phoneNumbers = contact.phoneNumbers;
     for (CNLabeledValue<CNPhoneNumber *> *phoneNumber in phoneNumbers) {
-        // 获取电话号码标签（例如：工作、家庭等）
+        // Get phone number labels (e.g., work, home, etc.)
         NSString *label = [CNLabeledValue localizedStringForLabel:phoneNumber.label];
 
-        // 获取电话号码字符串
+        // Gets a phone number string
         CNPhoneNumber *number = phoneNumber.value;
         NSString *phoneNumberString = [number stringValue];
 

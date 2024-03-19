@@ -107,7 +107,7 @@
 - (void)doneButtonTapped {
     NSDate *selectedDate = self.datePicker.date;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    // 设置日期格式，例如: yyyy MM dd
+    // Set the date format, for example, yyyy MM dd
     [dateFormatter setDateFormat:@"yyyy MM dd"];
     NSString *formattedDate = [dateFormatter stringFromDate:selectedDate];
     if (self.doneBlock) {
@@ -162,15 +162,15 @@
 - (UIDatePicker *)datePicker{
     if (!_datePicker) {
         _datePicker = [[UIDatePicker alloc] init];
-        _datePicker.datePickerMode = UIDatePickerModeDate; // 选择日期模式
+        _datePicker.datePickerMode = UIDatePickerModeDate; // Select date mode
         if (@available(iOS 13.4, *)) {
             _datePicker.preferredDatePickerStyle = UIDatePickerStyleWheels;
         }
-        _datePicker.locale = [NSLocale localeWithLocaleIdentifier:@"en"]; // 使用当前环境的语言和区域设置
-        // 获取当前日期
+        _datePicker.locale = [NSLocale localeWithLocaleIdentifier:@"en"]; // Use the language and locale of the current environment
+        // Get current date
         NSDate *currentDate = [NSDate date];
 
-        // 获取10个月前的日期
+        // Get the date 10 months ago
         NSCalendar *calendar = [NSCalendar currentCalendar];
         NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
         if (_type == DatePickerDataTypeMostRecentMenstruation){
@@ -182,7 +182,7 @@
         }
         NSDate *tenMonthsAgo = [calendar dateByAddingComponents:offsetComponents toDate:currentDate options:0];
 
-        // 设置最大和最小日期
+        // Set the maximum and minimum dates
         _datePicker.maximumDate = currentDate;
         _datePicker.minimumDate = tenMonthsAgo;
     }

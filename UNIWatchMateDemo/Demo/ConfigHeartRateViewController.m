@@ -59,7 +59,7 @@
 - (UILabel *)isAutoTip {
     if (!_isAutoTip) {
         _isAutoTip = [[UILabel alloc] init];
-        // 进行其他属性设置和布局
+        // Do other property Settings and layouts
         _isAutoTip.text = NSLocalizedString(@"isAutoMeasure", nil);
         _isAutoTip.adjustsFontSizeToFitWidth = YES;
         [self.scrollView addSubview:_isAutoTip];
@@ -71,7 +71,7 @@
 - (UISwitch *)isAutoSwitch {
     if (!_isAutoSwitch) {
         _isAutoSwitch = [[UISwitch alloc] init];
-        // 进行其他属性设置和布局
+        // Do other property Settings and layouts
         [_isAutoSwitch addTarget:self action:@selector(changeAuto) forControlEvents:UIControlEventValueChanged];
         [self.scrollView addSubview:_isAutoSwitch];
     }
