@@ -142,7 +142,7 @@
     self.lastProductType = productType;
     @weakify(self);
     //uid is usually the unique id of the login user, and "1" is used in the demo
-    [[[WMManager sharedInstance] findWatchFromSearch:productType uid:@"1"] subscribeNext:^(WMPeripheral * _Nullable x) {
+    [[[WMManager sharedInstance] findWatchFromSearch:productType bleNamePrefix:@"" Uid:@"1"] subscribeNext:^(WMPeripheral * _Nullable x) {
         @strongify(self);
         [self addNewDevice:x];
     } error:^(NSError * _Nullable error) {

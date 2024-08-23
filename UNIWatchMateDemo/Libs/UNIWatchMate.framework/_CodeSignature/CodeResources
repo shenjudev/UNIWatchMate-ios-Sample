@@ -4,6 +4,10 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>.DS_Store</key>
+		<data>
+		xSNd25RXHLbB1uTGF12hmSWzUH0=
+		</data>
 		<key>Headers/UNIWatchMate.h</key>
 		<data>
 		Y8gXbcAZfu8O+9W8WSkpRVlVgu8=
@@ -98,7 +102,7 @@
 		</data>
 		<key>Headers/WMConnectModel.h</key>
 		<data>
-		uT5erNgYJ7WIr+VNGgL3cy2+lzs=
+		ZgmzHCvYyQPBZXFqdcZ+UnmTBGM=
 		</data>
 		<key>Headers/WMContactModel.h</key>
 		<data>
@@ -158,7 +162,7 @@
 		</data>
 		<key>Headers/WMFindModel.h</key>
 		<data>
-		tLIP2rVpitAYi0Ys8L22swgsX2Y=
+		DvDXlV9Yj/5ObupBhoDheJa8xV4=
 		</data>
 		<key>Headers/WMHeartRateAlertModel.h</key>
 		<data>
@@ -202,7 +206,7 @@
 		</data>
 		<key>Headers/WMManager.h</key>
 		<data>
-		kVMbKiXUd55GkClWVUuPU9kz7SM=
+		gkMiD7wKWQC6ONHje+JRhI5Ptkg=
 		</data>
 		<key>Headers/WMMessageModel.h</key>
 		<data>
@@ -218,7 +222,7 @@
 		</data>
 		<key>Headers/WMPeripheral.h</key>
 		<data>
-		rFb+f0nUb1igNxMsfV5sxfkwdEk=
+		rJ5zM2JpmpH98Tut6QBLMyQ2HY4=
 		</data>
 		<key>Headers/WMPersonalInfoModel.h</key>
 		<data>
@@ -314,7 +318,7 @@
 		</data>
 		<key>Headers/WMWidgetModel.h</key>
 		<data>
-		UfA3WTrlB5NVEzSlG6mBqzK7gnA=
+		0n21+hDASLRu3efd4seh95AbZGc=
 		</data>
 		<key>Headers/WMWidgetSettingModel.h</key>
 		<data>
@@ -322,7 +326,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		FS0tTyoq8O75zccQwQ1phqVBf+g=
+		3MJPvZ2iEHV6MBgG1AzKra4oBbg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -496,7 +500,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zO1kubmYiuzF/x0o4n3+3hyiL/a152vXVROck9H/QXs=
+			8of9PV21wOGAp+q5ZGv6UsfoFVO91QJKYKIRR39n2EI=
 			</data>
 		</dict>
 		<key>Headers/WMContactModel.h</key>
@@ -601,7 +605,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HkJkVd13QYXOcvslrZlLhjwoeNwaUKvcXw94/zz829o=
+			BsrO2B3ZgBqJ78mIWi3c5ZBfhNqFG2jFvvazt5VZkSI=
 			</data>
 		</dict>
 		<key>Headers/WMHeartRateAlertModel.h</key>
@@ -678,7 +682,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HJCJR9WoefGcmhtsYcC3pn+WBB3LTtm2Mhut7VPXQj4=
+			tvpKHHFEuqxBrYnP8pTHam3sEeaMDnfeMlF/HjApn7k=
 			</data>
 		</dict>
 		<key>Headers/WMMessageModel.h</key>
@@ -706,7 +710,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6qM2uq3IczzrfYHPGyNIa1lVRQV0fHJ3VjGA2DuN9yg=
+			BB1tL8YhuYBVetrSM5XjFy7BuUG8htq3Nd81SkqywRw=
 			</data>
 		</dict>
 		<key>Headers/WMPersonalInfoModel.h</key>
@@ -874,7 +878,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			L/8Obmhhds+YTsTQRUZKeJ+9wQ7N5LqB3RF8RhJHeho=
+			2cH5nQGBt63o8mh5jquQmjOq/1CzBnpM2h+cZxNFFus=
 			</data>
 		</dict>
 		<key>Headers/WMWidgetSettingModel.h</key>

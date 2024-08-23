@@ -4,33 +4,13 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Frameworks/UNIWatchMate.framework/Info.plist</key>
+		<key>.DS_Store</key>
 		<data>
-		FS0tTyoq8O75zccQwQ1phqVBf+g=
-		</data>
-		<key>Frameworks/UNIWatchMate.framework/UNIWatchMate</key>
-		<data>
-		a3xrCYMFLJqlMX45fzP5GuJI/Pw=
-		</data>
-		<key>Frameworks/UNIWatchMate.framework/_CodeSignature/CodeResources</key>
-		<data>
-		4lu3omyRdaIrdv9EYwiYn6YNMUE=
-		</data>
-		<key>Frameworks/h264encoder.framework/Info.plist</key>
-		<data>
-		p6iwdJr4FWu7B/Jzay6GZKGLoPA=
-		</data>
-		<key>Frameworks/h264encoder.framework/_CodeSignature/CodeResources</key>
-		<data>
-		8Z9TaoErU4KNrBjsfLpLrviQiEU=
-		</data>
-		<key>Frameworks/h264encoder.framework/h264encoder</key>
-		<data>
-		SQjLZrgFb67NqrVNn57zYMB4Sws=
+		qFEs25+kSFc7kJcMKhQhKuiEIAE=
 		</data>
 		<key>Headers/BtUtils.h</key>
 		<data>
-		T1XF/4kejuls6mTX6OtDXEpYoSM=
+		7b9cts406QLYsxQITKeqATAFk04=
 		</data>
 		<key>Headers/DialThumbnailAdapter.h</key>
 		<data>
@@ -50,7 +30,7 @@
 		</data>
 		<key>Headers/SJWatchLib-Swift.h</key>
 		<data>
-		uJQEllHeOtfLRtF5NWs97jy9vfQ=
+		0ZqGfdedDwfKsk0YHkM051Qan9M=
 		</data>
 		<key>Headers/SJWatchLib.h</key>
 		<data>
@@ -58,19 +38,19 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		uK+0Ss4JmvGG73xNdPye9E+zYIw=
+		qszYHk5At7B99huu/wltVZjbmGc=
 		</data>
 		<key>Modules/SJWatchLib.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		F6E8uoj0qmYblJ7iV7Vj4cLblPc=
+		rIEtMCyXfT93wC+XS8lZcaS/jYM=
 		</data>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		4Kg0CWPqOYLE9Jb1KEP5EDTTnmY=
+		vFkFAtbf1VC5uvIqikSJ57zseZU=
 		</data>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		JDXI6RqgZSMDpxdVOlWnYne60Pc=
+		6TVFCHVULKbwXH1md6Ev4xrzYSU=
 		</data>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -78,11 +58,11 @@
 		</data>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		JDXI6RqgZSMDpxdVOlWnYne60Pc=
+		6TVFCHVULKbwXH1md6Ev4xrzYSU=
 		</data>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		IHasNnRqeYBg1hgrdhHDxbWs2uQ=
+		kC3kR+6fYJLORp14XLx3DwhApak=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -92,9 +72,17 @@
 		<data>
 		B+QmcsQY1DKsUDpQWEvOcukTeuA=
 		</data>
+		<key>base_custom_circle.json</key>
+		<data>
+		MtT5uZGuPfObhvjEjBmwP1VFHIQ=
+		</data>
 		<key>base_custom_video.json</key>
 		<data>
 		caWz26B4vhG5kltTc8+RdOv8Ibc=
+		</data>
+		<key>base_custom_video_circle.json</key>
+		<data>
+		tVVTBpucMSk6zECCEyGDNr9y7Xc=
 		</data>
 		<key>custom_dial_bottom_left.json</key>
 		<data>
@@ -114,11 +102,11 @@
 		</data>
 		<key>custom_round_dial_bottom.json</key>
 		<data>
-		12bfBgkxl9zOPnsx/MN6ChzmURI=
+		2eHlCKtP+eT9icJMtXbjlJw7dHc=
 		</data>
 		<key>custom_round_dial_top.json</key>
 		<data>
-		PmaknbJjkGmgOeSZv0m0xPK25H4=
+		vXtapDkFBihpqnHRhf14ZTHHwQs=
 		</data>
 		<key>sports_data.json</key>
 		<data>
@@ -127,53 +115,11 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Frameworks/UNIWatchMate.framework/Info.plist</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			Ihgqzny4Ete/e/NEfyN2YDzVqNg4Kk/CW05qG/p/VuE=
-			</data>
-		</dict>
-		<key>Frameworks/UNIWatchMate.framework/UNIWatchMate</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			jw61g8yPDY6aZ0UWjr4JSGBpwAbmcp645ttIO2liOfQ=
-			</data>
-		</dict>
-		<key>Frameworks/UNIWatchMate.framework/_CodeSignature/CodeResources</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			VJcoAx2d7MdmFhGXaFcrD2C7mzGtA/+Z/O4XQQFbbf4=
-			</data>
-		</dict>
-		<key>Frameworks/h264encoder.framework/Info.plist</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			9Szfds2RuAT2gMmmVko4LKgWRqSAuO2a0KRUAZ3Bvuo=
-			</data>
-		</dict>
-		<key>Frameworks/h264encoder.framework/_CodeSignature/CodeResources</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			6SHYNvZkPUAl042G5iGuxKjkBsUNjWzFBshR3R7uNDA=
-			</data>
-		</dict>
-		<key>Frameworks/h264encoder.framework/h264encoder</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			j6aOwm8p1fxeDYuAQppb44Ns6Or9Ci4abYcMSnEMreM=
-			</data>
-		</dict>
 		<key>Headers/BtUtils.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			uNArwUQr8rgVHC35cy5LWsd3zRnx4N2WTFN6KFkFMwg=
+			SM2VbhAUKnKyEHEahQx2+q12jwGxRz8MWlT0KNpn4f0=
 			</data>
 		</dict>
 		<key>Headers/DialThumbnailAdapter.h</key>
@@ -208,7 +154,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HMjR0rbVqjMUdDPIwKtZgKlhx0RIOUP6uvtgqDU0jDo=
+			zhNohMg1wBOQqOXCs4zyvXDefP9zEN2N78fT+X+28FM=
 			</data>
 		</dict>
 		<key>Headers/SJWatchLib.h</key>
@@ -222,21 +168,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			JiqGQXjBQG/HuTTzkgzudxcggoqu3eP/CSLM6irtBv0=
+			/Mp9i9PZ+PIhIsd9yAFU5Z+jsmO3Esj09xcEFbqv66U=
 			</data>
 		</dict>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			la0WdYsDkLAy7Y1VmwCdfMI6HTqLckM8hwhnLv3WarY=
+			nrW83HcGMaJLq1tkwvfKkwQDvcqhOSi/5KOa6s8EenU=
 			</data>
 		</dict>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZH9ueM2WwxoZPiI5+479iwY01emObq63Ec+SJo3q2f0=
+			0G4Pdz29BYMcKzupj4T2P61tYwFAHjV1HIvRsBxzCVM=
 			</data>
 		</dict>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.swiftdoc</key>
@@ -250,14 +196,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZH9ueM2WwxoZPiI5+479iwY01emObq63Ec+SJo3q2f0=
+			0G4Pdz29BYMcKzupj4T2P61tYwFAHjV1HIvRsBxzCVM=
 			</data>
 		</dict>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YLDdBfdqv1QybDMe2dRuJD3E3GqCZD7NNbjGodXvV68=
+			Gdoz/2eokwT6pM0I+et5FBQKs/ofDvnuPYe5Udg66CY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -274,11 +220,25 @@
 			EXUw77Z1njjKIniUa7Y/TNgNsimURgSNGB+OIla8vkM=
 			</data>
 		</dict>
+		<key>base_custom_circle.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			PmMoVsIcdglBGM75Mc9/YlrPVszYK74zUknvqHa4ask=
+			</data>
+		</dict>
 		<key>base_custom_video.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			htH2IcSk+rzqtUYWu3dSGpZ+tplPhXvqvuypI8Ztifk=
+			</data>
+		</dict>
+		<key>base_custom_video_circle.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			HEJIJjr/9TKtHixxHxaa1tyYfKhASzLbx1EUmyhEcBQ=
 			</data>
 		</dict>
 		<key>custom_dial_bottom_left.json</key>
@@ -313,14 +273,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			5cSa4CRYXZNn/m+KMePb7aNdEu2jyJnqHDUIYzwkw+0=
+			gRN0y5pmDN4hhVrk/QIMDCu55+eF6yCv5qBG9CwGM8M=
 			</data>
 		</dict>
 		<key>custom_round_dial_top.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ttstIs8W2gHNNDEmcrNwtgbWUwu7HpD3AJf5J8m68vQ=
+			KJR7gl3TdQX8rwv0w+/GKqYv6S44m/NW4wp/wzLpybU=
 			</data>
 		</dict>
 		<key>sports_data.json</key>

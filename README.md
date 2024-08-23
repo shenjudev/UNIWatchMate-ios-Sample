@@ -2,6 +2,17 @@
 # UNIWatchMate
 
 The interface framework of UNIWatchMate smartwatch is responsible for packaging functions such as communication with the watch device. It provides interfaces related to the smartwatch for the App to operate, and connects to SDKS of other watches.
+# Version 1.0.5
+1. Add receiving custom data
+```
+@protocol WMCustomDataDelegate <NSObject>
+
+// 接收到自定义数据回调（Receive custom data callback）
+- (void)devicePushData:(NSData *)data;
+
+@end
+```
+
 # Version 1.0.4  
 # [SDK documentation](https://github.com/shenjudev/UNIWatchMate-ios-Sample/wiki)  
 ## v1.0.4(2024-03-18)

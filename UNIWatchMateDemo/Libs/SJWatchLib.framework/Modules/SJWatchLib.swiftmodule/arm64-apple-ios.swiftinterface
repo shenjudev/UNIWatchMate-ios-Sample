@@ -10,6 +10,7 @@ import ReactiveObjC
 import RxCocoa
 import RxSwift
 @_exported import SJWatchLib
+import SWCompression
 import Swift
 import SwiftyJSON
 import UIKit
@@ -80,7 +81,7 @@ public class SJWatchSwitchModel {
 @objc @_inheritsConvenienceInitializers public class SJWatchFind : UNIWatchMate.WMFindModel {
   @objc override dynamic public class func sharedInstance() -> UNIWatchMate.WMFindModel
   @objc override dynamic public func fromScanQRCode(_ code: Swift.String, uid: Swift.String) -> ReactiveObjC.RACSignal<UNIWatchMate.WMPeripheral>?
-  @objc override dynamic public func fromSearch(withUid uid: Swift.String) -> ReactiveObjC.RACSignal<UNIWatchMate.WMPeripheral>?
+  @objc override dynamic public func fromSearch(withBleNamePrefix name: Swift.String?, uid: Swift.String) -> ReactiveObjC.RACSignal<UNIWatchMate.WMPeripheral>?
   @objc override dynamic public func fromTarget(_ target: UNIWatchMate.WMPeripheralTargetModel, uid: Swift.String) -> ReactiveObjC.RACSignal<UNIWatchMate.WMPeripheral>?
   @objc override dynamic public func stopSearch()
   @objc override dynamic public func isEnabled(forProduct product: Swift.String) -> Swift.Bool
@@ -116,7 +117,7 @@ public class SJWatchNaviVideoFrameModel {
   public func sendData(mtu: Swift.Int) -> [[Foundation.Data]]
   @objc deinit
 }
-public class USWatchViewModel : HandyJSON.HandyJSON {
+public class USWatchViewModel : HandyJSON {
   required public init()
   public var id: Swift.UInt8?
   public var name: Swift.String?
@@ -158,7 +159,7 @@ public let SH_LEVEL_INFO: Swift.String
   @objc override dynamic public func mateName() -> Swift.String
   @objc deinit
 }
-public class USWatchDialBleModel : HandyJSON.HandyJSON {
+public class USWatchDialBleModel : HandyJSON {
   required public init()
   public var id: Swift.String?
   public var using: Swift.UInt8?
@@ -168,7 +169,7 @@ public class USWatchDialBleModel : HandyJSON.HandyJSON {
   }
   @objc deinit
 }
-public class USWatchBatteryModel : HandyJSON.HandyJSON {
+public class USWatchBatteryModel : HandyJSON {
   required public init()
   public var battery: Swift.Int {
     get
@@ -178,7 +179,7 @@ public class USWatchBatteryModel : HandyJSON.HandyJSON {
   }
   @objc deinit
 }
-public class USWatchBaseInfoModel : HandyJSON.HandyJSON {
+public class USWatchBaseInfoModel : HandyJSON {
   public var chip_mode: Swift.String?
   public var prod_mode: Swift.String?
   public var soft_ver: Swift.String?

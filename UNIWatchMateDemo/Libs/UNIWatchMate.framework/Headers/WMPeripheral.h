@@ -15,6 +15,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol WMCustomDataDelegate <NSObject>
+
+// 接收到自定义数据回调（Receive custom data callback）
+- (void)devicePushData:(NSData *)data;
+
+@end
+
 @interface WMPeripheral : NSObject
 
 /// 连接的目标设备 (The connected target device)
@@ -29,6 +36,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) WMAppsModel *apps;
 /// 数据同步 (Data synchronization)
 @property (nonatomic, strong) WMDatasSyncModel *datasSync;
+
+/// 自定义数据（Custom Data）
+@property (nonatomic, weak) id<WMCustomDataDelegate> customDataDelegate;
+
+// 外设uuid
+- (NSString * _Nullable)uuidString;
+
+// 外设信号强度
+- (NSNumber * _Nullable)rssi;
 
 @end
 

@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 +(NSString *)encryptString:(NSString *)string key:(NSString *)key;
 +(bool)verificationCmd:(NSString *)cmd oldData:(NSString *)oldData old2Data:(NSString *)old2Data keyOri:(NSString *)keyOri;
 +(NSString *)crc:(NSData*)data;
++(long long)crcLong:(NSData*)data;
 +(NSString *)crc8maxim:(NSData*)data;
 +(NSData *)watchCrc16:(NSData*)data result:(uint16_t)result;
 +(uint16_t)watchCrc16Uint:(NSData*)data result:(uint16_t)result;

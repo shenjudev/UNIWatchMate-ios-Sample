@@ -32,8 +32,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 通过产品类型，搜索附近设备（回调多次，需要主动停止搜索） (Search for nearby devices by product type (callback multiple times, need to actively stop searching))
 /// - Parameter product: 产品类型 (Product type)
-/// // - Parameter uid: 登陆用户的用户id (User id of the logged-in user)
-- (RACSignal<WMPeripheral *> * _Nullable )findWatchFromSearch:(NSString *)product uid:(NSString *)uid;
+/// - Parameter name: 只搜索保护name前缀的设备， nil或@“”不过滤
+/// - Parameter uid: 登陆用户的用户id (User id of the logged-in user)
+- (RACSignal<WMPeripheral *> * _Nullable )findWatchFromSearch:(NSString *)product bleNamePrefix:(NSString * _Nullable)name Uid:(NSString *)uid;
 
 /// 用与回连设备，通过mac和产品型号，获取一个设备对象（回调一次） (Get a device object (callback once) by mac and product model with a callback device)
 /// - Parameters:

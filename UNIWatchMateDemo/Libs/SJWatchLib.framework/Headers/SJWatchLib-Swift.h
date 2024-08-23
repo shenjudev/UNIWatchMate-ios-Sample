@@ -318,7 +318,7 @@ SWIFT_CLASS("_TtC10SJWatchLib11SJWatchFind")
 @interface SJWatchFind : WMFindModel
 + (WMFindModel * _Nonnull)sharedInstance SWIFT_WARN_UNUSED_RESULT;
 - (RACSignal<WMPeripheral *> * _Nullable)fromScanQRCode:(NSString * _Nonnull)code uid:(NSString * _Nonnull)uid SWIFT_WARN_UNUSED_RESULT;
-- (RACSignal<WMPeripheral *> * _Nullable)fromSearchWithUid:(NSString * _Nonnull)uid SWIFT_WARN_UNUSED_RESULT;
+- (RACSignal<WMPeripheral *> * _Nullable)fromSearchWithBleNamePrefix:(NSString * _Nullable)name Uid:(NSString * _Nonnull)uid SWIFT_WARN_UNUSED_RESULT;
 - (RACSignal<WMPeripheral *> * _Nullable)fromTarget:(WMPeripheralTargetModel * _Nonnull)target uid:(NSString * _Nonnull)uid SWIFT_WARN_UNUSED_RESULT;
 - (void)stopSearch;
 - (BOOL)isEnabledForProduct:(NSString * _Nonnull)product SWIFT_WARN_UNUSED_RESULT;

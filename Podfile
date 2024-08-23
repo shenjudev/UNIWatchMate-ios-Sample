@@ -18,6 +18,7 @@ target 'UNIWatchMateDemo' do
    pod 'PromiseKit','8.1.1'
    pod 'HandyJSON', '5.0.0'
    pod 'SwiftyJSON','5.0.1'
+   pod 'SWCompression'
    # Pods for UNIWatchMateDemo
   
   pod 'LBXScan','2.5.1'

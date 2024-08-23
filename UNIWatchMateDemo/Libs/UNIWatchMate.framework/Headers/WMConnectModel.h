@@ -7,6 +7,8 @@
 
 #import <Foundation/Foundation.h>
 #import <ReactiveObjC/ReactiveObjC.h>
+#import <CoreBluetooth/CoreBluetooth.h>
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WMConnectModel : NSObject
@@ -18,6 +20,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// 可订阅对象，设备是否初始化完成，可以进行数据交互 (Subscribable objects, whether the device initialization is complete, can perform data interaction)
 @property (nonatomic, strong) RACSignal<NSNumber *> *isReady;
 @property (nonatomic, assign, readonly) BOOL isReadyValue;
+
+/// 可订阅对象，使用CBPeripheralState表示，SDK是否在连接目标设备（0未发起连接，1正在连接，2连接成功）
+@property (nonatomic, strong) RACSignal<NSNumber *> *connectState;
+@property (nonatomic, assign, readonly) BOOL connectStateValue;
 
 /// 连接 (connect)
 - (void)connect;
