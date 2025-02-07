@@ -9,8 +9,8 @@
 //NS_ASSUM__NONNULL_BEGIN
 
 @interface WmGlassesStorageInfo : NSObject
-
-@property (nonatomic, assign) NSString *remain;
+// kb
+@property (nonatomic, assign) NSString *used;
 @property (nonatomic, assign) NSString *total;
 
 @end

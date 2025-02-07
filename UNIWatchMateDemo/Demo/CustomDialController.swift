@@ -597,7 +597,7 @@ extension CustomDialController {
                 }
             } completed: {
                 DispatchQueue.main.async {
-                    NSLog("completion?(100, .Succeed, nil)")
+                    self.customPrint("completion?(100, .Succeed, nil)")
                     self.fileTransComplete(100, .Succeed, nil)
                     UIApplication.shared.isIdleTimerDisabled = false
                 }

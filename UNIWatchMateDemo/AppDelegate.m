@@ -29,6 +29,7 @@
         NSString *log =  [NSString stringWithFormat:@"%@",x];
 //        SJSJDeviceData("\n\(DateClass.dateToDateString(Date(), dateFormat: "yyyy-MM-dd HH:mm:ss.SSS")) \(string)")
 //        HDNormalLog(log);
+        [SJSJDeviceDataLogger logDeviceDataSimplified:log];
     }];
 //    [SVProgressHUD setDefaultMaskType: SVProgressHUDMaskTypeBlack];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

@@ -162,17 +162,16 @@ class GetDiskSpaceVC: UIViewController {
             SVProgressHUD.dismiss()
             guard let self = self else { return }
             
-            let remainSize = self.stringToMegabytesString(deviceStoreageInfo?.remain as String?)
             let totalSize = self.stringToMegabytesString(deviceStoreageInfo?.total as String?)
-            
             // 计算已使用空间和百分比
-            if let remain = deviceStoreageInfo?.remain as? String, 
+            if let used = deviceStoreageInfo?.used as? String,
                let total = deviceStoreageInfo?.total as? String,
-               let remainBytes = Double(remain), 
+               let usedBytes = Double(used),
                let totalBytes = Double(total) {
-                let usedBytes = totalBytes - remainBytes
+                let remainBytes = totalBytes - usedBytes
                 let percentage = usedBytes / totalBytes
-                
+                let remainSize = self.stringToMegabytesString("\(remainBytes.int)")
+
                 self.progressView.progress = Float(percentage)
                 self.usedSpaceLabel.text = self.stringToMegabytesString(String(Int(usedBytes)))
                 self.totalSpaceLabel.text = "总容量：\(totalSize)"
@@ -185,7 +184,7 @@ class GetDiskSpaceVC: UIViewController {
         }
     }
     
-    func stringToMegabytesString(_ input: String?, _ total: Bool = false) -> String {
+    func stringToMegabytesString(_ input: String?) -> String {
         // 1. 安全地解包可选的 String
         guard let string = input, let bytes = Int(string) else {
             print("输入的字符串为空或无法将字符串转换为字节数")
@@ -202,7 +201,6 @@ class GetDiskSpaceVC: UIViewController {
         
         // 4. 处理大于1GB的情况
         if gb >= 1 {
-            // 当total为true时，向上取整GB
             if gb.truncatingRemainder(dividingBy: 1) == 0 {
                         return String(format: "%.0fGB", gb) // 如果是整数GB，不显示小数位
                     } else {
@@ -214,15 +212,5 @@ class GetDiskSpaceVC: UIViewController {
         }
     }
 
-    
-    func bytesToGBMBString(_ bytes: Int) -> String {
-        let bytesInMB = 1024 * 1024
-        let bytesInGB = bytesInMB * 1024123
-
-        let gb = bytes / bytesInGB
-        let mb = Double(bytes % bytesInGB) / Double(bytesInMB)
-        
-        return "\(bytes) bytes is approximately \(gb) GB and \(String(format: "%.2f", mb)) MB."
-    }
 }
 
