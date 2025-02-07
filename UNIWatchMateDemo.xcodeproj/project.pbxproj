@@ -61,6 +61,7 @@
 		B589C8622D55BF01009A91CA /* SJLogTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589C85C2D55BF01009A91CA /* SJLogTool.swift */; };
 		B589C8652D55BF5D009A91CA /* opus-ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B589C8632D55BF5A009A91CA /* opus-ios.framework */; platformFilter = ios; };
 		B589C8662D55BF5D009A91CA /* opus-ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B589C8632D55BF5A009A91CA /* opus-ios.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B589C8AF2D560FD0009A91CA /* README_CN.md in Resources */ = {isa = PBXBuildFile; fileRef = B589C8AE2D560FD0009A91CA /* README_CN.md */; };
 		B5CF8FD32BA947970074E221 /* h264encoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CF8FCC2BA947920074E221 /* h264encoder.framework */; platformFilter = ios; };
 		B5CF8FD42BA947970074E221 /* h264encoder.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5CF8FCC2BA947920074E221 /* h264encoder.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B5CF8FD62BA947980074E221 /* SJWatchLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CF8FCD2BA947920074E221 /* SJWatchLib.framework */; platformFilter = ios; };
@@ -228,6 +229,7 @@
 		B589C85C2D55BF01009A91CA /* SJLogTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SJLogTool.swift; sourceTree = "<group>"; };
 		B589C85E2D55BF01009A91CA /* VideoDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDecoder.swift; sourceTree = "<group>"; };
 		B589C8632D55BF5A009A91CA /* opus-ios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "opus-ios.framework"; sourceTree = "<group>"; };
+		B589C8AE2D560FD0009A91CA /* README_CN.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README_CN.md; sourceTree = SOURCE_ROOT; };
 		B5CF8FCC2BA947920074E221 /* h264encoder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = h264encoder.framework; sourceTree = "<group>"; };
 		B5CF8FCD2BA947920074E221 /* SJWatchLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SJWatchLib.framework; sourceTree = "<group>"; };
 		B5CF8FCE2BA947920074E221 /* UNIWatchMate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UNIWatchMate.framework; sourceTree = "<group>"; };
@@ -579,6 +581,7 @@
 				D77825302ABD341B0056AB02 /* Info.plist */,
 				D77825312ABD341B0056AB02 /* main.m */,
 				5F1886322AF3B0AA00911FBF /* README.md */,
+				B589C8AE2D560FD0009A91CA /* README_CN.md */,
 				5FF961FF2AC4292700DFA693 /* Localizable.strings */,
 			);
 			path = UNIWatchMateDemo;
@@ -648,6 +651,7 @@
 			files = (
 				D778252F2ABD341B0056AB02 /* LaunchScreen.storyboard in Resources */,
 				D71481852B9738A700C3CB63 /* x1245156a62de4d6d8d60d8f8ff751302.dial in Resources */,
+				B589C8AF2D560FD0009A91CA /* README_CN.md in Resources */,
 				D71481842B9738A700C3CB63 /* x59c4aad46ed434ca58786f3232aba673.dial in Resources */,
 				5FC3119C2AE7EFAA00635E56 /* sports_data.json in Resources */,
 				5FF961FD2AC4292700DFA693 /* Localizable.strings in Resources */,

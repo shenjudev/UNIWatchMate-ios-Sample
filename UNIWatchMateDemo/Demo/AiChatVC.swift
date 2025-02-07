@@ -88,11 +88,7 @@ class AiChatVC: UIViewController {
         disposable?.dispose()
         isOnResume = false
         previewImageView.image = nil
-        WatchManager.sharedInstance().currentValue.apps.watchGlassesVideoApp.startPreviewSet(false).subscribeNext { rs in
-            print("startPreviewSet(false) rs=\(String(describing: rs))")
-        } error: { error in
-            print(error as Any)
-        }
+     
     }
     
     override func viewDidLoad() {
