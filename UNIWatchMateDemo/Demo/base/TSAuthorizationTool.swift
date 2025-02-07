@@ -9,9 +9,9 @@ import AVFoundation
 import Photos
 struct TSAuthorizationTool {
     
-    /// Camera access
-    /// - Parameter isOpenAlert: Whether to open the guided missile window
-    /// - Returns: Permission state
+    /// 摄像头访问权限
+    /// - Parameter isOpenAlert: 是否打开引导弹窗
+    /// - Returns: 权限状态
     static func isCameraAvailable(_ isOpenAlert : Bool = false , _ completion:CommonBoolBlock? = nil) -> Bool {
         if UIImagePickerController.isSourceTypeAvailable(.camera) && UIImagePickerController.isCameraDeviceAvailable(.front) && UIImagePickerController.isCameraDeviceAvailable(.rear) {
             return true
@@ -20,11 +20,11 @@ struct TSAuthorizationTool {
     }
     
     
-    ///  e whether the camera is supported
-    /// - Parameter isOpenAlert: Whether to open the guided missile window
-    /// - Returns: Permission state
+    ///  判断是否支持摄像
+    /// - Parameter isOpenAlert: 是否打开引导弹窗
+    /// - Returns: 权限状态
     static func doesCameraSupportTakingPhotos(_ isOpenAlert : Bool = false , _ completion:CommonBoolBlock? = nil) -> Bool {
-        let mediaType = AVMediaType.video //Read media type
+        let mediaType = AVMediaType.video //读取媒体类型
         let authStatus : AVAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: mediaType)
         if authStatus == AVAuthorizationStatus.authorized || authStatus == AVAuthorizationStatus.notDetermined {
             return true
@@ -33,8 +33,8 @@ struct TSAuthorizationTool {
 
     }
     
-    ///  Album access
-    /// - Parameter isOpenAlert: Whether to open the guided missile window
+    ///  相册访问权限
+    /// - Parameter isOpenAlert: 是否打开引导弹窗
     /// - Returns: 权限状态
     static func isPhotoLibraryAvailable(_ isOpenAlert : Bool = false , _ completion:CommonBoolBlock? = nil) -> Bool {
         let authStatus = PHPhotoLibrary.authorizationStatus()
@@ -44,10 +44,10 @@ struct TSAuthorizationTool {
         if isOpenAlert  {
             
             let sheet = TSAlertSheetView()
-            sheet.show(icon: nil, title:"The album access permission is not enabled".attributed , alignment: .center, leftTitle: "Cancel", rightTitle: "Go to Settings", cancelClosure: {
+            sheet.show(icon: nil, title:"相册访问权限未开启".attributed , alignment: .center, leftTitle: "取消", rightTitle: "去设置", cancelClosure: {
                 completion?(false)
             }, rightClosure: {
-                /// Permission state
+                /// 跳转到设置界面
                 guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             })

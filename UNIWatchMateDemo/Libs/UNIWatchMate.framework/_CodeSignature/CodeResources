@@ -4,6 +4,10 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Headers/SJSwitches.h</key>
+		<data>
+		1nmvAPPgBSwSr+W+kddUwAIh6es=
+		</data>
 		<key>Headers/UNIWatchMate.h</key>
 		<data>
 		Y8gXbcAZfu8O+9W8WSkpRVlVgu8=
@@ -54,7 +58,7 @@
 		</data>
 		<key>Headers/WMAppsModel.h</key>
 		<data>
-		tHDBV8XshzUaeS9QOWMVxACSzeM=
+		DT0mapUzDRtNyjqWB0a7Ev2rZlM=
 		</data>
 		<key>Headers/WMBaseDataModel.h</key>
 		<data>
@@ -98,7 +102,7 @@
 		</data>
 		<key>Headers/WMConnectModel.h</key>
 		<data>
-		uT5erNgYJ7WIr+VNGgL3cy2+lzs=
+		ZgmzHCvYyQPBZXFqdcZ+UnmTBGM=
 		</data>
 		<key>Headers/WMContactModel.h</key>
 		<data>
@@ -126,7 +130,7 @@
 		</data>
 		<key>Headers/WMDeviceInfoModel.h</key>
 		<data>
-		Z3FOfTASog9LnwYLXByAw8HE/S0=
+		/YuZO4BY8R1zVqJOeQnwXHlxYM8=
 		</data>
 		<key>Headers/WMDialAppModel.h</key>
 		<data>
@@ -150,7 +154,7 @@
 		</data>
 		<key>Headers/WMFileAppModel.h</key>
 		<data>
-		urcnxmTRkt77iGLSjeY5qu0C9Xs=
+		CJ4YECpAjNZrzDJ49HWFWHlhElY=
 		</data>
 		<key>Headers/WMFindAppModel.h</key>
 		<data>
@@ -158,7 +162,11 @@
 		</data>
 		<key>Headers/WMFindModel.h</key>
 		<data>
-		tLIP2rVpitAYi0Ys8L22swgsX2Y=
+		DvDXlV9Yj/5ObupBhoDheJa8xV4=
+		</data>
+		<key>Headers/WMGlassesVideoModel.h</key>
+		<data>
+		DE0fTNKo1jipiGzWRdgsHQhPues=
 		</data>
 		<key>Headers/WMHeartRateAlertModel.h</key>
 		<data>
@@ -196,13 +204,21 @@
 		<data>
 		rKK0rf4P3znIr1fmf8qZfZLOON8=
 		</data>
+		<key>Headers/WMLocation2DModel.h</key>
+		<data>
+		4JMsHvLA9lXZX4DzeKWPsmtKRW4=
+		</data>
+		<key>Headers/WMLocationSettingModel.h</key>
+		<data>
+		PbM7Xh2wmFYxhS5cpU8xlLGsRiE=
+		</data>
 		<key>Headers/WMLog.h</key>
 		<data>
 		briN/Y8WbiEHVAZLf60a79Kasao=
 		</data>
 		<key>Headers/WMManager.h</key>
 		<data>
-		kVMbKiXUd55GkClWVUuPU9kz7SM=
+		gkMiD7wKWQC6ONHje+JRhI5Ptkg=
 		</data>
 		<key>Headers/WMMessageModel.h</key>
 		<data>
@@ -212,13 +228,21 @@
 		<data>
 		evJ/QgZ7zPCFrn90LiDPASM/aYA=
 		</data>
+		<key>Headers/WMMusilinAppModel.h</key>
+		<data>
+		HAe0AVD+cpi9rAKzWg8vlJrY+Z4=
+		</data>
+		<key>Headers/WMMusilinDataModel.h</key>
+		<data>
+		DBkuGLwDQVojZ1qzb/3QpJCjLHg=
+		</data>
 		<key>Headers/WMNavigationAppModel.h</key>
 		<data>
 		WJFhLOKGvVSof5K9LNa0MnvL+aQ=
 		</data>
 		<key>Headers/WMPeripheral.h</key>
 		<data>
-		rFb+f0nUb1igNxMsfV5sxfkwdEk=
+		gbdFPSBtI1ibJRRdV1Z9xhAxufw=
 		</data>
 		<key>Headers/WMPersonalInfoModel.h</key>
 		<data>
@@ -242,7 +266,7 @@
 		</data>
 		<key>Headers/WMSettingsModel.h</key>
 		<data>
-		hIbywXsJ3Uu797XZcKI60uGFTpk=
+		MMgJJXYseR7D1I+BCtMd/NFepIk=
 		</data>
 		<key>Headers/WMSleepDataModel.h</key>
 		<data>
@@ -266,7 +290,7 @@
 		</data>
 		<key>Headers/WMSportGoalModel.h</key>
 		<data>
-		mWpBIns3NYZOSNLeWbBZkhX50nU=
+		RcVhq1fpCjRE3G3A0/lk39uAhK4=
 		</data>
 		<key>Headers/WMSportGoalSettingModel.h</key>
 		<data>
@@ -310,19 +334,27 @@
 		</data>
 		<key>Headers/WMWeatherModel.h</key>
 		<data>
-		2OQ+fuRZ50JuTdpKuED3qeLRtV4=
+		0Qb6yv+/Wcs6SThhTmXyUnjiYAw=
 		</data>
 		<key>Headers/WMWidgetModel.h</key>
 		<data>
-		UfA3WTrlB5NVEzSlG6mBqzK7gnA=
+		0n21+hDASLRu3efd4seh95AbZGc=
 		</data>
 		<key>Headers/WMWidgetSettingModel.h</key>
 		<data>
 		DWDds7KxRKlBP4mObPZQMcbpIkA=
 		</data>
+		<key>Headers/WmGlassesMediaCount.h</key>
+		<data>
+		pR0Ta0kY03nDd5bkKLGIBZZylk8=
+		</data>
+		<key>Headers/WmGlassesStorageInfo.h</key>
+		<data>
+		17Js4zT6Wfnu7GNc9vGS2LttEoA=
+		</data>
 		<key>Info.plist</key>
 		<data>
-		FS0tTyoq8O75zccQwQ1phqVBf+g=
+		cWX/LflWACFksOksbWEt6QtFCC0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -331,6 +363,13 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Headers/SJSwitches.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ZecElMhf6604Upp9kymanz+tkLPZ7hRIUHUZ737crpw=
+			</data>
+		</dict>
 		<key>Headers/UNIWatchMate.h</key>
 		<dict>
 			<key>hash2</key>
@@ -419,7 +458,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7bsB71f7yHWUlwYzqtZr1J2xplk+L7FH/I9lq+edXSI=
+			0tIgbiUZP9IlAyN5KBc9xdOmgcNGipgX5VnXJU9H4xo=
 			</data>
 		</dict>
 		<key>Headers/WMBaseDataModel.h</key>
@@ -496,7 +535,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zO1kubmYiuzF/x0o4n3+3hyiL/a152vXVROck9H/QXs=
+			8of9PV21wOGAp+q5ZGv6UsfoFVO91QJKYKIRR39n2EI=
 			</data>
 		</dict>
 		<key>Headers/WMContactModel.h</key>
@@ -545,7 +584,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			k5xMJuAMdvkKnskVevuAP35RRV36LAU4GvidZzYcCTI=
+			sPviNnDsbysOJp52Xh+NAogW44k0teDZtDR0nX1Az8A=
 			</data>
 		</dict>
 		<key>Headers/WMDialAppModel.h</key>
@@ -587,7 +626,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xtmdw5hRh2up7vOK90YS5FsgfDXFUsJUxq6/jH8PD70=
+			LQMEE8q1VuaXjnuj+eBU2yBd+aipyVOsUTwtpUTo41Q=
 			</data>
 		</dict>
 		<key>Headers/WMFindAppModel.h</key>
@@ -601,7 +640,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HkJkVd13QYXOcvslrZlLhjwoeNwaUKvcXw94/zz829o=
+			BsrO2B3ZgBqJ78mIWi3c5ZBfhNqFG2jFvvazt5VZkSI=
+			</data>
+		</dict>
+		<key>Headers/WMGlassesVideoModel.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			1+WEPvynF0XITtiuELjY0fnArgCJiVNMOhihky+sqs0=
 			</data>
 		</dict>
 		<key>Headers/WMHeartRateAlertModel.h</key>
@@ -667,6 +713,20 @@
 			EuQp0BE+YoLQwlfQ+J6pHQATFqv8wVF9Wd2X6IWv2BM=
 			</data>
 		</dict>
+		<key>Headers/WMLocation2DModel.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			oau2kqH1TihND2YEt0JuT6WgcYuG4ge8Qoac0GIoSUg=
+			</data>
+		</dict>
+		<key>Headers/WMLocationSettingModel.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			89gATl2Pf7IDO5GkogNn8GX/5bEvrlB1Woj4zo5D8kQ=
+			</data>
+		</dict>
 		<key>Headers/WMLog.h</key>
 		<dict>
 			<key>hash2</key>
@@ -678,7 +738,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HJCJR9WoefGcmhtsYcC3pn+WBB3LTtm2Mhut7VPXQj4=
+			tvpKHHFEuqxBrYnP8pTHam3sEeaMDnfeMlF/HjApn7k=
 			</data>
 		</dict>
 		<key>Headers/WMMessageModel.h</key>
@@ -695,6 +755,20 @@
 			WOkHxc1sTxIY0178OTHtmFbcvXzKZcgSOjIHkEXupmw=
 			</data>
 		</dict>
+		<key>Headers/WMMusilinAppModel.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+mxTQf3/H9cLP7pp16vzuJPqrU8gmYAJEZIjNAyhU28=
+			</data>
+		</dict>
+		<key>Headers/WMMusilinDataModel.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			BvzA6uyfT5F+/4RjEhVXdKA++Ciy91pd7UZm0zHIoyo=
+			</data>
+		</dict>
 		<key>Headers/WMNavigationAppModel.h</key>
 		<dict>
 			<key>hash2</key>
@@ -706,7 +780,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6qM2uq3IczzrfYHPGyNIa1lVRQV0fHJ3VjGA2DuN9yg=
+			D077bV54XhW+FmcptLHaEpYo5pDizJPDrB/GtUQKsiI=
 			</data>
 		</dict>
 		<key>Headers/WMPersonalInfoModel.h</key>
@@ -748,7 +822,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZEQU+YgubWgbYT5h91rxZ4m2eyPq/zR7IH7rp4W9yk4=
+			ZJaKoB9fRwB2MxWskW2pLYigEpLLVttaYjv9YXLtiCo=
 			</data>
 		</dict>
 		<key>Headers/WMSleepDataModel.h</key>
@@ -790,7 +864,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Snz+JL/IZLcBxdnOCh1ylY0nXcTDmy+7vXE+9vqqHc0=
+			4eu1Gk054Ra2SudHVUJm3dakiTMgdNISUY3nHGm6bog=
 			</data>
 		</dict>
 		<key>Headers/WMSportGoalSettingModel.h</key>
@@ -867,14 +941,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			clmO8i3VAK2Zm7aK+wvLOZcUvUKSz369jfsQYRx52RA=
+			xMREq3xqyyZTCIPQvoi5Wr+i46+vqJWy/Au1bxWtMCA=
 			</data>
 		</dict>
 		<key>Headers/WMWidgetModel.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			L/8Obmhhds+YTsTQRUZKeJ+9wQ7N5LqB3RF8RhJHeho=
+			2cH5nQGBt63o8mh5jquQmjOq/1CzBnpM2h+cZxNFFus=
 			</data>
 		</dict>
 		<key>Headers/WMWidgetSettingModel.h</key>
@@ -882,6 +956,20 @@
 			<key>hash2</key>
 			<data>
 			B/TRu8TpQGLrWN5g0x3MOQOT0Dgjfc298+M6MUAYRDQ=
+			</data>
+		</dict>
+		<key>Headers/WmGlassesMediaCount.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			rqU/sP9WsgA+6fxXEzgq5FhaeLgO4rfDwc2zr8lCOSE=
+			</data>
+		</dict>
+		<key>Headers/WmGlassesStorageInfo.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			VH79/ebbEyN5HDafD8Erw+NvueADoeRbMvB30HxKwr8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

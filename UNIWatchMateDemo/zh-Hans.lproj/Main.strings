@@ -6,7 +6,7 @@
 "Ruw-IF-pk5.normalTitle" = "搜索连接";
 
 /* Class = "UIButton"; configuration.title = "mac地址连接"; ObjectID = "SnB-YG-o2y"; */
-"SnB-YG-o2y.normalTitle" = "mac地址连接";
+"SnB-YG-o2y.normalTitle" = "通过mac地址回连";
 
 /* Class = "UIButton"; configuration.title = "扫码连接"; ObjectID = "sG1-D9-xeW"; */
 "sG1-D9-xeW.normalTitle" = "扫码连接";

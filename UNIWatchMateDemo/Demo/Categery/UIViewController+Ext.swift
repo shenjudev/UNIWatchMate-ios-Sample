@@ -116,7 +116,7 @@ extension UIViewController:UIImagePickerControllerDelegate, UINavigationControll
     
 //    private func openPhotoAlertView() {
 //        let sheet = R.nib.tsAlertSheetView(owner: nil)!
-//        sheet.show(icon: nil, title: R.string.tips.相册访问权限未开启().attributed, alignment: .center, leftTitle: R.string.cusButton.取消(), rightTitle: R.string.cusButton.去设置()) {
+//        sheet.show(icon: nil, title: R.string.tips.相册访问权限未开启().attributed, alignment: .center, leftTitle: "取消".by, rightTitle: "去设置".by) {
 //            
 //        } rightClosure: {
 //            TSBLEPermissions.shared.openAppSettings()
@@ -125,7 +125,7 @@ extension UIViewController:UIImagePickerControllerDelegate, UINavigationControll
 //
 //    private func openCameraAlertView() {
 //        let sheet = R.nib.tsAlertSheetView(owner: nil)!
-//        sheet.show(icon: nil, title: R.string.tips.摄像头权限未开启().attributed, alignment: .center, leftTitle: R.string.cusButton.取消(), rightTitle: R.string.cusButton.去设置()) {
+//        sheet.show(icon: nil, title: R.string.tips.摄像头权限未开启().attributed, alignment: .center, leftTitle: "取消".by, rightTitle: "去设置".by) {
 //            
 //        } rightClosure: {
 //            TSBLEPermissions.shared.openAppSettings()

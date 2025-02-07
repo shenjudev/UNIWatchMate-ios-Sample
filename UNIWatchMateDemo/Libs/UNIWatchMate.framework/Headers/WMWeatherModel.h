@@ -44,6 +44,8 @@ typedef NS_ENUM(NSInteger, WMWeek) {
 @property (nonatomic, strong) NSString *dayDesc;
 /// 夜晚天气描述（night weather description）
 @property (nonatomic, strong) NSString *nightDesc;
+
+@property (nonatomic, assign) NSInteger windScale;
 /// 日期（date）
 @property (nonatomic, strong) NSDate *date;
 @end
@@ -56,6 +58,7 @@ typedef NS_ENUM(NSInteger, WMWeek) {
 @property (nonatomic, assign) CGFloat humidity;
 /// 紫外线指数（ultraviolet index）
 @property (nonatomic, assign) NSInteger uvIndex;
+@property (nonatomic, assign) NSInteger windScale;
 /// 白天天气代码（day weather code）
 @property (nonatomic, assign) NSInteger weatheCode;
 /// 白天天气描述（day weather description）

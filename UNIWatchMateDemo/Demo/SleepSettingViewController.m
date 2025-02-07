@@ -78,14 +78,13 @@
     self.detail.text = @"";
     @weakify(self);
     WMPeripheral *wMPeripheral = [[WatchManager sharedInstance] currentValue];
-    [wMPeripheral settings];
-//    [[[[wMPeripheral settings] sleep] getConfigModel] subscribeNext:^(WMSleepModel * _Nullable x) {
-//        @strongify(self);
-//        self->_wMSleepModel = x;
-//        self.detail.text = [NSString stringWithFormat:@"isEnabled:%d\nstart:%@\nend:%@\n",_wMSleepModel.isEnabled,[x.timeRange.start stringWithFormat:@"HH:mm"],[_wMSleepModel.timeRange.end stringWithFormat:@"HH:mm"]];
-//    } error:^(NSError * _Nullable error) {
-//        
-//    }];
+    [[[[wMPeripheral settings] sleep] getConfigModel] subscribeNext:^(WMSleepModel * _Nullable x) {
+        @strongify(self);
+        self->_wMSleepModel = x;
+        self.detail.text = [NSString stringWithFormat:@"isEnabled:%d\nstart:%@\nend:%@\n",_wMSleepModel.isEnabled,[x.timeRange.start stringWithFormat:@"HH:mm"],[_wMSleepModel.timeRange.end stringWithFormat:@"HH:mm"]];
+    } error:^(NSError * _Nullable error) {
+        
+    }];
 }
 -(void)listen{
     @weakify(self);

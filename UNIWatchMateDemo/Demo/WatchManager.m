@@ -13,7 +13,7 @@
 }
 
 
-// Use static variables to hold singleton instances
+// 使用静态变量来保存单例实例
 static WatchManager *sharedInstance = nil;
 
 + (instancetype)sharedInstance {
@@ -24,38 +24,37 @@ static WatchManager *sharedInstance = nil;
         [sharedInstance.current subscribeNext:^(id value) {
             sharedInstance.currentValue = value;
             sharedInstance.cameraAppDelegate = [CameraAppDelegate new];
+            sharedInstance.glassesAppDelegate = [GlassesAppDelegate new];
             sharedInstance.currentValue.apps.cameraApp.delegate = sharedInstance.cameraAppDelegate;
-            
+            sharedInstance.currentValue.apps.watchGlassesVideoApp.delegate = sharedInstance.glassesAppDelegate;
         }];
-        
-        
     });
     return sharedInstance;
 }
 
 -(NSString *)lastConnectedMac {
-   
+    // 使用 getter 方法从属性中获取值
     _lastConnectedMac = [self retrieveLastConnectedMacFromUserDefaults];
     return _lastConnectedMac;
 }
 
 - (void)setLastConnectedMac:(NSString *)macAddress {
-   
+    // 使用 setter 方法设置属性的值
     _lastConnectedMac = macAddress;
     
-    
+    // 存储到 UserDefaults
     [self saveLastConnectedMacToUserDefaults];
 }
 
 - (void)saveLastConnectedMacToUserDefaults {
-    // Store in UserDefaults
+    // 存储到 UserDefaults
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:_lastConnectedMac forKey:@"LastConnectedMac"];
-    [userDefaults synchronize]; // Prior to iOS 9, you needed to manually invoke the synchronize method
+    [userDefaults synchronize]; // 在iOS 9之前，需要手动调用synchronize方法
 }
 
 - (NSString *)retrieveLastConnectedMacFromUserDefaults {
-    // Retrieves mac addresses from UserDefaults
+    // 从 UserDefaults 中检索 mac 地址
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *macAddress = [userDefaults objectForKey:@"LastConnectedMac"];
     return macAddress;

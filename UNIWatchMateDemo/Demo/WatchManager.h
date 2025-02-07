@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CameraAppDelegate.h"
+#import "GlassesAppDelegate.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WatchManager : NSObject
@@ -15,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) WMPeripheral * currentValue;
 @property (nonatomic, strong) NSString *lastConnectedMac;
 @property (nonatomic, strong) CameraAppDelegate *cameraAppDelegate;
+@property (nonatomic, strong) GlassesAppDelegate *glassesAppDelegate;
 + (instancetype)sharedInstance;
 
 @end

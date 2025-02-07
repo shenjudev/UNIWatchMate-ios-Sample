@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -725,7 +725,7 @@
                                     <action selector="actionSearch:" destination="yOg-8e-UON" eventType="touchUpInside" id="IyK-eF-bB4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sG1-D9-xeW">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sG1-D9-xeW">
                                 <rect key="frame" x="121.33333333333333" y="234" width="150.66666666666669" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Scan to Connect"/>
@@ -735,6 +735,12 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mac:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Le-Je-crz">
                                 <rect key="frame" x="177.66666666666666" y="309" width="38" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="version" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8U4-dO-ZnL">
+                                <rect key="frame" x="170" y="436" width="53" height="72"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -760,6 +766,7 @@
                             <constraint firstItem="nrb-0J-rMj" firstAttribute="leading" secondItem="R2P-qX-IYv" secondAttribute="leading" constant="10" id="5L7-X3-jOr"/>
                             <constraint firstItem="nrb-0J-rMj" firstAttribute="top" secondItem="SnB-YG-o2y" secondAttribute="bottom" constant="20" id="71I-xN-7hi"/>
                             <constraint firstItem="3Le-Je-crz" firstAttribute="top" secondItem="sG1-D9-xeW" secondAttribute="bottom" constant="40" id="89w-j0-ghX"/>
+                            <constraint firstItem="8U4-dO-ZnL" firstAttribute="centerX" secondItem="R2P-qX-IYv" secondAttribute="centerX" id="CSN-ae-Z5p"/>
                             <constraint firstItem="3Le-Je-crz" firstAttribute="centerX" secondItem="lR8-T7-dSb" secondAttribute="centerX" id="EAr-8c-dx4"/>
                             <constraint firstItem="SnB-YG-o2y" firstAttribute="top" secondItem="3Le-Je-crz" secondAttribute="bottom" constant="10" id="ICQ-Mh-Zfx"/>
                             <constraint firstItem="SnB-YG-o2y" firstAttribute="centerX" secondItem="lR8-T7-dSb" secondAttribute="centerX" id="PFF-jn-opk"/>
@@ -767,17 +774,19 @@
                             <constraint firstItem="R2P-qX-IYv" firstAttribute="trailing" secondItem="nrb-0J-rMj" secondAttribute="trailing" constant="10" id="SHb-lo-EbC"/>
                             <constraint firstItem="sG1-D9-xeW" firstAttribute="centerX" secondItem="lR8-T7-dSb" secondAttribute="centerX" id="f6a-LF-y3k"/>
                             <constraint firstItem="sG1-D9-xeW" firstAttribute="top" secondItem="Ruw-IF-pk5" secondAttribute="bottom" constant="40" id="gLv-qO-KJs"/>
+                            <constraint firstItem="R2P-qX-IYv" firstAttribute="bottom" secondItem="8U4-dO-ZnL" secondAttribute="bottom" constant="10" id="h3v-Wr-xVH"/>
                             <constraint firstItem="Ruw-IF-pk5" firstAttribute="top" secondItem="R2P-qX-IYv" secondAttribute="top" constant="100" id="hRH-QD-O5s"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="detailLabel" destination="nrb-0J-rMj" id="R8k-UD-4uP"/>
                         <outlet property="macLabel" destination="3Le-Je-crz" id="83d-NN-Wdl"/>
+                        <outlet property="versionLabel" destination="8U4-dO-ZnL" id="L5J-zj-zgb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vMG-Hc-ZDd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-198" y="-16"/>
+            <point key="canvasLocation" x="-199.23664122137404" y="-16.197183098591552"/>
         </scene>
         <!--Date And Time Synchronized View Controller-->
         <scene sceneID="Oex-PB-O7f">

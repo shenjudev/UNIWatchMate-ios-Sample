@@ -19,17 +19,17 @@ enum TSAlertLevel : Int {
 
 protocol TSAlertProtocol  {
 
-    /// Open a new attempt
+    /// 打开新的试图
     func showAnimation(_ isCreate:Bool)
-    // Popup disappears
+    // 弹窗消失
     func dismiss(commotion:CommonEmptyBlock?)
-    // Get memory address
+    // 获取内存地址
     func getAddress() -> String
-    // Get try to hide or not
+    // 获取试图是否隐藏
     func getCurrentHidden() -> Bool
-    // Gets the level of the current popup
+    // 获取当前弹窗的等级
     func getCurrentLevel() -> TSAlertLevel
-    /// Whether to allow popup display
+    /// 是否允许弹窗显示
     func isShowAlert() -> Bool
 }
 
@@ -37,7 +37,7 @@ protocol TSAlertProtocol  {
 struct TSAlertManagerTools {
     static var shared = TSAlertManagerTools()
     
-    // Whether pop-ups are allowed on the current page
+    // 当前页面是否允许弹窗
     var isAllowAlert:Bool = false {
         didSet {
             if isAllowAlert == true {
@@ -52,42 +52,42 @@ struct TSAlertManagerTools {
 
 extension TSAlertManagerTools {
     mutating func addNewAlertView(_ view:TSAlertProtocol) {
-        // Add target View
+        // 添加目标View
         self.addPopView(view)
         
         self.openLastAlertView(view)
     }
-    //  Remove the view currently in use
+    //  移除当前使用view
     mutating func removeUseAlertView(_ view:TSAlertProtocol) {
-        // Remove target view
+        // 移除目标view
         self.removePopView(view)
         currentObj = nil
         self.openLastAlertView(self.popViews.first)
     }
     
-    // Remove all Views
+    // 移除所有view
     mutating func  removeAllAlertView() {
         currentObj?.dismiss(commotion: nil)
         currentObj = nil
         self.popViews.removeAll()
     }
     
-    // Open current view
+    // 打开当前view
     mutating func openCurrentView() {
         self.openLastAlertView(self.popViews.first)
     }
     
-    // Update the currently selected view
+    // 更新当前选中view
     private mutating func openLastAlertView(_ view:TSAlertProtocol?) {
-        // The popup window cannot pop up
+        // 该弹窗不能弹出
         if view?.isShowAlert() == false && isAllowAlert == false {
             return
         }
-        // Current attempt does not exist, open the next one
+        // 当前试图不存在，打开下一个
         if currentObj == nil {
             currentObj = view
             currentObj?.showAnimation(true)
-        }else{ // Currently trying to be hidden, open hidden
+        }else{ // 当前试图被 hidden ，打开hidden
             if currentObj?.getCurrentHidden() == true {
                 currentObj?.showAnimation(false)
             }
@@ -95,7 +95,7 @@ extension TSAlertManagerTools {
     }
 }
 
-// Update pop queue
+// 更新pop队列
 extension TSAlertManagerTools  {
     
     private mutating func addPopView(_ view:TSAlertProtocol) {
@@ -108,7 +108,7 @@ extension TSAlertManagerTools  {
                     self.popViews.insert(view, at: i)
                     break
                 }else{
-                    // Find the last one, just add it
+                    // 查找到最后一个，直接添加
                     if i == popViews.count - 1 {
                         self.popViews.append(view)
                     }
@@ -124,18 +124,18 @@ extension TSAlertManagerTools  {
     }
 }
 
-// MARK: Open the newbie guided popup window
+// MARK: 打开新手引导的弹窗
 extension TSAlertManagerTools {
 //    func openNewGuideAlertView(_ dType : TSDeviceType, _ completion:CommonEmptyBlock? = nil) {
 //        let isSuportCallBluetooth = TSDeviceSupportTools.isSuportCallBluetooth(dType)
-//        ///Support Bluetooth call -
+//        ///支持蓝牙通话-
 //        if isSuportCallBluetooth {
 //            self.openCallAlertView {
 //                completion?()
 //            }
 //        }
 //        else {
-//            ///Bluetooth calls are not supported - weather Settings
+//            ///不支持蓝牙通话-- 天气设置
 //            self.openOnlyWeatherAlert {
 //                completion?()
 //            }
@@ -144,14 +144,14 @@ extension TSAlertManagerTools {
 //    }
 }
 
-// Novice pilot window
+// 新手引导弹窗
 extension TSAlertManagerTools {
     private func openCallAlertView(_ completion:CommonEmptyBlock? = nil) {
-        // Open the call Bluetooth pop-up window
+        // 打开通话蓝牙弹窗
 //        TSDeviceCallTools.shared.getCallBleStatus { success in
-//            // Address book permission bootstrap
+//            // 通讯录权限引导
 //            TSDeviceCallTools.shared.openGuideContasts { finish in
-//                // Weather authority guidance
+//                // 天气权限引导
 //                TSWeatherTools.shared.openWeartherSwitch { finish in
 //                    completion?()
 //                }
@@ -161,7 +161,7 @@ extension TSAlertManagerTools {
     
     private func openOnlyWeatherAlert(_ completion:CommonEmptyBlock? = nil) {
 
-//        // Weather authority guidance
+//        // 天气权限引导
 //        TSWeatherTools.shared.openWeartherSwitch { _ in
 //            completion?()
 //        }

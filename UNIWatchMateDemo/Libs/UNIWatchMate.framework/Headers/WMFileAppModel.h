@@ -19,7 +19,9 @@ typedef NS_ENUM(NSInteger, WMFileType) {
     // 音乐文件 （Music file）
     WMActivityTypeMUSIC,
     // 电子书文件 （Ebook file）
-    WMActivityTypeTXT
+    WMActivityTypeTXT,
+    // 视频文件 （Video file）
+    WMActivityTypeVIDEO
 };
 
 typedef NS_ENUM(NSInteger, WMCustomDialType) {

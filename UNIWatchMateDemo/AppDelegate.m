@@ -6,7 +6,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "UNIWatchMateDemo-Swift.h"
 @interface AppDelegate ()
 
 @end
@@ -18,23 +18,24 @@
     // Override point for customization after application launch.
     [QuickiOSLogServer start:YES offlineDetectIntervalInSeconds:1];
     XLOG_INFO(@"App launch.");
-
-    [[SJLogInfo sharedInstance] registerLevel: @"DEBUG"];
+//    [[SJLogInfo sharedInstance] registerLevel: @"DEBUG"];
+     [[SJLogInfo sharedInstance] registerLevel: @"INFO"];
     
     [[WMLog sharedInstance] registerLogInfo:[SJLogInfo sharedInstance]];
     [[WMManager sharedInstance] registerWatchMate:[SJWatchFind sharedInstance]];
     
     [[WMLog sharedInstance].log subscribeNext:^(NSString * _Nullable x) {
-        XLOG_INFO(@"SJLogInfo %@",x);
+//        XLOG_INFO(@"SJLogInfo %@",x);
         NSString *log =  [NSString stringWithFormat:@"%@",x];
-        HDNormalLog(log);
+//        SJSJDeviceData("\n\(DateClass.dateToDateString(Date(), dateFormat: "yyyy-MM-dd HH:mm:ss.SSS")) \(string)")
+//        HDNormalLog(log);
     }];
 //    [SVProgressHUD setDefaultMaskType: SVProgressHUDMaskTypeBlack];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     if (@available(iOS 13.0, *)) {
         self.window.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
     }
-    
+    // 其他初始化操作...
     [self.window makeKeyAndVisible];
     return YES;
 }

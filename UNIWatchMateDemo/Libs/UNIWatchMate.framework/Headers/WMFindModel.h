@@ -41,7 +41,7 @@ typedef NS_ENUM(NSInteger , WMPeripheralFormType){
 - (RACSignal<WMPeripheral *> * _Nullable )fromScanQRCode:(NSString *)code uid:(NSString *)uid;
 
 /// 搜索周围可以用的设备 (Search around for available devices)
-- (RACSignal<WMPeripheral *> * _Nullable )fromSearchWithUid:(NSString *)uid;
+- (RACSignal<WMPeripheral *> * _Nullable )fromSearchWithBleNamePrefix:(NSString * _Nullable)name Uid:(NSString *)uid;
 
 /// 停止搜索 (Stop search)
 - (void)stopSearch;

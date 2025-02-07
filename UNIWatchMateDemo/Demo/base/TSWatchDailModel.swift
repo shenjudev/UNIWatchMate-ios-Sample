@@ -11,31 +11,31 @@ import UIKit
 
 //表盘模型，根据供应商微调
 class TSWatchDailModel {
-    var filePath: String = "" //Must be published
+    var filePath: String = "" //必传
     var timeLocation: Int = 0
     var textColorType: Int = 0
     
-    var dailId: String = "" //Must be published
+    var dailId: String = "" //必传
     
     var bgImage: UIImage?
-    // Word graph
+    // 文字图
     var textImage: UIImage?
-    // Text color
+    // 文字颜色
     var textColor: UIColor?
-    // Dial rule
+    // 表盘规则(ZH 18需要)
     var dailRule = false
     
-    //Custom watch face preview diagram (UTE, final preview diagram with all elements displayed)
+    //自定义表盘预览图(UTE，最终预览图包含所有元素显示)
     var bgPreview: UIImage?
-    //Custom dial bin data (UTE, sent to device)
+    //自定义表盘bin数据(UTE，发送到设备)
     var customBinData : Data?
-    //Whether it is a video dial
+    //是否是视频表盘
     var isVideo = false
     init() {
 
     }
     
-    //ZH Wallpaper dial
+    //ZH 壁纸表盘
     init( dailId: String, photo bgImage: UIImage?, textImage: UIImage?, textColor: UIColor?, filePath: String) {
         self.dailId = dailId
         self.bgImage = bgImage
@@ -44,7 +44,7 @@ class TSWatchDailModel {
         self.filePath = filePath
     }
     
-    //ZH Cloud dial
+    //ZH 云表盘
     init(dailId: String, filePath: String) {
         self.dailId = dailId
         self.filePath = filePath

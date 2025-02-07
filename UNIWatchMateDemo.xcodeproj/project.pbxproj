@@ -46,7 +46,21 @@
 		5FF962052AC430B800DFA693 /* ConnectionManagementPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF962042AC430B800DFA693 /* ConnectionManagementPageViewController.m */; };
 		5FF962082AC43D0E00DFA693 /* WatchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF962072AC43D0E00DFA693 /* WatchManager.m */; };
 		5FFAC1482AD91DFD006B68CF /* CameraAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFAC1472AD91DFD006B68CF /* CameraAppDelegate.m */; };
-		B537F4A82BA941750094DE80 /* FeaturesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B537F4A72BA941750094DE80 /* FeaturesViewController.m */; };
+		B589C8462D55BE78009A91CA /* GlassesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B589C83E2D55BE78009A91CA /* GlassesAppDelegate.m */; };
+		B589C8472D55BE78009A91CA /* RecordVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589C8412D55BE78009A91CA /* RecordVideoVC.swift */; };
+		B589C8482D55BE78009A91CA /* GetDiskSpaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589C83C2D55BE78009A91CA /* GetDiskSpaceVC.swift */; };
+		B589C8492D55BE78009A91CA /* WatchVideoPreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589C8432D55BE78009A91CA /* WatchVideoPreviewVC.swift */; };
+		B589C84A2D55BE78009A91CA /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589C8442D55BE78009A91CA /* PaddingLabel.swift */; };
+		B589C84B2D55BE78009A91CA /* MediaCountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589C83F2D55BE78009A91CA /* MediaCountVC.swift */; };
+		B589C84C2D55BE78009A91CA /* TakePhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589C8422D55BE78009A91CA /* TakePhotoVC.swift */; };
+		B589C84D2D55BE78009A91CA /* AiChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589C83B2D55BE78009A91CA /* AiChatVC.swift */; };
+		B589C84E2D55BE78009A91CA /* RecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589C8402D55BE78009A91CA /* RecordVC.swift */; };
+		B589C85F2D55BF01009A91CA /* VideoDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589C85E2D55BF01009A91CA /* VideoDecoder.swift */; };
+		B589C8602D55BF01009A91CA /* SJSyncTimeLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589C8592D55BF01009A91CA /* SJSyncTimeLog.swift */; };
+		B589C8612D55BF01009A91CA /* SJLogBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589C85A2D55BF01009A91CA /* SJLogBase.swift */; };
+		B589C8622D55BF01009A91CA /* SJLogTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589C85C2D55BF01009A91CA /* SJLogTool.swift */; };
+		B589C8652D55BF5D009A91CA /* opus-ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B589C8632D55BF5A009A91CA /* opus-ios.framework */; platformFilter = ios; };
+		B589C8662D55BF5D009A91CA /* opus-ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B589C8632D55BF5A009A91CA /* opus-ios.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B5CF8FD32BA947970074E221 /* h264encoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CF8FCC2BA947920074E221 /* h264encoder.framework */; platformFilter = ios; };
 		B5CF8FD42BA947970074E221 /* h264encoder.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5CF8FCC2BA947920074E221 /* h264encoder.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B5CF8FD62BA947980074E221 /* SJWatchLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CF8FCD2BA947920074E221 /* SJWatchLib.framework */; platformFilter = ios; };
@@ -108,6 +122,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				B5CF8FD92BA947990074E221 /* UNIWatchMate.framework in Embed Frameworks */,
+				B589C8662D55BF5D009A91CA /* opus-ios.framework in Embed Frameworks */,
 				B5CF8FD42BA947970074E221 /* h264encoder.framework in Embed Frameworks */,
 				B5CF8FD72BA947980074E221 /* SJWatchLib.framework in Embed Frameworks */,
 			);
@@ -198,8 +213,21 @@
 		5FFAC1462AD91DFD006B68CF /* CameraAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraAppDelegate.h; sourceTree = "<group>"; };
 		5FFAC1472AD91DFD006B68CF /* CameraAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraAppDelegate.m; sourceTree = "<group>"; };
 		73959BDAF331E975138356DF /* Pods-UNIWatchMateDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIWatchMateDemo.release.xcconfig"; path = "Target Support Files/Pods-UNIWatchMateDemo/Pods-UNIWatchMateDemo.release.xcconfig"; sourceTree = "<group>"; };
-		B537F4A62BA941750094DE80 /* FeaturesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeaturesViewController.h; sourceTree = "<group>"; };
-		B537F4A72BA941750094DE80 /* FeaturesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeaturesViewController.m; sourceTree = "<group>"; };
+		B589C83B2D55BE78009A91CA /* AiChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiChatVC.swift; sourceTree = "<group>"; };
+		B589C83C2D55BE78009A91CA /* GetDiskSpaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDiskSpaceVC.swift; sourceTree = "<group>"; };
+		B589C83D2D55BE78009A91CA /* GlassesAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlassesAppDelegate.h; sourceTree = "<group>"; };
+		B589C83E2D55BE78009A91CA /* GlassesAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlassesAppDelegate.m; sourceTree = "<group>"; };
+		B589C83F2D55BE78009A91CA /* MediaCountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCountVC.swift; sourceTree = "<group>"; };
+		B589C8402D55BE78009A91CA /* RecordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordVC.swift; sourceTree = "<group>"; };
+		B589C8412D55BE78009A91CA /* RecordVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordVideoVC.swift; sourceTree = "<group>"; };
+		B589C8422D55BE78009A91CA /* TakePhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePhotoVC.swift; sourceTree = "<group>"; };
+		B589C8432D55BE78009A91CA /* WatchVideoPreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchVideoPreviewVC.swift; sourceTree = "<group>"; };
+		B589C8442D55BE78009A91CA /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		B589C8592D55BF01009A91CA /* SJSyncTimeLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SJSyncTimeLog.swift; sourceTree = "<group>"; };
+		B589C85A2D55BF01009A91CA /* SJLogBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SJLogBase.swift; sourceTree = "<group>"; };
+		B589C85C2D55BF01009A91CA /* SJLogTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SJLogTool.swift; sourceTree = "<group>"; };
+		B589C85E2D55BF01009A91CA /* VideoDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDecoder.swift; sourceTree = "<group>"; };
+		B589C8632D55BF5A009A91CA /* opus-ios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "opus-ios.framework"; sourceTree = "<group>"; };
 		B5CF8FCC2BA947920074E221 /* h264encoder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = h264encoder.framework; sourceTree = "<group>"; };
 		B5CF8FCD2BA947920074E221 /* SJWatchLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SJWatchLib.framework; sourceTree = "<group>"; };
 		B5CF8FCE2BA947920074E221 /* UNIWatchMate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UNIWatchMate.framework; sourceTree = "<group>"; };
@@ -264,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5CF8FD82BA947990074E221 /* UNIWatchMate.framework in Frameworks */,
+				B589C8652D55BF5D009A91CA /* opus-ios.framework in Frameworks */,
 				B5CF8FD32BA947970074E221 /* h264encoder.framework in Frameworks */,
 				D7135A8BBE24884BB6DAFEEE /* Pods_UNIWatchMateDemo.framework in Frameworks */,
 				B5CF8FD62BA947980074E221 /* SJWatchLib.framework in Frameworks */,
@@ -284,6 +313,10 @@
 		5F04AD892AF0B26600348A38 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				B589C8592D55BF01009A91CA /* SJSyncTimeLog.swift */,
+				B589C85B2D55BF01009A91CA /* TSLogs */,
+				B589C85D2D55BF01009A91CA /* TSLogTool */,
+				B589C85E2D55BF01009A91CA /* VideoDecoder.swift */,
 				5F04AD8A2AF0B28900348A38 /* NSDictionary+JSONDescription.h */,
 				5F04AD8B2AF0B28900348A38 /* NSDictionary+JSONDescription.m */,
 			);
@@ -324,8 +357,16 @@
 		5FF961ED2AC427DC00DFA693 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				B537F4A62BA941750094DE80 /* FeaturesViewController.h */,
-				B537F4A72BA941750094DE80 /* FeaturesViewController.m */,
+				B589C83B2D55BE78009A91CA /* AiChatVC.swift */,
+				B589C83C2D55BE78009A91CA /* GetDiskSpaceVC.swift */,
+				B589C83D2D55BE78009A91CA /* GlassesAppDelegate.h */,
+				B589C83E2D55BE78009A91CA /* GlassesAppDelegate.m */,
+				B589C83F2D55BE78009A91CA /* MediaCountVC.swift */,
+				B589C8402D55BE78009A91CA /* RecordVC.swift */,
+				B589C8412D55BE78009A91CA /* RecordVideoVC.swift */,
+				B589C8422D55BE78009A91CA /* TakePhotoVC.swift */,
+				B589C8432D55BE78009A91CA /* WatchVideoPreviewVC.swift */,
+				B589C8452D55BE78009A91CA /* Widget */,
 				D71481D02B973CA900C3CB63 /* UNIWatchMateDemo-Bridging-Header.h */,
 				D714818F2B97399D00C3CB63 /* base */,
 				D71481A02B97399E00C3CB63 /* Categery */,
@@ -415,9 +456,34 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B589C8452D55BE78009A91CA /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				B589C8442D55BE78009A91CA /* PaddingLabel.swift */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
+		B589C85B2D55BF01009A91CA /* TSLogs */ = {
+			isa = PBXGroup;
+			children = (
+				B589C85A2D55BF01009A91CA /* SJLogBase.swift */,
+			);
+			path = TSLogs;
+			sourceTree = "<group>";
+		};
+		B589C85D2D55BF01009A91CA /* TSLogTool */ = {
+			isa = PBXGroup;
+			children = (
+				B589C85C2D55BF01009A91CA /* SJLogTool.swift */,
+			);
+			path = TSLogTool;
+			sourceTree = "<group>";
+		};
 		B5CF8FCF2BA947920074E221 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				B589C8632D55BF5A009A91CA /* opus-ios.framework */,
 				B5CF8FCC2BA947920074E221 /* h264encoder.framework */,
 				B5CF8FCD2BA947920074E221 /* SJWatchLib.framework */,
 				B5CF8FCE2BA947920074E221 /* UNIWatchMate.framework */,
@@ -648,8 +714,11 @@
 				D71481C72B97399E00C3CB63 /* String+Ext.swift in Sources */,
 				D71481B22B97399E00C3CB63 /* TSAlertSheetView.swift in Sources */,
 				D71481B72B97399E00C3CB63 /* EFHSBView.swift in Sources */,
+				B589C85F2D55BF01009A91CA /* VideoDecoder.swift in Sources */,
+				B589C8602D55BF01009A91CA /* SJSyncTimeLog.swift in Sources */,
+				B589C8612D55BF01009A91CA /* SJLogBase.swift in Sources */,
+				B589C8622D55BF01009A91CA /* SJLogTool.swift in Sources */,
 				5FE994792AE112F40052851E /* AlarmsViewController.m in Sources */,
-				B537F4A82BA941750094DE80 /* FeaturesViewController.m in Sources */,
 				D71481CA2B97399E00C3CB63 /* Array+Ext.swift in Sources */,
 				5FF962082AC43D0E00DFA693 /* WatchManager.m in Sources */,
 				D71481C92B97399E00C3CB63 /* UISwitch+Ext.swift in Sources */,
@@ -709,6 +778,15 @@
 				D71481CC2B97399E00C3CB63 /* UIViewController+Ext.swift in Sources */,
 				5FFAC1482AD91DFD006B68CF /* CameraAppDelegate.m in Sources */,
 				5F54C5D42AE6714A0090596F /* FindDeviceViewController.m in Sources */,
+				B589C8462D55BE78009A91CA /* GlassesAppDelegate.m in Sources */,
+				B589C8472D55BE78009A91CA /* RecordVideoVC.swift in Sources */,
+				B589C8482D55BE78009A91CA /* GetDiskSpaceVC.swift in Sources */,
+				B589C8492D55BE78009A91CA /* WatchVideoPreviewVC.swift in Sources */,
+				B589C84A2D55BE78009A91CA /* PaddingLabel.swift in Sources */,
+				B589C84B2D55BE78009A91CA /* MediaCountVC.swift in Sources */,
+				B589C84C2D55BE78009A91CA /* TakePhotoVC.swift in Sources */,
+				B589C84D2D55BE78009A91CA /* AiChatVC.swift in Sources */,
+				B589C84E2D55BE78009A91CA /* RecordVC.swift in Sources */,
 				5FC311852AE768B700635E56 /* ExerciseGoalViewController.m in Sources */,
 				5FE03CE82AD7922100E60C76 /* DialManagerViewController.m in Sources */,
 				5FC3118B2AE77EC300635E56 /* DatePickerViewController.m in Sources */,

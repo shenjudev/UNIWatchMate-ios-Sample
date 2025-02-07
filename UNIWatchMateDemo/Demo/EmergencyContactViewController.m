@@ -24,7 +24,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        // Create button 1
+        // 创建按钮1
         _selectContacts = [UIButton buttonWithType:UIButtonTypeSystem];
         self.selectContacts.translatesAutoresizingMaskIntoConstraints = NO;
         [self.selectContacts setBackgroundColor:[UIColor blueColor]];
@@ -34,7 +34,7 @@
         self.selectContacts.layer.masksToBounds = YES;
         [self addSubview:self.selectContacts];
 
-        // Create button 2
+        // 创建按钮2
         _syncBtn = [UIButton buttonWithType:UIButtonTypeSystem];
         self.syncBtn.translatesAutoresizingMaskIntoConstraints = NO;
         [self.syncBtn setBackgroundColor:[UIColor blueColor]];
@@ -44,7 +44,7 @@
         self.syncBtn.layer.masksToBounds = YES;
         [self addSubview:self.syncBtn];
 
-        //Use Auto Layout to lay out buttons 1 and 2
+        // 使用Auto Layout布局按钮1和按钮2
         [self.selectContacts.leadingAnchor constraintEqualToAnchor:self.leadingAnchor constant:16].active = YES;
         [self.selectContacts.trailingAnchor constraintEqualToAnchor:self.trailingAnchor constant:-16].active = YES;
         [self.selectContacts.topAnchor constraintEqualToAnchor:self.topAnchor constant:16].active = YES;
@@ -65,10 +65,10 @@
 
 @interface EmergencyContactViewController ()<UITableViewDataSource, UITableViewDelegate,CNContactPickerDelegate>
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSArray<CNContact *> *contacts; // Store an array of contacts
+@property (nonatomic, strong) NSArray<CNContact *> *contacts; // 存储联系人的数组
 @property (nonatomic, strong) UIView *tableViewFooter;
 @property (nonatomic, strong) EmergencyContactFooter *tableViewFooterView;
-@property (nonatomic, strong) NSMutableArray *currentsValue; // Used to save the latest values
+@property (nonatomic, strong) NSMutableArray *currentsValue; // 用于保存最新的值
 
 @end
 
@@ -159,7 +159,7 @@
         [view removeFromSuperview];
     }
 
-    // Create delete button
+    // 创建删除按钮
     UIButton *deleteButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [deleteButton setTitle:NSLocalizedString(@"delete", nil) forState:UIControlStateNormal];
     [deleteButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -170,7 +170,7 @@
     [deleteButton addTarget:self action:@selector(deleteButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
 
 
-    // Create switch
+    // 创建开关
     UISwitch *switchView = [[UISwitch alloc] init];
     [switchView setOn:contact.isEnable];
     switchView.tag = indexPath.row + 1000;
@@ -178,19 +178,19 @@
 
 
 
-    // Layout switch and delete button
-    CGFloat buttonWidth = 60; // Button width
+    // 布局开关和删除按钮
+    CGFloat buttonWidth = 60; // 按钮宽度
     CGFloat cellWidth = CGRectGetWidth(self.view.frame);
 
-    // Calculate the location of the delete button
+    // 计算删除按钮的位置
     CGRect deleteButtonFrame = CGRectMake(cellWidth - buttonWidth - 10, 10, buttonWidth, 30);
     deleteButton.frame = deleteButtonFrame;
 
-    // Calculate the position of the switch
+    // 计算开关的位置
     CGRect switchFrame = CGRectMake(cellWidth - 2 * buttonWidth - 10, 10, buttonWidth, 30);
     switchView.frame = switchFrame;
 
-    // Add switches and delete buttons to cells
+    // 将开关和删除按钮添加到单元格
     [cell.contentView addSubview:switchView];
     [cell.contentView addSubview:deleteButton];
 
@@ -304,17 +304,17 @@
 }
 
 - (void)contactPickerDidCancel:(CNContactPickerViewController *)picker {
-    // The user deselected the contact
+    // 用户取消了联系人选择
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(NSString *)firstPhoneNumber:(CNContact*)contact{
     NSArray<CNLabeledValue<CNPhoneNumber *> *> *phoneNumbers = contact.phoneNumbers;
     for (CNLabeledValue<CNPhoneNumber *> *phoneNumber in phoneNumbers) {
-        // Get phone number labels (e.g., work, home, etc.)
+        // 获取电话号码标签（例如：工作、家庭等）
         NSString *label = [CNLabeledValue localizedStringForLabel:phoneNumber.label];
 
-        // Gets a phone number string
+        // 获取电话号码字符串
         CNPhoneNumber *number = phoneNumber.value;
         NSString *phoneNumberString = [number stringValue];
 

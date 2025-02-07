@@ -101,9 +101,11 @@
 }
 
 - (void)selectDay:(UIButton *)sender {
+    // 处理选择按钮的点击事件，可以根据按钮的tag属性来确定选择的是哪一天
     NSInteger selectedDayTag = sender.tag;
     NSLog(@"选中了第 %ld 天", (long)selectedDayTag);
     
+    // 如果需要在按钮之间切换选择状态，可以在这里进行状态切换
     sender.selected = !sender.selected;
 }
 
@@ -116,15 +118,20 @@
     self.uiScrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
     self.uiScrollView.backgroundColor = [UIColor whiteColor];
 
+    // 假设我们要滚动的内容高度是900
     self.uiScrollView.contentSize = CGSizeMake(self.view.bounds.size.width, 800);
     self.uiScrollView.delegate = self;
     [self.view addSubview:self.uiScrollView];
+    // 确保子视图允许用户交互
        self.uiScrollView.userInteractionEnabled = YES;
 
+       // 创建 UITapGestureRecognizer 实例
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollViewTapped:)];
-    tapRecognizer.cancelsTouchesInView = NO;
+    tapRecognizer.cancelsTouchesInView = NO; // 确保触摸事件可以继续传递给子视图
     [self.uiScrollView addGestureRecognizer:tapRecognizer];
+    // 现在可以在scrollView上添加其他视图，如UILabels, UIImageViews等
     
+    // 创建和布局页面元素，包括文本字段、日期选择器和开关
     _nameTip = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, CGRectGetWidth(self.view.frame) - 40, 30)];
     _nameTip.text = NSLocalizedString(@"Name", nil);
     [self.uiScrollView addSubview:_nameTip];
@@ -153,6 +160,7 @@
     self.openSwitch = [[UISwitch alloc] initWithFrame:CGRectMake(120, 340, 100, 40)];
     [self.uiScrollView addSubview:self.openSwitch];
     
+    // 设置页面元素的初始值为从 alarmModel 中获取的值
     self.nameTextField.text = self.alarmModel.alarmName;
     
     NSDateComponents *components = [[NSDateComponents alloc] init];
@@ -192,7 +200,7 @@
     [self reloadRepeatOpions];
 }
 - (void)scrollViewTapped:(UITapGestureRecognizer *)tapGestureRecognizer {
-    // When UIScrollView is clicked, end the editing to close the keyboard
+    // 当 UIScrollView 被点击时，结束编辑以关闭键盘
     [self.view endEditing:YES];
 }
 
@@ -205,7 +213,7 @@
         [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Alarms name cannot be empty", nil)];
         return;
     }
-    // When the user clicks the Save button, gets and saves the new value of the page element into the alarmModel
+    // 当用户点击保存按钮时，获取并保存页面元素的新值到 alarmModel 中
     WMAlarmModel *model = [[WMAlarmModel alloc] init];
     model.alarmName = self.nameTextField.text;
     
@@ -214,7 +222,7 @@
     model.alarmMinute = [components minute];
     model.isOn = self.openSwitch.isOn;
     model.repeatOptions =  [self currentRepeatOpions];
-    // To handle the add button click event, you can add new alarm data to the self.alarms array
+    // 处理添加按钮点击事件，可以添加新的闹钟数据到self.alarms数组
     model.identifier = (self.alarmModel.identifier == nil ? 0:self.alarmModel.identifier);
     
     [SVProgressHUD showWithStatus:nil];
@@ -257,20 +265,20 @@
 {
     [self.view endEditing:YES];
 }
-// Creates a method to convert colors to images
+// 创建一个方法，将颜色转换为图像
 - (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size {
-    // Create a graphic context
+    // 创建一个图形上下文
     UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    // Fill color
+    // 填充颜色
     [color setFill];
     CGContextFillRect(context, CGRectMake(0, 0, size.width, size.height));
     
-    // Get an image from a graphic context
+    // 从图形上下文中获取图像
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     
-    // End graphic context
+    // 结束图形上下文
     UIGraphicsEndImageContext();
     
     return image;
@@ -291,7 +299,7 @@
 -(NSInteger)currentRepeatOpions{
     NSInteger repeatOptions = 0;
     
-    // Check the selection status of each button and merge it into repeatOptions
+    // 检查每个按钮的选择状态并合并到repeatOptions中
     if (self.mondayBtn.isSelected == YES) {
         repeatOptions |= WMAlarmRepeatMonday;
     }
@@ -314,7 +322,7 @@
         repeatOptions |= WMAlarmRepeatSunday;
     }
     
-    // repeatOptions The bit flags corresponding to all selected buttons are now included
+    // repeatOptions 现在包含了所有选中的按钮对应的位标志
     return repeatOptions;
 }
 @end

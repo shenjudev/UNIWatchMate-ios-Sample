@@ -26,20 +26,20 @@ class TSAlertSheetView: UIView ,TSAlertProtocol {
     
     
     typealias Closure = () -> Void
-    // Whether you can click to remove pop-ups
+    // 是否可以点击移除弹窗
     var isClickRemove : Bool = false  {
         didSet {
             self.addRemoveTap()
         }
     }
     
-    // Whether the popup window can be opened directly
+    // 弹窗是否可以直接打开
     var isShow:Bool = true
-    // Does not add to the popup list
+    // 不添加到弹窗列表
     var isNoAddAlertList:Bool = false
-    /// Cancel callback
+    /// 取消回调
     var cancelClosure: Closure?
-    /// Definite callback
+    /// 确定回调
     var okClosure: Closure?
 }
 

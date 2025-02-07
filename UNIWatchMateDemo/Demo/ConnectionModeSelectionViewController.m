@@ -11,6 +11,7 @@
 @interface ConnectionModeSelectionViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *macLabel;
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *versionLabel;
 
 @end
 
@@ -30,7 +31,50 @@
     NSString *formattedMessage = [NSString stringWithFormat:logMessage, GCDTCPServerGetPrimaryIPAddress(false), 8080];
     
     self.detailLabel.text = formattedMessage;
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    // 获取发布版本号
+    NSString *shortVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    
+    // 获取构建版本号
+    NSString *buildVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
+    NSString *fullVersion = [NSString stringWithFormat:@"version:%@(%@)", shortVersion, buildVersion];
+    
+    NSLog(@"App Short Version: %@", shortVersion);
+    NSLog(@"App Build Version: %@", buildVersion);
+    
+    self.versionLabel.text = fullVersion;
+    //    NSString *lastConnectedMac = [WatchManager sharedInstance].lastConnectedMac;
+    if (lastConnectedMac == nil){
+        lastConnectedMac = @"";
+    }
+    if (lastConnectedMac == nil || [lastConnectedMac length] == 0){
+        return;
+    }
+    
+    BOOL isUserLoggedIn = [defaults boolForKey:shouldAutoReconnect];
+    if (isUserLoggedIn) {
+        XLOG_INFO(@"通过mac地址回连");
+        [SVProgressHUD showInfoWithStatus:  NSLocalizedString(@"通过mac地址回连", nil)];
+        [self connectDeviceByMac: lastConnectedMac];
+    }
 }
+
+//- (void)viewDidAppear:(BOOL)animated {
+//    XLOG_INFO(@"通过mac地址回连");
+//    NSString *lastConnectedMac = [WatchManager sharedInstance].lastConnectedMac;
+//    if (lastConnectedMac == nil){
+//        lastConnectedMac = @"";
+//    }
+//    if (lastConnectedMac == nil || [lastConnectedMac length] == 0){
+//        return;
+//    }
+//    [SVProgressHUD showInfoWithStatus:  NSLocalizedString(@"通过mac地址回连", nil)];
+//    [self connectDeviceByMac: lastConnectedMac];
+//
+//}
+
 
 /*
  #pragma mark - Navigation
@@ -41,18 +85,21 @@
  // Pass the selected object to the new view controller.
  }
  */
+
 - (IBAction)actionSearch:(id)sender {
     
     ConnectionManagementPageViewController *connectionManagementPageViewController = [ConnectionManagementPageViewController new];
-    [connectionManagementPageViewController connectDeviceBySearchProductType:@"OSW-802N"];
+    [connectionManagementPageViewController connectDeviceBySearchProductType:@""];
     connectionManagementPageViewController.title = NSLocalizedString(@"Connection management page", nil);
     [self.navigationController pushViewController:connectionManagementPageViewController animated:true];
 }
+
 - (IBAction)actionScan:(id)sender {
-    UIViewController *viewController = [ScanQRCodeConnectionViewController new];
-    viewController.title = NSLocalizedString(@"Scan QR code connection", nil);
-    [self.navigationController pushViewController:viewController animated:true];
+    //    UIViewController *viewController = [ScanQRCodeConnectionViewController new];
+    //    viewController.title = NSLocalizedString(@"Scan QR code connection", nil);
+    //    [self.navigationController pushViewController:viewController animated:true];
 }
+
 - (IBAction)actionByMac:(id)sender {
     
     NSString *lastConnectedMac = [WatchManager sharedInstance].lastConnectedMac;
@@ -60,6 +107,10 @@
         [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Last connected mac is nil.", nil)];
         return;
     }
+    [self connectDeviceByMac:lastConnectedMac];
+}
+
+- (void)connectDeviceByMac:(NSString *)lastConnectedMac{
     ConnectionManagementPageViewController *connectionManagementPageViewController = [ConnectionManagementPageViewController new];
     [connectionManagementPageViewController connectDeviceByMac:lastConnectedMac productType:@"OSW-802N"];
     connectionManagementPageViewController.title = NSLocalizedString(@"Connection management page", nil);

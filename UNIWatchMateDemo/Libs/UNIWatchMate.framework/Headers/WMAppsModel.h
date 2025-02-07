@@ -16,6 +16,9 @@
 #import "WMFindAppModel.h"
 #import "WMCameraAppModel.h"
 #import "WMNavigationAppModel.h"
+#import "WMMusilinAppModel.h"
+#import "WMGlassesVideoModel.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -40,8 +43,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) WMFindAppModel *findApp;
 /// 相机 （Camera）
 @property (nonatomic, strong) WMCameraAppModel *cameraApp;
+/// 手表视频预览 （Watch Video Preview）
+@property (nonatomic, strong) WMGlassesVideoModel *watchGlassesVideoApp;
 /// 导航 （Navigation）
 @property (nonatomic, strong) WMNavigationAppModel *navigationApp;
+
+@property (nonatomic, strong) WMMusilinAppModel *musilinApp;
 @end
 
 NS_ASSUME_NONNULL_END

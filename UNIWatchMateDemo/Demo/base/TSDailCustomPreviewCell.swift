@@ -13,10 +13,10 @@ class TSLoopVideoView: UIView {
     private var player: AVPlayer?
     private var playerLayer: AVPlayerLayer?
 
-    // Setting up the video player
+    // 设置视频播放器
     func setupVideoPlayer(url: URL) {
         self.playerLayer?.removeFromSuperlayer()
-        // Create player
+        // 创建播放器
         player = AVPlayer(url: url)
         player?.volume = 0
         playerLayer = AVPlayerLayer(player: player)
@@ -26,7 +26,7 @@ class TSLoopVideoView: UIView {
             self.layer.addSublayer(layer)
         }
 
-        // Loop the notification
+        // 循环播放的通知
         NotificationCenter.default.removeObserver(self)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(loopVideo),
@@ -35,30 +35,30 @@ class TSLoopVideoView: UIView {
         self.play()
     }
 
-    // Update the frame of the player layer when the view layout changes
+    // 视图布局变化时更新播放器图层的frame
     override func layoutSubviews() {
         super.layoutSubviews()
         playerLayer?.frame = self.bounds
     }
     
-    // Loop the video when it ends
+    // 视频播放结束时循环播放
     @objc func loopVideo() {
         player?.seek(to: .zero)
         player?.play()
     }
 
-    // Start playing video
+    // 开始播放视频
     func play() {
         player?.play()
     }
 
-    // Stop playing video
+    // 停止播放视频
     func stop() {
         player?.pause()
         player?.seek(to: .zero)
     }
 
-    // Remove notification upon destruction
+    // 销毁时移除通知
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
@@ -103,7 +103,7 @@ extension TSDailCustomPreviewView {
 
         let top = 40.0
         let width = 120.0
-        let height = 140.0
+        let height = 144.75
         var cornerRadius = TSDeviceDialTools.shared.getcornerRadii()
 //        switch dailStyle {
 //        case .square:
@@ -202,7 +202,7 @@ extension TSDailCustomPreviewCell {
     }
 }
 
-// MARK: Custom dial group header
+// MARK: 自定义表盘组头
 class TSDailCustomHeadView: UICollectionReusableView {
     lazy var titleLB:UILabel = UILabel.init(text: "Custom Background", textColor: .color000000, font: .medium16())
     
@@ -222,7 +222,7 @@ class TSDailCustomHeadView: UICollectionReusableView {
     }
 }
 
-// MARK: Customize the dial background
+// MARK: 自定义表盘背景
 class TSDailCustomBgCell: UICollectionViewCell {
     lazy var dialBgIcon:UIImageView = UIImageView(image: UIImage(named: "ic_dail_add"))
     lazy var tihuanIcon:UIImageView = UIImageView.init(image: UIImage(named: "ic_dail_tihuan"))
@@ -268,7 +268,7 @@ class TSDailCustomBgCell: UICollectionViewCell {
     }
 }
 
-// MARK: Custom dial time format horizontal scrolling
+// MARK: 自定义表盘时间格式横向滚动
 class TSDailCustomCollectionTimeStyleCell: UICollectionViewCell, UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout.init()
@@ -338,7 +338,7 @@ class TSDailCustomCollectionTimeStyleCell: UICollectionViewCell, UICollectionVie
 }
 
 
-// MARK: Customize the dial font color
+// MARK: 自定义表盘字体颜色
 
 class TSDailCustomTimeStyleCell: UICollectionViewCell {
     
@@ -412,7 +412,7 @@ extension TSDailCustomTimeStyleCell {
 }
 
 
-// MARK: Customize the dial font color
+// MARK: 自定义表盘字体颜色
 
 class TSDailCustomFontColorCell: UICollectionViewCell {
     

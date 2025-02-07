@@ -18,23 +18,23 @@ extension UIImageView {
 
 extension UIImage {
     
-    /// Crop the picture with rounded corners
-    /// - Parameter radius: 0000
-    /// - Returns: The cropped image
+    /// 裁剪图片为圆角
+    /// - Parameter radius: 圆角大小
+    /// - Returns: 裁剪后的图片
     func cornerWithRadius(_ radius : CGFloat = 25) -> UIImage? {
         let size = self.size
-        //Open graphics context
+        //开启图形上下文
          UIGraphicsBeginImageContext(size)
         let context = UIGraphicsGetCurrentContext()
         
-        //Draw rounded rectangles
+        //绘制圆角矩形
         let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         let path = UIBezierPath(roundedRect: rect, byRoundingCorners: .allCorners, cornerRadii: CGSize(width: radius, height: radius))
-        //Add Path to the context
+        //将Path添加到上下文中
         context?.addPath(path.cgPath)
-        //Crop context
+        //裁剪上下文
         context?.clip()
-        //Draw the picture into context
+        //将图片绘制到上下文中
         draw(in: rect)
         context?.drawPath(using: .stroke)
         let output = UIGraphicsGetImageFromCurrentImageContext()

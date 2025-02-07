@@ -91,7 +91,7 @@
     [super viewDidLoad];
     self.title = NSLocalizedString(@"Sports manger",nil);
 
-    // Gets the code that applies the current language
+    // 获取应用当前语言的代码
     self.currentLanguageCode = [[NSLocale preferredLanguages] firstObject];
     NSLog(@"Current Language Code: %@", self.currentLanguageCode);
 
@@ -138,36 +138,36 @@
 
     NSArray *deviceSportInfos = [self loadSportsFromJSONFile];
 //
-//    // Creates a variable array to hold the results
+//    // 创建一个用于存放结果的可变数组
 //    NSMutableArray<SJSport *> *result = [NSMutableArray array];
 //
-    // Traverse the x array
+    // 遍历x数组
 
     for (NSNumber *number in fixeds) {
-        // Search the deviceSportInfos array for SJSport objects with matching sportId
+        // 在deviceSportInfos数组中搜索具有匹配sportId的SJSport对象
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"sportId == %@", number];
         NSArray<SJSport *> *filtered = [deviceSportInfos filteredArrayUsingPredicate:predicate];
-        // If a match is found, it is added to the result array
+        // 如果找到匹配的对象，将其添加到结果数组中
         if (filtered.count > 0) {
             [fixedSJSports addObject:filtered.firstObject];
         }
     }
     for (NSNumber *number in variables) {
-        // Search the deviceSportInfos array for SJSport objects with matching sportId
+        // 在deviceSportInfos数组中搜索具有匹配sportId的SJSport对象
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"sportId == %@", number];
         NSArray<SJSport *> *filtered = [deviceSportInfos filteredArrayUsingPredicate:predicate];
-        // If a match is found, it is added to the result array
+        // 如果找到匹配的对象，将其添加到结果数组中
         if (filtered.count > 0) {
             [variableSJSports addObject:filtered.firstObject];
         }
     }
     for (NSNumber *number in supporteds) {
-        // Search the deviceSportInfos array for SJSport objects with matching sportId
+        // 在deviceSportInfos数组中搜索具有匹配sportId的SJSport对象
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"sportId == %@", number];
         NSArray<SJSport *> *filtered = [deviceSportInfos filteredArrayUsingPredicate:predicate];
         NSArray<SJSport *> *fixedFiltered = [fixedSJSports filteredArrayUsingPredicate:predicate];
         NSArray<SJSport *> *variableFiltered = [variableSJSports filteredArrayUsingPredicate:predicate];
-        // If a match is found, it is added to the result array
+        // 如果找到匹配的对象，将其添加到结果数组中
         if (filtered.count > 0 && fixedFiltered.count == 0 && variableFiltered.count == 0) {
             [supportSJSports addObject:filtered.firstObject];
         }
@@ -190,7 +190,7 @@
         self.tableView.separatorInset = UIEdgeInsetsZero;
         self.tableView.layoutMargins = UIEdgeInsetsZero;
         [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
-        _tableView.editing = YES; // Start edit mode
+        _tableView.editing = YES; // 启动编辑模式
     }
     return _tableView;
 }
@@ -268,7 +268,7 @@
     }
     
     if (indexPath.section != 0){
-        // Create delete button
+        // 创建删除按钮
         UIButton *deleteButton = [UIButton buttonWithType:UIButtonTypeCustom];
         if (indexPath.section == 1){
             [deleteButton setTitle:NSLocalizedString(@"delete", nil) forState:UIControlStateNormal];
@@ -283,11 +283,11 @@
         [deleteButton setBackgroundColor:[UIColor redColor]];
         deleteButton.tag = indexPath.row + 100;
         
-        // Layout switch and delete button
-        CGFloat buttonWidth = 60; // Button width
+        // 布局开关和删除按钮
+        CGFloat buttonWidth = 60; // 按钮宽度
         CGFloat cellWidth = CGRectGetWidth(self.view.frame);
         
-        // Calculate the location of the delete button
+        // 计算删除按钮的位置
         CGRect deleteButtonFrame = CGRectMake(cellWidth -  buttonWidth - 50, 10, buttonWidth, 30);
         deleteButton.frame = deleteButtonFrame;
         
@@ -304,7 +304,7 @@
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
     return indexPath.section == 0;
 }
-
+// 禁止删除行
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewCellEditingStyleNone;
 }
@@ -322,7 +322,7 @@
 
 - (void)deleteButtonTapped:(UIButton *)sender {
     NSInteger indexRow = sender.tag - 100;
-    // Handle delete button click events
+    // 处理删除按钮点击事件
     [self.variableTypes removeObjectAtIndex:indexRow];
     [SVProgressHUD showWithStatus:nil];
     @weakify(self);
@@ -357,7 +357,7 @@
 
 - (void)addButtonTapped:(UIButton *)sender {
     NSInteger indexRow = sender.tag - 100;
-    
+    // 处理删除按钮点击事件
     if ([self.dataArray[1] count] >= 12){
         [SVProgressHUD showErrorWithStatus:@"You must delete some data first"];
         return;

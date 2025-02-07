@@ -17,6 +17,7 @@
 #import "WMSleepSettingModel.h"
 #import "WMMessageSettingModel.h"
 #import "WMWidgetSettingModel.h"
+#import "WMLocationSettingModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -36,6 +37,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) WMReminderSettingModel *sedentaryReminder;
 /// 时间设置 （Time setting）
 @property (nonatomic, strong) WMDateTimeSettingModel *dateTime;
+/// 经纬度设置 （Time setting）
+@property (nonatomic, strong) WMLocationSettingModel *location;
 /// 开关设置 （Switch setting）
 @property (nonatomic, strong) WMSwitchsSettingModel *switchs;
 /// app视图设置 （app view Settings）

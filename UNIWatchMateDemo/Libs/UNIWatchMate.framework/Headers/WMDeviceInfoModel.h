@@ -72,7 +72,8 @@ typedef NS_ENUM(NSUInteger, WMFeature) {
     WMFeatureRestartDevice,          // 重启设备 （Restart the device）
     
     WMFeatureNavigation = 64,        // 导航 （Navigation）
-    WMFeatureCompass = 65            // 指南针 （Compass）
+    WMFeatureCompass = 65,            // 指南针 （Compass）
+    WMFeatureMusilin = 66            // 穆斯林 （musilin）
 };
 
 

@@ -47,13 +47,13 @@
 #pragma mark - LBXScanViewControllerDelegate
 
 - (void)scanResultWithArray:(NSArray<LBXScanResult *> *)array {
-    XLOG_INFO(@"Scan result：%@", array);
+    XLOG_INFO(@"扫描结果：%@", array);
     
-    // Process scan results, such as displaying them on the interface or performing other actions
+    // 处理扫描结果，例如显示在界面上或执行其他操作
     LBXScanResult * first = [array firstObject];
-    XLOG_INFO(@"Scan result：%@", first.strScanned);
+    XLOG_INFO(@"扫描结果：%@", first.strScanned);
     [self goConnectionManagementPage:first.strScanned];
-    //Delay 3 seconds
+    //延迟3秒
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self startScanQRCode];
     });

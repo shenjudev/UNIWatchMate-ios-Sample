@@ -22,3 +22,7 @@ FOUNDATION_EXPORT const unsigned char SJWatchLibVersionString[];
 #import <SJWatchLib/NavigationWatchVideoH264.h>
 #import <SJWatchLib/DialThumbnailAdapter.h>
 #import <ReactiveObjC/ReactiveObjC.h>
+#import <SJWatchLib/LSFR.h>
+//@import opus
+#import <opus-ios/opus.h>
+#import <opus-ios/OpusDecoder.h>

@@ -53,10 +53,12 @@
 }
 
 -(void)upgrade{
+    // 创建文件选择器
         UIDocumentPickerViewController *documentPicker = [[UIDocumentPickerViewController alloc] initWithDocumentTypes:@[@"public.item"]
                                                                                                                 inMode:UIDocumentPickerModeOpen];
         documentPicker.delegate = self;
 
+        // 弹出文件选择器
         [self presentViewController:documentPicker animated:YES completion:nil];
 }
 
@@ -70,6 +72,7 @@
             @strongify(self);
             [SVProgressHUD dismiss];
             [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Ota failed.", nil)];
+
             [path stopAccessingSecurityScopedResource];
         } completed:^{
             [SVProgressHUD dismiss];
@@ -84,16 +87,16 @@
     }
 }
 
-
+// 实现UIDocumentPickerDelegate的代理方法
 - (void)documentPicker:(UIDocumentPickerViewController *)controller didPickDocumentsAtURLs:(NSArray<NSURL *> *)urls {
     NSURL *selectedURL = [urls firstObject];
        if (selectedURL) {
-           // Verify here that the file extension is.up or.upex
+           // 在这里验证文件扩展名是否为 .up
            if ([[selectedURL pathExtension] isEqualToString:@"up"] || [[selectedURL pathExtension] isEqualToString:@"upex"]) {
-               // Here you can continue working with.up or.upex files
+               // 在这里可以继续处理 .up 文件
                [self sendData:selectedURL];
            } else {
-               // The selected file is not an.up file and can provide an error message to the user
+               // 选择的文件不是 .up 文件，可以提供错误消息给用户
                [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"The file format is incorrect. Please select a.up file.", nil)];
            }
        }
