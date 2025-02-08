@@ -4,18 +4,6 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Frameworks/TLOCP.framework/Info.plist</key>
-		<data>
-		K+PgNOsWrd2k6GO0Cgke7Fbg/VI=
-		</data>
-		<key>Frameworks/TLOCP.framework/TLOCP</key>
-		<data>
-		xjog4KZECfgQ2Tk/Y9dm8huBq34=
-		</data>
-		<key>Frameworks/TLOCP.framework/_CodeSignature/CodeResources</key>
-		<data>
-		qKY9HfNso580Pv/I4ydaO5eumpc=
-		</data>
 		<key>Headers/BtUtils.h</key>
 		<data>
 		DkGiKUGBpOgEd9dah91xBMxouU8=
@@ -62,7 +50,7 @@
 		</data>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		LRCP2/ilkN969u2TrIlM04hYcxA=
+		WvgPusd+MBTfx7SKet3eEWeVekU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -115,27 +103,6 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Frameworks/TLOCP.framework/Info.plist</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			+A/emA/4DkS/uELvThyauQHf1YJ+SDdj/F5COBE/8mo=
-			</data>
-		</dict>
-		<key>Frameworks/TLOCP.framework/TLOCP</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			3Z/u5jBw/r9tGXkXYTpoFDyHadmLQpckbP0eXPc+Kz0=
-			</data>
-		</dict>
-		<key>Frameworks/TLOCP.framework/_CodeSignature/CodeResources</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			BJ1D4TOQwsOnIN5pNdRRf63Xxe5kYQhJleRQTPFaYws=
-			</data>
-		</dict>
 		<key>Headers/BtUtils.h</key>
 		<dict>
 			<key>hash2</key>
@@ -210,7 +177,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			JlRnvWHMFEVHhNiscUisbvpaZg+cFf+R86A44ERycRQ=
+			yYxE5Mgsz1cYkI6T/TWf8He0ExUuVZJym/zDVeKrg7s=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

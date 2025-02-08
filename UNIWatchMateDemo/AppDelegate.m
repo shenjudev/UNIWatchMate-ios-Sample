@@ -25,8 +25,9 @@
     [[WMManager sharedInstance] registerWatchMate:[SJWatchFind sharedInstance]];
     
     [[WMLog sharedInstance].log subscribeNext:^(NSString * _Nullable x) {
-//        NSLog(@"SJLogInfo %@",x);
+        
         NSString *log =  [NSString stringWithFormat:@"%@",x];
+        NSLog(@"SJLogInfo %@",log);
 //        SJSJDeviceData("\n\(DateClass.dateToDateString(Date(), dateFormat: "yyyy-MM-dd HH:mm:ss.SSS")) \(string)")
 //        HDNormalLog(log);
         [SJSJDeviceDataLogger logDeviceDataSimplified:log];
