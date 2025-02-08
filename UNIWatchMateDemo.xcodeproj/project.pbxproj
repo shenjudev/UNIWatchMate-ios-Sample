@@ -68,6 +68,8 @@
 		B5CF8FD72BA947980074E221 /* SJWatchLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5CF8FCD2BA947920074E221 /* SJWatchLib.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B5CF8FD82BA947990074E221 /* UNIWatchMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CF8FCE2BA947920074E221 /* UNIWatchMate.framework */; platformFilter = ios; };
 		B5CF8FD92BA947990074E221 /* UNIWatchMate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5CF8FCE2BA947920074E221 /* UNIWatchMate.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B5D98DA72D572F8F00A2ECE6 /* TLOCP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D98DA52D572F8B00A2ECE6 /* TLOCP.framework */; platformFilter = ios; };
+		B5D98DA82D572F8F00A2ECE6 /* TLOCP.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5D98DA52D572F8B00A2ECE6 /* TLOCP.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D7135A8BBE24884BB6DAFEEE /* Pods_UNIWatchMateDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C60E9F032EABB4DD0FEDA943 /* Pods_UNIWatchMateDemo.framework */; };
 		D71481832B9738A700C3CB63 /* x8c637a6c26d476db361051786e773df7.dial in Resources */ = {isa = PBXBuildFile; fileRef = D714817F2B9738A600C3CB63 /* x8c637a6c26d476db361051786e773df7.dial */; };
 		D71481842B9738A700C3CB63 /* x59c4aad46ed434ca58786f3232aba673.dial in Resources */ = {isa = PBXBuildFile; fileRef = D71481802B9738A600C3CB63 /* x59c4aad46ed434ca58786f3232aba673.dial */; };
@@ -123,6 +125,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				B5CF8FD92BA947990074E221 /* UNIWatchMate.framework in Embed Frameworks */,
+				B5D98DA82D572F8F00A2ECE6 /* TLOCP.framework in Embed Frameworks */,
 				B589C8662D55BF5D009A91CA /* opus-ios.framework in Embed Frameworks */,
 				B5CF8FD42BA947970074E221 /* h264encoder.framework in Embed Frameworks */,
 				B5CF8FD72BA947980074E221 /* SJWatchLib.framework in Embed Frameworks */,
@@ -233,6 +236,7 @@
 		B5CF8FCC2BA947920074E221 /* h264encoder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = h264encoder.framework; sourceTree = "<group>"; };
 		B5CF8FCD2BA947920074E221 /* SJWatchLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SJWatchLib.framework; sourceTree = "<group>"; };
 		B5CF8FCE2BA947920074E221 /* UNIWatchMate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UNIWatchMate.framework; sourceTree = "<group>"; };
+		B5D98DA52D572F8B00A2ECE6 /* TLOCP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TLOCP.framework; sourceTree = "<group>"; };
 		C60E9F032EABB4DD0FEDA943 /* Pods_UNIWatchMateDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UNIWatchMateDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D714817F2B9738A600C3CB63 /* x8c637a6c26d476db361051786e773df7.dial */ = {isa = PBXFileReference; lastKnownFileType = file; path = x8c637a6c26d476db361051786e773df7.dial; sourceTree = "<group>"; };
 		D71481802B9738A600C3CB63 /* x59c4aad46ed434ca58786f3232aba673.dial */ = {isa = PBXFileReference; lastKnownFileType = file; path = x59c4aad46ed434ca58786f3232aba673.dial; sourceTree = "<group>"; };
@@ -294,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5CF8FD82BA947990074E221 /* UNIWatchMate.framework in Frameworks */,
+				B5D98DA72D572F8F00A2ECE6 /* TLOCP.framework in Frameworks */,
 				B589C8652D55BF5D009A91CA /* opus-ios.framework in Frameworks */,
 				B5CF8FD32BA947970074E221 /* h264encoder.framework in Frameworks */,
 				D7135A8BBE24884BB6DAFEEE /* Pods_UNIWatchMateDemo.framework in Frameworks */,
@@ -485,6 +490,7 @@
 		B5CF8FCF2BA947920074E221 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				B5D98DA52D572F8B00A2ECE6 /* TLOCP.framework */,
 				B589C8632D55BF5A009A91CA /* opus-ios.framework */,
 				B5CF8FCC2BA947920074E221 /* h264encoder.framework */,
 				B5CF8FCD2BA947920074E221 /* SJWatchLib.framework */,
