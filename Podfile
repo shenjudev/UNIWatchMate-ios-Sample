@@ -24,7 +24,7 @@ target 'UNIWatchMateDemo' do
   pod 'MBProgressHUD','1.2.0'
   pod 'Toast','4.0.0'
   pod 'SVProgressHUD','2.2.5'
-  pod 'QuickTraceiOSLogger','2.0.7'
+#  pod 'QuickTraceiOSLogger','2.0.7'
   pod 'HDWindowLogger', :path=> './localLib/HDWindowLogger'
   pod 'LSTPopView',"0.3.10"
     pod 'ZYImagePicker', '~> 0.1.2'

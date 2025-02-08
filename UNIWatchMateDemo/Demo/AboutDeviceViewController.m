@@ -37,7 +37,7 @@
 
 //点击页面复制全部信息
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    XLOG_INFO(@"%@",self.detail.text);
+    NSLog(@"%@",self.detail.text);
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
     pasteboard.string = self.detail.text;
     [SVProgressHUD showSuccessWithStatus:NSLocalizedString(@"Copied to clipboard", nil)];

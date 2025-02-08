@@ -16,7 +16,6 @@
 #import <UNIWatchMate/UNIWatchMate.h>
 #import <SJWatchLib/SJWatchLib.h>
 #import "WatchManager.h"
-#import <QuickTraceiOSLogger/QuickTraceiOSLogger.h>
 #import <HDWindowLogger/HDWindowLogger.h>
 #import "PickerViewController.h"
 #import <LSTPopView/LSTPopView.h>

@@ -124,12 +124,12 @@
         [SVProgressHUD dismiss];
         if ([error.domain isEqualToString:RACSignalErrorDomain] && error.code == RACSignalErrorTimedOut) {
             // 在超时时执行的代码
-            XLOG_INFO(@"Connect by mac:Signal timed out");
+            NSLog(@"Connect by mac:Signal timed out");
             [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Time out", nil)];
             
         } else {
             // 处理其他错误
-            XLOG_INFO(@"Connect by mac:Error: %@", error.localizedDescription);
+            NSLog(@"Connect by mac:Error: %@", error.localizedDescription);
             [SVProgressHUD showErrorWithStatus:error.localizedDescription];
             
         }
@@ -148,12 +148,12 @@
         [SVProgressHUD dismiss];
         if ([error.domain isEqualToString:RACSignalErrorDomain] && error.code == RACSignalErrorTimedOut) {
             // 在超时时执行的代码
-            XLOG_INFO(@"connectDeviceBySearchProductType:Signal timed out");
+            NSLog(@"connectDeviceBySearchProductType:Signal timed out");
             [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Time out", nil)];
             
         } else {
             // 处理其他错误
-            XLOG_INFO(@"connectDeviceBySearchProductType:Error: %@", error.localizedDescription);
+            NSLog(@"connectDeviceBySearchProductType:Error: %@", error.localizedDescription);
             [SVProgressHUD showErrorWithStatus:error.localizedDescription];
         }
         [self failBack];
@@ -184,7 +184,7 @@
 //        [[[device.connect.isConnected  skip:1] timeout:20 onScheduler:[RACScheduler mainThreadScheduler]] subscribeNext:^(NSNumber * _Nullable x) {
 //            @strongify(self);
 //            BOOL isConnected = [x boolValue];
-//            XLOG_INFO(@"%@, %@", mac, isConnected ? @"已连接":@"未连接");
+//            NSLog(@"%@, %@", mac, isConnected ? @"已连接":@"未连接");
 //            if (isConnected == true){
 //            }else{
 //                [SVProgressHUD dismiss];
@@ -196,12 +196,12 @@
 //            [SVProgressHUD dismiss];
 //            if ([error.domain isEqualToString:RACSignalErrorDomain] && error.code == RACSignalErrorTimedOut) {
 //                // 在超时时执行的代码
-//                XLOG_INFO(@"Connect:Signal timed out");
+//                NSLog(@"Connect:Signal timed out");
 //                [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Time out", nil)];
 //
 //            } else {
 //                // 处理其他错误
-//                XLOG_INFO(@"Connect:Error: %@", error.localizedDescription);
+//                NSLog(@"Connect:Error: %@", error.localizedDescription);
 //                [SVProgressHUD showErrorWithStatus:error.localizedDescription];
 //
 //            }
@@ -213,7 +213,7 @@
     @weakify(device);
     [[[device.connect.isReady skip:1] timeout:35 onScheduler:[RACScheduler mainThreadScheduler]] subscribeNext:^(NSNumber * _Nullable x) {
         @strongify(self);
-        XLOG_INFO(@"可以进行交互");
+        NSLog(@"可以进行交互");
         [SVProgressHUD dismiss];
         BOOL isReady = [x boolValue];
         if (isReady == true){
@@ -233,12 +233,12 @@
         }
         if ([error.domain isEqualToString:RACSignalErrorDomain] && error.code == RACSignalErrorTimedOut) {
             // 在超时时执行的代码
-            XLOG_INFO(@"isReady:Signal timed out");
+            NSLog(@"isReady:Signal timed out");
             [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Time out", nil)];
             
         } else {
             // 处理其他错误
-            XLOG_INFO(@"isReady:Error: %@", error.localizedDescription);
+            NSLog(@"isReady:Error: %@", error.localizedDescription);
             [SVProgressHUD showErrorWithStatus:error.localizedDescription];
         }
         [self failBack];
@@ -249,7 +249,7 @@
         return device.infoModel.wm_getBaseinfo;
     }] subscribeNext:^(id  _Nullable x) {
         WMDeviceInfoModel *infoModel = x;
-        XLOG_INFO(@"设备信息:%@", infoModel);
+        NSLog(@"设备信息:%@", infoModel);
     }];
     
     // 开始连接
@@ -294,7 +294,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     WMPeripheral *selectedPeripheral = self.currentsValue[indexPath.row];
-    XLOG_INFO(@"Selected Peripheral: %@", selectedPeripheral.target.mac);
+    NSLog(@"Selected Peripheral: %@", selectedPeripheral.target.mac);
     [self selectedDevice:selectedPeripheral];
     // 在这里处理选中项的其他逻辑
 }

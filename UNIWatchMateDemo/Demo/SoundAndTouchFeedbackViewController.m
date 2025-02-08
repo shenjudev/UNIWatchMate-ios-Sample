@@ -31,7 +31,7 @@
         [self feedInfo:x];
     } error:^(NSError * _Nullable error) {
         if(error!=nil){
-            XLOG_INFO(@"switchs getConfigModel error结果：%@", error.description);
+            NSLog(@"switchs getConfigModel error结果：%@", error.description);
         }
     } completed:^{
         

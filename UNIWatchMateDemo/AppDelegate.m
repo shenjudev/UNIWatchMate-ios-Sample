@@ -16,8 +16,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [QuickiOSLogServer start:YES offlineDetectIntervalInSeconds:1];
-    XLOG_INFO(@"App launch.");
+//    [QuickiOSLogServer start:YES offlineDetectIntervalInSeconds:1];
+    NSLog(@"App launch.");
 //    [[SJLogInfo sharedInstance] registerLevel: @"DEBUG"];
      [[SJLogInfo sharedInstance] registerLevel: @"INFO"];
     
@@ -25,7 +25,7 @@
     [[WMManager sharedInstance] registerWatchMate:[SJWatchFind sharedInstance]];
     
     [[WMLog sharedInstance].log subscribeNext:^(NSString * _Nullable x) {
-//        XLOG_INFO(@"SJLogInfo %@",x);
+//        NSLog(@"SJLogInfo %@",x);
         NSString *log =  [NSString stringWithFormat:@"%@",x];
 //        SJSJDeviceData("\n\(DateClass.dateToDateString(Date(), dateFormat: "yyyy-MM-dd HH:mm:ss.SSS")) \(string)")
 //        HDNormalLog(log);

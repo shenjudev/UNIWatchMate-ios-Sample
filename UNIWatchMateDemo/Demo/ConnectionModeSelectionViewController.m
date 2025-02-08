@@ -27,10 +27,10 @@
         lastConnectedMac = @"";
     }
     self.macLabel.text = [NSString stringWithFormat:@"%@%@",NSLocalizedString(@"mac:", nil), lastConnectedMac];
-    NSString *logMessage = NSLocalizedString(@"You can browse the logs by opening http://%@:%d in your PC browser.\nNote: The phone and PC are on the same network.",nil);
-    NSString *formattedMessage = [NSString stringWithFormat:logMessage, GCDTCPServerGetPrimaryIPAddress(false), 8080];
-    
-    self.detailLabel.text = formattedMessage;
+//    NSString *logMessage = NSLocalizedString(@"You can browse the logs by opening http://%@:%d in your PC browser.\nNote: The phone and PC are on the same network.",nil);
+//    NSString *formattedMessage = [NSString stringWithFormat:logMessage, GCDTCPServerGetPrimaryIPAddress(false), 8080];
+//    
+//    self.detailLabel.text = formattedMessage;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
@@ -55,14 +55,14 @@
     
     BOOL isUserLoggedIn = [defaults boolForKey:shouldAutoReconnect];
     if (isUserLoggedIn) {
-        XLOG_INFO(@"通过mac地址回连");
+        NSLog(@"通过mac地址回连");
         [SVProgressHUD showInfoWithStatus:  NSLocalizedString(@"通过mac地址回连", nil)];
         [self connectDeviceByMac: lastConnectedMac];
     }
 }
 
 //- (void)viewDidAppear:(BOOL)animated {
-//    XLOG_INFO(@"通过mac地址回连");
+//    NSLog(@"通过mac地址回连");
 //    NSString *lastConnectedMac = [WatchManager sharedInstance].lastConnectedMac;
 //    if (lastConnectedMac == nil){
 //        lastConnectedMac = @"";

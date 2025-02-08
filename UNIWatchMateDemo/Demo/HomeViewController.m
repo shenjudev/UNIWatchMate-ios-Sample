@@ -533,12 +533,12 @@
         @strongify(self);
         BOOL isUnbindSuccess = [x boolValue];
         if (isUnbindSuccess == YES){
-            XLOG_INFO(@"解绑成功"); // 获取应用程序的主Storyboard
+            NSLog(@"解绑成功"); // 获取应用程序的主Storyboard
             [WatchManager sharedInstance].lastConnectedMac = nil;
             [self goConnectView];
         }else{
             [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Connection mode selection", nil)];
-            XLOG_INFO(@"解绑失败");
+            NSLog(@"解绑失败");
         }
         
     }];
@@ -559,11 +559,11 @@
         @strongify(self);
         BOOL isUnbindSuccess = [x boolValue];
         if (isUnbindSuccess == YES){
-            XLOG_INFO(@"重启成功"); // 获取应用程序的主Storyboard
+            NSLog(@"重启成功"); // 获取应用程序的主Storyboard
             [self goConnectView];
         }else{
             [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Connection mode selection", nil)];
-            XLOG_INFO(@"解绑失败");
+            NSLog(@"解绑失败");
         }
     }];
 }
