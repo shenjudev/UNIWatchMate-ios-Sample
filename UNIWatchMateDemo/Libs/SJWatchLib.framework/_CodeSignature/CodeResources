@@ -4,6 +4,10 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>.DS_Store</key>
+		<data>
+		FRonokQPN2abPieddPb60wa4+aQ=
+		</data>
 		<key>Headers/BtUtils.h</key>
 		<data>
 		DkGiKUGBpOgEd9dah91xBMxouU8=
@@ -26,7 +30,7 @@
 		</data>
 		<key>Headers/SJWatchLib-Swift.h</key>
 		<data>
-		R1Md3w9QWzlEWp45qO2ggsOcVrQ=
+		DPG4Fzh1Vl2GvyY2Q9TgZgON7Sk=
 		</data>
 		<key>Headers/SJWatchLib.h</key>
 		<data>
@@ -34,11 +38,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		E/6bXd/ioVITE2EUNiFp1GMc+gY=
+		rMRZ4T9aUKkqsZhlFVU6llfLjz8=
 		</data>
 		<key>Modules/SJWatchLib.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		Ln/n9T7Jf4t0Ffyi1tKzgNcFIZ0=
+		xG7VdhSranxTqJiOaNIsGzXGcu4=
 		</data>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
@@ -46,11 +50,11 @@
 		</data>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		1sKN3N9X6sf43L3uZl9JFQWuYxk=
+		vVXW6+dVN+NQJyA72BZ95E8r7J0=
 		</data>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		WvgPusd+MBTfx7SKet3eEWeVekU=
+		Si2vgNKuJzyEgQvRsf8GkNHhHwQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -142,7 +146,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vIaGfmdY7Ag3YPF/3poeW+m18XlYkm0+R9cNEILCqlE=
+			7+eXqES4FPEgyRK35b4NNrzEGyFzvVcX2MMKgN3a0Yg=
 			</data>
 		</dict>
 		<key>Headers/SJWatchLib.h</key>
@@ -156,7 +160,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0bVqC52qE9ZJrvt8k0cMzhtr50nK88i1eUtTFkB7GY8=
+			FW/kq4752ELP0AWKOGT6hY6TLfp25wGJPAGdd6QLr/Q=
 			</data>
 		</dict>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.abi.json</key>
@@ -170,14 +174,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			iowfp5EexA9LYhOy+35hje67HV84McjU4vgM9cy6ipk=
+			SCpDaSSCRy39lbFJVxxl5N7qJiIAgLKZ+aRQx1wZfjw=
 			</data>
 		</dict>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yYxE5Mgsz1cYkI6T/TWf8He0ExUuVZJym/zDVeKrg7s=
+			9ZGe6EGb0yA6JUBoC/TbilZsjjjaFcdMq3iTsmJtjMA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
