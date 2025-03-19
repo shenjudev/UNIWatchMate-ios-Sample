@@ -4,8 +4,13 @@
 UNIWatchMate智能手表的接口框架负责封装与眼镜设备通信等功能。为App提供与智能眼镜相关的接口，并与其他眼镜的sdk对接。
   
 # [Wiki](https://github.com/shenjudev/UNIWatchMate-ios-Sample/wiki)  
-# 版本 1.0.0
 
+# 版本 1.0.1
+## v1.0.1(2025-03-19)
+1. 增加自定义数据协议
+2. SDK连接方法 增加 needBtConnected参数，needBtConnected为true时，连接时，会去检查bt是否连接（通过 音频路由设备的名称和ble广播名称是否相同 判断，）如果没有连接bt，SDK中会循环去检查 ，检查通过即去连接        
+
+# 版本 1.0.0
 ## v1.0.0(2025-02-07)
 1. 绑定和解绑定设备
 2. 获取介质数量

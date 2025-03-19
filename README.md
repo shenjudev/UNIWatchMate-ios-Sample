@@ -4,8 +4,12 @@
 The interface framework of UNIWatchMate smartwatch is responsible for packaging functions such as communication with the glasses device. It provides interfaces related to the smartGlasses for the App to operate, and connects to SDKS of other glasses.
   
 # [Wiki](https://github.com/shenjudev/UNIWatchMate-ios-Sample/wiki)  
-# Version 1.0.0
+# 版本 1.0.1
+## v1.0.1(2025-03-19)
+1. Add user-defined data protocols
+2. Add needBtConnected parameter to SDK connection method. When needBtConnected is true, it will check whether bt is connected during connection (judging whether the name of the audio routing device and the ble broadcast name are the same). If bt is not connected, the SDK will check for loop. If the check passes, the connection is disconnected    
 
+# Version 1.0.0
 ## v1.0.0(2025-02-07)
 1. Bind and unbind the device   
 2. Obtain the number of media   

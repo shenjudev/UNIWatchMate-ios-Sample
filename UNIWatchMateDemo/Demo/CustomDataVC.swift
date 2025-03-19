@@ -193,6 +193,5 @@ extension CustomDataVC: WMCustomDataDelegate {
             self.receivedDataTextView.text = "0X0002 - receiveData: \(data.toHexString2())"
         }
     }
-    
 }
 

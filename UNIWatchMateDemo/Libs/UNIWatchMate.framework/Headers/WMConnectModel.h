@@ -22,10 +22,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign, readonly) BOOL isReadyValue;
 
 /// 可订阅对象，使用CBPeripheralState表示，SDK是否在连接目标设备（0未发起连接，1正在连接，2连接成功）
+/// 可订阅对象，使用CBPeripheralState表示，SDK是否在连接目标设备（0未发起连接，1正在连接，2连接成功）
 @property (nonatomic, strong) RACSignal<NSNumber *> *connectState;
 @property (nonatomic, assign, readonly) BOOL connectStateValue;
 
-/// 连接 (connect) 是否检查 设备bt连接（通过 音频路由设备的名称和ble广播名称是否相同 判断）,如果没有连接SDK中会循环去检查 ，检查通过 即去连接
+/// 连接 (connect)
+/// needBtConnected ：是否检查 设备bt连接（通过 音频路由设备的名称和ble广播名称是否相同 判断）,如果needBtConnected为true，连接时检查bt未连接，则SDK中会循环去检查 ，
+/// 检查通过 即去连接
+/// needBtConnected: Whether to check the bt connection of the device (determine whether the name of the audio routing device is the same as the ble broadcast name). If needBtConnected is true and bt is not connected during connection, the SDK will loop to check.
+/// If the check passes, the connection is disconnected
 - (void)connect: (BOOL) needBtConnected;
 
 

@@ -176,7 +176,7 @@
 }
 /// 绑定设备
 /// - Parameter device: 需要绑定的设备
-- (void)bindDevice:(WMPeripheral *)device needCheckBt:(bool)checkBt; {
+- (void)bindDevice:(WMPeripheral *)device needCheckBt:(bool)needBtConnected; {
     [[WatchManager sharedInstance].current sendNext:device];
     NSString *name = device.target.name;
     NSString *mac = device.target.mac;
@@ -254,7 +254,7 @@
     }];
     
     // 开始连接
-    [device.connect connect:checkBt];
+    [device.connect connect:needBtConnected];
 }
 -(void)failBack{
     //延迟5秒返回
