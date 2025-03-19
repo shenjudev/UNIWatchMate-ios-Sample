@@ -25,8 +25,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) RACSignal<NSNumber *> *connectState;
 @property (nonatomic, assign, readonly) BOOL connectStateValue;
 
-/// 连接 (connect)
-- (void)connect;
+/// 连接 (connect) 是否检查 设备bt连接（通过 音频路由设备的名称和ble广播名称是否相同 判断）,如果没有连接SDK中会循环去检查 ，检查通过 即去连接
+- (void)connect: (BOOL) needBtConnected;
+
 
 /// 断开连接 (disconnect)
 - (void)disconnect;

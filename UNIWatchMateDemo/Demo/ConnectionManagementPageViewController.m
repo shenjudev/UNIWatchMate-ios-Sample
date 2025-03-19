@@ -94,17 +94,17 @@
  }
  */
 -(void)connectDeviceByQRCode:(NSString *)qrCode{
-    self.needHiddenLoading = YES;
-    [SVProgressHUD showWithStatus:nil];
-    NSString *code = qrCode;
-    @weakify(self);
-    
-    [[[WMManager sharedInstance] findWatchFromQRCode:code uid:@"1"] subscribeNext:^(WMPeripheral * _Nullable x) {
-        @strongify(self);
-        [self bindDevice:x];
-    } error:^(NSError * _Nullable error) {
-        
-    }];
+//    self.needHiddenLoading = YES;
+//    [SVProgressHUD showWithStatus:nil];
+//    NSString *code = qrCode;
+//    @weakify(self);
+//    
+//    [[[WMManager sharedInstance] findWatchFromQRCode:code uid:@"1"] subscribeNext:^(WMPeripheral * _Nullable x) {
+//        @strongify(self);
+//        [self bindDevice:x needCheckBt:false];
+//    } error:^(NSError * _Nullable error) {
+//        
+//    }];
 }
 -(void)connectDeviceByMac:(NSString *)mac productType:(NSString *)productType{
     [SVProgressHUD showWithStatus:nil];
@@ -118,7 +118,7 @@
     @weakify(self);
     [[[WMManager sharedInstance] findWatchFromTarget:model product:productType uid:@"1"] subscribeNext:^(WMPeripheral * _Nullable x) {
         @strongify(self);
-        [self bindDevice:x];
+        [self bindDevice:x needCheckBt:true];
     } error:^(NSError * _Nullable error) {
         @strongify(self);
         [SVProgressHUD dismiss];
@@ -172,11 +172,11 @@
 -(void)selectedDevice:(WMPeripheral * _Nullable)x{
     [SVProgressHUD showWithStatus:nil];
     [[WMManager sharedInstance] stopSearch:self.lastProductType];
-    [self bindDevice:x];
+    [self bindDevice:x needCheckBt:false];
 }
 /// 绑定设备
 /// - Parameter device: 需要绑定的设备
-- (void)bindDevice:(WMPeripheral *)device {
+- (void)bindDevice:(WMPeripheral *)device needCheckBt:(bool)checkBt; {
     [[WatchManager sharedInstance].current sendNext:device];
     NSString *name = device.target.name;
     NSString *mac = device.target.mac;
@@ -228,14 +228,15 @@
     }error:^(NSError * _Nullable error) {
         @strongify(self);
         [SVProgressHUD dismiss];
+
         if (self == nil || self.navigationController.viewControllers.lastObject != self){
+            NSLog(@"isReady:Signal timed out  self == nil || self.navigationController.viewControllers.lastObject != self");
             return;
         }
         if ([error.domain isEqualToString:RACSignalErrorDomain] && error.code == RACSignalErrorTimedOut) {
             // 在超时时执行的代码
             NSLog(@"isReady:Signal timed out");
             [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Time out", nil)];
-            
         } else {
             // 处理其他错误
             NSLog(@"isReady:Error: %@", error.localizedDescription);
@@ -253,7 +254,7 @@
     }];
     
     // 开始连接
-    [device.connect connect];
+    [device.connect connect:checkBt];
 }
 -(void)failBack{
     //延迟5秒返回
@@ -264,6 +265,7 @@
         [self.navigationController popViewControllerAnimated:true];
     });
 }
+
 -(void)goHome:(NSString *)deviceName macAdress:(NSString *)mac{
     UIViewController *viewController = [HomeViewController new];
     viewController.title = deviceName;

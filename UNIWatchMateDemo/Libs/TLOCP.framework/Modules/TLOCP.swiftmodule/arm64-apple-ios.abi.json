@@ -113,6 +113,808 @@
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
+        "moduleName": "TLOCP"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "LogLevel",
+        "printedName": "LogLevel",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "debug",
+            "printedName": "debug",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(TLOCP.LogLevel.Type) -> TLOCP.LogLevel",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LogLevel",
+                    "printedName": "TLOCP.LogLevel",
+                    "usr": "s:5TLOCP8LogLevelO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "TLOCP.LogLevel.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LogLevel",
+                        "printedName": "TLOCP.LogLevel",
+                        "usr": "s:5TLOCP8LogLevelO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:5TLOCP8LogLevelO5debugyA2CmF",
+            "mangledName": "$s5TLOCP8LogLevelO5debugyA2CmF",
+            "moduleName": "TLOCP"
+          },
+          {
+            "kind": "Var",
+            "name": "info",
+            "printedName": "info",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(TLOCP.LogLevel.Type) -> TLOCP.LogLevel",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LogLevel",
+                    "printedName": "TLOCP.LogLevel",
+                    "usr": "s:5TLOCP8LogLevelO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "TLOCP.LogLevel.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LogLevel",
+                        "printedName": "TLOCP.LogLevel",
+                        "usr": "s:5TLOCP8LogLevelO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:5TLOCP8LogLevelO4infoyA2CmF",
+            "mangledName": "$s5TLOCP8LogLevelO4infoyA2CmF",
+            "moduleName": "TLOCP"
+          },
+          {
+            "kind": "Var",
+            "name": "warning",
+            "printedName": "warning",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(TLOCP.LogLevel.Type) -> TLOCP.LogLevel",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LogLevel",
+                    "printedName": "TLOCP.LogLevel",
+                    "usr": "s:5TLOCP8LogLevelO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "TLOCP.LogLevel.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LogLevel",
+                        "printedName": "TLOCP.LogLevel",
+                        "usr": "s:5TLOCP8LogLevelO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:5TLOCP8LogLevelO7warningyA2CmF",
+            "mangledName": "$s5TLOCP8LogLevelO7warningyA2CmF",
+            "moduleName": "TLOCP"
+          },
+          {
+            "kind": "Var",
+            "name": "error",
+            "printedName": "error",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(TLOCP.LogLevel.Type) -> TLOCP.LogLevel",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LogLevel",
+                    "printedName": "TLOCP.LogLevel",
+                    "usr": "s:5TLOCP8LogLevelO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "TLOCP.LogLevel.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LogLevel",
+                        "printedName": "TLOCP.LogLevel",
+                        "usr": "s:5TLOCP8LogLevelO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:5TLOCP8LogLevelO5erroryA2CmF",
+            "mangledName": "$s5TLOCP8LogLevelO5erroryA2CmF",
+            "moduleName": "TLOCP"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "TLOCP.LogLevel?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LogLevel",
+                    "printedName": "TLOCP.LogLevel",
+                    "usr": "s:5TLOCP8LogLevelO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:5TLOCP8LogLevelO8rawValueACSgSS_tcfc",
+            "mangledName": "$s5TLOCP8LogLevelO8rawValueACSgSS_tcfc",
+            "moduleName": "TLOCP",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:5TLOCP8LogLevelO8rawValueSSvp",
+            "mangledName": "$s5TLOCP8LogLevelO8rawValueSSvp",
+            "moduleName": "TLOCP",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:5TLOCP8LogLevelO8rawValueSSvg",
+                "mangledName": "$s5TLOCP8LogLevelO8rawValueSSvg",
+                "moduleName": "TLOCP",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:5TLOCP8LogLevelO",
+        "mangledName": "$s5TLOCP8LogLevelO",
+        "moduleName": "TLOCP",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "enumRawTypeName": "String",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "TLLogger",
+        "printedName": "TLLogger",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "shared",
+            "printedName": "shared",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "TLLogger",
+                "printedName": "TLOCP.TLLogger",
+                "usr": "s:5TLOCP8TLLoggerC"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:5TLOCP8TLLoggerC6sharedACvpZ",
+            "mangledName": "$s5TLOCP8TLLoggerC6sharedACvpZ",
+            "moduleName": "TLOCP",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "TLLogger",
+                    "printedName": "TLOCP.TLLogger",
+                    "usr": "s:5TLOCP8TLLoggerC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:5TLOCP8TLLoggerC6sharedACvgZ",
+                "mangledName": "$s5TLOCP8TLLoggerC6sharedACvgZ",
+                "moduleName": "TLOCP",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "addCallback",
+            "printedName": "addCallback(identifier:callback:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.String, TLOCP.LogLevel, Swift.String, Swift.String, Swift.Int) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(Swift.String, TLOCP.LogLevel, Swift.String, Swift.String, Swift.Int)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LogLevel",
+                        "printedName": "TLOCP.LogLevel",
+                        "usr": "s:5TLOCP8LogLevelO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:5TLOCP8TLLoggerC11addCallback10identifier8callbackySS_ySS_AA8LogLevelOS2SSitctF",
+            "mangledName": "$s5TLOCP8TLLoggerC11addCallback10identifier8callbackySS_ySS_AA8LogLevelOS2SSitctF",
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "removeCallback",
+            "printedName": "removeCallback(identifier:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:5TLOCP8TLLoggerC14removeCallback10identifierySS_tF",
+            "mangledName": "$s5TLOCP8TLLoggerC14removeCallback10identifierySS_tF",
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "log",
+            "printedName": "log(_:level:file:function:line:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "LogLevel",
+                "printedName": "TLOCP.LogLevel",
+                "hasDefaultArg": true,
+                "usr": "s:5TLOCP8LogLevelO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "hasDefaultArg": true,
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:5TLOCP8TLLoggerC3log_5level4file8function4lineySS_AA8LogLevelOS2SSitF",
+            "mangledName": "$s5TLOCP8TLLoggerC3log_5level4file8function4lineySS_AA8LogLevelOS2SSitF",
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "debug",
+            "printedName": "debug(_:file:function:line:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "hasDefaultArg": true,
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:5TLOCP8TLLoggerC5debug_4file8function4lineySS_S2SSitF",
+            "mangledName": "$s5TLOCP8TLLoggerC5debug_4file8function4lineySS_S2SSitF",
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "info",
+            "printedName": "info(_:file:function:line:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "hasDefaultArg": true,
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:5TLOCP8TLLoggerC4info_4file8function4lineySS_S2SSitF",
+            "mangledName": "$s5TLOCP8TLLoggerC4info_4file8function4lineySS_S2SSitF",
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "warning",
+            "printedName": "warning(_:file:function:line:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "hasDefaultArg": true,
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:5TLOCP8TLLoggerC7warning_4file8function4lineySS_S2SSitF",
+            "mangledName": "$s5TLOCP8TLLoggerC7warning_4file8function4lineySS_S2SSitF",
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "error",
+            "printedName": "error(_:file:function:line:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "hasDefaultArg": true,
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:5TLOCP8TLLoggerC5error_4file8function4lineySS_S2SSitF",
+            "mangledName": "$s5TLOCP8TLLoggerC5error_4file8function4lineySS_S2SSitF",
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:5TLOCP8TLLoggerC",
+        "mangledName": "$s5TLOCP8TLLoggerC",
+        "moduleName": "TLOCP",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "TLLoggerDelegate",
+        "printedName": "TLLoggerDelegate",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "didReceiveLog",
+            "printedName": "didReceiveLog(message:level:fileName:function:line:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "LogLevel",
+                "printedName": "TLOCP.LogLevel",
+                "usr": "s:5TLOCP8LogLevelO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:5TLOCP16TLLoggerDelegateP13didReceiveLog7message5level8fileName8function4lineySS_AA0F5LevelOS2SSitF",
+            "mangledName": "$s5TLOCP16TLLoggerDelegateP13didReceiveLog7message5level8fileName8function4lineySS_AA0F5LevelOS2SSitF",
+            "moduleName": "TLOCP",
+            "genericSig": "<τ_0_0 where τ_0_0 : TLOCP.TLLoggerDelegate>",
+            "sugared_genericSig": "<Self where Self : TLOCP.TLLoggerDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:5TLOCP16TLLoggerDelegateP",
+        "mangledName": "$s5TLOCP16TLLoggerDelegateP",
+        "moduleName": "TLOCP",
+        "genericSig": "<τ_0_0 : AnyObject>",
+        "sugared_genericSig": "<Self : AnyObject>",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
         "moduleName": "TLOCP",
         "declAttributes": [
           "RawDocComment"
@@ -226,7 +1028,8 @@
             "moduleName": "TLOCP",
             "declAttributes": [
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -311,7 +1114,8 @@
             "moduleName": "TLOCP",
             "declAttributes": [
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -384,7 +1188,8 @@
         "mangledName": "$s5TLOCP15TLOCP2TypeModelV",
         "moduleName": "TLOCP",
         "declAttributes": [
-          "AccessControl"
+          "AccessControl",
+          "RawDocComment"
         ],
         "conformances": [
           {
@@ -480,7 +1285,10 @@
             "declKind": "EnumElement",
             "usr": "s:5TLOCP16TLOCP2LengthTypeO6headeryA2CmF",
             "mangledName": "$s5TLOCP16TLOCP2LengthTypeO6headeryA2CmF",
-            "moduleName": "TLOCP"
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "RawDocComment"
+            ]
           },
           {
             "kind": "Var",
@@ -517,7 +1325,10 @@
             "declKind": "EnumElement",
             "usr": "s:5TLOCP16TLOCP2LengthTypeO4bodyyA2CmF",
             "mangledName": "$s5TLOCP16TLOCP2LengthTypeO4bodyyA2CmF",
-            "moduleName": "TLOCP"
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "RawDocComment"
+            ]
           },
           {
             "kind": "Var",
@@ -554,7 +1365,10 @@
             "declKind": "EnumElement",
             "usr": "s:5TLOCP16TLOCP2LengthTypeO6footeryA2CmF",
             "mangledName": "$s5TLOCP16TLOCP2LengthTypeO6footeryA2CmF",
-            "moduleName": "TLOCP"
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "RawDocComment"
+            ]
           },
           {
             "kind": "Constructor",
@@ -634,7 +1448,8 @@
         "mangledName": "$s5TLOCP16TLOCP2LengthTypeO",
         "moduleName": "TLOCP",
         "declAttributes": [
-          "AccessControl"
+          "AccessControl",
+          "RawDocComment"
         ],
         "enumRawTypeName": "UInt8",
         "conformances": [
@@ -767,7 +1582,10 @@
             "declKind": "EnumElement",
             "usr": "s:5TLOCP16TLOCP2EncodeTypeO4jsonyA2CmF",
             "mangledName": "$s5TLOCP16TLOCP2EncodeTypeO4jsonyA2CmF",
-            "moduleName": "TLOCP"
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "RawDocComment"
+            ]
           },
           {
             "kind": "Constructor",
@@ -847,7 +1665,8 @@
         "mangledName": "$s5TLOCP16TLOCP2EncodeTypeO",
         "moduleName": "TLOCP",
         "declAttributes": [
-          "AccessControl"
+          "AccessControl",
+          "RawDocComment"
         ],
         "enumRawTypeName": "UInt8",
         "conformances": [
@@ -1011,7 +1830,8 @@
             "moduleName": "TLOCP",
             "declAttributes": [
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -1096,7 +1916,8 @@
             "moduleName": "TLOCP",
             "declAttributes": [
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -1181,7 +2002,8 @@
             "moduleName": "TLOCP",
             "declAttributes": [
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -1254,7 +2076,8 @@
         "mangledName": "$s5TLOCP17TLOCP2LengthModelV",
         "moduleName": "TLOCP",
         "declAttributes": [
-          "AccessControl"
+          "AccessControl",
+          "RawDocComment"
         ],
         "conformances": [
           {
@@ -1350,7 +2173,10 @@
             "declKind": "EnumElement",
             "usr": "s:5TLOCP17TLOCP2PayloadTypeO4readyA2CmF",
             "mangledName": "$s5TLOCP17TLOCP2PayloadTypeO4readyA2CmF",
-            "moduleName": "TLOCP"
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "RawDocComment"
+            ]
           },
           {
             "kind": "Var",
@@ -1387,7 +2213,10 @@
             "declKind": "EnumElement",
             "usr": "s:5TLOCP17TLOCP2PayloadTypeO5writeyA2CmF",
             "mangledName": "$s5TLOCP17TLOCP2PayloadTypeO5writeyA2CmF",
-            "moduleName": "TLOCP"
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "RawDocComment"
+            ]
           },
           {
             "kind": "Var",
@@ -1424,7 +2253,10 @@
             "declKind": "EnumElement",
             "usr": "s:5TLOCP17TLOCP2PayloadTypeO7executeyA2CmF",
             "mangledName": "$s5TLOCP17TLOCP2PayloadTypeO7executeyA2CmF",
-            "moduleName": "TLOCP"
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "RawDocComment"
+            ]
           },
           {
             "kind": "Var",
@@ -1461,7 +2293,10 @@
             "declKind": "EnumElement",
             "usr": "s:5TLOCP17TLOCP2PayloadTypeO6notifyyA2CmF",
             "mangledName": "$s5TLOCP17TLOCP2PayloadTypeO6notifyyA2CmF",
-            "moduleName": "TLOCP"
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "RawDocComment"
+            ]
           },
           {
             "kind": "Var",
@@ -1498,7 +2333,10 @@
             "declKind": "EnumElement",
             "usr": "s:5TLOCP17TLOCP2PayloadTypeO4eachyA2CmF",
             "mangledName": "$s5TLOCP17TLOCP2PayloadTypeO4eachyA2CmF",
-            "moduleName": "TLOCP"
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "RawDocComment"
+            ]
           },
           {
             "kind": "Var",
@@ -1535,7 +2373,10 @@
             "declKind": "EnumElement",
             "usr": "s:5TLOCP17TLOCP2PayloadTypeO6all_okyA2CmF",
             "mangledName": "$s5TLOCP17TLOCP2PayloadTypeO6all_okyA2CmF",
-            "moduleName": "TLOCP"
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "RawDocComment"
+            ]
           },
           {
             "kind": "Var",
@@ -1572,7 +2413,10 @@
             "declKind": "EnumElement",
             "usr": "s:5TLOCP17TLOCP2PayloadTypeO8all_failyA2CmF",
             "mangledName": "$s5TLOCP17TLOCP2PayloadTypeO8all_failyA2CmF",
-            "moduleName": "TLOCP"
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "RawDocComment"
+            ]
           },
           {
             "kind": "Constructor",
@@ -1652,7 +2496,8 @@
         "mangledName": "$s5TLOCP17TLOCP2PayloadTypeO",
         "moduleName": "TLOCP",
         "declAttributes": [
-          "AccessControl"
+          "AccessControl",
+          "RawDocComment"
         ],
         "enumRawTypeName": "UInt8",
         "conformances": [
@@ -1785,7 +2630,10 @@
             "declKind": "EnumElement",
             "usr": "s:5TLOCP18TLOCP2PayloadErrorO4failyA2CmF",
             "mangledName": "$s5TLOCP18TLOCP2PayloadErrorO4failyA2CmF",
-            "moduleName": "TLOCP"
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "RawDocComment"
+            ]
           },
           {
             "kind": "Var",
@@ -1822,7 +2670,10 @@
             "declKind": "EnumElement",
             "usr": "s:5TLOCP18TLOCP2PayloadErrorO6nodatayA2CmF",
             "mangledName": "$s5TLOCP18TLOCP2PayloadErrorO6nodatayA2CmF",
-            "moduleName": "TLOCP"
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "RawDocComment"
+            ]
           },
           {
             "kind": "Var",
@@ -1859,7 +2710,10 @@
             "declKind": "EnumElement",
             "usr": "s:5TLOCP18TLOCP2PayloadErrorO13invalid_paramyA2CmF",
             "mangledName": "$s5TLOCP18TLOCP2PayloadErrorO13invalid_paramyA2CmF",
-            "moduleName": "TLOCP"
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "RawDocComment"
+            ]
           },
           {
             "kind": "Var",
@@ -1896,7 +2750,10 @@
             "declKind": "EnumElement",
             "usr": "s:5TLOCP18TLOCP2PayloadErrorO11invalid_urnyA2CmF",
             "mangledName": "$s5TLOCP18TLOCP2PayloadErrorO11invalid_urnyA2CmF",
-            "moduleName": "TLOCP"
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "RawDocComment"
+            ]
           },
           {
             "kind": "Var",
@@ -1933,7 +2790,10 @@
             "declKind": "EnumElement",
             "usr": "s:5TLOCP18TLOCP2PayloadErrorO12invalid_datayA2CmF",
             "mangledName": "$s5TLOCP18TLOCP2PayloadErrorO12invalid_datayA2CmF",
-            "moduleName": "TLOCP"
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "RawDocComment"
+            ]
           },
           {
             "kind": "Var",
@@ -1970,7 +2830,10 @@
             "declKind": "EnumElement",
             "usr": "s:5TLOCP18TLOCP2PayloadErrorO11invalid_cmdyA2CmF",
             "mangledName": "$s5TLOCP18TLOCP2PayloadErrorO11invalid_cmdyA2CmF",
-            "moduleName": "TLOCP"
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "RawDocComment"
+            ]
           },
           {
             "kind": "Var",
@@ -2007,7 +2870,10 @@
             "declKind": "EnumElement",
             "usr": "s:5TLOCP18TLOCP2PayloadErrorO15invalid_packageyA2CmF",
             "mangledName": "$s5TLOCP18TLOCP2PayloadErrorO15invalid_packageyA2CmF",
-            "moduleName": "TLOCP"
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "RawDocComment"
+            ]
           },
           {
             "kind": "Var",
@@ -2044,7 +2910,10 @@
             "declKind": "EnumElement",
             "usr": "s:5TLOCP18TLOCP2PayloadErrorO19invalid_package_seqyA2CmF",
             "mangledName": "$s5TLOCP18TLOCP2PayloadErrorO19invalid_package_seqyA2CmF",
-            "moduleName": "TLOCP"
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "RawDocComment"
+            ]
           },
           {
             "kind": "Var",
@@ -2081,7 +2950,10 @@
             "declKind": "EnumElement",
             "usr": "s:5TLOCP18TLOCP2PayloadErrorO21invalid_package_limityA2CmF",
             "mangledName": "$s5TLOCP18TLOCP2PayloadErrorO21invalid_package_limityA2CmF",
-            "moduleName": "TLOCP"
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "RawDocComment"
+            ]
           },
           {
             "kind": "Var",
@@ -2118,7 +2990,10 @@
             "declKind": "EnumElement",
             "usr": "s:5TLOCP18TLOCP2PayloadErrorO18invalid_item_countyA2CmF",
             "mangledName": "$s5TLOCP18TLOCP2PayloadErrorO18invalid_item_countyA2CmF",
-            "moduleName": "TLOCP"
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "RawDocComment"
+            ]
           },
           {
             "kind": "Var",
@@ -2155,7 +3030,10 @@
             "declKind": "EnumElement",
             "usr": "s:5TLOCP18TLOCP2PayloadErrorO17invalid_item_listyA2CmF",
             "mangledName": "$s5TLOCP18TLOCP2PayloadErrorO17invalid_item_listyA2CmF",
-            "moduleName": "TLOCP"
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "RawDocComment"
+            ]
           },
           {
             "kind": "Var",
@@ -2192,7 +3070,10 @@
             "declKind": "EnumElement",
             "usr": "s:5TLOCP18TLOCP2PayloadErrorO17invalid_item_datayA2CmF",
             "mangledName": "$s5TLOCP18TLOCP2PayloadErrorO17invalid_item_datayA2CmF",
-            "moduleName": "TLOCP"
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "RawDocComment"
+            ]
           },
           {
             "kind": "Constructor",
@@ -2272,7 +3153,8 @@
         "mangledName": "$s5TLOCP18TLOCP2PayloadErrorO",
         "moduleName": "TLOCP",
         "declAttributes": [
-          "AccessControl"
+          "AccessControl",
+          "RawDocComment"
         ],
         "enumRawTypeName": "UInt8",
         "conformances": [
@@ -2419,7 +3301,10 @@
             "declKind": "EnumElement",
             "usr": "s:5TLOCP23TLOCP2PayloadEncodeTypeO9plaintextyA2CmF",
             "mangledName": "$s5TLOCP23TLOCP2PayloadEncodeTypeO9plaintextyA2CmF",
-            "moduleName": "TLOCP"
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "RawDocComment"
+            ]
           },
           {
             "kind": "Var",
@@ -2456,7 +3341,10 @@
             "declKind": "EnumElement",
             "usr": "s:5TLOCP23TLOCP2PayloadEncodeTypeO4jsonyA2CmF",
             "mangledName": "$s5TLOCP23TLOCP2PayloadEncodeTypeO4jsonyA2CmF",
-            "moduleName": "TLOCP"
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "RawDocComment"
+            ]
           },
           {
             "kind": "Var",
@@ -2493,7 +3381,10 @@
             "declKind": "EnumElement",
             "usr": "s:5TLOCP23TLOCP2PayloadEncodeTypeO6nodatayA2CmF",
             "mangledName": "$s5TLOCP23TLOCP2PayloadEncodeTypeO6nodatayA2CmF",
-            "moduleName": "TLOCP"
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "RawDocComment"
+            ]
           },
           {
             "kind": "Var",
@@ -2530,7 +3421,10 @@
             "declKind": "EnumElement",
             "usr": "s:5TLOCP23TLOCP2PayloadEncodeTypeO7errcodeyA2CmF",
             "mangledName": "$s5TLOCP23TLOCP2PayloadEncodeTypeO7errcodeyA2CmF",
-            "moduleName": "TLOCP"
+            "moduleName": "TLOCP",
+            "declAttributes": [
+              "RawDocComment"
+            ]
           },
           {
             "kind": "Constructor",
@@ -2610,7 +3504,8 @@
         "mangledName": "$s5TLOCP23TLOCP2PayloadEncodeTypeO",
         "moduleName": "TLOCP",
         "declAttributes": [
-          "AccessControl"
+          "AccessControl",
+          "RawDocComment"
         ],
         "enumRawTypeName": "UInt8",
         "conformances": [
@@ -2774,7 +3669,8 @@
             "moduleName": "TLOCP",
             "declAttributes": [
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -2859,7 +3755,8 @@
             "moduleName": "TLOCP",
             "declAttributes": [
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -2944,7 +3841,8 @@
             "moduleName": "TLOCP",
             "declAttributes": [
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -3038,7 +3936,8 @@
             "declAttributes": [
               "HasInitialValue",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -3148,7 +4047,8 @@
             "declAttributes": [
               "HasInitialValue",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -3237,7 +4137,8 @@
         "mangledName": "$s5TLOCP22TLOCP2PayloadItemModelV",
         "moduleName": "TLOCP",
         "declAttributes": [
-          "AccessControl"
+          "AccessControl",
+          "RawDocComment"
         ],
         "conformances": [
           {
@@ -3364,7 +4265,8 @@
             "moduleName": "TLOCP",
             "declAttributes": [
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -3449,7 +4351,8 @@
             "moduleName": "TLOCP",
             "declAttributes": [
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -3534,7 +4437,8 @@
             "moduleName": "TLOCP",
             "declAttributes": [
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -3619,7 +4523,8 @@
             "moduleName": "TLOCP",
             "declAttributes": [
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -3712,7 +4617,8 @@
             "moduleName": "TLOCP",
             "declAttributes": [
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -3837,7 +4743,8 @@
         "mangledName": "$s5TLOCP18TLOCP2PayloadModelV",
         "moduleName": "TLOCP",
         "declAttributes": [
-          "AccessControl"
+          "AccessControl",
+          "RawDocComment"
         ],
         "conformances": [
           {
@@ -3964,7 +4871,8 @@
             "moduleName": "TLOCP",
             "declAttributes": [
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -4049,7 +4957,8 @@
             "moduleName": "TLOCP",
             "declAttributes": [
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -4134,7 +5043,8 @@
             "moduleName": "TLOCP",
             "declAttributes": [
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -4219,7 +5129,8 @@
             "moduleName": "TLOCP",
             "declAttributes": [
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -4313,7 +5224,8 @@
             "declAttributes": [
               "HasInitialValue",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -4423,7 +5335,8 @@
             "declAttributes": [
               "HasInitialValue",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -4525,7 +5438,8 @@
             "declAttributes": [
               "HasInitialValue",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -4647,7 +5561,8 @@
             "moduleName": "TLOCP",
             "static": true,
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -4709,7 +5624,8 @@
             "moduleName": "TLOCP",
             "static": true,
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -4789,7 +5705,8 @@
             "moduleName": "TLOCP",
             "static": true,
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -4810,7 +5727,8 @@
             "mangledName": "$s5TLOCP11TLOCP2ModelV6toData10Foundation0E0Vvp",
             "moduleName": "TLOCP",
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "accessors": [
               {
@@ -4864,7 +5782,8 @@
             "mangledName": "$s5TLOCP11TLOCP2ModelV4dataACSg10Foundation4DataV_tcfc",
             "moduleName": "TLOCP",
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "isFromExtension": true,
             "init_kind": "Designated"
@@ -4875,7 +5794,8 @@
         "mangledName": "$s5TLOCP11TLOCP2ModelV",
         "moduleName": "TLOCP",
         "declAttributes": [
-          "AccessControl"
+          "AccessControl",
+          "RawDocComment"
         ],
         "conformances": [
           {
@@ -5022,261 +5942,296 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/ALSFR.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/ALSFR.swift",
       "kind": "IntegerLiteral",
       "offset": 85,
       "length": 6,
       "value": "0xD103"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/ALSFR.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/ALSFR.swift",
       "kind": "IntegerLiteral",
       "offset": 136,
       "length": 6,
       "value": "0x1021"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLLogger.swift",
+      "kind": "StringLiteral",
+      "offset": 67,
+      "length": 7,
+      "value": "\"DEBUG\""
+    },
+    {
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLLogger.swift",
+      "kind": "StringLiteral",
+      "offset": 91,
+      "length": 6,
+      "value": "\"INFO\""
+    },
+    {
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLLogger.swift",
+      "kind": "StringLiteral",
+      "offset": 117,
+      "length": 9,
+      "value": "\"WARNING\""
+    },
+    {
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLLogger.swift",
+      "kind": "StringLiteral",
+      "offset": 144,
+      "length": 7,
+      "value": "\"ERROR\""
+    },
+    {
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLLogger.swift",
+      "kind": "Dictionary",
+      "offset": 352,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 1211,
+      "offset": 1732,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 1231,
+      "offset": 1775,
       "length": 10,
       "value": "0b00000001"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 1258,
+      "offset": 1819,
       "length": 10,
       "value": "0b00000010"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 1287,
+      "offset": 1867,
       "length": 10,
       "value": "0b00000011"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 1740,
+      "offset": 2283,
       "length": 10,
       "value": "0b00000000"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 1767,
+      "offset": 2331,
       "length": 10,
       "value": "0b00000100"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 3016,
+      "offset": 3794,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 3027,
+      "offset": 3818,
       "length": 4,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 3041,
+      "offset": 3851,
       "length": 5,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 3056,
+      "offset": 3884,
       "length": 7,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 3073,
+      "offset": 3917,
       "length": 6,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 3101,
+      "offset": 3962,
       "length": 3,
       "value": "100"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 3114,
+      "offset": 3988,
       "length": 6,
       "value": "101"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 3130,
+      "offset": 4027,
       "length": 8,
       "value": "102"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 3203,
+      "offset": 4150,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 3214,
+      "offset": 4183,
       "length": 4,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 3228,
+      "offset": 4220,
       "length": 6,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 3244,
+      "offset": 4260,
       "length": 13,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 3267,
+      "offset": 4303,
       "length": 11,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 3288,
+      "offset": 4343,
       "length": 12,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 3310,
+      "offset": 4386,
       "length": 11,
       "value": "6"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 3331,
+      "offset": 4429,
       "length": 15,
       "value": "7"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 3356,
+      "offset": 4469,
       "length": 19,
       "value": "8"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 3385,
+      "offset": 4518,
       "length": 21,
       "value": "9"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 3416,
+      "offset": 4569,
       "length": 18,
       "value": "10"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 3444,
+      "offset": 4622,
       "length": 17,
       "value": "11"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 3471,
+      "offset": 4675,
       "length": 17,
       "value": "12"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 3555,
+      "offset": 4820,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 3566,
+      "offset": 4847,
       "length": 9,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 3585,
+      "offset": 4883,
       "length": 4,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 3599,
+      "offset": 4913,
       "length": 6,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 3615,
+      "offset": 4948,
       "length": 7,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 6906,
+      "offset": 9788,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 12372,
+      "offset": 16147,
       "length": 4,
       "value": "0x00"
     },
     {
-      "filePath": "\/Users\/lex\/zhangtian\/Cursor\/untitled folder\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
-      "offset": 12412,
+      "offset": 16187,
       "length": 4,
       "value": "0x00"
     }

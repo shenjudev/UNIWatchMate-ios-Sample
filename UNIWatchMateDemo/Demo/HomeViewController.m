@@ -376,6 +376,12 @@
                     @"subtitle":@"",
                     @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
                     @"selector": NSStringFromSelector(@selector(aiChatController:didSeletIndexPath:))
+                },
+                @{
+                    @"title":NSLocalizedString(@"自定义数据",nil),
+                    @"subtitle":@"",
+                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+                    @"selector": NSStringFromSelector(@selector(customDataViewController:didSeletIndexPath:))
                 }
                 
             ]
@@ -491,6 +497,11 @@
     UIViewController *viewController = [TakePhotoVC new];
     [self.navigationController pushViewController:viewController animated:YES];
 }
+-(void)customDataViewController:(UITableViewCell *)cell didSeletIndexPath:(NSIndexPath *)indexPath{
+    UIViewController *viewController = [CustomDataVC new];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
 -(void)recordController:(UITableViewCell *)cell didSeletIndexPath:(NSIndexPath *)indexPath{
     UIViewController *viewController = [RecordVC new];
     [self.navigationController pushViewController:viewController animated:YES];

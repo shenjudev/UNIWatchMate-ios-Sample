@@ -112,7 +112,7 @@
 
 - (void)connectDeviceByMac:(NSString *)lastConnectedMac{
     ConnectionManagementPageViewController *connectionManagementPageViewController = [ConnectionManagementPageViewController new];
-    [connectionManagementPageViewController connectDeviceByMac:lastConnectedMac productType:@"OSW-802N"];
+    [connectionManagementPageViewController connectDeviceByMac:lastConnectedMac productType:@""];
     connectionManagementPageViewController.title = NSLocalizedString(@"Connection management page", nil);
     [self.navigationController pushViewController:connectionManagementPageViewController animated:true];
 }

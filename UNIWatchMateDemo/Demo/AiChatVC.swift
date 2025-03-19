@@ -88,7 +88,11 @@ class AiChatVC: UIViewController {
         disposable?.dispose()
         isOnResume = false
         previewImageView.image = nil
-     
+        WatchManager.sharedInstance().currentValue.apps.watchGlassesVideoApp.startPreviewSet(false).subscribeNext { rs in
+            print("startPreviewSet(false) rs=\(String(describing: rs))")
+        } error: { error in
+            print(error as Any)
+        }
     }
     
     override func viewDidLoad() {
@@ -144,7 +148,7 @@ class AiChatVC: UIViewController {
     
     @objc private func aiButtonTapped() {
         guard let pcmData = debugPCMData, !pcmData.isEmpty else {
-            showToast("暂无音频数据")
+            showToast("暂无音频数据".localized())
             return
         }
         
@@ -168,13 +172,13 @@ class AiChatVC: UIViewController {
                 showPlayingStatus()
             } catch {
                 print("Error playing audio: \(error)")
-                showToast("音频播放失败")
+                showToast("音频播放失败".localized())
             }
         }
     }
     
     private func showPlayingStatus() {
-        statusLabel.text = "正在播放..."
+        statusLabel.text = "正在播放...".localized()
         UIView.animate(withDuration: 0.3) {
             self.statusLabel.alpha = 1
         }
@@ -201,7 +205,7 @@ class AiChatVC: UIViewController {
     
     private func updateDataInfo() {
         guard let pcmData = debugPCMData else {
-            dataInfoLabel.text = "暂无数据"
+            dataInfoLabel.text = "暂无数据".localized()
             return
         }
         
@@ -218,7 +222,7 @@ class AiChatVC: UIViewController {
             sizeText = String(format: "%.1f MB", mb)
         }
         
-        dataInfoLabel.text = "音频数据：\(sizeText)"
+        dataInfoLabel.text = "\("音频数据".localized())：\(sizeText)"
     }
 }
 
@@ -230,7 +234,7 @@ extension AiChatVC: AVAudioPlayerDelegate {
     
     func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
         hidePlayingStatus()
-        showToast("音频解码错误")
+        showToast("音频解码错误".localized())
     }
 }
 

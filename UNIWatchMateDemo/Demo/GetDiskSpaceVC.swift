@@ -36,7 +36,7 @@ class GetDiskSpaceVC: UIViewController {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "存储空间"
+        label.text = "存储空间".localized()
         label.textColor = .black
         label.font = .systemFont(ofSize: 20, weight: .semibold)
         label.textAlignment = .center
@@ -108,7 +108,7 @@ class GetDiskSpaceVC: UIViewController {
     
     func setupUI() {
         view.backgroundColor = .systemBackground
-        title = "存储空间"
+        title = "存储空间".localized()
         
         view.addSubview(containerView)
         containerView.addSubview(iconImageView)
@@ -174,8 +174,8 @@ class GetDiskSpaceVC: UIViewController {
 
                 self.progressView.progress = Float(percentage)
                 self.usedSpaceLabel.text = self.stringToMegabytesString(String(Int(usedBytes)))
-                self.totalSpaceLabel.text = "总容量：\(totalSize)"
-                self.detailLabel.text = "剩余可用：\(remainSize)"
+                self.totalSpaceLabel.text = "\("总容量".localized())：\(totalSize)"
+                self.detailLabel.text = "\("剩余可用".localized())：\(remainSize)"
             }
             
         } error: { error in

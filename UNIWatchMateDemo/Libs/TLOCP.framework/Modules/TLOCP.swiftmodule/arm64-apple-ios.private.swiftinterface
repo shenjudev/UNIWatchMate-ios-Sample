@@ -18,6 +18,32 @@ extension CoreBluetooth.CBManagerState {
     get
   }
 }
+public enum LogLevel : Swift.String {
+  case debug
+  case info
+  case warning
+  case error
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public typealias LogCallback = (Swift.String, TLOCP.LogLevel, Swift.String, Swift.String, Swift.Int) -> Swift.Void
+@_hasMissingDesignatedInitializers public class TLLogger {
+  public static let shared: TLOCP.TLLogger
+  public func addCallback(identifier: Swift.String, callback: @escaping TLOCP.LogCallback)
+  public func removeCallback(identifier: Swift.String)
+  public func log(_ message: Swift.String, level: TLOCP.LogLevel = .debug, file: Swift.String = #file, function: Swift.String = #function, line: Swift.Int = #line)
+  public func debug(_ message: Swift.String, file: Swift.String = #file, function: Swift.String = #function, line: Swift.Int = #line)
+  public func info(_ message: Swift.String, file: Swift.String = #file, function: Swift.String = #function, line: Swift.Int = #line)
+  public func warning(_ message: Swift.String, file: Swift.String = #file, function: Swift.String = #function, line: Swift.Int = #line)
+  public func error(_ message: Swift.String, file: Swift.String = #file, function: Swift.String = #function, line: Swift.Int = #line)
+  @objc deinit
+}
+public protocol TLLoggerDelegate : AnyObject {
+  func didReceiveLog(message: Swift.String, level: TLOCP.LogLevel, fileName: Swift.String, function: Swift.String, line: Swift.Int)
+}
 public struct TLOCP2TypeModel {
   public var sceneId: Swift.UInt8
   public var serialNumber: Swift.UInt8
@@ -134,6 +160,9 @@ public struct TLOCP2Model {
 extension TLOCP.TLOCP2Model {
   public init?(data: Foundation.Data)
 }
+extension TLOCP.LogLevel : Swift.Equatable {}
+extension TLOCP.LogLevel : Swift.Hashable {}
+extension TLOCP.LogLevel : Swift.RawRepresentable {}
 extension TLOCP.TLOCP2LengthType : Swift.Equatable {}
 extension TLOCP.TLOCP2LengthType : Swift.Hashable {}
 extension TLOCP.TLOCP2LengthType : Swift.RawRepresentable {}

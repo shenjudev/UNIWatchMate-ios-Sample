@@ -62,10 +62,10 @@
     model.mac = @"35:53:78:0f:87:44";
 
     @weakify(self);
-    [[[WMManager sharedInstance] findWatchFromTarget:model product:@"OSW-802N" uid:@"1"] subscribeNext:^(WMPeripheral * _Nullable x) {
+    [[[WMManager sharedInstance] findWatchFromTarget:model product:@"" uid:@"1"] subscribeNext:^(WMPeripheral * _Nullable x) {
         @strongify(self);
         self.watch = x;
-        [self.watch.connect connect];
+        [self.watch.connect connect:false];//连接时不需要检查设备bt是否连接
     } error:^(NSError * _Nullable error) {
 
     }];

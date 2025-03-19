@@ -130,9 +130,9 @@ class TakePhotoVC: UIViewController {
         if let dic = noticeInfo?.userInfo {
             if let result = dic["result"] as? Int {
                 if result != 1 {
-                    SVProgressHUD.showError(withStatus: "拍照失败 result = \(String(describing: result))")
+                    SVProgressHUD.showError(withStatus: "\("拍照失败".localized()) result = \(String(describing: result))")
                 }else {
-                    SVProgressHUD.showSuccess(withStatus: "拍照成功")
+                    SVProgressHUD.showSuccess(withStatus: "拍照成功".localized())
                 }
             }
         }
@@ -156,7 +156,7 @@ class TakePhotoVC: UIViewController {
             if result?.boolValue ?? false  {
                 DDLogInfo("deviceTakePhoto 拍照命令发送成功")
             }else {
-                SVProgressHUD.showError(withStatus: "拍照失败 result = \(String(describing: result))")
+                SVProgressHUD.showError(withStatus: "\("拍照失败".localized()) result = \(String(describing: result))")
             }
         } error: { error in
             print(error as Any)

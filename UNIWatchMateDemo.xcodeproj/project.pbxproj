@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		049D790E2D8A6AB4009A0DBA /* CustomDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D790D2D8A6AB4009A0DBA /* CustomDataVC.swift */; };
+		049D79102D8A6AC4009A0DBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D790F2D8A6AC4009A0DBA /* AppDelegate.swift */; };
 		5F04AD8C2AF0B28900348A38 /* NSDictionary+JSONDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F04AD8B2AF0B28900348A38 /* NSDictionary+JSONDescription.m */; };
 		5F04AD8F2AF0B47A00348A38 /* WeatherCreateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F04AD8E2AF0B47A00348A38 /* WeatherCreateHelper.m */; };
 		5F1886332AF3B0AA00911FBF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5F1886322AF3B0AA00911FBF /* README.md */; };
@@ -108,13 +110,11 @@
 		D71481CB2B97399E00C3CB63 /* NSAttributedString+SwifterSwiftExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71481AD2B97399E00C3CB63 /* NSAttributedString+SwifterSwiftExt.swift */; };
 		D71481CC2B97399E00C3CB63 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71481AE2B97399E00C3CB63 /* UIViewController+Ext.swift */; };
 		D71481CD2B97399E00C3CB63 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71481AF2B97399E00C3CB63 /* UIView+Ext.swift */; };
-		D77825212ABD34180056AB02 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D77825202ABD34180056AB02 /* AppDelegate.m */; };
 		D77825242ABD34180056AB02 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D77825232ABD34180056AB02 /* SceneDelegate.m */; };
 		D77825272ABD34180056AB02 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D77825262ABD34180056AB02 /* ViewController.m */; };
 		D778252A2ABD34180056AB02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D77825282ABD34180056AB02 /* Main.storyboard */; };
 		D778252C2ABD341B0056AB02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D778252B2ABD341B0056AB02 /* Assets.xcassets */; };
 		D778252F2ABD341B0056AB02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D778252D2ABD341B0056AB02 /* LaunchScreen.storyboard */; };
-		D77825322ABD341B0056AB02 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D77825312ABD341B0056AB02 /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -136,6 +136,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		049D790D2D8A6AB4009A0DBA /* CustomDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDataVC.swift; sourceTree = "<group>"; };
+		049D790F2D8A6AC4009A0DBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F04AD8A2AF0B28900348A38 /* NSDictionary+JSONDescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JSONDescription.h"; sourceTree = "<group>"; };
 		5F04AD8B2AF0B28900348A38 /* NSDictionary+JSONDescription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JSONDescription.m"; sourceTree = "<group>"; };
 		5F04AD8D2AF0B47A00348A38 /* WeatherCreateHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherCreateHelper.h; sourceTree = "<group>"; };
@@ -278,8 +280,6 @@
 		D71481AF2B97399E00C3CB63 /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		D71481D02B973CA900C3CB63 /* UNIWatchMateDemo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UNIWatchMateDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		D778251C2ABD34180056AB02 /* UNIWatchMateDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UNIWatchMateDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D778251F2ABD34180056AB02 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		D77825202ABD34180056AB02 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D77825222ABD34180056AB02 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		D77825232ABD34180056AB02 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		D77825252ABD34180056AB02 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -288,7 +288,6 @@
 		D778252B2ABD341B0056AB02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D778252E2ABD341B0056AB02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D77825302ABD341B0056AB02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D77825312ABD341B0056AB02 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E8DDA96325655A1B0EB18CED /* Pods-UNIWatchMateDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIWatchMateDemo.debug.xcconfig"; path = "Target Support Files/Pods-UNIWatchMateDemo/Pods-UNIWatchMateDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -364,6 +363,7 @@
 		5FF961ED2AC427DC00DFA693 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				049D790D2D8A6AB4009A0DBA /* CustomDataVC.swift */,
 				B589C83B2D55BE78009A91CA /* AiChatVC.swift */,
 				B589C83C2D55BE78009A91CA /* GetDiskSpaceVC.swift */,
 				B589C83D2D55BE78009A91CA /* GlassesAppDelegate.h */,
@@ -572,10 +572,9 @@
 		D778251E2ABD34180056AB02 /* UNIWatchMateDemo */ = {
 			isa = PBXGroup;
 			children = (
+				049D790F2D8A6AC4009A0DBA /* AppDelegate.swift */,
 				B5CF8FCF2BA947920074E221 /* Libs */,
 				5FF961EA2AC4275000DFA693 /* UNIWatchMate-Prefix.pch */,
-				D778251F2ABD34180056AB02 /* AppDelegate.h */,
-				D77825202ABD34180056AB02 /* AppDelegate.m */,
 				D77825222ABD34180056AB02 /* SceneDelegate.h */,
 				D77825232ABD34180056AB02 /* SceneDelegate.m */,
 				D77825252ABD34180056AB02 /* ViewController.h */,
@@ -585,7 +584,6 @@
 				D778252B2ABD341B0056AB02 /* Assets.xcassets */,
 				D778252D2ABD341B0056AB02 /* LaunchScreen.storyboard */,
 				D77825302ABD341B0056AB02 /* Info.plist */,
-				D77825312ABD341B0056AB02 /* main.m */,
 				5F1886322AF3B0AA00911FBF /* README.md */,
 				B589C8AE2D560FD0009A91CA /* README_CN.md */,
 				5FF961FF2AC4292700DFA693 /* Localizable.strings */,
@@ -731,6 +729,7 @@
 				5FE994792AE112F40052851E /* AlarmsViewController.m in Sources */,
 				D71481CA2B97399E00C3CB63 /* Array+Ext.swift in Sources */,
 				5FF962082AC43D0E00DFA693 /* WatchManager.m in Sources */,
+				049D790E2D8A6AB4009A0DBA /* CustomDataVC.swift in Sources */,
 				D71481C92B97399E00C3CB63 /* UISwitch+Ext.swift in Sources */,
 				5F1D9AC02AE144210050C702 /* AlarmEditViewController.m in Sources */,
 				5FA884F62AD7C5FC001F340D /* SleepSettingViewController.m in Sources */,
@@ -764,10 +763,8 @@
 				D71481C52B97399E00C3CB63 /* UIButton+Ext.swift in Sources */,
 				5FEA2DF52AE2174D00C464A7 /* LanguageChangeViewController.m in Sources */,
 				5FC3119F2AE7F1CE00635E56 /* SportsmanagerViewController.m in Sources */,
-				D77825212ABD34180056AB02 /* AppDelegate.m in Sources */,
 				5FF961F42AC427DC00DFA693 /* ScanQRCodeConnectionViewController.m in Sources */,
 				5FF962052AC430B800DFA693 /* ConnectionManagementPageViewController.m in Sources */,
-				D77825322ABD341B0056AB02 /* main.m in Sources */,
 				5F54C5DB2AE682C90090596F /* UnitSynchronizationViewController.m in Sources */,
 				5FC3119A2AE7CBF000635E56 /* ConfigHeartRateViewController.m in Sources */,
 				D71481B32B97399E00C3CB63 /* ZHBaseBottomPopView.swift in Sources */,
@@ -793,6 +790,7 @@
 				B589C8482D55BE78009A91CA /* GetDiskSpaceVC.swift in Sources */,
 				B589C8492D55BE78009A91CA /* WatchVideoPreviewVC.swift in Sources */,
 				B589C84A2D55BE78009A91CA /* PaddingLabel.swift in Sources */,
+				049D79102D8A6AC4009A0DBA /* AppDelegate.swift in Sources */,
 				B589C84B2D55BE78009A91CA /* MediaCountVC.swift in Sources */,
 				B589C84C2D55BE78009A91CA /* TakePhotoVC.swift in Sources */,
 				B589C84D2D55BE78009A91CA /* AiChatVC.swift in Sources */,

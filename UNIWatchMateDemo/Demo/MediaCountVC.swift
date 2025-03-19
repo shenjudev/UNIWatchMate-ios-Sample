@@ -36,7 +36,7 @@ class MediaCountVC: UIViewController {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "媒体统计"
+        label.text = "媒体统计".localized()
         label.textColor = .black
         label.font = .systemFont(ofSize: 20, weight: .semibold)
         label.textAlignment = .center
@@ -52,10 +52,10 @@ class MediaCountVC: UIViewController {
         return stack
     }()
     
-    private lazy var musicView = createStatView(icon: "music.note", title: "音乐")
-    private lazy var videoView = createStatView(icon: "video", title: "视频")
-    private lazy var photoView = createStatView(icon: "photo", title: "照片")
-    private lazy var recordView = createStatView(icon: "waveform", title: "录音")
+    private lazy var musicView = createStatView(icon: "music.note", title: "音乐".localized())
+    private lazy var videoView = createStatView(icon: "video", title: "视频".localized())
+    private lazy var photoView = createStatView(icon: "photo", title: "照片".localized())
+    private lazy var recordView = createStatView(icon: "waveform", title: "录音".localized())
     
     var disposable: RACDisposable?
     var isOnResume = false
@@ -118,7 +118,7 @@ class MediaCountVC: UIViewController {
     
     func setupUI() {
         view.backgroundColor = .systemBackground
-        title = "媒体数量"
+        title = "媒体资源数量".localized()
         
         view.addSubview(containerView)
         containerView.addSubview(iconImageView)
@@ -159,16 +159,16 @@ class MediaCountVC: UIViewController {
             guard let self = self else { return }
             
             if let musicLabel = (self.musicView.subviews.last as? UILabel) {
-                musicLabel.text = "音乐：\(mediaCount?.music_num ?? 0)"
+                musicLabel.text = "\("音乐".localized())：\(mediaCount?.music_num ?? 0)"
             }
             if let videoLabel = (self.videoView.subviews.last as? UILabel) {
-                videoLabel.text = "视频：\(mediaCount?.video_num ?? 0)"
+                videoLabel.text = "\("视频".localized())：\(mediaCount?.video_num ?? 0)"
             }
             if let photoLabel = (self.photoView.subviews.last as? UILabel) {
-                photoLabel.text = "照片：\(mediaCount?.photo_num ?? 0)"
+                photoLabel.text = "\("照片".localized())：\(mediaCount?.photo_num ?? 0)"
             }
             if let recordLabel = (self.recordView.subviews.last as? UILabel) {
-                recordLabel.text = "录音：\(mediaCount?.record_num ?? 0)"
+                recordLabel.text = "\("录音".localized())：\(mediaCount?.record_num ?? 0)"
             }
         } error: { error in
             print(error as Any)

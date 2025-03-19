@@ -13,8 +13,8 @@ target 'UNIWatchMateDemo' do
    pod "ReactiveObjC",'3.1.1'
    # Pods for UNIWatchMateDemo
    
-   pod 'RxSwift' , '6.7.1'
-   pod 'RxCocoa' , '6.7.1'
+   pod 'RxSwift' , '6.8.0'
+   pod 'RxCocoa' , '6.8.0'
    pod 'PromiseKit','8.1.1'
    pod 'HandyJSON', '5.0.0'
    pod 'SwiftyJSON','5.0.1'
