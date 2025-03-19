@@ -6,7 +6,7 @@ The interface framework of UNIWatchMate smartwatch is responsible for packaging 
 # [Wiki](https://github.com/shenjudev/UNIWatchMate-ios-Sample/wiki)  
 # Version 1.0.1
 ## v1.0.1(2025-03-19)
-1. Add user-defined data protocols
+1. Add Glasses user-defined data protocols
 2. Add needBtConnected parameter to SDK connection method. When needBtConnected is true, it will check whether bt is connected during connection (judging whether the name of the audio routing device and the ble broadcast name are the same). If bt is not connected, the SDK will check for loop. If the check passes, the connection is disconnected    
 
 # Version 1.0.0
