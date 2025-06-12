@@ -102,6 +102,26 @@ typedef NS_ENUM(NSUInteger, WMFeature) {
 @end
 
 
+typedef NS_ENUM(NSUInteger, WMGlassesFeature) {
+    WMFeatureAIChat = 0
+};
+// 特性列表 （Feature list）
+@interface WMGlassesFeatureSet : NSObject
+- (instancetype)initWithData:(NSData *)data;
+// 是否支持该功能 （Whether the function is supported）
+- (BOOL)isFeatureEnabled:(WMGlassesFeature)feature;
+@end
+
+// 眼镜特性 （Watch characteristics）
+@interface WMGlassesFeatureSetModel : NSObject
+// 特性清单版本 （Feature list version）
+@property (nonatomic, assign) NSInteger feature_version;
+// 特性清单开关 （Characteristic list switch）
+@property (strong, nonatomic) WMGlassesFeatureSet *feature_mask;
+
+@end
+
+
 @interface WMDeviceBaseInfo : NSObject
 /// 设备型号 （Equipment type）
 @property (nonatomic, copy) NSString * _Nullable model;
@@ -134,6 +154,7 @@ typedef NS_ENUM(NSUInteger, WMFeature) {
 @property (nonatomic, strong) RACSignal<WMDeviceBatteryModel *> *battery;
 @property (nonatomic, assign, readonly) WMDeviceBatteryModel *batteryValue;
 @property (nonatomic, strong, nullable) WMFeatureSetModel *featureSetModel;
+@property (nonatomic, strong, nullable) WMGlassesFeatureSetModel *glassesFeatureSetModel;
 
 /// 主动获取设备信息 （Proactively obtain device information）
 - (RACSignal<WMDeviceBaseInfo *> *)wm_getBaseinfo;

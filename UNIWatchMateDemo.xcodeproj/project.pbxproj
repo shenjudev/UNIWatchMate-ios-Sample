@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04191D9C2DFAC9A500685BCB /* USTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04191D932DFAC9A500685BCB /* USTheme.swift */; };
+		04191D9D2DFAC9A500685BCB /* UIView+Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04191D912DFAC9A500685BCB /* UIView+Core.swift */; };
+		04191D9E2DFAC9A500685BCB /* UIButton+Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04191D8E2DFAC9A500685BCB /* UIButton+Core.swift */; };
+		04191D9F2DFAC9A500685BCB /* PhotoLibraryOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04191D962DFAC9A500685BCB /* PhotoLibraryOperationView.swift */; };
+		04191DA02DFAC9A500685BCB /* PhotoLibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04191D9A2DFAC9A500685BCB /* PhotoLibraryViewModel.swift */; };
+		04191DA12DFAC9A500685BCB /* UILabel+Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04191D902DFAC9A500685BCB /* UILabel+Core.swift */; };
+		04191DA22DFAC9A500685BCB /* UIView+SafeArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04191D922DFAC9A500685BCB /* UIView+SafeArea.swift */; };
+		04191DA32DFAC9A500685BCB /* PhotoLibraryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04191D992DFAC9A500685BCB /* PhotoLibraryController.swift */; };
+		04191DA42DFAC9A500685BCB /* SJBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04191D972DFAC9A500685BCB /* SJBaseView.swift */; };
+		04191DA52DFAC9A500685BCB /* PhotoLibraryHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04191D952DFAC9A500685BCB /* PhotoLibraryHeader.swift */; };
+		04191DA62DFAC9A500685BCB /* UIImageView+Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04191D8F2DFAC9A500685BCB /* UIImageView+Core.swift */; };
+		04191DA82DFAC9F700685BCB /* SJHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04191DA72DFAC9F700685BCB /* SJHud.swift */; };
 		049D790E2D8A6AB4009A0DBA /* CustomDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D790D2D8A6AB4009A0DBA /* CustomDataVC.swift */; };
 		049D79102D8A6AC4009A0DBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D790F2D8A6AC4009A0DBA /* AppDelegate.swift */; };
 		5F04AD8C2AF0B28900348A38 /* NSDictionary+JSONDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F04AD8B2AF0B28900348A38 /* NSDictionary+JSONDescription.m */; };
@@ -136,6 +148,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		04191D8E2DFAC9A500685BCB /* UIButton+Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Core.swift"; sourceTree = "<group>"; };
+		04191D8F2DFAC9A500685BCB /* UIImageView+Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Core.swift"; sourceTree = "<group>"; };
+		04191D902DFAC9A500685BCB /* UILabel+Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Core.swift"; sourceTree = "<group>"; };
+		04191D912DFAC9A500685BCB /* UIView+Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Core.swift"; sourceTree = "<group>"; };
+		04191D922DFAC9A500685BCB /* UIView+SafeArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SafeArea.swift"; sourceTree = "<group>"; };
+		04191D932DFAC9A500685BCB /* USTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USTheme.swift; sourceTree = "<group>"; };
+		04191D952DFAC9A500685BCB /* PhotoLibraryHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryHeader.swift; sourceTree = "<group>"; };
+		04191D962DFAC9A500685BCB /* PhotoLibraryOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryOperationView.swift; sourceTree = "<group>"; };
+		04191D972DFAC9A500685BCB /* SJBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SJBaseView.swift; sourceTree = "<group>"; };
+		04191D992DFAC9A500685BCB /* PhotoLibraryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryController.swift; sourceTree = "<group>"; };
+		04191D9A2DFAC9A500685BCB /* PhotoLibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryViewModel.swift; sourceTree = "<group>"; };
+		04191DA72DFAC9F700685BCB /* SJHud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SJHud.swift; sourceTree = "<group>"; };
 		049D790D2D8A6AB4009A0DBA /* CustomDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDataVC.swift; sourceTree = "<group>"; };
 		049D790F2D8A6AC4009A0DBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F04AD8A2AF0B28900348A38 /* NSDictionary+JSONDescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JSONDescription.h"; sourceTree = "<group>"; };
@@ -308,6 +332,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04191D942DFAC9A500685BCB /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				04191D8E2DFAC9A500685BCB /* UIButton+Core.swift */,
+				04191D8F2DFAC9A500685BCB /* UIImageView+Core.swift */,
+				04191D902DFAC9A500685BCB /* UILabel+Core.swift */,
+				04191D912DFAC9A500685BCB /* UIView+Core.swift */,
+				04191D922DFAC9A500685BCB /* UIView+SafeArea.swift */,
+				04191D932DFAC9A500685BCB /* USTheme.swift */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		04191D982DFAC9A500685BCB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				04191D952DFAC9A500685BCB /* PhotoLibraryHeader.swift */,
+				04191D962DFAC9A500685BCB /* PhotoLibraryOperationView.swift */,
+				04191D972DFAC9A500685BCB /* SJBaseView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		04191D9B2DFAC9A500685BCB /* PhotoLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				04191D982DFAC9A500685BCB /* Views */,
+				04191D992DFAC9A500685BCB /* PhotoLibraryController.swift */,
+				04191D9A2DFAC9A500685BCB /* PhotoLibraryViewModel.swift */,
+			);
+			path = PhotoLibrary;
+			sourceTree = "<group>";
+		};
 		56031C1DA84625A2BB83AC8C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -319,6 +376,7 @@
 		5F04AD892AF0B26600348A38 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				04191DA72DFAC9F700685BCB /* SJHud.swift */,
 				B589C8592D55BF01009A91CA /* SJSyncTimeLog.swift */,
 				B589C85B2D55BF01009A91CA /* TSLogs */,
 				B589C85D2D55BF01009A91CA /* TSLogTool */,
@@ -363,6 +421,8 @@
 		5FF961ED2AC427DC00DFA693 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				04191D942DFAC9A500685BCB /* Libs */,
+				04191D9B2DFAC9A500685BCB /* PhotoLibrary */,
 				049D790D2D8A6AB4009A0DBA /* CustomDataVC.swift */,
 				B589C83B2D55BE78009A91CA /* AiChatVC.swift */,
 				B589C83C2D55BE78009A91CA /* GetDiskSpaceVC.swift */,
@@ -768,6 +828,7 @@
 				5F54C5DB2AE682C90090596F /* UnitSynchronizationViewController.m in Sources */,
 				5FC3119A2AE7CBF000635E56 /* ConfigHeartRateViewController.m in Sources */,
 				D71481B32B97399E00C3CB63 /* ZHBaseBottomPopView.swift in Sources */,
+				04191DA82DFAC9F700685BCB /* SJHud.swift in Sources */,
 				5FF3C1682AD6728E0063FEE4 /* SoundAndTouchFeedbackViewController.m in Sources */,
 				D71481C42B97399E00C3CB63 /* UITableView+Ext.swift in Sources */,
 				5FC311942AE7B1F200635E56 /* SedentaryReminderViewController.m in Sources */,
@@ -776,6 +837,17 @@
 				5FF3C1652AD651D60063FEE4 /* DateAndTimeSynchronizedViewController.m in Sources */,
 				5FEA2DF92AE2234200C464A7 /* PickerViewController.m in Sources */,
 				5FF961F62AC427DC00DFA693 /* DemoViewController.m in Sources */,
+				04191D9C2DFAC9A500685BCB /* USTheme.swift in Sources */,
+				04191D9D2DFAC9A500685BCB /* UIView+Core.swift in Sources */,
+				04191D9E2DFAC9A500685BCB /* UIButton+Core.swift in Sources */,
+				04191D9F2DFAC9A500685BCB /* PhotoLibraryOperationView.swift in Sources */,
+				04191DA02DFAC9A500685BCB /* PhotoLibraryViewModel.swift in Sources */,
+				04191DA12DFAC9A500685BCB /* UILabel+Core.swift in Sources */,
+				04191DA22DFAC9A500685BCB /* UIView+SafeArea.swift in Sources */,
+				04191DA32DFAC9A500685BCB /* PhotoLibraryController.swift in Sources */,
+				04191DA42DFAC9A500685BCB /* SJBaseView.swift in Sources */,
+				04191DA52DFAC9A500685BCB /* PhotoLibraryHeader.swift in Sources */,
+				04191DA62DFAC9A500685BCB /* UIImageView+Core.swift in Sources */,
 				D71481B92B97399E00C3CB63 /* EFColorWheelView.swift in Sources */,
 				D71481BA2B97399E00C3CB63 /* EFColorView.swift in Sources */,
 				D77825242ABD34180056AB02 /* SceneDelegate.m in Sources */,

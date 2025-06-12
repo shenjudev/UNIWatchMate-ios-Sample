@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WMConnectModel : NSObject
 
-/// 可订阅对象，设备是否连接 (Subscribed objects, whether the device is connected)
+/// 可订阅对象，设备是否连接,ble (Subscribed objects, whether the device is connected)
 @property (nonatomic, strong) RACSignal<NSNumber *> *isConnected;
 @property (nonatomic, assign, readonly) BOOL isConnectedValue;
 

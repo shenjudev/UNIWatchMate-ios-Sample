@@ -22,6 +22,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@protocol WMPhotoLibraryDelegate
+/**
+ * @brief 设备发送图片数据到APP
+ * @param imageData 图片数据，可以为空
+ * @discussion 仅发送图片数据到智能眼镜进行处理
+ */
+- (void)glassesSendImageWithImageData:(nullable NSData *)imageData;
+
+- (void)glassesSendImageNames:(nullable NSData *)imageNamesData;
+
+
+@end
+
 @protocol WMAiAssistantDelegate
 
 /**
@@ -76,6 +89,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) WMDatasSyncModel *datasSync;
 
 @property (nonatomic, weak) id<WMAiAssistantDelegate> aiAssistantDelegate;
+@property (nonatomic, weak) id<WMPhotoLibraryDelegate> photoLibraryDelegate;
 /// 自定义数据
 @property (nonatomic, weak) id<WMCustomDataDelegate> customDataDelegate;
 

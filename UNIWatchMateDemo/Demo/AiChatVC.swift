@@ -190,7 +190,7 @@ class AiChatVC: UIViewController {
         }
     }
     
-    private func showToast(_ message: String) {
+private func showToast(_ message: String) {
         statusLabel.text = message
         UIView.animate(withDuration: 0.3, animations: {
             self.statusLabel.alpha = 1

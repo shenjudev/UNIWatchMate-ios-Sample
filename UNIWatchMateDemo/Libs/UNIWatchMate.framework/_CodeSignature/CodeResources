@@ -58,7 +58,7 @@
 		</data>
 		<key>Headers/WMAppsModel.h</key>
 		<data>
-		DT0mapUzDRtNyjqWB0a7Ev2rZlM=
+		pNHOVrcnIDAfhK87JG1CKzhYjZ0=
 		</data>
 		<key>Headers/WMBaseDataModel.h</key>
 		<data>
@@ -102,7 +102,7 @@
 		</data>
 		<key>Headers/WMConnectModel.h</key>
 		<data>
-		zCxvvTA/uCi/sN0anCRU+KBk9Cw=
+		supm2bDETzslRuLGDohCJE2kWN0=
 		</data>
 		<key>Headers/WMContactModel.h</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>Headers/WMDeviceInfoModel.h</key>
 		<data>
-		/YuZO4BY8R1zVqJOeQnwXHlxYM8=
+		YgTtY4zN/nZACwbxKcuJID1gfhY=
 		</data>
 		<key>Headers/WMDialAppModel.h</key>
 		<data>
@@ -150,7 +150,7 @@
 		</data>
 		<key>Headers/WMError.h</key>
 		<data>
-		q6r/eucULZQxS3T7fxDgz7qAoAc=
+		U61npw1vIqZ/HZy7JPH0dnD6rlM=
 		</data>
 		<key>Headers/WMFileAppModel.h</key>
 		<data>
@@ -242,7 +242,7 @@
 		</data>
 		<key>Headers/WMPeripheral.h</key>
 		<data>
-		O7yudn/NfmgMnaZbPn4UDnQSdF4=
+		R3GIrDMqQ+sXzSG/MSZw37InHN4=
 		</data>
 		<key>Headers/WMPersonalInfoModel.h</key>
 		<data>
@@ -251,6 +251,10 @@
 		<key>Headers/WMPersonalInfoSettingModel.h</key>
 		<data>
 		ml/fbb/7tZ9CWGjvNaxzIuqJo98=
+		</data>
+		<key>Headers/WMPhotoLibrary.h</key>
+		<data>
+		8DXYEfG0Z7HMIgUk/A+N13hEPVQ=
 		</data>
 		<key>Headers/WMProgressModel.h</key>
 		<data>
@@ -354,7 +358,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		tVBH0oWwEWzUi2uwWd0FQz15bLo=
+		PnLJxs2rp3NO8YUq6Y9IqGXcvts=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -458,7 +462,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0tIgbiUZP9IlAyN5KBc9xdOmgcNGipgX5VnXJU9H4xo=
+			2qYJ99N5wTMyibbJzlweiqghxYN0mUHfC73prgeKMgA=
 			</data>
 		</dict>
 		<key>Headers/WMBaseDataModel.h</key>
@@ -535,7 +539,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			d2uDUB11iQVlUUk7U4r2H8c7AnAUorbfYqL6nOgs5pY=
+			z4CtqSglLz7Q0Xb4zFMBCh5F0liOIU+mltoPQNhgFE0=
 			</data>
 		</dict>
 		<key>Headers/WMContactModel.h</key>
@@ -584,7 +588,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			sPviNnDsbysOJp52Xh+NAogW44k0teDZtDR0nX1Az8A=
+			UhJkDdg3caZJ62s/thUocJ8g2DZ2KHVnIxaYiAZ3Y7Q=
 			</data>
 		</dict>
 		<key>Headers/WMDialAppModel.h</key>
@@ -619,7 +623,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			scoMSrqHVqmfCkH+A1JOBeA+xqmkfn6eSMJdWjGzdH0=
+			Gu1yiOrX/nGBqL/66tf1UyLr/JeA+5kYUsjpFI5WJF4=
 			</data>
 		</dict>
 		<key>Headers/WMFileAppModel.h</key>
@@ -780,7 +784,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Mtx24JTbEepMo583OhZHgta7vnPQ8CH2hoR0vZkreBI=
+			hPlQRf3hiJbOQttxPfHI/C1lghYEF9jxeIvJp7xD3Tc=
 			</data>
 		</dict>
 		<key>Headers/WMPersonalInfoModel.h</key>
@@ -795,6 +799,13 @@
 			<key>hash2</key>
 			<data>
 			GEfetuUuHrmPiu10ScseV5nm4pITflrvXRCfc91o5q4=
+			</data>
+		</dict>
+		<key>Headers/WMPhotoLibrary.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			9IniGN1yIreksSlpma4+YWWefE3DhjA8Jjg6lEpsMaw=
 			</data>
 		</dict>
 		<key>Headers/WMProgressModel.h</key>

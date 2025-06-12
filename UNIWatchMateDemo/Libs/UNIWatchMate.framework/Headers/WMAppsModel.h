@@ -18,6 +18,7 @@
 #import "WMNavigationAppModel.h"
 #import "WMMusilinAppModel.h"
 #import "WMGlassesVideoModel.h"
+#import "WMPhotoLibrary.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -49,6 +50,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) WMNavigationAppModel *navigationApp;
 
 @property (nonatomic, strong) WMMusilinAppModel *musilinApp;
+// 相册
+@property (nonatomic, strong) WMPhotoLibrary *photoLibraryApp;
 @end
 
 NS_ASSUME_NONNULL_END

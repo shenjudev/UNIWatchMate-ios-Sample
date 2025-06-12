@@ -383,6 +383,13 @@
                     @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
                     @"selector": NSStringFromSelector(@selector(customDataViewController:didSeletIndexPath:))
                 }
+                ,
+                @{
+                    @"title":NSLocalizedString(@"相册",nil),
+                    @"subtitle":@"",
+                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+                    @"selector": NSStringFromSelector(@selector(photoLibraryController:didSeletIndexPath:))
+                }
                 
             ]
         }, @{
@@ -490,6 +497,11 @@
 
 -(void)getMediaCountViewController:(UITableViewCell *)cell didSeletIndexPath:(NSIndexPath *)indexPath{
     UIViewController *viewController = [MediaCountVC new];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+-(void)photoLibraryController:(UITableViewCell *)cell didSeletIndexPath:(NSIndexPath *)indexPath{
+    UIViewController *viewController = [PhotoLibraryController new];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
