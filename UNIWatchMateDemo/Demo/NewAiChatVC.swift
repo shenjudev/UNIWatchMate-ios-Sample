@@ -13,7 +13,9 @@ import RxSwift
 import RxCocoa
 import SVProgressHUD
 import MZEncryptSDK
-
+//离线语音adk的使用
+//1.1 导包：导⼊MZEncryptSDK.framework 、openssl.framework 、AFNetworking.
+//1.2 设置：target -> Build Settings -> Bitcode设置为NO, Other Linker Flags添加-ObjC
 class NewAiChatVC: UIViewController {
 
     var disposable: RACDisposable?
@@ -147,6 +149,8 @@ class NewAiChatVC: UIViewController {
             wMPeripheral?.customDataDelegate = self
             MZPayAuth.share().logEnable = true
             //mac地址需要 离线语音提供商 授权，才能正常激活
+            DDLogInfo("wMPeripheral?.target.mac \(wMPeripheral?.target.mac ?? "")")
+            DDLogInfo("wMPeripheral?.target.name \(wMPeripheral?.target.name ?? "")")
             MZPayAuth.share().auth(withMac: wMPeripheral?.target.mac ?? "", name: wMPeripheral?.target.name ?? "", delegate: self)
             
             // 检查设备是否支持离线语音
