@@ -378,6 +378,12 @@
                     @"selector": NSStringFromSelector(@selector(aiChatController:didSeletIndexPath:))
                 },
                 @{
+                    @"title":NSLocalizedString(@"新AI对话",nil),
+                    @"subtitle":@"",
+                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+                    @"selector": NSStringFromSelector(@selector(newAiChatController:didSeletIndexPath:))
+                },
+                @{
                     @"title":NSLocalizedString(@"自定义数据",nil),
                     @"subtitle":@"",
                     @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
@@ -526,7 +532,10 @@
     UIViewController *viewController = [AiChatVC new];
     [self.navigationController pushViewController:viewController animated:YES];
 }
-
+-(void)newAiChatController:(UITableViewCell *)cell didSeletIndexPath:(NSIndexPath *)indexPath{
+    UIViewController *viewController = [NewAiChatVC new];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
 -(void)aboutDeviceViewController:(UITableViewCell *)cell didSeletIndexPath:(NSIndexPath *)indexPath{
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *viewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"AboutDeviceViewController"];

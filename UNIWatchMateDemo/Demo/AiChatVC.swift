@@ -240,7 +240,6 @@ extension AiChatVC: AVAudioPlayerDelegate {
 
 extension AiChatVC: WMAiAssistantDelegate {
     func glassesSendData(withImageData imageData: Data?, pcmData: Data?) {
-
     }
     
     func glassesSendAudio(withPcmData pcmData: Data) {

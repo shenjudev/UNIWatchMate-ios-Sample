@@ -45,7 +45,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /// 是否支持视频预览 （Whether to support video preview）
-- (BOOL)isSupportVideoPreview;
+//- (BOOL)isSupportVideoPreview;
 
 /// 接收手表发送过来的视频 （Receive video from the watch）
 - (RACSignal<NSData *> *)monitorVideo;

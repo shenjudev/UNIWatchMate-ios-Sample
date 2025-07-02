@@ -50,6 +50,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 组件设置 （Component setup）
 @property (nonatomic, strong) WMWidgetSettingModel *widget;
 
+
 @end
 
 NS_ASSUME_NONNULL_END

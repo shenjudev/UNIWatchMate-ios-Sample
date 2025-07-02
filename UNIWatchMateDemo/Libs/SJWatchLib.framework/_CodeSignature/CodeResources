@@ -34,31 +34,31 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		YZnxYnnXCVM3dXc3EQIBr0RcU90=
+		ik+ZHsyIukvn0ndp/NuwnGGGB3Q=
 		</data>
 		<key>Modules/SJWatchLib.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		gMC89KuXPoMa85CS6f86JNKdFEU=
+		TUnRgwGSd7VPqCsyHYircFpknmU=
 		</data>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		u46M9jJxPCwssRtnJd8m3jsdZns=
+		uVuCXbtjQWYJDTkqGPWAmOt9XKk=
 		</data>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		w9vYBb838Fq6JX+9zXlr7JvM5fs=
+		i66k+pNcBMg0/LHy2PMO2ZJhdgk=
 		</data>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		7tKy5x0V8gaEUcIMHW3hoTKo83Y=
+		W7dnKGpka6hOy8coU5t5Tl7siG4=
 		</data>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		w9vYBb838Fq6JX+9zXlr7JvM5fs=
+		i66k+pNcBMg0/LHy2PMO2ZJhdgk=
 		</data>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		VdQiyMTpPvUm+yGWMrqYpPJeKMo=
+		yRMGo4dDBMZoLlR13+hjGHqa19Q=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -164,42 +164,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			bSQU+YueVyMKh8obNntDH7pOicr7GdxI+c53xviscDU=
+			eIott+eeDDmMXNh97VeP2oy1jH3MAsrYNSqB+UD4j/8=
 			</data>
 		</dict>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			13zFqsYAnk6kUzZSYhyPipDdo71/hC9qVesfikUcb6o=
+			I5+OXMokO3u6uTOs3VU7Zhd9K6Ws+6Zv5R9FVuBUWs8=
 			</data>
 		</dict>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			eQ2cHU4TI1xpeuUrjgRLbX+EPotirJ+UlpTPuGuZisc=
+			n04TWDcFU01Y0fggUlbtjqk0fHTs5OKFE03g1fj1ImI=
 			</data>
 		</dict>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3AMVKFhYdFDXBy5H3sIfe/L48OkeMLRSa5qNn5jhzvQ=
+			+SD0RHZiBLnbNFjNvf7giTy/Iu4f+2RTaCJW+bgugGw=
 			</data>
 		</dict>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			eQ2cHU4TI1xpeuUrjgRLbX+EPotirJ+UlpTPuGuZisc=
+			n04TWDcFU01Y0fggUlbtjqk0fHTs5OKFE03g1fj1ImI=
 			</data>
 		</dict>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zNRlC/29dKO+xEvio4mxzMifqqNVWHYQMmZjLKIEluk=
+			F+Dv3CN3RgJ3eSeLlA1Sg0JVXP3puPUVwoKv5+fXa4A=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

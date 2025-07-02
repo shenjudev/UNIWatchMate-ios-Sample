@@ -103,7 +103,9 @@ typedef NS_ENUM(NSUInteger, WMFeature) {
 
 
 typedef NS_ENUM(NSUInteger, WMGlassesFeature) {
-    WMFeatureAIChat = 0
+    WMFeatureAIChat = 0,
+    WMFeatureWakeupWord = 1,
+    WMFeatureStarburstAiSDK = 2
 };
 // 特性列表 （Feature list）
 @interface WMGlassesFeatureSet : NSObject

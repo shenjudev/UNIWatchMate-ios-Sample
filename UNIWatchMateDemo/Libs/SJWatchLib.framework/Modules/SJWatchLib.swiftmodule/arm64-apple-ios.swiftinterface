@@ -15,6 +15,7 @@ import Swift
 import SwiftyJSON
 import TLOCP
 import UIKit
+import UNIWatchMate
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
@@ -234,6 +235,20 @@ public struct SJMessageError : Swift.Error {
     get
   }
 }
+public protocol SJGlassesAiDelegate : AnyObject {
+  func glassesSendData(imageData: Foundation.Data?, pcmData: Foundation.Data?)
+  func glassesSendAudio(pcmData: Foundation.Data)
+  func glassesSendImage(imageData: Foundation.Data?)
+  func openAiAssistant()
+  func closeAiAssistant()
+}
+public protocol SJNewGlassesAiDelegate : AnyObject {
+  func glassesSendDataNew(imageData: Foundation.Data?, pcmData: Foundation.Data?)
+  func glassesSendAudioNew(pcmData: Foundation.Data)
+  func glassesSendImageNew(imageData: Foundation.Data?)
+  func openAiAssistantNew()
+  func closeAiAssistantNew()
+}
 public let SH_LEVEL_DEBUG: Swift.String
 public let SH_LEVEL_INFO: Swift.String
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class SJLogInfo : UNIWatchMate.WMLogInfo {
@@ -241,13 +256,6 @@ public let SH_LEVEL_INFO: Swift.String
   @objc override dynamic public func registerLevel(_ level: Swift.String)
   @objc override dynamic public func mateName() -> Swift.String
   @objc deinit
-}
-public protocol SJGlassesAiDelegate : AnyObject {
-  func glassesSendData(imageData: Foundation.Data?, pcmData: Foundation.Data?)
-  func glassesSendAudio(pcmData: Foundation.Data)
-  func glassesSendImage(imageData: Foundation.Data?)
-  func openAiAssistant()
-  func closeAiAssistant()
 }
 public class SJGlassesVideoReceiveModel {
   final public let value: Foundation.Data
@@ -303,11 +311,6 @@ public class USWatchBatteryModel : Swift.Codable {
   required public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
-}
-extension Swift.Dictionary where Key == Swift.String, Value == Any {
-  public var macAddress: Swift.String? {
-    get
-  }
 }
 public class USWatchBaseInfoModel : Swift.Codable {
   public var chip_mode: Swift.String?

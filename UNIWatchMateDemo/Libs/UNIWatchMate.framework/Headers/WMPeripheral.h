@@ -35,6 +35,44 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@protocol WMNewAiAssistantDelegate
+
+/**
+ * @brief 设备发送图片和音频数据到APP
+ * @param imageData 图片数据，可以为空
+ * @param pcmData PCM格式的音频数据，可以为空
+ * @discussion 同时发送图片和音频数据到智能眼镜进行处理
+ */
+- (void)glassesSendDataNewWithImageData:(nullable NSData *)imageData pcmData:(nullable NSData *)pcmData;
+
+/**
+ * @brief 设备发送音频数据到APP
+ * @param pcmData PCM格式的音频数据
+ * @discussion 仅发送音频数据到智能眼镜进行处理
+ */
+- (void)glassesSendAudioNewWithPcmData:(NSData *)pcmData;
+
+/**
+ * @brief 设备发送图片数据到APP
+ * @param imageData 图片数据，可以为空
+ * @discussion 仅发送图片数据到智能眼镜进行处理
+ */
+- (void)glassesSendImageNewWithImageData:(nullable NSData *)imageData;
+
+/**
+ * @brief 设备打开AI助手功能
+ * @discussion 激活智能眼镜的AI助手功能
+ */
+- (void)openAiAssistantNew;
+
+/**
+ * @brief 设备关闭AI助手功能
+ * @discussion 停用智能眼镜的AI助手功能
+ */
+- (void)closeAiAssistantNew;
+
+@end
+
 @protocol WMAiAssistantDelegate
 
 /**
@@ -89,6 +127,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) WMDatasSyncModel *datasSync;
 
 @property (nonatomic, weak) id<WMAiAssistantDelegate> aiAssistantDelegate;
+@property (nonatomic, weak) id<WMNewAiAssistantDelegate> aiNewAssistantDelegate;
 @property (nonatomic, weak) id<WMPhotoLibraryDelegate> photoLibraryDelegate;
 /// 自定义数据
 @property (nonatomic, weak) id<WMCustomDataDelegate> customDataDelegate;

@@ -36,7 +36,8 @@ target 'UNIWatchMateDemo' do
   pod 'MJExtension'
   pod 'SWCompression/TAR'
   pod 'YYText'
-
+  pod 'AFNetworking', '~> 4.0'
+  pod 'OpenSSL-Universal'
 end
 
 post_install do |installer|

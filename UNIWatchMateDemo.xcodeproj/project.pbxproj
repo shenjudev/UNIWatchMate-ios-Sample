@@ -21,6 +21,10 @@
 		04191DA82DFAC9F700685BCB /* SJHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04191DA72DFAC9F700685BCB /* SJHud.swift */; };
 		049D790E2D8A6AB4009A0DBA /* CustomDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D790D2D8A6AB4009A0DBA /* CustomDataVC.swift */; };
 		049D79102D8A6AC4009A0DBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D790F2D8A6AC4009A0DBA /* AppDelegate.swift */; };
+		04E676682E1545290010DBB0 /* NewAiChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E676672E1545290010DBB0 /* NewAiChatVC.swift */; };
+		04E6766A2E1546370010DBB0 /* MZEncryptSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E676692E1546370010DBB0 /* MZEncryptSDK.framework */; };
+		04E6766B2E1546370010DBB0 /* MZEncryptSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04E676692E1546370010DBB0 /* MZEncryptSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		04E6766D2E15463E0010DBB0 /* MZEncryptSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E6766C2E15463E0010DBB0 /* MZEncryptSDK.framework */; };
 		5F04AD8C2AF0B28900348A38 /* NSDictionary+JSONDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F04AD8B2AF0B28900348A38 /* NSDictionary+JSONDescription.m */; };
 		5F04AD8F2AF0B47A00348A38 /* WeatherCreateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F04AD8E2AF0B47A00348A38 /* WeatherCreateHelper.m */; };
 		5F1886332AF3B0AA00911FBF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5F1886322AF3B0AA00911FBF /* README.md */; };
@@ -138,6 +142,7 @@
 			files = (
 				B5CF8FD92BA947990074E221 /* UNIWatchMate.framework in Embed Frameworks */,
 				B5D98DA82D572F8F00A2ECE6 /* TLOCP.framework in Embed Frameworks */,
+				04E6766B2E1546370010DBB0 /* MZEncryptSDK.framework in Embed Frameworks */,
 				B589C8662D55BF5D009A91CA /* opus-ios.framework in Embed Frameworks */,
 				B5CF8FD42BA947970074E221 /* h264encoder.framework in Embed Frameworks */,
 				B5CF8FD72BA947980074E221 /* SJWatchLib.framework in Embed Frameworks */,
@@ -162,6 +167,9 @@
 		04191DA72DFAC9F700685BCB /* SJHud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SJHud.swift; sourceTree = "<group>"; };
 		049D790D2D8A6AB4009A0DBA /* CustomDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDataVC.swift; sourceTree = "<group>"; };
 		049D790F2D8A6AC4009A0DBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		04E676672E1545290010DBB0 /* NewAiChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAiChatVC.swift; sourceTree = "<group>"; };
+		04E676692E1546370010DBB0 /* MZEncryptSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MZEncryptSDK.framework; path = UNIWatchMateDemo/Libs/MZEncryptSDK.framework; sourceTree = "<group>"; };
+		04E6766C2E15463E0010DBB0 /* MZEncryptSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MZEncryptSDK.framework; sourceTree = "<group>"; };
 		5F04AD8A2AF0B28900348A38 /* NSDictionary+JSONDescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JSONDescription.h"; sourceTree = "<group>"; };
 		5F04AD8B2AF0B28900348A38 /* NSDictionary+JSONDescription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JSONDescription.m"; sourceTree = "<group>"; };
 		5F04AD8D2AF0B47A00348A38 /* WeatherCreateHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherCreateHelper.h; sourceTree = "<group>"; };
@@ -320,12 +328,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04E6766D2E15463E0010DBB0 /* MZEncryptSDK.framework in Frameworks */,
 				B5CF8FD82BA947990074E221 /* UNIWatchMate.framework in Frameworks */,
 				B5D98DA72D572F8F00A2ECE6 /* TLOCP.framework in Frameworks */,
 				B589C8652D55BF5D009A91CA /* opus-ios.framework in Frameworks */,
 				B5CF8FD32BA947970074E221 /* h264encoder.framework in Frameworks */,
 				D7135A8BBE24884BB6DAFEEE /* Pods_UNIWatchMateDemo.framework in Frameworks */,
 				B5CF8FD62BA947980074E221 /* SJWatchLib.framework in Frameworks */,
+				04E6766A2E1546370010DBB0 /* MZEncryptSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +378,7 @@
 		56031C1DA84625A2BB83AC8C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04E676692E1546370010DBB0 /* MZEncryptSDK.framework */,
 				C60E9F032EABB4DD0FEDA943 /* Pods_UNIWatchMateDemo.framework */,
 			);
 			name = Frameworks;
@@ -421,6 +432,7 @@
 		5FF961ED2AC427DC00DFA693 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				04E676672E1545290010DBB0 /* NewAiChatVC.swift */,
 				04191D942DFAC9A500685BCB /* Libs */,
 				04191D9B2DFAC9A500685BCB /* PhotoLibrary */,
 				049D790D2D8A6AB4009A0DBA /* CustomDataVC.swift */,
@@ -550,6 +562,7 @@
 		B5CF8FCF2BA947920074E221 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				04E6766C2E15463E0010DBB0 /* MZEncryptSDK.framework */,
 				B5D98DA52D572F8B00A2ECE6 /* TLOCP.framework */,
 				B589C8632D55BF5A009A91CA /* opus-ios.framework */,
 				B5CF8FCC2BA947920074E221 /* h264encoder.framework */,
@@ -850,6 +863,7 @@
 				04191DA62DFAC9A500685BCB /* UIImageView+Core.swift in Sources */,
 				D71481B92B97399E00C3CB63 /* EFColorWheelView.swift in Sources */,
 				D71481BA2B97399E00C3CB63 /* EFColorView.swift in Sources */,
+				04E676682E1545290010DBB0 /* NewAiChatVC.swift in Sources */,
 				D77825242ABD34180056AB02 /* SceneDelegate.m in Sources */,
 				D71481C12B97399E00C3CB63 /* UIButton+Badge.swift in Sources */,
 				D71481C82B97399E00C3CB63 /* UIColor+Ext.swift in Sources */,

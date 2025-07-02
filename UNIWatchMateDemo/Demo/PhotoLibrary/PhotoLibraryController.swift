@@ -89,12 +89,6 @@ class PhotoLibraryController: UIViewController {
         layoutUI()
         actionsHandler()
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        if viewModel.importingPhoto.value{
-            viewModel.stopImport()
-        }
-    }
 
      func appendUI() {
         view.backgroundColor = .black
@@ -285,12 +279,7 @@ class PhotoLibraryController: UIViewController {
 
         photoLibraryHeader.isUserInteractionEnabled = true
          photoLibraryHeader.backBtn.rx.tap.bind { [weak self] in
-             guard let self = self else {return}
-             if viewModel.importingPhoto.value {
-                 SJHud.showRemind(status: "导入中...")
-                 return
-             }
-             self.navigationController?.popViewController()
+             self?.navigationController?.popViewController()
         }.disposed(by: self.disposeBag)
 
         photoLibraryHeader.selectModeBtn.addTarget(
@@ -310,7 +299,7 @@ class PhotoLibraryController: UIViewController {
         }
         
         //切换页面时，取消选中状态
-//        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     private func updatePhotoGroups(with urls: [URL]) {

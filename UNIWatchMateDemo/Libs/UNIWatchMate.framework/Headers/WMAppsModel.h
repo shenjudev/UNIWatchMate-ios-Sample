@@ -19,6 +19,8 @@
 #import "WMMusilinAppModel.h"
 #import "WMGlassesVideoModel.h"
 #import "WMPhotoLibrary.h"
+#import "WMAiAssistNew.h"
+
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -52,6 +54,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) WMMusilinAppModel *musilinApp;
 // 相册
 @property (nonatomic, strong) WMPhotoLibrary *photoLibraryApp;
+// AI对话
+@property (nonatomic, strong) WMAiAssistNew *aiNewAssist;
+
 @end
 
 NS_ASSUME_NONNULL_END

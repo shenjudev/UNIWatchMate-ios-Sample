@@ -17,8 +17,8 @@ class PhotoLibraryHeader: SJBaseView {
         addSubview(naviBar)
         addSubview(titleLb)
         addSubview(backBtn)
-        backBtn.isHidden = true
         addSubview(selectModeBtn)
+        
         // 添加按钮点击事件
     }
 
@@ -30,7 +30,7 @@ class PhotoLibraryHeader: SJBaseView {
             make.height.equalTo(44)
         }
         titleLb.snp.makeConstraints { make in
-            make.left.equalTo(16)
+            make.left.equalTo(backBtn.snp.right).offset(16)
             make.centerY.equalTo(naviBar)
         }
    
