@@ -13,8 +13,20 @@ import RxSwift
 import RxCocoa
 import SVProgressHUD
 import MZEncryptSDK
-//离线语音adk的使用
-//1.1 导包：导⼊MZEncryptSDK.framework 、openssl.framework 、AFNetworking.
+
+
+//长对话AI聊天流程。
+//1.通过语音唤醒进入语音聊天模式（不间断对话），APP端收到openAiAssistantNew()回调，设备端开始录音。glassesSendAudioNew()回调收到解码后的pcm数据。
+//2. 设备端通过vad检测到没有人声的时候，APP收到closeAiAssistantNew()回调， 告诉手机本次说话完成。
+//3. 手机端收到closeAiAssistantNew回调后开始调用大模型对话，App在开始播放tts时调用appBeginPlayTts()命令到设备端，设备端将忽略有人说话并不再采集语音数据
+//4. 手机端播放tts完成后，给设备端发送appStopPlayTts()方法表示手机tts播放完成，此时设备又重新开始采集语音数据
+//5. 在聊天过程中，手机端可以调用appStopAiChat()给设备来结束语音聊天
+//6. 设备端在6秒内如果检测不到声音设备主动退出聊天模式（再次进入聊天需要语音唤醒）
+//7. 手机端可以调用letDeviceTakePhoto()方法，让设备拍照并将数据传输给APP，glassesSendImageNew方法可以收到图片数据
+
+
+//离线语音sdk的使用
+//1.1 导包：导⼊MZEncryptSDK.framework 、OpenSSL-Universal 、AFNetworking.
 //1.2 设置：target -> Build Settings -> Bitcode设置为NO, Other Linker Flags添加-ObjC
 class NewAiChatVC: UIViewController {
 
@@ -146,7 +158,7 @@ class NewAiChatVC: UIViewController {
         
         WatchManager.sharedInstance().current.subscribeNext { wMPeripheral in
             wMPeripheral?.aiNewAssistantDelegate = self
-            wMPeripheral?.customDataDelegate = self
+            wMPeripheral?.customDataDelegate = self//设置自定义数据的代理
             MZPayAuth.share().logEnable = true
             //mac地址需要 离线语音提供商 授权，才能正常激活
             DDLogInfo("wMPeripheral?.target.mac \(wMPeripheral?.target.mac ?? "")")
@@ -359,6 +371,7 @@ private func showToast(_ message: String) {
     }
     
     private func checkVoiceSupportStatus() {
+        //通过特性判断设备是否支持离线语音
         let isSupported = WatchManager.sharedInstance().currentValue.infoModel.glassesFeatureSetModel?.feature_mask.isFeatureEnabled(.featureWakeupWord) ?? false
         
         if isSupported {
