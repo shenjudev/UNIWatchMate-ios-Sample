@@ -52,6 +52,52 @@ extension Swift.Array {
 extension Foundation.Data {
   public static func random(count: Swift.Int) -> Foundation.Data
 }
+public protocol SJOhterDataDelegate : AnyObject {
+  func glassesOtherData(data: Foundation.Data)
+}
+extension CoreBluetooth.CBManagerState {
+  public var desc: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class SJObservable<T> {
+  public var change: RxSwift.Observable<T>
+  public var value: T?
+  @objc deinit
+}
+extension Swift.Error {
+  public var desc: Swift.String {
+    get
+  }
+}
+public enum SJError : Swift.Error {
+  case timeout
+  case commandError
+  case nonsupport
+  case bluetoothOff(CoreBluetooth.CBManagerState)
+  case serviceFailure
+  case failToConnect((any Swift.Error)?)
+  case disconnect
+  case failUser
+  case unknown
+  case fileError
+  case cancelled
+  case lowPower
+  case outMemory
+  case busy
+  case dialLimit
+  case deviceFail
+  case noBaseInfo
+  case customDialFail
+  public var desc: Swift.String {
+    get
+  }
+}
+public struct SJMessageError : Swift.Error {
+  public var desc: Swift.String {
+    get
+  }
+}
 public enum SJWatchSwitchType : Swift.UInt8 {
   case ring
   case notifyShake
@@ -153,6 +199,7 @@ public class SJ2WatchBaseInfoGetModel : Swift.Codable {
   public var preview_height: Swift.Int?
   public var preview_width: Swift.Int?
   public var ble_name: Swift.String?
+  public var offline_asr_auth: Swift.String?
   required public init()
   required public init?(data: Foundation.Data)
   required public init(from decoder: any Swift.Decoder) throws
@@ -192,49 +239,6 @@ public class SJWatchSleepSettingModel {
   public func tagTime(HH: Swift.UInt8, mm: Swift.UInt8, isAdd: Swift.Bool, value: Swift.Int) -> (HH: Swift.UInt8, mm: Swift.UInt8)
   @objc deinit
 }
-extension CoreBluetooth.CBManagerState {
-  public var desc: Swift.String {
-    get
-  }
-}
-@_hasMissingDesignatedInitializers public class SJObservable<T> {
-  public var change: RxSwift.Observable<T>
-  public var value: T?
-  @objc deinit
-}
-extension Swift.Error {
-  public var desc: Swift.String {
-    get
-  }
-}
-public enum SJError : Swift.Error {
-  case timeout
-  case commandError
-  case nonsupport
-  case bluetoothOff(CoreBluetooth.CBManagerState)
-  case serviceFailure
-  case failToConnect((any Swift.Error)?)
-  case disconnect
-  case failUser
-  case unknown
-  case fileError
-  case cancelled
-  case lowPower
-  case outMemory
-  case busy
-  case dialLimit
-  case deviceFail
-  case noBaseInfo
-  case customDialFail
-  public var desc: Swift.String {
-    get
-  }
-}
-public struct SJMessageError : Swift.Error {
-  public var desc: Swift.String {
-    get
-  }
-}
 public protocol SJGlassesAiDelegate : AnyObject {
   func glassesSendData(imageData: Foundation.Data?, pcmData: Foundation.Data?)
   func glassesSendAudio(pcmData: Foundation.Data)
@@ -247,6 +251,7 @@ public protocol SJNewGlassesAiDelegate : AnyObject {
   func glassesSendAudioNew(pcmData: Foundation.Data)
   func glassesSendImageNew(imageData: Foundation.Data?)
   func openAiAssistantNew()
+  func stopAudioSendAiAssistantNew()
   func closeAiAssistantNew()
 }
 public let SH_LEVEL_DEBUG: Swift.String

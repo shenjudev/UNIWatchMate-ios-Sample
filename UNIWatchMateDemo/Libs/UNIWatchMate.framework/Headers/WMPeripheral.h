@@ -22,6 +22,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@protocol WMCustom4A02DataDelegate <NSObject>
+// 接受到自定义数据回调
+- (void)device4A02PushData:(NSData *)data;
+
+@end
+
 @protocol WMPhotoLibraryDelegate
 /**
  * @brief 设备发送图片数据到APP
@@ -70,6 +76,11 @@ NS_ASSUME_NONNULL_BEGIN
  * @discussion 停用智能眼镜的AI助手功能
  */
 - (void)closeAiAssistantNew;
+/**
+ * @brief 设备停止给手机发送音频数据
+ * @discussion 设备停止给手机发送音频数据
+ */
+- (void)stopAudioSendAiAssistantNew;
 
 @end
 
@@ -131,6 +142,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) id<WMPhotoLibraryDelegate> photoLibraryDelegate;
 /// 自定义数据
 @property (nonatomic, weak) id<WMCustomDataDelegate> customDataDelegate;
+
+/// 离线语音验证，收到 特点 character的数据
+///  if ([cuuid.uppercaseString isEqual:@"00004A02-0000-1000-8000-00805F9B34FB"] || [cuuid.uppercaseString isEqualToString:@"4A02"]) {
+
+@property (nonatomic, weak) id<WMCustom4A02DataDelegate> custom4A02DataDelegate;
+
+//@property (nonatomic, strong) CBPeripheral *cBPeripheral;
 
 // 外设uuid
 - (NSString * _Nullable)uuidString;

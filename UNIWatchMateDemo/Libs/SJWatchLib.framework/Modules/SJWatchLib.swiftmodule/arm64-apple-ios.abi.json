@@ -1579,6 +1579,66 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "SJOhterDataDelegate",
+        "printedName": "SJOhterDataDelegate",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "glassesOtherData",
+            "printedName": "glassesOtherData(data:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10SJWatchLib19SJOhterDataDelegateP012glassesOtherD04datay10Foundation0D0V_tF",
+            "mangledName": "$s10SJWatchLib19SJOhterDataDelegateP012glassesOtherD04datay10Foundation0D0V_tF",
+            "moduleName": "SJWatchLib",
+            "genericSig": "<τ_0_0 where τ_0_0 : SJWatchLib.SJOhterDataDelegate>",
+            "sugared_genericSig": "<Self where Self : SJWatchLib.SJOhterDataDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:10SJWatchLib19SJOhterDataDelegateP",
+        "mangledName": "$s10SJWatchLib19SJOhterDataDelegateP",
+        "moduleName": "SJWatchLib",
+        "genericSig": "<τ_0_0 : AnyObject>",
+        "sugared_genericSig": "<Self : AnyObject>",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -1856,6 +1916,1328 @@
         "kind": "Import",
         "name": "RxCocoa",
         "printedName": "RxCocoa",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "RxSwift",
+        "printedName": "RxSwift",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib"
+      },
+      {
+        "kind": "Import",
+        "name": "RxCocoa",
+        "printedName": "RxCocoa",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib"
+      },
+      {
+        "kind": "Import",
+        "name": "TLOCP",
+        "printedName": "TLOCP",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "RxSwift",
+        "printedName": "RxSwift",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib"
+      },
+      {
+        "kind": "Import",
+        "name": "RxCocoa",
+        "printedName": "RxCocoa",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib"
+      },
+      {
+        "kind": "Import",
+        "name": "TLOCP",
+        "printedName": "TLOCP",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "RxSwift",
+        "printedName": "RxSwift",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib"
+      },
+      {
+        "kind": "Import",
+        "name": "RxCocoa",
+        "printedName": "RxCocoa",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib"
+      },
+      {
+        "kind": "Import",
+        "name": "CoreBluetooth",
+        "printedName": "CoreBluetooth",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib"
+      },
+      {
+        "kind": "Import",
+        "name": "TLOCP",
+        "printedName": "TLOCP",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SJObservable",
+        "printedName": "SJObservable",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "change",
+            "printedName": "change",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Observable",
+                "printedName": "RxSwift.Observable<τ_0_0>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_0_0"
+                  }
+                ],
+                "usr": "s:7RxSwift10ObservableC"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10SJWatchLib12SJObservableC6change7RxSwift10ObservableCyxGvp",
+            "mangledName": "$s10SJWatchLib12SJObservableC6change7RxSwift10ObservableCyxGvp",
+            "moduleName": "SJWatchLib",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Observable",
+                    "printedName": "RxSwift.Observable<τ_0_0>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "GenericTypeParam",
+                        "printedName": "τ_0_0"
+                      }
+                    ],
+                    "usr": "s:7RxSwift10ObservableC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10SJWatchLib12SJObservableC6change7RxSwift10ObservableCyxGvg",
+                "mangledName": "$s10SJWatchLib12SJObservableC6change7RxSwift10ObservableCyxGvg",
+                "moduleName": "SJWatchLib",
+                "genericSig": "<τ_0_0>",
+                "sugared_genericSig": "<T>",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Observable",
+                    "printedName": "RxSwift.Observable<τ_0_0>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "GenericTypeParam",
+                        "printedName": "τ_0_0"
+                      }
+                    ],
+                    "usr": "s:7RxSwift10ObservableC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10SJWatchLib12SJObservableC6change7RxSwift10ObservableCyxGvs",
+                "mangledName": "$s10SJWatchLib12SJObservableC6change7RxSwift10ObservableCyxGvs",
+                "moduleName": "SJWatchLib",
+                "genericSig": "<τ_0_0>",
+                "sugared_genericSig": "<T>",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10SJWatchLib12SJObservableC6change7RxSwift10ObservableCyxGvM",
+                "mangledName": "$s10SJWatchLib12SJObservableC6change7RxSwift10ObservableCyxGvM",
+                "moduleName": "SJWatchLib",
+                "genericSig": "<τ_0_0>",
+                "sugared_genericSig": "<T>",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "value",
+            "printedName": "value",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "τ_0_0?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_0_0"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10SJWatchLib12SJObservableC5valuexSgvp",
+            "mangledName": "$s10SJWatchLib12SJObservableC5valuexSgvp",
+            "moduleName": "SJWatchLib",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "τ_0_0?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "GenericTypeParam",
+                        "printedName": "τ_0_0"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10SJWatchLib12SJObservableC5valuexSgvg",
+                "mangledName": "$s10SJWatchLib12SJObservableC5valuexSgvg",
+                "moduleName": "SJWatchLib",
+                "genericSig": "<τ_0_0>",
+                "sugared_genericSig": "<T>",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "τ_0_0?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "GenericTypeParam",
+                        "printedName": "τ_0_0"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10SJWatchLib12SJObservableC5valuexSgvs",
+                "mangledName": "$s10SJWatchLib12SJObservableC5valuexSgvs",
+                "moduleName": "SJWatchLib",
+                "genericSig": "<τ_0_0>",
+                "sugared_genericSig": "<T>",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10SJWatchLib12SJObservableC5valuexSgvM",
+                "mangledName": "$s10SJWatchLib12SJObservableC5valuexSgvM",
+                "moduleName": "SJWatchLib",
+                "genericSig": "<τ_0_0>",
+                "sugared_genericSig": "<T>",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:10SJWatchLib12SJObservableC",
+        "mangledName": "$s10SJWatchLib12SJObservableC",
+        "moduleName": "SJWatchLib",
+        "genericSig": "<τ_0_0>",
+        "sugared_genericSig": "<T>",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "RxSwift",
+        "printedName": "RxSwift",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib"
+      },
+      {
+        "kind": "Import",
+        "name": "RxCocoa",
+        "printedName": "RxCocoa",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib"
+      },
+      {
+        "kind": "Import",
+        "name": "CoreBluetooth",
+        "printedName": "CoreBluetooth",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "CoreBluetooth",
+        "printedName": "CoreBluetooth",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SJError",
+        "printedName": "SJError",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "timeout",
+            "printedName": "timeout",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SJWatchLib.SJError.Type) -> SJWatchLib.SJError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SJError",
+                    "printedName": "SJWatchLib.SJError",
+                    "usr": "s:10SJWatchLib7SJErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SJWatchLib.SJError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SJError",
+                        "printedName": "SJWatchLib.SJError",
+                        "usr": "s:10SJWatchLib7SJErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10SJWatchLib7SJErrorO7timeoutyA2CmF",
+            "mangledName": "$s10SJWatchLib7SJErrorO7timeoutyA2CmF",
+            "moduleName": "SJWatchLib"
+          },
+          {
+            "kind": "Var",
+            "name": "commandError",
+            "printedName": "commandError",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SJWatchLib.SJError.Type) -> SJWatchLib.SJError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SJError",
+                    "printedName": "SJWatchLib.SJError",
+                    "usr": "s:10SJWatchLib7SJErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SJWatchLib.SJError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SJError",
+                        "printedName": "SJWatchLib.SJError",
+                        "usr": "s:10SJWatchLib7SJErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10SJWatchLib7SJErrorO12commandErroryA2CmF",
+            "mangledName": "$s10SJWatchLib7SJErrorO12commandErroryA2CmF",
+            "moduleName": "SJWatchLib"
+          },
+          {
+            "kind": "Var",
+            "name": "nonsupport",
+            "printedName": "nonsupport",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SJWatchLib.SJError.Type) -> SJWatchLib.SJError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SJError",
+                    "printedName": "SJWatchLib.SJError",
+                    "usr": "s:10SJWatchLib7SJErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SJWatchLib.SJError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SJError",
+                        "printedName": "SJWatchLib.SJError",
+                        "usr": "s:10SJWatchLib7SJErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10SJWatchLib7SJErrorO10nonsupportyA2CmF",
+            "mangledName": "$s10SJWatchLib7SJErrorO10nonsupportyA2CmF",
+            "moduleName": "SJWatchLib"
+          },
+          {
+            "kind": "Var",
+            "name": "bluetoothOff",
+            "printedName": "bluetoothOff",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SJWatchLib.SJError.Type) -> (CoreBluetooth.CBManagerState) -> SJWatchLib.SJError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(CoreBluetooth.CBManagerState) -> SJWatchLib.SJError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SJError",
+                        "printedName": "SJWatchLib.SJError",
+                        "usr": "s:10SJWatchLib7SJErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CBManagerState",
+                        "printedName": "CoreBluetooth.CBManagerState",
+                        "usr": "c:@E@CBManagerState"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SJWatchLib.SJError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SJError",
+                        "printedName": "SJWatchLib.SJError",
+                        "usr": "s:10SJWatchLib7SJErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10SJWatchLib7SJErrorO12bluetoothOffyACSo14CBManagerStateVcACmF",
+            "mangledName": "$s10SJWatchLib7SJErrorO12bluetoothOffyACSo14CBManagerStateVcACmF",
+            "moduleName": "SJWatchLib"
+          },
+          {
+            "kind": "Var",
+            "name": "serviceFailure",
+            "printedName": "serviceFailure",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SJWatchLib.SJError.Type) -> SJWatchLib.SJError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SJError",
+                    "printedName": "SJWatchLib.SJError",
+                    "usr": "s:10SJWatchLib7SJErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SJWatchLib.SJError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SJError",
+                        "printedName": "SJWatchLib.SJError",
+                        "usr": "s:10SJWatchLib7SJErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10SJWatchLib7SJErrorO14serviceFailureyA2CmF",
+            "mangledName": "$s10SJWatchLib7SJErrorO14serviceFailureyA2CmF",
+            "moduleName": "SJWatchLib"
+          },
+          {
+            "kind": "Var",
+            "name": "failToConnect",
+            "printedName": "failToConnect",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SJWatchLib.SJError.Type) -> ((any Swift.Error)?) -> SJWatchLib.SJError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "((any Swift.Error)?) -> SJWatchLib.SJError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SJError",
+                        "printedName": "SJWatchLib.SJError",
+                        "usr": "s:10SJWatchLib7SJErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "(any Swift.Error)?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "any Swift.Error",
+                            "usr": "s:s5ErrorP"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SJWatchLib.SJError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SJError",
+                        "printedName": "SJWatchLib.SJError",
+                        "usr": "s:10SJWatchLib7SJErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10SJWatchLib7SJErrorO13failToConnectyACs5Error_pSgcACmF",
+            "mangledName": "$s10SJWatchLib7SJErrorO13failToConnectyACs5Error_pSgcACmF",
+            "moduleName": "SJWatchLib"
+          },
+          {
+            "kind": "Var",
+            "name": "disconnect",
+            "printedName": "disconnect",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SJWatchLib.SJError.Type) -> SJWatchLib.SJError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SJError",
+                    "printedName": "SJWatchLib.SJError",
+                    "usr": "s:10SJWatchLib7SJErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SJWatchLib.SJError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SJError",
+                        "printedName": "SJWatchLib.SJError",
+                        "usr": "s:10SJWatchLib7SJErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10SJWatchLib7SJErrorO10disconnectyA2CmF",
+            "mangledName": "$s10SJWatchLib7SJErrorO10disconnectyA2CmF",
+            "moduleName": "SJWatchLib"
+          },
+          {
+            "kind": "Var",
+            "name": "failUser",
+            "printedName": "failUser",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SJWatchLib.SJError.Type) -> SJWatchLib.SJError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SJError",
+                    "printedName": "SJWatchLib.SJError",
+                    "usr": "s:10SJWatchLib7SJErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SJWatchLib.SJError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SJError",
+                        "printedName": "SJWatchLib.SJError",
+                        "usr": "s:10SJWatchLib7SJErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10SJWatchLib7SJErrorO8failUseryA2CmF",
+            "mangledName": "$s10SJWatchLib7SJErrorO8failUseryA2CmF",
+            "moduleName": "SJWatchLib"
+          },
+          {
+            "kind": "Var",
+            "name": "unknown",
+            "printedName": "unknown",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SJWatchLib.SJError.Type) -> SJWatchLib.SJError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SJError",
+                    "printedName": "SJWatchLib.SJError",
+                    "usr": "s:10SJWatchLib7SJErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SJWatchLib.SJError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SJError",
+                        "printedName": "SJWatchLib.SJError",
+                        "usr": "s:10SJWatchLib7SJErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10SJWatchLib7SJErrorO7unknownyA2CmF",
+            "mangledName": "$s10SJWatchLib7SJErrorO7unknownyA2CmF",
+            "moduleName": "SJWatchLib"
+          },
+          {
+            "kind": "Var",
+            "name": "fileError",
+            "printedName": "fileError",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SJWatchLib.SJError.Type) -> SJWatchLib.SJError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SJError",
+                    "printedName": "SJWatchLib.SJError",
+                    "usr": "s:10SJWatchLib7SJErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SJWatchLib.SJError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SJError",
+                        "printedName": "SJWatchLib.SJError",
+                        "usr": "s:10SJWatchLib7SJErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10SJWatchLib7SJErrorO9fileErroryA2CmF",
+            "mangledName": "$s10SJWatchLib7SJErrorO9fileErroryA2CmF",
+            "moduleName": "SJWatchLib"
+          },
+          {
+            "kind": "Var",
+            "name": "cancelled",
+            "printedName": "cancelled",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SJWatchLib.SJError.Type) -> SJWatchLib.SJError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SJError",
+                    "printedName": "SJWatchLib.SJError",
+                    "usr": "s:10SJWatchLib7SJErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SJWatchLib.SJError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SJError",
+                        "printedName": "SJWatchLib.SJError",
+                        "usr": "s:10SJWatchLib7SJErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10SJWatchLib7SJErrorO9cancelledyA2CmF",
+            "mangledName": "$s10SJWatchLib7SJErrorO9cancelledyA2CmF",
+            "moduleName": "SJWatchLib"
+          },
+          {
+            "kind": "Var",
+            "name": "lowPower",
+            "printedName": "lowPower",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SJWatchLib.SJError.Type) -> SJWatchLib.SJError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SJError",
+                    "printedName": "SJWatchLib.SJError",
+                    "usr": "s:10SJWatchLib7SJErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SJWatchLib.SJError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SJError",
+                        "printedName": "SJWatchLib.SJError",
+                        "usr": "s:10SJWatchLib7SJErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10SJWatchLib7SJErrorO8lowPoweryA2CmF",
+            "mangledName": "$s10SJWatchLib7SJErrorO8lowPoweryA2CmF",
+            "moduleName": "SJWatchLib"
+          },
+          {
+            "kind": "Var",
+            "name": "outMemory",
+            "printedName": "outMemory",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SJWatchLib.SJError.Type) -> SJWatchLib.SJError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SJError",
+                    "printedName": "SJWatchLib.SJError",
+                    "usr": "s:10SJWatchLib7SJErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SJWatchLib.SJError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SJError",
+                        "printedName": "SJWatchLib.SJError",
+                        "usr": "s:10SJWatchLib7SJErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10SJWatchLib7SJErrorO9outMemoryyA2CmF",
+            "mangledName": "$s10SJWatchLib7SJErrorO9outMemoryyA2CmF",
+            "moduleName": "SJWatchLib"
+          },
+          {
+            "kind": "Var",
+            "name": "busy",
+            "printedName": "busy",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SJWatchLib.SJError.Type) -> SJWatchLib.SJError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SJError",
+                    "printedName": "SJWatchLib.SJError",
+                    "usr": "s:10SJWatchLib7SJErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SJWatchLib.SJError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SJError",
+                        "printedName": "SJWatchLib.SJError",
+                        "usr": "s:10SJWatchLib7SJErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10SJWatchLib7SJErrorO4busyyA2CmF",
+            "mangledName": "$s10SJWatchLib7SJErrorO4busyyA2CmF",
+            "moduleName": "SJWatchLib"
+          },
+          {
+            "kind": "Var",
+            "name": "dialLimit",
+            "printedName": "dialLimit",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SJWatchLib.SJError.Type) -> SJWatchLib.SJError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SJError",
+                    "printedName": "SJWatchLib.SJError",
+                    "usr": "s:10SJWatchLib7SJErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SJWatchLib.SJError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SJError",
+                        "printedName": "SJWatchLib.SJError",
+                        "usr": "s:10SJWatchLib7SJErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10SJWatchLib7SJErrorO9dialLimityA2CmF",
+            "mangledName": "$s10SJWatchLib7SJErrorO9dialLimityA2CmF",
+            "moduleName": "SJWatchLib"
+          },
+          {
+            "kind": "Var",
+            "name": "deviceFail",
+            "printedName": "deviceFail",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SJWatchLib.SJError.Type) -> SJWatchLib.SJError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SJError",
+                    "printedName": "SJWatchLib.SJError",
+                    "usr": "s:10SJWatchLib7SJErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SJWatchLib.SJError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SJError",
+                        "printedName": "SJWatchLib.SJError",
+                        "usr": "s:10SJWatchLib7SJErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10SJWatchLib7SJErrorO10deviceFailyA2CmF",
+            "mangledName": "$s10SJWatchLib7SJErrorO10deviceFailyA2CmF",
+            "moduleName": "SJWatchLib"
+          },
+          {
+            "kind": "Var",
+            "name": "noBaseInfo",
+            "printedName": "noBaseInfo",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SJWatchLib.SJError.Type) -> SJWatchLib.SJError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SJError",
+                    "printedName": "SJWatchLib.SJError",
+                    "usr": "s:10SJWatchLib7SJErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SJWatchLib.SJError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SJError",
+                        "printedName": "SJWatchLib.SJError",
+                        "usr": "s:10SJWatchLib7SJErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10SJWatchLib7SJErrorO10noBaseInfoyA2CmF",
+            "mangledName": "$s10SJWatchLib7SJErrorO10noBaseInfoyA2CmF",
+            "moduleName": "SJWatchLib"
+          },
+          {
+            "kind": "Var",
+            "name": "customDialFail",
+            "printedName": "customDialFail",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SJWatchLib.SJError.Type) -> SJWatchLib.SJError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SJError",
+                    "printedName": "SJWatchLib.SJError",
+                    "usr": "s:10SJWatchLib7SJErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SJWatchLib.SJError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SJError",
+                        "printedName": "SJWatchLib.SJError",
+                        "usr": "s:10SJWatchLib7SJErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10SJWatchLib7SJErrorO14customDialFailyA2CmF",
+            "mangledName": "$s10SJWatchLib7SJErrorO14customDialFailyA2CmF",
+            "moduleName": "SJWatchLib"
+          },
+          {
+            "kind": "Var",
+            "name": "desc",
+            "printedName": "desc",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10SJWatchLib7SJErrorO4descSSvp",
+            "mangledName": "$s10SJWatchLib7SJErrorO4descSSvp",
+            "moduleName": "SJWatchLib",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10SJWatchLib7SJErrorO4descSSvg",
+                "mangledName": "$s10SJWatchLib7SJErrorO4descSSvg",
+                "moduleName": "SJWatchLib",
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:10SJWatchLib7SJErrorO",
+        "mangledName": "$s10SJWatchLib7SJErrorO",
+        "moduleName": "SJWatchLib",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Error",
+            "printedName": "Error",
+            "usr": "s:s5ErrorP",
+            "mangledName": "$ss5ErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SJMessageError",
+        "printedName": "SJMessageError",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "desc",
+            "printedName": "desc",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10SJWatchLib14SJMessageErrorV4descSSvp",
+            "mangledName": "$s10SJWatchLib14SJMessageErrorV4descSSvp",
+            "moduleName": "SJWatchLib",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10SJWatchLib14SJMessageErrorV4descSSvg",
+                "mangledName": "$s10SJWatchLib14SJMessageErrorV4descSSvg",
+                "moduleName": "SJWatchLib",
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:10SJWatchLib14SJMessageErrorV",
+        "mangledName": "$s10SJWatchLib14SJMessageErrorV",
+        "moduleName": "SJWatchLib",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Error",
+            "printedName": "Error",
+            "usr": "s:s5ErrorP",
+            "mangledName": "$ss5ErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "CoreBluetooth",
+        "printedName": "CoreBluetooth",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib"
+      },
+      {
+        "kind": "Import",
+        "name": "RxSwift",
+        "printedName": "RxSwift",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib"
+      },
+      {
+        "kind": "Import",
+        "name": "RxCocoa",
+        "printedName": "RxCocoa",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib"
+      },
+      {
+        "kind": "Import",
+        "name": "TLOCP",
+        "printedName": "TLOCP",
         "declKind": "Import",
         "moduleName": "SJWatchLib"
       },
@@ -7271,6 +8653,116 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "offline_asr_auth",
+            "printedName": "offline_asr_auth",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10SJWatchLib24SJ2WatchBaseInfoGetModelC16offline_asr_authSSSgvp",
+            "mangledName": "$s10SJWatchLib24SJ2WatchBaseInfoGetModelC16offline_asr_authSSSgvp",
+            "moduleName": "SJWatchLib",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10SJWatchLib24SJ2WatchBaseInfoGetModelC16offline_asr_authSSSgvg",
+                "mangledName": "$s10SJWatchLib24SJ2WatchBaseInfoGetModelC16offline_asr_authSSSgvg",
+                "moduleName": "SJWatchLib",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10SJWatchLib24SJ2WatchBaseInfoGetModelC16offline_asr_authSSSgvs",
+                "mangledName": "$s10SJWatchLib24SJ2WatchBaseInfoGetModelC16offline_asr_authSSSgvs",
+                "moduleName": "SJWatchLib",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10SJWatchLib24SJ2WatchBaseInfoGetModelC16offline_asr_authSSSgvM",
+                "mangledName": "$s10SJWatchLib24SJ2WatchBaseInfoGetModelC16offline_asr_authSSSgvM",
+                "moduleName": "SJWatchLib",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init()",
@@ -8715,1328 +10207,6 @@
       },
       {
         "kind": "Import",
-        "name": "RxSwift",
-        "printedName": "RxSwift",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib"
-      },
-      {
-        "kind": "Import",
-        "name": "RxCocoa",
-        "printedName": "RxCocoa",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib"
-      },
-      {
-        "kind": "Import",
-        "name": "TLOCP",
-        "printedName": "TLOCP",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib"
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "RxSwift",
-        "printedName": "RxSwift",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib"
-      },
-      {
-        "kind": "Import",
-        "name": "RxCocoa",
-        "printedName": "RxCocoa",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib"
-      },
-      {
-        "kind": "Import",
-        "name": "TLOCP",
-        "printedName": "TLOCP",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib"
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "RxSwift",
-        "printedName": "RxSwift",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib"
-      },
-      {
-        "kind": "Import",
-        "name": "RxCocoa",
-        "printedName": "RxCocoa",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib"
-      },
-      {
-        "kind": "Import",
-        "name": "CoreBluetooth",
-        "printedName": "CoreBluetooth",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib"
-      },
-      {
-        "kind": "Import",
-        "name": "TLOCP",
-        "printedName": "TLOCP",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib"
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "SJObservable",
-        "printedName": "SJObservable",
-        "children": [
-          {
-            "kind": "Var",
-            "name": "change",
-            "printedName": "change",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Observable",
-                "printedName": "RxSwift.Observable<τ_0_0>",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "GenericTypeParam",
-                    "printedName": "τ_0_0"
-                  }
-                ],
-                "usr": "s:7RxSwift10ObservableC"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:10SJWatchLib12SJObservableC6change7RxSwift10ObservableCyxGvp",
-            "mangledName": "$s10SJWatchLib12SJObservableC6change7RxSwift10ObservableCyxGvp",
-            "moduleName": "SJWatchLib",
-            "declAttributes": [
-              "HasStorage",
-              "AccessControl"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Observable",
-                    "printedName": "RxSwift.Observable<τ_0_0>",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "GenericTypeParam",
-                        "printedName": "τ_0_0"
-                      }
-                    ],
-                    "usr": "s:7RxSwift10ObservableC"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:10SJWatchLib12SJObservableC6change7RxSwift10ObservableCyxGvg",
-                "mangledName": "$s10SJWatchLib12SJObservableC6change7RxSwift10ObservableCyxGvg",
-                "moduleName": "SJWatchLib",
-                "genericSig": "<τ_0_0>",
-                "sugared_genericSig": "<T>",
-                "implicit": true,
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Observable",
-                    "printedName": "RxSwift.Observable<τ_0_0>",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "GenericTypeParam",
-                        "printedName": "τ_0_0"
-                      }
-                    ],
-                    "usr": "s:7RxSwift10ObservableC"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:10SJWatchLib12SJObservableC6change7RxSwift10ObservableCyxGvs",
-                "mangledName": "$s10SJWatchLib12SJObservableC6change7RxSwift10ObservableCyxGvs",
-                "moduleName": "SJWatchLib",
-                "genericSig": "<τ_0_0>",
-                "sugared_genericSig": "<T>",
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:10SJWatchLib12SJObservableC6change7RxSwift10ObservableCyxGvM",
-                "mangledName": "$s10SJWatchLib12SJObservableC6change7RxSwift10ObservableCyxGvM",
-                "moduleName": "SJWatchLib",
-                "genericSig": "<τ_0_0>",
-                "sugared_genericSig": "<T>",
-                "implicit": true,
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "value",
-            "printedName": "value",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "τ_0_0?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "GenericTypeParam",
-                    "printedName": "τ_0_0"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:10SJWatchLib12SJObservableC5valuexSgvp",
-            "mangledName": "$s10SJWatchLib12SJObservableC5valuexSgvp",
-            "moduleName": "SJWatchLib",
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage",
-              "AccessControl"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "τ_0_0?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "GenericTypeParam",
-                        "printedName": "τ_0_0"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:10SJWatchLib12SJObservableC5valuexSgvg",
-                "mangledName": "$s10SJWatchLib12SJObservableC5valuexSgvg",
-                "moduleName": "SJWatchLib",
-                "genericSig": "<τ_0_0>",
-                "sugared_genericSig": "<T>",
-                "implicit": true,
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "τ_0_0?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "GenericTypeParam",
-                        "printedName": "τ_0_0"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:10SJWatchLib12SJObservableC5valuexSgvs",
-                "mangledName": "$s10SJWatchLib12SJObservableC5valuexSgvs",
-                "moduleName": "SJWatchLib",
-                "genericSig": "<τ_0_0>",
-                "sugared_genericSig": "<T>",
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:10SJWatchLib12SJObservableC5valuexSgvM",
-                "mangledName": "$s10SJWatchLib12SJObservableC5valuexSgvM",
-                "moduleName": "SJWatchLib",
-                "genericSig": "<τ_0_0>",
-                "sugared_genericSig": "<T>",
-                "implicit": true,
-                "accessorKind": "_modify"
-              }
-            ]
-          }
-        ],
-        "declKind": "Class",
-        "usr": "s:10SJWatchLib12SJObservableC",
-        "mangledName": "$s10SJWatchLib12SJObservableC",
-        "moduleName": "SJWatchLib",
-        "genericSig": "<τ_0_0>",
-        "sugared_genericSig": "<T>",
-        "declAttributes": [
-          "AccessControl"
-        ],
-        "hasMissingDesignatedInitializers": true,
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          }
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "RxSwift",
-        "printedName": "RxSwift",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib"
-      },
-      {
-        "kind": "Import",
-        "name": "RxCocoa",
-        "printedName": "RxCocoa",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib"
-      },
-      {
-        "kind": "Import",
-        "name": "CoreBluetooth",
-        "printedName": "CoreBluetooth",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib"
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "CoreBluetooth",
-        "printedName": "CoreBluetooth",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib"
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "SJError",
-        "printedName": "SJError",
-        "children": [
-          {
-            "kind": "Var",
-            "name": "timeout",
-            "printedName": "timeout",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(SJWatchLib.SJError.Type) -> SJWatchLib.SJError",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "SJError",
-                    "printedName": "SJWatchLib.SJError",
-                    "usr": "s:10SJWatchLib7SJErrorO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "SJWatchLib.SJError.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "SJError",
-                        "printedName": "SJWatchLib.SJError",
-                        "usr": "s:10SJWatchLib7SJErrorO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:10SJWatchLib7SJErrorO7timeoutyA2CmF",
-            "mangledName": "$s10SJWatchLib7SJErrorO7timeoutyA2CmF",
-            "moduleName": "SJWatchLib"
-          },
-          {
-            "kind": "Var",
-            "name": "commandError",
-            "printedName": "commandError",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(SJWatchLib.SJError.Type) -> SJWatchLib.SJError",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "SJError",
-                    "printedName": "SJWatchLib.SJError",
-                    "usr": "s:10SJWatchLib7SJErrorO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "SJWatchLib.SJError.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "SJError",
-                        "printedName": "SJWatchLib.SJError",
-                        "usr": "s:10SJWatchLib7SJErrorO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:10SJWatchLib7SJErrorO12commandErroryA2CmF",
-            "mangledName": "$s10SJWatchLib7SJErrorO12commandErroryA2CmF",
-            "moduleName": "SJWatchLib"
-          },
-          {
-            "kind": "Var",
-            "name": "nonsupport",
-            "printedName": "nonsupport",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(SJWatchLib.SJError.Type) -> SJWatchLib.SJError",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "SJError",
-                    "printedName": "SJWatchLib.SJError",
-                    "usr": "s:10SJWatchLib7SJErrorO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "SJWatchLib.SJError.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "SJError",
-                        "printedName": "SJWatchLib.SJError",
-                        "usr": "s:10SJWatchLib7SJErrorO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:10SJWatchLib7SJErrorO10nonsupportyA2CmF",
-            "mangledName": "$s10SJWatchLib7SJErrorO10nonsupportyA2CmF",
-            "moduleName": "SJWatchLib"
-          },
-          {
-            "kind": "Var",
-            "name": "bluetoothOff",
-            "printedName": "bluetoothOff",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(SJWatchLib.SJError.Type) -> (CoreBluetooth.CBManagerState) -> SJWatchLib.SJError",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(CoreBluetooth.CBManagerState) -> SJWatchLib.SJError",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "SJError",
-                        "printedName": "SJWatchLib.SJError",
-                        "usr": "s:10SJWatchLib7SJErrorO"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "CBManagerState",
-                        "printedName": "CoreBluetooth.CBManagerState",
-                        "usr": "c:@E@CBManagerState"
-                      }
-                    ]
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "SJWatchLib.SJError.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "SJError",
-                        "printedName": "SJWatchLib.SJError",
-                        "usr": "s:10SJWatchLib7SJErrorO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:10SJWatchLib7SJErrorO12bluetoothOffyACSo14CBManagerStateVcACmF",
-            "mangledName": "$s10SJWatchLib7SJErrorO12bluetoothOffyACSo14CBManagerStateVcACmF",
-            "moduleName": "SJWatchLib"
-          },
-          {
-            "kind": "Var",
-            "name": "serviceFailure",
-            "printedName": "serviceFailure",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(SJWatchLib.SJError.Type) -> SJWatchLib.SJError",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "SJError",
-                    "printedName": "SJWatchLib.SJError",
-                    "usr": "s:10SJWatchLib7SJErrorO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "SJWatchLib.SJError.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "SJError",
-                        "printedName": "SJWatchLib.SJError",
-                        "usr": "s:10SJWatchLib7SJErrorO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:10SJWatchLib7SJErrorO14serviceFailureyA2CmF",
-            "mangledName": "$s10SJWatchLib7SJErrorO14serviceFailureyA2CmF",
-            "moduleName": "SJWatchLib"
-          },
-          {
-            "kind": "Var",
-            "name": "failToConnect",
-            "printedName": "failToConnect",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(SJWatchLib.SJError.Type) -> ((any Swift.Error)?) -> SJWatchLib.SJError",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "((any Swift.Error)?) -> SJWatchLib.SJError",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "SJError",
-                        "printedName": "SJWatchLib.SJError",
-                        "usr": "s:10SJWatchLib7SJErrorO"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Optional",
-                        "printedName": "(any Swift.Error)?",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Error",
-                            "printedName": "any Swift.Error",
-                            "usr": "s:s5ErrorP"
-                          }
-                        ],
-                        "usr": "s:Sq"
-                      }
-                    ]
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "SJWatchLib.SJError.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "SJError",
-                        "printedName": "SJWatchLib.SJError",
-                        "usr": "s:10SJWatchLib7SJErrorO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:10SJWatchLib7SJErrorO13failToConnectyACs5Error_pSgcACmF",
-            "mangledName": "$s10SJWatchLib7SJErrorO13failToConnectyACs5Error_pSgcACmF",
-            "moduleName": "SJWatchLib"
-          },
-          {
-            "kind": "Var",
-            "name": "disconnect",
-            "printedName": "disconnect",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(SJWatchLib.SJError.Type) -> SJWatchLib.SJError",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "SJError",
-                    "printedName": "SJWatchLib.SJError",
-                    "usr": "s:10SJWatchLib7SJErrorO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "SJWatchLib.SJError.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "SJError",
-                        "printedName": "SJWatchLib.SJError",
-                        "usr": "s:10SJWatchLib7SJErrorO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:10SJWatchLib7SJErrorO10disconnectyA2CmF",
-            "mangledName": "$s10SJWatchLib7SJErrorO10disconnectyA2CmF",
-            "moduleName": "SJWatchLib"
-          },
-          {
-            "kind": "Var",
-            "name": "failUser",
-            "printedName": "failUser",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(SJWatchLib.SJError.Type) -> SJWatchLib.SJError",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "SJError",
-                    "printedName": "SJWatchLib.SJError",
-                    "usr": "s:10SJWatchLib7SJErrorO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "SJWatchLib.SJError.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "SJError",
-                        "printedName": "SJWatchLib.SJError",
-                        "usr": "s:10SJWatchLib7SJErrorO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:10SJWatchLib7SJErrorO8failUseryA2CmF",
-            "mangledName": "$s10SJWatchLib7SJErrorO8failUseryA2CmF",
-            "moduleName": "SJWatchLib"
-          },
-          {
-            "kind": "Var",
-            "name": "unknown",
-            "printedName": "unknown",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(SJWatchLib.SJError.Type) -> SJWatchLib.SJError",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "SJError",
-                    "printedName": "SJWatchLib.SJError",
-                    "usr": "s:10SJWatchLib7SJErrorO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "SJWatchLib.SJError.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "SJError",
-                        "printedName": "SJWatchLib.SJError",
-                        "usr": "s:10SJWatchLib7SJErrorO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:10SJWatchLib7SJErrorO7unknownyA2CmF",
-            "mangledName": "$s10SJWatchLib7SJErrorO7unknownyA2CmF",
-            "moduleName": "SJWatchLib"
-          },
-          {
-            "kind": "Var",
-            "name": "fileError",
-            "printedName": "fileError",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(SJWatchLib.SJError.Type) -> SJWatchLib.SJError",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "SJError",
-                    "printedName": "SJWatchLib.SJError",
-                    "usr": "s:10SJWatchLib7SJErrorO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "SJWatchLib.SJError.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "SJError",
-                        "printedName": "SJWatchLib.SJError",
-                        "usr": "s:10SJWatchLib7SJErrorO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:10SJWatchLib7SJErrorO9fileErroryA2CmF",
-            "mangledName": "$s10SJWatchLib7SJErrorO9fileErroryA2CmF",
-            "moduleName": "SJWatchLib"
-          },
-          {
-            "kind": "Var",
-            "name": "cancelled",
-            "printedName": "cancelled",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(SJWatchLib.SJError.Type) -> SJWatchLib.SJError",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "SJError",
-                    "printedName": "SJWatchLib.SJError",
-                    "usr": "s:10SJWatchLib7SJErrorO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "SJWatchLib.SJError.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "SJError",
-                        "printedName": "SJWatchLib.SJError",
-                        "usr": "s:10SJWatchLib7SJErrorO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:10SJWatchLib7SJErrorO9cancelledyA2CmF",
-            "mangledName": "$s10SJWatchLib7SJErrorO9cancelledyA2CmF",
-            "moduleName": "SJWatchLib"
-          },
-          {
-            "kind": "Var",
-            "name": "lowPower",
-            "printedName": "lowPower",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(SJWatchLib.SJError.Type) -> SJWatchLib.SJError",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "SJError",
-                    "printedName": "SJWatchLib.SJError",
-                    "usr": "s:10SJWatchLib7SJErrorO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "SJWatchLib.SJError.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "SJError",
-                        "printedName": "SJWatchLib.SJError",
-                        "usr": "s:10SJWatchLib7SJErrorO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:10SJWatchLib7SJErrorO8lowPoweryA2CmF",
-            "mangledName": "$s10SJWatchLib7SJErrorO8lowPoweryA2CmF",
-            "moduleName": "SJWatchLib"
-          },
-          {
-            "kind": "Var",
-            "name": "outMemory",
-            "printedName": "outMemory",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(SJWatchLib.SJError.Type) -> SJWatchLib.SJError",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "SJError",
-                    "printedName": "SJWatchLib.SJError",
-                    "usr": "s:10SJWatchLib7SJErrorO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "SJWatchLib.SJError.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "SJError",
-                        "printedName": "SJWatchLib.SJError",
-                        "usr": "s:10SJWatchLib7SJErrorO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:10SJWatchLib7SJErrorO9outMemoryyA2CmF",
-            "mangledName": "$s10SJWatchLib7SJErrorO9outMemoryyA2CmF",
-            "moduleName": "SJWatchLib"
-          },
-          {
-            "kind": "Var",
-            "name": "busy",
-            "printedName": "busy",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(SJWatchLib.SJError.Type) -> SJWatchLib.SJError",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "SJError",
-                    "printedName": "SJWatchLib.SJError",
-                    "usr": "s:10SJWatchLib7SJErrorO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "SJWatchLib.SJError.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "SJError",
-                        "printedName": "SJWatchLib.SJError",
-                        "usr": "s:10SJWatchLib7SJErrorO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:10SJWatchLib7SJErrorO4busyyA2CmF",
-            "mangledName": "$s10SJWatchLib7SJErrorO4busyyA2CmF",
-            "moduleName": "SJWatchLib"
-          },
-          {
-            "kind": "Var",
-            "name": "dialLimit",
-            "printedName": "dialLimit",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(SJWatchLib.SJError.Type) -> SJWatchLib.SJError",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "SJError",
-                    "printedName": "SJWatchLib.SJError",
-                    "usr": "s:10SJWatchLib7SJErrorO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "SJWatchLib.SJError.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "SJError",
-                        "printedName": "SJWatchLib.SJError",
-                        "usr": "s:10SJWatchLib7SJErrorO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:10SJWatchLib7SJErrorO9dialLimityA2CmF",
-            "mangledName": "$s10SJWatchLib7SJErrorO9dialLimityA2CmF",
-            "moduleName": "SJWatchLib"
-          },
-          {
-            "kind": "Var",
-            "name": "deviceFail",
-            "printedName": "deviceFail",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(SJWatchLib.SJError.Type) -> SJWatchLib.SJError",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "SJError",
-                    "printedName": "SJWatchLib.SJError",
-                    "usr": "s:10SJWatchLib7SJErrorO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "SJWatchLib.SJError.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "SJError",
-                        "printedName": "SJWatchLib.SJError",
-                        "usr": "s:10SJWatchLib7SJErrorO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:10SJWatchLib7SJErrorO10deviceFailyA2CmF",
-            "mangledName": "$s10SJWatchLib7SJErrorO10deviceFailyA2CmF",
-            "moduleName": "SJWatchLib"
-          },
-          {
-            "kind": "Var",
-            "name": "noBaseInfo",
-            "printedName": "noBaseInfo",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(SJWatchLib.SJError.Type) -> SJWatchLib.SJError",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "SJError",
-                    "printedName": "SJWatchLib.SJError",
-                    "usr": "s:10SJWatchLib7SJErrorO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "SJWatchLib.SJError.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "SJError",
-                        "printedName": "SJWatchLib.SJError",
-                        "usr": "s:10SJWatchLib7SJErrorO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:10SJWatchLib7SJErrorO10noBaseInfoyA2CmF",
-            "mangledName": "$s10SJWatchLib7SJErrorO10noBaseInfoyA2CmF",
-            "moduleName": "SJWatchLib"
-          },
-          {
-            "kind": "Var",
-            "name": "customDialFail",
-            "printedName": "customDialFail",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(SJWatchLib.SJError.Type) -> SJWatchLib.SJError",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "SJError",
-                    "printedName": "SJWatchLib.SJError",
-                    "usr": "s:10SJWatchLib7SJErrorO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "SJWatchLib.SJError.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "SJError",
-                        "printedName": "SJWatchLib.SJError",
-                        "usr": "s:10SJWatchLib7SJErrorO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:10SJWatchLib7SJErrorO14customDialFailyA2CmF",
-            "mangledName": "$s10SJWatchLib7SJErrorO14customDialFailyA2CmF",
-            "moduleName": "SJWatchLib"
-          },
-          {
-            "kind": "Var",
-            "name": "desc",
-            "printedName": "desc",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:10SJWatchLib7SJErrorO4descSSvp",
-            "mangledName": "$s10SJWatchLib7SJErrorO4descSSvp",
-            "moduleName": "SJWatchLib",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:10SJWatchLib7SJErrorO4descSSvg",
-                "mangledName": "$s10SJWatchLib7SJErrorO4descSSvg",
-                "moduleName": "SJWatchLib",
-                "accessorKind": "get"
-              }
-            ]
-          }
-        ],
-        "declKind": "Enum",
-        "usr": "s:10SJWatchLib7SJErrorO",
-        "mangledName": "$s10SJWatchLib7SJErrorO",
-        "moduleName": "SJWatchLib",
-        "declAttributes": [
-          "AccessControl"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Error",
-            "printedName": "Error",
-            "usr": "s:s5ErrorP",
-            "mangledName": "$ss5ErrorP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Sendable",
-            "printedName": "Sendable",
-            "usr": "s:s8SendableP",
-            "mangledName": "$ss8SendableP"
-          }
-        ]
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "SJMessageError",
-        "printedName": "SJMessageError",
-        "children": [
-          {
-            "kind": "Var",
-            "name": "desc",
-            "printedName": "desc",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:10SJWatchLib14SJMessageErrorV4descSSvp",
-            "mangledName": "$s10SJWatchLib14SJMessageErrorV4descSSvp",
-            "moduleName": "SJWatchLib",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:10SJWatchLib14SJMessageErrorV4descSSvg",
-                "mangledName": "$s10SJWatchLib14SJMessageErrorV4descSSvg",
-                "moduleName": "SJWatchLib",
-                "accessorKind": "get"
-              }
-            ]
-          }
-        ],
-        "declKind": "Struct",
-        "usr": "s:10SJWatchLib14SJMessageErrorV",
-        "mangledName": "$s10SJWatchLib14SJMessageErrorV",
-        "moduleName": "SJWatchLib",
-        "declAttributes": [
-          "AccessControl"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Error",
-            "printedName": "Error",
-            "usr": "s:s5ErrorP",
-            "mangledName": "$ss5ErrorP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Sendable",
-            "printedName": "Sendable",
-            "usr": "s:s8SendableP",
-            "mangledName": "$ss8SendableP"
-          }
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "CoreBluetooth",
-        "printedName": "CoreBluetooth",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib"
-      },
-      {
-        "kind": "Import",
-        "name": "RxSwift",
-        "printedName": "RxSwift",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib"
-      },
-      {
-        "kind": "Import",
-        "name": "RxCocoa",
-        "printedName": "RxCocoa",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib"
-      },
-      {
-        "kind": "Import",
-        "name": "TLOCP",
-        "printedName": "TLOCP",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib"
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
         "name": "RxCocoa",
         "printedName": "RxCocoa",
         "declKind": "Import",
@@ -10217,194 +10387,6 @@
         "kind": "Import",
         "name": "RxSwift",
         "printedName": "RxSwift",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib"
-      },
-      {
-        "kind": "Import",
-        "name": "PromiseKit",
-        "printedName": "PromiseKit",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib"
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "SwiftyJSON",
-        "printedName": "SwiftyJSON",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib"
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "RxSwift",
-        "printedName": "RxSwift",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib"
-      },
-      {
-        "kind": "Import",
-        "name": "RxCocoa",
-        "printedName": "RxCocoa",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib"
-      },
-      {
-        "kind": "Import",
-        "name": "CoreBluetooth",
-        "printedName": "CoreBluetooth",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib"
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "RxSwift",
-        "printedName": "RxSwift",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib"
-      },
-      {
-        "kind": "Import",
-        "name": "RxCocoa",
-        "printedName": "RxCocoa",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib"
-      },
-      {
-        "kind": "Import",
-        "name": "PromiseKit",
-        "printedName": "PromiseKit",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib"
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "RxSwift",
-        "printedName": "RxSwift",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib"
-      },
-      {
-        "kind": "Import",
-        "name": "RxCocoa",
-        "printedName": "RxCocoa",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib"
-      },
-      {
-        "kind": "Import",
-        "name": "PromiseKit",
-        "printedName": "PromiseKit",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib"
-      },
-      {
-        "kind": "Import",
-        "name": "UIKit",
-        "printedName": "UIKit",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "RxCocoa",
-        "printedName": "RxCocoa",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib"
-      },
-      {
-        "kind": "Import",
-        "name": "RxSwift",
-        "printedName": "RxSwift",
-        "declKind": "Import",
-        "moduleName": "SJWatchLib"
-      },
-      {
-        "kind": "Import",
-        "name": "SwiftyJSON",
-        "printedName": "SwiftyJSON",
         "declKind": "Import",
         "moduleName": "SJWatchLib"
       },
@@ -10823,6 +10805,27 @@
           },
           {
             "kind": "Function",
+            "name": "stopAudioSendAiAssistantNew",
+            "printedName": "stopAudioSendAiAssistantNew()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10SJWatchLib22SJNewGlassesAiDelegateP013stopAudioSendE12AssistantNewyyF",
+            "mangledName": "$s10SJWatchLib22SJNewGlassesAiDelegateP013stopAudioSendE12AssistantNewyyF",
+            "moduleName": "SJWatchLib",
+            "genericSig": "<τ_0_0 where τ_0_0 : SJWatchLib.SJNewGlassesAiDelegate>",
+            "sugared_genericSig": "<Self where Self : SJWatchLib.SJNewGlassesAiDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "closeAiAssistantNew",
             "printedName": "closeAiAssistantNew()",
             "children": [
@@ -10868,6 +10871,194 @@
             "mangledName": "$ss8CopyableP"
           }
         ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftyJSON",
+        "printedName": "SwiftyJSON",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "RxSwift",
+        "printedName": "RxSwift",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib"
+      },
+      {
+        "kind": "Import",
+        "name": "RxCocoa",
+        "printedName": "RxCocoa",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib"
+      },
+      {
+        "kind": "Import",
+        "name": "CoreBluetooth",
+        "printedName": "CoreBluetooth",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "RxSwift",
+        "printedName": "RxSwift",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib"
+      },
+      {
+        "kind": "Import",
+        "name": "RxCocoa",
+        "printedName": "RxCocoa",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib"
+      },
+      {
+        "kind": "Import",
+        "name": "PromiseKit",
+        "printedName": "PromiseKit",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "RxSwift",
+        "printedName": "RxSwift",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib"
+      },
+      {
+        "kind": "Import",
+        "name": "RxCocoa",
+        "printedName": "RxCocoa",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib"
+      },
+      {
+        "kind": "Import",
+        "name": "PromiseKit",
+        "printedName": "PromiseKit",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "RxCocoa",
+        "printedName": "RxCocoa",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib"
+      },
+      {
+        "kind": "Import",
+        "name": "RxSwift",
+        "printedName": "RxSwift",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib"
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftyJSON",
+        "printedName": "SwiftyJSON",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib"
+      },
+      {
+        "kind": "Import",
+        "name": "PromiseKit",
+        "printedName": "PromiseKit",
+        "declKind": "Import",
+        "moduleName": "SJWatchLib"
       },
       {
         "kind": "Import",
@@ -19834,6 +20025,129 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "CBManagerState",
+        "printedName": "CBManagerState",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "desc",
+            "printedName": "desc",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:So14CBManagerStateV10SJWatchLibE4descSSvp",
+            "mangledName": "$sSo14CBManagerStateV10SJWatchLibE4descSSvp",
+            "moduleName": "SJWatchLib",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:So14CBManagerStateV10SJWatchLibE4descSSvg",
+                "mangledName": "$sSo14CBManagerStateV10SJWatchLibE4descSSvg",
+                "moduleName": "SJWatchLib",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "c:@E@CBManagerState",
+        "moduleName": "CoreBluetooth",
+        "intro_iOS": "10.0",
+        "objc_name": "CBManagerState",
+        "declAttributes": [
+          "Available",
+          "SynthesizedProtocol",
+          "ObjC",
+          "SynthesizedProtocol",
+          "Sendable",
+          "Dynamic"
+        ],
+        "enumRawTypeName": "Int",
+        "isExternal": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
         "name": "KeyedDecodingContainer",
         "printedName": "KeyedDecodingContainer",
         "children": [
@@ -20056,129 +20370,6 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
-          }
-        ]
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "CBManagerState",
-        "printedName": "CBManagerState",
-        "children": [
-          {
-            "kind": "Var",
-            "name": "desc",
-            "printedName": "desc",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:So14CBManagerStateV10SJWatchLibE4descSSvp",
-            "mangledName": "$sSo14CBManagerStateV10SJWatchLibE4descSSvp",
-            "moduleName": "SJWatchLib",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:So14CBManagerStateV10SJWatchLibE4descSSvg",
-                "mangledName": "$sSo14CBManagerStateV10SJWatchLibE4descSSvg",
-                "moduleName": "SJWatchLib",
-                "isFromExtension": true,
-                "accessorKind": "get"
-              }
-            ]
-          }
-        ],
-        "declKind": "Enum",
-        "usr": "c:@E@CBManagerState",
-        "moduleName": "CoreBluetooth",
-        "intro_iOS": "10.0",
-        "objc_name": "CBManagerState",
-        "declAttributes": [
-          "Available",
-          "SynthesizedProtocol",
-          "ObjC",
-          "SynthesizedProtocol",
-          "Sendable",
-          "Dynamic"
-        ],
-        "enumRawTypeName": "Int",
-        "isExternal": true,
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "RawRepresentable",
-            "printedName": "RawRepresentable",
-            "children": [
-              {
-                "kind": "TypeWitness",
-                "name": "RawValue",
-                "printedName": "RawValue",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Int",
-                    "printedName": "Swift.Int",
-                    "usr": "s:Si"
-                  }
-                ]
-              }
-            ],
-            "usr": "s:SY",
-            "mangledName": "$sSY"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Sendable",
-            "printedName": "Sendable",
-            "usr": "s:s8SendableP",
-            "mangledName": "$ss8SendableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
           }
         ]
       }
@@ -20598,6 +20789,34 @@
       "offset": 661,
       "length": 1,
       "value": "6"
+    },
+    {
+      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/Core\/SJBaseTask.swift",
+      "kind": "StringLiteral",
+      "offset": 1551,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/Core\/SJBaseTask.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10061,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/Core\/SJPeripheralToolsProtocol.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1945,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/Core\/SJWatchMTUTask.swift",
+      "kind": "IntegerLiteral",
+      "offset": 140,
+      "length": 1,
+      "value": "0"
     },
     {
       "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/Task\/Tasks\/TLOCP2\/SJ2WatchCheckTask.swift",
@@ -21302,7 +21521,7 @@
     {
       "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/SJMate\/SJWatchPeripheralDeviceInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 2026,
+      "offset": 2017,
       "length": 1,
       "value": "1"
     },
@@ -21387,34 +21606,6 @@
       "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/Task\/Tasks\/TLOCP2\/SJ2PhotoLibraryTask.swift",
       "kind": "IntegerLiteral",
       "offset": 2067,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/Core\/SJBaseTask.swift",
-      "kind": "StringLiteral",
-      "offset": 1551,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/Core\/SJBaseTask.swift",
-      "kind": "IntegerLiteral",
-      "offset": 10061,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/Core\/SJPeripheralToolsProtocol.swift",
-      "kind": "BooleanLiteral",
-      "offset": 1945,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/Core\/SJWatchMTUTask.swift",
-      "kind": "IntegerLiteral",
-      "offset": 140,
       "length": 1,
       "value": "0"
     },
@@ -21536,6 +21727,41 @@
       "offset": 586,
       "length": 1,
       "value": "5"
+    },
+    {
+      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/Task\/AiAssistant\/SJAiAudioTask.swift",
+      "kind": "IntegerLiteral",
+      "offset": 178,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/Task\/AiAssistant\/SJAiAudioTask.swift",
+      "kind": "IntegerLiteral",
+      "offset": 196,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/Task\/AiAssistant\/SJAiVideoTask.swift",
+      "kind": "IntegerLiteral",
+      "offset": 177,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/Task\/AiAssistant\/SJAiVideoTask.swift",
+      "kind": "IntegerLiteral",
+      "offset": 195,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/Task\/AiAssistant\/SJAiVideoTask.swift",
+      "kind": "IntegerLiteral",
+      "offset": 221,
+      "length": 1,
+      "value": "2"
     },
     {
       "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
@@ -21844,41 +22070,6 @@
       "offset": 2978,
       "length": 2,
       "value": "10"
-    },
-    {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/Task\/AiAssistant\/SJAiAudioTask.swift",
-      "kind": "IntegerLiteral",
-      "offset": 178,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/Task\/AiAssistant\/SJAiAudioTask.swift",
-      "kind": "IntegerLiteral",
-      "offset": 196,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/Task\/AiAssistant\/SJAiVideoTask.swift",
-      "kind": "IntegerLiteral",
-      "offset": 177,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/Task\/AiAssistant\/SJAiVideoTask.swift",
-      "kind": "IntegerLiteral",
-      "offset": 195,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/Task\/AiAssistant\/SJAiVideoTask.swift",
-      "kind": "IntegerLiteral",
-      "offset": 221,
-      "length": 1,
-      "value": "2"
     },
     {
       "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/Task\/Tasks\/TLOCP2\/SJ2GlassesInfoGetTask.swift",
@@ -22807,84 +22998,84 @@
     {
       "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/WatchLib\/MTWatchPeripheral.swift",
       "kind": "BooleanLiteral",
-      "offset": 3010,
+      "offset": 3205,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/WatchLib\/MTWatchPeripheral.swift",
       "kind": "BooleanLiteral",
-      "offset": 3064,
+      "offset": 3259,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/WatchLib\/MTWatchPeripheral.swift",
       "kind": "IntegerLiteral",
-      "offset": 4160,
+      "offset": 4355,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/WatchLib\/MTWatchPeripheral.swift",
       "kind": "StringLiteral",
-      "offset": 4210,
+      "offset": 4405,
       "length": 20,
       "value": "\"sj_semaphore_queue\""
     },
     {
       "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/WatchLib\/MTWatchPeripheral.swift",
       "kind": "IntegerLiteral",
-      "offset": 4408,
+      "offset": 4603,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/WatchLib\/MTWatchPeripheral.swift",
       "kind": "BooleanLiteral",
-      "offset": 4474,
+      "offset": 4669,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/WatchLib\/MTWatchPeripheral.swift",
       "kind": "BooleanLiteral",
-      "offset": 8041,
+      "offset": 8236,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/WatchLib\/MTWatchPeripheral.swift",
       "kind": "BooleanLiteral",
-      "offset": 8071,
+      "offset": 8266,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/WatchLib\/MTWatchPeripheral.swift",
       "kind": "Array",
-      "offset": 8245,
+      "offset": 8440,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/WatchLib\/MTWatchPeripheral.swift",
       "kind": "Array",
-      "offset": 19562,
+      "offset": 19757,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/WatchLib\/MTWatchPeripheral.swift",
       "kind": "Array",
-      "offset": 19696,
+      "offset": 19891,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/SJWatchLib\/WatchLib\/MTWatchPeripheral.swift",
       "kind": "Array",
-      "offset": 20278,
+      "offset": 20473,
       "length": 2,
       "value": "[]"
     },

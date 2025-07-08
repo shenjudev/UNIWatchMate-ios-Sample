@@ -1,6 +1,0 @@
-framework module MZEncryptSDK {
-  umbrella header "MZEncryptSDK.h"
-  export *
-
-  module * { export * }
-}

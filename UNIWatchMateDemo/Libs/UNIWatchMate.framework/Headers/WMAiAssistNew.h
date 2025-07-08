@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (RACSignal<NSNumber *> *)getVoiceWakeupOpen;
 
-- (RACSignal<NSNumber *> *)letDeviceTakePhoto;
+- (RACSignal<NSNumber *> *)letDeviceTakePhotoInChat;
 
 - (RACSignal<NSNumber *> *)appStopAiChat;
 
