@@ -12,6 +12,7 @@ import Photos
 import RxSwift
 import RxCocoa
 import SVProgressHUD
+import MZEncryptSDK
 
 //长对话AI聊天流程。
 //1.通过语音唤醒进入语音聊天模式（不间断对话），APP端收到openAiAssistantNew()回调，设备端开始录音。glassesSendAudioNew()回调收到解码后的pcm数据。
@@ -23,7 +24,10 @@ import SVProgressHUD
 //7. 手机端可以调用letDeviceTakePhotoInChat()方法，让设备拍照并将数据传输给APP，glassesSendImageNew方法可以收到图片数据
 //8.语音唤醒或设备按键时，可以打断当前ai对话，此时会收到closeAiAssistantNew()的回调
 
-
+//离线语音sdk的使用
+//1.1 导包：导⼊MZEncryptSDK.framework 、OpenSSL-Universal 、AFNetworking.
+//1.2 设置：target -> Build Settings -> Bitcode设置为NO, Other Linker Flags添加-ObjC
+//需要注意 默认语音应该是英文，中文唤醒词唤醒不了
 class NewAiChatVC: UIViewController {
 
     var disposable: RACDisposable?
@@ -99,7 +103,7 @@ class NewAiChatVC: UIViewController {
         let label = UILabel()
         label.text = "离线语音唤醒".localized()
         label.textColor = .darkGray
-        label.isHidden = true
+        label.isHidden = false
         label.font = .systemFont(ofSize: 16, weight: .medium)
         label.textAlignment = .center
         return label
@@ -108,7 +112,7 @@ class NewAiChatVC: UIViewController {
     private lazy var voiceWakeupSwitch: UISwitch = {
         let switchControl = UISwitch()
         switchControl.onTintColor = .systemBlue
-        switchControl.isHidden = true
+        switchControl.isHidden = false
         switchControl.addTarget(self, action: #selector(voiceWakeupSwitchChanged), for: .valueChanged)
         return switchControl
     }()
@@ -117,7 +121,7 @@ class NewAiChatVC: UIViewController {
         let label = UILabel()
         label.text = "设备支持离线语音".localized()
         label.textColor = .darkGray
-        label.isHidden = true
+        label.isHidden = false
         label.font = .systemFont(ofSize: 14)
         label.textAlignment = .center
         return label
@@ -126,7 +130,7 @@ class NewAiChatVC: UIViewController {
     private lazy var voiceSupportImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.isHidden = true
+        imageView.isHidden = false
         imageView.tintColor = .systemGreen
         return imageView
     }()
@@ -157,15 +161,35 @@ class NewAiChatVC: UIViewController {
         
         WatchManager.sharedInstance().current.subscribeNext { wMPeripheral in
             wMPeripheral?.aiNewAssistantDelegate = self
-//            wMPeripheral?.customDataDelegate = self
-//            MZPayAuth.share().logEnable = true
-//            //mac地址需要 离线语音提供商 授权，才能正常激活
-//            MZPayAuth.share().auth(withMac: wMPeripheral?.target.mac ?? "", name: wMPeripheral?.target.name ?? "", delegate: self)
+            wMPeripheral?.customDataDelegate = self
+            MZPayAuth.share().logEnable = true
+            print("wMPeripheral?.connect.isReadyValue = \(wMPeripheral?.connect.isReadyValue ?? false)")
+
+            //设备绑定成功后调用
             
-            // 检查设备是否支持离线语音
-//            self.checkVoiceSupportStatus()
-//            // 获取当前离线语音唤醒状态
-//            self.getVoiceWakeupStatus()
+            if wMPeripheral?.connect.isReadyValue ?? false {
+                wMPeripheral?.infoModel.wm_getBaseinfo().subscribeNext({[weak self] baseInfo in
+                    guard let self = self else{return}
+                    //设备基本信息中的offline_asr_auth 为"1",说明设备离线语音已经激活，不需要二次激活
+                    let offline_asr_auth = baseInfo?.otherInfo?["offline_asr_auth"] ?? "-1"
+                    print("offline_asr_auth = \(offline_asr_auth)")
+                    if offline_asr_auth as! String != "1" {
+                        //说明离线语音没有售全国
+                        //mac地址需要 离线语音提供商 授权，才能正常激活
+                        MZPayAuth.share().auth(withMac: wMPeripheral?.target.mac ?? "", name: wMPeripheral?.target.name ?? "", delegate: self)
+
+                    }
+                }, error: { error in
+                    
+                }, completed: {
+                    
+                })
+            }
+            
+//             检查设备是否支持离线语音
+            self.checkVoiceSupportStatus()
+            // 获取当前离线语音唤醒状态
+            self.getVoiceWakeupStatus()
         }
        
     }
@@ -521,66 +545,66 @@ extension NewAiChatVC: WMNewAiAssistantDelegate {
     }
 }
 
-//extension NewAiChatVC: MZPayAuthDelegate{
-//    func mzPayAuthWriteValue(_ data: Data) {
-//        //将数据发送给设备
-//        DDLogInfo("离线语音验证收到数据，发送给设备,data大小 \(data.count)");
-//        var sendData = Data()
-//        sendData.append(UInt8(2))
-//        sendData.append(data)
-//        //收到设备的数据后，通过MZPayAuth.parseData方法将数据传给MZEncryptSDK
-//        WatchManager.sharedInstance().currentValue.sendCustomData(sendData)
+extension NewAiChatVC: MZPayAuthDelegate{
+    func mzPayAuthWriteValue(_ data: Data) {
+        //将数据发送给设备
+        DDLogInfo("离线语音验证收到数据，发送给设备,data大小 \(data.count)");
+        var sendData = Data()
+        sendData.append(UInt8(2))
+        sendData.append(data)
+        //收到设备的数据后，通过MZPayAuth.parseData方法将数据传给MZEncryptSDK
+        WatchManager.sharedInstance().currentValue.sendCustomData(sendData)
+    }
+    
+//    func onCheckAuthoriseState(_ error: MZPayAuthError) {
+//        DDLogInfo("离线语音验证 onCheckAuthoriseState\(error.result)  \(error.type)")
 //    }
-//    
-////    func onCheckAuthoriseState(_ error: MZPayAuthError) {
-////        DDLogInfo("离线语音验证 onCheckAuthoriseState\(error.result)  \(error.type)")
-////    }
-//    
-//    func onCheckAuthoriseResult(_ result: MZAuthResult) {
-//     
-//        if (result.payAuthResult != nil) {
-//            if (result.payAuthResult!.result == MZPayAuthResult.success) {
-//                DDLogInfo("双付验证成功");
-//            } else if (result.payAuthResult!.result == MZPayAuthResult.failure) {
-//                DDLogInfo("双付验证失败,errorCode = \(result.payAuthResult!.errorCode)");
-//            } else {
-//                DDLogInfo("双付验证失败,未知错误");
-//            }
-//        }
-//        
-//        if (result.voiceOfflineAuthResult != nil&&result.payAuthResult != nil) {
-//            if (result.payAuthResult!.result == MZPayAuthResult.success) {
-//                DDLogInfo("离线语音验证成功");
-//            } else if (result.payAuthResult!.result == MZPayAuthResult.failure) {
-//                DDLogInfo("离线语音验证失败,errorCode = \(result.voiceOfflineAuthResult!.errorCode)");
-//            } else {
-//                DDLogInfo("离线语音验证失败,未知错误");
-//            }
-//        }
-//    }
-//}
+    
+    func onCheckAuthoriseResult(_ result: MZAuthResult) {
+     
+        if (result.payAuthResult != nil) {
+            if (result.payAuthResult!.result == MZPayAuthResult.success) {
+                DDLogInfo("双付验证成功");
+            } else if (result.payAuthResult!.result == MZPayAuthResult.failure) {
+                DDLogInfo("双付验证失败,errorCode = \(result.payAuthResult!.errorCode)");
+            } else {
+                DDLogInfo("双付验证失败,未知错误");
+            }
+        }
+        
+        if (result.voiceOfflineAuthResult != nil&&result.payAuthResult != nil) {
+            if (result.payAuthResult!.result == MZPayAuthResult.success) {
+                DDLogInfo("离线语音验证成功");
+            } else if (result.payAuthResult!.result == MZPayAuthResult.failure) {
+                DDLogInfo("离线语音验证失败,errorCode = \(result.voiceOfflineAuthResult!.errorCode)");
+            } else {
+                DDLogInfo("离线语音验证失败,未知错误");
+            }
+        }
+    }
+}
 
 
-//extension NewAiChatVC: WMCustomDataDelegate {
-//    func devicePushDataNeedReply(_ data: Data, result: @escaping (Bool) -> Void) {
-//        result(true)
-//        DispatchQueue.main.async {
-//        }
-//    }
-//    
-//    func devicePush(_ deviceData: Data) {
-//        DispatchQueue.main.async {
-//           if deviceData.count > 1 , deviceData[0] == 2 {
-//                let receiveData =  deviceData[1..<deviceData.count]
-//                let receiveDataString  = receiveData.toHexString()
-//                DDLogInfo("glasses receive device data 收到离线语音验证数据 MZPayAuth.share().parseData  = \(String(describing: receiveDataString))")
-//                MZPayAuth.share().parseData(receiveData)
-//            }else{
-//                DDLogInfo("StarburstSdk  glasses deviceData = \(deviceData.toHexString())")
-//            }
-//        }
-//    }
-//}
+extension NewAiChatVC: WMCustomDataDelegate {
+    func devicePushDataNeedReply(_ data: Data, result: @escaping (Bool) -> Void) {
+        result(true)
+        DispatchQueue.main.async {
+        }
+    }
+    
+    func devicePush(_ deviceData: Data) {
+        DispatchQueue.main.async {
+           if deviceData.count > 1 , deviceData[0] == 2 {
+                let receiveData =  deviceData[1..<deviceData.count]
+                let receiveDataString  = receiveData.toHexString()
+                DDLogInfo("glasses receive device data 收到离线语音验证数据 MZPayAuth.share().parseData  = \(String(describing: receiveDataString))")
+                MZPayAuth.share().parseData(receiveData)
+            }else{
+                DDLogInfo("StarburstSdk  glasses deviceData = \(deviceData.toHexString())")
+            }
+        }
+    }
+}
 
 extension Data {
  

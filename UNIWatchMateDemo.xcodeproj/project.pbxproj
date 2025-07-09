@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0411AC972E1E4839003E24B7 /* MZEncryptSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0411AC952E1E4832003E24B7 /* MZEncryptSDK.framework */; };
+		0411AC982E1E4839003E24B7 /* MZEncryptSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0411AC952E1E4832003E24B7 /* MZEncryptSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		04191D9C2DFAC9A500685BCB /* USTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04191D932DFAC9A500685BCB /* USTheme.swift */; };
 		04191D9D2DFAC9A500685BCB /* UIView+Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04191D912DFAC9A500685BCB /* UIView+Core.swift */; };
 		04191D9E2DFAC9A500685BCB /* UIButton+Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04191D8E2DFAC9A500685BCB /* UIButton+Core.swift */; };
@@ -139,6 +141,7 @@
 			files = (
 				B5CF8FD92BA947990074E221 /* UNIWatchMate.framework in Embed Frameworks */,
 				B5D98DA82D572F8F00A2ECE6 /* TLOCP.framework in Embed Frameworks */,
+				0411AC982E1E4839003E24B7 /* MZEncryptSDK.framework in Embed Frameworks */,
 				B589C8662D55BF5D009A91CA /* opus-ios.framework in Embed Frameworks */,
 				B5CF8FD42BA947970074E221 /* h264encoder.framework in Embed Frameworks */,
 				B5CF8FD72BA947980074E221 /* SJWatchLib.framework in Embed Frameworks */,
@@ -149,6 +152,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0411AC952E1E4832003E24B7 /* MZEncryptSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MZEncryptSDK.framework; sourceTree = "<group>"; };
 		04191D8E2DFAC9A500685BCB /* UIButton+Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Core.swift"; sourceTree = "<group>"; };
 		04191D8F2DFAC9A500685BCB /* UIImageView+Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Core.swift"; sourceTree = "<group>"; };
 		04191D902DFAC9A500685BCB /* UILabel+Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Core.swift"; sourceTree = "<group>"; };
@@ -329,6 +333,7 @@
 				B5CF8FD32BA947970074E221 /* h264encoder.framework in Frameworks */,
 				D7135A8BBE24884BB6DAFEEE /* Pods_UNIWatchMateDemo.framework in Frameworks */,
 				B5CF8FD62BA947980074E221 /* SJWatchLib.framework in Frameworks */,
+				0411AC972E1E4839003E24B7 /* MZEncryptSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,6 +560,7 @@
 		B5CF8FCF2BA947920074E221 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				0411AC952E1E4832003E24B7 /* MZEncryptSDK.framework */,
 				B5D98DA52D572F8B00A2ECE6 /* TLOCP.framework */,
 				B589C8632D55BF5A009A91CA /* opus-ios.framework */,
 				B5CF8FCC2BA947920074E221 /* h264encoder.framework */,

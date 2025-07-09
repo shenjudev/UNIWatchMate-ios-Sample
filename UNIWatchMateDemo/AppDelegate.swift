@@ -31,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let logString = x {
                 let log = String(format: "%@", logString)
                 SJSJDeviceDataLogger.logDeviceDataSimplified(log)
+                print("logString = \(logString)")
             }
         }
         
