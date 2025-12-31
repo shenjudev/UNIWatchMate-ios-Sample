@@ -22,11 +22,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (RACSignal<NSNumber *> *)letDeviceTakePhotoInChat;
 
+- (RACSignal<NSNumber *> *)appStopRecord;
 - (RACSignal<NSNumber *> *)appStopAiChat;
 
 - (RACSignal<NSNumber *> *)appBeginPlayTts;
 
 - (RACSignal<NSNumber *> *)appStopPlayTts;
+
+- (RACSignal<NSNumber *> *)appSendAiIntent2Device:(Byte)intent;
+
+- (RACSignal<NSNumber *> *)letDeviceSendAudioWhenFHP;
 
 @end
 

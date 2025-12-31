@@ -3221,6 +3221,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -5934,6 +5941,13 @@
             "printedName": "Hashable",
             "usr": "s:SH",
             "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       }
@@ -5942,294 +5956,294 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/ALSFR.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/ALSFR.swift",
       "kind": "IntegerLiteral",
       "offset": 85,
       "length": 6,
       "value": "0xD103"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/ALSFR.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/ALSFR.swift",
       "kind": "IntegerLiteral",
       "offset": 136,
       "length": 6,
       "value": "0x1021"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLLogger.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLLogger.swift",
       "kind": "StringLiteral",
       "offset": 67,
       "length": 7,
       "value": "\"DEBUG\""
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLLogger.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLLogger.swift",
       "kind": "StringLiteral",
       "offset": 91,
       "length": 6,
       "value": "\"INFO\""
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLLogger.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLLogger.swift",
       "kind": "StringLiteral",
       "offset": 117,
       "length": 9,
       "value": "\"WARNING\""
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLLogger.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLLogger.swift",
       "kind": "StringLiteral",
       "offset": 144,
       "length": 7,
       "value": "\"ERROR\""
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLLogger.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLLogger.swift",
       "kind": "Dictionary",
       "offset": 352,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 1732,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 1775,
       "length": 10,
       "value": "0b00000001"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 1819,
       "length": 10,
       "value": "0b00000010"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 1867,
       "length": 10,
       "value": "0b00000011"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 2283,
       "length": 10,
       "value": "0b00000000"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 2331,
       "length": 10,
       "value": "0b00000100"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 3794,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 3818,
       "length": 4,
       "value": "1"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 3851,
       "length": 5,
       "value": "2"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 3884,
       "length": 7,
       "value": "3"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 3917,
       "length": 6,
       "value": "4"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 3962,
       "length": 3,
       "value": "100"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 3988,
       "length": 6,
       "value": "101"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 4027,
       "length": 8,
       "value": "102"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 4150,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 4183,
       "length": 4,
       "value": "1"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 4220,
       "length": 6,
       "value": "2"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 4260,
       "length": 13,
       "value": "3"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 4303,
       "length": 11,
       "value": "4"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 4343,
       "length": 12,
       "value": "5"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 4386,
       "length": 11,
       "value": "6"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 4429,
       "length": 15,
       "value": "7"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 4469,
       "length": 19,
       "value": "8"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 4518,
       "length": 21,
       "value": "9"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 4569,
       "length": 18,
       "value": "10"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 4622,
       "length": 17,
       "value": "11"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 4675,
       "length": 17,
       "value": "12"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 4820,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 4847,
       "length": 9,
       "value": "1"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 4883,
       "length": 4,
       "value": "2"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 4913,
       "length": 6,
       "value": "3"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 4948,
       "length": 7,
       "value": "4"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 9788,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 16147,
       "length": 4,
       "value": "0x00"
     },
     {
-      "filePath": "\/Volumes\/mac7\/Users\/lex\/绅聚\/代码\/lib\/UNIWatchMateSDK\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
+      "filePath": "\/Volumes\/mac7\/Users\/mac\/workspace\/lensmoos-ios-1\/SJWatchLib\/TLOCP\/TLOCP\/TLOCP2Model.swift",
       "kind": "IntegerLiteral",
       "offset": 16187,
       "length": 4,

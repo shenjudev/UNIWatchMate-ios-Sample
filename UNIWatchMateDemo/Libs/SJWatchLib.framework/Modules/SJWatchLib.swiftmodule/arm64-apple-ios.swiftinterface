@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
-// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-experimental-feature OpaqueTypeErasure -enable-bare-slash-regex -module-name SJWatchLib
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+// swift-compiler-version: Apple Swift version 6.2.3 effective-5.10 (swiftlang-6.2.3.3.21 clang-1700.6.3.2)
+// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name SJWatchLib
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.3
 import AVFoundation
 import CoreBluetooth
 import Foundation
@@ -54,6 +54,7 @@ extension Foundation.Data {
 }
 public protocol SJOhterDataDelegate : AnyObject {
   func glassesOtherData(data: Foundation.Data)
+  func deviceAudioRecordData(data: Foundation.Data)
 }
 extension CoreBluetooth.CBManagerState {
   public var desc: Swift.String {
@@ -107,7 +108,9 @@ public enum SJWatchSwitchType : Swift.UInt8 {
   public var desc: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.UInt8)
+  #endif
   public typealias RawValue = Swift.UInt8
   public var rawValue: Swift.UInt8 {
     get
@@ -116,7 +119,9 @@ public enum SJWatchSwitchType : Swift.UInt8 {
 public class SJWatchSwitchModel {
   final public let type: SJWatchLib.SJWatchSwitchType
   final public let isOn: Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(data: Foundation.Data)
+  #endif
   public init(type: SJWatchLib.SJWatchSwitchType, isOn: Swift.Bool)
   public var data: Foundation.Data {
     get
@@ -128,9 +133,15 @@ public class SJWatchSwitchModel {
 }
 @objc @_inheritsConvenienceInitializers public class SJWatchFind : UNIWatchMate.WMFindModel {
   @objc override dynamic public class func sharedInstance() -> UNIWatchMate.WMFindModel
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc override dynamic public func fromScanQRCode(_ code: Swift.String, uid: Swift.String) -> ReactiveObjC.RACSignal<UNIWatchMate.WMPeripheral>?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc override dynamic public func fromSearch(withBleNamePrefix name: Swift.String?, uid: Swift.String) -> ReactiveObjC.RACSignal<UNIWatchMate.WMPeripheral>?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc override dynamic public func fromTarget(_ target: UNIWatchMate.WMPeripheralTargetModel, uid: Swift.String) -> ReactiveObjC.RACSignal<UNIWatchMate.WMPeripheral>?
+  #endif
   @objc override dynamic public func stopSearch()
   @objc override dynamic public func isEnabled(forProduct product: Swift.String) -> Swift.Bool
   @objc override dynamic public init()
@@ -139,7 +150,9 @@ public class SJWatchSwitchModel {
 public enum SJWatchCameraSettingType : Swift.UInt8 {
   case camera
   case flash
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.UInt8)
+  #endif
   public typealias RawValue = Swift.UInt8
   public var rawValue: Swift.UInt8 {
     get
@@ -148,7 +161,9 @@ public enum SJWatchCameraSettingType : Swift.UInt8 {
 public class SJWatchCameraSettingModel {
   final public let type: SJWatchLib.SJWatchCameraSettingType
   final public let value: Swift.UInt8
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(data: Foundation.Data)
+  #endif
   public init(type: SJWatchLib.SJWatchCameraSettingType, value: Swift.UInt8)
   public var data: Foundation.Data {
     get
@@ -201,17 +216,25 @@ public class SJ2WatchBaseInfoGetModel : Swift.Codable {
   public var ble_name: Swift.String?
   public var offline_asr_auth: Swift.String?
   required public init()
+  #if compiler(>=5.3) && $NonescapableTypes
   required public init?(data: Foundation.Data)
+  #endif
   required public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 extension Swift.KeyedDecodingContainer {
+  #if compiler(>=5.3) && $NonescapableTypes
   public func decodeIntFromStringOrInt(forKey key: K) -> Swift.Int?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func decodeStringFromStringOrInt(forKey key: K) -> Swift.String?
+  #endif
 }
 extension Swift.KeyedEncodingContainer {
+  #if compiler(>=5.3) && $NonescapableTypes
   public mutating func encodeIntAsString(_ value: Swift.Int?, forKey key: K) throws
+  #endif
 }
 public class SJWatchSleepSettingModel {
   public var isOn: Swift.Bool
@@ -219,7 +242,9 @@ public class SJWatchSleepSettingModel {
   public var start_mm: Swift.UInt8
   public var end_HH: Swift.UInt8
   public var end_mm: Swift.UInt8
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(data: Foundation.Data)
+  #endif
   public init()
   public var desc: Swift.String {
     get
@@ -240,19 +265,28 @@ public class SJWatchSleepSettingModel {
   @objc deinit
 }
 public protocol SJGlassesAiDelegate : AnyObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   func glassesSendData(imageData: Foundation.Data?, pcmData: Foundation.Data?)
+  #endif
   func glassesSendAudio(pcmData: Foundation.Data)
+  #if compiler(>=5.3) && $NonescapableTypes
   func glassesSendImage(imageData: Foundation.Data?)
+  #endif
   func openAiAssistant()
   func closeAiAssistant()
 }
 public protocol SJNewGlassesAiDelegate : AnyObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   func glassesSendDataNew(imageData: Foundation.Data?, pcmData: Foundation.Data?)
+  #endif
   func glassesSendAudioNew(pcmData: Foundation.Data)
+  #if compiler(>=5.3) && $NonescapableTypes
   func glassesSendImageNew(imageData: Foundation.Data?)
+  #endif
   func openAiAssistantNew()
   func stopAudioSendAiAssistantNew()
   func closeAiAssistantNew()
+  func deviceQueryAPPFront()
 }
 public let SH_LEVEL_DEBUG: Swift.String
 public let SH_LEVEL_INFO: Swift.String
@@ -264,7 +298,9 @@ public let SH_LEVEL_INFO: Swift.String
 }
 public class SJGlassesVideoReceiveModel {
   final public let value: Foundation.Data
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(data: Foundation.Data)
+  #endif
   public var data: Foundation.Data {
     get
   }
@@ -278,9 +314,11 @@ public class USWatchDialBleModel : Swift.Codable {
   public var id: Swift.String?
   public var using: Swift.UInt8?
   public var version: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   public var bUsing: Swift.Bool? {
     get
   }
+  #endif
   required public init()
   required public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
@@ -289,7 +327,9 @@ public class USWatchDialBleModel : Swift.Codable {
 public class SJGlassesH264VideoReceiveModel {
   final public let value: Foundation.Data
   final public let keyFrame: Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(data: Foundation.Data, key: Swift.UInt8)
+  #endif
   public var data: Foundation.Data {
     get
   }
@@ -316,6 +356,13 @@ public class USWatchBatteryModel : Swift.Codable {
   required public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
+}
+extension Swift.Dictionary where Key == Swift.String, Value == Any {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var macAddress: Swift.String? {
+    get
+  }
+  #endif
 }
 public class USWatchBaseInfoModel : Swift.Codable {
   public var chip_mode: Swift.String?
@@ -347,7 +394,9 @@ public class USWatchBaseInfoModel : Swift.Codable {
 public enum SJWatchVideoFrameType : Swift.UInt8 {
   case I
   case P
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.UInt8)
+  #endif
   public typealias RawValue = Swift.UInt8
   public var rawValue: Swift.UInt8 {
     get
@@ -372,7 +421,9 @@ public class SJ2WatchDeviceBatteryGetModel : Swift.Codable {
     get
   }
   required public init()
+  #if compiler(>=5.3) && $NonescapableTypes
   required public init?(data: Foundation.Data)
+  #endif
   required public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
@@ -386,11 +437,17 @@ extension Foundation.Data {
   public func toHexString2() -> Swift.String
 }
 public protocol SJPhotoLibrayDelegate : AnyObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   func receivePhotoImage(imageData: Foundation.Data?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   func receivePhotoNames(imageNamesData: Foundation.Data?)
+  #endif
 }
 public struct TLOCPModel {
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(data: Foundation.Data)
+  #endif
 }
 extension SJWatchLib.SJWatchSwitchType : Swift.Equatable {}
 extension SJWatchLib.SJWatchSwitchType : Swift.Hashable {}

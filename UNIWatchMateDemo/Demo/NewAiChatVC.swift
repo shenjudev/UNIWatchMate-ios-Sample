@@ -427,6 +427,10 @@ extension NewAiChatVC: AVAudioPlayerDelegate {
 }
 
 extension NewAiChatVC: WMNewAiAssistantDelegate {
+    func deviceQueryAPPFront() {
+        //设备查询APP是否在前台
+    }
+    
     func stopAudioSendAiAssistantNew() {
         //本次语音结束，停止向app发送音频数据
         print("stopAudioSendAiAssistantNew  本次语音结束")

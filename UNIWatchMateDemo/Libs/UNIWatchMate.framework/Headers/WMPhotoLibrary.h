@@ -11,7 +11,21 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol WMPhotoLibraryAppDelegate <NSObject, AVCaptureVideoDataOutputSampleBufferDelegate>
+
+/// 无存储方案，设备拍照，向手机发送照片分片数量 （No storage solution, device takes photos, number of photo fragments sent to the mobile phone）
+/// Parameter elementCount: 照片分片数量 （Number of photo fragments）
+- (void)deviceTakePhotoElementCount:(NSInteger)elementCount;
+
+@end
+
+
+
 @interface WMPhotoLibrary : NSObject<WMSupportProtocol>
+
+
+@property (nonatomic, weak) id<WMPhotoLibraryAppDelegate> delegate;
+
 /// APP请求设备 照片名称（设备不进入 "等待发送图片状态"） （APP Turn on/off the record）
 /// result 照片列表
 - (RACSignal<NSNumber *> *)getOnlyDevicePhotoNamesCount;

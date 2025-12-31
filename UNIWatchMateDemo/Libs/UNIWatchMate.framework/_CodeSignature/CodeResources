@@ -42,7 +42,7 @@
 		</data>
 		<key>Headers/WMAiAssistNew.h</key>
 		<data>
-		pmMmG3QsOKG282Q2cgoEF6NwK9E=
+		SIjzMLp8Mnc5cxv6fHu7OKewMeE=
 		</data>
 		<key>Headers/WMAlarmAppModel.h</key>
 		<data>
@@ -106,7 +106,7 @@
 		</data>
 		<key>Headers/WMConnectModel.h</key>
 		<data>
-		supm2bDETzslRuLGDohCJE2kWN0=
+		nnvjyULyA7LNhyauKMZ3gIak9TU=
 		</data>
 		<key>Headers/WMContactModel.h</key>
 		<data>
@@ -134,7 +134,7 @@
 		</data>
 		<key>Headers/WMDeviceInfoModel.h</key>
 		<data>
-		uj7TbpaxG61ZXzO6jcjWcH9uwX0=
+		XPWcTTK+grF7/fRXyjBiPqrFHbs=
 		</data>
 		<key>Headers/WMDialAppModel.h</key>
 		<data>
@@ -246,7 +246,7 @@
 		</data>
 		<key>Headers/WMPeripheral.h</key>
 		<data>
-		j3+VGVRvpcwpM/T6M7pMaR32tFA=
+		VALKNbwCAbUa7qzlMS7hlGbMppY=
 		</data>
 		<key>Headers/WMPersonalInfoModel.h</key>
 		<data>
@@ -258,7 +258,7 @@
 		</data>
 		<key>Headers/WMPhotoLibrary.h</key>
 		<data>
-		8DXYEfG0Z7HMIgUk/A+N13hEPVQ=
+		V7JY+iamHNhiEbXD9dNAVr/AmoI=
 		</data>
 		<key>Headers/WMProgressModel.h</key>
 		<data>
@@ -362,7 +362,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		RqY5rQU8j1w47NkFU5yWoUE5Wqs=
+		fCmcNsbNbQlctdbsqz6BM5VPdNI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -438,7 +438,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Q/Eia5jbzBV6urt5hyiPlyr2/4DfVfcPX2Jb6ieFDyY=
+			TyEZDVsxT4HmiZdSe2d18JnxMQlXR6ot/4DFWbcT+CU=
 			</data>
 		</dict>
 		<key>Headers/WMAlarmAppModel.h</key>
@@ -550,7 +550,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			z4CtqSglLz7Q0Xb4zFMBCh5F0liOIU+mltoPQNhgFE0=
+			jWuWZFeZzUE3YVBZ7DXFb9bfMDgho4+YN5hDTyrz+p8=
 			</data>
 		</dict>
 		<key>Headers/WMContactModel.h</key>
@@ -599,7 +599,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7ibA925t1qMLbUCYo4u2xbc4kFwait3S9zL/HnDjc+0=
+			JDZJbsGdCLRpwFTHURU4KlrSjxmt8PXqyuPLhuq0iSk=
 			</data>
 		</dict>
 		<key>Headers/WMDialAppModel.h</key>
@@ -795,7 +795,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2KVj+G+Ee6nmHoUmtPudlHeEudK2uQVJqcxJQi1+aEY=
+			tz2CT7GhAMi6YCBNh0n+ZrAfObB+hXMZYw6Yhr6tMdw=
 			</data>
 		</dict>
 		<key>Headers/WMPersonalInfoModel.h</key>
@@ -816,7 +816,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9IniGN1yIreksSlpma4+YWWefE3DhjA8Jjg6lEpsMaw=
+			uM/Qny6pMB4v7pxOq++B1fUZaEfwhlgfI9bnHiSw3VM=
 			</data>
 		</dict>
 		<key>Headers/WMProgressModel.h</key>

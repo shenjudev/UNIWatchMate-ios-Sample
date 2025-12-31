@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
-// swift-module-flags: -target arm64-apple-ios13 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name TLOCP
+// swift-compiler-version: Apple Swift version 6.2.3 effective-5.10 (swiftlang-6.2.3.3.21 clang-1700.6.3.2)
+// swift-module-flags: -target arm64-apple-ios13 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name TLOCP
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.3
 import AudioToolbox
 import CoreBluetooth
 import Foundation
@@ -23,7 +24,9 @@ public enum LogLevel : Swift.String {
   case info
   case warning
   case error
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -54,7 +57,9 @@ public enum TLOCP2LengthType : Swift.UInt8 {
   case header
   case body
   case footer
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.UInt8)
+  #endif
   public typealias RawValue = Swift.UInt8
   public var rawValue: Swift.UInt8 {
     get
@@ -63,7 +68,9 @@ public enum TLOCP2LengthType : Swift.UInt8 {
 public enum TLOCP2EncodeType : Swift.UInt8 {
   case bin
   case json
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.UInt8)
+  #endif
   public typealias RawValue = Swift.UInt8
   public var rawValue: Swift.UInt8 {
     get
@@ -84,7 +91,9 @@ public enum TLOCP2PayloadType : Swift.UInt8 {
   case each
   case all_ok
   case all_fail
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.UInt8)
+  #endif
   public typealias RawValue = Swift.UInt8
   public var rawValue: Swift.UInt8 {
     get
@@ -104,7 +113,9 @@ public enum TLOCP2PayloadError : Swift.UInt8, Swift.Error {
   case invalid_item_count
   case invalid_item_list
   case invalid_item_data
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.UInt8)
+  #endif
   public typealias RawValue = Swift.UInt8
   public var rawValue: Swift.UInt8 {
     get
@@ -116,7 +127,9 @@ public enum TLOCP2PayloadEncodeType : Swift.UInt8 {
   case json
   case nodata
   case errcode
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.UInt8)
+  #endif
   public typealias RawValue = Swift.UInt8
   public var rawValue: Swift.UInt8 {
     get
@@ -139,7 +152,9 @@ public struct TLOCP2PayloadModel {
   public var items: [TLOCP.TLOCP2PayloadItemModel]
 }
 extension TLOCP.TLOCP2PayloadModel {
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(data: Foundation.Data)
+  #endif
 }
 public struct TLOCP2Model {
   public var typeModel: TLOCP.TLOCP2TypeModel
@@ -158,7 +173,9 @@ public struct TLOCP2Model {
   }
 }
 extension TLOCP.TLOCP2Model {
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(data: Foundation.Data)
+  #endif
 }
 extension TLOCP.LogLevel : Swift.Equatable {}
 extension TLOCP.LogLevel : Swift.Hashable {}

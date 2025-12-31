@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 可订阅对象，设备是否初始化完成，可以进行数据交互 (Subscribable objects, whether the device initialization is complete, can perform data interaction)
 @property (nonatomic, strong) RACSignal<NSNumber *> *isReady;
+//isReadyValue TODO 
 @property (nonatomic, assign, readonly) BOOL isReadyValue;
 
 /// 可订阅对象，使用CBPeripheralState表示，SDK是否在连接目标设备（0未发起连接，1正在连接，2连接成功）

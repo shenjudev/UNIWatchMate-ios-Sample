@@ -23,6 +23,6 @@ FOUNDATION_EXPORT const unsigned char SJWatchLibVersionString[];
 #import <SJWatchLib/DialThumbnailAdapter.h>
 #import <ReactiveObjC/ReactiveObjC.h>
 #import <SJWatchLib/LSFR.h>
-//@import opus
+// opus 框架导入 - 使用框架路径导入，确保能找到头文件
 #import <opus-ios/opus.h>
 #import <opus-ios/OpusDecoder.h>
