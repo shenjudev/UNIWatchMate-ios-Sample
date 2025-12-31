@@ -86,10 +86,42 @@ class RecordVideoVC: UIViewController {
     var isOnResume = false
     var recording = false
     
+    // 无存储设备提示标签
+    private lazy var noStorageLabel: UILabel = {
+        let label = UILabel()
+        label.text = "无存储设备，不支持此功能".localized()
+        label.textColor = .systemRed
+        label.font = .systemFont(ofSize: 18, weight: .medium)
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.isHidden = true
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         addNotice()
+        
+        // 检查是否为无存储设备
+        let isNoStorageDevice = WatchManager.sharedInstance().currentValue.infoModel.glassesFeatureSetModel?.feature_mask.isFeatureEnabled(.featureNoStorageDevice) ?? false
+        
+        if isNoStorageDevice {
+            // 如果是无存储设备，显示提示信息并隐藏/禁用原有功能
+            view.addSubview(noStorageLabel)
+            noStorageLabel.isHidden = false
+            
+            noStorageLabel.snp.makeConstraints { make in
+                make.center.equalToSuperview()
+                make.left.right.equalToSuperview().inset(40)
+            }
+            
+            // 隐藏原有的容器视图和描述标签
+            containerView.isHidden = true
+            descriptionLabel.isHidden = true
+            // 禁用点击手势
+            containerView.isUserInteractionEnabled = false
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -102,7 +134,12 @@ class RecordVideoVC: UIViewController {
         super.viewDidAppear(animated)
         UIApplication.shared.isIdleTimerDisabled = true
         isOnResume = true
-        checkRecordingState()
+        
+        // 只有在非无存储设备时才检查录像状态
+        let isNoStorageDevice = WatchManager.sharedInstance().currentValue.infoModel.glassesFeatureSetModel?.feature_mask.isFeatureEnabled(.featureNoStorageDevice) ?? false
+        if !isNoStorageDevice {
+            checkRecordingState()
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -265,6 +302,12 @@ class RecordVideoVC: UIViewController {
     }
     
     @objc func handleRecordTap(_ sender: UITapGestureRecognizer) {
+        // 检查是否为无存储设备，如果是则直接返回
+        let isNoStorageDevice = WatchManager.sharedInstance().currentValue.infoModel.glassesFeatureSetModel?.feature_mask.isFeatureEnabled(.featureNoStorageDevice) ?? false
+        if isNoStorageDevice {
+            return
+        }
+        
         // 添加点击反馈动画
         UIView.animate(withDuration: 0.1, animations: {
             self.containerView.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)

@@ -60,6 +60,18 @@ class MediaCountVC: UIViewController {
     var disposable: RACDisposable?
     var isOnResume = false
     private lazy var simpleImg = UIImageView()
+    
+    // 无存储设备提示标签
+    private lazy var noStorageLabel: UILabel = {
+        let label = UILabel()
+        label.text = "无存储设备，不支持此功能".localized()
+        label.textColor = .systemRed
+        label.font = .systemFont(ofSize: 18, weight: .medium)
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.isHidden = true
+        return label
+    }()
         
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -120,60 +132,78 @@ class MediaCountVC: UIViewController {
         view.backgroundColor = .systemBackground
         title = "媒体资源数量".localized()
         
-        view.addSubview(containerView)
-        containerView.addSubview(iconImageView)
-        containerView.addSubview(titleLabel)
-        containerView.addSubview(statsStackView)
+        // 检查是否为无存储设备
+        let isNoStorageDevice = WatchManager.sharedInstance().currentValue.infoModel.glassesFeatureSetModel?.feature_mask.isFeatureEnabled(.featureNoStorageDevice) ?? false
         
-        statsStackView.addArrangedSubview(musicView)
-        statsStackView.addArrangedSubview(videoView)
-        statsStackView.addArrangedSubview(photoView)
-        statsStackView.addArrangedSubview(recordView)
-        
-        containerView.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-            make.left.right.equalToSuperview().inset(20)
-            make.height.equalTo(400)
-        }
-        
-        iconImageView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(30)
-            make.centerX.equalToSuperview()
-            make.width.height.equalTo(60)
-        }
-        
-        titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(iconImageView.snp.bottom).offset(16)
-            make.centerX.equalToSuperview()
-        }
-        
-        statsStackView.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(32)
-            make.left.right.equalToSuperview()
-            make.bottom.lessThanOrEqualToSuperview().offset(-30)
-        }
-        
-        SVProgressHUD.show()
-        WatchManager.sharedInstance().currentValue.apps.watchGlassesVideoApp.deviceMediaCount().subscribeNext {[weak self] mediaCount in
-            SVProgressHUD.dismiss()
-            guard let self = self else { return }
+        if isNoStorageDevice {
+            // 如果是无存储设备，显示提示信息并隐藏原有功能
+            view.addSubview(noStorageLabel)
+            noStorageLabel.isHidden = false
             
-            if let musicLabel = (self.musicView.subviews.last as? UILabel) {
-                musicLabel.text = "\("音乐".localized())：\(mediaCount?.music_num ?? 0)"
+            noStorageLabel.snp.makeConstraints { make in
+                make.center.equalToSuperview()
+                make.left.right.equalToSuperview().inset(40)
             }
-            if let videoLabel = (self.videoView.subviews.last as? UILabel) {
-                videoLabel.text = "\("视频".localized())：\(mediaCount?.video_num ?? 0)"
+            
+            // 隐藏原有的容器视图
+            containerView.isHidden = true
+        } else {
+            // 正常显示原有功能
+            view.addSubview(containerView)
+            containerView.addSubview(iconImageView)
+            containerView.addSubview(titleLabel)
+            containerView.addSubview(statsStackView)
+            
+            statsStackView.addArrangedSubview(musicView)
+            statsStackView.addArrangedSubview(videoView)
+            statsStackView.addArrangedSubview(photoView)
+            statsStackView.addArrangedSubview(recordView)
+            
+            containerView.snp.makeConstraints { make in
+                make.center.equalToSuperview()
+                make.left.right.equalToSuperview().inset(20)
+                make.height.equalTo(400)
             }
-            if let photoLabel = (self.photoView.subviews.last as? UILabel) {
-                photoLabel.text = "\("照片".localized())：\(mediaCount?.photo_num ?? 0)"
+            
+            iconImageView.snp.makeConstraints { make in
+                make.top.equalToSuperview().offset(30)
+                make.centerX.equalToSuperview()
+                make.width.height.equalTo(60)
             }
-            if let recordLabel = (self.recordView.subviews.last as? UILabel) {
-                recordLabel.text = "\("录音".localized())：\(mediaCount?.record_num ?? 0)"
+            
+            titleLabel.snp.makeConstraints { make in
+                make.top.equalTo(iconImageView.snp.bottom).offset(16)
+                make.centerX.equalToSuperview()
             }
-        } error: { error in
-            print(error as Any)
-            SVProgressHUD.dismiss()
-        } completed: {
+            
+            statsStackView.snp.makeConstraints { make in
+                make.top.equalTo(titleLabel.snp.bottom).offset(32)
+                make.left.right.equalToSuperview()
+                make.bottom.lessThanOrEqualToSuperview().offset(-30)
+            }
+            
+            SVProgressHUD.show()
+            WatchManager.sharedInstance().currentValue.apps.watchGlassesVideoApp.deviceMediaCount().subscribeNext {[weak self] mediaCount in
+                SVProgressHUD.dismiss()
+                guard let self = self else { return }
+                
+                if let musicLabel = (self.musicView.subviews.last as? UILabel) {
+                    musicLabel.text = "\("音乐".localized())：\(mediaCount?.music_num ?? 0)"
+                }
+                if let videoLabel = (self.videoView.subviews.last as? UILabel) {
+                    videoLabel.text = "\("视频".localized())：\(mediaCount?.video_num ?? 0)"
+                }
+                if let photoLabel = (self.photoView.subviews.last as? UILabel) {
+                    photoLabel.text = "\("照片".localized())：\(mediaCount?.photo_num ?? 0)"
+                }
+                if let recordLabel = (self.recordView.subviews.last as? UILabel) {
+                    recordLabel.text = "\("录音".localized())：\(mediaCount?.record_num ?? 0)"
+                }
+            } error: { error in
+                print(error as Any)
+                SVProgressHUD.dismiss()
+            } completed: {
+            }
         }
     }
     

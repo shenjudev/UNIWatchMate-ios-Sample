@@ -231,3 +231,4 @@
 "预览中..." = "Previewing...";
 "预览失败" = "Preview Failed";
 "暂无音频数据" = "no audio data";
+"无存储设备，不支持此功能" = "No storage device, this feature is not supported";

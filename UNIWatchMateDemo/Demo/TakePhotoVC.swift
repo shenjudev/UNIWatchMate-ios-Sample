@@ -163,6 +163,18 @@ class TakePhotoVC: UIViewController {
             SVProgressHUD.dismiss()
         } completed: {
         }
+        //无存储方案，设置拍照的代理
+        WatchManager.sharedInstance().current.subscribeNext {[weak self] peripheral in
+            peripheral?.apps.photoLibraryApp.delegate = self
+        }
     }
 }
 
+// MARK: -apps.photoLibraryApp.delegatee
+extension TakePhotoVC: WMPhotoLibraryAppDelegate {
+    func deviceTakePhotoElementCount(_ elementCount: Int) {
+        //无存储方案，拍照后，设备会发送 拍照 分片数量给设备，拿到分片数量后，可参照PhotoLibraryViewModel中的代码向设备请求
+        DDLogInfo("无存储方案，收到拍照 分片数量 = \(elementCount)")
+
+    }
+}

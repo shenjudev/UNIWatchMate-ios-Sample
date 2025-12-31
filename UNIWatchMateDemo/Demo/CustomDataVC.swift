@@ -14,6 +14,8 @@ import RxCocoa
 import SVProgressHUD
 import SnapKit
 
+// 添加 @objc 和 @objcMembers 标记，确保 Objective-C 可以正确访问此类
+@objcMembers
 class CustomDataVC: UIViewController {
     
     private let disposeBag = DisposeBag()
@@ -70,6 +72,13 @@ class CustomDataVC: UIViewController {
         WatchManager.sharedInstance().current.subscribeNext { wMPeripheral in
             wMPeripheral?.customDataDelegate = self
         }
+    }
+    
+    // 确保导航栏显示（用于显示返回键）
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // 显示导航栏
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     // MARK: - UI Setup

@@ -278,12 +278,16 @@ class PhotoLibraryController: UIViewController {
             self, action: #selector(downloadTapped), for: .touchUpInside)
 
         photoLibraryHeader.isUserInteractionEnabled = true
-         photoLibraryHeader.backBtn.rx.tap.bind { [weak self] in
+        photoLibraryHeader.backBtn.rx.tap.bind { [weak self] in
              self?.navigationController?.popViewController()
         }.disposed(by: self.disposeBag)
 
         photoLibraryHeader.selectModeBtn.addTarget(
             self, action: #selector(selectModeBtnTapped), for: .touchUpInside)
+         
+        let isNoStorageDevice = WatchManager.sharedInstance().currentValue.infoModel.glassesFeatureSetModel?.feature_mask.isFeatureEnabled(.featureNoStorageDevice) ?? false
+        
+         photoLibraryHeader.isHidden = isNoStorageDevice
     }
     
     override func viewWillAppear(_ animated: Bool) {

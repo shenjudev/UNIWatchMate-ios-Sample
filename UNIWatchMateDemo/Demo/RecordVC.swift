@@ -173,6 +173,11 @@ class RecordVC: UIViewController {
             SVProgressHUD.dismiss()
         } completed: {
         }
+        //设置无存储设备 录音数据的delegate
+        WatchManager.sharedInstance().current.subscribeNext {[weak self] peripheral in
+            peripheral?.otherDataDelegate = self
+
+        }
     }
     
     private func updateRecordingState(_ isRecording: Bool) {
@@ -247,5 +252,19 @@ class RecordVC: UIViewController {
         } completed: {
         }
     }
+}
+
+//无存储设备
+extension RecordVC: WMOtherDataDelegate {
+    func device4A02Push(_ data: Data) {
+        
+    }
+    
+    func deviceAudioRecord(_ data: Data) {
+        // 无存储设备 开始录音后，设备会一直发送语言数据给APP
+        // 收到无存储设备的 pcm录音数据
+        DDLogInfo("收到无存储设备的 PCM录音数据，数据大小: \(data.count) bytes")
+    }
+    
 }
 

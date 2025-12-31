@@ -81,6 +81,18 @@ class GetDiskSpaceVC: UIViewController {
     var disposable: RACDisposable?
     var isOnResume = false
     private lazy var simpleImg = UIImageView()
+    
+    // 无存储设备提示标签
+    private lazy var noStorageLabel: UILabel = {
+        let label = UILabel()
+        label.text = "无存储设备，不支持此功能".localized()
+        label.textColor = .systemRed
+        label.font = .systemFont(ofSize: 18, weight: .medium)
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.isHidden = true
+        return label
+    }()
         
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -110,77 +122,95 @@ class GetDiskSpaceVC: UIViewController {
         view.backgroundColor = .systemBackground
         title = "存储空间".localized()
         
-        view.addSubview(containerView)
-        containerView.addSubview(iconImageView)
-        containerView.addSubview(titleLabel)
-        containerView.addSubview(progressView)
-        containerView.addSubview(usedSpaceLabel)
-        containerView.addSubview(totalSpaceLabel)
-        containerView.addSubview(detailLabel)
+        // 检查是否为无存储设备
+        let isNoStorageDevice = WatchManager.sharedInstance().currentValue.infoModel.glassesFeatureSetModel?.feature_mask.isFeatureEnabled(.featureNoStorageDevice) ?? false
         
-        containerView.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-            make.left.right.equalToSuperview().inset(20)
-            make.height.equalTo(320)
-        }
-        
-        iconImageView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(30)
-            make.centerX.equalToSuperview()
-            make.width.height.equalTo(50)
-        }
-        
-        titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(iconImageView.snp.bottom).offset(16)
-            make.centerX.equalToSuperview()
-        }
-        
-        usedSpaceLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(30)
-            make.centerX.equalToSuperview()
-        }
-        
-        totalSpaceLabel.snp.makeConstraints { make in
-            make.top.equalTo(usedSpaceLabel.snp.bottom).offset(16)
-            make.centerX.equalToSuperview()
-        }
-        
-        progressView.snp.makeConstraints { make in
-            make.top.equalTo(totalSpaceLabel.snp.bottom).offset(25)
-            make.left.right.equalToSuperview().inset(24)
-            make.height.equalTo(8)
-        }
-        
-        detailLabel.snp.makeConstraints { make in
-            make.top.equalTo(progressView.snp.bottom).offset(25)
-            make.left.right.equalToSuperview().inset(24)
-            make.bottom.lessThanOrEqualToSuperview().offset(-30)
-        }
-        
-        SVProgressHUD.show()
-        WatchManager.sharedInstance().currentValue.apps.watchGlassesVideoApp.deviceStoreageInfo().subscribeNext {[weak self] deviceStoreageInfo in
-            SVProgressHUD.dismiss()
-            guard let self = self else { return }
+        if isNoStorageDevice {
+            // 如果是无存储设备，显示提示信息并隐藏原有功能
+            view.addSubview(noStorageLabel)
+            noStorageLabel.isHidden = false
             
-            let totalSize = self.stringToMegabytesString(deviceStoreageInfo?.total as String?)
-            // 计算已使用空间和百分比
-            if let used = deviceStoreageInfo?.used as? String,
-               let total = deviceStoreageInfo?.total as? String,
-               let usedBytes = Double(used),
-               let totalBytes = Double(total) {
-                let remainBytes = totalBytes - usedBytes
-                let percentage = usedBytes / totalBytes
-                let remainSize = self.stringToMegabytesString("\(remainBytes.int)")
-
-                self.progressView.progress = Float(percentage)
-                self.usedSpaceLabel.text = self.stringToMegabytesString(String(Int(usedBytes)))
-                self.totalSpaceLabel.text = "\("总容量".localized())：\(totalSize)"
-                self.detailLabel.text = "\("剩余可用".localized())：\(remainSize)"
+            noStorageLabel.snp.makeConstraints { make in
+                make.center.equalToSuperview()
+                make.left.right.equalToSuperview().inset(40)
             }
             
-        } error: { error in
-            SVProgressHUD.dismiss()
-            print(error as Any)
+            // 隐藏原有的容器视图
+            containerView.isHidden = true
+        } else {
+            // 正常显示原有功能
+            view.addSubview(containerView)
+            containerView.addSubview(iconImageView)
+            containerView.addSubview(titleLabel)
+            containerView.addSubview(progressView)
+            containerView.addSubview(usedSpaceLabel)
+            containerView.addSubview(totalSpaceLabel)
+            containerView.addSubview(detailLabel)
+            
+            containerView.snp.makeConstraints { make in
+                make.center.equalToSuperview()
+                make.left.right.equalToSuperview().inset(20)
+                make.height.equalTo(320)
+            }
+            
+            iconImageView.snp.makeConstraints { make in
+                make.top.equalToSuperview().offset(30)
+                make.centerX.equalToSuperview()
+                make.width.height.equalTo(50)
+            }
+            
+            titleLabel.snp.makeConstraints { make in
+                make.top.equalTo(iconImageView.snp.bottom).offset(16)
+                make.centerX.equalToSuperview()
+            }
+            
+            usedSpaceLabel.snp.makeConstraints { make in
+                make.top.equalTo(titleLabel.snp.bottom).offset(30)
+                make.centerX.equalToSuperview()
+            }
+            
+            totalSpaceLabel.snp.makeConstraints { make in
+                make.top.equalTo(usedSpaceLabel.snp.bottom).offset(16)
+                make.centerX.equalToSuperview()
+            }
+            
+            progressView.snp.makeConstraints { make in
+                make.top.equalTo(totalSpaceLabel.snp.bottom).offset(25)
+                make.left.right.equalToSuperview().inset(24)
+                make.height.equalTo(8)
+            }
+            
+            detailLabel.snp.makeConstraints { make in
+                make.top.equalTo(progressView.snp.bottom).offset(25)
+                make.left.right.equalToSuperview().inset(24)
+                make.bottom.lessThanOrEqualToSuperview().offset(-30)
+            }
+            
+            SVProgressHUD.show()
+            WatchManager.sharedInstance().currentValue.apps.watchGlassesVideoApp.deviceStoreageInfo().subscribeNext {[weak self] deviceStoreageInfo in
+                SVProgressHUD.dismiss()
+                guard let self = self else { return }
+                
+                let totalSize = self.stringToMegabytesString(deviceStoreageInfo?.total as String?)
+                // 计算已使用空间和百分比
+                if let used = deviceStoreageInfo?.used as? String,
+                   let total = deviceStoreageInfo?.total as? String,
+                   let usedBytes = Double(used),
+                   let totalBytes = Double(total) {
+                    let remainBytes = totalBytes - usedBytes
+                    let percentage = usedBytes / totalBytes
+                    let remainSize = self.stringToMegabytesString("\(remainBytes.int)")
+
+                    self.progressView.progress = Float(percentage)
+                    self.usedSpaceLabel.text = self.stringToMegabytesString(String(Int(usedBytes)))
+                    self.totalSpaceLabel.text = "\("总容量".localized())：\(totalSize)"
+                    self.detailLabel.text = "\("剩余可用".localized())：\(remainSize)"
+                }
+                
+            } error: { error in
+                SVProgressHUD.dismiss()
+                print(error as Any)
+            }
         }
     }
     
