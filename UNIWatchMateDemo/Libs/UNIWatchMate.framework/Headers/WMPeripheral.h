@@ -20,12 +20,16 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)devicePushData:(NSData *)data;
 - (void)devicePushDataNeedReply:(NSData *)data result:(void(^)(BOOL))result;
 
+
+
 @end
 
 @protocol WMOtherDataDelegate <NSObject>
 // 接受到自定义数据回调
 - (void)device4A02PushData:(NSData *)data;
 - (void)deviceAudioRecordData:(NSData *)data;
+
+- (void)devicePushRawData:(NSData *)data;
 
 @end
 
@@ -164,6 +168,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 发送自定义数据，不报错
 - (void)sendCustomData:(NSData *)data;
+
+/// 发送蓝牙数据
+- (void)sendIfNeed:(NSData *)data;
 
 @end
 

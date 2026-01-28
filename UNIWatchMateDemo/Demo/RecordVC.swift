@@ -256,6 +256,10 @@ class RecordVC: UIViewController {
 
 //无存储设备
 extension RecordVC: WMOtherDataDelegate {
+    func devicePushRawData(_ data: Data) {
+        
+    }
+    
     func device4A02Push(_ data: Data) {
         
     }

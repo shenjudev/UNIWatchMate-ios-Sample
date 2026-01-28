@@ -23,6 +23,36 @@
 		04191DA82DFAC9F700685BCB /* SJHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04191DA72DFAC9F700685BCB /* SJHud.swift */; };
 		049D790E2D8A6AB4009A0DBA /* CustomDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D790D2D8A6AB4009A0DBA /* CustomDataVC.swift */; };
 		049D79102D8A6AC4009A0DBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D790F2D8A6AC4009A0DBA /* AppDelegate.swift */; };
+		04E312D62F2A044A008A16E3 /* SJSendFileCommandATask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E312BE2F2A044A008A16E3 /* SJSendFileCommandATask.swift */; };
+		04E312D72F2A044A008A16E3 /* SJ2WatchHighSpeedModeSetTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E312BB2F2A044A008A16E3 /* SJ2WatchHighSpeedModeSetTask.swift */; };
+		04E312D82F2A044A008A16E3 /* MTBleMonitorTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E312B52F2A044A008A16E3 /* MTBleMonitorTask.swift */; };
+		04E312D92F2A044A008A16E3 /* SJSendFileCommand4Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E312C32F2A044A008A16E3 /* SJSendFileCommand4Task.swift */; };
+		04E312DA2F2A044A008A16E3 /* Data+Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E312CA2F2A044A008A16E3 /* Data+Core.swift */; };
+		04E312DB2F2A044A008A16E3 /* SJSendFileCommand1Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E312BD2F2A044A008A16E3 /* SJSendFileCommand1Task.swift */; };
+		04E312DC2F2A044A008A16E3 /* MTBleGetSetTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E312B62F2A044A008A16E3 /* MTBleGetSetTask.swift */; };
+		04E312DD2F2A044A008A16E3 /* SJSendFileCommand5Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E312C42F2A044A008A16E3 /* SJSendFileCommand5Task.swift */; };
+		04E312DE2F2A044A008A16E3 /* TLOCPPlayLoadEncodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E312CD2F2A044A008A16E3 /* TLOCPPlayLoadEncodeType.swift */; };
+		04E312DF2F2A044A008A16E3 /* TLOCPPayLoadType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E312CB2F2A044A008A16E3 /* TLOCPPayLoadType.swift */; };
+		04E312E02F2A044A008A16E3 /* TLOCP2Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E312C92F2A044A008A16E3 /* TLOCP2Model.swift */; };
+		04E312E12F2A044A008A16E3 /* MTBleTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E312B82F2A044A008A16E3 /* MTBleTask.swift */; };
+		04E312E22F2A044A008A16E3 /* UNIOTAUsageExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E312D42F2A044A008A16E3 /* UNIOTAUsageExample.swift */; };
+		04E312E32F2A044A008A16E3 /* SJSendFileCommand3Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E312C22F2A044A008A16E3 /* SJSendFileCommand3Task.swift */; };
+		04E312E42F2A044A008A16E3 /* MTError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E312B42F2A044A008A16E3 /* MTError.swift */; };
+		04E312E52F2A044A008A16E3 /* SJFileAppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E312BC2F2A044A008A16E3 /* SJFileAppModel.swift */; };
+		04E312E62F2A044A008A16E3 /* SJSendFileCommand2Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E312BF2F2A044A008A16E3 /* SJSendFileCommand2Task.swift */; };
+		04E312E72F2A044A008A16E3 /* MTBleOnlySetTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E312B72F2A044A008A16E3 /* MTBleOnlySetTask.swift */; };
+		04E312E82F2A044A008A16E3 /* SJSendFileCommand3ResponseTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E312C12F2A044A008A16E3 /* SJSendFileCommand3ResponseTask.swift */; };
+		04E312E92F2A044A008A16E3 /* TLOCPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E312CC2F2A044A008A16E3 /* TLOCPModel.swift */; };
+		04E312EA2F2A044A008A16E3 /* SJSendFileCommand3ErrorRepairTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E312C02F2A044A008A16E3 /* SJSendFileCommand3ErrorRepairTask.swift */; };
+		04E312EB2F2A044A008A16E3 /* PayloadPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E312B22F2A044A008A16E3 /* PayloadPackage.swift */; };
+		04E312EC2F2A044A008A16E3 /* UNIOTABtUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 04E312D22F2A044A008A16E3 /* UNIOTABtUtils.mm */; };
+		04E312ED2F2A044A008A16E3 /* SJSendFileCommand6Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E312C62F2A044A008A16E3 /* SJSendFileCommand6Task.swift */; };
+		04E312EE2F2A044A008A16E3 /* UNIOTACLFSR.mm in Sources */ = {isa = PBXBuildFile; fileRef = 04E312D02F2A044A008A16E3 /* UNIOTACLFSR.mm */; };
+		04E312EF2F2A044A008A16E3 /* SJSendFileTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E312C72F2A044A008A16E3 /* SJSendFileTask.swift */; };
+		04E312F02F2A044A008A16E3 /* MTLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E312B02F2A044A008A16E3 /* MTLog.swift */; };
+		04E312F12F2A044A008A16E3 /* WatchPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E312B92F2A044A008A16E3 /* WatchPeripheral.swift */; };
+		04E312F22F2A044A008A16E3 /* SJ2BaseNodeTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E312B32F2A044A008A16E3 /* SJ2BaseNodeTask.swift */; };
+		04E312F32F2A044A008A16E3 /* SJSendFileCommand8Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E312C52F2A044A008A16E3 /* SJSendFileCommand8Task.swift */; };
 		04E676682E1545290010DBB0 /* NewAiChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E676672E1545290010DBB0 /* NewAiChatVC.swift */; };
 		5F04AD8C2AF0B28900348A38 /* NSDictionary+JSONDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F04AD8B2AF0B28900348A38 /* NSDictionary+JSONDescription.m */; };
 		5F04AD8F2AF0B47A00348A38 /* WeatherCreateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F04AD8E2AF0B47A00348A38 /* WeatherCreateHelper.m */; };
@@ -167,6 +197,38 @@
 		04191DA72DFAC9F700685BCB /* SJHud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SJHud.swift; sourceTree = "<group>"; };
 		049D790D2D8A6AB4009A0DBA /* CustomDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDataVC.swift; sourceTree = "<group>"; };
 		049D790F2D8A6AC4009A0DBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		04E312B02F2A044A008A16E3 /* MTLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTLog.swift; sourceTree = "<group>"; };
+		04E312B22F2A044A008A16E3 /* PayloadPackage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadPackage.swift; sourceTree = "<group>"; };
+		04E312B32F2A044A008A16E3 /* SJ2BaseNodeTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SJ2BaseNodeTask.swift; sourceTree = "<group>"; };
+		04E312B42F2A044A008A16E3 /* MTError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTError.swift; sourceTree = "<group>"; };
+		04E312B52F2A044A008A16E3 /* MTBleMonitorTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTBleMonitorTask.swift; sourceTree = "<group>"; };
+		04E312B62F2A044A008A16E3 /* MTBleGetSetTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTBleGetSetTask.swift; sourceTree = "<group>"; };
+		04E312B72F2A044A008A16E3 /* MTBleOnlySetTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTBleOnlySetTask.swift; sourceTree = "<group>"; };
+		04E312B82F2A044A008A16E3 /* MTBleTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTBleTask.swift; sourceTree = "<group>"; };
+		04E312B92F2A044A008A16E3 /* WatchPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchPeripheral.swift; sourceTree = "<group>"; };
+		04E312BB2F2A044A008A16E3 /* SJ2WatchHighSpeedModeSetTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SJ2WatchHighSpeedModeSetTask.swift; sourceTree = "<group>"; };
+		04E312BC2F2A044A008A16E3 /* SJFileAppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SJFileAppModel.swift; sourceTree = "<group>"; };
+		04E312BD2F2A044A008A16E3 /* SJSendFileCommand1Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SJSendFileCommand1Task.swift; sourceTree = "<group>"; };
+		04E312BE2F2A044A008A16E3 /* SJSendFileCommandATask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SJSendFileCommandATask.swift; sourceTree = "<group>"; };
+		04E312BF2F2A044A008A16E3 /* SJSendFileCommand2Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SJSendFileCommand2Task.swift; sourceTree = "<group>"; };
+		04E312C02F2A044A008A16E3 /* SJSendFileCommand3ErrorRepairTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SJSendFileCommand3ErrorRepairTask.swift; sourceTree = "<group>"; };
+		04E312C12F2A044A008A16E3 /* SJSendFileCommand3ResponseTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SJSendFileCommand3ResponseTask.swift; sourceTree = "<group>"; };
+		04E312C22F2A044A008A16E3 /* SJSendFileCommand3Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SJSendFileCommand3Task.swift; sourceTree = "<group>"; };
+		04E312C32F2A044A008A16E3 /* SJSendFileCommand4Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SJSendFileCommand4Task.swift; sourceTree = "<group>"; };
+		04E312C42F2A044A008A16E3 /* SJSendFileCommand5Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SJSendFileCommand5Task.swift; sourceTree = "<group>"; };
+		04E312C52F2A044A008A16E3 /* SJSendFileCommand8Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SJSendFileCommand8Task.swift; sourceTree = "<group>"; };
+		04E312C62F2A044A008A16E3 /* SJSendFileCommand6Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SJSendFileCommand6Task.swift; sourceTree = "<group>"; };
+		04E312C72F2A044A008A16E3 /* SJSendFileTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SJSendFileTask.swift; sourceTree = "<group>"; };
+		04E312C92F2A044A008A16E3 /* TLOCP2Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLOCP2Model.swift; sourceTree = "<group>"; };
+		04E312CA2F2A044A008A16E3 /* Data+Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Core.swift"; sourceTree = "<group>"; };
+		04E312CB2F2A044A008A16E3 /* TLOCPPayLoadType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLOCPPayLoadType.swift; sourceTree = "<group>"; };
+		04E312CC2F2A044A008A16E3 /* TLOCPModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLOCPModel.swift; sourceTree = "<group>"; };
+		04E312CD2F2A044A008A16E3 /* TLOCPPlayLoadEncodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLOCPPlayLoadEncodeType.swift; sourceTree = "<group>"; };
+		04E312CF2F2A044A008A16E3 /* UNIOTACLFSR.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UNIOTACLFSR.h; sourceTree = "<group>"; };
+		04E312D02F2A044A008A16E3 /* UNIOTACLFSR.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = UNIOTACLFSR.mm; sourceTree = "<group>"; };
+		04E312D12F2A044A008A16E3 /* UNIOTABtUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UNIOTABtUtils.h; sourceTree = "<group>"; };
+		04E312D22F2A044A008A16E3 /* UNIOTABtUtils.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = UNIOTABtUtils.mm; sourceTree = "<group>"; };
+		04E312D42F2A044A008A16E3 /* UNIOTAUsageExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNIOTAUsageExample.swift; sourceTree = "<group>"; };
 		04E676672E1545290010DBB0 /* NewAiChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAiChatVC.swift; sourceTree = "<group>"; };
 		04E676692E1546370010DBB0 /* MZEncryptSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MZEncryptSDK.framework; path = UNIWatchMateDemo/Libs/MZEncryptSDK.framework; sourceTree = "<group>"; };
 		5F04AD8A2AF0B28900348A38 /* NSDictionary+JSONDescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JSONDescription.h"; sourceTree = "<group>"; };
@@ -373,6 +435,85 @@
 			path = PhotoLibrary;
 			sourceTree = "<group>";
 		};
+		04E312B12F2A044A008A16E3 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				04E312B02F2A044A008A16E3 /* MTLog.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		04E312BA2F2A044A008A16E3 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				04E312B22F2A044A008A16E3 /* PayloadPackage.swift */,
+				04E312B32F2A044A008A16E3 /* SJ2BaseNodeTask.swift */,
+				04E312B42F2A044A008A16E3 /* MTError.swift */,
+				04E312B52F2A044A008A16E3 /* MTBleMonitorTask.swift */,
+				04E312B62F2A044A008A16E3 /* MTBleGetSetTask.swift */,
+				04E312B72F2A044A008A16E3 /* MTBleOnlySetTask.swift */,
+				04E312B82F2A044A008A16E3 /* MTBleTask.swift */,
+				04E312B92F2A044A008A16E3 /* WatchPeripheral.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		04E312C82F2A044A008A16E3 /* SendFile */ = {
+			isa = PBXGroup;
+			children = (
+				04E312BB2F2A044A008A16E3 /* SJ2WatchHighSpeedModeSetTask.swift */,
+				04E312BC2F2A044A008A16E3 /* SJFileAppModel.swift */,
+				04E312BD2F2A044A008A16E3 /* SJSendFileCommand1Task.swift */,
+				04E312BE2F2A044A008A16E3 /* SJSendFileCommandATask.swift */,
+				04E312BF2F2A044A008A16E3 /* SJSendFileCommand2Task.swift */,
+				04E312C02F2A044A008A16E3 /* SJSendFileCommand3ErrorRepairTask.swift */,
+				04E312C12F2A044A008A16E3 /* SJSendFileCommand3ResponseTask.swift */,
+				04E312C22F2A044A008A16E3 /* SJSendFileCommand3Task.swift */,
+				04E312C32F2A044A008A16E3 /* SJSendFileCommand4Task.swift */,
+				04E312C42F2A044A008A16E3 /* SJSendFileCommand5Task.swift */,
+				04E312C52F2A044A008A16E3 /* SJSendFileCommand8Task.swift */,
+				04E312C62F2A044A008A16E3 /* SJSendFileCommand6Task.swift */,
+				04E312C72F2A044A008A16E3 /* SJSendFileTask.swift */,
+			);
+			path = SendFile;
+			sourceTree = "<group>";
+		};
+		04E312CE2F2A044A008A16E3 /* TLOCP */ = {
+			isa = PBXGroup;
+			children = (
+				04E312C92F2A044A008A16E3 /* TLOCP2Model.swift */,
+				04E312CA2F2A044A008A16E3 /* Data+Core.swift */,
+				04E312CB2F2A044A008A16E3 /* TLOCPPayLoadType.swift */,
+				04E312CC2F2A044A008A16E3 /* TLOCPModel.swift */,
+				04E312CD2F2A044A008A16E3 /* TLOCPPlayLoadEncodeType.swift */,
+			);
+			path = TLOCP;
+			sourceTree = "<group>";
+		};
+		04E312D32F2A044A008A16E3 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				04E312CF2F2A044A008A16E3 /* UNIOTACLFSR.h */,
+				04E312D02F2A044A008A16E3 /* UNIOTACLFSR.mm */,
+				04E312D12F2A044A008A16E3 /* UNIOTABtUtils.h */,
+				04E312D22F2A044A008A16E3 /* UNIOTABtUtils.mm */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		04E312D52F2A044A008A16E3 /* OtaSdk */ = {
+			isa = PBXGroup;
+			children = (
+				04E312B12F2A044A008A16E3 /* Extension */,
+				04E312BA2F2A044A008A16E3 /* Base */,
+				04E312C82F2A044A008A16E3 /* SendFile */,
+				04E312CE2F2A044A008A16E3 /* TLOCP */,
+				04E312D32F2A044A008A16E3 /* Lib */,
+				04E312D42F2A044A008A16E3 /* UNIOTAUsageExample.swift */,
+			);
+			path = OtaSdk;
+			sourceTree = "<group>";
+		};
 		56031C1DA84625A2BB83AC8C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -430,6 +571,7 @@
 		5FF961ED2AC427DC00DFA693 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				04E312D52F2A044A008A16E3 /* OtaSdk */,
 				04E676672E1545290010DBB0 /* NewAiChatVC.swift */,
 				04191D942DFAC9A500685BCB /* Libs */,
 				04191D9B2DFAC9A500685BCB /* PhotoLibrary */,
@@ -771,9 +913,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-UNIWatchMateDemo/Pods-UNIWatchMateDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-UNIWatchMateDemo/Pods-UNIWatchMateDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -875,6 +1021,36 @@
 				B589C8492D55BE78009A91CA /* WatchVideoPreviewVC.swift in Sources */,
 				B589C84A2D55BE78009A91CA /* PaddingLabel.swift in Sources */,
 				049D79102D8A6AC4009A0DBA /* AppDelegate.swift in Sources */,
+				04E312D62F2A044A008A16E3 /* SJSendFileCommandATask.swift in Sources */,
+				04E312D72F2A044A008A16E3 /* SJ2WatchHighSpeedModeSetTask.swift in Sources */,
+				04E312D82F2A044A008A16E3 /* MTBleMonitorTask.swift in Sources */,
+				04E312D92F2A044A008A16E3 /* SJSendFileCommand4Task.swift in Sources */,
+				04E312DA2F2A044A008A16E3 /* Data+Core.swift in Sources */,
+				04E312DB2F2A044A008A16E3 /* SJSendFileCommand1Task.swift in Sources */,
+				04E312DC2F2A044A008A16E3 /* MTBleGetSetTask.swift in Sources */,
+				04E312DD2F2A044A008A16E3 /* SJSendFileCommand5Task.swift in Sources */,
+				04E312DE2F2A044A008A16E3 /* TLOCPPlayLoadEncodeType.swift in Sources */,
+				04E312DF2F2A044A008A16E3 /* TLOCPPayLoadType.swift in Sources */,
+				04E312E02F2A044A008A16E3 /* TLOCP2Model.swift in Sources */,
+				04E312E12F2A044A008A16E3 /* MTBleTask.swift in Sources */,
+				04E312E22F2A044A008A16E3 /* UNIOTAUsageExample.swift in Sources */,
+				04E312E32F2A044A008A16E3 /* SJSendFileCommand3Task.swift in Sources */,
+				04E312E42F2A044A008A16E3 /* MTError.swift in Sources */,
+				04E312E52F2A044A008A16E3 /* SJFileAppModel.swift in Sources */,
+				04E312E62F2A044A008A16E3 /* SJSendFileCommand2Task.swift in Sources */,
+				04E312E72F2A044A008A16E3 /* MTBleOnlySetTask.swift in Sources */,
+				04E312E82F2A044A008A16E3 /* SJSendFileCommand3ResponseTask.swift in Sources */,
+				04E312E92F2A044A008A16E3 /* TLOCPModel.swift in Sources */,
+				04E312EA2F2A044A008A16E3 /* SJSendFileCommand3ErrorRepairTask.swift in Sources */,
+				04E312EB2F2A044A008A16E3 /* PayloadPackage.swift in Sources */,
+				04E312EC2F2A044A008A16E3 /* UNIOTABtUtils.mm in Sources */,
+				04E312ED2F2A044A008A16E3 /* SJSendFileCommand6Task.swift in Sources */,
+				04E312EE2F2A044A008A16E3 /* UNIOTACLFSR.mm in Sources */,
+				04E312EF2F2A044A008A16E3 /* SJSendFileTask.swift in Sources */,
+				04E312F02F2A044A008A16E3 /* MTLog.swift in Sources */,
+				04E312F12F2A044A008A16E3 /* WatchPeripheral.swift in Sources */,
+				04E312F22F2A044A008A16E3 /* SJ2BaseNodeTask.swift in Sources */,
+				04E312F32F2A044A008A16E3 /* SJSendFileCommand8Task.swift in Sources */,
 				B589C84B2D55BE78009A91CA /* MediaCountVC.swift in Sources */,
 				B589C84C2D55BE78009A91CA /* TakePhotoVC.swift in Sources */,
 				B589C84D2D55BE78009A91CA /* AiChatVC.swift in Sources */,

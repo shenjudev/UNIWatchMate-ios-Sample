@@ -401,11 +401,17 @@
         }, @{
             @"title":@"",
             @"data":@[
+//                @{
+//                    @"title":NSLocalizedString(@"ota",nil),
+//                    @"subtitle":@"",
+//                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
+//                    @"selector": NSStringFromSelector(@selector(otaViewController:didSeletIndexPath:))
+//                },
                 @{
-                    @"title":NSLocalizedString(@"ota",nil),
+                    @"title":@"OTA SDK Demo",
                     @"subtitle":@"",
                     @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
-                    @"selector": NSStringFromSelector(@selector(otaViewController:didSeletIndexPath:))
+                    @"selector": NSStringFromSelector(@selector(otaSDKDemoViewController:didSeletIndexPath:))
                 },
                 @{
                     @"title":NSLocalizedString(@"About device",nil),
@@ -545,15 +551,24 @@
     UIViewController *viewController = [LanguageChangeViewController new];
     [self.navigationController pushViewController:viewController animated:YES];
 }
-
+/// Push to OTA SDK Demo.
+/// - Parameters:
+///   - cell: selected cell
+///   - indexPath: selected indexPath
+-(void)otaSDKDemoViewController:(UITableViewCell *)cell didSeletIndexPath:(NSIndexPath *)indexPath{
+    // 创建 OTAExampleViewController 实例（Swift类）
+    UIViewController *viewController = [[OTAExampleViewController alloc] init];
+    viewController.title = @"OTA SDK Demo";
+    [self.navigationController pushViewController:viewController animated:YES];
+}
 /// Push to OTA.
 /// - Parameters:
 ///   - cell: selected cell
 ///   - indexPath: selected indexPath
--(void)otaViewController:(UITableViewCell *)cell didSeletIndexPath:(NSIndexPath *)indexPath{
-    UIViewController *viewController = [OtaViewController new];
-    [self.navigationController pushViewController:viewController animated:YES];
-}
+//-(void)otaViewController:(UITableViewCell *)cell didSeletIndexPath:(NSIndexPath *)indexPath{
+//    UIViewController *viewController = [OtaViewController new];
+//    [self.navigationController pushViewController:viewController animated:YES];
+//}
 
 
 

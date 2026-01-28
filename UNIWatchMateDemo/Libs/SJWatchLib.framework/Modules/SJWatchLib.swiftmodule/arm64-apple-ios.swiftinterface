@@ -55,6 +55,7 @@ extension Foundation.Data {
 public protocol SJOhterDataDelegate : AnyObject {
   func glassesOtherData(data: Foundation.Data)
   func deviceAudioRecordData(data: Foundation.Data)
+  func devicePushRawData(data: Foundation.Data)
 }
 extension CoreBluetooth.CBManagerState {
   public var desc: Swift.String {
