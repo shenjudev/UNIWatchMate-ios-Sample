@@ -44,6 +44,8 @@ post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
       config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+      config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+
       if config.name == "Debug"
         config.build_settings['SWIFT_ACTIVE_COMPILATION_CONDITIONS'] = []
 
