@@ -194,8 +194,8 @@
     self.view.backgroundColor = [UIColor whiteColor];
     _currents = [RACReplaySubject replaySubjectWithCapacity:1];
     _currentsValue = [NSMutableArray new];
-    self.tableView.tableHeaderView = self.tableViewHeader;
-    self.tableView.tableFooterView = self.tableViewFooter;
+//    self.tableView.tableHeaderView = self.tableViewHeader;
+//    self.tableView.tableFooterView = self.tableViewFooter;
     [self observerTableViewData];
     [self listenForDeviceDiscovery];
     [self config];
@@ -329,78 +329,6 @@
        @{
             @"title":@"",
             @"data":@[
-                @{
-                    @"title":NSLocalizedString(@"Device language", nil),
-                    @"subtitle":@"",
-                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
-                    @"selector": NSStringFromSelector(@selector(languageChangeViewController:didSeletIndexPath:))
-                },
-                @{
-                    @"title":NSLocalizedString(@"存储空间", nil),
-                    @"subtitle":@"",
-                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
-                    @"selector": NSStringFromSelector(@selector(getDiskSpaceViewController:didSeletIndexPath:))
-                },
-                @{
-                    @"title":NSLocalizedString(@"媒体资源数量", nil),
-                    @"subtitle":@"",
-                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
-                    @"selector": NSStringFromSelector(@selector(getMediaCountViewController:didSeletIndexPath:))
-                },
-                @{
-                    @"title":NSLocalizedString(@"拍照", nil),
-                    @"subtitle":@"",
-                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
-                    @"selector": NSStringFromSelector(@selector(takePhotoViewController:didSeletIndexPath:))
-                },
-                @{
-                    @"title":NSLocalizedString(@"录音", nil),
-                    @"subtitle":@"",
-                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
-                    @"selector": NSStringFromSelector(@selector(recordController:didSeletIndexPath:))
-                },
-                @{
-                    @"title":NSLocalizedString(@"录像", nil),
-                    @"subtitle":@"",
-                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
-                    @"selector": NSStringFromSelector(@selector(recordVideoController:didSeletIndexPath:))
-                },
-                @{
-                    @"title":NSLocalizedString(@"预览",nil),
-                    @"subtitle":@"",
-                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
-                    @"selector": NSStringFromSelector(@selector(watchVideoControlViewController:didSeletIndexPath:))
-                },
-                @{
-                    @"title":NSLocalizedString(@"AI对话",nil),
-                    @"subtitle":@"",
-                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
-                    @"selector": NSStringFromSelector(@selector(aiChatController:didSeletIndexPath:))
-                },
-                @{
-                    @"title":NSLocalizedString(@"新AI对话",nil),
-                    @"subtitle":@"",
-                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
-                    @"selector": NSStringFromSelector(@selector(newAiChatController:didSeletIndexPath:))
-                },
-                @{
-                    @"title":NSLocalizedString(@"自定义数据",nil),
-                    @"subtitle":@"",
-                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
-                    @"selector": NSStringFromSelector(@selector(customDataViewController:didSeletIndexPath:))
-                }
-                ,
-                @{
-                    @"title":NSLocalizedString(@"相册",nil),
-                    @"subtitle":@"",
-                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
-                    @"selector": NSStringFromSelector(@selector(photoLibraryController:didSeletIndexPath:))
-                }
-                
-            ]
-        }, @{
-            @"title":@"",
-            @"data":@[
 //                @{
 //                    @"title":NSLocalizedString(@"ota",nil),
 //                    @"subtitle":@"",
@@ -412,12 +340,6 @@
                     @"subtitle":@"",
                     @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
                     @"selector": NSStringFromSelector(@selector(otaSDKDemoViewController:didSeletIndexPath:))
-                },
-                @{
-                    @"title":NSLocalizedString(@"About device",nil),
-                    @"subtitle":@"",
-                    @"accessoryType":@"UITableViewCellAccessoryDisclosureIndicator",
-                    @"selector": NSStringFromSelector(@selector(aboutDeviceViewController:didSeletIndexPath:))
                 }
             ]
         }

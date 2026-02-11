@@ -38,7 +38,7 @@
 		</data>
 		<key>Modules/SJWatchLib.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		q6akLA5bEs0Lnox4I0gnszT3x+I=
+		QRvUWfuh5wUnFsw6c4ndZ7MIMuo=
 		</data>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
@@ -58,7 +58,7 @@
 		</data>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		0MqNSI1380TLjNzAd4jILWbL8kI=
+		Gxw0tdNa+OhU3l5XSWyFq3e2cSQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -164,7 +164,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xC1cdrwx8S0gzDT3OzVB9zSqa+lZ0RotKg+nOFoPafw=
+			uPe49A3GIASJK5W5S6S69TGTqvu9Vb2leo5FdBk2tRs=
 			</data>
 		</dict>
 		<key>Modules/SJWatchLib.swiftmodule/arm64-apple-ios.abi.json</key>
@@ -199,7 +199,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			4G9Sl+VibTAyEgTlpvPmW7w5YO4pQ35t9clrGUIr058=
+			W8JSPdCnAOWLszP3BQUAKZqUWgvne7RiPlLk7Q3qoyk=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
