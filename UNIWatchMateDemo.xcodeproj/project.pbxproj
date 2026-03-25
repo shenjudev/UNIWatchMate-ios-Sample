@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,7 @@
 		04191DA82DFAC9F700685BCB /* SJHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04191DA72DFAC9F700685BCB /* SJHud.swift */; };
 		049D790E2D8A6AB4009A0DBA /* CustomDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D790D2D8A6AB4009A0DBA /* CustomDataVC.swift */; };
 		049D79102D8A6AC4009A0DBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D790F2D8A6AC4009A0DBA /* AppDelegate.swift */; };
+		049FADEA2F7161EF0090A40A /* APPPhotoLibraryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049FADE92F7161EF0090A40A /* APPPhotoLibraryDelegate.swift */; };
 		04E676682E1545290010DBB0 /* NewAiChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E676672E1545290010DBB0 /* NewAiChatVC.swift */; };
 		5F04AD8C2AF0B28900348A38 /* NSDictionary+JSONDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F04AD8B2AF0B28900348A38 /* NSDictionary+JSONDescription.m */; };
 		5F04AD8F2AF0B47A00348A38 /* WeatherCreateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F04AD8E2AF0B47A00348A38 /* WeatherCreateHelper.m */; };
@@ -167,6 +168,7 @@
 		04191DA72DFAC9F700685BCB /* SJHud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SJHud.swift; sourceTree = "<group>"; };
 		049D790D2D8A6AB4009A0DBA /* CustomDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDataVC.swift; sourceTree = "<group>"; };
 		049D790F2D8A6AC4009A0DBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		049FADE92F7161EF0090A40A /* APPPhotoLibraryDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APPPhotoLibraryDelegate.swift; sourceTree = "<group>"; };
 		04E676672E1545290010DBB0 /* NewAiChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAiChatVC.swift; sourceTree = "<group>"; };
 		04E676692E1546370010DBB0 /* MZEncryptSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MZEncryptSDK.framework; path = UNIWatchMateDemo/Libs/MZEncryptSDK.framework; sourceTree = "<group>"; };
 		5F04AD8A2AF0B28900348A38 /* NSDictionary+JSONDescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JSONDescription.h"; sourceTree = "<group>"; };
@@ -322,6 +324,10 @@
 		E8DDA96325655A1B0EB18CED /* Pods-UNIWatchMateDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNIWatchMateDemo.debug.xcconfig"; path = "Target Support Files/Pods-UNIWatchMateDemo/Pods-UNIWatchMateDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		049FADE62F715DE20090A40A /* App */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = App; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		D77825192ABD34180056AB02 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -366,6 +372,7 @@
 		04191D9B2DFAC9A500685BCB /* PhotoLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				049FADE92F7161EF0090A40A /* APPPhotoLibraryDelegate.swift */,
 				04191D982DFAC9A500685BCB /* Views */,
 				04191D992DFAC9A500685BCB /* PhotoLibraryController.swift */,
 				04191D9A2DFAC9A500685BCB /* PhotoLibraryViewModel.swift */,
@@ -430,6 +437,7 @@
 		5FF961ED2AC427DC00DFA693 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				049FADE62F715DE20090A40A /* App */,
 				04E676672E1545290010DBB0 /* NewAiChatVC.swift */,
 				04191D942DFAC9A500685BCB /* Libs */,
 				04191D9B2DFAC9A500685BCB /* PhotoLibrary */,
@@ -680,6 +688,9 @@
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				049FADE62F715DE20090A40A /* App */,
+			);
 			name = UNIWatchMateDemo;
 			productName = UNIWatchMateDemo;
 			productReference = D778251C2ABD34180056AB02 /* UNIWatchMateDemo.app */;
@@ -771,9 +782,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-UNIWatchMateDemo/Pods-UNIWatchMateDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-UNIWatchMateDemo/Pods-UNIWatchMateDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -864,6 +879,7 @@
 				04E676682E1545290010DBB0 /* NewAiChatVC.swift in Sources */,
 				D77825242ABD34180056AB02 /* SceneDelegate.m in Sources */,
 				D71481C12B97399E00C3CB63 /* UIButton+Badge.swift in Sources */,
+				049FADEA2F7161EF0090A40A /* APPPhotoLibraryDelegate.swift in Sources */,
 				D71481C82B97399E00C3CB63 /* UIColor+Ext.swift in Sources */,
 				D71481C32B97399E00C3CB63 /* Date+Ext.swift in Sources */,
 				D71481CC2B97399E00C3CB63 /* UIViewController+Ext.swift in Sources */,

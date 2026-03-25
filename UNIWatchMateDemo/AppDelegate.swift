@@ -47,6 +47,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.overrideUserInterfaceStyle = .light
         }
         
+        // 无存储方案拍照：注册图库分片接收与保存
+        _ = APPCommonLibraryService.shared
+        
         // 其他初始化操作...
         window?.makeKeyAndVisible()
         

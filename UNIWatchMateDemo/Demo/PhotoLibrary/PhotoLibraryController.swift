@@ -80,6 +80,9 @@ class PhotoLibraryController: UIViewController {
     private var selectedIndexPaths: Set<IndexPath> = []
     private var photoGroups: [(date: Date, urls: [URL])] = []
 
+    /// 无存储设备：无「从设备按文件名导入」能力，仅展示本地已保存缩略图
+    private var isNoStorageDevice = false
+
     // 添加标题引用属性
     private weak var previewTitleLabel: UILabel?
     private weak var previewTimeLabel: UILabel?
@@ -88,6 +91,7 @@ class PhotoLibraryController: UIViewController {
         appendUI()
         layoutUI()
         actionsHandler()
+        APPCommonLibraryService.shared.setAPPPhotoLibraryDelegate(delegate: viewModel)
     }
 
      func appendUI() {
@@ -214,7 +218,9 @@ class PhotoLibraryController: UIViewController {
             if newPhotoCount <= 0 {
                 newPhotoCount = 0
             }
-            photoLibraryOperationView.isHidden = false
+            if !self.isNoStorageDevice {
+                photoLibraryOperationView.isHidden = false
+            }
 
             updateCollectionViewConstraints()
         }.disposed(by: disposeBag)
@@ -285,25 +291,39 @@ class PhotoLibraryController: UIViewController {
         photoLibraryHeader.selectModeBtn.addTarget(
             self, action: #selector(selectModeBtnTapped), for: .touchUpInside)
          
-        let isNoStorageDevice = WatchManager.sharedInstance().currentValue.infoModel.glassesFeatureSetModel?.feature_mask.isFeatureEnabled(.featureNoStorageDevice) ?? false
-        
-         photoLibraryHeader.isHidden = isNoStorageDevice
+        isNoStorageDevice = WatchManager.sharedInstance().currentValue.infoModel.glassesFeatureSetModel?.feature_mask.isFeatureEnabled(.featureNoStorageDevice) ?? false
+        photoLibraryHeader.isHidden = false
+        photoLibraryOperationView.isHidden = isNoStorageDevice
+        updateCollectionViewConstraints()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if self.viewModel.phoneImgUrlFromDevice.value.isEmpty{
+        super.viewWillAppear(animated)
+        let showHud = viewModel.phoneImgUrlFromDevice.value.isEmpty
+        if showHud {
             SJHud.showLoading(text: nil)
-            viewModel.getDeviceImageURLs().subscribe { rs in
-                SJHud.dismiss()
-                DDLogInfo("getDeviceImageURLs count = \(rs.count)")
-            } onError: { error in
-                SJHud.dismiss()
-                DDLogError("error \(error.localizedDescription )")
-            }.disposed(by: self.disposeBag)
         }
-        
-        //切换页面时，取消选中状态
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        viewModel.getDeviceImageURLs().subscribe { [weak self] rs in
+            if showHud {
+                SJHud.dismiss()
+            }
+            DDLogInfo("getDeviceImageURLs count = \(rs.count)")
+        } onError: { error in
+            if showHud {
+                SJHud.dismiss()
+            }
+            DDLogError("error \(error.localizedDescription )")
+        }.disposed(by: self.disposeBag)
+
+        // 相册使用自定义顶栏，隐藏系统导航栏；必须在离开时恢复，否则后续页面（如关于）系统返回键不显示
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if isMovingFromParent || isBeingDismissed {
+            navigationController?.setNavigationBarHidden(false, animated: animated)
+        }
     }
 
     private func updatePhotoGroups(with urls: [URL]) {

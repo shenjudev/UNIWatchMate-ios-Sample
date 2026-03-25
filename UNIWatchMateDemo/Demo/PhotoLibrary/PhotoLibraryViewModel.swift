@@ -291,6 +291,49 @@ class PhotoLibraryViewModel : NSObject {
     
 }
 
+// MARK: - APPPhotoLibraryDelegate（与 APPCommonLibraryService 回调对齐，便于复用同一套数据通知）
+extension PhotoLibraryViewModel: APPPhotoLibraryDelegate {
+    func appPhotoLibraryDidReceiveImage(_ imageData: Data?) {
+        handleImportedImageData(imageData)
+    }
+    
+    /// 处理设备发送的图片名称数据
+    func appPhotoLibraryDidReceiveImageNames(_ imageNamesData: Data?) {
+        guard let imageNamesData = imageNamesData else { return }
+        
+        let imageNames = String(data: imageNamesData, encoding: .utf8)?.trimmingCharacters(in: CharacterSet(charactersIn: "\0"))
+        DDLogInfo("收到图片名称：\(String(describing: imageNames))")
+        guard let imageNames = imageNames, !imageNames.isEmpty else {
+            DDLogInfo("收到图片名称：为空")
+            stopImport()
+            return
+        }
+    
+        let namesArray = imageNames.components(separatedBy: "|")
+        DDLogInfo("收到图片名称数量：\(namesArray.count)")
+        // 将 phoneImgUrlFromDevice 中的 URL 转换为文件名进行比较
+        let existingFileNames = phoneImgUrlFromDevice.value.map { url -> String in
+            let fileName = url.lastPathComponent
+            return fileName // 移除所有扩展名
+        }
+        let names = namesArray.filter { !existingFileNames.contains($0) }
+        
+        if names.isEmpty {
+            SJHud.showText(status: "no_photo_import")
+            stopImport()
+            photoCount.accept(photoCount.value)
+            return
+        }
+        importingPhoto.accept(true)
+        importingIndex.accept(0)
+        self.deviceFileNameList.accept(names)
+
+        startReceiveImg()
+        let timestampMilliseconds = Int(Date().timeIntervalSince1970 * 1000)
+        lastReceiveImgTime = timestampMilliseconds
+    }
+}
+
 //相册SDK回调
 extension PhotoLibraryViewModel: WMPhotoLibraryDelegate {
     
@@ -330,8 +373,16 @@ extension PhotoLibraryViewModel: WMPhotoLibraryDelegate {
     }
     
     func glassesSendImage(withImageData imageData: Data?) {
+        appPhotoLibraryDidReceiveImage(imageData)
+    }
+    
+}
+
+// MARK: - 有存储方案：分片图片数据（与 APPPhotoLibraryDelegate.appPhotoLibraryDidReceiveImage 共用实现）
+private extension PhotoLibraryViewModel {
+    func handleImportedImageData(_ imageData: Data?) {
         DDLogInfo("收到图片 curPhotoElementIndex = \(curPhotoElementIndex)")
-        guard let imageElementData = imageData else{
+        guard let imageElementData = imageData else {
             DDLogInfo("收到图片 result 为 nil")
             return
         }
@@ -341,23 +392,23 @@ extension PhotoLibraryViewModel: WMPhotoLibraryDelegate {
         }
         curImageData.append(imageElementData)
         
-        if curPhotoElementIndex < curPhotoElementCount  {
+        if curPhotoElementIndex < curPhotoElementCount {
             DDLogInfo("curPhotoElementIndex < curPhotoElementCount : \(curPhotoElementIndex) < \(curPhotoElementCount)")
             curPhotoElementIndex += 1
             startReceiveImg()
             return
         }
         // 检查文件头部信息（以 JPEG 为例）
-          if curImageData.count > 2 {
-              let header = curImageData.prefix(2).map { String(format: "%02X", $0) }.joined()
-              DDLogInfo("文件头: \(header)") // JPEG 应该是 FFD8
-          }
-          
-          // 检查文件尾部信息
-          if curImageData.count > 2 {
-              let footer = curImageData.suffix(2).map { String(format: "%02X", $0) }.joined()
-              DDLogInfo("文件尾: \(footer)") // JPEG 应该是 FFD9
-          }
+        if curImageData.count > 2 {
+            let header = curImageData.prefix(2).map { String(format: "%02X", $0) }.joined()
+            DDLogInfo("文件头: \(header)") // JPEG 应该是 FFD8
+        }
+        
+        // 检查文件尾部信息
+        if curImageData.count > 2 {
+            let footer = curImageData.suffix(2).map { String(format: "%02X", $0) }.joined()
+            DDLogInfo("文件尾: \(footer)") // JPEG 应该是 FFD9
+        }
         curPhotoElementCount = 0
         let photoNameList = deviceFileNameList.value
         if importingIndex.value < photoNameList.count {
@@ -374,7 +425,7 @@ extension PhotoLibraryViewModel: WMPhotoLibraryDelegate {
                 do {
                     try curImageData.write(to: imageUrl)
                     DDLogInfo("图片已保存到私有目录: \(imageUrl.path)")
-                   var urlList = phoneImgUrlFromDevice.value
+                    var urlList = phoneImgUrlFromDevice.value
                     urlList.append(imageUrl)
                     phoneImgUrlFromDevice.accept(urlList)
                 } catch {
@@ -385,7 +436,7 @@ extension PhotoLibraryViewModel: WMPhotoLibraryDelegate {
                 DDLogDebug("lastImgCostTime :  \(timestampMilliseconds - lastReceiveImgTime)")
                 lastReceiveImgTime = timestampMilliseconds
             }
-            if( UserDefaults.standard.bool(forKey: "PhotoLibraryAutoSave")){
+            if UserDefaults.standard.bool(forKey: "PhotoLibraryAutoSave") {
                 // 2. 保存到相册
                 if let image = UIImage(data: curImageData) {
                     PHPhotoLibrary.requestAuthorization { status in
@@ -408,14 +459,12 @@ extension PhotoLibraryViewModel: WMPhotoLibraryDelegate {
                     }
                 }
             }
-//            self.curImg.accept(UIImage(data: imageData))
             self.importingIndex.accept(importingIndex.value + 1)
             self.startReceiveImg()
-        }else {
+        } else {
             DDLogInfo("index 错误 importingIndex = \(importingIndex)  photoNameList count = \(photoNameList.count)")
         }
     }
-    
 }
 // 本地图片
 extension PhotoLibraryViewModel {
@@ -428,57 +477,57 @@ extension PhotoLibraryViewModel {
         return nil
     }
     
-    /// 获取设备图片目录下的所有图片文件名
+    /// 获取设备图片目录下的所有图片文件名（仅根目录，兼容旧逻辑）
     func getDeviceImageFileNames() -> [String] {
+        collectAllDeviceImageFileURLs().map { $0.lastPathComponent }
+    }
+
+    /// 收集 `Documents/deviceImg` 下所有图片文件 URL（含一级或多级子目录，与无存储方案 `deviceImg/<mac>/` 一致）
+    func collectAllDeviceImageFileURLs() -> [URL] {
         guard let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             DDLogInfo("无法获取Documents目录")
             return []
         }
-        let deviceImgPath = documentsPath.appendingPathComponent("deviceImg")
-        
-        do {
-            // 检查目录是否存在
-            if !FileManager.default.fileExists(atPath: deviceImgPath.path) {
-                DDLogInfo("deviceImg目录不存在")
-                return []
-            }
-            
-            // 获取目录中的所有文件
-            let fileNames = try FileManager.default.contentsOfDirectory(atPath: deviceImgPath.path)
-            
-            // 过滤出图片文件（根据常见图片扩展名）
-            let imageFileNames = fileNames.filter { fileName in
-                let fileExtension = (fileName as NSString).pathExtension.lowercased()
-                return ["jpg", "jpeg", "png"].contains(fileExtension)
-            }
-            
-            DDLogInfo("获取到设备图片文件: \(imageFileNames.count)张")
-            return imageFileNames
-        } catch {
-            DDLogInfo("获取设备图片文件失败: \(error.localizedDescription)")
+        let root = documentsPath.appendingPathComponent("deviceImg")
+        guard FileManager.default.fileExists(atPath: root.path) else {
+            DDLogInfo("deviceImg目录不存在")
             return []
         }
+        let fm = FileManager.default
+        var result: [URL] = []
+        let exts = Set(["jpg", "jpeg", "png"])
+
+        func visit(_ dir: URL) {
+            guard let contents = try? fm.contentsOfDirectory(at: dir, includingPropertiesForKeys: [.isDirectoryKey], options: [.skipsHiddenFiles]) else { return }
+            for url in contents {
+                var isDir: ObjCBool = false
+                guard fm.fileExists(atPath: url.path, isDirectory: &isDir) else { continue }
+                if isDir.boolValue {
+                    visit(url)
+                } else if exts.contains(url.pathExtension.lowercased()) {
+                    result.append(url)
+                }
+            }
+        }
+        visit(root)
+        DDLogInfo("collectAllDeviceImageFileURLs: \(result.count) 张")
+        return result
     }
-    
-    
+
     func getDeviceImageURLs() -> Observable<[URL]> {
-        
+
         return Observable.create { [weak self] observer in
             guard let self = self else {
                 observer.onCompleted()
                 return Disposables.create()
             }
-            let fileNames = self.getDeviceImageFileNames()
-            let urls = fileNames.compactMap { fileName in
-                self.getDeviceImagePath(fileName: fileName)
-            }
+            let urls = self.collectAllDeviceImageFileURLs()
             DispatchQueue.main.async {
                 self.phoneImgUrlFromDevice.accept(urls)
                 observer.onNext(urls)
                 observer.onCompleted()
             }
-           
-            
+
             return Disposables.create()
         }.subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
             .observe(on: MainScheduler.instance)
@@ -500,16 +549,34 @@ extension PhotoLibraryViewModel {
         }
     }
     
-    /// 删除设备图片目录下的指定图片
+    /// 删除设备图片目录下的指定图片（支持根目录或子目录中的同名文件）
     func deleteDeviceImage(fileName: String) -> Bool {
-        guard let imageURL = getDeviceImagePath(fileName: fileName) else {
-            DDLogInfo("删除本地图片失败 deleteDeviceImage: \(fileName)")
+        if let flat = getDeviceImagePath(fileName: fileName), FileManager.default.fileExists(atPath: flat.path) {
+            return deleteDeviceImageFile(at: flat, knownName: fileName)
+        }
+        guard let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             return false
         }
-        
+        let root = documentsPath.appendingPathComponent("deviceImg")
+        guard let enumerator = FileManager.default.enumerator(at: root, includingPropertiesForKeys: [.isRegularFileKey], options: [.skipsHiddenFiles]) else {
+            return false
+        }
+        for case let url as URL in enumerator {
+            if url.lastPathComponent == fileName {
+                return deleteDeviceImageFile(at: url, knownName: fileName)
+            }
+        }
+        DDLogInfo("删除本地图片失败，未找到文件: \(fileName)")
+        return false
+    }
+
+    private func deleteDeviceImageFile(at url: URL, knownName: String) -> Bool {
         do {
-            try FileManager.default.removeItem(at: imageURL)
-            DDLogInfo("成功删除本地图片: \(fileName)")
+            try FileManager.default.removeItem(at: url)
+            DDLogInfo("成功删除本地图片: \(knownName)")
+            var list = phoneImgUrlFromDevice.value
+            list.removeAll { $0 == url || $0.lastPathComponent == knownName }
+            phoneImgUrlFromDevice.accept(list)
             return true
         } catch {
             DDLogInfo("删除本地图片失败: \(error.localizedDescription)")

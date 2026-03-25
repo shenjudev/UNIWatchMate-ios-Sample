@@ -148,33 +148,22 @@ class TakePhotoVC: UIViewController {
             }
         }
         
-        SVProgressHUD.show()
-        WatchManager.sharedInstance().currentValue.apps.watchGlassesVideoApp.deviceTakePhoto().subscribeNext {[weak self] result in
-            SVProgressHUD.dismiss()
+        SJHud.showLoading(text: "photo_taking_loading".localized())
+        _ = APPCommonLibraryService.shared
+        WatchManager.sharedInstance().currentValue.apps.watchGlassesVideoApp.deviceTakePhoto().subscribeNext { result in
             DDLogInfo("deviceTakePhoto result = \(String(describing: result))")
-            guard let self = self else { return }
-            if result?.boolValue ?? false  {
+            if result?.boolValue ?? false {
                 DDLogInfo("deviceTakePhoto 拍照命令发送成功")
-            }else {
+                // 保持 loading，无存储方案下分片与保存由 APPCommonLibraryService 处理
+            } else {
+                SJHud.dismiss()
                 SVProgressHUD.showError(withStatus: "\("拍照失败".localized()) result = \(String(describing: result))")
             }
         } error: { error in
             print(error as Any)
-            SVProgressHUD.dismiss()
+            SJHud.dismiss()
+            SVProgressHUD.showError(withStatus: "拍照失败".localized())
         } completed: {
         }
-        //无存储方案，设置拍照的代理
-        WatchManager.sharedInstance().current.subscribeNext {[weak self] peripheral in
-            peripheral?.apps.photoLibraryApp.delegate = self
-        }
-    }
-}
-
-// MARK: -apps.photoLibraryApp.delegatee
-extension TakePhotoVC: WMPhotoLibraryAppDelegate {
-    func deviceTakePhotoElementCount(_ elementCount: Int) {
-        //无存储方案，拍照后，设备会发送 拍照 分片数量给设备，拿到分片数量后，可参照PhotoLibraryViewModel中的代码向设备请求
-        DDLogInfo("无存储方案，收到拍照 分片数量 = \(elementCount)")
-
     }
 }

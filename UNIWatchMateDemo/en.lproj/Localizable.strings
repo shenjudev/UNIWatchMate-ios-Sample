@@ -201,6 +201,7 @@
 "录音失败，设备忙" = "Recording Failed, Device Busy";
 "停止录音中..." = "Stopping Recording...";
 "开始录音..." = "Starting Recording...";
+"保存的录音文件" = "Saved Recording";
 "操作失败" = "Operation Failed";
 "点击按钮开始/停止录像" = "Click to Start/Stop Video";
 "录像中..." = "Recording Video...";
@@ -211,6 +212,11 @@
 "拍照失败" = "Photo Failed";
 "拍照成功" = "Photo Success";
 "点击按钮开始拍照" = "Click to Take Photo";
+"photo_taking_loading" = "Taking photo…";
+"photo_receiving_loading" = "Receiving photo…";
+"photo_saved_check_album" = "Saved to Photos. Open the Photos app to view.";
+"photo_save_failed" = "Could not save to Photos.";
+"photo_album_permission_denied" = "Photo library access is required to save.";
 "音乐" = "Music";
 "视频" = "Video";
 "照片" = "Photo";
