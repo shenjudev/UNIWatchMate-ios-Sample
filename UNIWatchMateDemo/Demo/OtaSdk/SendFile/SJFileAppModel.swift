@@ -237,7 +237,7 @@ extension SJFileAppModel {
             let disposable = peripheral.sendFileTask
                 .startTask(fileDatas: [model], type: sjType)
                 .do(onSubscribe: {
-                    // 可选：进入高速模式
+                     // 可选：进入高速模式
                      self.peripheral?.enterHighSpeedMode()
                 })
                 .map { result -> SJFileProgress in
